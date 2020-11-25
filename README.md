@@ -1,4 +1,4 @@
-# yonomi-platform-flutter-core
+# Yonomi Flutter SDK
 Flutter package providing core functionality with Yonomi Platform
 
 ## Getting Started
