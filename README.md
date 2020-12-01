@@ -1,5 +1,4 @@
 # Yonomi Flutter SDK
-[![Yonomi Flutter SDK][platform-shield]][yonomi]
 
 Flutter SDK for Yonomi Platform
 
