@@ -1,5 +1,5 @@
 # Yonomi Flutter SDK
-Flutter package providing core functionality with Yonomi Platform
+Flutter SDK for Yonomi Platform
 
 ## Getting Started
 
