@@ -1,4 +1,4 @@
-# Yonomi Flutter SDK
+# Yonomi Dart SDK
 
 Flutter SDK for Yonomi Platform
 
