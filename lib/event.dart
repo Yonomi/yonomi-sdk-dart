@@ -1,0 +1,3 @@
+library event;
+
+class Event {}
