@@ -28,6 +28,9 @@
 .pub/
 build/
 
+# Test Artifacts
+coverage/
+
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.gradle
