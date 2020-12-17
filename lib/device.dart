@@ -1,6 +1,5 @@
 library device;
 
-import 'package:flutter/foundation.dart';
 import 'package:yonomi_platform_sdk/trait.dart';
 import 'package:yonomi_platform_sdk/event.dart';
 import 'package:yonomi_platform_sdk/user.dart';
@@ -13,9 +12,9 @@ class Device {
   List<User> users;
 
   Device(
-      {@required this.id,
-      @required this.createdAt,
-      @required this.updatedAt,
+      {this.id,
+      this.createdAt,
+      this.updatedAt,
       this.traits,
       this.events,
       this.users});
