@@ -6,27 +6,30 @@ import 'package:yonomi_platform_sdk/event.dart';
 import 'package:yonomi_platform_sdk/user.dart';
 import 'package:yonomi_platform_sdk/has_user.dart';
 
-class Device with HasUser {
+class Device {
   var id, createdAt, updatedAt;
   List<Trait> traits;
   List<Event> events;
+  List<User> users;
 
-  Device({
-    @required this.id,
-    @required this.createdAt,
-    @required this.updatedAt,
-    this.traits,
-    this.events,
-    User user,
-  }) {
-    this.user = user;
-  }
+  Device(
+      {@required this.id,
+      @required this.createdAt,
+      @required this.updatedAt,
+      this.traits,
+      this.events,
+      this.users});
 
   static find({List fields}) {
     // Todo: This is just a stub and should query the platform graph
     return mockedDevices.first;
   }
 }
+
+// Device.find() {}, Device.findByName {}, Device.findBy
+
+// Users.findById, Users., Devices, Integrations, Accounts,
+// Device.find({})
 
 List mockedDevices = [
   Device(
@@ -35,7 +38,6 @@ List mockedDevices = [
     updatedAt: DateTime.now(),
     traits: [Trait()],
     events: [Event()],
-    user: User(),
   ),
   Device(
     id: 'bar',
@@ -43,6 +45,5 @@ List mockedDevices = [
     updatedAt: DateTime.now(),
     traits: [Trait()],
     events: [Event()],
-    user: User(),
   ),
 ];
