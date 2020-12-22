@@ -27,11 +27,11 @@ class User {
     return user;
   }
 
-  User project(List<UserFields> fields) {
+  void project(List<UserFields> fields) {
     // TODO: Validation that fields are correct
     // MAYBE: checking if this.propertyName.toString() exist for given field
     if (fields.length == 0) {
-      return this;
+      return;
     }
 
     this._projectedFields =
@@ -43,7 +43,6 @@ class User {
     this._query = this
         ._query
         .replaceFirst('${User.defaultInnerQuery}', '{ $innerQuery }');
-    return this;
   }
 
   String query() {

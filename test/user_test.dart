@@ -16,20 +16,20 @@ void main() {
   });
 
   test('project() should return same query if id projection is provided', () {
-    User user = User.find().project([UserFields.id]);
+    User user = User.find()..project([UserFields.id]);
     expect(user.query(), equals(User.find().query()));
   });
 
   test('project() should return query with all fields included', () {
-    User user =
-        User.find().project([UserFields.id, UserFields.firstActivityAt]);
+    User user = User.find()
+      ..project([UserFields.id, UserFields.firstActivityAt]);
     expect(
         user.query(), equals('query basicInfo { me { id, firstActivityAt } }'));
   });
 
   test('project() should return query with default field if empty array passed',
       () {
-    User user = User.find().project([]);
+    User user = User.find()..project([]);
     expect(user.query(), equals(User.find().query()));
   });
 
@@ -39,14 +39,18 @@ void main() {
   });
 
   test('project() should return projections for firstActivityAt', () async {
-    User user = await User.find().project([UserFields.firstActivityAt]).get();
+    User userWithPopulatedQuery = User.find()
+      ..project([UserFields.firstActivityAt]);
+    User user = await userWithPopulatedQuery.get();
     expect(user.firstActivityAt, isA<DateTime>());
     expect(user.id, isNull);
     expect(user.lastActivityAt, isNull);
   });
 
   test('project() should return projections for lastActivityAt', () async {
-    User user = await User.find().project([UserFields.lastActivityAt]).get();
+    User userWithPopulatedQuery = User.find()
+      ..project([UserFields.lastActivityAt]);
+    User user = await userWithPopulatedQuery.get();
     expect(user.lastActivityAt, isA<DateTime>());
     expect(user.id, isNull);
     expect(user.firstActivityAt, isNull);
