@@ -34,15 +34,21 @@ void main() {
   });
 
   test('get() should return user with default value', () async {
-    Map<String, dynamic> user = await User.find().get();
-    expect(user['id'], isNotNull);
+    User user = await User.find().get();
+    expect(user.id, isNotNull);
   });
 
-  test('project() should return projections', () async {
-    Map<String, dynamic> user =
-        await User.find().project([UserFields.firstActivityAt]).get();
-    expect(user['firstActivityAt'], isNotNull);
-    expect(user['id'], isNull);
-    expect(user['lastActivityAt'], isNull);
+  test('project() should return projections for firstActivityAt', () async {
+    User user = await User.find().project([UserFields.firstActivityAt]).get();
+    expect(user.firstActivityAt, isA<DateTime>());
+    expect(user.id, isNull);
+    expect(user.lastActivityAt, isNull);
+  });
+
+  test('project() should return projections for lastActivityAt', () async {
+    User user = await User.find().project([UserFields.lastActivityAt]).get();
+    expect(user.lastActivityAt, isA<DateTime>());
+    expect(user.id, isNull);
+    expect(user.firstActivityAt, isNull);
   });
 }

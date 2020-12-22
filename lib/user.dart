@@ -9,9 +9,10 @@ import 'package:http/http.dart' as http;
 enum UserFields { id, firstActivityAt, lastActivityAt, devices }
 
 class User {
-  var id, createdAt, updatedAt, displayName;
+  String id;
   static const String defaultInnerQuery = '{ id }';
   DateTime firstActivityAt, lastActivityAt;
+  List<String> _projectedFields;
   // List<Device> connectedDevices;
 
   String _query;
@@ -32,11 +33,12 @@ class User {
     if (fields.length == 0) {
       return this;
     }
-    List<String> innerFieldList =
+
+    this._projectedFields =
         List<String>.from(fields.map((e) => e.toString().split('.')[1]));
 
     String innerQuery =
-        innerFieldList.reduce((value, element) => '$value, $element');
+        this._projectedFields.reduce((value, element) => '$value, $element');
 
     this._query = this
         ._query
@@ -48,7 +50,17 @@ class User {
     return this._query;
   }
 
-  Future<Map<String, dynamic>> get() async {
+  void _createUserFromUserMap(Map<String, dynamic> userMap) {
+    this.id = userMap['id'];
+    if ((userMap['firstActivityAt'] != null)) {
+      this.firstActivityAt = DateTime.parse(userMap['firstActivityAt']);
+    }
+    if ((userMap['lastActivityAt'] != null)) {
+      this.lastActivityAt = DateTime.parse(userMap['lastActivityAt']);
+    }
+  }
+
+  Future<User> get() async {
     var graphQlQuery = {'query': this._query};
 
     String bearerToken = 'Bearer ${CONFIG.TOKEN}';
@@ -60,7 +72,9 @@ class User {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    return jsonDecode(response.body)['data']['me'];
+    Map<String, dynamic> userMap = jsonDecode(response.body)['data']['me'];
+    _createUserFromUserMap(userMap);
+    return this;
   }
 }
 
