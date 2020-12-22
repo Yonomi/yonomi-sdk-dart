@@ -1,9 +1,15 @@
-import 'dart:math';
-
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/user.dart';
+import 'package:nock/nock.dart';
 
 void main() {
+  // setUpAll(() {
+  //   nock.init();
+  // });
+
+  // setUp(() {
+  //   nock.cleanAll();
+  // });
   test('find() should create a user with default query', () {
     User user = User.find();
     expect(user.query(), equals('query basicInfo { me { id } }'));
@@ -29,7 +35,6 @@ void main() {
 
   test('get() should return user with default value', () async {
     Map<String, dynamic> user = await User.find().get();
-    // print()
     expect(user['id'], isNotNull);
   });
 

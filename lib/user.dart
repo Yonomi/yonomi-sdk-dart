@@ -51,11 +51,9 @@ class User {
   Future<Map<String, dynamic>> get() async {
     var graphQlQuery = {'query': this._query};
 
-    String bearerToken =
-        'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzMTQyNWQxMC1jNWM0LTQ5NjAtOTExNy00OGM0ZTg3N2Y0NjkiLCJpc3MiOiI4YTcwNTRiYS00YWRhLTRhMzctODUyOS02ZjMwM2M4NzhjNTEiLCJpYXQiOjE2MDg2MDE4MDYsImV4cCI6MTYwODY4ODIwNn0.KoPvn0amxaRaLOeCoXQ2TGk0EoWIgc3Agam5oi1lYkzFIaP9Cud0UfI1CjV-XL7ci2mWa3e7NEa3VqxPl9mVyG9dRHBTFrQzp_qFPWF6K89ifXd8sSFeR4eXedL7RHAgg4uAueFIXyQ-0kqLuk6vDOP7qN0iDSQCTLCjhqCB8oiIBplGr7TQrNeSsNXp32lMm918O8H7a2mQ-G0VI5eLtNwJZD4yzEUvCH63JRMhrYv8WWnsys6DWffvMUI7ub4UGH0e3eAWIBlYiaFFizFFFsABJRtFIM82X63m9Bly2mJN_tYeoT3D3-ScX_XTOZhMKLahsuWvqmYtoxkoUpCQVQ';
+    String bearerToken = 'Bearer ${CONFIG.TOKEN}';
     // Graphql flutter
-    String url =
-        'https://lui95yypaj.execute-api.us-east-1.amazonaws.com/dev/graphql';
+    String url = '${CONFIG.URL}';
     var response = await http.post(url,
         body: jsonEncode(graphQlQuery),
         headers: {
@@ -64,4 +62,12 @@ class User {
         });
     return jsonDecode(response.body)['data']['me'];
   }
+}
+
+// TODO: Make this environment specific and move to common home
+class CONFIG {
+  static final String TOKEN =
+      'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzMTQyNWQxMC1jNWM0LTQ5NjAtOTExNy00OGM0ZTg3N2Y0NjkiLCJpc3MiOiI4YTcwNTRiYS00YWRhLTRhMzctODUyOS02ZjMwM2M4NzhjNTEiLCJpYXQiOjE2MDg2MDE4MDYsImV4cCI6MTYwODY4ODIwNn0.KoPvn0amxaRaLOeCoXQ2TGk0EoWIgc3Agam5oi1lYkzFIaP9Cud0UfI1CjV-XL7ci2mWa3e7NEa3VqxPl9mVyG9dRHBTFrQzp_qFPWF6K89ifXd8sSFeR4eXedL7RHAgg4uAueFIXyQ-0kqLuk6vDOP7qN0iDSQCTLCjhqCB8oiIBplGr7TQrNeSsNXp32lMm918O8H7a2mQ-G0VI5eLtNwJZD4yzEUvCH63JRMhrYv8WWnsys6DWffvMUI7ub4UGH0e3eAWIBlYiaFFizFFFsABJRtFIM82X63m9Bly2mJN_tYeoT3D3-ScX_XTOZhMKLahsuWvqmYtoxkoUpCQVQ';
+  static final String URL =
+      'https://lui95yypaj.execute-api.us-east-1.amazonaws.com/dev/graphql';
 }
