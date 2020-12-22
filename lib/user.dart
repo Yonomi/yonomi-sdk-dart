@@ -3,12 +3,14 @@ library user;
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:yonomi_platform_sdk/device.dart';
 // import 'device.dart';
 import 'package:http/http.dart' as http;
 
+enum UserFields { id, firstActivityAt, lastActivityAt, devices }
+
 class User {
   var id, createdAt, updatedAt, displayName;
+  static const String defaultInnerQuery = '{ id }';
   DateTime firstActivityAt, lastActivityAt;
   // List<Device> connectedDevices;
 
@@ -19,70 +21,47 @@ class User {
   }
 
   static User find() {
-    // Returns all the fields of the user, no projection
-    User user = User('me {}');
+    // By default it adds id to the query
+    User user = User('query basicInfo { me ${User.defaultInnerQuery} }');
     return user;
   }
 
-/* Example of calculating the sum of an iterable:
-* 
-* var numbers = [1, 2, 3, 4, 5];
-* var sum = numbers.reduce((curr, next) => curr + next);
-* print(sum); // => 15
-*
- *
- *     iterable.reduce((value, element) => value + element);
- * user.project(['id', 'displayName'])
- * // value == 'id'
- * // element == 0
- */
-
-// List foo = ['foo', 'bar'];
-//   String init;
-//   String bar = foo.reduce((value, element) => "$value, $element");
-//   print(bar);
-
-  User project(List<String> fields) {
+  User project(List<UserFields> fields) {
     // TODO: Validation that fields are correct
     // MAYBE: checking if this.propertyName.toString() exist for given field
+    if (fields.length == 0) {
+      return this;
+    }
+    List<String> innerFieldList =
+        List<String>.from(fields.map((e) => e.toString().split('.')[1]));
 
-    String fieldsString = fields.toString();
-    String internalQuery = fieldsString.substring(1, fieldsString.length - 1);
-    // this._query = this._query.replaceRange(2, 4, '''{$internalQuery}''');
-    this._query = 'query basicInfo { me { id } }';
+    String innerQuery =
+        innerFieldList.reduce((value, element) => '$value, $element');
+
+    this._query = this
+        ._query
+        .replaceFirst('${User.defaultInnerQuery}', '{ $innerQuery }');
     return this;
   }
 
-  Future<User> get() async {
-    const String bearerToken =
-        'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNmUwZWFhZi1jZGNkLTRiNmQtOWRhMi04ZGI5NmNmNmU2MzUiLCJpc3MiOiI5MzYzZGE3My1kNzNiLTQ2MjktOWY3Yy1hZTc4NTNlOGVkZTciLCJpYXQiOjE2MDgyNDA3MDIsImV4cCI6MTYwODMyNzEwMn0.fBSwpZz6XIy-Pg0FwnTiMn8kCNNmcgWaV60OhauPd4RcokbgMsjLribuSrtx70GJf1yZnlv4Wn2w4zAwYpcUgthuIXuW6u6RTeOW0afjvYwvG3ooNKZ4aE7udBjYhSzUjLtzOG95tPam5xMOoqskCj57F_qLBdaMefOI2pquuFD5cUQR8GvTiL3zu5A6CzFQY_LjBkOwYp-y_0QMf_2zH7eOud4vJockeex7nfM9S9uTYDeS1xvkws97H0-ve_7d02wBs7jwSE1SqP35JiVHYIT7JscF3bwjdzmJBBCY5lSGRwBW2wzKyF2G5Xq2uPxcZ38z1Y-qkILKmUns56846A';
-    // Graphql flutter
-    var url =
-        'https://lui95yypaj.execute-api.us-east-1.amazonaws.com/dev/graphql';
+  String query() {
+    return this._query;
+  }
+
+  Future<Map<String, dynamic>> get() async {
     var graphQlQuery = {'query': this._query};
 
+    String bearerToken =
+        'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzMTQyNWQxMC1jNWM0LTQ5NjAtOTExNy00OGM0ZTg3N2Y0NjkiLCJpc3MiOiI4YTcwNTRiYS00YWRhLTRhMzctODUyOS02ZjMwM2M4NzhjNTEiLCJpYXQiOjE2MDg2MDE4MDYsImV4cCI6MTYwODY4ODIwNn0.KoPvn0amxaRaLOeCoXQ2TGk0EoWIgc3Agam5oi1lYkzFIaP9Cud0UfI1CjV-XL7ci2mWa3e7NEa3VqxPl9mVyG9dRHBTFrQzp_qFPWF6K89ifXd8sSFeR4eXedL7RHAgg4uAueFIXyQ-0kqLuk6vDOP7qN0iDSQCTLCjhqCB8oiIBplGr7TQrNeSsNXp32lMm918O8H7a2mQ-G0VI5eLtNwJZD4yzEUvCH63JRMhrYv8WWnsys6DWffvMUI7ub4UGH0e3eAWIBlYiaFFizFFFsABJRtFIM82X63m9Bly2mJN_tYeoT3D3-ScX_XTOZhMKLahsuWvqmYtoxkoUpCQVQ';
+    // Graphql flutter
+    String url =
+        'https://lui95yypaj.execute-api.us-east-1.amazonaws.com/dev/graphql';
     var response = await http.post(url,
         body: jsonEncode(graphQlQuery),
         headers: {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    this.id = 'id';
-    this.firstActivityAt = DateTime.now();
-    return this;
-  }
-}
-
-class AuthorizedClient extends http.BaseClient {
-  http.Client _httpClient = new http.Client();
-
-  var token;
-
-  AuthorizedClient(this.token);
-
-  @override
-  Future<http.StreamedResponse> send(http.BaseRequest request) {
-    request.headers.addAll({'Authorization': 'Bearer ${token}'});
-    return _httpClient.send(request);
+    return jsonDecode(response.body)['data']['me'];
   }
 }
