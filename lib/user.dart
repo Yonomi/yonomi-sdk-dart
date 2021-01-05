@@ -102,8 +102,3 @@ class CONFIG {
   static final String URL =
       'https://lui95yypaj.execute-api.us-east-1.amazonaws.com/dev/graphql';
 }
-
-// class NotProjectedException implements Exception {
-//   String cause = ;
-//   NotProjectedException('The field is not projected');
-// }
