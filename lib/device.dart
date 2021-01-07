@@ -15,7 +15,9 @@ enum DeviceFields {
   model,
   firmwareVersion,
   softwareVersion,
-  serialNumber
+  serialNumber,
+  createdAt,
+  updatedAt
 }
 
 class Device {
@@ -128,11 +130,11 @@ class Device {
     this._firmwareVersion = userMap['firmwareVersion'];
     this._serialNumber = userMap['serialNumber'];
 
-    if ((userMap['firstActivityAt'] != null)) {
+    if ((userMap['createdAt'] != null)) {
       this._createdAt = DateTime.parse(userMap['createdAt']);
     }
-    if ((userMap['lastActivityAt'] != null)) {
-      this._updatedAt = DateTime.parse(userMap['lastActivityAt']);
+    if ((userMap['updatedAt'] != null)) {
+      this._updatedAt = DateTime.parse(userMap['updatedAt']);
     }
   }
 
