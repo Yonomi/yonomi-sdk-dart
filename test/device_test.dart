@@ -5,7 +5,7 @@ void main() {
   test('find() should create a device with default query', () {
     Device user = Device.findById("someId");
     expect(
-        user.query(), equals('query basicInfo { device(id:someId) { id } }'));
+        user.query(), equals('query Device { device(id: "someId") { id } }'));
   });
 
   test('project() should return same query if id projection is provided', () {
@@ -17,7 +17,7 @@ void main() {
     Device device = Device.findById('someId')
       ..project([DeviceFields.id, DeviceFields.description]);
     expect(device.query(),
-        equals('query basicInfo { device(id:someId) { id, description } }'));
+        equals('query Device { device(id: "someId") { id, description } }'));
   });
 
   test('get() should return device with default value', () async {
