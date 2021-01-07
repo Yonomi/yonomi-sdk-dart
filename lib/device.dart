@@ -1,48 +1,160 @@
 library device;
 
-import 'package:flutter/foundation.dart';
-import 'package:yonomi_platform_sdk/trait.dart';
-import 'package:yonomi_platform_sdk/event.dart';
-import 'package:yonomi_platform_sdk/user.dart';
-import 'package:yonomi_platform_sdk/has_user.dart';
+import 'dart:convert';
+import 'dart:io';
 
-class Device with HasUser {
-  var id, createdAt, updatedAt;
-  List<Trait> traits;
-  List<Event> events;
+import 'package:http/http.dart' as http;
 
-  Device({
-    @required this.id,
-    @required this.createdAt,
-    @required this.updatedAt,
-    this.traits,
-    this.events,
-    User user,
-  }) {
-    this.user = user;
-  }
+import 'config.dart';
 
-  static find({List fields}) {
-    // Todo: This is just a stub and should query the platform graph
-    return mockedDevices.first;
-  }
+enum DeviceFields {
+  id,
+  displayName,
+  description,
+  manufacturerName,
+  model,
+  firmwareVersion,
+  softwareVersion,
+  serialNumber,
+  createdAt,
+  updatedAt
 }
 
-List mockedDevices = [
-  Device(
-    id: 'foo',
-    createdAt: DateTime.now(),
-    updatedAt: DateTime.now(),
-    traits: [Trait()],
-    events: [Event()],
-    user: User(),
-  ),
-  Device(
-    id: 'bar',
-    createdAt: DateTime.now(),
-    updatedAt: DateTime.now(),
-    traits: [Trait()],
-    events: [Event()],
-    user: User(),
-  ),
-];
+class Device {
+  String _id,
+      _displayName,
+      _description,
+      _manufacturerName,
+      _model,
+      _firmwareVersion,
+      _softwareVersion,
+      _serialNumber,
+      _query;
+  DateTime _createdAt, _updatedAt;
+  // List<Trait> traits;
+  // List<Event> events;
+  // List<User> users;
+
+  static const List<String> defaultProjectedFields = ['id'];
+  List<String> _projectedFields = Device.defaultProjectedFields;
+  static String defaultInnerQuery =
+      "{ ${Device.defaultProjectedFields.reduce((value, element) => '$value, $element')} }";
+
+  void _throwFieldNotFoundException(String fieldName) {
+    if (!_projectedFields.contains(fieldName)) {
+      throw ('${fieldName} is not projected');
+    }
+  }
+
+  String get id {
+    _throwFieldNotFoundException('id');
+    return this._id;
+  }
+
+  String get displayName {
+    _throwFieldNotFoundException('displayName');
+    return this._displayName;
+  }
+
+  String get description {
+    _throwFieldNotFoundException('description');
+    return this._description;
+  }
+
+  String get manufacturerName {
+    _throwFieldNotFoundException('manufacturerName');
+    return this._manufacturerName;
+  }
+
+  String get model {
+    _throwFieldNotFoundException('model');
+    return this._model;
+  }
+
+  String get firmwareVersion {
+    _throwFieldNotFoundException('firmwareVersion');
+    return this._firmwareVersion;
+  }
+
+  String get softwareVersion {
+    _throwFieldNotFoundException('softwareVersion');
+    return this._softwareVersion;
+  }
+
+  String get serialNumber {
+    _throwFieldNotFoundException('serialNumber');
+    return this._serialNumber;
+  }
+
+  DateTime get createdAt {
+    _throwFieldNotFoundException('createdAt');
+    return this._createdAt;
+  }
+
+  DateTime get updatedAt {
+    _throwFieldNotFoundException('updatedAt');
+    return this._updatedAt;
+  }
+
+  Device(String query) {
+    this._query = query;
+  }
+
+  static findById(String id) {
+    Device device = Device(
+        'query Device { device(id: "${id}") ${Device.defaultInnerQuery} }');
+    return device;
+  }
+
+  void project(List<DeviceFields> fields) {
+    if (fields.length == 0) {
+      return;
+    }
+
+    this._projectedFields =
+        List<String>.from(fields.map((e) => e.toString().split('.')[1]));
+    String innerQuery =
+        this._projectedFields.reduce((value, element) => '$value, $element');
+    this._query = this
+        ._query
+        .replaceFirst('${Device.defaultInnerQuery}', '{ $innerQuery }');
+  }
+
+  void _createDeviceFromDeviceMap(Map<String, dynamic> userMap) {
+    this._id = userMap['id'];
+    this._description = userMap['description'];
+    this._displayName = userMap['displayName'];
+    this._manufacturerName = userMap['manufacturerName'];
+    this._model = userMap['model'];
+    this._softwareVersion = userMap['softwareVersion'];
+    this._firmwareVersion = userMap['firmwareVersion'];
+    this._serialNumber = userMap['serialNumber'];
+
+    if ((userMap['createdAt'] != null)) {
+      this._createdAt = DateTime.parse(userMap['createdAt']);
+    }
+    if ((userMap['updatedAt'] != null)) {
+      this._updatedAt = DateTime.parse(userMap['updatedAt']);
+    }
+  }
+
+  String query() {
+    return this._query;
+  }
+
+  Future<Device> get() async {
+    var graphQlQuery = {'query': this._query};
+
+    String bearerToken = 'Bearer ${CONFIG.TOKEN}';
+    String url = '${CONFIG.URL}';
+    var response = await http.post(url,
+        body: jsonEncode(graphQlQuery),
+        headers: {
+          HttpHeaders.authorizationHeader: bearerToken,
+          'Content-Type': 'application/json'
+        });
+    Map<String, dynamic> userMap = jsonDecode(response.body)['data']['device'];
+    _createDeviceFromDeviceMap(userMap);
+    return this;
+  }
+}
