@@ -95,7 +95,7 @@ class Device {
 
   static findById(String id) {
     Device device = Device(
-        'query basicInfo { device(id:${id}) ${Device.defaultInnerQuery} }');
+        'query Device { device(id: "${id}") ${Device.defaultInnerQuery} }');
     return device;
   }
 
