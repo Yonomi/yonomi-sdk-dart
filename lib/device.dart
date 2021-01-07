@@ -64,6 +64,11 @@ class Device {
     return this._manufacturerName;
   }
 
+  String get model {
+    _throwFieldNotFoundException('model');
+    return this._model;
+  }
+
   String get firmwareVersion {
     _throwFieldNotFoundException('firmwareVersion');
     return this._firmwareVersion;
@@ -117,9 +122,11 @@ class Device {
     this._id = userMap['id'];
     this._description = userMap['description'];
     this._displayName = userMap['displayName'];
-    this._manufacturerName = userMap['displayName'];
+    this._manufacturerName = userMap['manufacturerName'];
+    this._model = userMap['model'];
     this._softwareVersion = userMap['softwareVersion'];
     this._firmwareVersion = userMap['firmwareVersion'];
+    this._serialNumber = userMap['serialNumber'];
 
     if ((userMap['firstActivityAt'] != null)) {
       this._createdAt = DateTime.parse(userMap['createdAt']);
