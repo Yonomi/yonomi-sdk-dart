@@ -91,5 +91,22 @@ void main() {
     expect(() => device.id, throwsA('id is not projected'));
   });
 
-  // });
+  test('project() should return projections for createdAt', () async {
+    Device deviceWithPopulatedQuery =
+    Device.findById(testDeviceId)
+      ..project([DeviceFields.createdAt]);
+    Device device = await deviceWithPopulatedQuery.get();
+    expect(device.createdAt, isA<DateTime>());
+    expect(() => device.id, throwsA('id is not projected'));
+  });
+
+  test('project() should return projections for updatedAt', () async {
+    Device deviceWithPopulatedQuery =
+    Device.findById(testDeviceId)
+      ..project([DeviceFields.updatedAt]);
+    Device device = await deviceWithPopulatedQuery.get();
+    expect(device.updatedAt, isA<DateTime>());
+    expect(() => device.id, throwsA('id is not projected'));
+  });
+
 }
