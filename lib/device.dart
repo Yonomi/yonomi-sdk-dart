@@ -31,6 +31,7 @@ class Device {
       _serialNumber,
       _query;
   DateTime _createdAt, _updatedAt;
+
   // List<Trait> traits;
   // List<Event> events;
   // List<User> users;
@@ -100,7 +101,7 @@ class Device {
     this._query = query;
   }
 
-  static findById(String id) {
+  static Device findById(String id) {
     Device device = Device(
         'query Device { device(id: "${id}") ${Device.defaultInnerQuery} }');
     return device;
@@ -111,8 +112,8 @@ class Device {
       return;
     }
 
-    this._projectedFields =
-        List<String>.from(fields.map((e) => e.toString().split('.')[1]));
+    this._projectedFields = List<String>.from(
+        fields.map<String>((DeviceFields e) => e.toString().split('.')[1]));
     String innerQuery =
         this._projectedFields.reduce((value, element) => '$value, $element');
     this._query = this
@@ -120,7 +121,7 @@ class Device {
         .replaceFirst('${Device.defaultInnerQuery}', '{ $innerQuery }');
   }
 
-  void _createDeviceFromDeviceMap(Map<String, dynamic> userMap) {
+  void _createDeviceFromDeviceMap(Map<String, String> userMap) {
     this._id = userMap['id'];
     this._description = userMap['description'];
     this._displayName = userMap['displayName'];
@@ -153,8 +154,10 @@ class Device {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    Map<String, dynamic> userMap = jsonDecode(response.body)['data']['device'];
-    _createDeviceFromDeviceMap(userMap);
+    Map<String, String> deviceMap =
+        jsonDecode(response.body)['data']['device'] as Map<String, String>;
+
+    _createDeviceFromDeviceMap(deviceMap);
     return this;
   }
 }
