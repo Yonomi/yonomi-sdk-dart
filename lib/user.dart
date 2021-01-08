@@ -2,8 +2,10 @@ library user;
 
 import 'dart:convert';
 import 'dart:io';
-import 'config.dart';
+
 import 'package:http/http.dart' as http;
+
+import 'config.dart';
 
 enum UserFields { id, firstActivityAt, lastActivityAt, devices }
 
@@ -70,13 +72,15 @@ class User {
     return this._query;
   }
 
-  void _createUserFromUserMap(Map<String, String> userMap) {
-    this._id = userMap['id'];
+  void _createUserFromUserMap(Map<String, dynamic> userMap) {
+    this._id = userMap['id'] as String;
     if ((userMap['firstActivityAt'] != null)) {
-      this._firstActivityAt = DateTime.parse(userMap['firstActivityAt']);
+      this._firstActivityAt =
+          DateTime.parse(userMap['firstActivityAt'] as String);
     }
     if ((userMap['lastActivityAt'] != null)) {
-      this._lastActivityAt = DateTime.parse(userMap['lastActivityAt']);
+      this._lastActivityAt =
+          DateTime.parse(userMap['lastActivityAt'] as String);
     }
   }
 
@@ -91,8 +95,8 @@ class User {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    Map<String, String> userMap =
-        jsonDecode(response.body)['data']['me'] as Map<String, String>;
+    Map<String, dynamic> userMap =
+        jsonDecode(response.body)['data']['me'] as Map<String, dynamic>;
     _createUserFromUserMap(userMap);
     return this;
   }

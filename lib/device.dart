@@ -121,21 +121,21 @@ class Device {
         .replaceFirst('${Device.defaultInnerQuery}', '{ $innerQuery }');
   }
 
-  void _createDeviceFromDeviceMap(Map<String, String> userMap) {
-    this._id = userMap['id'];
-    this._description = userMap['description'];
-    this._displayName = userMap['displayName'];
-    this._manufacturerName = userMap['manufacturerName'];
-    this._model = userMap['model'];
-    this._softwareVersion = userMap['softwareVersion'];
-    this._firmwareVersion = userMap['firmwareVersion'];
-    this._serialNumber = userMap['serialNumber'];
+  void _createDeviceFromDeviceMap(Map<String, dynamic> userMap) {
+    this._id = userMap['id'] as String;
+    this._description = userMap['description'] as String;
+    this._displayName = userMap['displayName'] as String;
+    this._manufacturerName = userMap['manufacturerName'] as String;
+    this._model = userMap['model'] as String;
+    this._softwareVersion = userMap['softwareVersion'] as String;
+    this._firmwareVersion = userMap['firmwareVersion'] as String;
+    this._serialNumber = userMap['serialNumber'] as String;
 
     if ((userMap['createdAt'] != null)) {
-      this._createdAt = DateTime.parse(userMap['createdAt']);
+      this._createdAt = DateTime.parse(userMap['createdAt'] as String);
     }
     if ((userMap['updatedAt'] != null)) {
-      this._updatedAt = DateTime.parse(userMap['updatedAt']);
+      this._updatedAt = DateTime.parse(userMap['updatedAt'] as String);
     }
   }
 
@@ -154,8 +154,8 @@ class Device {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    Map<String, String> deviceMap =
-        jsonDecode(response.body)['data']['device'] as Map<String, String>;
+    Map<String, dynamic> deviceMap =
+        jsonDecode(response.body)['data']['device'] as Map<String, dynamic>;
 
     _createDeviceFromDeviceMap(deviceMap);
     return this;
