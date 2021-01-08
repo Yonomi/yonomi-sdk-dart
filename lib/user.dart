@@ -14,6 +14,7 @@ class User {
   List<String> _projectedFields = User.defaultProjectedFields;
   static String defaultInnerQuery =
       "{ ${User.defaultProjectedFields.reduce((value, element) => '$value, $element')} }";
+
   // List<Device> connectedDevices;
 
   String _query;
@@ -54,8 +55,8 @@ class User {
       return;
     }
 
-    this._projectedFields =
-        List<String>.from(fields.map((e) => e.toString().split('.')[1]));
+    this._projectedFields = List<String>.from(
+        fields.map<String>((e) => e.toString().split('.')[1]));
 
     String innerQuery =
         this._projectedFields.reduce((value, element) => '$value, $element');
@@ -69,7 +70,7 @@ class User {
     return this._query;
   }
 
-  void _createUserFromUserMap(Map<String, dynamic> userMap) {
+  void _createUserFromUserMap(Map<String, String> userMap) {
     this._id = userMap['id'];
     if ((userMap['firstActivityAt'] != null)) {
       this._firstActivityAt = DateTime.parse(userMap['firstActivityAt']);
@@ -90,7 +91,8 @@ class User {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    Map<String, dynamic> userMap = jsonDecode(response.body)['data']['me'];
+    Map<String, String> userMap =
+        jsonDecode(response.body)['data']['me'] as Map<String, String>;
     _createUserFromUserMap(userMap);
     return this;
   }
