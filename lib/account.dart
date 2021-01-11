@@ -5,14 +5,12 @@ import 'package:http/http.dart' as http;
 
 import 'config.dart';
 
-class account {
+class Account {
   static Future<String> generateAccountLinkingUrl(String integrationId) async {
     var graphQlMutation = {
-      'query': '''mutation generateAccountLinkingUrl (\$integrationId: ID!) { 
-                generateAccountLinkingUrl(integrationId: \$integrationId) { url } 
-            }
-          ''',
-      'variables': '{"integrationId": "${integrationId}"}'
+      'query': ''''mutation generateAccountLinkingUrl {
+                generateAccountLinkingUrl(integrationId: "${integrationId}") { url } 
+            }'''
     };
 
     String bearerToken = 'Bearer ${CONFIG.TOKEN}';
