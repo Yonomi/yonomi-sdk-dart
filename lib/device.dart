@@ -61,14 +61,14 @@ class Device {
     return this._description;
   }
 
-  String get manufacturerName {
-    _throwFieldNotFoundException('manufacturerName');
-    return this._manufacturerName;
-  }
-
   String get model {
     _throwFieldNotFoundException('model');
     return this._model;
+  }
+
+  String get manufacturerName {
+    _throwFieldNotFoundException('manufacturerName');
+    return this._manufacturerName;
   }
 
   String get firmwareVersion {
@@ -120,12 +120,34 @@ class Device {
         .replaceFirst('${Device.defaultInnerQuery}', '{ $innerQuery }');
   }
 
+  Device.createDevice(
+      String id,
+      String displayName,
+      String manufacturerName,
+      String model,
+      String firmwareVersion,
+      String softwareVersion,
+      String serialNumber,
+      String description,
+      DateTime updatedAt,
+      DateTime createdAt) {
+    this._id = id;
+    this._displayName = displayName;
+    this._manufacturerName = manufacturerName;
+    this._model = model;
+    this._firmwareVersion = firmwareVersion;
+    this._softwareVersion = softwareVersion;
+    this._serialNumber = serialNumber;
+    this._createdAt = createdAt;
+    this._updatedAt = updatedAt;
+    this._description = description;
+  }
+
   void _createDeviceFromDeviceMap(Map<String, dynamic> userMap) {
     this._id = userMap['id'];
-    this._description = userMap['description'];
     this._displayName = userMap['displayName'];
-    this._manufacturerName = userMap['manufacturerName'];
-    this._model = userMap['model'];
+    this._description = userMap['description'];
+    this._manufacturerName = userMap['displayName'];
     this._softwareVersion = userMap['softwareVersion'];
     this._firmwareVersion = userMap['firmwareVersion'];
     this._serialNumber = userMap['serialNumber'];
