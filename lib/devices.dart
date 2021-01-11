@@ -56,6 +56,9 @@ class Devices {
     if ((userMap['updatedAt'] != null)) {
       updatedAt = DateTime.parse(userMap['updatedAt']);
     }
+    if (this._devices == null) {
+      this._devices = [];
+    }
     this._devices.add(Device.createDevice(
         id,
         displayName,
@@ -66,7 +69,12 @@ class Devices {
         serialNumber,
         description,
         updatedAt,
-        createdAt));
+        createdAt,
+        _projectedFields));
+  }
+
+  List<Device> get devices {
+    return this._devices;
   }
 
   String query() {
@@ -84,8 +92,11 @@ class Devices {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    Map<String, dynamic> userMap = jsonDecode(response.body)['data']['device'];
-
+    List<dynamic> edges =
+        jsonDecode(response.body)['data']['me']['devices']['edges'];
+    edges.forEach((element) {
+      _createDeviceFromDeviceMap(element['node']);
+    });
     return this;
   }
 }

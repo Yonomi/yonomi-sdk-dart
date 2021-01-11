@@ -130,7 +130,8 @@ class Device {
       String serialNumber,
       String description,
       DateTime updatedAt,
-      DateTime createdAt) {
+      DateTime createdAt,
+      List<String> projectedFields) {
     this._id = id;
     this._displayName = displayName;
     this._manufacturerName = manufacturerName;
