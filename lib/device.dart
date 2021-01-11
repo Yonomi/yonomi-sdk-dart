@@ -31,6 +31,7 @@ class Device {
       _serialNumber,
       _query;
   DateTime _createdAt, _updatedAt;
+
   // List<Trait> traits;
   // List<Event> events;
   // List<User> users;
@@ -100,7 +101,7 @@ class Device {
     this._query = query;
   }
 
-  static findById(String id) {
+  static Device findById(String id) {
     Device device = Device(
         'query Device { device(id: "${id}") ${Device.defaultInnerQuery} }');
     return device;
@@ -111,8 +112,8 @@ class Device {
       return;
     }
 
-    this._projectedFields =
-        List<String>.from(fields.map((e) => e.toString().split('.')[1]));
+    this._projectedFields = List<String>.from(
+        fields.map<String>((DeviceFields e) => e.toString().split('.')[1]));
     String innerQuery =
         this._projectedFields.reduce((value, element) => '$value, $element');
     this._query = this
@@ -121,20 +122,20 @@ class Device {
   }
 
   void _createDeviceFromDeviceMap(Map<String, dynamic> userMap) {
-    this._id = userMap['id'];
-    this._description = userMap['description'];
-    this._displayName = userMap['displayName'];
-    this._manufacturerName = userMap['manufacturerName'];
-    this._model = userMap['model'];
-    this._softwareVersion = userMap['softwareVersion'];
-    this._firmwareVersion = userMap['firmwareVersion'];
-    this._serialNumber = userMap['serialNumber'];
+    this._id = userMap['id'] as String;
+    this._description = userMap['description'] as String;
+    this._displayName = userMap['displayName'] as String;
+    this._manufacturerName = userMap['manufacturerName'] as String;
+    this._model = userMap['model'] as String;
+    this._softwareVersion = userMap['softwareVersion'] as String;
+    this._firmwareVersion = userMap['firmwareVersion'] as String;
+    this._serialNumber = userMap['serialNumber'] as String;
 
     if ((userMap['createdAt'] != null)) {
-      this._createdAt = DateTime.parse(userMap['createdAt']);
+      this._createdAt = DateTime.parse(userMap['createdAt'] as String);
     }
     if ((userMap['updatedAt'] != null)) {
-      this._updatedAt = DateTime.parse(userMap['updatedAt']);
+      this._updatedAt = DateTime.parse(userMap['updatedAt'] as String);
     }
   }
 
@@ -153,8 +154,10 @@ class Device {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    Map<String, dynamic> userMap = jsonDecode(response.body)['data']['device'];
-    _createDeviceFromDeviceMap(userMap);
+    Map<String, dynamic> deviceMap =
+        jsonDecode(response.body)['data']['device'] as Map<String, dynamic>;
+
+    _createDeviceFromDeviceMap(deviceMap);
     return this;
   }
 }
