@@ -2,12 +2,12 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/device.dart';
 
 void main() {
-  var testDeviceId = "616e8382-bb26-41f5-8861-eeb62525d606";
+  var testDeviceId = "352ed979-e209-4e03-bb48-090f7b38ea26";
 
   test('find() should create a device with default query', () {
-    Device user = Device.findById("someId");
+    Device device = Device.findById("someId");
     expect(
-        user.query(), equals('query Device { device(id: "someId") { id } }'));
+        device.query(), equals('query Device { device(id: "someId") { id } }'));
   });
 
   test('project() should return same query if id projection is provided', () {

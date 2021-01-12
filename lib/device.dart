@@ -21,6 +21,10 @@ enum DeviceFields {
 }
 
 class Device {
+  Device(String query) {
+    _query = query;
+  }
+
   String _id,
       _displayName,
       _description,
@@ -31,10 +35,10 @@ class Device {
       _serialNumber,
       _query;
   DateTime _createdAt, _updatedAt;
+
   // List<Trait> traits;
   // List<Event> events;
   // List<User> users;
-
   static const List<String> defaultProjectedFields = ['id'];
   List<String> _projectedFields = Device.defaultProjectedFields;
   static String defaultInnerQuery =
@@ -42,65 +46,61 @@ class Device {
 
   void _throwFieldNotFoundException(String fieldName) {
     if (!_projectedFields.contains(fieldName)) {
-      throw ('${fieldName} is not projected');
+      throw '$fieldName is not projected';
     }
   }
 
   String get id {
     _throwFieldNotFoundException('id');
-    return this._id;
+    return _id;
   }
 
   String get displayName {
     _throwFieldNotFoundException('displayName');
-    return this._displayName;
+    return _displayName;
   }
 
   String get description {
     _throwFieldNotFoundException('description');
-    return this._description;
+    return _description;
   }
 
   String get model {
     _throwFieldNotFoundException('model');
-    return this._model;
+    return _model;
   }
 
   String get manufacturerName {
     _throwFieldNotFoundException('manufacturerName');
-    return this._manufacturerName;
+    return _manufacturerName;
   }
 
   String get firmwareVersion {
     _throwFieldNotFoundException('firmwareVersion');
-    return this._firmwareVersion;
+    return _firmwareVersion;
   }
 
   String get softwareVersion {
     _throwFieldNotFoundException('softwareVersion');
-    return this._softwareVersion;
+    return _softwareVersion;
   }
 
   String get serialNumber {
     _throwFieldNotFoundException('serialNumber');
-    return this._serialNumber;
+    return _serialNumber;
   }
 
   DateTime get createdAt {
     _throwFieldNotFoundException('createdAt');
-    return this._createdAt;
+    return _createdAt;
   }
 
   DateTime get updatedAt {
     _throwFieldNotFoundException('updatedAt');
-    return this._updatedAt;
+    return _updatedAt;
   }
 
-  Device(String query) {
-    this._query = query;
-  }
-
-  static findById(String id) {
+  static Device findById(String id) {
     Device device = Device(
         'query Device { device(id: "${id}") ${Device.defaultInnerQuery} }');
     return device;
@@ -111,11 +111,11 @@ class Device {
       return;
     }
 
-    this._projectedFields =
-        List<String>.from(fields.map((e) => e.toString().split('.')[1]));
+    _projectedFields = List<String>.from(
+        fields.map<String>((DeviceFields e) => e.toString().split('.')[1]));
     String innerQuery =
-        this._projectedFields.reduce((value, element) => '$value, $element');
-    this._query = this
+        _projectedFields.reduce((value, element) => '$value, $element');
+    _query = this
         ._query
         .replaceFirst('${Device.defaultInnerQuery}', '{ $innerQuery }');
   }
@@ -132,52 +132,56 @@ class Device {
       DateTime updatedAt,
       DateTime createdAt,
       List<String> projectedFields) {
-    this._id = id;
-    this._displayName = displayName;
-    this._manufacturerName = manufacturerName;
-    this._model = model;
-    this._firmwareVersion = firmwareVersion;
-    this._softwareVersion = softwareVersion;
-    this._serialNumber = serialNumber;
-    this._createdAt = createdAt;
-    this._updatedAt = updatedAt;
-    this._description = description;
+    _id = id;
+    _displayName = displayName;
+    _manufacturerName = manufacturerName;
+    _model = model;
+    _firmwareVersion = firmwareVersion;
+    _softwareVersion = softwareVersion;
+    _serialNumber = serialNumber;
+    _createdAt = createdAt;
+    _updatedAt = updatedAt;
+    _description = description;
+    _projectedFields = projectedFields;
   }
 
   void _createDeviceFromDeviceMap(Map<String, dynamic> userMap) {
-    this._id = userMap['id'];
-    this._displayName = userMap['displayName'];
-    this._description = userMap['description'];
-    this._manufacturerName = userMap['displayName'];
-    this._softwareVersion = userMap['softwareVersion'];
-    this._firmwareVersion = userMap['firmwareVersion'];
-    this._serialNumber = userMap['serialNumber'];
+    _id = userMap['id'] as String;
+    _description = userMap['description'] as String;
+    _displayName = userMap['displayName'] as String;
+    _manufacturerName = userMap['manufacturerName'] as String;
+    _model = userMap['model'] as String;
+    _softwareVersion = userMap['softwareVersion'] as String;
+    _firmwareVersion = userMap['firmwareVersion'] as String;
+    _serialNumber = userMap['serialNumber'] as String;
 
-    if ((userMap['createdAt'] != null)) {
-      this._createdAt = DateTime.parse(userMap['createdAt']);
+    if (userMap['createdAt'] != null) {
+      _createdAt = DateTime.parse(userMap['createdAt'] as String);
     }
-    if ((userMap['updatedAt'] != null)) {
-      this._updatedAt = DateTime.parse(userMap['updatedAt']);
+    if (userMap['updatedAt'] != null) {
+      _updatedAt = DateTime.parse(userMap['updatedAt'] as String);
     }
   }
 
   String query() {
-    return this._query;
+    return _query;
   }
 
   Future<Device> get() async {
-    var graphQlQuery = {'query': this._query};
+    var graphQlQuery = {'query': _query};
 
-    String bearerToken = 'Bearer ${CONFIG.TOKEN}';
-    String url = '${CONFIG.URL}';
+    final String bearerToken = 'Bearer ${CONFIG.TOKEN}';
+    String url = CONFIG.URL;
     var response = await http.post(url,
         body: jsonEncode(graphQlQuery),
         headers: {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    Map<String, dynamic> userMap = jsonDecode(response.body)['data']['device'];
-    _createDeviceFromDeviceMap(userMap);
+    final Map<String, dynamic> deviceMap =
+        jsonDecode(response.body)['data']['device'] as Map<String, dynamic>;
+
+    _createDeviceFromDeviceMap(deviceMap);
     return this;
   }
 }

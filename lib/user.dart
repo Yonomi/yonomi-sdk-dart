@@ -2,8 +2,10 @@ library user;
 
 import 'dart:convert';
 import 'dart:io';
-import 'config.dart';
+
 import 'package:http/http.dart' as http;
+
+import 'config.dart';
 
 enum UserFields { id, firstActivityAt, lastActivityAt, devices }
 
@@ -14,6 +16,7 @@ class User {
   List<String> _projectedFields = User.defaultProjectedFields;
   static String defaultInnerQuery =
       "{ ${User.defaultProjectedFields.reduce((value, element) => '$value, $element')} }";
+
   // List<Device> connectedDevices;
 
   String _query;
@@ -54,8 +57,8 @@ class User {
       return;
     }
 
-    this._projectedFields =
-        List<String>.from(fields.map((e) => e.toString().split('.')[1]));
+    this._projectedFields = List<String>.from(
+        fields.map<String>((e) => e.toString().split('.')[1]));
 
     String innerQuery =
         this._projectedFields.reduce((value, element) => '$value, $element');
@@ -70,12 +73,14 @@ class User {
   }
 
   void _createUserFromUserMap(Map<String, dynamic> userMap) {
-    this._id = userMap['id'];
+    this._id = userMap['id'] as String;
     if ((userMap['firstActivityAt'] != null)) {
-      this._firstActivityAt = DateTime.parse(userMap['firstActivityAt']);
+      this._firstActivityAt =
+          DateTime.parse(userMap['firstActivityAt'] as String);
     }
     if ((userMap['lastActivityAt'] != null)) {
-      this._lastActivityAt = DateTime.parse(userMap['lastActivityAt']);
+      this._lastActivityAt =
+          DateTime.parse(userMap['lastActivityAt'] as String);
     }
   }
 
@@ -90,7 +95,8 @@ class User {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    Map<String, dynamic> userMap = jsonDecode(response.body)['data']['me'];
+    Map<String, dynamic> userMap =
+        jsonDecode(response.body)['data']['me'] as Map<String, dynamic>;
     _createUserFromUserMap(userMap);
     return this;
   }

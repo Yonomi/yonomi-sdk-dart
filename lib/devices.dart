@@ -16,10 +16,10 @@ class Devices {
       "{ ${Devices.defaultProjectedFields.reduce((value, element) => '$value, $element')} }";
 
   Devices(String query) {
-    this._query = query;
+    _query = query;
   }
 
-  static all() {
+  static Devices all() {
     Devices device = Devices(
         'query myDevices { me { devices { pageInfo { hasNextPage } edges { node ${Devices.defaultInnerQuery} } } } }');
     return device;
@@ -30,36 +30,35 @@ class Devices {
       return;
     }
 
-    this._projectedFields =
+    _projectedFields =
         List<String>.from(fields.map((e) => e.toString().split('.')[1]));
     String innerQuery =
-        this._projectedFields.reduce((value, element) => '$value, $element');
-    this._query = this
-        ._query
-        .replaceFirst('${Devices.defaultInnerQuery}', '{ $innerQuery }');
+        _projectedFields.reduce((value, element) => '$value, $element');
+    _query =
+        _query.replaceFirst('${Devices.defaultInnerQuery}', '{ $innerQuery }');
   }
 
   void _createDeviceFromDeviceMap(Map<String, dynamic> userMap) {
-    String id = userMap['id'];
-    String displayName = userMap['displayName'];
-    String description = userMap['description'];
-    String model = userMap['model'];
-    String manufacturerName = userMap['manufacturerName'];
-    String softwareVersion = userMap['softwareVersion'];
-    String serialNumber = userMap['serialNumber'];
-    String firmwareVersion = userMap['firmwareVersion'];
+    final String id = userMap['id'] as String;
+    final String displayName = userMap['displayName'] as String;
+    final String description = userMap['description'] as String;
+    final String model = userMap['model'] as String;
+    final String manufacturerName = userMap['manufacturerName'] as String;
+    final String softwareVersion = userMap['softwareVersion'] as String;
+    final String serialNumber = userMap['serialNumber'] as String;
+    final String firmwareVersion = userMap['firmwareVersion'] as String;
     DateTime createdAt, updatedAt;
 
     if ((userMap['createdAt'] != null)) {
-      createdAt = DateTime.parse(userMap['createdAt']);
+      createdAt = DateTime.parse(userMap['createdAt'] as String);
     }
     if ((userMap['updatedAt'] != null)) {
-      updatedAt = DateTime.parse(userMap['updatedAt']);
+      updatedAt = DateTime.parse(userMap['updatedAt'] as String);
     }
-    if (this._devices == null) {
-      this._devices = [];
+    if (_devices == null) {
+      _devices = [];
     }
-    this._devices.add(Device.createDevice(
+    _devices.add(Device.createDevice(
         id,
         displayName,
         manufacturerName,
@@ -74,15 +73,15 @@ class Devices {
   }
 
   List<Device> get devices {
-    return this._devices;
+    return _devices;
   }
 
   String query() {
-    return this._query;
+    return _query;
   }
 
   Future<Devices> get() async {
-    var graphQlQuery = {'query': this._query};
+    var graphQlQuery = {'query': _query};
 
     String bearerToken = 'Bearer ${CONFIG.TOKEN}';
     String url = '${CONFIG.URL}';
@@ -92,11 +91,11 @@ class Devices {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    List<dynamic> edges =
-        jsonDecode(response.body)['data']['me']['devices']['edges'];
+    var edges = jsonDecode(response.body)['data']['me']['devices']['edges'];
     edges.forEach((element) {
-      _createDeviceFromDeviceMap(element['node']);
+      _createDeviceFromDeviceMap(element['node'] as Map<String, dynamic>);
     });
+
     return this;
   }
 }
