@@ -8,7 +8,7 @@ import 'config.dart';
 class Account {
   static Future<String> generateAccountLinkingUrl(String integrationId) async {
     var graphQlMutation = {
-      'query': ''''mutation generateAccountLinkingUrl {
+      'query': '''mutation generateAccountLinkingUrl {
                 generateAccountLinkingUrl(integrationId: "${integrationId}") { url } 
             }'''
     };
