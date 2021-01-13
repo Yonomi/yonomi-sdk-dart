@@ -4,11 +4,13 @@ Flutter SDK for Yonomi Platform
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+###  Set up Configuration Files
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+1. Create ".env" file (Do not check-in!):
+  Place your token in this format:
+  `myToken="YOUR-BEARER-TOKEN"`
+
+
+2. Create or modify "config.yaml" file:
+  Place your graphQL endpoint in this format:
+  `graphEndpoint: "https://YOUR-GRAPHQL-ENDPOINT-HERE/graphql"`
