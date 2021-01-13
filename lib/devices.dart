@@ -92,10 +92,12 @@ class Devices {
           'Content-Type': 'application/json'
         });
     var edges = jsonDecode(response.body)['data']['me']['devices']['edges'];
-    edges.forEach((element) {
-      _createDeviceFromDeviceMap(element['node'] as Map<String, dynamic>);
-    });
-
+    for (var device in edges) {
+      if (device == null) {
+        continue;
+      }
+      _createDeviceFromDeviceMap(device['node'] as Map<String, dynamic>);
+    }
     return this;
   }
 }
