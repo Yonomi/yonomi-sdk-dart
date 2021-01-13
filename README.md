@@ -8,12 +8,15 @@ Flutter SDK for Yonomi Platform
 
 ##### 1. Create ".env" file (Do not check-in!):
 
-  Place your token in this format:
+Place your token in this format:
 
-  `myToken="YOUR-BEARER-TOKEN"`
+`myToken="YOUR-BEARER-TOKEN"`
 
 ##### 2. Create or modify "config.yaml" file:
 
-  Place your graphQL endpoint in this format:
+Create a config.yaml file with the following structure:
 
-  `graphEndpoint: "https://YOUR-GRAPHQL-ENDPOINT-HERE/graphql"`
+```
+graphqlEndpoints:
+  staging: "https://YOUR-GRAPHQL-ENDPOINT-HERE/graphql"
+```

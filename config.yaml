@@ -1,1 +1,2 @@
-graphEndpoint: "MY-ENDPOINT-HERE"
+graphqlEndpoints:
+  staging: "https://co19ogympg.execute-api.us-east-1.amazonaws.com/stg/graphql"

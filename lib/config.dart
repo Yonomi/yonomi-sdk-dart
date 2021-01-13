@@ -4,6 +4,8 @@ import 'package:dotenv/dotenv.dart' show load, env;
 import 'package:safe_config/safe_config.dart';
 
 class CONFIG extends Configuration {
+  static final environment = "staging";
+
   static final configFilename = "config.yaml", tokenKey = "myToken";
 
   static final CONFIG _instance = CONFIG._privateConstructor();
@@ -24,7 +26,7 @@ class CONFIG extends Configuration {
   static final String TOKEN = _instance._getToken();
 
   @optionalConfiguration
-  static final String URL = _instance.graphEndpoint;
+  static final String URL = _instance.graphqlEndpoints[environment];
 
-  String graphEndpoint;
+  Map<String, String> graphqlEndpoints;
 }
