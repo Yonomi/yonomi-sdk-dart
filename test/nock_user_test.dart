@@ -4,6 +4,10 @@ import 'package:nock/nock.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/user.dart';
 
+buildNockWithResponse(Map<String, dynamic> map) {
+  return nock.post("/graphql", anything)..reply(200, jsonEncode(map));
+}
+
 void main() {
   setUpAll(() {
     nock.defaultBase =
@@ -18,14 +22,11 @@ void main() {
   test('get() should return user with default value', () async {
     var testUserId = "USER-ID-GOES-HERE";
 
-    final interceptor = nock.post("/graphql", anything)
-      ..reply(
-          200,
-          json.encode({
-            "data": {
-              "me": {"id": "${testUserId}"}
-            }
-          }));
+    final interceptor = buildNockWithResponse({
+      "data": {
+        "me": {"id": "${testUserId}"}
+      }
+    });
 
     User user = await User.find().get();
 
@@ -37,14 +38,11 @@ void main() {
   test('project() should return projections for firstActivityAt', () async {
     var testedFirstActivityAt = "2021-01-13T20:45:18.313Z";
 
-    final interceptor = nock.post("/graphql", anything)
-      ..reply(
-          200,
-          json.encode({
-            "data": {
-              "me": {"firstActivityAt": testedFirstActivityAt}
-            }
-          }));
+    final interceptor = buildNockWithResponse({
+      "data": {
+        "me": {"firstActivityAt": testedFirstActivityAt}
+      }
+    });
 
     User userWithPopulatedQuery = User.find()
       ..project([UserFields.firstActivityAt]);
@@ -61,14 +59,11 @@ void main() {
   test('project() should return projections for lastActivityAt', () async {
     var testedLastActivityAt = "2021-01-10T20:20:20.200Z";
 
-    final interceptor = nock.post("/graphql", anything)
-      ..reply(
-          200,
-          json.encode({
-            "data": {
-              "me": {"lastActivityAt": testedLastActivityAt}
-            }
-          }));
+    final interceptor = buildNockWithResponse({
+      "data": {
+        "me": {"lastActivityAt": testedLastActivityAt}
+      }
+    });
 
     User userWithPopulatedQuery = User.find()
       ..project([UserFields.lastActivityAt]);
