@@ -10,7 +10,7 @@ Flutter SDK for Yonomi Platform
 
 Place your token in this format:
 
-`myToken="YOUR-BEARER-TOKEN"`
+`AUTH_TOKEN="YOUR-BEARER-TOKEN"`
 
 ##### 2. Create or modify "config.yaml" file:
 
