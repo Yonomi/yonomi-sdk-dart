@@ -1,6 +1,32 @@
-class CONFIG {
-  static final String TOKEN =
-      'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OTM3NDRhOC1mY2QyLTQ2ZDktYjZmOS1iZWYxMjUxNjBlZjQiLCJpc3MiOiJmZWZkNjZhOS1mZDY5LTQzMjYtOTA5OC04MTM4NTA1ZGRjNDYiLCJpYXQiOjE2MTA1NDM5ODQsImV4cCI6MTYxMDYzMDM4NH0.IZjoxv3XouDvarfwG1BtTbevQft8BPBRTFoL4YgT8NkxaZPJhTBIiYv2RQhfNcLJCBFUTuj1QoaCYZ1LwQSozASntBV7ldqoOH16NV_R1zPu-bJ9_LNC_CGXQTExkE-vzJn6xyg49mQ63yykBJtZlpSeayPc3_7MRF84iP_0UBZYurHpWr609N83637gkFOhuyQzJ5-p0nH1uycOp9m4arQO-2-1FU7Du9tiE04CELZ66zUMOiIe_UwNc1ma8qDH4cqQPrBRlvPhKlEMDISrZZr7w3aoO7Miw6L2ma0NBjnJsHDXS-q9tJnuCx2rsIXMYx_rVmzaUcKkrr5guobE8A';
-  static final String URL =
-      'https://co19ogympg.execute-api.us-east-1.amazonaws.com/stg/graphql';
+import 'dart:io';
+
+import 'package:dotenv/dotenv.dart' show load, env;
+import 'package:safe_config/safe_config.dart';
+
+class CONFIG extends Configuration {
+  static final environment = "staging";
+
+  static final configFilename = "config.yaml", tokenKey = "AUTH_TOKEN";
+
+  static final CONFIG _instance = CONFIG._privateConstructor();
+
+  factory CONFIG() {
+    return _instance;
+  }
+
+  CONFIG._privateConstructor() : super.fromFile(File(configFilename)) {
+    load(); // Loads variables in your .env file
+  }
+
+  String _getToken() {
+    return env[tokenKey];
+  }
+
+  @optionalConfiguration
+  static final String TOKEN = _instance._getToken();
+
+  @optionalConfiguration
+  static final String URL = _instance.graphqlEndpoints[environment];
+
+  Map<String, String> graphqlEndpoints;
 }
