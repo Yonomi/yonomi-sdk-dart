@@ -2,7 +2,7 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/device.dart';
 
 void main() {
-  var testDeviceId = "352ed979-e209-4e03-bb48-090f7b38ea26";
+  var testDeviceId = "35c57871-48de-4496-b3b3-2cc1fed0f337";
 
   test('find() should create a device with default query', () {
     Device device = Device.findById("someId");
