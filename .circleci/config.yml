@@ -62,6 +62,12 @@ jobs:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
       - run:
+          name: Parse an access Token from the Playground
+          command: |
+            stagingPlayground="https://exmxg9b6f6.execute-api.us-east-1.amazonaws.com/stg?session=dartSdk"
+            token=$( curl $stagingPlayground | awk 'sub(/.*Bearer */,""){f=1} f{if ( sub(/ *\\\".*/,"") ) f=0; print}' )
+            echo "export AUTH_TOKEN=\"$token\"" >> $BASH_ENV
+      - run:
           name: Create .env file for test credentials
           command: |
             if [[ -z "${AUTH_TOKEN}" ]]; then
