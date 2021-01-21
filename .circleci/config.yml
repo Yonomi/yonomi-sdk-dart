@@ -1,0 +1,77 @@
+version: 2.1
+
+#####################
+# Common Definitions
+#####################
+
+# Orb declarations
+orbs:
+  win: circleci/windows@2.4.0
+
+# Simple YAML anchors
+aliases:
+  - &project_dir "~/project"
+
+commands:
+  dependencies:
+    description: "Download dependencies and setup global packages"
+    parameters:
+      shell:
+        type: string
+        default: "/bin/bash --login -eo pipefail"
+      pub-cache:
+        type: string
+        default: "~/.pub-cache"
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1.4-dependencies-{{ arch }}-{{ checksum "pubspec.lock" }}
+            - v1.4-dependencies-{{ arch }}-
+      - run:
+          name: Download deps
+          shell: << parameters.shell >>
+          command: pub get
+      - run:
+          name: Get junitreporter
+          shell: << parameters.shell >>
+          command: pub global activate junitreport
+      - save_cache:
+          key: v1.4-dependencies-{{ arch }}-{{ checksum "pubspec.lock" }}
+          paths:
+            - .dart_tool
+            - << parameters.pub-cache >>
+
+######################
+# Workflow Definition
+######################
+workflows:
+  version: 2.1
+  test-and-build:
+    jobs:
+      - test
+
+##################
+# Job Definitions
+##################
+jobs:
+  test:
+    docker:
+      - image: google/dart:2.9.1
+    steps:
+      - dependencies:
+          shell: "/bin/bash -eo pipefail"
+      - run:
+          name: Parse an access Token from the Playground
+          command: |
+            stagingPlayground="https://exmxg9b6f6.execute-api.us-east-1.amazonaws.com/stg?session=dartSdk"
+            token=$( curl $stagingPlayground | awk 'sub(/.*Bearer */,""){f=1} f{if ( sub(/ *\\\".*/,"") ) f=0; print}' )
+            echo "export AUTH_TOKEN=\"$token\"" >> $BASH_ENV
+      - run:
+          name: Make folder for test results
+          command: mkdir -p test-results/dart-tests
+      - run:
+          name: Run tests
+          command: pub run test --reporter json | tojunit --output test-results/dart-tests/circleci_dart_demo_test-report.xml
+      - store_test_results:
+          path: test-results

@@ -2,25 +2,7 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/device.dart';
 
 void main() {
-  var testDeviceId = "352ed979-e209-4e03-bb48-090f7b38ea26";
-
-  test('find() should create a device with default query', () {
-    Device device = Device.findById("someId");
-    expect(
-        device.query(), equals('query Device { device(id: "someId") { id } }'));
-  });
-
-  test('project() should return same query if id projection is provided', () {
-    Device device = Device.findById('someId')..project([DeviceFields.id]);
-    expect(device.query(), equals(Device.findById('someId').query()));
-  });
-
-  test('project() should return query with all fields included', () {
-    Device device = Device.findById('someId')
-      ..project([DeviceFields.id, DeviceFields.description]);
-    expect(device.query(),
-        equals('query Device { device(id: "someId") { id, description } }'));
-  });
+  var testDeviceId = "35c57871-48de-4496-b3b3-2cc1fed0f337";
 
   test('get() should return device with default value', () async {
     Device device = await Device.findById(testDeviceId).get();

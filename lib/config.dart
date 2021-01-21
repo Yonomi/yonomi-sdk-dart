@@ -19,7 +19,7 @@ class CONFIG extends Configuration {
   }
 
   String _getToken() {
-    return env[tokenKey];
+    return Platform.environment[tokenKey] ?? env[tokenKey];
   }
 
   @optionalConfiguration
