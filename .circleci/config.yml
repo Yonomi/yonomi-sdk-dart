@@ -13,6 +13,24 @@ aliases:
   - &project_dir "~/project"
 
 commands:
+  unit-tests:
+    description: "Run local unit tests"
+    steps:
+      - run:
+          name: command to run unit tests
+          command: pub run test test/unit --reporter json | tojunit --output test-results/dart-tests/dart_sdk_unit_tests-report.xml
+  e2e-tests:
+    description: "Run end-to-end tests"
+    steps:
+      - run:
+          name: command to run e2e tests
+          command: pub run test test/e2e --reporter json | tojunit --output test-results/dart-tests/dart_sdk_e2e_tests-report.xml
+  all-tests:
+    description: "Run all tests"
+    steps:
+      - run:
+          name: command to run all tests
+          command: pub run test test --reporter json | tojunit --output test-results/dart-tests/dart_sdk_all_tests-report.xml
   dependencies:
     description: "Download dependencies and setup global packages"
     parameters:
@@ -70,8 +88,6 @@ jobs:
       - run:
           name: Make folder for test results
           command: mkdir -p test-results/dart-tests
-      - run:
-          name: Run tests
-          command: pub run test --reporter json | tojunit --output test-results/dart-tests/circleci_dart_demo_test-report.xml
+      - all-tests
       - store_test_results:
           path: test-results
