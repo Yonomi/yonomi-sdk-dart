@@ -5,7 +5,8 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/user.dart';
 
 buildNockWithResponse(Map<String, dynamic> map) {
-  return nock.post("/graphql", anything)..reply(200, jsonEncode(map));
+  return nock.post("/graphql?session=dartSdk", anything)
+    ..reply(200, jsonEncode(map));
 }
 
 void main() {
