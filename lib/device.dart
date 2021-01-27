@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:yonomi_platform_sdk/Traits/ActionQuery.dart';
 
 import 'config.dart';
 
@@ -41,6 +42,7 @@ class Device {
   // List<User> users;
   static const List<String> defaultProjectedFields = ['id'];
   List<String> _projectedFields = Device.defaultProjectedFields;
+  List<String> _actionProjections = [];
   static String defaultInnerQuery =
       "{ ${Device.defaultProjectedFields.reduce((value, element) => '$value, $element')} }";
 
@@ -110,14 +112,30 @@ class Device {
     if (fields.length == 0) {
       return;
     }
+    if (_query.contains('mutation')) {
+      _query = _projectMutationQuery(fields);
+    } else {
+      _projectedFields = List<String>.from(
+          fields.map<String>((DeviceFields e) => e.toString().split('.')[1]));
+      String innerQuery =
+          _projectedFields.reduce((value, element) => '$value, $element');
+      _query = this
+          ._query
+          .replaceFirst('${Device.defaultInnerQuery}', '{ $innerQuery }');
+    }
+  }
 
-    _projectedFields = List<String>.from(
+  String _projectMutationQuery(List<DeviceFields> fields) {
+    List<String> _actionProjections = List<String>.from(
         fields.map<String>((DeviceFields e) => e.toString().split('.')[1]));
     String innerQuery =
-        _projectedFields.reduce((value, element) => '$value, $element');
-    _query = this
-        ._query
-        .replaceFirst('${Device.defaultInnerQuery}', '{ $innerQuery }');
+        _actionProjections.reduce((value, element) => '$value, $element');
+    return _query.replaceFirst('actionId', 'actionId device {$innerQuery}');
+  }
+
+  void action(ActionQuery actionQuery) {
+    String innerQuery = actionQuery.query().replaceAll('__undefined__', _id);
+    _query = 'mutation action{$innerQuery}';
   }
 
   Device.createDevice(
@@ -163,11 +181,38 @@ class Device {
     }
   }
 
+  ActionResult _createActionRequestFromAction(
+      Map<String, dynamic> actionResultMap) {
+    String actionId = actionResultMap['actionId'];
+    Device device;
+    var deviceMap = actionResultMap['device'];
+    if (deviceMap != null) {
+      device = Device.createDevice(
+          deviceMap['id'],
+          deviceMap['displayName'],
+          deviceMap['manufacturerName'],
+          deviceMap['model'],
+          deviceMap['firmwareVersion'],
+          deviceMap['softwareVersion'],
+          deviceMap['serialNumber'],
+          deviceMap['description'],
+          deviceMap['updatedAt'],
+          deviceMap['createdAt'],
+          _actionProjections);
+    }
+    return ActionResult(actionId, device);
+  }
+
   String query() {
     return _query;
   }
 
   Future<Device> get() async {
+    _createDeviceFromDeviceMap((await _request())['device']);
+    return this;
+  }
+
+  Future<Map<String, dynamic>> _request() async {
     var graphQlQuery = {'query': _query};
 
     final String bearerToken = 'Bearer ${CONFIG.TOKEN}';
@@ -178,10 +223,17 @@ class Device {
           HttpHeaders.authorizationHeader: bearerToken,
           'Content-Type': 'application/json'
         });
-    final Map<String, dynamic> deviceMap =
-        jsonDecode(response.body)['data']['device'] as Map<String, dynamic>;
 
-    _createDeviceFromDeviceMap(deviceMap);
-    return this;
+    return jsonDecode(response.body)['data'] as Map<String, dynamic>;
   }
+
+  Future<ActionResult> execute() async {
+    return _createActionRequestFromAction((await _request())['data']);
+  }
+}
+
+class ActionResult {
+  String actionId;
+  Device device;
+  ActionResult(this.actionId, this.device);
 }
