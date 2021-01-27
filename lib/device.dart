@@ -134,8 +134,9 @@ class Device {
   }
 
   void action(ActionQuery actionQuery) {
-    String innerQuery = actionQuery.query().replaceAll('__undefined__', _id);
-    _query = 'mutation action{$innerQuery}';
+    String innerQuery =
+        actionQuery.query().replaceAll('__undefined__', '\"$_id\"');
+    _query = 'mutation action {$innerQuery}';
   }
 
   Device.createDevice(
@@ -214,7 +215,6 @@ class Device {
 
   Future<Map<String, dynamic>> _request() async {
     var graphQlQuery = {'query': _query};
-
     final String bearerToken = 'Bearer ${CONFIG.TOKEN}';
     String url = CONFIG.URL;
     var response = await http.post(url,
@@ -228,7 +228,7 @@ class Device {
   }
 
   Future<ActionResult> execute() async {
-    return _createActionRequestFromAction((await _request())['data']);
+    return _createActionRequestFromAction((await _request()));
   }
 }
 
