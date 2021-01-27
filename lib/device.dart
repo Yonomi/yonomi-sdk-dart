@@ -36,6 +36,7 @@ class Device {
       _serialNumber,
       _query;
   DateTime _createdAt, _updatedAt;
+  ActionQuery _actionQuery;
 
   // List<Trait> traits;
   // List<Event> events;
@@ -126,7 +127,7 @@ class Device {
   }
 
   String _projectMutationQuery(List<DeviceFields> fields) {
-    List<String> _actionProjections = List<String>.from(
+    _actionProjections = List<String>.from(
         fields.map<String>((DeviceFields e) => e.toString().split('.')[1]));
     String innerQuery =
         _actionProjections.reduce((value, element) => '$value, $element');
@@ -134,6 +135,7 @@ class Device {
   }
 
   void action(ActionQuery actionQuery) {
+    _actionQuery = actionQuery;
     String innerQuery =
         actionQuery.query().replaceAll('__undefined__', '\"$_id\"');
     _query = 'mutation action {$innerQuery}';
@@ -228,7 +230,8 @@ class Device {
   }
 
   Future<ActionResult> execute() async {
-    return _createActionRequestFromAction((await _request()));
+    return _createActionRequestFromAction(
+        (await _request())[_actionQuery.actionName()]);
   }
 }
 

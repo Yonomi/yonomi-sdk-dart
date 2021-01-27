@@ -41,7 +41,7 @@ void main() {
     expect(
         device.query(),
         equals(
-            'mutation action{actionPowerOnOff(deviceId: someId, on: true){ actionId }}'));
+            'mutation action {actionPowerOnOff(deviceId: "someId", on: true){ actionId }}'));
   });
 
   test('action() should return proper action query for lock device', () {
@@ -63,7 +63,7 @@ void main() {
     expect(
         device.query(),
         equals(
-            'mutation action{actionLockUnlockLockUnlock(deviceId: someId, lock: false){ actionId }}'));
+            'mutation action {actionLockUnlockLockUnlock(deviceId: "someId", lock: false){ actionId }}'));
   });
 
   test('action().project() should return proper action query for lock device',
@@ -87,6 +87,6 @@ void main() {
     expect(
         device.query(),
         equals(
-            'mutation action{actionLockUnlockLockUnlock(deviceId: someId, lock: false){ actionId device {displayName, id} }}'));
+            'mutation action {actionLockUnlockLockUnlock(deviceId: "someId", lock: false){ actionId device {displayName, id} }}'));
   });
 }
