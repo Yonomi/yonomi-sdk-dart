@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-import 'package:yonomi_platform_sdk/Traits/actionQuery.dart';
+import 'package:yonomi_platform_sdk/traits/actionQuery.dart';
 
 import 'config.dart';
 
