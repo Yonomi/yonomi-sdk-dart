@@ -1,4 +1,4 @@
-import 'package:yonomi_platform_sdk/Traits/ActionQuery.dart';
+import 'package:yonomi_platform_sdk/Traits/actionQuery.dart';
 
 // This will be generated code
 class TraitLockUnlockActionQuery extends ActionQuery {
