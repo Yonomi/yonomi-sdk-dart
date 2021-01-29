@@ -1,5 +1,6 @@
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/device.dart';
+import 'package:yonomi_platform_sdk/traits/traitLockUnlock/traitLockUnlockActionQuery.dart';
 
 void main() {
   var testDeviceId = "35c57871-48de-4496-b3b3-2cc1fed0f337";
@@ -79,5 +80,16 @@ void main() {
     Device device = await deviceWithPopulatedQuery.get();
     expect(device.updatedAt, isA<DateTime>());
     expect(() => device.id, throwsA('id is not projected'));
+  });
+
+  test('action().project().execute() should return proper action result',
+      () async {
+    Device deviceWithPopulatedQuery = Device.findById(testDeviceId);
+    Device device = await deviceWithPopulatedQuery.get();
+    device
+      ..action(TraitLockUnlockActionQuery.lockUnlock(false))
+      ..project([DeviceFields.displayName, DeviceFields.id]);
+    ActionResult actionResponse = await device.execute();
+    expect(actionResponse.device.displayName, isA<String>());
   });
 }
