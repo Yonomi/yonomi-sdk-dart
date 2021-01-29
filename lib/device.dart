@@ -42,13 +42,13 @@ class Device {
   // List<Event> events;
   // List<User> users;
   static const List<String> defaultProjectedFields = ['id'];
-  List<String> _projectedFields = Device.defaultProjectedFields;
+  List<String> _getProjections = Device.defaultProjectedFields;
   List<String> _actionProjections = [];
   static String defaultInnerQuery =
       "{ ${Device.defaultProjectedFields.reduce((value, element) => '$value, $element')} }";
 
   void _throwFieldNotFoundException(String fieldName) {
-    if (!_projectedFields.contains(fieldName)) {
+    if (!_getProjections.contains(fieldName)) {
       throw '$fieldName is not projected';
     }
   }
@@ -113,26 +113,29 @@ class Device {
     if (fields.length == 0) {
       return;
     }
-    if (_query.contains('mutation')) {
-      _query = _projectMutationQuery(fields);
-    } else {
-      _projectedFields = List<String>.from(
-          fields.map<String>((DeviceFields e) => e.toString().split('.')[1]));
-      String innerQuery =
-          _projectedFields.reduce((value, element) => '$value, $element');
-      _query = this
-          ._query
-          .replaceFirst('${Device.defaultInnerQuery}', '{ $innerQuery }');
-    }
+    _query = (_query.contains('mutation'))
+        ? _projectMutationQuery(fields)
+        : _projectGetQuery(fields);
+  }
+
+  String _projectGetQuery(List<DeviceFields> fields) {
+    _getProjections = _deviceFieldToStringList(fields);
+    return _query.replaceFirst('${Device.defaultInnerQuery}',
+        '{ ${_getInnerQueryFromProjection(_getProjections)} }');
   }
 
   String _projectMutationQuery(List<DeviceFields> fields) {
-    _actionProjections = List<String>.from(
-        fields.map<String>((DeviceFields e) => e.toString().split('.')[1]));
-    String innerQuery =
-        _actionProjections.reduce((value, element) => '$value, $element');
-    return _query.replaceFirst('actionId', 'actionId device {$innerQuery}');
+    _actionProjections = _deviceFieldToStringList(fields);
+    return _query.replaceFirst('actionId',
+        'actionId device {${_getInnerQueryFromProjection(_actionProjections)}}');
   }
+
+  String _getInnerQueryFromProjection(List<String> fields) =>
+      fields.reduce((value, element) => '$value, $element');
+
+  List<String> _deviceFieldToStringList(List<DeviceFields> fields) =>
+      List<String>.from(
+          fields.map<String>((DeviceFields e) => e.toString().split('.')[1]));
 
   void action(ActionQuery actionQuery) {
     _actionQuery = actionQuery;
@@ -163,7 +166,7 @@ class Device {
     _createdAt = createdAt;
     _updatedAt = updatedAt;
     _description = description;
-    _projectedFields = projectedFields;
+    _getProjections = projectedFields;
   }
 
   void _createDeviceFromDeviceMap(Map<String, dynamic> userMap) {
