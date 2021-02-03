@@ -14,7 +14,7 @@ Place your token in this format:
 
 ##### 2. Create or modify "config.yaml" file:
 
-Create a config.yaml file with the following structure:
+Create (or edit) `yonomi.yaml` file with the following structure:
 
 ```
 graphqlEndpoints:
