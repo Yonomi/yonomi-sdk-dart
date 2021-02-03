@@ -2,7 +2,7 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/device.dart';
 
 void main() {
-  var testDeviceId = "35c57871-48de-4496-b3b3-2cc1fed0f337";
+  var testDeviceId = "2f69db9b-2801-4410-ac73-9abbae05b9e5";
 
   test('get() should return device with default value', () async {
     Device device = await Device.findById(testDeviceId).get();

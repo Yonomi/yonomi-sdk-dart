@@ -12,7 +12,7 @@ buildNockWithResponse(Map<String, dynamic> map) {
 void main() {
   setUpAll(() {
     nock.defaultBase =
-        "https://co19ogympg.execute-api.us-east-1.amazonaws.com/stg";
+        "https://dhapuogzxl.execute-api.us-east-1.amazonaws.com/stg";
     nock.init();
   });
 
