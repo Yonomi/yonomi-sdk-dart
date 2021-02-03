@@ -6,7 +6,7 @@ import 'package:safe_config/safe_config.dart';
 class CONFIG extends Configuration {
   static final environment = "staging";
 
-  static final configFilename = "config.yaml", tokenKey = "AUTH_TOKEN";
+  static final configFilename = "yonomi.yaml", tokenKey = "AUTH_TOKEN";
 
   static final CONFIG _instance = CONFIG._privateConstructor();
 
