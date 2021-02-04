@@ -1,3 +1,0 @@
-library trait;
-
-class Trait {}

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:yonomi_platform_sdk/request/request.dart';
 
 import 'config.dart';
 
@@ -80,7 +81,7 @@ class Devices {
     return _query;
   }
 
-  Future<Devices> get() async {
+  Future<Devices> get(Request request) async {
     var graphQlQuery = {'query': _query};
 
     String bearerToken = 'Bearer ${CONFIG.TOKEN}';

@@ -1,26 +1,20 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:http/http.dart' as http;
-
-import 'config.dart';
+import 'package:yonomi_platform_sdk/request/request.dart';
 
 class Account {
-  static Future<String> generateAccountLinkingUrl(String integrationId) async {
+  static Future<String> generateAccountLinkingUrl(
+      String integrationId, Request request) async {
     var graphQlMutation = {
       'query': '''mutation generateAccountLinkingUrl {
                 generateAccountLinkingUrl(integrationId: "${integrationId}") { url } 
             }'''
     };
 
-    String bearerToken = 'Bearer ${CONFIG.TOKEN}';
-    String url = '${CONFIG.URL}';
-    var response = await http.post(url,
-        body: jsonEncode(graphQlMutation),
-        headers: {
-          HttpHeaders.authorizationHeader: bearerToken,
-          'Content-Type': 'application/json'
-        });
+    request.headers.addAll({'Content-Type': 'application/json'});
+    var response = await http.post(request.graphUrl,
+        body: jsonEncode(graphQlMutation), headers: request.headers);
 
     Map<String, dynamic> accountMap = jsonDecode(response.body)['data']
         ['generateAccountLinkingUrl'] as Map<String, dynamic>;

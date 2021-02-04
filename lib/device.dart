@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:yonomi_platform_sdk/request/request.dart';
 import 'package:yonomi_platform_sdk/traits/actionQuery.dart';
 
 import 'config.dart';
@@ -213,28 +214,23 @@ class Device {
     return _query;
   }
 
-  Future<Device> get() async {
-    _createDeviceFromDeviceMap((await _request())['device']);
+  Future<Device> get(Request request) async {
+    _createDeviceFromDeviceMap((await _request(request))['device']);
     return this;
   }
 
-  Future<Map<String, dynamic>> _request() async {
+  Future<Map<String, dynamic>> _request(Request request) async {
     var graphQlQuery = {'query': _query};
-    final String bearerToken = 'Bearer ${CONFIG.TOKEN}';
-    String url = CONFIG.URL;
-    var response = await http.post(url,
-        body: jsonEncode(graphQlQuery),
-        headers: {
-          HttpHeaders.authorizationHeader: bearerToken,
-          'Content-Type': 'application/json'
-        });
+    request.headers.addAll({'Content-Type': 'application/json'});
+    var response = await http.post(request.graphUrl,
+        body: jsonEncode(graphQlQuery), headers: request.headers);
 
     return jsonDecode(response.body)['data'] as Map<String, dynamic>;
   }
 
-  Future<ActionResult> execute() async {
+  Future<ActionResult> execute(Request request) async {
     return _createActionRequestFromAction(
-        (await _request())[_actionQuery.actionName()]);
+        (await _request(request))[_actionQuery.actionName()]);
   }
 }
 
