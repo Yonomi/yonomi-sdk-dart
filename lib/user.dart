@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:yonomi_platform_sdk/request/request.dart';
 
 import 'config.dart';
 
@@ -84,17 +85,11 @@ class User {
     }
   }
 
-  Future<User> get() async {
+  Future<User> get(Request request) async {
     var graphQlQuery = {'query': this._query};
-
-    String bearerToken = 'Bearer ${CONFIG.TOKEN}';
-    String url = '${CONFIG.URL}';
-    var response = await http.post(url,
-        body: jsonEncode(graphQlQuery),
-        headers: {
-          HttpHeaders.authorizationHeader: bearerToken,
-          'Content-Type': 'application/json'
-        });
+    request.headers.addAll({'Content-Type': 'application/json'});
+    var response = await http.post(request.graphUrl,
+        body: jsonEncode(graphQlQuery), headers: request.headers);
     Map<String, dynamic> userMap =
         jsonDecode(response.body)['data']['me'] as Map<String, dynamic>;
     _createUserFromUserMap(userMap);

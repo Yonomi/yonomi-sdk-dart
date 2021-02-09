@@ -1,8 +1,11 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:nock/nock.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/user.dart';
+import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
+import 'package:yonomi_platform_sdk/config.dart';
 
 buildNockWithResponse(Map<String, dynamic> map) {
   return nock.post("/graphql?session=dartSdk", anything)
@@ -10,6 +13,9 @@ buildNockWithResponse(Map<String, dynamic> map) {
 }
 
 void main() {
+  yoRequest.Request request = yoRequest.Request(
+      CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${CONFIG.TOKEN}'});
+
   setUpAll(() {
     nock.defaultBase =
         "https://dhapuogzxl.execute-api.us-east-1.amazonaws.com/stg";
@@ -29,7 +35,7 @@ void main() {
       }
     });
 
-    User user = await User.find().get();
+    User user = await User.find().get(request);
 
     expect(interceptor.isDone, true);
     expect(user.id, isNotNull);
@@ -47,7 +53,7 @@ void main() {
 
     User userWithPopulatedQuery = User.find()
       ..project([UserFields.firstActivityAt]);
-    User user = await userWithPopulatedQuery.get();
+    User user = await userWithPopulatedQuery.get(request);
 
     expect(interceptor.isDone, true);
     expect(user.firstActivityAt, isA<DateTime>());
@@ -68,7 +74,7 @@ void main() {
 
     User userWithPopulatedQuery = User.find()
       ..project([UserFields.lastActivityAt]);
-    User user = await userWithPopulatedQuery.get();
+    User user = await userWithPopulatedQuery.get(request);
 
     expect(interceptor.isDone, true);
     expect(user.lastActivityAt, isA<DateTime>());
