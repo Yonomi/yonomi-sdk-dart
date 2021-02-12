@@ -83,15 +83,9 @@ class Devices {
 
   Future<Devices> get(Request request) async {
     var graphQlQuery = {'query': _query};
-
-    String bearerToken = 'Bearer ${CONFIG.TOKEN}';
-    String url = '${CONFIG.URL}';
-    var response = await http.post(url,
-        body: jsonEncode(graphQlQuery),
-        headers: {
-          HttpHeaders.authorizationHeader: bearerToken,
-          'Content-Type': 'application/json'
-        });
+    request.headers.addAll({'Content-Type': 'application/json'});
+    var response = await http.post(request.graphUrl,
+        body: jsonEncode(graphQlQuery), headers: request.headers);
     var edges = jsonDecode(response.body)['data']['me']['devices']['edges'];
     for (var device in edges) {
       if (device == null) {
