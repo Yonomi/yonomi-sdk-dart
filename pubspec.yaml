@@ -9,7 +9,7 @@ environment:
   
 dependencies:
   http: ^0.12.2
-  safe_config: ^2.0.2
+  yaml: ^2.2.1
   dotenv: ^2.0.0
 
 dev_dependencies:

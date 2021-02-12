@@ -1,12 +1,12 @@
 import 'dart:io';
 
 import 'package:dotenv/dotenv.dart' show load, env;
-import 'package:safe_config/safe_config.dart';
+import 'package:yaml/yaml.dart';
 
-class CONFIG extends Configuration {
-  static final environment = "staging";
-
-  static final configFilename = "yonomi.yaml", tokenKey = "AUTH_TOKEN";
+class CONFIG {
+  static final tokenKey = "AUTH_TOKEN";
+  String _configFilename;
+  String _configYamlContent;
 
   static final CONFIG _instance = CONFIG._privateConstructor();
 
@@ -14,19 +14,30 @@ class CONFIG extends Configuration {
     return _instance;
   }
 
-  CONFIG._privateConstructor() : super.fromFile(File(configFilename)) {
-    load(); // Loads variables in your .env file
+  CONFIG._privateConstructor() {
+    load();
+    String configFileNamePrefix = 'yonomi';
+    String instance = env['INSTANCE'];
+    if (instance != null) {
+      configFileNamePrefix = '$configFileNamePrefix-$instance';
+    }
+    _configFilename = '$configFileNamePrefix.yaml';
+    File file = new File(_configFilename);
+    _configYamlContent = file.readAsStringSync();
   }
 
   String _getToken() {
     return Platform.environment[tokenKey] ?? env[tokenKey];
   }
 
-  @optionalConfiguration
+  String _getUrl() {
+    var yamlMap = loadYaml(_instance._configYamlContent)['graphqlEndpoints'];
+    return yamlMap.toString();
+  }
+
   static final String TOKEN = _instance._getToken();
 
-  @optionalConfiguration
-  static final String URL = _instance.graphqlEndpoints[environment];
+  static final String URL = _instance._getUrl();
 
   Map<String, String> graphqlEndpoints;
 }
