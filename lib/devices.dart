@@ -72,32 +72,6 @@ class Devices {
     _currentInnerQuery = newInnerQuery;
   }
 
-  void _createTraitFromTraitMap(Map<String, dynamic> traitMap) {}
-
-  /*
-
-[
-                {
-                  "name": "LOCK_UNLOCK",
-                  "state": {
-                    "isLocked": {
-                      "reported": {
-                        "value": false,
-                        "sampledAt": "2021-02-12T22:09:15.936Z",
-                        "createdAt": "2021-02-12T22:09:16.500Z"
-                      },
-                      "desired": {
-                        "value": false,
-                        "delta": null,
-                        "updatedAt": "2021-02-12T22:09:16.500Z"
-                      }
-                    }
-                  }
-                }
-              ]
-
-  */
-
   void _createDeviceFromDeviceMap(Map<String, dynamic> userMap) {
     final String id = userMap['id'] as String;
     final String displayName = userMap['displayName'] as String;
