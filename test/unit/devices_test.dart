@@ -19,6 +19,18 @@ void main() {
     expect(devices.query(), equals(Devices.all().query()));
   });
 
+  test(
+      'project().withTraits() should return same query if id and displayName projection is provided with traits',
+      () {
+    Devices devices = Devices.all()
+      ..withTraits()
+      ..project([DeviceFields.id, DeviceFields.displayName]);
+    expect(
+        devices.query(),
+        equals(
+            '''query myDevices { me { devices { pageInfo { hasNextPage } edges { node { traits { name instance ... on LockUnlockDeviceTrait { state { isLocked { reported { value sampledAt createdAt } } } } }, id, displayName } } } } }'''));
+  });
+
   test('project() should return query with all fields included', () {
     Devices devices = Devices.all()
       ..project([
