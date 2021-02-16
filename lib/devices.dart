@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:yonomi_platform_sdk/request/request.dart';
+import 'package:yonomi_platform_sdk/traits/trait.dart';
 
 import 'config.dart';
 
@@ -13,9 +14,11 @@ class Devices {
   String _query;
   static const List<String> defaultProjectedFields = ['id', 'displayName'];
   List<String> _projectedFields = Devices.defaultProjectedFields;
+  String _currentInnerQuery = Devices.defaultInnerQuery;
   static String defaultInnerQuery =
       "{ ${Devices.defaultProjectedFields.reduce((value, element) => '$value, $element')} }";
-
+  static final String traitQuery =
+      'traits { name instance ... on LockUnlockDeviceTrait { state { isLocked { reported { value sampledAt createdAt } } } } },';
   Devices(String query) {
     _query = query;
   }
@@ -26,6 +29,26 @@ class Devices {
     return device;
   }
 
+  /**
+   * 
+    traits {
+      name instance
+      ... on LockUnlockDeviceTrait {
+        state {
+          isLocked {
+            reported { value sampledAt createdAt }
+          }
+        }
+      }
+    }
+   */
+
+  /*
+  {
+    query myDevices { me { devices { pageInfo { hasNextPage } edges { node ${Devices.defaultInnerQuery} } } } }
+  }
+  */
+
   void project(List<DeviceFields> fields) {
     if (fields.length == 0) {
       return;
@@ -35,8 +58,18 @@ class Devices {
         List<String>.from(fields.map((e) => e.toString().split('.')[1]));
     String innerQuery =
         _projectedFields.reduce((value, element) => '$value, $element');
+    _currentInnerQuery = innerQuery;
     _query =
         _query.replaceFirst('${Devices.defaultInnerQuery}', '{ $innerQuery }');
+  }
+
+  void withTraits() {
+    String newInnerQuery = _currentInnerQuery[0] +
+        ' ' +
+        Devices.traitQuery +
+        _currentInnerQuery.substring(1);
+    _query = _query.replaceFirst('$_currentInnerQuery', '$newInnerQuery');
+    _currentInnerQuery = newInnerQuery;
   }
 
   void _createDeviceFromDeviceMap(Map<String, dynamic> userMap) {
@@ -49,6 +82,7 @@ class Devices {
     final String serialNumber = userMap['serialNumber'] as String;
     final String firmwareVersion = userMap['firmwareVersion'] as String;
     DateTime createdAt, updatedAt;
+    List<Trait> traits;
 
     if ((userMap['createdAt'] != null)) {
       createdAt = DateTime.parse(userMap['createdAt'] as String);
@@ -56,9 +90,24 @@ class Devices {
     if ((userMap['updatedAt'] != null)) {
       updatedAt = DateTime.parse(userMap['updatedAt'] as String);
     }
+
+    if (userMap['traits'] != null) {
+      var traitsFromMap = userMap['traits'];
+      for (var jsonTrait in traitsFromMap) {
+        if (jsonTrait == null) {
+          continue;
+        }
+
+        Trait trait = Trait.createFromJson(jsonTrait);
+        traits = (traits ?? []);
+        traits.add(trait);
+      }
+    }
+
     if (_devices == null) {
       _devices = [];
     }
+
     _devices.add(Device.createDevice(
         id,
         displayName,
@@ -70,7 +119,8 @@ class Devices {
         description,
         updatedAt,
         createdAt,
-        _projectedFields));
+        _projectedFields,
+        traits));
   }
 
   List<Device> get devices {
