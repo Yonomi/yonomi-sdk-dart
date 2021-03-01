@@ -1,0 +1,14 @@
+targets:
+  $default:
+    sources:
+      - lib/**
+      - graphql/**
+      - yp.schema.graphql
+    builders:
+      artemis:
+        options:
+          # fragments_glob: graphql/**.fragment.graphql
+          schema_mapping:
+            - schema: yp.schema.graphql
+              queries_glob: graphql/user.query.graphql
+              output: lib/graphql/user_query.dart
