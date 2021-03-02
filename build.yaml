@@ -8,6 +8,9 @@ targets:
       artemis:
         options:
           # fragments_glob: graphql/**.fragment.graphql
+          scalar_mapping:
+            - graphql_type: DateTime
+              dart_type: DateTime
           schema_mapping:
             - schema: yp.schema.graphql
               queries_glob: graphql/user.query.graphql
