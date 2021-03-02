@@ -11,6 +11,8 @@ targets:
           scalar_mapping:
             - graphql_type: DateTime
               dart_type: DateTime
+            - graphql_type: PartialDateTime
+              dart_type: DateTime
           schema_mapping:
             - schema: yp.schema.graphql
               queries_glob: graphql/user.query.graphql
