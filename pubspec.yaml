@@ -11,6 +11,9 @@ dependencies:
   http: ^0.12.2
   safe_config: ^2.0.2
   dotenv: ^2.0.0
+  json_annotation: ^3.1.0
+  equatable: ^1.2.5
+  gql: '>=0.12.3 <1.0.0'
   
 
 dev_dependencies:
