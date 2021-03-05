@@ -920,8 +920,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -945,8 +945,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -984,8 +984,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -1009,8 +1009,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1048,8 +1048,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -1070,8 +1070,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1106,8 +1106,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -1131,8 +1131,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1170,8 +1170,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -1195,8 +1195,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1234,8 +1234,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -1256,8 +1256,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1292,8 +1292,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -1317,8 +1317,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1356,8 +1356,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -1381,8 +1381,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1420,8 +1420,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -1442,8 +1442,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1451,10 +1451,10 @@ Map<String, dynamic>
           'desired': instance.desired?.toJson(),
         };
 
-DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHighFromJson(
+DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHigh
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHighFromJson(
         Map<String, dynamic> json) {
-  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh()
+  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHigh()
     ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
@@ -1478,21 +1478,21 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
-    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh.fromJson(json['reported'] as Map<String, dynamic>)
-    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh.fromJson(json['desired'] as Map<String, dynamic>)
+    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHigh.fromJson(json['reported'] as Map<String, dynamic>)
+    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHigh.fromJson(json['desired'] as Map<String, dynamic>)
     ..value = (json['value'] as num)?.toDouble()
     ..sampledAt = json['sampledAt'] == null ? null : DateTime.parse(json['sampledAt'] as String)
     ..createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt'] as String);
 }
 
 Map<String, dynamic>
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHighToJson(
-            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHighToJson(
+            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHigh
                 instance) =>
         <String, dynamic>{
           '__typename': instance.$$typename,
@@ -1503,8 +1503,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1515,10 +1515,10 @@ Map<String, dynamic>
           'createdAt': instance.createdAt?.toIso8601String(),
         };
 
-DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHighFromJson(
+DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHigh
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHighFromJson(
         Map<String, dynamic> json) {
-  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh()
+  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHigh()
     ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
@@ -1542,21 +1542,21 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
-    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh.fromJson(json['reported'] as Map<String, dynamic>)
-    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh.fromJson(json['desired'] as Map<String, dynamic>)
+    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHigh.fromJson(json['reported'] as Map<String, dynamic>)
+    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHigh.fromJson(json['desired'] as Map<String, dynamic>)
     ..value = (json['value'] as num)?.toDouble()
     ..delta = (json['delta'] as num)?.toDouble()
     ..updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt'] as String);
 }
 
 Map<String, dynamic>
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHighToJson(
-            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHighToJson(
+            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHigh
                 instance) =>
         <String, dynamic>{
           '__typename': instance.$$typename,
@@ -1567,8 +1567,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1579,10 +1579,10 @@ Map<String, dynamic>
           'updatedAt': instance.updatedAt?.toIso8601String(),
         };
 
-DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighFieldFromJson(
+DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighFieldFromJson(
         Map<String, dynamic> json) {
-  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField()
+  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField()
     ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
@@ -1606,18 +1606,18 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
-    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh.fromJson(json['reported'] as Map<String, dynamic>)
-    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh.fromJson(json['desired'] as Map<String, dynamic>);
+    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHigh.fromJson(json['reported'] as Map<String, dynamic>)
+    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHigh.fromJson(json['desired'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic>
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighFieldToJson(
-            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighFieldToJson(
+            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField
                 instance) =>
         <String, dynamic>{
           '__typename': instance.$$typename,
@@ -1628,8 +1628,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1637,10 +1637,10 @@ Map<String, dynamic>
           'desired': instance.desired?.toJson(),
         };
 
-DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLowFromJson(
+DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLow
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLowFromJson(
         Map<String, dynamic> json) {
-  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow()
+  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLow()
     ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
@@ -1664,21 +1664,21 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
-    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow.fromJson(json['reported'] as Map<String, dynamic>)
-    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow.fromJson(json['desired'] as Map<String, dynamic>)
+    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLow.fromJson(json['reported'] as Map<String, dynamic>)
+    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLow.fromJson(json['desired'] as Map<String, dynamic>)
     ..value = (json['value'] as num)?.toDouble()
     ..sampledAt = json['sampledAt'] == null ? null : DateTime.parse(json['sampledAt'] as String)
     ..createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt'] as String);
 }
 
 Map<String, dynamic>
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLowToJson(
-            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLowToJson(
+            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLow
                 instance) =>
         <String, dynamic>{
           '__typename': instance.$$typename,
@@ -1689,8 +1689,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1701,10 +1701,10 @@ Map<String, dynamic>
           'createdAt': instance.createdAt?.toIso8601String(),
         };
 
-DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLowFromJson(
+DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLow
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLowFromJson(
         Map<String, dynamic> json) {
-  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow()
+  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLow()
     ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
@@ -1728,21 +1728,21 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
-    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow.fromJson(json['reported'] as Map<String, dynamic>)
-    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow.fromJson(json['desired'] as Map<String, dynamic>)
+    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLow.fromJson(json['reported'] as Map<String, dynamic>)
+    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLow.fromJson(json['desired'] as Map<String, dynamic>)
     ..value = (json['value'] as num)?.toDouble()
     ..delta = (json['delta'] as num)?.toDouble()
     ..updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt'] as String);
 }
 
 Map<String, dynamic>
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLowToJson(
-            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLowToJson(
+            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLow
                 instance) =>
         <String, dynamic>{
           '__typename': instance.$$typename,
@@ -1753,8 +1753,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1765,10 +1765,10 @@ Map<String, dynamic>
           'updatedAt': instance.updatedAt?.toIso8601String(),
         };
 
-DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowFieldFromJson(
+DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowFieldFromJson(
         Map<String, dynamic> json) {
-  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField()
+  return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField()
     ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
@@ -1792,18 +1792,18 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
-    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow.fromJson(json['reported'] as Map<String, dynamic>)
-    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow.fromJson(json['desired'] as Map<String, dynamic>);
+    ..reported = json['reported'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLow.fromJson(json['reported'] as Map<String, dynamic>)
+    ..desired = json['desired'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLow.fromJson(json['desired'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic>
-    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowFieldToJson(
-            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField
+    _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowFieldToJson(
+            DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField
                 instance) =>
         <String, dynamic>{
           '__typename': instance.$$typename,
@@ -1814,8 +1814,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1850,8 +1850,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -1875,8 +1875,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1914,8 +1914,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -1939,8 +1939,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -1978,8 +1978,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -2000,8 +2000,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -2036,8 +2036,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -2061,8 +2061,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -2100,8 +2100,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -2125,8 +2125,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -2164,8 +2164,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -2186,8 +2186,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -2222,8 +2222,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -2247,8 +2247,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -2286,8 +2286,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -2311,8 +2311,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -2350,8 +2350,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>)
@@ -2372,8 +2372,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),
@@ -2408,8 +2408,8 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     ..ambientTemperature = json['ambientTemperature'] == null
         ? null
         : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField.fromJson(json['ambientTemperature'] as Map<String, dynamic>)
-    ..setpointHigh = json['setpointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(json['setpointHigh'] as Map<String, dynamic>)
-    ..setpointLow = json['setpointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(json['setpointLow'] as Map<String, dynamic>)
+    ..setPointHigh = json['setPointHigh'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(json['setPointHigh'] as Map<String, dynamic>)
+    ..setPointLow = json['setPointLow'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(json['setPointLow'] as Map<String, dynamic>)
     ..ambientHumidity = json['ambientHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField.fromJson(json['ambientHumidity'] as Map<String, dynamic>)
     ..targetHumidity = json['targetHumidity'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField.fromJson(json['targetHumidity'] as Map<String, dynamic>)
     ..fanMode = json['fanMode'] == null ? null : DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField.fromJson(json['fanMode'] as Map<String, dynamic>);
@@ -2428,8 +2428,8 @@ Map<String, dynamic>
           'mode': instance.mode?.toJson(),
           'targetTemperature': instance.targetTemperature?.toJson(),
           'ambientTemperature': instance.ambientTemperature?.toJson(),
-          'setpointHigh': instance.setpointHigh?.toJson(),
-          'setpointLow': instance.setpointLow?.toJson(),
+          'setPointHigh': instance.setPointHigh?.toJson(),
+          'setPointLow': instance.setPointLow?.toJson(),
           'ambientHumidity': instance.ambientHumidity?.toJson(),
           'targetHumidity': instance.targetHumidity?.toJson(),
           'fanMode': instance.fanMode?.toJson(),

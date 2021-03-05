@@ -700,14 +700,14 @@ class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSett
 }
 
 @JsonSerializable(explicitToJson: true)
-class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh
-    extends DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField
+class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHigh
+    extends DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField
     with EquatableMixin {
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh();
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHigh();
 
-  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh.fromJson(
+  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHigh.fromJson(
           Map<String, dynamic> json) =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHighFromJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHighFromJson(
           json);
 
   double value;
@@ -719,19 +719,19 @@ class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSett
   @override
   List<Object> get props => [value, sampledAt, createdAt];
   Map<String, dynamic> toJson() =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHighToJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHighToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh
-    extends DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField
+class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHigh
+    extends DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField
     with EquatableMixin {
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh();
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHigh();
 
-  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh.fromJson(
+  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHigh.fromJson(
           Map<String, dynamic> json) =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHighFromJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHighFromJson(
           json);
 
   double value;
@@ -743,43 +743,43 @@ class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSett
   @override
   List<Object> get props => [value, delta, updatedAt];
   Map<String, dynamic> toJson() =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHighToJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHighToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField
+class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField
     extends DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
     with EquatableMixin {
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField();
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField();
 
-  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField.fromJson(
+  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField.fromJson(
           Map<String, dynamic> json) =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighFieldFromJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighFieldFromJson(
           json);
 
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateReportedSetPointHigh
       reported;
 
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField$ThermostatSettingStateDesiredSetPointHigh
       desired;
 
   @override
   List<Object> get props => [reported, desired];
   Map<String, dynamic> toJson() =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighFieldToJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighFieldToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow
-    extends DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField
+class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLow
+    extends DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField
     with EquatableMixin {
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow();
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLow();
 
-  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow.fromJson(
+  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLow.fromJson(
           Map<String, dynamic> json) =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLowFromJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLowFromJson(
           json);
 
   double value;
@@ -791,19 +791,19 @@ class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSett
   @override
   List<Object> get props => [value, sampledAt, createdAt];
   Map<String, dynamic> toJson() =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLowToJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLowToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow
-    extends DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField
+class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLow
+    extends DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField
     with EquatableMixin {
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow();
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLow();
 
-  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow.fromJson(
+  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLow.fromJson(
           Map<String, dynamic> json) =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLowFromJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLowFromJson(
           json);
 
   double value;
@@ -815,31 +815,31 @@ class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSett
   @override
   List<Object> get props => [value, delta, updatedAt];
   Map<String, dynamic> toJson() =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLowToJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLowToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField
+class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField
     extends DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
     with EquatableMixin {
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField();
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField();
 
-  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField.fromJson(
+  factory DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField.fromJson(
           Map<String, dynamic> json) =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowFieldFromJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowFieldFromJson(
           json);
 
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateReportedSetPointLow
       reported;
 
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField$ThermostatSettingStateDesiredSetPointLow
       desired;
 
   @override
   List<Object> get props => [reported, desired];
   Map<String, dynamic> toJson() =>
-      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowFieldToJson(
+      _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowFieldToJson(
           this);
 }
 
@@ -1082,11 +1082,11 @@ class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSett
   DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField
       ambientTemperature;
 
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField
-      setpointHigh;
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointHighField
+      setPointHigh;
 
-  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField
-      setpointLow;
+  DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetPointLowField
+      setPointLow;
 
   DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField
       ambientHumidity;
@@ -1102,8 +1102,8 @@ class DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSett
         mode,
         targetTemperature,
         ambientTemperature,
-        setpointHigh,
-        setpointLow,
+        setPointHigh,
+        setPointLow,
         ambientHumidity,
         targetHumidity,
         fanMode
@@ -1865,7 +1865,7 @@ class GetDeviceQuery extends GraphQLQuery<GetDevice$Query, GetDeviceArguments> {
                                       ]))
                                 ])),
                             FieldNode(
-                                name: NameNode(value: 'setpointHigh'),
+                                name: NameNode(value: 'setPointHigh'),
                                 alias: null,
                                 arguments: [],
                                 directives: [],
@@ -1924,7 +1924,7 @@ class GetDeviceQuery extends GraphQLQuery<GetDevice$Query, GetDeviceArguments> {
                                       ]))
                                 ])),
                             FieldNode(
-                                name: NameNode(value: 'setpointLow'),
+                                name: NameNode(value: 'setPointLow'),
                                 alias: null,
                                 arguments: [],
                                 directives: [],
