@@ -242,6 +242,10 @@ class Device {
       this._softwareVersion = deviceQueryResponse.data.device.softwareVersion;
     if (_getProjections.contains("serialNumber"))
       this._serialNumber = deviceQueryResponse.data.device.serialNumber;
+    if (_getProjections.contains("createdAt"))
+      this._createdAt = deviceQueryResponse.data.device.createdAt;
+    if (_getProjections.contains("updatedAt"))
+      this._updatedAt = deviceQueryResponse.data.device.updatedAt;
 
     return this;
   }

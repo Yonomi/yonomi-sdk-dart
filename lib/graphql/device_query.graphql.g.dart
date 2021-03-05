@@ -20,6 +20,9 @@ GetDevice$Query$Device _$GetDevice$Query$DeviceFromJson(
     ..createdAt = json['createdAt'] == null
         ? null
         : DateTime.parse(json['createdAt'] as String)
+    ..updatedAt = json['updatedAt'] == null
+        ? null
+        : DateTime.parse(json['updatedAt'] as String)
     ..traits = (json['traits'] as List)
         ?.map((e) => e == null
             ? null
@@ -40,6 +43,7 @@ Map<String, dynamic> _$GetDevice$Query$DeviceToJson(
       'softwareVersion': instance.softwareVersion,
       'serialNumber': instance.serialNumber,
       'createdAt': instance.createdAt?.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
       'traits': instance.traits?.map((e) => e?.toJson())?.toList(),
     };
 

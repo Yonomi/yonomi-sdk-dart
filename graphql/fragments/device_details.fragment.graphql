@@ -8,6 +8,7 @@ fragment DeviceDetails on Device {
     softwareVersion
     serialNumber
     createdAt
+    updatedAt
     traits {
         __typename name instance
         ... on LockUnlockDeviceTrait {

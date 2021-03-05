@@ -17,6 +17,7 @@ mixin DeviceDetailsMixin {
   String softwareVersion;
   String serialNumber;
   DateTime createdAt;
+  DateTime updatedAt;
   List<DeviceDetailsMixin$DeviceTrait> traits;
 }
 
@@ -38,6 +39,7 @@ class GetDevice$Query$Device with EquatableMixin, DeviceDetailsMixin {
         softwareVersion,
         serialNumber,
         createdAt,
+        updatedAt,
         traits
       ];
   Map<String, dynamic> toJson() => _$GetDevice$Query$DeviceToJson(this);
@@ -1357,6 +1359,12 @@ class GetDeviceQuery extends GraphQLQuery<GetDevice$Query, GetDeviceArguments> {
               selectionSet: null),
           FieldNode(
               name: NameNode(value: 'createdAt'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null),
+          FieldNode(
+              name: NameNode(value: 'updatedAt'),
               alias: null,
               arguments: [],
               directives: [],
