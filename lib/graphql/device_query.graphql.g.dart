@@ -60,6 +60,7 @@ DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockProperties
     _$DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockPropertiesFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockProperties()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -79,6 +80,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockProperties
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -131,6 +133,7 @@ DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockS
     _$DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateReportedIsLockedFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateReportedIsLocked()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -163,6 +166,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateReportedIsLocked
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -179,6 +183,7 @@ DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockS
     _$DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateDesiredIsLockedFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateDesiredIsLocked()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -211,6 +216,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateDesiredIsLocked
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -227,6 +233,7 @@ DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockS
     _$DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedFieldFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -256,6 +263,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -269,6 +277,7 @@ DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState
     _$DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockStateFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -291,6 +300,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -302,6 +312,7 @@ DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait
     _$DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTraitFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -319,6 +330,7 @@ Map<String, dynamic>
     _$DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTraitToJson(
             DeviceDetailsMixin$DeviceTrait$LockUnlockDeviceTrait instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -329,6 +341,7 @@ DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerProperties
     _$DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerPropertiesFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerProperties()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -349,6 +362,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerProperties
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -361,6 +375,7 @@ DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerField$
     _$DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerField$PowerStateReportedPowerFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerField$PowerStateReportedPower()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -394,6 +409,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerField$PowerStateReportedPower
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -410,6 +426,7 @@ DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerField$
     _$DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerField$PowerStateDesiredPowerFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerField$PowerStateDesiredPower()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -443,6 +460,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerField$PowerStateDesiredPower
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -459,6 +477,7 @@ DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerField
     _$DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerFieldFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -489,6 +508,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState$PowerStatePowerField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -502,6 +522,7 @@ DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState
     _$DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerStateFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -523,6 +544,7 @@ Map<String,
     dynamic> _$DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerStateToJson(
         DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait$PowerState instance) =>
     <String, dynamic>{
+      '__typename': instance.$$typename,
       'name': _$TraitNameEnumMap[instance.name],
       'instance': instance.instance,
       'properties': instance.properties?.toJson(),
@@ -534,6 +556,7 @@ DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait
     _$DeviceDetailsMixin$DeviceTrait$PowerDeviceTraitFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -550,6 +573,7 @@ DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait
 Map<String, dynamic> _$DeviceDetailsMixin$DeviceTrait$PowerDeviceTraitToJson(
         DeviceDetailsMixin$DeviceTrait$PowerDeviceTrait instance) =>
     <String, dynamic>{
+      '__typename': instance.$$typename,
       'name': _$TraitNameEnumMap[instance.name],
       'instance': instance.instance,
       'properties': instance.properties?.toJson(),
@@ -560,6 +584,7 @@ DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessProperties
     _$DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessPropertiesFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessProperties()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -579,6 +604,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessProperties
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -590,6 +616,7 @@ DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessS
     _$DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessStateBrightnessField$BrightnessStateReportedBrightnessFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessStateBrightnessField$BrightnessStateReportedBrightness()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -622,6 +649,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessStateBrightnessField$BrightnessStateReportedBrightness
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -638,6 +666,7 @@ DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessS
     _$DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessStateBrightnessField$BrightnessStateDesiredBrightnessFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessStateBrightnessField$BrightnessStateDesiredBrightness()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -670,6 +699,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessStateBrightnessField$BrightnessStateDesiredBrightness
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -686,6 +716,7 @@ DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessS
     _$DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessStateBrightnessFieldFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessStateBrightnessField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -715,6 +746,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState$BrightnessStateBrightnessField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -728,6 +760,7 @@ DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState
     _$DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessStateFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -750,6 +783,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait$BrightnessState
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -761,6 +795,7 @@ DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait
     _$DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTraitFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -778,6 +813,7 @@ Map<String, dynamic>
     _$DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTraitToJson(
             DeviceDetailsMixin$DeviceTrait$BrightnessDeviceTrait instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -788,6 +824,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingPro
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingPropertiesFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -814,6 +851,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -859,6 +897,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedModeFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -898,6 +937,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -921,6 +961,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredModeFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -960,6 +1001,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -983,6 +1025,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeFieldFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1019,6 +1062,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1039,6 +1083,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateReportedTargetTemperatureFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateReportedTargetTemperature()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1078,6 +1123,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateReportedTargetTemperature
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1101,6 +1147,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateDesiredTargetTemperatureFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateDesiredTargetTemperature()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1140,6 +1187,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateDesiredTargetTemperature
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1163,6 +1211,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureFieldFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1199,6 +1248,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1219,6 +1269,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField$ThermostatSettingStateReportedAmbientTemperatureFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField$ThermostatSettingStateReportedAmbientTemperature()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1258,6 +1309,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField$ThermostatSettingStateReportedAmbientTemperature
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1281,6 +1333,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField$ThermostatSettingStateDesiredAmbientTemperatureFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField$ThermostatSettingStateDesiredAmbientTemperature()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1320,6 +1373,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField$ThermostatSettingStateDesiredAmbientTemperature
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1343,6 +1397,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureFieldFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1379,6 +1434,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientTemperatureField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1399,6 +1455,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHighFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1438,6 +1495,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateReportedSetpointHigh
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1461,6 +1519,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHighFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1500,6 +1559,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField$ThermostatSettingStateDesiredSetpointHigh
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1523,6 +1583,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighFieldFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1559,6 +1620,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointHighField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1579,6 +1641,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLowFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1618,6 +1681,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateReportedSetpointLow
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1641,6 +1705,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLowFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1680,6 +1745,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField$ThermostatSettingStateDesiredSetpointLow
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1703,6 +1769,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowFieldFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1739,6 +1806,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateSetpointLowField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1759,6 +1827,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField$ThermostatSettingStateReportedAmbientHumidityFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField$ThermostatSettingStateReportedAmbientHumidity()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1798,6 +1867,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField$ThermostatSettingStateReportedAmbientHumidity
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1821,6 +1891,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField$ThermostatSettingStateDesiredAmbientHumidityFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField$ThermostatSettingStateDesiredAmbientHumidity()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1860,6 +1931,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField$ThermostatSettingStateDesiredAmbientHumidity
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1883,6 +1955,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityFieldFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1919,6 +1992,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateAmbientHumidityField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -1939,6 +2013,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField$ThermostatSettingStateReportedTargetHumidityFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField$ThermostatSettingStateReportedTargetHumidity()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -1978,6 +2053,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField$ThermostatSettingStateReportedTargetHumidity
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -2001,6 +2077,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField$ThermostatSettingStateDesiredTargetHumidityFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField$ThermostatSettingStateDesiredTargetHumidity()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -2040,6 +2117,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField$ThermostatSettingStateDesiredTargetHumidity
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -2063,6 +2141,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityFieldFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -2099,6 +2178,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetHumidityField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -2119,6 +2199,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateReportedFanModeFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateReportedFanMode()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -2158,6 +2239,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateReportedFanMode
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -2181,6 +2263,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateDesiredFanModeFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateDesiredFanMode()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -2220,6 +2303,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateDesiredFanMode
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -2243,6 +2327,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeFieldFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -2279,6 +2364,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -2299,6 +2385,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingSta
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingStateFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -2333,6 +2420,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -2351,6 +2439,7 @@ DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait
     _$DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTraitFromJson(
         Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -2369,6 +2458,7 @@ Map<String, dynamic>
             DeviceDetailsMixin$DeviceTrait$ThermostatSettingDeviceTrait
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -2378,6 +2468,7 @@ Map<String, dynamic>
 DeviceDetailsMixin$DeviceTrait _$DeviceDetailsMixin$DeviceTraitFromJson(
     Map<String, dynamic> json) {
   return DeviceDetailsMixin$DeviceTrait()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String;
@@ -2386,6 +2477,7 @@ DeviceDetailsMixin$DeviceTrait _$DeviceDetailsMixin$DeviceTraitFromJson(
 Map<String, dynamic> _$DeviceDetailsMixin$DeviceTraitToJson(
         DeviceDetailsMixin$DeviceTrait instance) =>
     <String, dynamic>{
+      '__typename': instance.$$typename,
       'name': _$TraitNameEnumMap[instance.name],
       'instance': instance.instance,
     };

@@ -10,6 +10,7 @@ MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$Thermosta
     _$MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingPropertiesFromJson(
         Map<String, dynamic> json) {
   return MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -36,6 +37,7 @@ Map<String, dynamic>
             MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -122,6 +124,7 @@ MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$Thermosta
     _$MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateReportedFanModeFromJson(
         Map<String, dynamic> json) {
   return MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateReportedFanMode()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -154,6 +157,7 @@ Map<String, dynamic>
             MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateReportedFanMode
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -170,6 +174,7 @@ MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$Thermosta
     _$MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateDesiredFanModeFromJson(
         Map<String, dynamic> json) {
   return MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateDesiredFanMode()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -202,6 +207,7 @@ Map<String, dynamic>
             MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField$ThermostatSettingStateDesiredFanMode
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -218,6 +224,7 @@ MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$Thermosta
     _$MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeFieldFromJson(
         Map<String, dynamic> json) {
   return MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -247,6 +254,7 @@ Map<String, dynamic>
             MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateFanModeField
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -260,6 +268,7 @@ MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$Thermosta
     _$MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingStateFromJson(
         Map<String, dynamic> json) {
   return MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -282,6 +291,7 @@ Map<String, dynamic>
             MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -293,6 +303,7 @@ MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$Thermosta
     _$MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTraitFromJson(
         Map<String, dynamic> json) {
   return MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String
@@ -311,6 +322,7 @@ Map<String, dynamic>
             MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
           'properties': instance.properties?.toJson(),
@@ -321,6 +333,7 @@ MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait
     _$MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTraitFromJson(
         Map<String, dynamic> json) {
   return MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait()
+    ..$$typename = json['__typename'] as String
     ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
         unknownValue: TraitName.artemisUnknown)
     ..instance = json['instance'] as String;
@@ -331,6 +344,7 @@ Map<String, dynamic>
             MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait
                 instance) =>
         <String, dynamic>{
+          '__typename': instance.$$typename,
           'name': _$TraitNameEnumMap[instance.name],
           'instance': instance.instance,
         };

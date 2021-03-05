@@ -22,4 +22,3 @@ targets:
             - schema: yp.schema.graphql
               queries_glob: graphql/action.graphql
               output: lib/graphql/action_mutation.dart
-              

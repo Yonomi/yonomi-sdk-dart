@@ -3,7 +3,7 @@ mutation makeSetFanModeRequest ($deviceId: ID! $fanMode: FanMode!) {
         actionId
         device {
             traits {
-                name instance
+                __typename name instance
                 ... on ThermostatSettingDeviceTrait {
                     properties { availableThermostatModes availableFanModes }
                     state {

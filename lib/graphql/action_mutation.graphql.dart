@@ -1,11 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:meta/meta.dart';
 import 'package:artemis/artemis.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'package:equatable/equatable.dart';
 import 'package:gql/ast.dart';
-import 'package:json_annotation/json_annotation.dart';
-import 'package:meta/meta.dart';
-
 part 'action_mutation.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
@@ -169,17 +168,16 @@ class MakeSetFanModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait
         json);
   }
 
+  @JsonKey(name: '__typename')
+  String $$typename;
+
   @JsonKey(unknownEnumValue: TraitName.artemisUnknown)
   TraitName name;
 
   String instance;
 
   @override
-  @JsonKey(name: '__typename')
-  String $$typename;
-
-  @override
-  List<Object> get props => [name, instance];
+  List<Object> get props => [$$typename, name, instance];
   Map<String, dynamic> toJson() {
     switch ($$typename) {
       case r'ThermostatSettingDeviceTrait':
@@ -386,6 +384,12 @@ class MakeSetFanModeRequestMutation extends GraphQLQuery<
                           arguments: [],
                           directives: [],
                           selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: '__typename'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
                             FieldNode(
                                 name: NameNode(value: 'name'),
                                 alias: null,
