@@ -1249,8 +1249,8 @@ type ThermostatSettingStateAmbientTemperatureField {
   ): EventConnection!
 }
 
-# Information about the reported ThermostatSetting state for the setpointHigh field.
-type ThermostatSettingStateReportedSetpointHigh implements ReportedStateField {
+# Information about the reported ThermostatSetting state for the setPointHigh field.
+type ThermostatSettingStateReportedSetPointHigh implements ReportedStateField {
   # The DateTime that this reported state value was persisted to the platform.
   createdAt: DateTime!
 
@@ -1261,8 +1261,8 @@ type ThermostatSettingStateReportedSetpointHigh implements ReportedStateField {
   value: Float!
 }
 
-# Information about the desired ThermostatSetting state for the setpointHigh field.
-type ThermostatSettingStateDesiredSetpointHigh implements DesiredStateField {
+# Information about the desired ThermostatSetting state for the setPointHigh field.
+type ThermostatSettingStateDesiredSetPointHigh implements DesiredStateField {
   # The datetime that this desired state value was most recently updated.
   updatedAt: DateTime!
 
@@ -1273,13 +1273,13 @@ type ThermostatSettingStateDesiredSetpointHigh implements DesiredStateField {
   delta: Float
 }
 
-# Information about the ThermostatSetting state for the setpointHigh field
-type ThermostatSettingStateSetpointHighField {
+# Information about the ThermostatSetting state for the setPointHigh field
+type ThermostatSettingStateSetPointHighField {
   # The most recently reported state. May be null if the device has not yet reported it's state
-  reported: ThermostatSettingStateReportedSetpointHigh
+  reported: ThermostatSettingStateReportedSetPointHigh
 
   # The device's desired state. May be null if the device has not yet reported it's state.
-  desired: ThermostatSettingStateDesiredSetpointHigh
+  desired: ThermostatSettingStateDesiredSetPointHigh
 
   # The device's history of states.
   history(
@@ -1296,8 +1296,8 @@ type ThermostatSettingStateSetpointHighField {
   ): EventConnection!
 }
 
-# Information about the reported ThermostatSetting state for the setpointLow field.
-type ThermostatSettingStateReportedSetpointLow implements ReportedStateField {
+# Information about the reported ThermostatSetting state for the setPointLow field.
+type ThermostatSettingStateReportedSetPointLow implements ReportedStateField {
   # The DateTime that this reported state value was persisted to the platform.
   createdAt: DateTime!
 
@@ -1308,8 +1308,8 @@ type ThermostatSettingStateReportedSetpointLow implements ReportedStateField {
   value: Float!
 }
 
-# Information about the desired ThermostatSetting state for the setpointLow field.
-type ThermostatSettingStateDesiredSetpointLow implements DesiredStateField {
+# Information about the desired ThermostatSetting state for the setPointLow field.
+type ThermostatSettingStateDesiredSetPointLow implements DesiredStateField {
   # The datetime that this desired state value was most recently updated.
   updatedAt: DateTime!
 
@@ -1320,13 +1320,13 @@ type ThermostatSettingStateDesiredSetpointLow implements DesiredStateField {
   delta: Float
 }
 
-# Information about the ThermostatSetting state for the setpointLow field
-type ThermostatSettingStateSetpointLowField {
+# Information about the ThermostatSetting state for the setPointLow field
+type ThermostatSettingStateSetPointLowField {
   # The most recently reported state. May be null if the device has not yet reported it's state
-  reported: ThermostatSettingStateReportedSetpointLow
+  reported: ThermostatSettingStateReportedSetPointLow
 
   # The device's desired state. May be null if the device has not yet reported it's state.
-  desired: ThermostatSettingStateDesiredSetpointLow
+  desired: ThermostatSettingStateDesiredSetPointLow
 
   # The device's history of states.
   history(
@@ -1496,10 +1496,10 @@ type ThermostatSettingState {
   ambientTemperature: ThermostatSettingStateAmbientTemperatureField!
 
   # Higher end of the range for auto mode.
-  setpointHigh: ThermostatSettingStateSetpointHighField!
+  setPointHigh: ThermostatSettingStateSetPointHighField!
 
   # Lower end of the range for auto mode.
-  setpointLow: ThermostatSettingStateSetpointLowField!
+  setPointLow: ThermostatSettingStateSetPointLowField!
 
   # Observed humidity.
   ambientHumidity: ThermostatSettingStateAmbientHumidityField!
