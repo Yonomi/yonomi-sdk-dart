@@ -21,3 +21,4 @@ dev_dependencies:
   nock: ^1.1.2
   build_runner: ^1.10.4
   json_serializable: ^3.5.0
+  mockito: ^4.1.4
