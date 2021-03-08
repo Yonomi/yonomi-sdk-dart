@@ -21,6 +21,9 @@ targets:
               queries_glob: graphql/device.query.graphql
               output: lib/graphql/device_query.dart
             - schema: yp.schema.graphql
+              queries_glob: graphql/account.**.graphql
+              output: lib/graphql/account_queries.dart
+            - schema: yp.schema.graphql
               queries_glob: graphql/action.graphql
               output: lib/graphql/action_mutation.dart
 
