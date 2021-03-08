@@ -4,8 +4,9 @@ import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
 import 'package:yonomi_platform_sdk/request/request.dart';
 
 class UserRepository {
-  static Future<User> getUserDetails(Request request) async {
-    ArtemisClient client = ArtemisClientCreator.create(request);
+  static Future<User> getUserDetails(Request request,
+      {client: ArtemisClient}) async {
+    if (client == null) client = ArtemisClientCreator.create(request);
     final userQuery = UserQuery();
 
     final userQueryResponse = await client.execute(userQuery);
