@@ -1,0 +1,9 @@
+mutation generateAccountLinkingUrl ($integrationId: ID!) {
+    generateAccountLinkingUrl(integrationId: $integrationId) {
+        url
+        integration {
+            id
+            displayName
+        }
+    }
+}

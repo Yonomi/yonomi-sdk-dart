@@ -1,12 +1,8 @@
 library user;
 
-import 'dart:convert';
-import 'dart:io';
-
-import 'package:http/http.dart' as http;
+import 'package:yonomi_platform_sdk/graphql/user_query.dart';
+import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
 import 'package:yonomi_platform_sdk/request/request.dart';
-
-import 'config.dart';
 
 enum UserFields { id, firstActivityAt, lastActivityAt, devices }
 
@@ -86,13 +82,24 @@ class User {
   }
 
   Future<User> get(Request request) async {
-    var graphQlQuery = {'query': this._query};
-    request.headers.addAll({'Content-Type': 'application/json'});
-    var response = await http.post(request.graphUrl,
-        body: jsonEncode(graphQlQuery), headers: request.headers);
-    Map<String, dynamic> userMap =
-        jsonDecode(response.body)['data']['me'] as Map<String, dynamic>;
-    _createUserFromUserMap(userMap);
+    final artemisClient = ArtemisClientCreator.create(request);
+
+    final userQuery = UserQuery();
+
+    final userQueryResponse = await artemisClient.execute(userQuery);
+
+    //TODO: We ideally should find a way to modify userQuery.document
+    // so that we only query for fields the user cares about.
+
+    if (_projectedFields.contains('id')) {
+      this._id = userQueryResponse.data.me.id;
+    }
+    if (_projectedFields.contains('firstActivityAt')) {
+      this._firstActivityAt = userQueryResponse.data.me.firstActivityAt;
+    }
+    if (_projectedFields.contains('lastActivityAt')) {
+      this._lastActivityAt = userQueryResponse.data.me.lastActivityAt;
+    }
     return this;
   }
 }

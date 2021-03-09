@@ -3,9 +3,12 @@ library device;
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
 import 'package:yonomi_platform_sdk/request/request.dart';
 import 'package:yonomi_platform_sdk/traits/actionQuery.dart';
 import 'package:yonomi_platform_sdk/traits/trait.dart';
+
+import 'graphql/device_query.dart';
 
 enum DeviceFields {
   id,
@@ -220,7 +223,35 @@ class Device {
   }
 
   Future<Device> get(Request request) async {
-    _createDeviceFromDeviceMap((await _request(request))['device']);
+    final artemisClient = ArtemisClientCreator.create(request);
+
+    final deviceQuery = GetDeviceQuery(
+        variables: GetDeviceArguments(
+            deviceId: "2f69db9b-2801-4410-ac73-9abbae05b9e5"));
+
+    final deviceQueryResponse = await artemisClient.execute(deviceQuery);
+
+    if (_getProjections.contains("id"))
+      this._id = deviceQueryResponse.data.device.id;
+    if (_getProjections.contains("displayName"))
+      this._displayName = deviceQueryResponse.data.device.displayName;
+    if (_getProjections.contains("description"))
+      this._description = deviceQueryResponse.data.device.description;
+    if (_getProjections.contains("manufacturerName"))
+      this._manufacturerName = deviceQueryResponse.data.device.manufacturerName;
+    if (_getProjections.contains("model"))
+      this._model = deviceQueryResponse.data.device.model;
+    if (_getProjections.contains("firmwareVersion"))
+      this._firmwareVersion = deviceQueryResponse.data.device.firmwareVersion;
+    if (_getProjections.contains("softwareVersion"))
+      this._softwareVersion = deviceQueryResponse.data.device.softwareVersion;
+    if (_getProjections.contains("serialNumber"))
+      this._serialNumber = deviceQueryResponse.data.device.serialNumber;
+    if (_getProjections.contains("createdAt"))
+      this._createdAt = deviceQueryResponse.data.device.createdAt;
+    if (_getProjections.contains("updatedAt"))
+      this._updatedAt = deviceQueryResponse.data.device.updatedAt;
+
     return this;
   }
 
@@ -242,5 +273,6 @@ class Device {
 class ActionResult {
   String actionId;
   Device device;
+
   ActionResult(this.actionId, this.device);
 }

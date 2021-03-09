@@ -1,0 +1,34 @@
+targets:
+  $default:
+    sources:
+      - lib/**
+      - graphql/**
+      - yp.schema.graphql
+    builders:
+      artemis:
+        options:
+          fragments_glob: graphql/fragments/**.fragment.graphql
+          scalar_mapping:
+            - graphql_type: DateTime
+              dart_type: DateTime
+            - graphql_type: PartialDateTime
+              dart_type: DateTime
+          schema_mapping:
+            - schema: yp.schema.graphql
+              queries_glob: graphql/user.query.graphql
+              output: lib/graphql/user_query.dart
+            - schema: yp.schema.graphql
+              queries_glob: graphql/device.query.graphql
+              output: lib/graphql/device_query.dart
+            - schema: yp.schema.graphql
+              queries_glob: graphql/account.**.graphql
+              output: lib/graphql/account_queries.dart
+            - schema: yp.schema.graphql
+              queries_glob: graphql/action.graphql
+              output: lib/graphql/action_mutation.dart
+            - schema: yp.schema.graphql
+              queries_glob: graphql/devices.query.graphql
+              output: lib/graphql/devices_query.dart
+            - schema: yp.schema.graphql
+              queries_glob: graphql/lock_unlock.mutation.graphql
+              output: lib/graphql/lock_unlock_mutation.dart
