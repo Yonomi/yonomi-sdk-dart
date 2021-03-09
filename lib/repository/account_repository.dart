@@ -7,7 +7,7 @@ import 'artemis_client.dart';
 
 class AccountRepository {
   static Future<List<dynamic>> getAllIntegrations(Request request,
-      {client: ArtemisClient}) async {
+      {ArtemisClient client}) async {
     if (client == null) client = ArtemisClientCreator.create(request);
 
     var getAllIntegrationsQuery = GetAllIntegrationsQuery();
