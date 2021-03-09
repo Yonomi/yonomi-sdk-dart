@@ -6,8 +6,12 @@ import 'package:artemis/artemis.dart';
 import 'package:http/http.dart' as http;
 import 'package:yonomi_platform_sdk/request/request.dart';
 import 'package:yonomi_platform_sdk/traits/actionQuery.dart';
+<<<<<<< HEAD
 
 import 'graphql/device_query.graphql.dart';
+=======
+import 'package:yonomi_platform_sdk/traits/trait.dart';
+>>>>>>> main
 
 enum DeviceFields {
   id,
@@ -38,6 +42,7 @@ class Device {
       _query;
   DateTime _createdAt, _updatedAt;
   ActionQuery _actionQuery;
+  List<Trait> _traits;
 
   // List<Trait> traits;
   // List<Event> events;
@@ -104,6 +109,10 @@ class Device {
     return _updatedAt;
   }
 
+  List<Trait> get traits {
+    return _traits;
+  }
+
   static Device findById(String id) {
     Device device = Device(
         'query Device { device(id: "${id}") ${Device.defaultInnerQuery} }');
@@ -156,7 +165,8 @@ class Device {
       String description,
       DateTime updatedAt,
       DateTime createdAt,
-      List<String> projectedFields) {
+      List<String> projectedFields,
+      [List<Trait> traits]) {
     _id = id;
     _displayName = displayName;
     _manufacturerName = manufacturerName;
@@ -168,6 +178,7 @@ class Device {
     _updatedAt = updatedAt;
     _description = description;
     _getProjections = projectedFields;
+    _traits = traits;
   }
 
   void _createDeviceFromDeviceMap(Map<String, dynamic> userMap) {

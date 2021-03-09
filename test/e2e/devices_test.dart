@@ -5,6 +5,7 @@ import 'package:yonomi_platform_sdk/device.dart';
 import 'package:yonomi_platform_sdk/devices.dart';
 import 'package:yonomi_platform_sdk/config.dart';
 import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
+import 'package:yonomi_platform_sdk/traits/trait.dart';
 
 void main() {
   yoRequest.Request request = yoRequest.Request(
@@ -27,5 +28,14 @@ void main() {
     Devices devices = await devicesQuery.get(request);
     expect(devices.devices[0].description, isA<String>());
     expect(() => devices.devices[0].id, throwsA('id is not projected'));
+  });
+
+  test('project() with trait should return traits', () async {
+    Devices devicesQuery = Devices.all()..withTraits();
+    Devices devices = await devicesQuery.get(request);
+    expect(devices.devices[0].traits[0].name, isA<String>());
+    expect(
+        (devices.devices[0].traits[0].state as IsLocked).reportedIsLocked.value,
+        isA<bool>());
   });
 }
