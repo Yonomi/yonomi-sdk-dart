@@ -1,4 +1,5 @@
 import 'package:artemis/client.dart';
+import 'package:yonomi_platform_sdk/graphql/action_mutation.dart';
 import 'package:yonomi_platform_sdk/graphql/device_query.graphql.dart';
 import 'package:yonomi_platform_sdk/graphql/devices_query.graphql.dart'
     as devices;
@@ -14,18 +15,26 @@ class DevicesRepository {
     final devicesResponse = await client.execute(devicesQuery);
 
     return devicesResponse.data.me.devices.edges
-        .map((e) => Device(
-            e.node.id,
-            e.node.displayName,
-            e.node.description,
-            e.node.manufacturerName,
-            e.node.model,
-            e.node.firmwareVersion,
-            e.node.softwareVersion,
-            e.node.serialNumber,
-            e.node.createdAt,
-            e.node.updatedAt,
-            [Trait(e.node.traits[0].name.toString())]))
+        .map((device) => Device(
+            device.node.id,
+            device.node.displayName,
+            device.node.description,
+            device.node.manufacturerName,
+            device.node.model,
+            device.node.firmwareVersion,
+            device.node.softwareVersion,
+            device.node.serialNumber,
+            device.node.createdAt,
+            device.node.updatedAt,
+            device.node.traits
+                .where((trait) =>
+                    trait.name.toString().toLowerCase().contains('lockunlock'))
+                .map((trait) {
+              return LockUnlockTrait(
+                  'lockUnlock',
+                  IsLocked(
+                      (trait as dynamic)?.state?.isLocked?.reported?.value));
+            }).toList()))
         .toList();
   }
 
@@ -45,7 +54,13 @@ class DevicesRepository {
         deviceResponse.data.device.serialNumber,
         deviceResponse.data.device.createdAt,
         deviceResponse.data.device.updatedAt,
-        [Trait(deviceResponse.data.device.traits[0].name.toString())]);
+        deviceResponse.data.device.traits
+            .where((trait) =>
+                trait.name.toString().toLowerCase().contains('lockunlock'))
+            .map((trait) {
+          return LockUnlockTrait('lockUnlock',
+              IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value));
+        }).toList());
   }
 
   static Future<void> sendLockUnlockAction(
@@ -85,8 +100,24 @@ class Device {
       this.traits);
 }
 
-class Trait {
+abstract class Trait {
   final String name;
+  final State state;
 
-  Trait(this.name);
+  Trait(this.name, this.state);
+}
+
+abstract class State<T> {
+  final String name;
+  final T value;
+
+  State(this.name, this.value);
+}
+
+class IsLocked extends State<bool> {
+  IsLocked(bool value) : super('LockUnlock', value);
+}
+
+class LockUnlockTrait extends Trait {
+  LockUnlockTrait(String name, State state) : super(name, state);
 }

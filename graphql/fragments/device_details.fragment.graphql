@@ -10,7 +10,9 @@ fragment DeviceDetails on Device {
     createdAt
     updatedAt
     traits {
-        __typename name instance
+        __typename 
+        name 
+        instance
         ... on LockUnlockDeviceTrait {
             properties { supportsIsJammed }
             state {
