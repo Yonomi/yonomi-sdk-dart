@@ -8,6 +8,116 @@ import 'package:gql/ast.dart';
 part 'account_queries.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
+class RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User
+    with EquatableMixin {
+  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User();
+
+  factory RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User.fromJson(
+          Map<String, dynamic> json) =>
+      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserFromJson(
+          json);
+
+  String id;
+
+  @override
+  List<Object> get props => [id];
+  Map<String, dynamic> toJson() =>
+      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse
+    with EquatableMixin {
+  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse();
+
+  factory RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse.fromJson(
+          Map<String, dynamic> json) =>
+      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseFromJson(json);
+
+  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User me;
+
+  @override
+  List<Object> get props => [me];
+  Map<String, dynamic> toJson() =>
+      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class RemoveLinkedAccount$Mutation with EquatableMixin {
+  RemoveLinkedAccount$Mutation();
+
+  factory RemoveLinkedAccount$Mutation.fromJson(Map<String, dynamic> json) =>
+      _$RemoveLinkedAccount$MutationFromJson(json);
+
+  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse removeLinkedAccount;
+
+  @override
+  List<Object> get props => [removeLinkedAccount];
+  Map<String, dynamic> toJson() => _$RemoveLinkedAccount$MutationToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$Integration
+    with EquatableMixin {
+  GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$Integration();
+
+  factory GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$Integration.fromJson(
+          Map<String, dynamic> json) =>
+      _$GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$IntegrationFromJson(
+          json);
+
+  String id;
+
+  String displayName;
+
+  @override
+  List<Object> get props => [id, displayName];
+  Map<String, dynamic> toJson() =>
+      _$GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$IntegrationToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl
+    with EquatableMixin {
+  GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl();
+
+  factory GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl.fromJson(
+          Map<String, dynamic> json) =>
+      _$GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrlFromJson(
+          json);
+
+  String url;
+
+  GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$Integration
+      integration;
+
+  @override
+  List<Object> get props => [url, integration];
+  Map<String, dynamic> toJson() =>
+      _$GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrlToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class GenerateAccountLinkingUrl$Mutation with EquatableMixin {
+  GenerateAccountLinkingUrl$Mutation();
+
+  factory GenerateAccountLinkingUrl$Mutation.fromJson(
+          Map<String, dynamic> json) =>
+      _$GenerateAccountLinkingUrl$MutationFromJson(json);
+
+  GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl
+      generateAccountLinkingUrl;
+
+  @override
+  List<Object> get props => [generateAccountLinkingUrl];
+  Map<String, dynamic> toJson() =>
+      _$GenerateAccountLinkingUrl$MutationToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
 class LinkedAccounts$Query$User$LinkedAccountConnection$LinkedAccountEdge$LinkedAccount$Integration
     with EquatableMixin {
   LinkedAccounts$Query$User$LinkedAccountConnection$LinkedAccountEdge$LinkedAccount$Integration();
@@ -191,116 +301,6 @@ class GetAllIntegrations$Query with EquatableMixin {
   Map<String, dynamic> toJson() => _$GetAllIntegrations$QueryToJson(this);
 }
 
-@JsonSerializable(explicitToJson: true)
-class RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User
-    with EquatableMixin {
-  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User();
-
-  factory RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User.fromJson(
-          Map<String, dynamic> json) =>
-      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserFromJson(
-          json);
-
-  String id;
-
-  @override
-  List<Object> get props => [id];
-  Map<String, dynamic> toJson() =>
-      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse
-    with EquatableMixin {
-  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse();
-
-  factory RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse.fromJson(
-          Map<String, dynamic> json) =>
-      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseFromJson(json);
-
-  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User me;
-
-  @override
-  List<Object> get props => [me];
-  Map<String, dynamic> toJson() =>
-      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class RemoveLinkedAccount$Mutation with EquatableMixin {
-  RemoveLinkedAccount$Mutation();
-
-  factory RemoveLinkedAccount$Mutation.fromJson(Map<String, dynamic> json) =>
-      _$RemoveLinkedAccount$MutationFromJson(json);
-
-  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse removeLinkedAccount;
-
-  @override
-  List<Object> get props => [removeLinkedAccount];
-  Map<String, dynamic> toJson() => _$RemoveLinkedAccount$MutationToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$Integration
-    with EquatableMixin {
-  GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$Integration();
-
-  factory GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$Integration.fromJson(
-          Map<String, dynamic> json) =>
-      _$GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$IntegrationFromJson(
-          json);
-
-  String id;
-
-  String displayName;
-
-  @override
-  List<Object> get props => [id, displayName];
-  Map<String, dynamic> toJson() =>
-      _$GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$IntegrationToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl
-    with EquatableMixin {
-  GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl();
-
-  factory GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl.fromJson(
-          Map<String, dynamic> json) =>
-      _$GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrlFromJson(
-          json);
-
-  String url;
-
-  GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$Integration
-      integration;
-
-  @override
-  List<Object> get props => [url, integration];
-  Map<String, dynamic> toJson() =>
-      _$GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrlToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class GenerateAccountLinkingUrl$Mutation with EquatableMixin {
-  GenerateAccountLinkingUrl$Mutation();
-
-  factory GenerateAccountLinkingUrl$Mutation.fromJson(
-          Map<String, dynamic> json) =>
-      _$GenerateAccountLinkingUrl$MutationFromJson(json);
-
-  GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl
-      generateAccountLinkingUrl;
-
-  @override
-  List<Object> get props => [generateAccountLinkingUrl];
-  Map<String, dynamic> toJson() =>
-      _$GenerateAccountLinkingUrl$MutationToJson(this);
-}
-
 enum LinkedAccountAuthorizedStatus {
   @JsonValue('AUTHORIZED')
   authorized,
@@ -308,156 +308,6 @@ enum LinkedAccountAuthorizedStatus {
   notAuthorized,
   @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
-}
-
-class LinkedAccountsQuery
-    extends GraphQLQuery<LinkedAccounts$Query, JsonSerializable> {
-  LinkedAccountsQuery();
-
-  @override
-  final DocumentNode document = DocumentNode(definitions: [
-    OperationDefinitionNode(
-        type: OperationType.query,
-        name: NameNode(value: 'linkedAccounts'),
-        variableDefinitions: [],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
-          FieldNode(
-              name: NameNode(value: 'me'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'linkedAccounts'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'edges'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: SelectionSetNode(selections: [
-                            FieldNode(
-                                name: NameNode(value: 'node'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: SelectionSetNode(selections: [
-                                  FieldNode(
-                                      name: NameNode(value: 'id'),
-                                      alias: null,
-                                      arguments: [],
-                                      directives: [],
-                                      selectionSet: null),
-                                  FieldNode(
-                                      name: NameNode(value: 'status'),
-                                      alias: null,
-                                      arguments: [],
-                                      directives: [],
-                                      selectionSet: null),
-                                  FieldNode(
-                                      name: NameNode(value: 'createdAt'),
-                                      alias: null,
-                                      arguments: [],
-                                      directives: [],
-                                      selectionSet: null),
-                                  FieldNode(
-                                      name: NameNode(value: 'integration'),
-                                      alias: null,
-                                      arguments: [],
-                                      directives: [],
-                                      selectionSet:
-                                          SelectionSetNode(selections: [
-                                        FieldNode(
-                                            name: NameNode(value: 'id'),
-                                            alias: null,
-                                            arguments: [],
-                                            directives: [],
-                                            selectionSet: null),
-                                        FieldNode(
-                                            name:
-                                                NameNode(value: 'displayName'),
-                                            alias: null,
-                                            arguments: [],
-                                            directives: [],
-                                            selectionSet: null)
-                                      ]))
-                                ]))
-                          ]))
-                    ]))
-              ]))
-        ]))
-  ]);
-
-  @override
-  final String operationName = 'linkedAccounts';
-
-  @override
-  List<Object> get props => [document, operationName];
-  @override
-  LinkedAccounts$Query parse(Map<String, dynamic> json) =>
-      LinkedAccounts$Query.fromJson(json);
-}
-
-class GetAllIntegrationsQuery
-    extends GraphQLQuery<GetAllIntegrations$Query, JsonSerializable> {
-  GetAllIntegrationsQuery();
-
-  @override
-  final DocumentNode document = DocumentNode(definitions: [
-    OperationDefinitionNode(
-        type: OperationType.query,
-        name: NameNode(value: 'getAllIntegrations'),
-        variableDefinitions: [],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
-          FieldNode(
-              name: NameNode(value: 'integrations'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'edges'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'node'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: SelectionSetNode(selections: [
-                            FieldNode(
-                                name: NameNode(value: 'id'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null),
-                            FieldNode(
-                                name: NameNode(value: 'displayName'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null)
-                          ]))
-                    ]))
-              ]))
-        ]))
-  ]);
-
-  @override
-  final String operationName = 'getAllIntegrations';
-
-  @override
-  List<Object> get props => [document, operationName];
-  @override
-  GetAllIntegrations$Query parse(Map<String, dynamic> json) =>
-      GetAllIntegrations$Query.fromJson(json);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -623,4 +473,154 @@ class GenerateAccountLinkingUrlMutation extends GraphQLQuery<
   @override
   GenerateAccountLinkingUrl$Mutation parse(Map<String, dynamic> json) =>
       GenerateAccountLinkingUrl$Mutation.fromJson(json);
+}
+
+class LinkedAccountsQuery
+    extends GraphQLQuery<LinkedAccounts$Query, JsonSerializable> {
+  LinkedAccountsQuery();
+
+  @override
+  final DocumentNode document = DocumentNode(definitions: [
+    OperationDefinitionNode(
+        type: OperationType.query,
+        name: NameNode(value: 'linkedAccounts'),
+        variableDefinitions: [],
+        directives: [],
+        selectionSet: SelectionSetNode(selections: [
+          FieldNode(
+              name: NameNode(value: 'me'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: SelectionSetNode(selections: [
+                FieldNode(
+                    name: NameNode(value: 'linkedAccounts'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: SelectionSetNode(selections: [
+                      FieldNode(
+                          name: NameNode(value: 'edges'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'node'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'id'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'status'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'createdAt'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'integration'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet:
+                                          SelectionSetNode(selections: [
+                                        FieldNode(
+                                            name: NameNode(value: 'id'),
+                                            alias: null,
+                                            arguments: [],
+                                            directives: [],
+                                            selectionSet: null),
+                                        FieldNode(
+                                            name:
+                                                NameNode(value: 'displayName'),
+                                            alias: null,
+                                            arguments: [],
+                                            directives: [],
+                                            selectionSet: null)
+                                      ]))
+                                ]))
+                          ]))
+                    ]))
+              ]))
+        ]))
+  ]);
+
+  @override
+  final String operationName = 'linkedAccounts';
+
+  @override
+  List<Object> get props => [document, operationName];
+  @override
+  LinkedAccounts$Query parse(Map<String, dynamic> json) =>
+      LinkedAccounts$Query.fromJson(json);
+}
+
+class GetAllIntegrationsQuery
+    extends GraphQLQuery<GetAllIntegrations$Query, JsonSerializable> {
+  GetAllIntegrationsQuery();
+
+  @override
+  final DocumentNode document = DocumentNode(definitions: [
+    OperationDefinitionNode(
+        type: OperationType.query,
+        name: NameNode(value: 'getAllIntegrations'),
+        variableDefinitions: [],
+        directives: [],
+        selectionSet: SelectionSetNode(selections: [
+          FieldNode(
+              name: NameNode(value: 'integrations'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: SelectionSetNode(selections: [
+                FieldNode(
+                    name: NameNode(value: 'edges'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: SelectionSetNode(selections: [
+                      FieldNode(
+                          name: NameNode(value: 'node'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'id'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'displayName'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null)
+                          ]))
+                    ]))
+              ]))
+        ]))
+  ]);
+
+  @override
+  final String operationName = 'getAllIntegrations';
+
+  @override
+  List<Object> get props => [document, operationName];
+  @override
+  GetAllIntegrations$Query parse(Map<String, dynamic> json) =>
+      GetAllIntegrations$Query.fromJson(json);
 }

@@ -29,4 +29,6 @@ targets:
             - schema: yp.schema.graphql
               queries_glob: graphql/devices.query.graphql
               output: lib/graphql/devices_query.dart
-
+            - schema: yp.schema.graphql
+              queries_glob: graphql/lock_unlock.mutation.graphql
+              output: lib/graphql/lock_unlock_mutation.dart

@@ -2,6 +2,7 @@ import 'package:artemis/client.dart';
 import 'package:yonomi_platform_sdk/graphql/device_query.graphql.dart';
 import 'package:yonomi_platform_sdk/graphql/devices_query.graphql.dart'
     as devices;
+import 'package:yonomi_platform_sdk/graphql/lock_unlock_mutation.graphql.dart';
 import 'package:yonomi_platform_sdk/request/request.dart';
 
 import 'artemis_client.dart';
@@ -45,6 +46,15 @@ class DevicesRepository {
         deviceResponse.data.device.createdAt,
         deviceResponse.data.device.updatedAt,
         [Trait(deviceResponse.data.device.traits[0].name.toString())]);
+  }
+
+  static Future<void> sendLockUnlockAction(
+      Request request, String id, bool lockUnlock) async {
+    ArtemisClient client = ArtemisClientCreator.create(request);
+    final actionQuery = MakeLockUnlockActionRequestMutation(
+        variables: MakeLockUnlockActionRequestArguments(
+            deviceId: id, lock: lockUnlock));
+    await client.execute(actionQuery);
   }
 }
 
