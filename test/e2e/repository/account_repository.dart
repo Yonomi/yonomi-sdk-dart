@@ -26,4 +26,24 @@ void main() {
     expect(url, isNotEmpty);
     expect(Uri.parse(url).isAbsolute, true); // Expect a valid URL
   });
+
+  test("AccountRepository.getAllIntegrations - returns list of Integrations",
+      () async {
+    ArtemisClient myClient = ArtemisClientCreator.create(request);
+
+    var listOfIntegrations =
+        await AccountRepository.getAllIntegrations(request, client: myClient);
+
+    expect(listOfIntegrations.isNotEmpty, true);
+  });
+
+  test("AccountRepository.getLinkedAccounts - returns list of linked Accounts",
+      () async {
+    ArtemisClient myClient = ArtemisClientCreator.create(request);
+
+    var listOfLinkedAccounts =
+        await AccountRepository.getLinkedAccounts(request, client: myClient);
+
+    expect(listOfLinkedAccounts.isNotEmpty, true);
+  });
 }
