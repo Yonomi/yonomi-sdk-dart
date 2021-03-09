@@ -1,8 +1,7 @@
 library user;
 
-import 'package:artemis/artemis.dart';
-import 'package:http/http.dart' as http;
 import 'package:yonomi_platform_sdk/graphql/user_query.dart';
+import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
 import 'package:yonomi_platform_sdk/request/request.dart';
 
 enum UserFields { id, firstActivityAt, lastActivityAt, devices }
@@ -83,10 +82,7 @@ class User {
   }
 
   Future<User> get(Request request) async {
-    http.BaseClient authClient = AuthorizedClient.fromRequest(request);
-
-    final artemisClient =
-        ArtemisClient(request.graphUrl, httpClient: authClient);
+    final artemisClient = ArtemisClientCreator.create(request);
 
     final userQuery = UserQuery();
 
@@ -105,25 +101,5 @@ class User {
       this._lastActivityAt = userQueryResponse.data.me.lastActivityAt;
     }
     return this;
-  }
-}
-
-class AuthorizedClient extends http.BaseClient {
-  final http.Client _httpClient = new http.Client();
-
-  String token;
-
-  Map<String, String> headers;
-
-  AuthorizedClient(this.token);
-
-  AuthorizedClient.fromRequest(Request request) {
-    this.headers = request.headers;
-  }
-
-  @override
-  Future<http.StreamedResponse> send(http.BaseRequest request) {
-    request.headers.addAll(this.headers);
-    return _httpClient.send(request);
   }
 }

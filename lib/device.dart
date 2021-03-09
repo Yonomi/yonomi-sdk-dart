@@ -2,8 +2,8 @@ library device;
 
 import 'dart:convert';
 
-import 'package:artemis/artemis.dart';
 import 'package:http/http.dart' as http;
+import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
 import 'package:yonomi_platform_sdk/request/request.dart';
 import 'package:yonomi_platform_sdk/traits/actionQuery.dart';
 import 'package:yonomi_platform_sdk/traits/trait.dart';
@@ -223,10 +223,7 @@ class Device {
   }
 
   Future<Device> get(Request request) async {
-    http.BaseClient authClient = AuthorizedClient.fromRequest(request);
-
-    final artemisClient =
-        ArtemisClient(request.graphUrl, httpClient: authClient);
+    final artemisClient = ArtemisClientCreator.create(request);
 
     final deviceQuery = GetDeviceQuery(
         variables: GetDeviceArguments(
@@ -278,24 +275,4 @@ class ActionResult {
   Device device;
 
   ActionResult(this.actionId, this.device);
-}
-
-class AuthorizedClient extends http.BaseClient {
-  final http.Client _httpClient = new http.Client();
-
-  String token;
-
-  Map<String, String> headers;
-
-  AuthorizedClient(this.token);
-
-  AuthorizedClient.fromRequest(Request request) {
-    this.headers = request.headers;
-  }
-
-  @override
-  Future<http.StreamedResponse> send(http.BaseRequest request) {
-    request.headers.addAll(this.headers);
-    return _httpClient.send(request);
-  }
 }
