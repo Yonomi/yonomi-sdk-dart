@@ -6,12 +6,9 @@ import 'package:artemis/artemis.dart';
 import 'package:http/http.dart' as http;
 import 'package:yonomi_platform_sdk/request/request.dart';
 import 'package:yonomi_platform_sdk/traits/actionQuery.dart';
-<<<<<<< HEAD
-
-import 'graphql/device_query.graphql.dart';
-=======
 import 'package:yonomi_platform_sdk/traits/trait.dart';
->>>>>>> main
+
+import 'graphql/device_query.dart';
 
 enum DeviceFields {
   id,

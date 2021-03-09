@@ -1,11 +1,8 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:yonomi_platform_sdk/request/request.dart';
 import 'package:yonomi_platform_sdk/traits/trait.dart';
-
-import 'config.dart';
 
 import 'device.dart';
 
