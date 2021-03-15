@@ -32,3 +32,6 @@ targets:
             - schema: yp.schema.graphql
               queries_glob: graphql/lock_unlock.mutation.graphql
               output: lib/graphql/lock_unlock_mutation.dart
+            - schema: yp.schema.graphql
+              queries_glob: graphql/set_point.mutation.graphql
+              output: lib/graphql/thermostat/set_point_mutation.dart

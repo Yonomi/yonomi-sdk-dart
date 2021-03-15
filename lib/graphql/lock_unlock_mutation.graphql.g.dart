@@ -312,6 +312,7 @@ MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device
     _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$DeviceFromJson(
         Map<String, dynamic> json) {
   return MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device()
+    ..id = json['id'] as String
     ..traits = (json['traits'] as List)
         ?.map((e) => e == null
             ? null
@@ -325,6 +326,7 @@ Map<String, dynamic>
             MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device
                 instance) =>
         <String, dynamic>{
+          'id': instance.id,
           'traits': instance.traits?.map((e) => e?.toJson())?.toList(),
         };
 

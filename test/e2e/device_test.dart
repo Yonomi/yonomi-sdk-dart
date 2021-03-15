@@ -8,7 +8,7 @@ import 'package:yonomi_platform_sdk/traits/traitLockUnlock/traitLockUnlockAction
 
 void main() {
   var testDeviceId = "2f69db9b-2801-4410-ac73-9abbae05b9e5";
-  yoRequest.Request request = yoRequest.Request(
+  final request = yoRequest.Request(
       CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${CONFIG.TOKEN}'});
   test('get() should return device with default value', () async {
     Device device = await Device.findById(testDeviceId).get(request);

@@ -5,40 +5,44 @@ import 'package:artemis/artemis.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:equatable/equatable.dart';
 import 'package:gql/ast.dart';
-part 'lock_unlock_mutation.graphql.g.dart';
+part 'set_point_mutation.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockProperties
-    extends MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait
+class MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
+    extends MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait
     with EquatableMixin {
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockProperties();
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties();
 
-  factory MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockProperties.fromJson(
+  factory MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties.fromJson(
           Map<String, dynamic> json) =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockPropertiesFromJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingPropertiesFromJson(
           json);
 
-  bool supportsIsJammed;
+  @JsonKey(unknownEnumValue: ThermostatMode.artemisUnknown)
+  List<ThermostatMode> availableThermostatModes;
+
+  @JsonKey(unknownEnumValue: FanMode.artemisUnknown)
+  List<FanMode> availableFanModes;
 
   @override
-  List<Object> get props => [supportsIsJammed];
+  List<Object> get props => [availableThermostatModes, availableFanModes];
   Map<String, dynamic> toJson() =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockPropertiesToJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingPropertiesToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateReportedIsLocked
-    extends MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField
+class MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateReportedTargetTemperature
+    extends MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField
     with EquatableMixin {
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateReportedIsLocked();
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateReportedTargetTemperature();
 
-  factory MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateReportedIsLocked.fromJson(
+  factory MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateReportedTargetTemperature.fromJson(
           Map<String, dynamic> json) =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateReportedIsLockedFromJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateReportedTargetTemperatureFromJson(
           json);
 
-  bool value;
+  double value;
 
   DateTime sampledAt;
 
@@ -47,117 +51,117 @@ class MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTra
   @override
   List<Object> get props => [value, sampledAt, createdAt];
   Map<String, dynamic> toJson() =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateReportedIsLockedToJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateReportedTargetTemperatureToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateDesiredIsLocked
-    extends MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField
+class MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateDesiredTargetTemperature
+    extends MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField
     with EquatableMixin {
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateDesiredIsLocked();
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateDesiredTargetTemperature();
 
-  factory MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateDesiredIsLocked.fromJson(
+  factory MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateDesiredTargetTemperature.fromJson(
           Map<String, dynamic> json) =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateDesiredIsLockedFromJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateDesiredTargetTemperatureFromJson(
           json);
 
-  bool value;
+  double value;
 
-  bool delta;
+  double delta;
 
   DateTime updatedAt;
 
   @override
   List<Object> get props => [value, delta, updatedAt];
   Map<String, dynamic> toJson() =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateDesiredIsLockedToJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateDesiredTargetTemperatureToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField
-    extends MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState
+class MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField
+    extends MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
     with EquatableMixin {
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField();
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField();
 
-  factory MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField.fromJson(
+  factory MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField.fromJson(
           Map<String, dynamic> json) =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedFieldFromJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureFieldFromJson(
           json);
 
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateReportedIsLocked
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateReportedTargetTemperature
       reported;
 
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField$LockUnlockStateDesiredIsLocked
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField$ThermostatSettingStateDesiredTargetTemperature
       desired;
 
   @override
   List<Object> get props => [reported, desired];
   Map<String, dynamic> toJson() =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedFieldToJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureFieldToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState
-    extends MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait
+class MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
+    extends MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait
     with EquatableMixin {
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState();
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState();
 
-  factory MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState.fromJson(
+  factory MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState.fromJson(
           Map<String, dynamic> json) =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockStateFromJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingStateFromJson(
           json);
 
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState$LockUnlockStateIsLockedField
-      isLocked;
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateTargetTemperatureField
+      targetTemperature;
 
   @override
-  List<Object> get props => [isLocked];
+  List<Object> get props => [targetTemperature];
   Map<String, dynamic> toJson() =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockStateToJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingStateToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait
-    extends MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait
+class MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait
+    extends MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait
     with EquatableMixin {
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait();
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait();
 
-  factory MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait.fromJson(
+  factory MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait.fromJson(
           Map<String, dynamic> json) =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTraitFromJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTraitFromJson(
           json);
 
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockProperties
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
       properties;
 
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait$LockUnlockState
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
       state;
 
   @override
   List<Object> get props => [properties, state];
   Map<String, dynamic> toJson() =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTraitToJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTraitToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait
+class MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait
     with EquatableMixin {
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait();
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait();
 
-  factory MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait.fromJson(
+  factory MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait.fromJson(
       Map<String, dynamic> json) {
     switch (json['__typename'].toString()) {
-      case r'LockUnlockDeviceTrait':
-        return MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait
+      case r'ThermostatSettingDeviceTrait':
+        return MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait
             .fromJson(json);
       default:
     }
-    return _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTraitFromJson(
+    return _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTraitFromJson(
         json);
   }
 
@@ -173,75 +177,125 @@ class MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTra
   List<Object> get props => [$$typename, name, instance];
   Map<String, dynamic> toJson() {
     switch ($$typename) {
-      case r'LockUnlockDeviceTrait':
+      case r'ThermostatSettingDeviceTrait':
         return (this
-                as MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait$LockUnlockDeviceTrait)
+                as MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait)
             .toJson();
       default:
     }
-    return _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTraitToJson(
+    return _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTraitToJson(
         this);
   }
 }
 
 @JsonSerializable(explicitToJson: true)
-class MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device
+class MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device
     with EquatableMixin {
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device();
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device();
 
-  factory MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device.fromJson(
+  factory MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device.fromJson(
           Map<String, dynamic> json) =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$DeviceFromJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$DeviceFromJson(
           json);
 
-  String id;
-
-  List<MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device$DeviceTrait>
+  List<MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait>
       traits;
 
   @override
-  List<Object> get props => [id, traits];
+  List<Object> get props => [traits];
   Map<String, dynamic> toJson() =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponse$DeviceToJson(
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$DeviceToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class MakeLockUnlockActionRequest$Mutation$CreateActionResponse
+class MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse
     with EquatableMixin {
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse();
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse();
 
-  factory MakeLockUnlockActionRequest$Mutation$CreateActionResponse.fromJson(
+  factory MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse.fromJson(
           Map<String, dynamic> json) =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponseFromJson(json);
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponseFromJson(
+          json);
 
   String actionId;
 
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse$Device device;
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device device;
 
   @override
   List<Object> get props => [actionId, device];
   Map<String, dynamic> toJson() =>
-      _$MakeLockUnlockActionRequest$Mutation$CreateActionResponseToJson(this);
+      _$MakeSetTargetTemperatureRequest$Mutation$CreateActionResponseToJson(
+          this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class MakeLockUnlockActionRequest$Mutation with EquatableMixin {
-  MakeLockUnlockActionRequest$Mutation();
+class MakeSetTargetTemperatureRequest$Mutation with EquatableMixin {
+  MakeSetTargetTemperatureRequest$Mutation();
 
-  factory MakeLockUnlockActionRequest$Mutation.fromJson(
+  factory MakeSetTargetTemperatureRequest$Mutation.fromJson(
           Map<String, dynamic> json) =>
-      _$MakeLockUnlockActionRequest$MutationFromJson(json);
+      _$MakeSetTargetTemperatureRequest$MutationFromJson(json);
 
-  MakeLockUnlockActionRequest$Mutation$CreateActionResponse
-      actionLockUnlockLockUnlock;
+  MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse
+      actionThermostatSettingSetTargetTemperature;
 
   @override
-  List<Object> get props => [actionLockUnlockLockUnlock];
+  List<Object> get props => [actionThermostatSettingSetTargetTemperature];
   Map<String, dynamic> toJson() =>
-      _$MakeLockUnlockActionRequest$MutationToJson(this);
+      _$MakeSetTargetTemperatureRequest$MutationToJson(this);
 }
 
+enum ThermostatMode {
+  @JsonValue('OFF')
+  off,
+  @JsonValue('AUTO')
+  auto,
+  @JsonValue('HEAT')
+  heat,
+  @JsonValue('COOL')
+  cool,
+  @JsonValue('FANONLY')
+  fanonly,
+  @JsonValue('DEHUMIDIFY')
+  dehumidify,
+  @JsonValue('AIRFLOW')
+  airflow,
+  @JsonValue('ARTEMIS_UNKNOWN')
+  artemisUnknown,
+}
+enum FanMode {
+  @JsonValue('ON')
+  kw$ON,
+  @JsonValue('AUTO')
+  auto,
+  @JsonValue('CIRCULATE')
+  circulate,
+  @JsonValue('SWAY')
+  sway,
+  @JsonValue('WIND')
+  wind,
+  @JsonValue('HEALTH')
+  health,
+  @JsonValue('HUMIDITY')
+  humidity,
+  @JsonValue('ECO')
+  eco,
+  @JsonValue('ENERGY')
+  energy,
+  @JsonValue('FRESH')
+  fresh,
+  @JsonValue('TASTE')
+  taste,
+  @JsonValue('LOW')
+  low,
+  @JsonValue('MEDIUM')
+  medium,
+  @JsonValue('HIGH')
+  high,
+  @JsonValue('ARTEMIS_UNKNOWN')
+  artemisUnknown,
+}
 enum TraitName {
   @JsonValue('BATTERY_LEVEL')
   batteryLevel,
@@ -258,37 +312,37 @@ enum TraitName {
 }
 
 @JsonSerializable(explicitToJson: true)
-class MakeLockUnlockActionRequestArguments extends JsonSerializable
+class MakeSetTargetTemperatureRequestArguments extends JsonSerializable
     with EquatableMixin {
-  MakeLockUnlockActionRequestArguments(
-      {@required this.deviceId, @required this.lock});
+  MakeSetTargetTemperatureRequestArguments(
+      {@required this.deviceId, @required this.targetTemperature});
 
   @override
-  factory MakeLockUnlockActionRequestArguments.fromJson(
+  factory MakeSetTargetTemperatureRequestArguments.fromJson(
           Map<String, dynamic> json) =>
-      _$MakeLockUnlockActionRequestArgumentsFromJson(json);
+      _$MakeSetTargetTemperatureRequestArgumentsFromJson(json);
 
   final String deviceId;
 
-  final bool lock;
+  final double targetTemperature;
 
   @override
-  List<Object> get props => [deviceId, lock];
+  List<Object> get props => [deviceId, targetTemperature];
   @override
   Map<String, dynamic> toJson() =>
-      _$MakeLockUnlockActionRequestArgumentsToJson(this);
+      _$MakeSetTargetTemperatureRequestArgumentsToJson(this);
 }
 
-class MakeLockUnlockActionRequestMutation extends GraphQLQuery<
-    MakeLockUnlockActionRequest$Mutation,
-    MakeLockUnlockActionRequestArguments> {
-  MakeLockUnlockActionRequestMutation({this.variables});
+class MakeSetTargetTemperatureRequestMutation extends GraphQLQuery<
+    MakeSetTargetTemperatureRequest$Mutation,
+    MakeSetTargetTemperatureRequestArguments> {
+  MakeSetTargetTemperatureRequestMutation({this.variables});
 
   @override
   final DocumentNode document = DocumentNode(definitions: [
     OperationDefinitionNode(
         type: OperationType.mutation,
-        name: NameNode(value: 'makeLockUnlockActionRequest'),
+        name: NameNode(value: 'makeSetTargetTemperatureRequest'),
         variableDefinitions: [
           VariableDefinitionNode(
               variable: VariableNode(name: NameNode(value: 'deviceId')),
@@ -296,24 +350,27 @@ class MakeLockUnlockActionRequestMutation extends GraphQLQuery<
               defaultValue: DefaultValueNode(value: null),
               directives: []),
           VariableDefinitionNode(
-              variable: VariableNode(name: NameNode(value: 'lock')),
+              variable:
+                  VariableNode(name: NameNode(value: 'targetTemperature')),
               type: NamedTypeNode(
-                  name: NameNode(value: 'Boolean'), isNonNull: true),
+                  name: NameNode(value: 'Float'), isNonNull: true),
               defaultValue: DefaultValueNode(value: null),
               directives: [])
         ],
         directives: [],
         selectionSet: SelectionSetNode(selections: [
           FieldNode(
-              name: NameNode(value: 'actionLockUnlockLockUnlock'),
+              name: NameNode(
+                  value: 'actionThermostatSettingSetTargetTemperature'),
               alias: null,
               arguments: [
                 ArgumentNode(
                     name: NameNode(value: 'deviceId'),
                     value: VariableNode(name: NameNode(value: 'deviceId'))),
                 ArgumentNode(
-                    name: NameNode(value: 'lock'),
-                    value: VariableNode(name: NameNode(value: 'lock')))
+                    name: NameNode(value: 'targetTemperature'),
+                    value: VariableNode(
+                        name: NameNode(value: 'targetTemperature')))
               ],
               directives: [],
               selectionSet: SelectionSetNode(selections: [
@@ -329,12 +386,6 @@ class MakeLockUnlockActionRequestMutation extends GraphQLQuery<
                     arguments: [],
                     directives: [],
                     selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'id'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
                       FieldNode(
                           name: NameNode(value: 'traits'),
                           alias: null,
@@ -363,7 +414,8 @@ class MakeLockUnlockActionRequestMutation extends GraphQLQuery<
                                 typeCondition: TypeConditionNode(
                                     on: NamedTypeNode(
                                         name: NameNode(
-                                            value: 'LockUnlockDeviceTrait'),
+                                            value:
+                                                'ThermostatSettingDeviceTrait'),
                                         isNonNull: false)),
                                 directives: [],
                                 selectionSet: SelectionSetNode(selections: [
@@ -376,7 +428,15 @@ class MakeLockUnlockActionRequestMutation extends GraphQLQuery<
                                           SelectionSetNode(selections: [
                                         FieldNode(
                                             name: NameNode(
-                                                value: 'supportsIsJammed'),
+                                                value:
+                                                    'availableThermostatModes'),
+                                            alias: null,
+                                            arguments: [],
+                                            directives: [],
+                                            selectionSet: null),
+                                        FieldNode(
+                                            name: NameNode(
+                                                value: 'availableFanModes'),
                                             alias: null,
                                             arguments: [],
                                             directives: [],
@@ -390,7 +450,8 @@ class MakeLockUnlockActionRequestMutation extends GraphQLQuery<
                                       selectionSet:
                                           SelectionSetNode(selections: [
                                         FieldNode(
-                                            name: NameNode(value: 'isLocked'),
+                                            name: NameNode(
+                                                value: 'targetTemperature'),
                                             alias: null,
                                             arguments: [],
                                             directives: [],
@@ -471,14 +532,14 @@ class MakeLockUnlockActionRequestMutation extends GraphQLQuery<
   ]);
 
   @override
-  final String operationName = 'makeLockUnlockActionRequest';
+  final String operationName = 'makeSetTargetTemperatureRequest';
 
   @override
-  final MakeLockUnlockActionRequestArguments variables;
+  final MakeSetTargetTemperatureRequestArguments variables;
 
   @override
   List<Object> get props => [document, operationName, variables];
   @override
-  MakeLockUnlockActionRequest$Mutation parse(Map<String, dynamic> json) =>
-      MakeLockUnlockActionRequest$Mutation.fromJson(json);
+  MakeSetTargetTemperatureRequest$Mutation parse(Map<String, dynamic> json) =>
+      MakeSetTargetTemperatureRequest$Mutation.fromJson(json);
 }

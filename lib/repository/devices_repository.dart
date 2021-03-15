@@ -4,6 +4,7 @@ import 'package:yonomi_platform_sdk/graphql/device_query.graphql.dart';
 import 'package:yonomi_platform_sdk/graphql/devices_query.graphql.dart'
     as devices;
 import 'package:yonomi_platform_sdk/graphql/lock_unlock_mutation.graphql.dart';
+import 'package:yonomi_platform_sdk/graphql/thermostat/set_point_mutation.dart';
 import 'package:yonomi_platform_sdk/request/request.dart';
 
 import 'artemis_client.dart';
@@ -70,6 +71,15 @@ class DevicesRepository {
         variables: MakeLockUnlockActionRequestArguments(
             deviceId: id, lock: lockUnlock));
     await client.execute(actionQuery);
+  }
+
+  static Future<void> setPointThermostat(
+      Request request, String id, double temperature) async {
+    ArtemisClient client = ArtemisClientCreator.create(request);
+    final actionQuery = MakeSetTargetTemperatureRequestMutation(
+        variables: MakeSetTargetTemperatureRequestArguments(
+            deviceId: id, targetTemperature: temperature));
+    final setPointResult = await client.execute(actionQuery);
   }
 }
 
