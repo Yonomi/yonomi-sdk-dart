@@ -29,8 +29,27 @@ class DevicesRepository {
             device.node.updatedAt,
             device.node.traits
                 .where((trait) =>
-                    trait.name.toString().toLowerCase().contains('lockunlock'))
+                    trait.name
+                        .toString()
+                        .toLowerCase()
+                        .contains('lockunlock') ||
+                    trait.name
+                        .toString()
+                        .toLowerCase()
+                        .contains('thermostatsetting'))
                 .map((trait) {
+              if (trait.name
+                  .toString()
+                  .toLowerCase()
+                  .contains('thermostatsetting')) {
+                return ThermostatTrait(
+                    'thermostatSetting',
+                    TargetTemperature((trait as dynamic)
+                        ?.state
+                        ?.targetTemperature
+                        ?.reported
+                        ?.value));
+              }
               return LockUnlockTrait(
                   'lockUnlock',
                   IsLocked(
@@ -61,6 +80,38 @@ class DevicesRepository {
             .map((trait) {
           return LockUnlockTrait('lockUnlock',
               IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value));
+        }).toList());
+  }
+
+  static Future<Device> getThermostatDetails(Request request, String id) async {
+    ArtemisClient client = ArtemisClientCreator.create(request);
+    final deviceQuery =
+        GetDeviceQuery(variables: GetDeviceArguments(deviceId: id));
+    final deviceResponse = await client.execute(deviceQuery);
+    return Device(
+        deviceResponse.data.device.id,
+        deviceResponse.data.device.displayName,
+        deviceResponse.data.device.description,
+        deviceResponse.data.device.manufacturerName,
+        deviceResponse.data.device.model,
+        deviceResponse.data.device.firmwareVersion,
+        deviceResponse.data.device.softwareVersion,
+        deviceResponse.data.device.serialNumber,
+        deviceResponse.data.device.createdAt,
+        deviceResponse.data.device.updatedAt,
+        deviceResponse.data.device.traits
+            .where((trait) => trait.name
+                .toString()
+                .toLowerCase()
+                .contains('thermostatsetting'))
+            .map((trait) {
+          return ThermostatTrait(
+              'thermostatSetting',
+              TargetTemperature((trait as dynamic)
+                  ?.state
+                  ?.targetTemperature
+                  ?.reported
+                  ?.value));
         }).toList());
   }
 
@@ -128,6 +179,14 @@ class IsLocked extends State<bool> {
   IsLocked(bool value) : super('LockUnlock', value);
 }
 
+class TargetTemperature extends State<double> {
+  TargetTemperature(double value) : super('TargetTemperature', value);
+}
+
 class LockUnlockTrait extends Trait {
   LockUnlockTrait(String name, State state) : super(name, state);
+}
+
+class ThermostatTrait extends Trait {
+  ThermostatTrait(String name, State state) : super(name, state);
 }
