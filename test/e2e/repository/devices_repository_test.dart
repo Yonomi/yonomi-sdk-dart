@@ -2,14 +2,17 @@ import 'dart:io';
 
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/config.dart';
-import 'package:yonomi_platform_sdk/repository/devices_repository.dart';
+import 'package:yonomi_platform_sdk/graphql/devices/thermostat/thermostat_queries.dart';
+import 'package:yonomi_platform_sdk/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/repository/devices/lock_repository.dart';
+import 'package:yonomi_platform_sdk/repository/devices/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
 
 String thermostatUrl =
     'https://dhapuogzxl.execute-api.us-east-1.amazonaws.com/stg/graphql?session=dxEcobee';
 String thermostatId = 'fb085508-59cd-404a-8130-78f201afb10e';
 String thermostatBearer =
-    'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODExYzMxNS1kMGM0LTQ4YTEtOWQwZi04NzdkMjIyYzk1NTYiLCJpc3MiOiIzYWE5NTFlYi0yZDFhLTQ0Y2EtOWZhMi1iZWM2M2Y4ODFjNjUiLCJpYXQiOjE2MTU4NDM3MjYsImV4cCI6MTYxNTkzMDEyNn0.F601SvtdD7wP553ZCAjYsgmdBOs5PMBT_9qXXTqEhaLMmiv2mDNatyHSBoCfjFAW0m5yViU8-Y4r21kKtu9-TGWXou4mpp_uKOgiu_An9rdZJlph6N_OGBA0xia7MmXL0_s9sqnq5-wyknsJILlreb5dsJbSUY5qkhQsWS3PwJxDnNDpOr79R5VGD7OSSG8TShdA2J4zUpim_SdpHy5Ho_0jHHYzVvSOMZQ3xh_alOpuFTUWuM01u51T6gm7Om9mWgT2nJ4i9bFSENUrEnVKP1WFM9toAorWWJHJQ6swOjkWw_9YvVIZDPmpMlbeaUQSftSeKhg69CXxUoDu0KY7mQ';
+    'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODExYzMxNS1kMGM0LTQ4YTEtOWQwZi04NzdkMjIyYzk1NTYiLCJpc3MiOiIzYWE5NTFlYi0yZDFhLTQ0Y2EtOWZhMi1iZWM2M2Y4ODFjNjUiLCJpYXQiOjE2MTU5Nzk1NzQsImV4cCI6MTYxNjA2NTk3NH0.8e0AE_GL6OMYnCesYI1jofblWrL35h0pJDZqhFc1ay7BTyUyyzFHzBZR1-fBHDL4fM-E2ThvCWJSC-2R51pmyDY4hYvKjWJXaN1qjeecUbjevCMlCtnGmXgxWxxWDdwr2XDOJTihCBXLR8YEw4kGW6fbM6UqFOT4MmlcE9uEmbE8-Q1B5ScnwStABKhLDzKYS1pAOiE9xVM_S-MBojOJmC-p8nLB0OxSeUeHfGEsunpZmdvqAIG_wHFVEAaL2tgkK42uEQaETBIMebqXxLm5NU-u22devlfDxjhP6iQLFmSaWpwfThaorRwTdZbqKYPUO-iQ5dPe4djinEZ81WowIw';
 void main() {
   final request = yoRequest.Request(
       CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${CONFIG.TOKEN}'});
@@ -35,14 +38,25 @@ void main() {
   });
 
   test('deviceAction lock executes as expected', () async {
-    await DevicesRepository.sendLockUnlockAction(
+    await LockRepository.sendLockUnlockAction(
         request, '2f69db9b-2801-4410-ac73-9abbae05b9e5', false);
     expect(true, isTrue);
   });
 
   test('setPoint sets thermostat action', () async {
-    final setThermostat = await DevicesRepository.setPointThermostat(
+    final setThermostat = await ThermostatRepository.setPointThermostat(
         thermostatRequest, thermostatId, 22);
+    expect(true, isTrue);
+  });
+
+  test('setFanMode sets fanmode', () async {
+    final setThermostat = await ThermostatRepository.setPointThermostat(
+        thermostatRequest, thermostatId, 22);
+    expect(true, isTrue);
+  });
+  test('setFanMode sets fan mode', () async {
+    final setFanMode = await ThermostatRepository.setMode(
+        thermostatRequest, thermostatId, ThermostatMode.heat);
     expect(true, isTrue);
   });
 }

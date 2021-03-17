@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'set_point_mutation.graphql.dart';
+part of 'thermostat_queries.graphql.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -408,6 +408,333 @@ Map<String, dynamic> _$MakeSetTargetTemperatureRequest$MutationToJson(
           instance.actionThermostatSettingSetTargetTemperature?.toJson(),
     };
 
+MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingPropertiesFromJson(
+        Map<String, dynamic> json) {
+  return MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties()
+    ..$$typename = json['__typename'] as String
+    ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
+        unknownValue: TraitName.artemisUnknown)
+    ..instance = json['instance'] as String
+    ..properties = json['properties'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
+            .fromJson(json['properties'] as Map<String, dynamic>)
+    ..state = json['state'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
+            .fromJson(json['state'] as Map<String, dynamic>)
+    ..availableThermostatModes = (json['availableThermostatModes'] as List)
+        ?.map((e) => _$enumDecodeNullable(_$ThermostatModeEnumMap, e,
+            unknownValue: ThermostatMode.artemisUnknown))
+        ?.toList()
+    ..availableFanModes = (json['availableFanModes'] as List)
+        ?.map(
+            (e) => _$enumDecodeNullable(_$FanModeEnumMap, e, unknownValue: FanMode.artemisUnknown))
+        ?.toList();
+}
+
+Map<String, dynamic>
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingPropertiesToJson(
+            MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
+                instance) =>
+        <String, dynamic>{
+          '__typename': instance.$$typename,
+          'name': _$TraitNameEnumMap[instance.name],
+          'instance': instance.instance,
+          'properties': instance.properties?.toJson(),
+          'state': instance.state?.toJson(),
+          'availableThermostatModes': instance.availableThermostatModes
+              ?.map((e) => _$ThermostatModeEnumMap[e])
+              ?.toList(),
+          'availableFanModes': instance.availableFanModes
+              ?.map((e) => _$FanModeEnumMap[e])
+              ?.toList(),
+        };
+
+MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedModeFromJson(
+        Map<String, dynamic> json) {
+  return MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode()
+    ..$$typename = json['__typename'] as String
+    ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
+        unknownValue: TraitName.artemisUnknown)
+    ..instance = json['instance'] as String
+    ..properties = json['properties'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties.fromJson(
+            json['properties'] as Map<String, dynamic>)
+    ..state = json['state'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState.fromJson(
+            json['state'] as Map<String, dynamic>)
+    ..mode = json['mode'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField.fromJson(
+            json['mode'] as Map<String, dynamic>)
+    ..reported = json['reported'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode
+            .fromJson(json['reported'] as Map<String, dynamic>)
+    ..desired = json['desired'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode.fromJson(json['desired'] as Map<String, dynamic>)
+    ..value = _$enumDecodeNullable(_$ThermostatModeEnumMap, json['value'], unknownValue: ThermostatMode.artemisUnknown)
+    ..sampledAt = json['sampledAt'] == null ? null : DateTime.parse(json['sampledAt'] as String)
+    ..createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt'] as String);
+}
+
+Map<String, dynamic>
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedModeToJson(
+            MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode
+                instance) =>
+        <String, dynamic>{
+          '__typename': instance.$$typename,
+          'name': _$TraitNameEnumMap[instance.name],
+          'instance': instance.instance,
+          'properties': instance.properties?.toJson(),
+          'state': instance.state?.toJson(),
+          'mode': instance.mode?.toJson(),
+          'reported': instance.reported?.toJson(),
+          'desired': instance.desired?.toJson(),
+          'value': _$ThermostatModeEnumMap[instance.value],
+          'sampledAt': instance.sampledAt?.toIso8601String(),
+          'createdAt': instance.createdAt?.toIso8601String(),
+        };
+
+MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredModeFromJson(
+        Map<String, dynamic> json) {
+  return MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode()
+    ..$$typename = json['__typename'] as String
+    ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
+        unknownValue: TraitName.artemisUnknown)
+    ..instance = json['instance'] as String
+    ..properties = json['properties'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties.fromJson(
+            json['properties'] as Map<String, dynamic>)
+    ..state = json['state'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState.fromJson(
+            json['state'] as Map<String, dynamic>)
+    ..mode = json['mode'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField.fromJson(
+            json['mode'] as Map<String, dynamic>)
+    ..reported = json['reported'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode
+            .fromJson(json['reported'] as Map<String, dynamic>)
+    ..desired = json['desired'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode.fromJson(json['desired'] as Map<String, dynamic>)
+    ..value = _$enumDecodeNullable(_$ThermostatModeEnumMap, json['value'], unknownValue: ThermostatMode.artemisUnknown)
+    ..delta = _$enumDecodeNullable(_$ThermostatModeEnumMap, json['delta'], unknownValue: ThermostatMode.artemisUnknown)
+    ..updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt'] as String);
+}
+
+Map<String, dynamic>
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredModeToJson(
+            MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode
+                instance) =>
+        <String, dynamic>{
+          '__typename': instance.$$typename,
+          'name': _$TraitNameEnumMap[instance.name],
+          'instance': instance.instance,
+          'properties': instance.properties?.toJson(),
+          'state': instance.state?.toJson(),
+          'mode': instance.mode?.toJson(),
+          'reported': instance.reported?.toJson(),
+          'desired': instance.desired?.toJson(),
+          'value': _$ThermostatModeEnumMap[instance.value],
+          'delta': _$ThermostatModeEnumMap[instance.delta],
+          'updatedAt': instance.updatedAt?.toIso8601String(),
+        };
+
+MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeFieldFromJson(
+        Map<String, dynamic> json) {
+  return MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField()
+    ..$$typename = json['__typename'] as String
+    ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
+        unknownValue: TraitName.artemisUnknown)
+    ..instance = json['instance'] as String
+    ..properties = json['properties'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties.fromJson(
+            json['properties'] as Map<String, dynamic>)
+    ..state = json['state'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState.fromJson(
+            json['state'] as Map<String, dynamic>)
+    ..mode = json['mode'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField.fromJson(
+            json['mode'] as Map<String, dynamic>)
+    ..reported = json['reported'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode
+            .fromJson(json['reported'] as Map<String, dynamic>)
+    ..desired = json['desired'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode.fromJson(json['desired'] as Map<String, dynamic>);
+}
+
+Map<String, dynamic>
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeFieldToJson(
+            MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField
+                instance) =>
+        <String, dynamic>{
+          '__typename': instance.$$typename,
+          'name': _$TraitNameEnumMap[instance.name],
+          'instance': instance.instance,
+          'properties': instance.properties?.toJson(),
+          'state': instance.state?.toJson(),
+          'mode': instance.mode?.toJson(),
+          'reported': instance.reported?.toJson(),
+          'desired': instance.desired?.toJson(),
+        };
+
+MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingStateFromJson(
+        Map<String, dynamic> json) {
+  return MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState()
+    ..$$typename = json['__typename'] as String
+    ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
+        unknownValue: TraitName.artemisUnknown)
+    ..instance = json['instance'] as String
+    ..properties = json['properties'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
+            .fromJson(json['properties'] as Map<String, dynamic>)
+    ..state = json['state'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
+            .fromJson(json['state'] as Map<String, dynamic>)
+    ..mode = json['mode'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField
+            .fromJson(json['mode'] as Map<String, dynamic>);
+}
+
+Map<String, dynamic>
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingStateToJson(
+            MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
+                instance) =>
+        <String, dynamic>{
+          '__typename': instance.$$typename,
+          'name': _$TraitNameEnumMap[instance.name],
+          'instance': instance.instance,
+          'properties': instance.properties?.toJson(),
+          'state': instance.state?.toJson(),
+          'mode': instance.mode?.toJson(),
+        };
+
+MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTraitFromJson(
+        Map<String, dynamic> json) {
+  return MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait()
+    ..$$typename = json['__typename'] as String
+    ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
+        unknownValue: TraitName.artemisUnknown)
+    ..instance = json['instance'] as String
+    ..properties = json['properties'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
+            .fromJson(json['properties'] as Map<String, dynamic>)
+    ..state = json['state'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
+            .fromJson(json['state'] as Map<String, dynamic>);
+}
+
+Map<String, dynamic>
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTraitToJson(
+            MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait
+                instance) =>
+        <String, dynamic>{
+          '__typename': instance.$$typename,
+          'name': _$TraitNameEnumMap[instance.name],
+          'instance': instance.instance,
+          'properties': instance.properties?.toJson(),
+          'state': instance.state?.toJson(),
+        };
+
+MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTraitFromJson(
+        Map<String, dynamic> json) {
+  return MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait()
+    ..$$typename = json['__typename'] as String
+    ..name = _$enumDecodeNullable(_$TraitNameEnumMap, json['name'],
+        unknownValue: TraitName.artemisUnknown)
+    ..instance = json['instance'] as String;
+}
+
+Map<String, dynamic>
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTraitToJson(
+            MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait
+                instance) =>
+        <String, dynamic>{
+          '__typename': instance.$$typename,
+          'name': _$TraitNameEnumMap[instance.name],
+          'instance': instance.instance,
+        };
+
+MakeSetModeRequest$Mutation$CreateActionResponse$Device
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$DeviceFromJson(
+        Map<String, dynamic> json) {
+  return MakeSetModeRequest$Mutation$CreateActionResponse$Device()
+    ..traits = (json['traits'] as List)
+        ?.map((e) => e == null
+            ? null
+            : MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait
+                .fromJson(e as Map<String, dynamic>))
+        ?.toList();
+}
+
+Map<String, dynamic>
+    _$MakeSetModeRequest$Mutation$CreateActionResponse$DeviceToJson(
+            MakeSetModeRequest$Mutation$CreateActionResponse$Device instance) =>
+        <String, dynamic>{
+          'traits': instance.traits?.map((e) => e?.toJson())?.toList(),
+        };
+
+MakeSetModeRequest$Mutation$CreateActionResponse
+    _$MakeSetModeRequest$Mutation$CreateActionResponseFromJson(
+        Map<String, dynamic> json) {
+  return MakeSetModeRequest$Mutation$CreateActionResponse()
+    ..actionId = json['actionId'] as String
+    ..device = json['device'] == null
+        ? null
+        : MakeSetModeRequest$Mutation$CreateActionResponse$Device.fromJson(
+            json['device'] as Map<String, dynamic>);
+}
+
+Map<String, dynamic> _$MakeSetModeRequest$Mutation$CreateActionResponseToJson(
+        MakeSetModeRequest$Mutation$CreateActionResponse instance) =>
+    <String, dynamic>{
+      'actionId': instance.actionId,
+      'device': instance.device?.toJson(),
+    };
+
+MakeSetModeRequest$Mutation _$MakeSetModeRequest$MutationFromJson(
+    Map<String, dynamic> json) {
+  return MakeSetModeRequest$Mutation()
+    ..actionThermostatSettingSetMode =
+        json['actionThermostatSettingSetMode'] == null
+            ? null
+            : MakeSetModeRequest$Mutation$CreateActionResponse.fromJson(
+                json['actionThermostatSettingSetMode'] as Map<String, dynamic>);
+}
+
+Map<String, dynamic> _$MakeSetModeRequest$MutationToJson(
+        MakeSetModeRequest$Mutation instance) =>
+    <String, dynamic>{
+      'actionThermostatSettingSetMode':
+          instance.actionThermostatSettingSetMode?.toJson(),
+    };
+
 MakeSetTargetTemperatureRequestArguments
     _$MakeSetTargetTemperatureRequestArgumentsFromJson(
         Map<String, dynamic> json) {
@@ -422,4 +749,20 @@ Map<String, dynamic> _$MakeSetTargetTemperatureRequestArgumentsToJson(
     <String, dynamic>{
       'deviceId': instance.deviceId,
       'targetTemperature': instance.targetTemperature,
+    };
+
+MakeSetModeRequestArguments _$MakeSetModeRequestArgumentsFromJson(
+    Map<String, dynamic> json) {
+  return MakeSetModeRequestArguments(
+    deviceId: json['deviceId'] as String,
+    mode: _$enumDecodeNullable(_$ThermostatModeEnumMap, json['mode'],
+        unknownValue: ThermostatMode.artemisUnknown),
+  );
+}
+
+Map<String, dynamic> _$MakeSetModeRequestArgumentsToJson(
+        MakeSetModeRequestArguments instance) =>
+    <String, dynamic>{
+      'deviceId': instance.deviceId,
+      'mode': _$ThermostatModeEnumMap[instance.mode],
     };

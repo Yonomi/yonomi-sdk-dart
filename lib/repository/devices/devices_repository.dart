@@ -1,18 +1,17 @@
 import 'package:artemis/client.dart';
-import 'package:yonomi_platform_sdk/graphql/action_mutation.dart';
-import 'package:yonomi_platform_sdk/graphql/device_query.graphql.dart';
-import 'package:yonomi_platform_sdk/graphql/devices_query.graphql.dart'
-    as devices;
-import 'package:yonomi_platform_sdk/graphql/lock_unlock_mutation.graphql.dart';
-import 'package:yonomi_platform_sdk/graphql/thermostat/set_point_mutation.dart';
+import 'package:yonomi_platform_sdk/graphql/devices/device_query.dart';
+import 'package:yonomi_platform_sdk/graphql/devices/devices_query.dart';
+import 'package:yonomi_platform_sdk/graphql/devices/lock/lock_queries.dart';
+import 'package:yonomi_platform_sdk/graphql/devices/thermostat/thermostat_queries.dart';
+
 import 'package:yonomi_platform_sdk/request/request.dart';
 
-import 'artemis_client.dart';
+import '../artemis_client.dart';
 
 class DevicesRepository {
   static Future<List<Device>> getDevices(Request request) async {
     ArtemisClient client = ArtemisClientCreator.create(request);
-    final devicesQuery = devices.GetDevicesQuery();
+    final devicesQuery = GetDevicesQuery();
     final devicesResponse = await client.execute(devicesQuery);
 
     return devicesResponse.data.me.devices.edges
@@ -113,24 +112,6 @@ class DevicesRepository {
                   ?.reported
                   ?.value));
         }).toList());
-  }
-
-  static Future<void> sendLockUnlockAction(
-      Request request, String id, bool lockUnlock) async {
-    ArtemisClient client = ArtemisClientCreator.create(request);
-    final actionQuery = MakeLockUnlockActionRequestMutation(
-        variables: MakeLockUnlockActionRequestArguments(
-            deviceId: id, lock: lockUnlock));
-    await client.execute(actionQuery);
-  }
-
-  static Future<void> setPointThermostat(
-      Request request, String id, double temperature) async {
-    ArtemisClient client = ArtemisClientCreator.create(request);
-    final actionQuery = MakeSetTargetTemperatureRequestMutation(
-        variables: MakeSetTargetTemperatureRequestArguments(
-            deviceId: id, targetTemperature: temperature));
-    final setPointResult = await client.execute(actionQuery);
   }
 }
 

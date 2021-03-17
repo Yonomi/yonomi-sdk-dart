@@ -5,7 +5,7 @@ import 'package:artemis/artemis.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:equatable/equatable.dart';
 import 'package:gql/ast.dart';
-part 'set_point_mutation.graphql.g.dart';
+part 'thermostat_queries.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class MakeSetTargetTemperatureRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
@@ -244,6 +244,241 @@ class MakeSetTargetTemperatureRequest$Mutation with EquatableMixin {
   List<Object> get props => [actionThermostatSettingSetTargetTemperature];
   Map<String, dynamic> toJson() =>
       _$MakeSetTargetTemperatureRequest$MutationToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
+    extends MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait
+    with EquatableMixin {
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties();
+
+  factory MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties.fromJson(
+          Map<String, dynamic> json) =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingPropertiesFromJson(
+          json);
+
+  @JsonKey(unknownEnumValue: ThermostatMode.artemisUnknown)
+  List<ThermostatMode> availableThermostatModes;
+
+  @JsonKey(unknownEnumValue: FanMode.artemisUnknown)
+  List<FanMode> availableFanModes;
+
+  @override
+  List<Object> get props => [availableThermostatModes, availableFanModes];
+  Map<String, dynamic> toJson() =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingPropertiesToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode
+    extends MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField
+    with EquatableMixin {
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode();
+
+  factory MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode.fromJson(
+          Map<String, dynamic> json) =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedModeFromJson(
+          json);
+
+  @JsonKey(unknownEnumValue: ThermostatMode.artemisUnknown)
+  ThermostatMode value;
+
+  DateTime sampledAt;
+
+  DateTime createdAt;
+
+  @override
+  List<Object> get props => [value, sampledAt, createdAt];
+  Map<String, dynamic> toJson() =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedModeToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode
+    extends MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField
+    with EquatableMixin {
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode();
+
+  factory MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode.fromJson(
+          Map<String, dynamic> json) =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredModeFromJson(
+          json);
+
+  @JsonKey(unknownEnumValue: ThermostatMode.artemisUnknown)
+  ThermostatMode value;
+
+  @JsonKey(unknownEnumValue: ThermostatMode.artemisUnknown)
+  ThermostatMode delta;
+
+  DateTime updatedAt;
+
+  @override
+  List<Object> get props => [value, delta, updatedAt];
+  Map<String, dynamic> toJson() =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredModeToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField
+    extends MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
+    with EquatableMixin {
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField();
+
+  factory MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField.fromJson(
+          Map<String, dynamic> json) =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeFieldFromJson(
+          json);
+
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateReportedMode
+      reported;
+
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField$ThermostatSettingStateDesiredMode
+      desired;
+
+  @override
+  List<Object> get props => [reported, desired];
+  Map<String, dynamic> toJson() =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeFieldToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
+    extends MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait
+    with EquatableMixin {
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState();
+
+  factory MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState.fromJson(
+          Map<String, dynamic> json) =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingStateFromJson(
+          json);
+
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState$ThermostatSettingStateModeField
+      mode;
+
+  @override
+  List<Object> get props => [mode];
+  Map<String, dynamic> toJson() =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingStateToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait
+    extends MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait
+    with EquatableMixin {
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait();
+
+  factory MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait.fromJson(
+          Map<String, dynamic> json) =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTraitFromJson(
+          json);
+
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingProperties
+      properties;
+
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait$ThermostatSettingState
+      state;
+
+  @override
+  List<Object> get props => [properties, state];
+  Map<String, dynamic> toJson() =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTraitToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait
+    with EquatableMixin {
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait();
+
+  factory MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait.fromJson(
+      Map<String, dynamic> json) {
+    switch (json['__typename'].toString()) {
+      case r'ThermostatSettingDeviceTrait':
+        return MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait
+            .fromJson(json);
+      default:
+    }
+    return _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTraitFromJson(
+        json);
+  }
+
+  @JsonKey(name: '__typename')
+  String $$typename;
+
+  @JsonKey(unknownEnumValue: TraitName.artemisUnknown)
+  TraitName name;
+
+  String instance;
+
+  @override
+  List<Object> get props => [$$typename, name, instance];
+  Map<String, dynamic> toJson() {
+    switch ($$typename) {
+      case r'ThermostatSettingDeviceTrait':
+        return (this
+                as MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait$ThermostatSettingDeviceTrait)
+            .toJson();
+      default:
+    }
+    return _$MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTraitToJson(
+        this);
+  }
+}
+
+@JsonSerializable(explicitToJson: true)
+class MakeSetModeRequest$Mutation$CreateActionResponse$Device
+    with EquatableMixin {
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device();
+
+  factory MakeSetModeRequest$Mutation$CreateActionResponse$Device.fromJson(
+          Map<String, dynamic> json) =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$DeviceFromJson(json);
+
+  List<MakeSetModeRequest$Mutation$CreateActionResponse$Device$DeviceTrait>
+      traits;
+
+  @override
+  List<Object> get props => [traits];
+  Map<String, dynamic> toJson() =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponse$DeviceToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class MakeSetModeRequest$Mutation$CreateActionResponse with EquatableMixin {
+  MakeSetModeRequest$Mutation$CreateActionResponse();
+
+  factory MakeSetModeRequest$Mutation$CreateActionResponse.fromJson(
+          Map<String, dynamic> json) =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponseFromJson(json);
+
+  String actionId;
+
+  MakeSetModeRequest$Mutation$CreateActionResponse$Device device;
+
+  @override
+  List<Object> get props => [actionId, device];
+  Map<String, dynamic> toJson() =>
+      _$MakeSetModeRequest$Mutation$CreateActionResponseToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class MakeSetModeRequest$Mutation with EquatableMixin {
+  MakeSetModeRequest$Mutation();
+
+  factory MakeSetModeRequest$Mutation.fromJson(Map<String, dynamic> json) =>
+      _$MakeSetModeRequest$MutationFromJson(json);
+
+  MakeSetModeRequest$Mutation$CreateActionResponse
+      actionThermostatSettingSetMode;
+
+  @override
+  List<Object> get props => [actionThermostatSettingSetMode];
+  Map<String, dynamic> toJson() => _$MakeSetModeRequest$MutationToJson(this);
 }
 
 enum ThermostatMode {
@@ -542,4 +777,229 @@ class MakeSetTargetTemperatureRequestMutation extends GraphQLQuery<
   @override
   MakeSetTargetTemperatureRequest$Mutation parse(Map<String, dynamic> json) =>
       MakeSetTargetTemperatureRequest$Mutation.fromJson(json);
+}
+
+@JsonSerializable(explicitToJson: true)
+class MakeSetModeRequestArguments extends JsonSerializable with EquatableMixin {
+  MakeSetModeRequestArguments({@required this.deviceId, @required this.mode});
+
+  @override
+  factory MakeSetModeRequestArguments.fromJson(Map<String, dynamic> json) =>
+      _$MakeSetModeRequestArgumentsFromJson(json);
+
+  final String deviceId;
+
+  @JsonKey(unknownEnumValue: ThermostatMode.artemisUnknown)
+  final ThermostatMode mode;
+
+  @override
+  List<Object> get props => [deviceId, mode];
+  @override
+  Map<String, dynamic> toJson() => _$MakeSetModeRequestArgumentsToJson(this);
+}
+
+class MakeSetModeRequestMutation extends GraphQLQuery<
+    MakeSetModeRequest$Mutation, MakeSetModeRequestArguments> {
+  MakeSetModeRequestMutation({this.variables});
+
+  @override
+  final DocumentNode document = DocumentNode(definitions: [
+    OperationDefinitionNode(
+        type: OperationType.mutation,
+        name: NameNode(value: 'makeSetModeRequest'),
+        variableDefinitions: [
+          VariableDefinitionNode(
+              variable: VariableNode(name: NameNode(value: 'deviceId')),
+              type: NamedTypeNode(name: NameNode(value: 'ID'), isNonNull: true),
+              defaultValue: DefaultValueNode(value: null),
+              directives: []),
+          VariableDefinitionNode(
+              variable: VariableNode(name: NameNode(value: 'mode')),
+              type: NamedTypeNode(
+                  name: NameNode(value: 'ThermostatMode'), isNonNull: true),
+              defaultValue: DefaultValueNode(value: null),
+              directives: [])
+        ],
+        directives: [],
+        selectionSet: SelectionSetNode(selections: [
+          FieldNode(
+              name: NameNode(value: 'actionThermostatSettingSetMode'),
+              alias: null,
+              arguments: [
+                ArgumentNode(
+                    name: NameNode(value: 'deviceId'),
+                    value: VariableNode(name: NameNode(value: 'deviceId'))),
+                ArgumentNode(
+                    name: NameNode(value: 'mode'),
+                    value: VariableNode(name: NameNode(value: 'mode')))
+              ],
+              directives: [],
+              selectionSet: SelectionSetNode(selections: [
+                FieldNode(
+                    name: NameNode(value: 'actionId'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null),
+                FieldNode(
+                    name: NameNode(value: 'device'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: SelectionSetNode(selections: [
+                      FieldNode(
+                          name: NameNode(value: 'traits'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: '__typename'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'name'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'instance'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            InlineFragmentNode(
+                                typeCondition: TypeConditionNode(
+                                    on: NamedTypeNode(
+                                        name: NameNode(
+                                            value:
+                                                'ThermostatSettingDeviceTrait'),
+                                        isNonNull: false)),
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'properties'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet:
+                                          SelectionSetNode(selections: [
+                                        FieldNode(
+                                            name: NameNode(
+                                                value:
+                                                    'availableThermostatModes'),
+                                            alias: null,
+                                            arguments: [],
+                                            directives: [],
+                                            selectionSet: null),
+                                        FieldNode(
+                                            name: NameNode(
+                                                value: 'availableFanModes'),
+                                            alias: null,
+                                            arguments: [],
+                                            directives: [],
+                                            selectionSet: null)
+                                      ])),
+                                  FieldNode(
+                                      name: NameNode(value: 'state'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet:
+                                          SelectionSetNode(selections: [
+                                        FieldNode(
+                                            name: NameNode(value: 'mode'),
+                                            alias: null,
+                                            arguments: [],
+                                            directives: [],
+                                            selectionSet:
+                                                SelectionSetNode(selections: [
+                                              FieldNode(
+                                                  name: NameNode(
+                                                      value: 'reported'),
+                                                  alias: null,
+                                                  arguments: [],
+                                                  directives: [],
+                                                  selectionSet:
+                                                      SelectionSetNode(
+                                                          selections: [
+                                                        FieldNode(
+                                                            name: NameNode(
+                                                                value: 'value'),
+                                                            alias: null,
+                                                            arguments: [],
+                                                            directives: [],
+                                                            selectionSet: null),
+                                                        FieldNode(
+                                                            name: NameNode(
+                                                                value:
+                                                                    'sampledAt'),
+                                                            alias: null,
+                                                            arguments: [],
+                                                            directives: [],
+                                                            selectionSet: null),
+                                                        FieldNode(
+                                                            name: NameNode(
+                                                                value:
+                                                                    'createdAt'),
+                                                            alias: null,
+                                                            arguments: [],
+                                                            directives: [],
+                                                            selectionSet: null)
+                                                      ])),
+                                              FieldNode(
+                                                  name: NameNode(
+                                                      value: 'desired'),
+                                                  alias: null,
+                                                  arguments: [],
+                                                  directives: [],
+                                                  selectionSet:
+                                                      SelectionSetNode(
+                                                          selections: [
+                                                        FieldNode(
+                                                            name: NameNode(
+                                                                value: 'value'),
+                                                            alias: null,
+                                                            arguments: [],
+                                                            directives: [],
+                                                            selectionSet: null),
+                                                        FieldNode(
+                                                            name: NameNode(
+                                                                value: 'delta'),
+                                                            alias: null,
+                                                            arguments: [],
+                                                            directives: [],
+                                                            selectionSet: null),
+                                                        FieldNode(
+                                                            name: NameNode(
+                                                                value:
+                                                                    'updatedAt'),
+                                                            alias: null,
+                                                            arguments: [],
+                                                            directives: [],
+                                                            selectionSet: null)
+                                                      ]))
+                                            ]))
+                                      ]))
+                                ]))
+                          ]))
+                    ]))
+              ]))
+        ]))
+  ]);
+
+  @override
+  final String operationName = 'makeSetModeRequest';
+
+  @override
+  final MakeSetModeRequestArguments variables;
+
+  @override
+  List<Object> get props => [document, operationName, variables];
+  @override
+  MakeSetModeRequest$Mutation parse(Map<String, dynamic> json) =>
+      MakeSetModeRequest$Mutation.fromJson(json);
 }

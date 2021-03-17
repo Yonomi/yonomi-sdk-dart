@@ -3,12 +3,11 @@ library device;
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:yonomi_platform_sdk/graphql/devices/device_query.dart';
 import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
 import 'package:yonomi_platform_sdk/request/request.dart';
 import 'package:yonomi_platform_sdk/traits/actionQuery.dart';
 import 'package:yonomi_platform_sdk/traits/trait.dart';
-
-import 'graphql/device_query.dart';
 
 enum DeviceFields {
   id,

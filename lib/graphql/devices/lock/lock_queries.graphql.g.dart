@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'lock_unlock_mutation.graphql.dart';
+part of 'lock_queries.graphql.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

@@ -2,12 +2,12 @@ targets:
   $default:
     sources:
       - lib/**
-      - graphql/**
+      - queries/**
       - yp.schema.graphql
     builders:
       artemis:
         options:
-          fragments_glob: graphql/fragments/**.fragment.graphql
+          fragments_glob: queries/fragments/**.fragment.graphql
           scalar_mapping:
             - graphql_type: DateTime
               dart_type: DateTime
@@ -15,23 +15,20 @@ targets:
               dart_type: DateTime
           schema_mapping:
             - schema: yp.schema.graphql
-              queries_glob: graphql/user.query.graphql
-              output: lib/graphql/user_query.dart
+              queries_glob: queries/user/user.query.graphql
+              output: lib/graphql/user/user_query.dart
             - schema: yp.schema.graphql
-              queries_glob: graphql/device.query.graphql
-              output: lib/graphql/device_query.dart
+              queries_glob: queries/accounts/**.graphql
+              output: lib/graphql/accounts/account_queries.dart
             - schema: yp.schema.graphql
-              queries_glob: graphql/account.**.graphql
-              output: lib/graphql/account_queries.dart
+              queries_glob: queries/get_devices.graphql
+              output: lib/graphql/devices/devices_query.dart
             - schema: yp.schema.graphql
-              queries_glob: graphql/action.graphql
-              output: lib/graphql/action_mutation.dart
+              queries_glob: queries/get_device.graphql
+              output: lib/graphql/devices/device_query.dart
             - schema: yp.schema.graphql
-              queries_glob: graphql/devices.query.graphql
-              output: lib/graphql/devices_query.dart
+              queries_glob: queries/devices/lock/**.graphql
+              output: lib/graphql/devices/lock/lock_queries.dart
             - schema: yp.schema.graphql
-              queries_glob: graphql/lock_unlock.mutation.graphql
-              output: lib/graphql/lock_unlock_mutation.dart
-            - schema: yp.schema.graphql
-              queries_glob: graphql/set_point.mutation.graphql
-              output: lib/graphql/thermostat/set_point_mutation.dart
+              queries_glob: queries/devices/thermostat/**.graphql
+              output: lib/graphql/devices/thermostat/thermostat_queries.dart
