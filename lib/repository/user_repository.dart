@@ -1,5 +1,5 @@
 import 'package:artemis/client.dart';
-import 'package:yonomi_platform_sdk/graphql/user_query.dart';
+import 'package:yonomi_platform_sdk/graphql/user/user_query.dart';
 import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
 import 'package:yonomi_platform_sdk/request/request.dart';
 

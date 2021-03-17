@@ -8,56 +8,6 @@ import 'package:gql/ast.dart';
 part 'account_queries.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User
-    with EquatableMixin {
-  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User();
-
-  factory RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User.fromJson(
-          Map<String, dynamic> json) =>
-      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserFromJson(
-          json);
-
-  String id;
-
-  @override
-  List<Object> get props => [id];
-  Map<String, dynamic> toJson() =>
-      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse
-    with EquatableMixin {
-  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse();
-
-  factory RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse.fromJson(
-          Map<String, dynamic> json) =>
-      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseFromJson(json);
-
-  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User me;
-
-  @override
-  List<Object> get props => [me];
-  Map<String, dynamic> toJson() =>
-      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class RemoveLinkedAccount$Mutation with EquatableMixin {
-  RemoveLinkedAccount$Mutation();
-
-  factory RemoveLinkedAccount$Mutation.fromJson(Map<String, dynamic> json) =>
-      _$RemoveLinkedAccount$MutationFromJson(json);
-
-  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse removeLinkedAccount;
-
-  @override
-  List<Object> get props => [removeLinkedAccount];
-  Map<String, dynamic> toJson() => _$RemoveLinkedAccount$MutationToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
 class GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$Integration
     with EquatableMixin {
   GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$Integration();
@@ -301,6 +251,56 @@ class GetAllIntegrations$Query with EquatableMixin {
   Map<String, dynamic> toJson() => _$GetAllIntegrations$QueryToJson(this);
 }
 
+@JsonSerializable(explicitToJson: true)
+class RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User
+    with EquatableMixin {
+  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User();
+
+  factory RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User.fromJson(
+          Map<String, dynamic> json) =>
+      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserFromJson(
+          json);
+
+  String id;
+
+  @override
+  List<Object> get props => [id];
+  Map<String, dynamic> toJson() =>
+      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse
+    with EquatableMixin {
+  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse();
+
+  factory RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse.fromJson(
+          Map<String, dynamic> json) =>
+      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseFromJson(json);
+
+  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User me;
+
+  @override
+  List<Object> get props => [me];
+  Map<String, dynamic> toJson() =>
+      _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class RemoveLinkedAccount$Mutation with EquatableMixin {
+  RemoveLinkedAccount$Mutation();
+
+  factory RemoveLinkedAccount$Mutation.fromJson(Map<String, dynamic> json) =>
+      _$RemoveLinkedAccount$MutationFromJson(json);
+
+  RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse removeLinkedAccount;
+
+  @override
+  List<Object> get props => [removeLinkedAccount];
+  Map<String, dynamic> toJson() => _$RemoveLinkedAccount$MutationToJson(this);
+}
+
 enum LinkedAccountAuthorizedStatus {
   @JsonValue('AUTHORIZED')
   authorized,
@@ -308,82 +308,6 @@ enum LinkedAccountAuthorizedStatus {
   notAuthorized,
   @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
-}
-
-@JsonSerializable(explicitToJson: true)
-class RemoveLinkedAccountArguments extends JsonSerializable
-    with EquatableMixin {
-  RemoveLinkedAccountArguments({@required this.linkedAccountId});
-
-  @override
-  factory RemoveLinkedAccountArguments.fromJson(Map<String, dynamic> json) =>
-      _$RemoveLinkedAccountArgumentsFromJson(json);
-
-  final String linkedAccountId;
-
-  @override
-  List<Object> get props => [linkedAccountId];
-  @override
-  Map<String, dynamic> toJson() => _$RemoveLinkedAccountArgumentsToJson(this);
-}
-
-class RemoveLinkedAccountMutation extends GraphQLQuery<
-    RemoveLinkedAccount$Mutation, RemoveLinkedAccountArguments> {
-  RemoveLinkedAccountMutation({this.variables});
-
-  @override
-  final DocumentNode document = DocumentNode(definitions: [
-    OperationDefinitionNode(
-        type: OperationType.mutation,
-        name: NameNode(value: 'removeLinkedAccount'),
-        variableDefinitions: [
-          VariableDefinitionNode(
-              variable: VariableNode(name: NameNode(value: 'linkedAccountId')),
-              type: NamedTypeNode(name: NameNode(value: 'ID'), isNonNull: true),
-              defaultValue: DefaultValueNode(value: null),
-              directives: [])
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
-          FieldNode(
-              name: NameNode(value: 'removeLinkedAccount'),
-              alias: null,
-              arguments: [
-                ArgumentNode(
-                    name: NameNode(value: 'linkedAccountId'),
-                    value:
-                        VariableNode(name: NameNode(value: 'linkedAccountId')))
-              ],
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'me'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'id'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null)
-                    ]))
-              ]))
-        ]))
-  ]);
-
-  @override
-  final String operationName = 'removeLinkedAccount';
-
-  @override
-  final RemoveLinkedAccountArguments variables;
-
-  @override
-  List<Object> get props => [document, operationName, variables];
-  @override
-  RemoveLinkedAccount$Mutation parse(Map<String, dynamic> json) =>
-      RemoveLinkedAccount$Mutation.fromJson(json);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -623,4 +547,80 @@ class GetAllIntegrationsQuery
   @override
   GetAllIntegrations$Query parse(Map<String, dynamic> json) =>
       GetAllIntegrations$Query.fromJson(json);
+}
+
+@JsonSerializable(explicitToJson: true)
+class RemoveLinkedAccountArguments extends JsonSerializable
+    with EquatableMixin {
+  RemoveLinkedAccountArguments({@required this.linkedAccountId});
+
+  @override
+  factory RemoveLinkedAccountArguments.fromJson(Map<String, dynamic> json) =>
+      _$RemoveLinkedAccountArgumentsFromJson(json);
+
+  final String linkedAccountId;
+
+  @override
+  List<Object> get props => [linkedAccountId];
+  @override
+  Map<String, dynamic> toJson() => _$RemoveLinkedAccountArgumentsToJson(this);
+}
+
+class RemoveLinkedAccountMutation extends GraphQLQuery<
+    RemoveLinkedAccount$Mutation, RemoveLinkedAccountArguments> {
+  RemoveLinkedAccountMutation({this.variables});
+
+  @override
+  final DocumentNode document = DocumentNode(definitions: [
+    OperationDefinitionNode(
+        type: OperationType.mutation,
+        name: NameNode(value: 'removeLinkedAccount'),
+        variableDefinitions: [
+          VariableDefinitionNode(
+              variable: VariableNode(name: NameNode(value: 'linkedAccountId')),
+              type: NamedTypeNode(name: NameNode(value: 'ID'), isNonNull: true),
+              defaultValue: DefaultValueNode(value: null),
+              directives: [])
+        ],
+        directives: [],
+        selectionSet: SelectionSetNode(selections: [
+          FieldNode(
+              name: NameNode(value: 'removeLinkedAccount'),
+              alias: null,
+              arguments: [
+                ArgumentNode(
+                    name: NameNode(value: 'linkedAccountId'),
+                    value:
+                        VariableNode(name: NameNode(value: 'linkedAccountId')))
+              ],
+              directives: [],
+              selectionSet: SelectionSetNode(selections: [
+                FieldNode(
+                    name: NameNode(value: 'me'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: SelectionSetNode(selections: [
+                      FieldNode(
+                          name: NameNode(value: 'id'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null)
+                    ]))
+              ]))
+        ]))
+  ]);
+
+  @override
+  final String operationName = 'removeLinkedAccount';
+
+  @override
+  final RemoveLinkedAccountArguments variables;
+
+  @override
+  List<Object> get props => [document, operationName, variables];
+  @override
+  RemoveLinkedAccount$Mutation parse(Map<String, dynamic> json) =>
+      RemoveLinkedAccount$Mutation.fromJson(json);
 }

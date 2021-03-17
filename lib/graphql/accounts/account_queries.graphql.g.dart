@@ -6,53 +6,6 @@ part of 'account_queries.graphql.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User
-    _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserFromJson(
-        Map<String, dynamic> json) {
-  return RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User()
-    ..id = json['id'] as String;
-}
-
-Map<String, dynamic>
-    _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserToJson(
-            RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User
-                instance) =>
-        <String, dynamic>{
-          'id': instance.id,
-        };
-
-RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse
-    _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseFromJson(
-        Map<String, dynamic> json) {
-  return RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse()
-    ..me = json['me'] == null
-        ? null
-        : RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User
-            .fromJson(json['me'] as Map<String, dynamic>);
-}
-
-Map<String,
-    dynamic> _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseToJson(
-        RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse instance) =>
-    <String, dynamic>{
-      'me': instance.me?.toJson(),
-    };
-
-RemoveLinkedAccount$Mutation _$RemoveLinkedAccount$MutationFromJson(
-    Map<String, dynamic> json) {
-  return RemoveLinkedAccount$Mutation()
-    ..removeLinkedAccount = json['removeLinkedAccount'] == null
-        ? null
-        : RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse.fromJson(
-            json['removeLinkedAccount'] as Map<String, dynamic>);
-}
-
-Map<String, dynamic> _$RemoveLinkedAccount$MutationToJson(
-        RemoveLinkedAccount$Mutation instance) =>
-    <String, dynamic>{
-      'removeLinkedAccount': instance.removeLinkedAccount?.toJson(),
-    };
-
 GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$Integration
     _$GenerateAccountLinkingUrl$Mutation$GeneratedAccountLinkingUrl$IntegrationFromJson(
         Map<String, dynamic> json) {
@@ -322,17 +275,51 @@ Map<String, dynamic> _$GetAllIntegrations$QueryToJson(
       'integrations': instance.integrations?.toJson(),
     };
 
-RemoveLinkedAccountArguments _$RemoveLinkedAccountArgumentsFromJson(
-    Map<String, dynamic> json) {
-  return RemoveLinkedAccountArguments(
-    linkedAccountId: json['linkedAccountId'] as String,
-  );
+RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User
+    _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserFromJson(
+        Map<String, dynamic> json) {
+  return RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User()
+    ..id = json['id'] as String;
 }
 
-Map<String, dynamic> _$RemoveLinkedAccountArgumentsToJson(
-        RemoveLinkedAccountArguments instance) =>
+Map<String, dynamic>
+    _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$UserToJson(
+            RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User
+                instance) =>
+        <String, dynamic>{
+          'id': instance.id,
+        };
+
+RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse
+    _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseFromJson(
+        Map<String, dynamic> json) {
+  return RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse()
+    ..me = json['me'] == null
+        ? null
+        : RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse$User
+            .fromJson(json['me'] as Map<String, dynamic>);
+}
+
+Map<String,
+    dynamic> _$RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponseToJson(
+        RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse instance) =>
     <String, dynamic>{
-      'linkedAccountId': instance.linkedAccountId,
+      'me': instance.me?.toJson(),
+    };
+
+RemoveLinkedAccount$Mutation _$RemoveLinkedAccount$MutationFromJson(
+    Map<String, dynamic> json) {
+  return RemoveLinkedAccount$Mutation()
+    ..removeLinkedAccount = json['removeLinkedAccount'] == null
+        ? null
+        : RemoveLinkedAccount$Mutation$RemoveLinkedAccountResponse.fromJson(
+            json['removeLinkedAccount'] as Map<String, dynamic>);
+}
+
+Map<String, dynamic> _$RemoveLinkedAccount$MutationToJson(
+        RemoveLinkedAccount$Mutation instance) =>
+    <String, dynamic>{
+      'removeLinkedAccount': instance.removeLinkedAccount?.toJson(),
     };
 
 GenerateAccountLinkingUrlArguments _$GenerateAccountLinkingUrlArgumentsFromJson(
@@ -346,4 +333,17 @@ Map<String, dynamic> _$GenerateAccountLinkingUrlArgumentsToJson(
         GenerateAccountLinkingUrlArguments instance) =>
     <String, dynamic>{
       'integrationId': instance.integrationId,
+    };
+
+RemoveLinkedAccountArguments _$RemoveLinkedAccountArgumentsFromJson(
+    Map<String, dynamic> json) {
+  return RemoveLinkedAccountArguments(
+    linkedAccountId: json['linkedAccountId'] as String,
+  );
+}
+
+Map<String, dynamic> _$RemoveLinkedAccountArgumentsToJson(
+        RemoveLinkedAccountArguments instance) =>
+    <String, dynamic>{
+      'linkedAccountId': instance.linkedAccountId,
     };
