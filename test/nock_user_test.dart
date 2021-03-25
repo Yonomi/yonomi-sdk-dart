@@ -17,7 +17,7 @@ void main() {
       CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${CONFIG.TOKEN}'});
 
   setUpAll(() {
-    nock.defaultBase = "https://platform-stg.yonomi.cloud/";
+    nock.defaultBase = "https://platform-stg.yonomi.cloud";
     nock.init();
   });
 
