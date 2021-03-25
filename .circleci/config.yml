@@ -83,7 +83,7 @@ jobs:
           name: Parse an access Token from the Playground
           command: |
             instance="staging"
-            stagingPlayground="https://zsks8yvbv1.execute-api.us-east-1.amazonaws.com/stg?session=dartSdk"
+            stagingPlayground="https://platform-stg.yonomi.cloud/playground?session=dartSdk"
             token=$( curl $stagingPlayground | awk 'sub(/.*Bearer */,""){f=1} f{if ( sub(/ *\\\".*/,"") ) f=0; print}' )
             echo "export AUTH_TOKEN=\"$token\"" >> $BASH_ENV
             echo "export INSTANCE=\"$instance\"" >> $BASH_ENV

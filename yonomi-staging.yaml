@@ -1,1 +1,1 @@
-graphqlEndpoints: "https://dhapuogzxl.execute-api.us-east-1.amazonaws.com/stg/graphql?session=dartSdk"
+graphqlEndpoints: "https://platform-stg.yonomi.cloud/graphql?session=dartSdk"
