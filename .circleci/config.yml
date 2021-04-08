@@ -7,6 +7,7 @@ version: 2.1
 # Orb declarations
 orbs:
   win: circleci/windows@2.4.0
+  codecov: codecov/codecov@1.0.2
 
 # Simple YAML anchors
 aliases:
@@ -30,7 +31,9 @@ commands:
     steps:
       - run:
           name: command to run all tests
-          command: pub run test test --reporter json | tojunit --output test-results/dart-tests/dart_sdk_all_tests-report.xml
+          command: flutter test --coverage
+      - codecov/upload:
+          file: coverage/lcov.info
   dependencies:
     description: "Download dependencies and setup global packages"
     parameters:
