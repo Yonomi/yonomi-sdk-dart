@@ -62,6 +62,7 @@ class DevicesRepository {
     final deviceQuery =
         GetDeviceQuery(variables: GetDeviceArguments(deviceId: id));
     final deviceResponse = await client.execute(deviceQuery);
+    
     return Device(
         deviceResponse.data.device.id,
         deviceResponse.data.device.displayName,

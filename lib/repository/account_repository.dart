@@ -20,7 +20,7 @@ class AccountRepository {
 
   static Future<String> generateAccountUrl(
       String integrationId, Request request,
-      {client: ArtemisClient}) async {
+      {ArtemisClient client}) async {
     if (client == null) client = ArtemisClientCreator.create(request);
 
     var generatedUrlMutation = GenerateAccountLinkingUrlMutation(
@@ -34,7 +34,7 @@ class AccountRepository {
   }
 
   static Future<List<dynamic>> getLinkedAccounts(Request request,
-      {client: ArtemisClient}) async {
+      {ArtemisClient client}) async {
     if (client == null) client = ArtemisClientCreator.create(request);
 
     var linkedAccountsQuery = LinkedAccountsQuery();
@@ -46,7 +46,7 @@ class AccountRepository {
   }
 
   static void removeLinkedAccount(String linkedAccountId, Request request,
-      {client: ArtemisClient}) async {
+      {ArtemisClient client}) async {
     if (client == null) client = ArtemisClientCreator.create(request);
 
     var removeLinkedAccountMutation = RemoveLinkedAccountMutation(

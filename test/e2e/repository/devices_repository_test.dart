@@ -9,10 +9,10 @@ import 'package:yonomi_platform_sdk/repository/devices/thermostat_repository.dar
 import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
 
 String thermostatUrl =
-    'https://dhapuogzxl.execute-api.us-east-1.amazonaws.com/stg/graphql?session=dxEcobee';
-String thermostatId = 'fb085508-59cd-404a-8130-78f201afb10e';
+    'https://platform-stg.yonomi.cloud/graphql?session=dxEcobee';
+String thermostatId = '6a0b8dcb-9874-43b6-b690-a64221fa8132';
 String thermostatBearer =
-    'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODExYzMxNS1kMGM0LTQ4YTEtOWQwZi04NzdkMjIyYzk1NTYiLCJpc3MiOiIzYWE5NTFlYi0yZDFhLTQ0Y2EtOWZhMi1iZWM2M2Y4ODFjNjUiLCJpYXQiOjE2MTU5Nzk1NzQsImV4cCI6MTYxNjA2NTk3NH0.8e0AE_GL6OMYnCesYI1jofblWrL35h0pJDZqhFc1ay7BTyUyyzFHzBZR1-fBHDL4fM-E2ThvCWJSC-2R51pmyDY4hYvKjWJXaN1qjeecUbjevCMlCtnGmXgxWxxWDdwr2XDOJTihCBXLR8YEw4kGW6fbM6UqFOT4MmlcE9uEmbE8-Q1B5ScnwStABKhLDzKYS1pAOiE9xVM_S-MBojOJmC-p8nLB0OxSeUeHfGEsunpZmdvqAIG_wHFVEAaL2tgkK42uEQaETBIMebqXxLm5NU-u22devlfDxjhP6iQLFmSaWpwfThaorRwTdZbqKYPUO-iQ5dPe4djinEZ81WowIw';
+    'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODExYzMxNS1kMGM0LTQ4YTEtOWQwZi04NzdkMjIyYzk1NTYiLCJpc3MiOiJ3d3cuZXhhbXBsZS5jb20iLCJjdXN0b206dGVuYW50IjoiM2FhOTUxZWItMmQxYS00NGNhLTlmYTItYmVjNjNmODgxYzY1IiwiaWF0IjoxNjE4MjY1MzA1LCJleHAiOjE2MTgzNTE3MDV9.YKxGDPyHt27M1kfKUyfvcXDgJhcKPvfr2AyCnfdXsrv_5UxH-5O6AfgmPp2NhUEVUCbfd5aBRMIi3C3HZ1EMMZWsLd67FvKLa3cND5qU064fh0puLPtVWIRKjUOzC3rZDo2MaL96oOVnlsRHyapq_k_A4yHW0g4GGwF5CbPz6ZpcV9Bk7aFnUAI-ZHAdacZno9k9Z2l008lif5jUKECt2T4XZniLjI4Cc442abwkhvnySJqr3iiKWJYi5HIx0dpbNH3K2cTzQsAdegxyuscK7_qKrVdMbJdw_na_ODEOP6LdtqattpAnG0tPoO1YVsMfQD7SLAoCXPwLGHdj2JAG0w';
 void main() {
   final request = yoRequest.Request(
       CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${CONFIG.TOKEN}'});
