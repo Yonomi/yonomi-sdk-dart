@@ -26,7 +26,7 @@ Create (or edit) `yonomi.yaml` file with the following:
 
 ```
 graphqlEndpoints:
-  staging: "https://dhapuogzxl.execute-api.us-east-1.amazonaws.com/stg/graphql"
+  staging: "https://platform-stg.yonomi.cloud/graphql"
 ```
 
 [circle-shield]: https://circleci.com/gh/Yonomi/yonomi-dart-sdk/tree/main.svg?style=shield&circle-token=470fbce0775849f45768cb551352807a5652f75f
