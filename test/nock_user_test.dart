@@ -3,13 +3,12 @@ import 'dart:io';
 
 import 'package:nock/nock.dart';
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/user.dart';
-import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
 import 'package:yonomi_platform_sdk/config.dart';
+import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
+import 'package:yonomi_platform_sdk/user.dart';
 
 buildNockWithResponse(Map<String, dynamic> map) {
-  return nock.post("/graphql?session=dartSdk", anything)
-    ..reply(200, jsonEncode(map));
+  return nock.post("", anything)..reply(200, jsonEncode(map));
 }
 
 void main() {
@@ -17,8 +16,7 @@ void main() {
       CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${CONFIG.TOKEN}'});
 
   setUpAll(() {
-    nock.defaultBase =
-        "https://dhapuogzxl.execute-api.us-east-1.amazonaws.com/stg";
+    nock.defaultBase = CONFIG.URL;
     nock.init();
   });
 
