@@ -9,12 +9,12 @@ Flutter SDK for Yonomi Platform
 ---
 
 # Table of contents
-1. [Getting Started](#getting-started)
-    1. [Installing the SDK](#install-sdk)
-    1. [Set up Configuration Files](#setup-config)
-    1. [Making requests to the platform](#first-request)
 
-## Getting Started <a name="getting-started"></a>
+1. [Installing the SDK](#install-sdk)
+1. [Set up Configuration Files](#setup-config)
+1. [Making requests to the platform](#first-request)
+
+## Getting Started
 
 ### Installing the SDK <a name="install-sdk"></a>
 
@@ -56,25 +56,25 @@ Let's look at how we can leverage the Dart SDK to make requests to the platform.
 
 Let's query our user info by following the steps below:
 
-1. Build our request:
+1. Build Request object:
 
 ```
 Request _request = Request("YOUR-GRAPH-ENDPOINT-HERE",
     {"Authorization": "Bearer YOUR-JWT-ACCESS-TOKEN-HERE"});
 ```
 
-2. Use the [UserRepository]() class to get our current user's information.
+2. Use [UserRepository]() class to get our current user's information.
 
 ```
 final userFromRequest = await UserRepository.getUserDetails(_request);
 ```
 
-Now let's unwrap the `userFromRequest` object to get useful data:
+3. Now let's unwrap the `userFromRequest` object to get useful data:
 
 ```
-        print("My User ID: ${userFromRequest?.id}");
-        print("Date of my user's first activity: ${userFromRequest?.firstActivityAt}");
-        print("Date of my user's last activity: ${userFromRequest?.lastActivityAt}");
+    print("My User ID: ${userFromRequest?.id}");
+    print("Date of my user's first activity: ${userFromRequest?.firstActivityAt}");
+    print("Date of my user's last activity: ${userFromRequest?.lastActivityAt}");
 ```
 
 
