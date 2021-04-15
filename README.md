@@ -1,6 +1,7 @@
 # Yonomi Dart SDK
 
-[![Yonomi Dart SDK][sdk-shield]][yonomi][![CircleCI][circle-shield]][circle-pipeline]
+[![Yonomi Dart SDK][sdk-shield]][yonomi]
+[![CircleCI][circle-shield]][circle-pipeline]
 
 ---
 
@@ -14,6 +15,8 @@ Flutter SDK for Yonomi Platform
 1. [Setting up your environment](#setup-env)
 1. [Making requests to the platform](#first-request)
 1. [Getting a list of all available integrations](#account-flow)
+1. [Retrieving all devices](#retrieve-devices)
+1. [Trait-specific actions](#trait-actions)
 
 ## Getting Started
 
@@ -121,7 +124,7 @@ AccountRepository.getLinkedAccounts(integrationId, request);
 
 Verify that the account is in the list.
 
-###  Retrieving all devices
+###  Retrieving all devices <a name="retrieve-devices"></a>
 
 **Pre-requisite:** Make sure you've built a Request object (See step 1 in [Making requests to the platform](#first-request)).
 
@@ -135,10 +138,10 @@ You will get a list of devices, e.g.:
 
 ```
 {
-    id: "",
-    displayName: "",
-    description: "",
-    manufacturerName: "",
+    id: "DEVICE-ID-HERE",
+    displayName: "The device name",
+    description: "A description of this device",
+    manufacturerName: "The manufacturer of this device",
     traits: [{
     	name: "THERMOSTAT_SETTING",
     	instance: "default",
@@ -161,18 +164,18 @@ If you have a device with a `Thermostat` trait, you can use the `getThermostatDe
 Device thermostatDevice = await DevicesRepository.getThermostatDetails(request, "DEVICE-ID-HERE");
 ```
 
-To get the current Target Temperature, you can do the following:
+To get the current target temperature, you can do the following:
 
 ```
 print(thermostatDevice.traits.first.state.value);
 
 ```
 
-### Trait-specific actions 
+### Trait-specific actions <a name="trait-actions"></a>
 
-### Lock Trait
+#### Lock Trait
 
-#### Action: Lock or Unlock
+##### Action: Lock or Unlock
 To lock or unlock a device with a Lock trait, use the `sendLockUnlockAction` method inside the `LockRepository` class:
 
 **Example:** If you wish to lock the device, set the last parameter to `true`, otherwise, set it to `false`.
@@ -180,9 +183,9 @@ To lock or unlock a device with a Lock trait, use the `sendLockUnlockAction` met
 LockRepository.sendLockUnlockAction(request, "YOUR-DEVICE-ID-HERE", true);
 ```
 
-### Thermostat Trait
+#### Thermostat Trait
 
-#### Action: Set Target Temperature
+##### Action: Set Target Temperature
 
 To set the Target Temperature of a device with the Thermostat trait, use the `setPointThermostat` method inside the `ThermostatRepository` class:
 
