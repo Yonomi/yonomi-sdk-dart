@@ -175,7 +175,7 @@ print(thermostatDevice.traits.first.state.value);
 #### Action: Lock or Unlock
 To lock or unlock a device with a Lock trait, use the `sendLockUnlockAction` method inside the `LockRepository` class:
 
-If you wish to lock the device, set the last parameter to true, otherwise, set it to false.
+**Example:** If you wish to lock the device, set the last parameter to `true`, otherwise, set it to `false`.
 ```
 LockRepository.sendLockUnlockAction(request, "YOUR-DEVICE-ID-HERE", true);
 ```
@@ -184,7 +184,9 @@ LockRepository.sendLockUnlockAction(request, "YOUR-DEVICE-ID-HERE", true);
 
 #### Action: Set Target Temperature
 
-To lock or unlock a device with a Lock trait, use the `setPointThermostat` method inside the `ThermostatRepository` class:
+To set the Target Temperature of a device with the Thermostat trait, use the `setPointThermostat` method inside the `ThermostatRepository` class:
+
+**Example:** Set the thermostat's target temperature to 23.0 C:
 
 ```
 ThermostatRepository.setPointThermostat(request, "YOUR-DEVICE-ID-HERE", 23.0);
@@ -192,13 +194,20 @@ ThermostatRepository.setPointThermostat(request, "YOUR-DEVICE-ID-HERE", 23.0);
 
 #### Action: Set Thermostat Mode
 
-To lock or unlock a device with a Lock trait, use the `setMode` method:
+To set the Thermostat Mode of a device with the Thermostat trait, use the `setMode` method:
+
+**Example:** Set the Thermostat's Mode to AUTO:
 
 ```
-ThermostatRepository.setMode(request, "YOUR-DEVICE-ID-HERE",
-    {OFF, AUTO, HEAT, COOL, FANONLY, DEHUMIDIFY, AIRFLOW});
+ThermostatRepository.setMode(request, "YOUR-DEVICE-ID-HERE", ThermostatMode.auto);
+```
+You can pick from the following modes listed in the ThermostatMode enumerator:
+
+```
+{OFF, AUTO, HEAT, COOL, FANONLY, DEHUMIDIFY, AIRFLOW}
 ```
 
+To make sure your Thermostat device supports 
 
 [circle-shield]: https://circleci.com/gh/Yonomi/yonomi-dart-sdk/tree/main.svg?style=shield&circle-token=470fbce0775849f45768cb551352807a5652f75f
 [circle-pipeline]: https://app.circleci.com/pipelines/github/Yonomi/yonomi-dart-sdk
