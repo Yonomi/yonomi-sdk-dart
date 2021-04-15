@@ -1,6 +1,6 @@
 # Yonomi Dart SDK
 
-[![CircleCI][circle-shield]][circle-pipeline]
+[![Yonomi Dart SDK][sdk-shield]][yonomi][![CircleCI][circle-shield]][circle-pipeline]
 
 ---
 
@@ -207,7 +207,7 @@ You can pick from the following modes listed in the ThermostatMode enumerator:
 {OFF, AUTO, HEAT, COOL, FANONLY, DEHUMIDIFY, AIRFLOW}
 ```
 
-To make sure your Thermostat device supports 
-
 [circle-shield]: https://circleci.com/gh/Yonomi/yonomi-dart-sdk/tree/main.svg?style=shield&circle-token=470fbce0775849f45768cb551352807a5652f75f
 [circle-pipeline]: https://app.circleci.com/pipelines/github/Yonomi/yonomi-dart-sdk
+[sdk-shield]: https://img.shields.io/badge/Yonomi-SDK:_Dart-lightgrey.svg?colorA=ffd500&colorB=5c5c5c
+[yonomi]: https://www.yonomi.co/
