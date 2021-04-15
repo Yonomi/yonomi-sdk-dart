@@ -11,8 +11,9 @@ Flutter SDK for Yonomi Platform
 # Table of contents
 
 1. [Installing the SDK](#install-sdk)
-1. [Set up Configuration Files](#setup-config)
+1. [Setting up your environment](#setup-env)
 1. [Making requests to the platform](#first-request)
+1. [Getting a list of all available integrations](#account-flow)
 
 ## Getting Started
 
@@ -29,27 +30,33 @@ dependencies:
   
 ```
 
-###  Set up Configuration Files <a name="setup-config"></a>
+###  Setting up your environment<a name="setup-env"></a>
 
-Now we need to configure the SDK through a few configuration files.
+You will be interacting with our platform using the following URL:
 
-You will first obtain a JWT to make queries to the graph. First, visit the following link to reach the Yonomi GraphQL Playground:
+[https://platform.yonomi.cloud/graphql](https://platform.yonomi.cloud/graphql)
 
-[https://platform-stg.yonomi.cloud/playground](https://platform-stg.yonomi.cloud/playground?modes=any,uat,debug,integrator)
+**Pre-requisites:** You will need to be set up with our platform, having fulfilled the following requirements:
 
-Scroll to the bottom and look for the comment block starting with "The JWT used for this session..." and copy the JWT of your session.
+1. Created a Tenant
+2. Generated public and private RS256 key pairs
+3. Updated the Tenant with your public key
+4. Have users with unique Ids
 
-##### 1. Create a `.env` file:
-Create or edit a `.env` file in your app's top-level directory.
+If you need guidance to complete any of these steps, visit the following guide for the complete walkthrough to onboard with the platform:
 
-Place your token in this format:
+[Comprehensive Platform Request Guide](https://yonomi.atlassian.net/wiki/spaces/YP/pages/1740963897/Comprehensive+Platform+Requests+Guide)
 
-`AUTH_TOKEN="YOUR-JWT-HERE"`
+#### Configure the `config.yaml` file:
 
-##### 2. Create a `config.yaml` file:
-Create or edit a `yonomi.yaml` file in your app's top-level directory.
+Navigate to the `assets` folder in the Flutter app and create (or edit) the `config.yaml` file to make sure it has the URL to the graphQL endpoint and your tenant Id:
 
-``graphqlEndpoints: "https://platform-stg.yonomi.cloud/graphql"``
+```
+url: https://platform.yonomi.cloud/graphql
+tenantId: YOUR-TENANT-ID-GOES-HERE
+```
+
+You should now be ready to make requests to our platform.
 
 ###  Making requests to the platform <a name="first-request"></a>
 Let's look at how we can leverage the Dart SDK to make requests to the platform.
@@ -59,60 +66,138 @@ Let's query our user info by following the steps below:
 1. Build Request object:
 
 ```
-Request _request = Request("YOUR-GRAPH-ENDPOINT-HERE",
+Request request = Request("YOUR-GRAPH-ENDPOINT-HERE",
     {"Authorization": "Bearer YOUR-JWT-ACCESS-TOKEN-HERE"});
 ```
 
 2. Use [UserRepository]() class to get our current user's information.
 
 ```
-final userFromRequest = await UserRepository.getUserDetails(_request);
+final userFromRequest = await UserRepository.getUserDetails(request);
 ```
 
 3. Now let's unwrap the `userFromRequest` object to display some useful data about our user:
 
 ```
-    print("My User ID: ${userFromRequest?.id}");
-    print("Date of my user's first activity: ${userFromRequest?.firstActivityAt}");
-    print("Date of my user's last activity: ${userFromRequest?.lastActivityAt}");
+print("My User ID: ${userFromRequest?.id}");
+print("Date of my user's first activity: ${userFromRequest?.firstActivityAt}");
+print("Date of my user's last activity: ${userFromRequest?.lastActivityAt}");
 ```
 
-### Getting a list of all available Integrations
+### Getting a list of all available Integrations <a name="account-flow"></a>
 
-Pre-requisite: Make sure you've built a Request object (See step 1 in [Making requests to the platform](#first-request)).
+**Pre-requisite:** Make sure you've built a Request object (See step 1 in [Making requests to the platform](#first-request)).
 
 To get a list of all Integrations available in the platform:
 
 ```
-final integrations = await AccountRepository.getAllIntegrations(_request);
+final integrations = await AccountRepository.getAllIntegrations(request);
 ```
 
 You will get a list of Integrations
 
 ```
-{id="INTEGRATION-ID-1", displayName="An Integration"},
-{id="INTEGRATION-ID-2", displayName="Another Integration"},
+{id: "INTEGRATION-ID-1", displayName: "An Integration"},
+{id: "INTEGRATION-ID-2", displayName: "Another Integration"},
 ```
-
 
 Pick an integration from the list that you are interested in and copy its ID.
 
 We will add this integration into our account by generating a URL that lets us authenticate.
 
 ```
-String generatedAccountUrl = await AccountRepository.generateAccountUrl("INTEGRATION-ID-1", _request);
+String generatedAccountUrl = await AccountRepository.generateAccountUrl("INTEGRATION-ID-1", request);
 ```
 
 This call will return a String URL.
 
 The app can navigate to this URL to authenticate and link the user's account.
 
-Finally, to verify that the account was linked, retrieve a list of accounts that were authorized via the account linking flow. Verify that the account is in the list.
+Finally, to verify that the account was linked, we can retrieve a list of accounts that were authorized via the account linking flow:
 
 ```
-AccountRepository.getLinkedAccounts(integrationId, _request);
+AccountRepository.getLinkedAccounts(integrationId, request);
 ```
 
+Verify that the account is in the list.
+
+###  Retrieving all devices
+
+**Pre-requisite:** Make sure you've built a Request object (See step 1 in [Making requests to the platform](#first-request)).
+
+To retrieve a list of all available devices
+
+```
+DevicesRepository.getDevices(request);
+```
+
+You will get a list of devices, e.g.:
+
+```
+{
+    id: "",
+    displayName: "",
+    description: "",
+    manufacturerName: "",
+    traits: [{
+    	name: "THERMOSTAT_SETTING",
+    	instance: "default",
+    	...
+    }]
+    
+    ...
+}
+```
+
+To get specific data for a particular device, use the `getDeviceDetails` method:
+
+```
+DevicesRepository.getDeviceDetails(request, "DEVICE-ID-HERE");
+```
+
+If you have a device with a `Thermostat` trait, you can use the `getThermostatDetails` method to retrieve state data specific only to Thermostat devices, e.g.:
+
+```
+Device thermostatDevice = await DevicesRepository.getThermostatDetails(request, "DEVICE-ID-HERE");
+```
+
+To get the current Target Temperature, you can do the following:
+
+```
+print(thermostatDevice.traits.first.state.value);
+
+```
+
+### Trait-specific actions 
+
+### Lock Trait
+
+#### Action: Lock or Unlock
+To lock or unlock a device with a Lock trait, use the `sendLockUnlockAction` method inside the `LockRepository` class:
+
+If you wish to lock the device, set the last parameter to true, otherwise, set it to false.
+```
+LockRepository.sendLockUnlockAction(request, "YOUR-DEVICE-ID-HERE", true);
+```
+
+### Thermostat Trait
+
+#### Action: Set Target Temperature
+
+To lock or unlock a device with a Lock trait, use the `setPointThermostat` method inside the `ThermostatRepository` class:
+
+```
+ThermostatRepository.setPointThermostat(request, "YOUR-DEVICE-ID-HERE", 23.0);
+```
+
+#### Action: Set Thermostat Mode
+
+To lock or unlock a device with a Lock trait, use the `setMode` method:
+
+```
+ThermostatRepository.setMode(request, "YOUR-DEVICE-ID-HERE",
+    {OFF, AUTO, HEAT, COOL, FANONLY, DEHUMIDIFY, AIRFLOW});
+```
 
 
 [circle-shield]: https://circleci.com/gh/Yonomi/yonomi-dart-sdk/tree/main.svg?style=shield&circle-token=470fbce0775849f45768cb551352807a5652f75f
