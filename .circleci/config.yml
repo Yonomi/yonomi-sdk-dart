@@ -13,6 +13,17 @@ aliases:
   - &project_dir "~/project"
 
 commands:
+  write-private-key:
+    description: "Write private data for e2e tests to test-config file"
+    steps:
+      - run:
+          name: Write private data into config file for testing
+          command: |
+            echo "userId: \"$TEST_USER_ID\"" >> test-config.yaml
+            echo "tenantId: \"$TEST_TENANT_ID\"" >> test-config.yaml
+            echo "privateKey: \"$PRIVATE_KEY\"" >> test-config.yaml
+            echo "testDeviceId: \"$TEST_DEVICE_ID\"" >> test-config.yaml
+            echo "testThermostatId: \"$TEST_THERMOSTAT_ID\"" >> test-config.yaml
   unit-tests:
     description: "Run local unit tests"
     steps:
@@ -79,14 +90,7 @@ jobs:
     steps:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
-      - run:
-          name: Parse an access Token from the Playground
-          command: |
-            instance="staging"
-            stagingPlayground="https://platform-stg.yonomi.cloud/playground?session=dartSdk"
-            token=$( curl $stagingPlayground | awk 'sub(/.*Bearer */,""){f=1} f{if ( sub(/ *\\\".*/,"") ) f=0; print}' )
-            echo "export AUTH_TOKEN=\"$token\"" >> $BASH_ENV
-            echo "export INSTANCE=\"$instance\"" >> $BASH_ENV
+      - write-private-key
       - run:
           name: Make folder for test results
           command: mkdir -p test-results/dart-tests
