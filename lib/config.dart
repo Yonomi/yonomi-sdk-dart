@@ -15,6 +15,7 @@ import 'package:yaml/yaml.dart';
 /// privateKey: "E2E-PRIVATE-KEY"
 /// testDeviceId: "E2E-TEST-DEVICE-ID"
 /// testThermostatId: "E2E-THERMOSTAT-TEST-DEVICE-ID"
+/// testLockId: "E2E-LOCK-TEST-DEVICE-ID"
 ///
 class CONFIG {
   static final tokenKey = "AUTH_TOKEN";
@@ -70,6 +71,11 @@ class CONFIG {
     return yamlMap.toString();
   }
 
+  String _getTestLockId() {
+    var yamlMap = loadYaml(_instance._configYamlContent)['testLockId'];
+    return yamlMap.toString();
+  }
+
   // Should be deprecated
   @deprecated
   static final String TOKEN = _instance._getToken();
@@ -85,4 +91,6 @@ class CONFIG {
   static final String TEST_DEVICE_ID = _instance._getTestDeviceId();
 
   static final String TEST_THERMOSTAT_ID = _instance._getTestThermostatId();
+
+  static final String TEST_LOCK_ID = _instance._getTestLockId();
 }

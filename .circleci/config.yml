@@ -24,6 +24,7 @@ commands:
             echo "privateKey: \"$PRIVATE_KEY\"" >> test-config.yaml
             echo "testDeviceId: \"$TEST_DEVICE_ID\"" >> test-config.yaml
             echo "testThermostatId: \"$TEST_THERMOSTAT_ID\"" >> test-config.yaml
+            echo "testLockId: \"$TEST_LOCK_ID\"" >> test-config.yaml
   unit-tests:
     description: "Run local unit tests"
     steps:
