@@ -8,8 +8,15 @@ import 'package:yonomi_platform_sdk/repository/user_repository.dart';
 import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
 
 void main() {
-  yoRequest.Request request = yoRequest.Request(
-      CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${CONFIG.TOKEN}'});
+  yoRequest.Request request;
+
+  setUpAll(() {
+    String accessToken = ArtemisClientCreator.createToken(
+        CONFIG.USER_ID, CONFIG.TENANT_ID, CONFIG.PRIVATE_KEY);
+
+    request = yoRequest.Request(
+        CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${accessToken}'});
+  });
 
   test('getUserDetails() returns populated fields', () async {
     ArtemisClient myClient = ArtemisClientCreator.create(request);
