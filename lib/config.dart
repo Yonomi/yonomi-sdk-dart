@@ -4,14 +4,17 @@ import 'package:dotenv/dotenv.dart' show load, env;
 import 'package:yaml/yaml.dart';
 
 ///
-/// Helper class to obtain config values for e2e tests from the following file:
-/// File: test-config.yaml
+/// Helper class to obtain config values for e2e tests from the following files:
+/// test-config.yaml and .env (or environment process)
 ///
-/// Parameters:
+/// test-config.yaml configuration variables:
 ///
 /// graphqlEndpoint: "https://platform.yonomi.cloud/graphql"
 /// userId: "E2E-TEST-USER-ID"
 /// tenantId: "E2E-TENANT-ID"
+///
+/// Environment variables used (from .env or from process):
+///
 /// privateKey: "E2E-PRIVATE-KEY"
 /// testDeviceId: "E2E-TEST-DEVICE-ID"
 /// testThermostatId: "E2E-THERMOSTAT-TEST-DEVICE-ID"
@@ -37,8 +40,9 @@ class CONFIG {
     _configYamlContent = file.readAsStringSync();
   }
 
+  @deprecated
   String _getToken() {
-    return Platform.environment[tokenKey] ?? env[tokenKey];
+    return _getEnvironmentValue(tokenKey);
   }
 
   String _getUrl() {
@@ -57,23 +61,27 @@ class CONFIG {
   }
 
   String _getPrivateKey() {
-    var yamlMap = loadYaml(_instance._configYamlContent)['privateKey'];
-    return yamlMap.toString();
+    return _getEnvironmentValue("privateKey");
   }
 
   String _getTestDeviceId() {
-    var yamlMap = loadYaml(_instance._configYamlContent)['testDeviceId'];
-    return yamlMap.toString();
+    return _getEnvironmentValue("privateKey");
   }
 
   String _getTestThermostatId() {
-    var yamlMap = loadYaml(_instance._configYamlContent)['testThermostatId'];
-    return yamlMap.toString();
+    return _getEnvironmentValue("testThermostatId");
   }
 
   String _getTestLockId() {
-    var yamlMap = loadYaml(_instance._configYamlContent)['testLockId'];
-    return yamlMap.toString();
+    return _getEnvironmentValue("testLockId");
+  }
+
+  /// Get environment variable's value
+  ///
+  /// Get the value from this process's environment, else from a .env file
+  /// placed in top-level directory.
+  String _getEnvironmentValue(String valueKey) {
+    return Platform.environment[valueKey] ?? env[valueKey];
   }
 
   // Should be deprecated
