@@ -19,10 +19,10 @@ commands:
       - run:
           name: Write private data into config file for testing
           command: |
-            echo "privateKey: \"$PRIVATE_KEY\"" >> $BASH_ENV
-            echo "testDeviceId: \"$TEST_DEVICE_ID\"" >> $BASH_ENV
-            echo "testThermostatId: \"$TEST_THERMOSTAT_ID\"" >> $BASH_ENV
-            echo "testLockId: \"$TEST_LOCK_ID\"" >> $BASH_ENV
+            echo "PRIVATE_KEY: \"$PRIVATE_KEY\"" >> $BASH_ENV
+            echo "TEST_DEVICE_ID: \"$TEST_DEVICE_ID\"" >> $BASH_ENV
+            echo "TEST_THERMOSTAT_ID: \"$TEST_THERMOSTAT_ID\"" >> $BASH_ENV
+            echo "TEST_LOCK_ID: \"$TEST_LOCK_ID\"" >> $BASH_ENV
   unit-tests:
     description: "Run local unit tests"
     steps:
