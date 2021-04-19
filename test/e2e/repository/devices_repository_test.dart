@@ -1,28 +1,24 @@
-import 'dart:io';
-
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/config.dart';
 import 'package:yonomi_platform_sdk/graphql/devices/thermostat/thermostat_queries.dart';
-import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
 import 'package:yonomi_platform_sdk/repository/devices/devices_repository.dart';
 import 'package:yonomi_platform_sdk/repository/devices/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
+
+import '../../utils/test_fixtures.dart';
 
 void main() {
   String testThermostatId, testLockId;
 
   yoRequest.Request request;
 
-  setUpAll(() {
-    testThermostatId = CONFIG.TEST_THERMOSTAT_ID;
+  setUpAll(() async {
+    var tester = TestFixtures();
 
-    testLockId = CONFIG.TEST_DEVICE_ID;
+    request = tester.buildRequest();
 
-    String accessToken = ArtemisClientCreator.createToken(
-        CONFIG.USER_ID, CONFIG.TENANT_ID, CONFIG.PRIVATE_KEY);
+    testThermostatId = await tester.getThermostatDeviceId(request);
 
-    request = yoRequest.Request(
-        CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${accessToken}'});
+    testLockId = await tester.getLockUnlockDeviceId(request);
   });
 
   test('getDevices returns device list for all traits', () async {
