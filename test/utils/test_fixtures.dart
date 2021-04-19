@@ -6,10 +6,19 @@ import 'package:yonomi_platform_sdk/repository/devices/devices_repository.dart';
 import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
 
 class TestFixtures {
+  yoRequest.Request buildRequest() {
+    String accessToken = ArtemisClientCreator.createToken(
+        CONFIG.USER_ID, CONFIG.TENANT_ID, CONFIG.PRIVATE_KEY);
+    yoRequest.Request request = yoRequest.Request(
+        CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${accessToken}'});
+    return request;
+  }
+
   Future<String> getThermostatDeviceId(yoRequest.Request request) async {
     List<Device> devices = await DevicesRepository.getDevices(request);
     return devices
-        .firstWhere((device) => deviceIsOfTrait(device, ThermostatTrait))
+        .firstWhere((device) => deviceIsOfTrait(device, ThermostatTrait),
+            orElse: () => null)
         .id;
   }
 
@@ -19,14 +28,6 @@ class TestFixtures {
         .firstWhere((device) => deviceIsOfTrait(device, LockUnlockTrait),
             orElse: () => null)
         ?.id;
-  }
-
-  yoRequest.Request buildRequest() {
-    String accessToken = ArtemisClientCreator.createToken(
-        CONFIG.USER_ID, CONFIG.TENANT_ID, CONFIG.PRIVATE_KEY);
-    yoRequest.Request request = yoRequest.Request(
-        CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${accessToken}'});
-    return request;
   }
 
   bool deviceIsOfTrait(Device device, Type desiredTrait) {
