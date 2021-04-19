@@ -27,13 +27,12 @@ void main() {
 
   test('getDevices returns device list for all traits', () async {
     List<Device> devices = await DevicesRepository.getDevices(request);
-    expect(devices.length, equals(1));
+    expect(devices, isNotEmpty);
   });
 
   test('getThermostatDetails gets thermostat details', () async {
     final device =
         await DevicesRepository.getThermostatDetails(request, testThermostatId);
-    print(device);
     expect(device, isNotNull);
   });
 

@@ -21,9 +21,9 @@ import 'package:yaml/yaml.dart';
 /// TEST_LOCK_ID="E2E-LOCK-TEST-DEVICE-ID"
 ///
 class CONFIG {
-  static final tokenKey = "AUTH_TOKEN";
+  static final String _configFilename = "test-config.yaml";
 
-  String _configFilename;
+  static final String tokenKey = "AUTH_TOKEN";
 
   String _configYamlContent;
 
@@ -35,7 +35,6 @@ class CONFIG {
 
   CONFIG._privateConstructor() {
     load();
-    _configFilename = "test-config.yaml";
     File file = new File(_configFilename);
     _configYamlContent = file.readAsStringSync();
   }

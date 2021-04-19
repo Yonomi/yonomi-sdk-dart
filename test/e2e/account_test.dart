@@ -22,7 +22,7 @@ void main() {
 
     integrationsList.forEach((integration) async {
       String url =
-          await AccountRepository.generateAccountUrl(integration, request);
+          await AccountRepository.generateAccountUrl(integration.id, request);
 
       expect(url, isNotEmpty);
       expect(Uri.parse(url).isAbsolute, true); //
