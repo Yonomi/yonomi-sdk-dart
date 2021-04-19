@@ -19,8 +19,6 @@ commands:
       - run:
           name: Write private data into config file for testing
           command: |
-            echo "userId: \"$TEST_USER_ID\"" >> test-config.yaml
-            echo "tenantId: \"$TEST_TENANT_ID\"" >> test-config.yaml
             echo "privateKey: \"$PRIVATE_KEY\"" >> test-config.yaml
             echo "testDeviceId: \"$TEST_DEVICE_ID\"" >> test-config.yaml
             echo "testThermostatId: \"$TEST_THERMOSTAT_ID\"" >> test-config.yaml
