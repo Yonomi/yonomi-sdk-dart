@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/account.dart';
 import 'package:yonomi_platform_sdk/config.dart';
 import 'package:yonomi_platform_sdk/repository/account_repository.dart';
 import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
@@ -23,7 +22,7 @@ void main() {
 
     integrationsList.forEach((integration) async {
       String url =
-          await Account.generateAccountLinkingUrl(integration.Id, request);
+          await AccountRepository.generateAccountUrl(integration, request);
 
       expect(url, isNotEmpty);
       expect(Uri.parse(url).isAbsolute, true); //
