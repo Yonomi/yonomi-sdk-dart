@@ -14,15 +14,15 @@ aliases:
 
 commands:
   write-private-key:
-    description: "Write private data for e2e tests to test-config file"
+    description: "Write private data for e2e tests to environment variables"
     steps:
       - run:
           name: Write private data into config file for testing
           command: |
-            echo "privateKey: \"$PRIVATE_KEY\"" >> test-config.yaml
-            echo "testDeviceId: \"$TEST_DEVICE_ID\"" >> test-config.yaml
-            echo "testThermostatId: \"$TEST_THERMOSTAT_ID\"" >> test-config.yaml
-            echo "testLockId: \"$TEST_LOCK_ID\"" >> test-config.yaml
+            echo "privateKey: \"$PRIVATE_KEY\"" >> $BASH_ENV
+            echo "testDeviceId: \"$TEST_DEVICE_ID\"" >> $BASH_ENV
+            echo "testThermostatId: \"$TEST_THERMOSTAT_ID\"" >> $BASH_ENV
+            echo "testLockId: \"$TEST_LOCK_ID\"" >> $BASH_ENV
   unit-tests:
     description: "Run local unit tests"
     steps:
