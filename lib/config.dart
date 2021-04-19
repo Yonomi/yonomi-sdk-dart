@@ -15,10 +15,10 @@ import 'package:yaml/yaml.dart';
 ///
 /// Environment variables used (from .env or from process):
 ///
-/// privateKey: "E2E-PRIVATE-KEY"
-/// testDeviceId: "E2E-TEST-DEVICE-ID"
-/// testThermostatId: "E2E-THERMOSTAT-TEST-DEVICE-ID"
-/// testLockId: "E2E-LOCK-TEST-DEVICE-ID"
+/// privateKey="E2E-PRIVATE-KEY"
+/// testDeviceId="E2E-TEST-DEVICE-ID"
+/// testThermostatId="E2E-THERMOSTAT-TEST-DEVICE-ID"
+/// testLockId="E2E-LOCK-TEST-DEVICE-ID"
 ///
 class CONFIG {
   static final tokenKey = "AUTH_TOKEN";
@@ -65,7 +65,7 @@ class CONFIG {
   }
 
   String _getTestDeviceId() {
-    return _getEnvironmentValue("privateKey");
+    return _getEnvironmentValue("testDeviceId");
   }
 
   String _getTestThermostatId() {
