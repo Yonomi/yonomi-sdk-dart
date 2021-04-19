@@ -20,9 +20,6 @@ commands:
           name: Write sensitive data into environment variables for testing
           command: |
             echo "export PRIVATE_KEY=\"$PRIVATE_KEY\"" >> $BASH_ENV
-            echo "export TEST_DEVICE_ID=\"TEST_DEVICE_ID\"" >> $BASH_ENV
-            echo "export TEST_THERMOSTAT_ID=\"TEST_THERMOSTAT_ID\"" >> $BASH_ENV
-            echo "export TEST_LOCK_ID=\"TEST_LOCK_ID\"" >> $BASH_ENV
   unit-tests:
     description: "Run local unit tests"
     steps:
