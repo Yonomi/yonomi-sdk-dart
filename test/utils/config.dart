@@ -4,7 +4,7 @@ import 'package:yaml/yaml.dart';
 
 ///
 /// Helper class to obtain config values for e2e tests from the following files:
-/// test-config.yaml and .env (or environment process)
+/// test-config.yaml and from environment variables
 ///
 /// test-config.yaml configuration variables:
 ///
@@ -12,7 +12,7 @@ import 'package:yaml/yaml.dart';
 /// userId: "E2E-TEST-USER-ID"
 /// tenantId: "E2E-TENANT-ID"
 ///
-/// Environment variable(s) used (from .env or from process):
+/// Environment variable(s) read:
 ///
 /// PRIVATE_KEY="E2E-PRIVATE-KEY"
 ///
@@ -28,7 +28,7 @@ class CONFIG {
   }
 
   CONFIG._privateConstructor() {
-    File file = new File('./test/test-config.yaml');
+    File file = new File('./test/${_configFilename}');
     _configYamlContent = file.readAsStringSync();
   }
 
@@ -53,8 +53,7 @@ class CONFIG {
 
   /// Get environment variable's value
   ///
-  /// Get the value from this process's environment, else from a .env file
-  /// placed in top-level directory.
+  /// Get the value from this process's environment
   String _getEnvironmentValue(String valueKey) {
     return Platform.environment[valueKey];
   }
