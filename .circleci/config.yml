@@ -7,6 +7,7 @@ version: 2.1
 # Orb declarations
 orbs:
   win: circleci/windows@2.4.0
+  codecov: codecov/codecov@1.0.2
 
 # Simple YAML anchors
 aliases:
@@ -30,7 +31,9 @@ commands:
     steps:
       - run:
           name: command to run all tests
-          command: pub run test test --reporter json | tojunit --output test-results/dart-tests/dart_sdk_all_tests-report.xml
+          command: PRIVATE_KEY=$(echo "$PRIVATE_KEY_ENCODED" | base64 --decode) flutter test --coverage && lcov --remove coverage/lcov.info 'lib/graphql/*' > coverage/lcov1.info
+      - codecov/upload:
+          file: coverage/lcov1.info
   dependencies:
     description: "Download dependencies and setup global packages"
     parameters:
@@ -75,18 +78,10 @@ workflows:
 jobs:
   test:
     docker:
-      - image: google/dart:2.12.0
+      - image: cirrusci/flutter:stable
     steps:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
-      - run:
-          name: Parse an access Token from the Playground
-          command: |
-            instance="staging"
-            stagingPlayground="https://platform-stg.yonomi.cloud/playground?session=dartSdk"
-            token=$( curl $stagingPlayground | awk 'sub(/.*Bearer */,""){f=1} f{if ( sub(/ *\\\".*/,"") ) f=0; print}' )
-            echo "export AUTH_TOKEN=\"$token\"" >> $BASH_ENV
-            echo "export INSTANCE=\"$instance\"" >> $BASH_ENV
       - run:
           name: Make folder for test results
           command: mkdir -p test-results/dart-tests

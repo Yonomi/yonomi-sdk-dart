@@ -1,11 +1,33 @@
+import 'dart:io';
+
 import 'package:artemis/client.dart';
 import 'package:http/http.dart';
 import '../request/request.dart' as sdkRequest;
+import 'package:corsac_jwt/corsac_jwt.dart';
 
 class ArtemisClientCreator {
   static ArtemisClient create(sdkRequest.Request request) {
-    BaseClient authClient = AuthorizedClient.fromRequest(request);
+    BaseClient authClient = AuthorizedClient.withHeaders(request.headers);
     return ArtemisClient(request.graphUrl, httpClient: authClient);
+  }
+
+  static ArtemisClient createFromUserId(sdkRequest.RequestParam requestParam) {
+    final token = createToken(
+        requestParam.userId, requestParam.tenantId, requestParam.privateKey);
+    final tokenHeader = {HttpHeaders.authorizationHeader: 'Bearer ${token}'};
+    final authClient = AuthorizedClient.withHeaders(tokenHeader);
+    return ArtemisClient(requestParam.graphUrl, httpClient: authClient);
+  }
+
+  static String createToken(String userId, String tenantId, String privateKey) {
+    var builder = new JWTBuilder();
+    builder.subject = userId;
+    builder.expiresAt = DateTime.now().add(Duration(days: 30));
+    builder.issuer = 'www.example.com';
+    builder.setClaim('custom:tenant', tenantId);
+    var signer = JWTRsaSha256Signer(privateKey: privateKey);
+
+    return builder.getSignedToken(signer).toString();
   }
 }
 
@@ -18,8 +40,8 @@ class AuthorizedClient extends BaseClient {
 
   AuthorizedClient(this.token);
 
-  AuthorizedClient.fromRequest(sdkRequest.Request request) {
-    this.headers = request.headers;
+  AuthorizedClient.withHeaders(Map<String, String> headers) {
+    this.headers = headers;
   }
 
   @override

@@ -1,21 +1,26 @@
-import 'dart:io';
-
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/account.dart';
-import 'package:yonomi_platform_sdk/config.dart';
-import 'package:yonomi_platform_sdk/request/request.dart';
+import 'package:yonomi_platform_sdk/repository/account_repository.dart';
 import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
 
-Request request = yoRequest.Request(
-    CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${CONFIG.TOKEN}'});
+import '../utils/test_fixtures.dart';
+
 void main() {
-  String integrationId = "13249925-686c-400f-a2ab-5da5059a15bf";
+  yoRequest.Request request;
+
+  setUpAll(() {
+    var tester = TestFixtures();
+    request = tester.buildRequest();
+  });
 
   test('generateAccountLinkingUrl() should generate a URL String', () async {
-    String url =
-        await Account.generateAccountLinkingUrl(integrationId, request);
+    var integrationsList = await AccountRepository.getAllIntegrations(request);
 
-    expect(url, isNotEmpty);
-    expect(Uri.parse(url).isAbsolute, true); // Expect a valid URL
+    integrationsList.forEach((integration) async {
+      String url =
+          await AccountRepository.generateAccountUrl(integration.id, request);
+
+      expect(url, isNotEmpty);
+      expect(Uri.parse(url).isAbsolute, true); //
+    });
   });
 }

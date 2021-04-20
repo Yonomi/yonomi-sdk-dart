@@ -1,30 +1,34 @@
-import 'dart:io';
-
 import 'package:artemis/client.dart';
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/config.dart';
 import 'package:yonomi_platform_sdk/repository/account_repository.dart';
 import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
 import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
-import 'package:yonomi_platform_sdk/request/request.dart';
 
-Request request = yoRequest.Request(
-    CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${CONFIG.TOKEN}'});
+import '../../utils/test_fixtures.dart';
 
 void main() {
-  final String integrationId = "13249925-686c-400f-a2ab-5da5059a15bf";
+  yoRequest.Request request;
+
+  setUpAll(() {
+    var tester = TestFixtures();
+    request = tester.buildRequest();
+  });
 
   test(
       "AccountRepository.generateAccountUrl - generates an account linking url",
       () async {
+    var integrationsList = await AccountRepository.getAllIntegrations(request);
+
     ArtemisClient myClient = ArtemisClientCreator.create(request);
 
-    String url = await AccountRepository.generateAccountUrl(
-        integrationId, request,
-        client: myClient);
+    integrationsList.forEach((integration) async {
+      String url = await AccountRepository.generateAccountUrl(
+          integration.id, request,
+          client: myClient);
 
-    expect(url, isNotEmpty);
-    expect(Uri.parse(url).isAbsolute, true); // Expect a valid URL
+      expect(url, isNotEmpty);
+      expect(Uri.parse(url).isAbsolute, true); // Expect a valid URL
+    });
   });
 
   test("AccountRepository.getAllIntegrations - returns list of Integrations",
