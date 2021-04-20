@@ -14,13 +14,6 @@ aliases:
   - &project_dir "~/project"
 
 commands:
-  write-private-key:
-    description: "Write private data for e2e tests to environment variables"
-    steps:
-      - run:
-          name: Write sensitive data into environment variables for testing
-          command: |
-            echo "export PRIVATE_KEY=\"$PRIVATE_KEY\"" >> $BASH_ENV
   unit-tests:
     description: "Run local unit tests"
     steps:
