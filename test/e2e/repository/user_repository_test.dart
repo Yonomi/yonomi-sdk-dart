@@ -1,15 +1,18 @@
-import 'dart:io';
-
 import 'package:artemis/client.dart';
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/config.dart';
 import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
 import 'package:yonomi_platform_sdk/repository/user_repository.dart';
 import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
 
+import '../../utils/test_fixtures.dart';
+
 void main() {
-  yoRequest.Request request = yoRequest.Request(
-      CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${CONFIG.TOKEN}'});
+  yoRequest.Request request;
+
+  setUpAll(() {
+    var tester = TestFixtures();
+    request = tester.buildRequest();
+  });
 
   test('getUserDetails() returns populated fields', () async {
     ArtemisClient myClient = ArtemisClientCreator.create(request);
