@@ -8,6 +8,9 @@ import '../config.dart';
 
 class TestFixtures {
   yoRequest.Request buildRequest() {
+    if (CONFIG.PRIVATE_KEY == null) {
+      throw 'Private Key could not be found';
+    }
     String accessToken = ArtemisClientCreator.createToken(
         CONFIG.USER_ID, CONFIG.TENANT_ID, CONFIG.PRIVATE_KEY);
     yoRequest.Request request = yoRequest.Request(
