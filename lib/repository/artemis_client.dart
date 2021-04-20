@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:artemis/client.dart';
 import 'package:http/http.dart';
-import '../config.dart';
 import '../request/request.dart' as sdkRequest;
 import 'package:corsac_jwt/corsac_jwt.dart';
 

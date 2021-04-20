@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:dotenv/dotenv.dart' show load, env;
 import 'package:yaml/yaml.dart';
 
 ///
@@ -18,9 +17,7 @@ import 'package:yaml/yaml.dart';
 /// PRIVATE_KEY="E2E-PRIVATE-KEY"
 ///
 class CONFIG {
-  static final String _configFilename = "test-config.yaml";
-
-  static final String tokenKey = "AUTH_TOKEN";
+  static final String _configFilename = 'test-config.yaml';
 
   String _configYamlContent;
 
@@ -31,14 +28,8 @@ class CONFIG {
   }
 
   CONFIG._privateConstructor() {
-    load();
-    File file = new File(_configFilename);
+    File file = new File('./test/test-config.yaml');
     _configYamlContent = file.readAsStringSync();
-  }
-
-  @deprecated
-  String _getToken() {
-    return _getEnvironmentValue(tokenKey);
   }
 
   String _getUrl() {
@@ -65,12 +56,8 @@ class CONFIG {
   /// Get the value from this process's environment, else from a .env file
   /// placed in top-level directory.
   String _getEnvironmentValue(String valueKey) {
-    return Platform.environment[valueKey] ?? env[valueKey];
+    return Platform.environment[valueKey];
   }
-
-  // Should be deprecated
-  @deprecated
-  static final String TOKEN = _instance._getToken();
 
   static final String URL = _instance._getUrl();
 
