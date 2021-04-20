@@ -5,17 +5,7 @@ import 'package:yaml/yaml.dart';
 ///
 /// Helper class to obtain config values for e2e tests from the following files:
 /// test-config.yaml and from environment variables
-///
-/// test-config.yaml configuration variables:
-///
-/// graphqlEndpoint: "https://platform.yonomi.cloud/graphql"
-/// userId: "E2E-TEST-USER-ID"
-/// tenantId: "E2E-TENANT-ID"
-///
-/// Environment variable(s) read:
-///
-/// PRIVATE_KEY="E2E-PRIVATE-KEY"
-///
+
 class CONFIG {
   static final String _configFilename = 'test-config.yaml';
 
