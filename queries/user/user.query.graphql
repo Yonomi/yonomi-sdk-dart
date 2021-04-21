@@ -1,0 +1,14 @@
+query user {
+  # "me" is the entry point to any data specific to the current user
+  me {
+    id
+    lastActivityAt
+    firstActivityAt
+  }
+
+  # basic information about the tenant
+  tenant {
+    id
+    displayName
+  }
+}
