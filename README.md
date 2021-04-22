@@ -45,11 +45,9 @@ You will be interacting with our platform using the following URL:
 1. Created a Tenant
 2. Generated public and private RS256 key pairs
 3. Updated the Tenant with your public key
-4. Have users with unique Ids
+4. Have users with unique IDs
 
-If you need guidance to complete any of these steps, visit the following guide for the complete walkthrough to onboard with the platform:
-
-[Comprehensive Platform Request Guide](https://yonomi.atlassian.net/wiki/spaces/YP/pages/1740963897/Comprehensive+Platform+Requests+Guide)
+If you need guidance on completing any of these steps, please contact our sales team to help you get started using our platform.
 
 #### Configure the `config.yaml` file:
 
