@@ -42,24 +42,9 @@ You will be interacting with our platform using the following URL:
 
 **Pre-requisites:** You will need to be set up with our platform
 
-You will need a tenant ID and a private key to get started.
-
-It is NOT recommended that the private key be added in source control and only be generated during CI/CD process.
-
-You will need a user ID, a tenant ID, and a private key to generate an access token and make requests to the platform.
+You will need a user ID, a tenant ID, and a private key to generate access tokens and make requests to the platform.
 
 If you need guidance on obtaining any of these, please [contact our sales team](https://www.yonomi.co/contact-us) to help you get started using our platform.
-
-#### Configure the `config.yaml` file:
-
-Navigate to the `assets` folder in the Flutter app and create (or edit) the `config.yaml` file to make sure it has the URL to the graphQL endpoint and your tenant Id:
-
-```
-url: https://platform.yonomi.cloud/graphql
-tenantId: YOUR-TENANT-ID-GOES-HERE
-```
-
-You should now be ready to make requests to our platform.
 
 ###  Making requests to the platform <a name="first-request"></a>
 Let's look at how we can leverage the Dart SDK to make requests to the platform.
