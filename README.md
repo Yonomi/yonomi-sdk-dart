@@ -40,14 +40,15 @@ You will be interacting with our platform using the following URL:
 
 [https://platform.yonomi.cloud/graphql](https://platform.yonomi.cloud/graphql)
 
-**Pre-requisites:** You will need to be set up with our platform, having fulfilled the following requirements:
+**Pre-requisites:** You will need to be set up with our platform
 
-1. Created a Tenant
-2. Generated public and private RS256 key pairs
-3. Updated the Tenant with your public key
-4. Have users with unique IDs
+You will need a tenant ID and a private key to get started.
 
-If you need guidance on completing any of these steps, please [contact our sales team](https://www.yonomi.co/contact-us) to help you get started using our platform.
+It is NOT recommended that the private key be added in source control and only be generated during CI/CD process.
+
+You will need a user ID, a tenant ID, and a private key to generate an access token and make requests to the platform.
+
+If you need guidance on obtaining any of these, please [contact our sales team](https://www.yonomi.co/contact-us) to help you get started using our platform.
 
 #### Configure the `config.yaml` file:
 
