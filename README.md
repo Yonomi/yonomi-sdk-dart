@@ -17,6 +17,7 @@ Flutter SDK for Yonomi Platform
 1. [Getting a list of all available integrations](#account-flow)
 1. [Retrieving all devices](#retrieve-devices)
 1. [Trait-specific actions](#trait-actions)
+1. [License](#license)
 
 ## Getting Started
 
@@ -209,6 +210,11 @@ You can pick from the following modes listed in the ThermostatMode enumerator:
 ```
 {OFF, AUTO, HEAT, COOL, FANONLY, DEHUMIDIFY, AIRFLOW}
 ```
+
+## License <a name="license"></a>
+This application is released under the [Apache license v2.0](LICENSE)
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 [circle-shield]: https://circleci.com/gh/Yonomi/yonomi-dart-sdk/tree/main.svg?style=shield&circle-token=470fbce0775849f45768cb551352807a5652f75f
 [circle-pipeline]: https://app.circleci.com/pipelines/github/Yonomi/yonomi-dart-sdk
