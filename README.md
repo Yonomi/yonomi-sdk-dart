@@ -2,6 +2,7 @@
 
 [![Yonomi Dart SDK][sdk-shield]][yonomi]
 [![CircleCI][circle-shield]][circle-pipeline]
+[![codecov](https://codecov.io/gh/Yonomi/yonomi-dart-sdk/branch/main/graph/badge.svg?token=L99ZQAQIOI)](https://codecov.io/gh/Yonomi/yonomi-dart-sdk)
 
 ---
 
