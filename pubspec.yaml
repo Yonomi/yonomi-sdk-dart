@@ -1,8 +1,8 @@
 name: yonomi_platform_sdk
-description: A new Flutter package project.
+description: Flutter SDK for Yonomi Platform
 version: 0.0.1
 author: Yonomi
-homepage:
+homepage: https://www.yonomi.co
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
