@@ -33,8 +33,7 @@ class CONFIG {
   }
 
   String _getTenantId() {
-    var yamlMap = loadYaml(_instance._configYamlContent)['tenantId'];
-    return yamlMap.toString();
+    return _getEnvironmentValue("TENANT_ID");
   }
 
   String _getPrivateKey() {
