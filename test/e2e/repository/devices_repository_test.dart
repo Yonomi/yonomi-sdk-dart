@@ -7,7 +7,7 @@ import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
 import '../../utils/test_fixtures.dart';
 
 void main() {
-  String testThermostatId, testLockId;
+  String testThermostatId; //, testLockId;
 
   yoRequest.Request request;
 
@@ -18,7 +18,7 @@ void main() {
 
     testThermostatId = await tester.getThermostatDeviceId(request);
 
-    testLockId = await tester.getLockUnlockDeviceId(request);
+    // testLockId = await tester.getLockUnlockDeviceId(request);
   });
 
   test('getDevices returns device list for all traits', () async {
@@ -33,19 +33,19 @@ void main() {
   });
 
   test('setPoint sets thermostat action', () async {
-    final setThermostat = await ThermostatRepository.setPointThermostat(
+    await ThermostatRepository.setPointThermostat(
         request, testThermostatId, 22);
     expect(true, isTrue);
   });
 
   test('setFanMode sets fanmode', () async {
-    final setThermostat = await ThermostatRepository.setPointThermostat(
+    await ThermostatRepository.setPointThermostat(
         request, testThermostatId, 22);
     expect(true, isTrue);
   });
 
   test('setFanMode sets fan mode', () async {
-    final setFanMode = await ThermostatRepository.setMode(
+    await ThermostatRepository.setMode(
         request, testThermostatId, ThermostatMode.heat);
     expect(true, isTrue);
   });
