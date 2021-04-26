@@ -11,7 +11,7 @@ class ThermostatRepository {
     final actionQuery = MakeSetTargetTemperatureRequestMutation(
         variables: MakeSetTargetTemperatureRequestArguments(
             deviceId: id, targetTemperature: temperature));
-    final setPointResult = await client.execute(actionQuery);
+    await client.execute(actionQuery);
   }
 
   static Future<void> setMode(
@@ -19,6 +19,6 @@ class ThermostatRepository {
     ArtemisClient client = ArtemisClientCreator.create(request);
     final actionQuery = MakeSetModeRequestMutation(
         variables: MakeSetModeRequestArguments(deviceId: id, mode: mode));
-    final fanModeResult = await client.execute(actionQuery);
+    await client.execute(actionQuery);
   }
 }
