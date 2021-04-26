@@ -1,8 +1,6 @@
 import 'package:artemis/client.dart';
 import 'package:yonomi_platform_sdk/graphql/devices/device_query.dart';
 import 'package:yonomi_platform_sdk/graphql/devices/devices_query.dart';
-import 'package:yonomi_platform_sdk/graphql/devices/lock/lock_queries.dart';
-import 'package:yonomi_platform_sdk/graphql/devices/thermostat/thermostat_queries.dart';
 
 import 'package:yonomi_platform_sdk/request/request.dart';
 
@@ -62,7 +60,7 @@ class DevicesRepository {
     final deviceQuery =
         GetDeviceQuery(variables: GetDeviceArguments(deviceId: id));
     final deviceResponse = await client.execute(deviceQuery);
-    
+
     return Device(
         deviceResponse.data.device.id,
         deviceResponse.data.device.displayName,
