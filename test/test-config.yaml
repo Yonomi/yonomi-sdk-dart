@@ -1,3 +1,2 @@
 graphqlEndpoint: "https://platform.yonomi.cloud/graphql"
 userId: "sdk-test-user"
-tenantId: "18f22d09-834d-4060-9b2f-0c062f626455"
