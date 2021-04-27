@@ -1,0 +1,90 @@
+version: 2.1
+
+#####################
+# Common Definitions
+#####################
+
+# Orb declarations
+orbs:
+  win: circleci/windows@2.4.0
+  codecov: codecov/codecov@1.0.2
+
+# Simple YAML anchors
+aliases:
+  - &project_dir "~/project"
+
+commands:
+  unit-tests:
+    description: "Run local unit tests"
+    steps:
+      - run:
+          name: command to run unit tests
+          command: pub run test test/unit --reporter json | tojunit --output test-results/dart-tests/dart_sdk_unit_tests-report.xml
+  e2e-tests:
+    description: "Run end-to-end tests"
+    steps:
+      - run:
+          name: command to run e2e tests
+          command: pub run test test/e2e --reporter json | tojunit --output test-results/dart-tests/dart_sdk_e2e_tests-report.xml
+  all-tests:
+    description: "Run all tests"
+    steps:
+      - run:
+          name: command to run all tests
+          command: PRIVATE_KEY=$(echo "$PRIVATE_KEY_ENCODED" | base64 --decode) flutter test --coverage && lcov --remove coverage/lcov.info 'lib/graphql/*' > coverage/lcov1.info
+      - codecov/upload:
+          file: coverage/lcov1.info
+  dependencies:
+    description: "Download dependencies and setup global packages"
+    parameters:
+      shell:
+        type: string
+        default: "/bin/bash --login -eo pipefail"
+      pub-cache:
+        type: string
+        default: "~/.pub-cache"
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1.4-dependencies-{{ arch }}-{{ checksum "pubspec.lock" }}
+            - v1.4-dependencies-{{ arch }}-
+      - run:
+          name: Download deps
+          shell: << parameters.shell >>
+          command: pub get
+      - run:
+          name: Get junitreporter
+          shell: << parameters.shell >>
+          command: pub global activate junitreport
+      - save_cache:
+          key: v1.4-dependencies-{{ arch }}-{{ checksum "pubspec.lock" }}
+          paths:
+            - .dart_tool
+            - << parameters.pub-cache >>
+
+######################
+# Workflow Definition
+######################
+workflows:
+  version: 2.1
+  test-and-build:
+    jobs:
+      - test
+
+##################
+# Job Definitions
+##################
+jobs:
+  test:
+    docker:
+      - image: cirrusci/flutter:stable
+    steps:
+      - dependencies:
+          shell: "/bin/bash -eo pipefail"
+      - run:
+          name: Make folder for test results
+          command: mkdir -p test-results/dart-tests
+      - all-tests
+      - store_test_results:
+          path: test-results

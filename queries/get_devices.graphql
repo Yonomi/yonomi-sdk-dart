@@ -1,0 +1,12 @@
+query getDevices {
+    me {
+        devices {
+            pageInfo { hasNextPage }
+            edges {
+                node {
+                    ... DeviceDetails
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,2 @@
+graphqlEndpoint: "https://platform.yonomi.cloud/graphql"
+userId: "sdk-test-user"
