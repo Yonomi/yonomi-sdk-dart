@@ -1,13 +1,14 @@
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/graphql/devices/thermostat/thermostat_queries.dart';
 import 'package:yonomi_platform_sdk/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/repository/devices/lock_repository.dart';
 import 'package:yonomi_platform_sdk/repository/devices/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
 
 import '../../utils/test_fixtures.dart';
 
 void main() {
-  String testThermostatId; //, testLockId;
+  String testThermostatId, testLockId;
 
   yoRequest.Request request;
 
@@ -18,7 +19,7 @@ void main() {
 
     testThermostatId = await tester.getThermostatDeviceId(request);
 
-    // testLockId = await tester.getLockUnlockDeviceId(request);
+    testLockId = await tester.getLockUnlockDeviceId(request);
   });
 
   test('getDevices returns device list for all traits', () async {
@@ -50,17 +51,14 @@ void main() {
     expect(true, isTrue);
   });
 
-  // TODO: Set up a Lock-related device and fix tests below:
-  //
-  // test('getDeviceDetails get device detail', () async {
-  //   final device =
-  //       await DevicesRepository.getDeviceDetails(request, testLockId);
-  //   expect(device, isNotNull);
-  // });
+  test('getDeviceDetails get device detail', () async {
+    final device =
+        await DevicesRepository.getDeviceDetails(request, testLockId);
+    expect(device, isNotNull);
+  }, skip: 'Skipped until we add lock related device');
 
-  // test('deviceAction lock executes as expected', () async {
-  //   await LockRepository.sendLockUnlockAction(
-  //       request, TEST_LOCK_DEVICE_ID, false);
-  //   expect(true, isTrue);
-  // });
+  test('deviceAction lock executes as expected', () async {
+    await LockRepository.sendLockUnlockAction(request, testLockId, false);
+    expect(true, isTrue);
+  }, skip: 'Skipped until we add lock related device');
 }
