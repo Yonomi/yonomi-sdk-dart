@@ -36,7 +36,7 @@ commands:
   semantic-versioning:
     description: "Create correct versioning"
     steps:
-      - install node:
+      - run:
           name: install node
           command: apt-get update && apt-get -y install npm && npm -v
   dependencies:
