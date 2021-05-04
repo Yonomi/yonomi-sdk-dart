@@ -127,11 +127,14 @@ workflows:
   version: 2.1
   test-and-build:
     jobs:
-      - test
+      - test:
         context: sdk-private-dev
         <<: *feature-branch-filter
   changelog-tag:
     jobs:
-      - test
-      context: sdk-private-test
-      <<: *main-branch-filter
+      - test:
+        context: sdk-private-test
+        <<: *main-branch-filter
+      - semantic-versioning:
+        context: sdk-private-test
+        <<: *feature-branch-filter
