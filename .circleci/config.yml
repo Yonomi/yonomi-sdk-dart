@@ -30,10 +30,10 @@ anchors:
       branches:
         ignore: /.*/
 
-  executors:
-    default-executor:
-      docker:
-        - image: cirrusci/flutter:stable
+executors:
+  default-executor:
+    docker:
+      - image: cirrusci/flutter:stable
 
 
 # Simple YAML anchors
