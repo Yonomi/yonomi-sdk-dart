@@ -12,11 +12,11 @@ anchors:
   - &feature-branch-filter
     filters:
       branches:
-        only: /^(?!master$).*/
+        only: /^(?!main$).*/
   - &master-branch-filter
     filters:
       branches:
-        only: /^master$/
+        only: /^main$/
   - &staging-tag-filter
     filters:
       tags:
@@ -68,7 +68,7 @@ commands:
       - run: sudo apt-get update
       - run: sudo apt-get -y install npm
       - run: | 
-          npx semantic-release
+          npx semantic-release --branches main
   dependencies:
     description: "Download dependencies and setup global packages"
     parameters:
