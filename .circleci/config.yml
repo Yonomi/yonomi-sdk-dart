@@ -13,7 +13,7 @@ anchors:
     filters:
       branches:
         only: /^(?!main$).*/
-  - &master-branch-filter
+  - &main-branch-filter
     filters:
       branches:
         only: /^main$/
@@ -48,7 +48,7 @@ commands:
       - run:
           name: command to run e2e tests
           command: pub run test test/e2e --reporter json | tojunit --output test-results/dart-tests/dart_sdk_e2e_tests-report.xml
-  all-tests:
+  run-tests:
     description: "Run all tests"
     steps:
       - run:
@@ -61,6 +61,7 @@ commands:
     steps:
       - run:
           name: Git Setup
+          shell: << parameters.shell >>
           command: |
             mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
             git config --global user.email "developer@yonomi.co"
@@ -98,14 +99,7 @@ commands:
             - .dart_tool
             - << parameters.pub-cache >>
 
-######################
-# Workflow Definition
-######################
-workflows:
-  version: 2.1
-  test-and-build:
-    jobs:
-      - test
+  
 
 ##################
 # Job Definitions
@@ -120,7 +114,24 @@ jobs:
       - run:
           name: Make folder for test results
           command: mkdir -p test-results/dart-tests
-      - all-tests
+      - run-tests
       - store_test_results:
           path: test-results
       - semantic-versioning
+
+
+######################
+# Workflow Definition
+######################
+workflows:
+  version: 2.1
+  test-and-build:
+    jobs:
+      - test
+        context: sdk-private-dev
+        <<: *feature-branch-filter
+  changelog-tag:
+    jobs:
+      - test
+      context: sdk-private-test
+      <<: *main-branch-filter
