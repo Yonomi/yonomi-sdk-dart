@@ -33,6 +33,12 @@ commands:
           command: PRIVATE_KEY=$(echo "$PRIVATE_KEY_ENCODED" | base64 --decode) flutter test --coverage && lcov --remove coverage/lcov.info 'lib/graphql/*' > coverage/lcov1.info
       - codecov/upload:
           file: coverage/lcov1.info
+  semantic-versioning:
+    description: "Create correct versioning"
+    steps:
+      - install node:
+          name: install node
+          command: apt-get update && apt-get -y install npm && npm -v
   dependencies:
     description: "Download dependencies and setup global packages"
     parameters:
@@ -87,3 +93,4 @@ jobs:
       - all-tests
       - store_test_results:
           path: test-results
+      - semantic-versioning
