@@ -131,7 +131,7 @@ workflows:
   test-and-build:
     jobs:
       - test
-        context: sdk-private-dev
+        # context: sdk-private-dev
         <<: *feature-branch-filter
   # changelog-tag:
   #   jobs:
