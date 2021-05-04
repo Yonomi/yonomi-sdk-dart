@@ -30,6 +30,11 @@ anchors:
       branches:
         ignore: /.*/
 
+  executors:
+    default-executor:
+      docker:
+        - image: cirrusci/flutter:stable
+
 
 # Simple YAML anchors
 aliases:
@@ -104,8 +109,6 @@ commands:
 # Job Definitions
 ##################
 jobs:
-  docker:
-    - image: cirrusci/flutter:stable
   test:
     steps:
       - dependencies:
