@@ -110,6 +110,7 @@ commands:
 ##################
 jobs:
   test:
+    executor: default-executor
     steps:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
