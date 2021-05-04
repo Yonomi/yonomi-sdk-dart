@@ -108,21 +108,21 @@ workflows:
   test:
     jobs:
       - test:
-        filters:
-          branches:
-            ignore:
-              - main
+          filters:
+            branches:
+              ignore:
+                - main
   test-changelog-tag:
     jobs:
       - test:
-        filters:
-          branches:
-            only:
-              - main
+          filters:
+            branches:
+              only:
+                - main
       - semantic-versioning:
-        requires:
-            - test
-        filters:
-          branches:
-            only:
-              - main
+          requires:
+              - test
+          filters:
+            branches:
+              only:
+                - main
