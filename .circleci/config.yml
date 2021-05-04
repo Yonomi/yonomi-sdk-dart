@@ -130,7 +130,7 @@ workflows:
   version: 2.1
   test-and-build:
     jobs:
-      - test
+      - test:
         # context: sdk-private-dev
         <<: *feature-branch-filter
   # changelog-tag:
