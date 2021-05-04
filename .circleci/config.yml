@@ -8,6 +8,28 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@1.0.2
 
+# anchors:
+#   - &feature-branch-filter
+#     filters:
+#       branches:
+#         only: /^(?!master$).*/
+#   - &master-branch-filter
+#     filters:
+#       branches:
+#         only: /^master$/
+#   - &staging-tag-filter
+#     filters:
+#       tags:
+#         only: /^staging$/
+#       branches:
+#         ignore: /.*/
+#   - &production-tag-filter
+#     filters:
+#       tags:
+#         only: /^production$/
+#       branches:
+#         ignore: /.*/
+
 # Simple YAML anchors
 aliases:
   - &project_dir "~/project"
@@ -36,9 +58,10 @@ commands:
   semantic-versioning:
     description: "Create correct versioning"
     steps:
-      - run:
-          name: install node
-          command: apt-get update && apt-get -y install npm && npm -v
+      - run: sudo apt-get update
+      - run: sudo apt-get -y install npm
+      - run: | 
+          npx semantic-release
   dependencies:
     description: "Download dependencies and setup global packages"
     parameters:
