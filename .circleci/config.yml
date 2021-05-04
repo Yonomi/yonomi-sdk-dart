@@ -8,37 +8,10 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@1.0.2
 
-anchors:
-  - &feature-branch-filter
-    filters:
-      branches:
-        only: /^(?!main$).*/
-  - &main-branch-filter
-    filters:
-      branches:
-        only: /^main$/
-  - &staging-tag-filter
-    filters:
-      tags:
-        only: /^staging$/
-      branches:
-        ignore: /.*/
-  - &production-tag-filter
-    filters:
-      tags:
-        only: /^production$/
-      branches:
-        ignore: /.*/
-
 executors:
   default-executor:
     docker:
       - image: cirrusci/flutter:stable
-
-
-# Simple YAML anchors
-aliases:
-  - &project_dir "~/project"
 
 commands:
   unit-tests:
@@ -132,13 +105,24 @@ jobs:
 ######################
 workflows:
   version: 2.1
-  test-and-build:
+  test:
     jobs:
       - test:
-        <<: *feature-branch-filter
-  changelog-tag:
+        filters:
+          branches:
+            ignore:
+              - main
+  test-changelog-tag:
     jobs:
       - test:
-        <<: *main-branch-filter
+        filters:
+          branches:
+            only:
+              - main
       - semantic-versioning:
-        <<: *main-branch-filter
+        requires:
+            - test
+        filters:
+          branches:
+            only:
+              - main
