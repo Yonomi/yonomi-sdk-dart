@@ -56,7 +56,7 @@ commands:
           command: PRIVATE_KEY=$(echo "$PRIVATE_KEY_ENCODED" | base64 --decode) flutter test --coverage && lcov --remove coverage/lcov.info 'lib/graphql/*' > coverage/lcov1.info
       - codecov/upload:
           file: coverage/lcov1.info
-  semantic-versioning:
+  semantic-versioning-command:
     description: "Tag and create changelog"
     steps:
       - run:
@@ -104,9 +104,9 @@ commands:
 # Job Definitions
 ##################
 jobs:
+  docker:
+    - image: cirrusci/flutter:stable
   test:
-    docker:
-      - image: cirrusci/flutter:stable
     steps:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
@@ -116,8 +116,8 @@ jobs:
       - run-tests
       - store_test_results:
           path: test-results
-      - semantic-versioning
-
+  # semantic-version:
+  #   steps:
 
 ######################
 # Workflow Definition
@@ -128,7 +128,7 @@ workflows:
     jobs:
       - test
   #       context: sdk-private-dev
-  #       <<: *feature-branch-filter
+        <<: *feature-branch-filter
   # changelog-tag:
   #   jobs:
   #     - test:
