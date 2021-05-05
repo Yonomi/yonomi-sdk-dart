@@ -123,6 +123,8 @@ workflows:
               only:
                 - main
       - semantic-versioning:
+          context:
+            - org-global
           requires:
               - test
           filters:
