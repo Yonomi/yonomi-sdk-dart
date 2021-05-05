@@ -9,11 +9,13 @@
                 "changelogFile": "docs/CHANGELOG.md"
             }
         ],
+        "semantic-release-dart",
         [
         "@semantic-release/github",
         {
             "assets": ["docs/CHANGELOG.md"]
         }
+        
     ]
   ]
 }

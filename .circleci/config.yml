@@ -48,6 +48,7 @@ commands:
       - run: |
           npm init -y
           npm i -D @semantic-release/changelog
+          npm i -D semantic-release-dart
           npx semantic-release --branches main
   dependencies:
     description: "Download dependencies and setup global packages"
