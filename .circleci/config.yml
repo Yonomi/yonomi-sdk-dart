@@ -45,7 +45,9 @@ commands:
             git config --global user.name "CircleCI"
       - run: sudo apt-get update
       - run: sudo apt-get -y install npm
-      - run: | 
+      - run: |
+          npm init -y
+          npm i -D @semantic-release/changelog
           npx semantic-release --branches main
   dependencies:
     description: "Download dependencies and setup global packages"
