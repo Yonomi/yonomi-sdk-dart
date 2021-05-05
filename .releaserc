@@ -1,3 +1,5 @@
+
+
 {
     "branches": ["main"],
     "plugins": [
@@ -11,7 +13,7 @@
         ],
         "semantic-release-dart",
         [
-        "@semantic-release/github",
+        "@semantic-release/git",
         {
             "assets": ["docs/CHANGELOG.md"]
         }
