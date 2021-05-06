@@ -24,7 +24,7 @@ class ArtemisClientCreator {
     builder.subject = userId;
     builder.expiresAt = DateTime.now().add(Duration(days: 30));
     builder.issuer = 'www.example.com';
-    builder.setClaim('custom:tenant', tenantId);
+    builder.setClaim('https://platform.yonomi.cloud/tenant', tenantId);
     var signer = JWTRsaSha256Signer(privateKey: privateKey);
 
     return builder.getSignedToken(signer).toString();
