@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
-import 'package:yonomi_platform_sdk/repository/devices/devices_repository.dart';
-import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
+import 'package:yonomi_sdk_dart/repository/artemis_client.dart';
+import 'package:yonomi_sdk_dart/repository/devices/devices_repository.dart';
+import 'package:yonomi_sdk_dart/request/request.dart' as yoRequest;
 
 import 'config.dart';
 

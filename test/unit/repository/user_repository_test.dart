@@ -1,9 +1,9 @@
 import 'package:artemis/artemis.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/graphql/user/user_query.dart';
-import 'package:yonomi_platform_sdk/repository/user_repository.dart';
-import 'package:yonomi_platform_sdk/request/request.dart';
+import 'package:yonomi_sdk_dart/graphql/user/user_query.dart';
+import 'package:yonomi_sdk_dart/repository/user_repository.dart';
+import 'package:yonomi_sdk_dart/request/request.dart';
 
 class MockClient extends Mock implements ArtemisClient {}
 
