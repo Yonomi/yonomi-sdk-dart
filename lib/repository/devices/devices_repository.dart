@@ -1,8 +1,8 @@
 import 'package:artemis/client.dart';
-import 'package:yonomi_platform_sdk/graphql/devices/device_query.dart';
-import 'package:yonomi_platform_sdk/graphql/devices/devices_query.dart';
+import 'package:yonomi_sdk_dart/graphql/devices/device_query.dart';
+import 'package:yonomi_sdk_dart/graphql/devices/devices_query.dart';
 
-import 'package:yonomi_platform_sdk/request/request.dart';
+import 'package:yonomi_sdk_dart/request/request.dart';
 
 import '../artemis_client.dart';
 

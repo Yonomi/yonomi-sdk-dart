@@ -1,6 +1,6 @@
 import 'package:artemis/artemis.dart';
-import 'package:yonomi_platform_sdk/graphql/devices/lock/lock_queries.dart';
-import 'package:yonomi_platform_sdk/request/request.dart';
+import 'package:yonomi_sdk_dart/graphql/devices/lock/lock_queries.dart';
+import 'package:yonomi_sdk_dart/request/request.dart';
 
 import '../artemis_client.dart';
 

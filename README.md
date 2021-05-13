@@ -31,7 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
     
-  yonomi_platform_sdk: ^1.0.0
+  yonomi_sdk_dart: ^1.0.0
   
 ```
 

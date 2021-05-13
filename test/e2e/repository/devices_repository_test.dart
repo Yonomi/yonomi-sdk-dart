@@ -1,9 +1,9 @@
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/graphql/devices/thermostat/thermostat_queries.dart';
-import 'package:yonomi_platform_sdk/repository/devices/devices_repository.dart';
-import 'package:yonomi_platform_sdk/repository/devices/lock_repository.dart';
-import 'package:yonomi_platform_sdk/repository/devices/thermostat_repository.dart';
-import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
+import 'package:yonomi_sdk_dart/graphql/devices/thermostat/thermostat_queries.dart';
+import 'package:yonomi_sdk_dart/repository/devices/devices_repository.dart';
+import 'package:yonomi_sdk_dart/repository/devices/lock_repository.dart';
+import 'package:yonomi_sdk_dart/repository/devices/thermostat_repository.dart';
+import 'package:yonomi_sdk_dart/request/request.dart' as yoRequest;
 
 import '../../utils/test_fixtures.dart';
 
