@@ -146,7 +146,7 @@ workflows:
           <<: *main_only
   conditional-workflow:
     when:
-      equal: ["https://github.com/Yonomi/yonomi-sdk-dart-private.git", $CIRCLE_REPOSITORY_URL]
+      equal: ["https://github.com/Yonomi/yonomi-sdk-dart-private.git", "${CIRCLE_REPOSITORY_URL}"]
     publish:
       jobs:
         - test:
