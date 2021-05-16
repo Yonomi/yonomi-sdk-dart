@@ -53,9 +53,10 @@ commands:
           npx semantic-release --branches main
   run-publish:
     description: "Publishes to pub.dev"
-    - run:
-        name: Publishing to pub.dev
-        command: dart pub publish --dry-run
+    steps:
+      - run:
+          name: Publishing to pub.dev
+          command: dart pub publish --dry-run
 
   dependencies:
     description: "Download dependencies and setup global packages"
