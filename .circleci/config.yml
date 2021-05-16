@@ -146,7 +146,7 @@ workflows:
           <<: *main_only
   test-publish:
     when:
-      equal: [ private, $REPO_TYPE ]
+      equal: [ private, "${REPO_TYPE}" ]
     jobs:
       - test:
           filters:
