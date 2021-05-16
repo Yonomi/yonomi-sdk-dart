@@ -51,6 +51,12 @@ commands:
           npm i -D @semantic-release/git
           npm i -D semantic-release-dart
           npx semantic-release --branches main
+  run-publish:
+    description: "Publishes to pub.dev"
+    - run:
+        name: Publishing to pub.dev
+        command: dart pub publish --dry-run
+
   dependencies:
     description: "Download dependencies and setup global packages"
     parameters:
@@ -103,6 +109,18 @@ jobs:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
       - run-semantic-versioning
+  hold:
+    type: approval
+    requires: 
+      - test
+  publish:
+    executor: default-executor
+    requires:
+      - hold
+    steps:
+      - dependencies:
+          shell: "/bin/bash -eo pipefail"
+      - run-publish
 
 ######################
 # Workflow Definition
@@ -132,3 +150,14 @@ workflows:
             branches:
               only:
                 - main
+  conditional-workflow:
+    when:
+      equal: [https://github.com/Yonomi/yonomi-sdk-dart-private.git, $CIRCLE_REPOSITORY_URL]
+    publish:
+      jobs:
+        - publish:
+            filters:
+              branches:
+                only:
+                  - test_publish
+
