@@ -144,23 +144,22 @@ workflows:
           requires:
               - test
           <<: *main_only
-  conditional-workflow:
+  test-publish:
     when:
-      equal: ["https://github.com/Yonomi/yonomi-sdk-dart-private.git", "${CIRCLE_REPOSITORY_URL}"]
-    publish:
-      jobs:
-        - test:
+      equal: [ private, $REPO_TYPE ]
+    jobs:
+      - test:
           filters:
               branches:
                 only:
                   - test_publish
-        - hold:
-            type: approval
-            requires:
-              - test
-        - publish:
-            requires:
-              - hold
+      - hold:
+          type: approval
+          requires:
+            - test
+      - publish:
+          requires:
+            - hold
           filters:
             branches:
               only:
