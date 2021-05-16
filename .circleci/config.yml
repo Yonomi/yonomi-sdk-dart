@@ -13,6 +13,11 @@ executors:
     docker:
       - image: cirrusci/flutter:stable
 
+main_only: &main_only
+  filters:
+    branches:
+      only: main
+
 commands:
   unit-tests:
     description: "Run local unit tests"
@@ -110,14 +115,8 @@ jobs:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
       - run-semantic-versioning
-  hold:
-    type: approval
-    requires: 
-      - test
   publish:
     executor: default-executor
-    requires:
-      - hold
     steps:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
@@ -138,27 +137,32 @@ workflows:
   test-changelog-tag:
     jobs:
       - test:
-          filters:
-            branches:
-              only:
-                - main
+          <<: *main_only  
       - semantic-versioning:
           context:
             - org-global
           requires:
               - test
-          filters:
-            branches:
-              only:
-                - main
+          <<: *main_only
   conditional-workflow:
     when:
       equal: [https://github.com/Yonomi/yonomi-sdk-dart-private.git, $CIRCLE_REPOSITORY_URL]
     publish:
       jobs:
-        - publish:
-            filters:
+        - test:
+          filters:
               branches:
                 only:
                   - test_publish
+        - hold:
+            type: approval
+            requires:
+              - test
+        - publish:
+            requires:
+              - hold
+          filters:
+            branches:
+              only:
+                - test_publish
 
