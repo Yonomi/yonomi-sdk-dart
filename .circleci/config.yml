@@ -152,7 +152,7 @@ workflows:
         type: env_var_name
     when:
       and:
-        - equal: [ test_publish, << pipeline.git.branch >> ]
+        - equal: [ test_publish_1, << pipeline.git.branch >> ]
     jobs:
       - test:
           filters:
