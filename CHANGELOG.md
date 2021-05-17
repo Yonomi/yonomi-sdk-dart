@@ -1,4 +1,16 @@
+## [1.0.3](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.2...v1.0.3) (2021-05-17)
+
+
+### Bug Fixes
+
+* **semver:** update gitstep to add another file ([b4746ec](https://github.com/Yonomi/yonomi-sdk-dart/commit/b4746ec74d5522e5260df3a1b428bba41764c791))
+
 ## [1.0.2](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.1...v1.0.2) (2021-05-11)
+
+
+### Bug Fixes
+
+* **semver:** update gitstep to add another file ([b4746ec](https://github.com/Yonomi/yonomi-sdk-dart-private/commit/b4746ec74d5522e5260df3a1b428bba41764c791))
 
 
 ### Bug Fixes
