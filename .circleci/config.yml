@@ -120,10 +120,7 @@ jobs:
   publish:
     executor: default-executor
     steps:
-      - dependencies:
-          shell: "/bin/bash -eo pipefail"
       - run-publish
-
 ######################
 # Workflow Definition
 ######################
@@ -136,7 +133,7 @@ workflows:
             branches:
               ignore:
                 - main
-  test-changelog-tag:
+  tag-release:
     jobs:
       - test:
           <<: *main_only  
@@ -146,19 +143,14 @@ workflows:
           requires:
               - test
           <<: *main_only
-  test-publish:
-    when:
-      and:
-        - equal: [ https://github.com/Yonomi/yonomi-sdk-dart, << pipeline.project.git_url >> ]
-    jobs:
-      - test:
-          <<: *main_only
       - hold:
           type: approval
           requires:
-            - test
+            - semantic-versioning
+      
       - publish:
+          context:
+            - org-global
           requires:
-            - hold
+              - hold
           <<: *main_only
-
