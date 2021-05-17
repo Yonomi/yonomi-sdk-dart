@@ -152,7 +152,7 @@ workflows:
         type: env_var_name
     when:
       and:
-        - equal: [ "https://github.com/Yonomi/yonomi-sdk-dart-private.git", "${<< pipeline.git.url >>}" ]
+        - equal: [ "https://github.com/Yonomi/yonomi-sdk-dart-private.git", "${<< pipeline.project.git_url >>}" ]
     jobs:
       - test:
           filters:
