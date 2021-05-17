@@ -18,6 +18,11 @@ main_only: &main_only
     branches:
       only: main
 
+parameters:
+  repo_type: 
+    default: REPO_TYPE
+    type: env_var_name
+
 commands:
   unit-tests:
     description: "Run local unit tests"
@@ -145,8 +150,8 @@ workflows:
               - test
           <<: *main_only
   test-publish:
-    # when:
-    #   equal: [ private, "${REPO_TYPE}" ]
+    when:
+      equal: [ private, "${<< parameters.repo_type >>}" ]
     jobs:
       - test:
           filters:
