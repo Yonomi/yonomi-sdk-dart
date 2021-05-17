@@ -34,6 +34,7 @@ commands:
   run-tests:
     description: "Run all tests"
     steps:
+      - run: echo $REPO_TYPE
       - run:
           name: command to run all tests
           command: PRIVATE_KEY=$(echo "$PRIVATE_KEY_ENCODED" | base64 --decode) flutter test --coverage && lcov --remove coverage/lcov.info 'lib/graphql/*' > coverage/lcov1.info
@@ -150,7 +151,7 @@ workflows:
         default: REPO_TYPE
         type: env_var_name
     when:
-      equal: [ private, ${<< parameters.repo_type >>} ]
+      equal: [ private, << parameters.repo_type >> ]
     jobs:
       - test:
           filters:
