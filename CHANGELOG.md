@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.3...v1.0.4) (2021-05-17)
+
+
+### Bug Fixes
+
+* **cicd:** changes on pipeline names ([3ecdad5](https://github.com/Yonomi/yonomi-sdk-dart/commit/3ecdad567464dfd6cde5c8b91f0a1a3bf463a395))
+* **cicd:** update build step to publish after semantic release ([73f39f9](https://github.com/Yonomi/yonomi-sdk-dart/commit/73f39f902d6da9ef81824e55f30cefb4ae97b47c))
+* **cicd:** update build step to publish after semantic release ([802915c](https://github.com/Yonomi/yonomi-sdk-dart/commit/802915ceeaa88ad9dc9757e5fd59b029503f2d78))
+
 ## [1.0.3](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.2...v1.0.3) (2021-05-17)
 
 
