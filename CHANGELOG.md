@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/Yonomi/yonomi-sdk-dart-private/compare/v1.0.6...v1.0.7) (2021-05-17)
+
+
+### Bug Fixes
+
+* **cicd:** update build step to publish after semantic release ([73f39f9](https://github.com/Yonomi/yonomi-sdk-dart-private/commit/73f39f902d6da9ef81824e55f30cefb4ae97b47c))
+
 ## [1.0.6](https://github.com/Yonomi/yonomi-sdk-dart-private/compare/v1.0.5...v1.0.6) (2021-05-17)
 
 
