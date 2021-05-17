@@ -150,8 +150,9 @@ workflows:
         default: REPO_TYPE
         type: env_var_name
     when:
-      equal: [ private, << parameters.repo_type >> ]
+      equal: [ true, true ]
     jobs:
+      - run: echo "${<< parameters.repo_type >>}"
       - test:
           filters:
               branches:
