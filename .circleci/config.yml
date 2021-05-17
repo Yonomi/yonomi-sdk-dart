@@ -63,7 +63,7 @@ commands:
     steps:
       - run:
           name: Publishing to pub.dev
-          command: dart pub publish --dry-run
+          command: dart pub publish
 
   dependencies:
     description: "Download dependencies and setup global packages"
@@ -147,19 +147,12 @@ workflows:
               - test
           <<: *main_only
   test-publish:
-    parameters:
-      repo_type: 
-        default: REPO_TYPE
-        type: env_var_name
     when:
       and:
-        - equal: [ https://github.com/Yonomi/yonomi-sdk-dart-private, << pipeline.project.git_url >> ]
+        - equal: [ https://github.com/Yonomi/yonomi-sdk-dart, << pipeline.project.git_url >> ]
     jobs:
       - test:
-          filters:
-              branches:
-                only:
-                  - test_publish
+          <<: *main_only
       - hold:
           type: approval
           requires:
@@ -167,8 +160,5 @@ workflows:
       - publish:
           requires:
             - hold
-          filters:
-            branches:
-              only:
-                - test_publish
+          <<: *main_only
 
