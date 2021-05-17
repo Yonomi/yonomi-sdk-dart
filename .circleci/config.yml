@@ -13,10 +13,21 @@ executors:
     docker:
       - image: cirrusci/flutter:stable
 
-main_only: &main_only
-  filters:
-    branches:
-      only: main
+anchors: 
+  - &main_only
+    filters:
+      branches:
+        only: main
+  - &release-tag-filter
+    filters:
+      tags:
+        only: /^v.*/
+      branches:
+        ignore: /.*/
+  - &feature-branch-filter
+    filters:
+      branches:
+        only: /^(?!main$).*/
 
 commands:
   unit-tests:
@@ -129,14 +140,11 @@ jobs:
 ######################
 workflows:
   version: 2.1
-  test:
+  feature:
     jobs:
       - test:
-          filters:
-            branches:
-              ignore:
-                - main
-  test-changelog-tag:
+          <<: *feature-branch-filter
+  main:
     jobs:
       - test:
           <<: *main_only  
@@ -145,14 +153,13 @@ workflows:
             - org-global
           requires:
               - test
-          <<: *main_only
-  test-publish:
+  production:
     when:
       and:
         - equal: [ https://github.com/Yonomi/yonomi-sdk-dart, << pipeline.project.git_url >> ]
     jobs:
       - test:
-          <<: *main_only
+          <<: *release-tag-filter
       - hold:
           type: approval
           requires:
@@ -160,5 +167,4 @@ workflows:
       - publish:
           requires:
             - hold
-          <<: *main_only
 
