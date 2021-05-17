@@ -13,6 +13,22 @@ executors:
     docker:
       - image: cirrusci/flutter:stable
 
+anchors: 
+  - &main_only
+    filters:
+      branches:
+        only: main
+  - &release-tag-filter
+    filters:
+      tags:
+        only: /^v.*/
+      branches:
+        ignore: /.*/
+  - &feature-branch-filter
+    filters:
+      branches:
+        only: /^(?!main$).*/
+
 commands:
   unit-tests:
     description: "Run local unit tests"
@@ -29,6 +45,8 @@ commands:
   run-tests:
     description: "Run all tests"
     steps:
+      - run: echo << pipeline.project.git_url >>
+      - run: echo $REPO_TYPE
       - run:
           name: command to run all tests
           command: PRIVATE_KEY=$(echo "$PRIVATE_KEY_ENCODED" | base64 --decode) flutter test --coverage && lcov --remove coverage/lcov.info 'lib/graphql/*' > coverage/lcov1.info
@@ -51,6 +69,13 @@ commands:
           npm i -D @semantic-release/git
           npm i -D semantic-release-dart
           npx semantic-release --branches main
+  run-publish:
+    description: "Publishes to pub.dev"
+    steps:
+      - run:
+          name: Publishing to pub.dev
+          command: dart pub publish
+
   dependencies:
     description: "Download dependencies and setup global packages"
     parameters:
@@ -103,32 +128,43 @@ jobs:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
       - run-semantic-versioning
+  publish:
+    executor: default-executor
+    steps:
+      - dependencies:
+          shell: "/bin/bash -eo pipefail"
+      - run-publish
 
 ######################
 # Workflow Definition
 ######################
 workflows:
   version: 2.1
-  test:
+  feature:
     jobs:
       - test:
-          filters:
-            branches:
-              ignore:
-                - main
-  test-changelog-tag:
+          <<: *feature-branch-filter
+  main:
     jobs:
       - test:
-          filters:
-            branches:
-              only:
-                - main
+          <<: *main_only  
       - semantic-versioning:
           context:
             - org-global
           requires:
               - test
-          filters:
-            branches:
-              only:
-                - main
+  production:
+    when:
+      and:
+        - equal: [ https://github.com/Yonomi/yonomi-sdk-dart, << pipeline.project.git_url >> ]
+    jobs:
+      - test:
+          <<: *release-tag-filter
+      - hold:
+          type: approval
+          requires:
+            - test
+      - publish:
+          requires:
+            - hold
+
