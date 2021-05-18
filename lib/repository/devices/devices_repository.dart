@@ -74,11 +74,25 @@ class DevicesRepository {
         deviceResponse.data.device.updatedAt,
         deviceResponse.data.device.traits
             .where((trait) =>
+                trait.name.toString().toLowerCase().contains('thermostatsetting'))
+            .map((trait) {
+              return ThermostatTrait(
+                  'thermostatSetting',
+                  TargetTemperature((trait as dynamic)
+                      ?.state
+                      ?.targetTemperature
+                      ?.reported
+                      ?.value));
+            })
+            .where((trait) =>
                 trait.name.toString().toLowerCase().contains('lockunlock'))
             .map((trait) {
-          return LockUnlockTrait('lockUnlock',
-              IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value));
-        }).toList());
+              return LockUnlockTrait(
+                  'lockUnlock',
+                  IsLocked(
+                      (trait as dynamic)?.state?.isLocked?.reported?.value));
+            })
+            .toList());
   }
 
   static Future<Device> getThermostatDetails(Request request, String id) async {
@@ -110,6 +124,31 @@ class DevicesRepository {
                   ?.targetTemperature
                   ?.reported
                   ?.value));
+        }).toList());
+  }
+
+  static Future<Device> getLockDetails(Request request, String id) async {
+    ArtemisClient client = ArtemisClientCreator.create(request);
+    final deviceQuery =
+        GetDeviceQuery(variables: GetDeviceArguments(deviceId: id));
+    final deviceResponse = await client.execute(deviceQuery);
+    return Device(
+        deviceResponse.data.device.id,
+        deviceResponse.data.device.displayName,
+        deviceResponse.data.device.description,
+        deviceResponse.data.device.manufacturerName,
+        deviceResponse.data.device.model,
+        deviceResponse.data.device.firmwareVersion,
+        deviceResponse.data.device.softwareVersion,
+        deviceResponse.data.device.serialNumber,
+        deviceResponse.data.device.createdAt,
+        deviceResponse.data.device.updatedAt,
+        deviceResponse.data.device.traits
+            .where((trait) =>
+                trait.name.toString().toLowerCase().contains('lockunlock'))
+            .map((trait) {
+          return LockUnlockTrait('lockunlock',
+              IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value));
         }).toList());
   }
 }

@@ -33,6 +33,11 @@ void main() {
     expect(device, isNotNull);
   });
 
+  test('getLockDetails gets lock details', () async {
+    final device = await DevicesRepository.getLockDetails(request, testLockId);
+    expect(device, isNotNull);
+  });
+
   test('setPoint sets thermostat action', () async {
     await ThermostatRepository.setPointThermostat(
         request, testThermostatId, 22);
