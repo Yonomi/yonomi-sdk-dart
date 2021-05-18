@@ -20,6 +20,10 @@ void main() {
     testThermostatId = await tester.getThermostatDeviceId(request);
 
     testLockId = await tester.getLockUnlockDeviceId(request);
+
+    assert(testThermostatId != null);
+
+    assert(testLockId != null);
   });
 
   test('getDevices returns device list for all traits', () async {
