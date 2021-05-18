@@ -33,11 +33,6 @@ void main() {
     expect(device, isNotNull);
   });
 
-  test('getLockDetails gets lock details', () async {
-    final device = await DevicesRepository.getLockDetails(request, testLockId);
-    expect(device, isNotNull);
-  });
-
   test('setPoint sets thermostat action', () async {
     await ThermostatRepository.setPointThermostat(
         request, testThermostatId, 22);
@@ -56,14 +51,13 @@ void main() {
     expect(true, isTrue);
   });
 
-  test('getDeviceDetails get device detail', () async {
-    final device =
-        await DevicesRepository.getDeviceDetails(request, testLockId);
+  test('getLockDetails gets lock details', () async {
+    final device = await DevicesRepository.getLockDetails(request, testLockId);
     expect(device, isNotNull);
-  }, skip: 'Skipped until we add lock related device');
+  });
 
   test('deviceAction lock executes as expected', () async {
     await LockRepository.sendLockUnlockAction(request, testLockId, false);
     expect(true, isTrue);
-  }, skip: 'Skipped until we add lock related device');
+  });
 }
