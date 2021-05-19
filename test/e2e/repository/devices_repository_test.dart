@@ -31,6 +31,15 @@ void main() {
     expect(devices, isNotEmpty);
   });
 
+  test(
+      'getDeviceDetails on a Thermostat Device returns thermostat-relevant details',
+      () async {
+    final device =
+        await DevicesRepository.getDeviceDetails(request, testThermostatId);
+    expect(device, isNotNull);
+    expect(device.traits.first.runtimeType, ThermostatTrait);
+  });
+
   test('getThermostatDetails gets thermostat details', () async {
     final device =
         await DevicesRepository.getThermostatDetails(request, testThermostatId);
@@ -53,6 +62,14 @@ void main() {
     await ThermostatRepository.setMode(
         request, testThermostatId, ThermostatMode.heat);
     expect(true, isTrue);
+  });
+
+  test('getDeviceDetails on a Lock Device returns Lock-relevant details',
+      () async {
+    final device =
+        await DevicesRepository.getDeviceDetails(request, testLockId);
+    expect(device, isNotNull);
+    expect(device.traits.first.runtimeType, LockUnlockTrait);
   });
 
   test('getLockDetails gets lock details', () async {

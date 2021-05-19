@@ -1,7 +1,6 @@
 import 'package:artemis/client.dart';
 import 'package:yonomi_platform_sdk/graphql/devices/device_query.dart';
 import 'package:yonomi_platform_sdk/graphql/devices/devices_query.dart';
-
 import 'package:yonomi_platform_sdk/request/request.dart';
 
 import '../artemis_client.dart';
@@ -61,38 +60,55 @@ class DevicesRepository {
         GetDeviceQuery(variables: GetDeviceArguments(deviceId: id));
     final deviceResponse = await client.execute(deviceQuery);
 
+    final deviceTraits = deviceResponse.data.device.traits;
+
+    final thermostatTrait = deviceTraits.firstWhere(
+        (trait) =>
+            trait.name.toString().toLowerCase().contains('thermostatsetting'),
+        orElse: () => null);
+
+    final lockTrait = deviceTraits.firstWhere(
+        (trait) => trait.name.toString().toLowerCase().contains('lockunlock'),
+        orElse: () => null);
+
+    final bool isThermostat = thermostatTrait != null;
+    final bool isLock = lockTrait != null;
+
+    List<Trait> deviceTrait = !(isThermostat || isLock)
+        ? []
+        : isLock
+            ? [
+                LockUnlockTrait(
+                    'lockUnlock',
+                    IsLocked((deviceTraits.first as dynamic)
+                        ?.state
+                        ?.isLocked
+                        ?.reported
+                        ?.value))
+              ]
+            : [
+                ThermostatTrait(
+                    'thermostatSetting',
+                    TargetTemperature((deviceTraits.first as dynamic)
+                        ?.state
+                        ?.targetTemperature
+                        ?.reported
+                        ?.value))
+              ];
+
     return Device(
-        deviceResponse.data.device.id,
-        deviceResponse.data.device.displayName,
-        deviceResponse.data.device.description,
-        deviceResponse.data.device.manufacturerName,
-        deviceResponse.data.device.model,
-        deviceResponse.data.device.firmwareVersion,
-        deviceResponse.data.device.softwareVersion,
-        deviceResponse.data.device.serialNumber,
-        deviceResponse.data.device.createdAt,
-        deviceResponse.data.device.updatedAt,
-        deviceResponse.data.device.traits
-            .where((trait) =>
-                trait.name.toString().toLowerCase().contains('thermostatsetting'))
-            .map((trait) {
-              return ThermostatTrait(
-                  'thermostatSetting',
-                  TargetTemperature((trait as dynamic)
-                      ?.state
-                      ?.targetTemperature
-                      ?.reported
-                      ?.value));
-            })
-            .where((trait) =>
-                trait.name.toString().toLowerCase().contains('lockunlock'))
-            .map((trait) {
-              return LockUnlockTrait(
-                  'lockUnlock',
-                  IsLocked(
-                      (trait as dynamic)?.state?.isLocked?.reported?.value));
-            })
-            .toList());
+      deviceResponse.data.device.id,
+      deviceResponse.data.device.displayName,
+      deviceResponse.data.device.description,
+      deviceResponse.data.device.manufacturerName,
+      deviceResponse.data.device.model,
+      deviceResponse.data.device.firmwareVersion,
+      deviceResponse.data.device.softwareVersion,
+      deviceResponse.data.device.serialNumber,
+      deviceResponse.data.device.createdAt,
+      deviceResponse.data.device.updatedAt,
+      deviceTrait,
+    );
   }
 
   static Future<Device> getThermostatDetails(Request request, String id) async {
