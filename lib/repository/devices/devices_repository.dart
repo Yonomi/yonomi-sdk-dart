@@ -63,7 +63,20 @@ class DevicesRepository {
         deviceResponse.data.device.serialNumber,
         deviceResponse.data.device.createdAt,
         deviceResponse.data.device.updatedAt,
-        responseToDeviceTraitConverter(deviceResponse.data.device.traits));
+        deviceResponse.data.device.traits
+            .where((trait) => trait.name
+                .toString()
+                .toLowerCase()
+                .contains('thermostatsetting'))
+            .map((trait) {
+          return ThermostatTrait(
+              'thermostatSetting',
+              TargetTemperature((trait as dynamic)
+                  ?.state
+                  ?.targetTemperature
+                  ?.reported
+                  ?.value));
+        }).toList());
   }
 
   static Future<Device> getLockDetails(Request request, String id) async {
@@ -83,7 +96,13 @@ class DevicesRepository {
         deviceResponse.data.device.serialNumber,
         deviceResponse.data.device.createdAt,
         deviceResponse.data.device.updatedAt,
-        responseToDeviceTraitConverter(deviceResponse.data.device.traits));
+        deviceResponse.data.device.traits
+            .where((trait) =>
+                trait.name.toString().toLowerCase().contains('lockunlock'))
+            .map((trait) {
+          return LockUnlockTrait('lockunlock',
+              IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value));
+        }).toList());
   }
 
   static List<Trait> responseToDeviceTraitConverter(
