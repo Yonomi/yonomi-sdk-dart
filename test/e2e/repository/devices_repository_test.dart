@@ -84,8 +84,66 @@ void main() {
     expect(true, isTrue);
   });
 
+  test('responseToDeviceTraitConverter maps empty response to empty list',
+      () async {
+    List<DeviceDetailsMixin$DeviceTrait> responseTraits = [];
+
+    List<Trait> mappedTraits =
+        DevicesRepository.responseToDeviceTraitConverter(responseTraits);
+
+    expect(mappedTraits, isEmpty);
+  });
+
   test(
-      'responseToDeviceTraitConverter maps responses to Trait objects as expected',
+      'responseToDeviceTraitConverter maps single Lock DeviceTrait to LockUnlockTrait',
+      () async {
+    List<DeviceDetailsMixin$DeviceTrait> responseTraits = [
+      DeviceDetailsMixin$DeviceTrait.fromJson(
+        {
+          "__typename": "LockUnlockDeviceTrait",
+          "name": "LOCK_UNLOCK",
+          "properties": {"supportsIsJammed": true},
+          "state": {
+            "isLocked": {
+              "reported": {"value": false},
+            },
+          },
+        },
+      ),
+    ];
+
+    List<Trait> mappedTraits =
+        DevicesRepository.responseToDeviceTraitConverter(responseTraits);
+
+    expect(mappedTraits[0].runtimeType, LockUnlockTrait);
+  });
+
+  test(
+      'responseToDeviceTraitConverter maps single Thermostat DeviceTrait to ThermostatTrait',
+      () async {
+    List<DeviceDetailsMixin$DeviceTrait> responseTraits = [
+      DeviceDetailsMixin$DeviceTrait.fromJson(
+        {
+          "__typename": "ThermostatSettingDeviceTrait",
+          "name": "THERMOSTAT_SETTING",
+          "properties": {"supportsIsJammed": true},
+          "state": {
+            "targetTemperature": {
+              "reported": {"value": 22.0},
+            },
+          },
+        },
+      ),
+    ];
+
+    List<Trait> mappedTraits =
+        DevicesRepository.responseToDeviceTraitConverter(responseTraits);
+
+    expect(mappedTraits[0].runtimeType, ThermostatTrait);
+  });
+
+  test(
+      'responseToDeviceTraitConverter maps multiple responses to correct Trait objects',
       () async {
     List<DeviceDetailsMixin$DeviceTrait> responseTraits = [
       DeviceDetailsMixin$DeviceTrait.fromJson(
@@ -119,5 +177,53 @@ void main() {
 
     expect(mappedTraits[0].runtimeType, LockUnlockTrait);
     expect(mappedTraits[1].runtimeType, ThermostatTrait);
+  });
+
+  test('responseToDeviceTraitConverter only maps Traits we support', () async {
+    List<DeviceDetailsMixin$DeviceTrait> responseTraits = [
+      DeviceDetailsMixin$DeviceTrait.fromJson(
+        {
+          "__typename": "LockUnlockDeviceTrait",
+          "name": "LOCK_UNLOCK",
+          "properties": {"supportsIsJammed": true},
+          "state": {
+            "isLocked": {
+              "reported": {"value": false},
+            },
+          },
+        },
+      ),
+      DeviceDetailsMixin$DeviceTrait.fromJson(
+        {
+          "__typename": "ThermostatSettingDeviceTrait",
+          "name": "THERMOSTAT_SETTING",
+          "properties": {"supportsIsJammed": true},
+          "state": {
+            "targetTemperature": {
+              "reported": {"value": 22.0},
+            },
+          },
+        },
+      ),
+      DeviceDetailsMixin$DeviceTrait.fromJson(
+        {
+          "__typename": "PowerDeviceTrait",
+          "name": "POWER",
+          "properties": {"supportsToggle": true},
+          "state": {
+            "power": {
+              "reported": {"value": true},
+            },
+          },
+        },
+      ),
+    ];
+
+    List<Trait> mappedTraits =
+        DevicesRepository.responseToDeviceTraitConverter(responseTraits);
+
+    expect(mappedTraits[0].runtimeType, LockUnlockTrait);
+    expect(mappedTraits[1].runtimeType, ThermostatTrait);
+    expect(mappedTraits.length, equals(2));
   });
 }
