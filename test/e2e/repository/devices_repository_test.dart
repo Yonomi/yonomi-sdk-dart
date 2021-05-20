@@ -117,7 +117,7 @@ void main() {
     List<Trait> mappedTraits =
         DevicesRepository.responseToDeviceTraitConverter(responseTraits);
 
-    expect(mappedTraits[0].runtimeType, ThermostatTrait);
-    expect(mappedTraits[1].runtimeType, LockUnlockTrait);
+    expect(mappedTraits[0].runtimeType, LockUnlockTrait);
+    expect(mappedTraits[1].runtimeType, ThermostatTrait);
   });
 }

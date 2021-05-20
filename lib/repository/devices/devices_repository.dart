@@ -107,23 +107,26 @@ class DevicesRepository {
 
   static List<Trait> responseToDeviceTraitConverter(
       List<dynamic> deviceTraits) {
-    return [
-      ...deviceTraits
-          .where((trait) =>
-              trait.name.toString().toLowerCase().contains('thermostatsetting'))
-          .map((trait) => ThermostatTrait(
+    return deviceTraits.fold([], (listTraits, trait) {
+      var name = trait.name.toString().toLowerCase();
+      if (name.contains("thermostatsetting")) {
+        listTraits.add(
+          ThermostatTrait(
               'thermostatSetting',
               TargetTemperature((trait as dynamic)
                   ?.state
                   ?.targetTemperature
                   ?.reported
-                  ?.value))),
-      ...deviceTraits
-          .where((trait) =>
-              trait.name.toString().toLowerCase().contains('lockunlock'))
-          .map((trait) => LockUnlockTrait('lockUnlock',
-              IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value)))
-    ];
+                  ?.value)),
+        );
+      } else if (name.contains("lockunlock")) {
+        listTraits.add(LockUnlockTrait(
+          'lockUnlock',
+          IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value),
+        ));
+      }
+      return listTraits;
+    });
   }
 }
 
