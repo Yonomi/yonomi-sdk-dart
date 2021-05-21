@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/Yonomi/yonomi-sdk-dart-private/compare/v1.1.0...v1.1.1) (2021-05-21)
+
+
+### Bug Fixes
+
+* DevicesRepository returns a device with fully-defined Lock trait ([b327252](https://github.com/Yonomi/yonomi-sdk-dart-private/commit/b32725263ee655dd1117eba81210a1410f68c52f))
+* make DevicesRepository.getDeviceDetails handle different Traits ([1f8f296](https://github.com/Yonomi/yonomi-sdk-dart-private/commit/1f8f2965dfd7386a2b5420a426d454af1af0d55a))
+
 # [1.1.0](https://github.com/Yonomi/yonomi-sdk-dart-private/compare/v1.0.7...v1.1.0) (2021-05-17)
 
 
