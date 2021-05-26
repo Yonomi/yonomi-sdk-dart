@@ -1,6 +1,6 @@
 name: yonomi_sdk_dart
 description: Flutter SDK for Yonomi Platform
-version: 1.1.0
+version: 1.1.1
 homepage: https://www.yonomi.co
 
 environment:
