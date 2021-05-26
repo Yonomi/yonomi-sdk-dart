@@ -1,5 +1,7 @@
 import 'package:test/test.dart';
-import 'package:yonomi_sdk_dart/graphql/devices/thermostat/thermostat_queries.dart';
+import 'package:yonomi_sdk_dart/graphql/devices/device_query.graphql.dart';
+import 'package:yonomi_sdk_dart/graphql/devices/thermostat/thermostat_queries.dart'
+    as ThermostatQueries;
 import 'package:yonomi_sdk_dart/repository/devices/devices_repository.dart';
 import 'package:yonomi_sdk_dart/repository/devices/lock_repository.dart';
 import 'package:yonomi_sdk_dart/repository/devices/thermostat_repository.dart';
