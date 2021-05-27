@@ -1,10 +1,3 @@
-# [1.1.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.4...v1.1.0) (2021-05-17)
-
-
-### Features
-
-* **cicd:** Added tag filter so that it is picked up ([e39b295](https://github.com/Yonomi/yonomi-sdk-dart/commit/e39b295bfd8bd247801fcea1362b87e20036ef92))
-
 ## [1.0.4](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.3...v1.0.4) (2021-05-17)
 
 
