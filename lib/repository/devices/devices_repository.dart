@@ -1,8 +1,8 @@
 import 'package:artemis/client.dart';
-import 'package:yonomi_sdk_dart/graphql/devices/device_query.dart';
-import 'package:yonomi_sdk_dart/graphql/devices/devices_query.dart';
+import 'package:yonomi_platform_sdk/graphql/devices/device_query.dart';
+import 'package:yonomi_platform_sdk/graphql/devices/devices_query.dart';
 
-import 'package:yonomi_sdk_dart/request/request.dart';
+import 'package:yonomi_platform_sdk/request/request.dart';
 
 import '../artemis_client.dart';
 
@@ -24,34 +24,7 @@ class DevicesRepository {
             device.node.serialNumber,
             device.node.createdAt,
             device.node.updatedAt,
-            device.node.traits
-                .where((trait) =>
-                    trait.name
-                        .toString()
-                        .toLowerCase()
-                        .contains('lockunlock') ||
-                    trait.name
-                        .toString()
-                        .toLowerCase()
-                        .contains('thermostatsetting'))
-                .map((trait) {
-              if (trait.name
-                  .toString()
-                  .toLowerCase()
-                  .contains('thermostatsetting')) {
-                return ThermostatTrait(
-                    'thermostatSetting',
-                    TargetTemperature((trait as dynamic)
-                        ?.state
-                        ?.targetTemperature
-                        ?.reported
-                        ?.value));
-              }
-              return LockUnlockTrait(
-                  'lockUnlock',
-                  IsLocked(
-                      (trait as dynamic)?.state?.isLocked?.reported?.value));
-            }).toList()))
+            responseToDeviceTraitConverter(device.node.traits)))
         .toList();
   }
 
@@ -72,13 +45,7 @@ class DevicesRepository {
         deviceResponse.data.device.serialNumber,
         deviceResponse.data.device.createdAt,
         deviceResponse.data.device.updatedAt,
-        deviceResponse.data.device.traits
-            .where((trait) =>
-                trait.name.toString().toLowerCase().contains('lockunlock'))
-            .map((trait) {
-          return LockUnlockTrait('lockUnlock',
-              IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value));
-        }).toList());
+        responseToDeviceTraitConverter(deviceResponse.data.device.traits));
   }
 
   static Future<Device> getThermostatDetails(Request request, String id) async {
@@ -111,6 +78,56 @@ class DevicesRepository {
                   ?.reported
                   ?.value));
         }).toList());
+  }
+
+  static Future<Device> getLockDetails(Request request, String id) async {
+    ArtemisClient client = ArtemisClientCreator.create(request);
+    final deviceQuery =
+        GetDeviceQuery(variables: GetDeviceArguments(deviceId: id));
+    final deviceResponse = await client.execute(deviceQuery);
+
+    return Device(
+        deviceResponse.data.device.id,
+        deviceResponse.data.device.displayName,
+        deviceResponse.data.device.description,
+        deviceResponse.data.device.manufacturerName,
+        deviceResponse.data.device.model,
+        deviceResponse.data.device.firmwareVersion,
+        deviceResponse.data.device.softwareVersion,
+        deviceResponse.data.device.serialNumber,
+        deviceResponse.data.device.createdAt,
+        deviceResponse.data.device.updatedAt,
+        deviceResponse.data.device.traits
+            .where((trait) =>
+                trait.name.toString().toLowerCase().contains('lockunlock'))
+            .map((trait) {
+          return LockUnlockTrait('lockunlock',
+              IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value));
+        }).toList());
+  }
+
+  static List<Trait> responseToDeviceTraitConverter(
+      List<dynamic> deviceTraits) {
+    return deviceTraits.fold([], (listTraits, trait) {
+      var name = trait.name.toString().toLowerCase();
+      if (name.contains("thermostatsetting")) {
+        listTraits.add(
+          ThermostatTrait(
+              'thermostatSetting',
+              TargetTemperature((trait as dynamic)
+                  ?.state
+                  ?.targetTemperature
+                  ?.reported
+                  ?.value)),
+        );
+      } else if (name.contains("lockunlock")) {
+        listTraits.add(LockUnlockTrait(
+          'lockUnlock',
+          IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value),
+        ));
+      }
+      return listTraits;
+    });
   }
 }
 
