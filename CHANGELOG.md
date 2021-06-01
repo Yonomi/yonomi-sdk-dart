@@ -1,4 +1,4 @@
-# [1.1.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.4...v1.1.0) (2021-05-17)
+# [1.1.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.4...v1.1.0) (2021-05-27)
 
 
 ### Features
