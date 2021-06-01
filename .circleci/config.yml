@@ -45,6 +45,7 @@ commands:
   run-tests:
     description: "Run all tests"
     steps:
+      - run: echo << pipeline.project.git_url >>
       - run: echo $REPO_TYPE
       - run:
           name: command to run all tests
@@ -163,8 +164,6 @@ workflows:
           type: approval
           requires:
             - test
-          <<: *release-tag-filter
       - publish:
           requires:
             - hold
-          <<: *release-tag-filter
