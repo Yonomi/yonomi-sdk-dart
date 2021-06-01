@@ -1,6 +1,6 @@
 import 'package:corsac_jwt/corsac_jwt.dart';
 import 'package:test/test.dart';
-import 'package:yonomi_sdk_dart/repository/artemis_client.dart';
+import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
 
 const String privateKey = '''
 -----BEGIN RSA PRIVATE KEY-----

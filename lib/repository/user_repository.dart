@@ -1,7 +1,7 @@
 import 'package:artemis/client.dart';
-import 'package:yonomi_sdk_dart/graphql/user/user_query.dart';
-import 'package:yonomi_sdk_dart/repository/artemis_client.dart';
-import 'package:yonomi_sdk_dart/request/request.dart';
+import 'package:yonomi_platform_sdk/graphql/user/user_query.dart';
+import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
+import 'package:yonomi_platform_sdk/request/request.dart';
 
 class UserRepository {
   static Future<User> getUserDetails(Request request,
