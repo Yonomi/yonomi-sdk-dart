@@ -1,0 +1,24 @@
+
+
+
+# DeviceDetailsMixin constructor
+
+
+
+
+
+
+
+DeviceDetailsMixin()
+
+
+
+
+
+
+
+
+
+
+
+
