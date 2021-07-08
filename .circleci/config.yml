@@ -143,17 +143,18 @@ jobs:
       - generate-dartdoc
       - setup-github
       - run:
-          name: Check if changes made to documentation were not checked in
+          name: Generate and push new docs if they exist
           command: |
             if [[ `git status doc/ --porcelain` ]];
             then
-              echo "Documentation changes were not checked in"
-              echo "Run dartdoc locally and check in any changes under \'doc\' folder"
+              echo "New documents detected. Checking in new docs."
               git add doc/
               git commit -m "docs: updated dartdocs"
               REMOTE_URL="$( echo << pipeline.project.git_url >> | sed -e 's#^https://##; s#/score/$##' )"
               git remote set-url origin "https://$GH_TOKEN@$REMOTE_URL.git"
               git push -u origin HEAD
+            else
+              echo "Nothing to check in. No new docs generated"
             fi
 
 ######################
