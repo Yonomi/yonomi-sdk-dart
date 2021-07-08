@@ -145,7 +145,7 @@ jobs:
       - run:
           name: Check if changes made to documentation were not checked in
           command: |
-            git diff --exit-code
+            git diff --exit-code || true
             DIFF=$(git diff --exit-code doc/api )
             if [ "$DIFF" != "" ]
             then
