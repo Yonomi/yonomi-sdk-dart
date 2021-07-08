@@ -135,87 +135,35 @@ print("Date of my user's last activity: ${userFromRequest?.lastActivityAt}");
 
 ## Libraries
 
-##### [account_queries](graphql_accounts_account_queries/graphql_accounts_account_queries-library.md)
+##### [account_repository](package-yonomi_sdk_dart_repository_account_repository/package-yonomi_sdk_dart_repository_account_repository-library.md)
  
 
 
-##### [account_queries.graphql](graphql_accounts_account_queries.graphql/graphql_accounts_account_queries.graphql-library.md)
+##### [artemis_client](package-yonomi_sdk_dart_repository_artemis_client/package-yonomi_sdk_dart_repository_artemis_client-library.md)
  
 
 
-##### [account_repository](repository_account_repository/repository_account_repository-library.md)
+##### [devices_repository](package-yonomi_sdk_dart_repository_devices_devices_repository/package-yonomi_sdk_dart_repository_devices_devices_repository-library.md)
  
 
 
-##### [actionQuery](traits_actionQuery/traits_actionQuery-library.md)
+##### [lock_repository](package-yonomi_sdk_dart_repository_devices_lock_repository/package-yonomi_sdk_dart_repository_devices_lock_repository-library.md)
  
 
 
-##### [artemis_client](repository_artemis_client/repository_artemis_client-library.md)
+##### [request](package-yonomi_sdk_dart_request_request/package-yonomi_sdk_dart_request_request-library.md)
  
 
 
-##### [device_query](graphql_devices_device_query/graphql_devices_device_query-library.md)
+##### [thermostat_repository](package-yonomi_sdk_dart_repository_devices_thermostat_repository/package-yonomi_sdk_dart_repository_devices_thermostat_repository-library.md)
  
 
 
-##### [device_query.graphql](graphql_devices_device_query.graphql/graphql_devices_device_query.graphql-library.md)
+##### [trait](package-yonomi_sdk_dart_traits_trait/package-yonomi_sdk_dart_traits_trait-library.md)
  
 
 
-##### [devices_query](graphql_devices_devices_query/graphql_devices_devices_query-library.md)
- 
-
-
-##### [devices_query.graphql](graphql_devices_devices_query.graphql/graphql_devices_devices_query.graphql-library.md)
- 
-
-
-##### [devices_repository](repository_devices_devices_repository/repository_devices_devices_repository-library.md)
- 
-
-
-##### [lock_queries](graphql_devices_lock_lock_queries/graphql_devices_lock_lock_queries-library.md)
- 
-
-
-##### [lock_queries.graphql](graphql_devices_lock_lock_queries.graphql/graphql_devices_lock_lock_queries.graphql-library.md)
- 
-
-
-##### [lock_repository](repository_devices_lock_repository/repository_devices_lock_repository-library.md)
- 
-
-
-##### [request](request_request/request_request-library.md)
- 
-
-
-##### [thermostat_queries](graphql_devices_thermostat_thermostat_queries/graphql_devices_thermostat_thermostat_queries-library.md)
- 
-
-
-##### [thermostat_queries.graphql](graphql_devices_thermostat_thermostat_queries.graphql/graphql_devices_thermostat_thermostat_queries.graphql-library.md)
- 
-
-
-##### [thermostat_repository](repository_devices_thermostat_repository/repository_devices_thermostat_repository-library.md)
- 
-
-
-##### [trait](traits_trait/traits_trait-library.md)
- 
-
-
-##### [user_query](graphql_user_user_query/graphql_user_user_query-library.md)
- 
-
-
-##### [user_query.graphql](graphql_user_user_query.graphql/graphql_user_user_query.graphql-library.md)
- 
-
-
-##### [user_repository](repository_user_repository/repository_user_repository-library.md)
+##### [user_repository](package-yonomi_sdk_dart_repository_user_repository/package-yonomi_sdk_dart_repository_user_repository-library.md)
  
 
 
