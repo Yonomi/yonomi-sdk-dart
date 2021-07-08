@@ -164,6 +164,8 @@ workflows:
       - test:
           <<: *feature-branch-filter
       - dartdoc_verify:
+          context:
+            - org-global
           requires:
             - test
   main:
