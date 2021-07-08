@@ -145,15 +145,13 @@ jobs:
       - run:
           name: Check if changes made to documentation were not checked in
           command: |
-            DIFF=$(git diff --exit-code doc/api )
-            if [ "$DIFF" != "" ]
+            if [[ `git status doc/ --porcelain` ]];
             then
               echo "Documentation changes were not checked in"
               echo "Run dartdoc locally and check in any changes under \'doc\' folder"
               git add doc/
               git commit -m "docs: updated dartdocs"
-              git push
-              exit 0
+              git push -u origin HEAD
             fi
 
 ######################
