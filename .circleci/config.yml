@@ -151,6 +151,8 @@ jobs:
               echo "Run dartdoc locally and check in any changes under \'doc\' folder"
               git add doc/
               git commit -m "docs: updated dartdocs"
+              REMOTE_URL="$( echo << pipeline.project.git_url >> | sed -e 's#^https://##; s#/score/$##' )"
+              git remote set-url origin "https://$GH_TOKEN@$REMOTE_URL.git"
               git push -u origin HEAD
             fi
 
