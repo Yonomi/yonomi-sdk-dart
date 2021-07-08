@@ -1,0 +1,24 @@
+
+
+
+# DevicesRepository constructor
+
+
+
+
+
+
+
+DevicesRepository()
+
+
+
+
+
+
+
+
+
+
+
+

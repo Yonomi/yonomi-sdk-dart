@@ -1,0 +1,24 @@
+
+
+
+# ThermostatRepository constructor
+
+
+
+
+
+
+
+ThermostatRepository()
+
+
+
+
+
+
+
+
+
+
+
+
