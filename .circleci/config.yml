@@ -11,7 +11,8 @@ orbs:
 executors:
   default-executor:
     docker:
-      - image: cirrusci/flutter:stable
+      - image: cirrusci/flutter:2.0.6
+    shell: "/bin/bash -eo pipefail"
 
 anchors: 
   - &main_only
@@ -51,8 +52,8 @@ commands:
           command: PRIVATE_KEY=$(echo "$PRIVATE_KEY_ENCODED" | base64 --decode) flutter test --coverage && lcov --remove coverage/lcov.info 'lib/graphql/*' > coverage/lcov1.info
       - codecov/upload:
           file: coverage/lcov1.info
-  run-semantic-versioning:
-    description: "Tag and create changelog"
+  setup-github:
+    description: "Git Setup"
     steps:
       - run:
           name: Git Setup
@@ -60,6 +61,10 @@ commands:
             mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
             git config --global user.email "developer@yonomi.co"
             git config --global user.name "CircleCI"
+  run-semantic-versioning:
+    description: "Tag and create changelog"
+    steps:
+      - setup-github
       - run: sudo apt-get update
       - run: sudo apt-get -y install npm
       - run: |
@@ -78,9 +83,6 @@ commands:
   dependencies:
     description: "Download dependencies and setup global packages"
     parameters:
-      shell:
-        type: string
-        default: "/bin/bash --login -eo pipefail"
       pub-cache:
         type: string
         default: "~/.pub-cache"
@@ -92,19 +94,23 @@ commands:
             - v1.4-dependencies-{{ arch }}-
       - run:
           name: Download deps
-          shell: << parameters.shell >>
           command: pub get
       - run:
           name: Get junitreporter
-          shell: << parameters.shell >>
           command: pub global activate junitreport
       - save_cache:
           key: v1.4-dependencies-{{ arch }}-{{ checksum "pubspec.lock" }}
           paths:
             - .dart_tool
             - << parameters.pub-cache >>
-
-  
+  generate-dartdoc:
+    description: "Prepare and generate dartdocs"
+    steps:
+      - run:
+          name: Prepare Dartdoc
+          command: |
+            pub global activate dartdoc
+            flutter pub global run dartdoc:dartdoc --format md
 
 ##################
 # Job Definitions
@@ -113,8 +119,7 @@ jobs:
   test:
     executor: default-executor
     steps:
-      - dependencies:
-          shell: "/bin/bash -eo pipefail"
+      - dependencies
       - run:
           name: Make folder for test results
           command: mkdir -p test-results/dart-tests
@@ -124,15 +129,33 @@ jobs:
   semantic-versioning:
     executor: default-executor
     steps:
-      - dependencies:
-          shell: "/bin/bash -eo pipefail"
+      - dependencies
       - run-semantic-versioning
   publish:
     executor: default-executor
     steps:
-      - dependencies:
-          shell: "/bin/bash -eo pipefail"
+      - dependencies
       - run-publish
+  generate_documentation:
+    executor: default-executor
+    steps:
+      - dependencies
+      - generate-dartdoc
+      - setup-github
+      - run:
+          name: Generate and push new docs if they exist
+          command: |
+            if [[ `git status doc/ --porcelain` ]];
+            then
+              echo "New documents detected. Checking in new docs."
+              git add doc/
+              git commit -m "docs: updated dartdocs"
+              REMOTE_URL="$( echo << pipeline.project.git_url >> | sed -e 's#^https://##; s#/score/$##' )"
+              git remote set-url origin "https://$GH_TOKEN@$REMOTE_URL.git"
+              git push -u origin HEAD
+            else
+              echo "Nothing to check in. No new docs generated"
+            fi
 
 ######################
 # Workflow Definition
@@ -143,6 +166,11 @@ workflows:
     jobs:
       - test:
           <<: *feature-branch-filter
+      - generate_documentation:
+          context:
+            - org-global
+          requires:
+            - test
   main:
     jobs:
       - test:
