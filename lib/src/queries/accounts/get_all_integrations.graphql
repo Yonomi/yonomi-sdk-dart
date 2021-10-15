@@ -1,0 +1,10 @@
+query getAllIntegrations {
+    integrations {
+        edges {
+            node {
+                id
+                displayName
+            }
+        }
+    }
+}

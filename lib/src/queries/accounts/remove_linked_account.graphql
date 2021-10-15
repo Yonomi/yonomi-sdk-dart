@@ -1,0 +1,7 @@
+mutation removeLinkedAccount ($linkedAccountId: ID!) {
+    removeLinkedAccount(linkedAccountId: $linkedAccountId) {
+        me {
+            id
+        }
+    }
+}

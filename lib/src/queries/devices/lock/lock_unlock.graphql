@@ -1,0 +1,20 @@
+mutation makeLockUnlockActionRequest ($deviceId: ID!, $lock: Boolean!) {
+	actionLockSetLocked (deviceId: $deviceId lock: $lock) {
+    actionId
+    device {
+      id
+ 	    traits {
+       __typename name instance
+       ... on LockDeviceTrait {
+         properties { supportsIsJammed }
+         state {
+          isLocked {
+              reported { value sampledAt createdAt }
+              desired { value delta updatedAt }
+            }
+          }
+        }
+      }
+    }
+  }
+}

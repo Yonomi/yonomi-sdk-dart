@@ -1,0 +1,7 @@
+# import "./device_details.fragment.graphql"
+
+query getDevice($deviceId: ID!) {
+    device(id: $deviceId) {
+        ... DeviceDetails
+    }
+}
