@@ -9,7 +9,7 @@ import 'package:yaml/yaml.dart';
 class CONFIG {
   static final String _configFilename = 'test-config.yaml';
 
-  String _configYamlContent;
+  late String _configYamlContent;
 
   static final CONFIG _instance = CONFIG._privateConstructor();
 
@@ -32,18 +32,18 @@ class CONFIG {
     return yamlMap.toString();
   }
 
-  String _getTenantId() {
+  String? _getTenantId() {
     return _getEnvironmentValue("TENANT_ID");
   }
 
-  String _getPrivateKey() {
+  String? _getPrivateKey() {
     return _getEnvironmentValue("PRIVATE_KEY");
   }
 
   /// Get environment variable's value
   ///
   /// Get the value from this process's environment
-  String _getEnvironmentValue(String valueKey) {
+  String? _getEnvironmentValue(String valueKey) {
     return Platform.environment[valueKey];
   }
 
@@ -51,7 +51,7 @@ class CONFIG {
 
   static final String USER_ID = _instance._getUserId();
 
-  static final String TENANT_ID = _instance._getTenantId();
+  static final String? TENANT_ID = _instance._getTenantId();
 
-  static final String PRIVATE_KEY = _instance._getPrivateKey();
+  static final String? PRIVATE_KEY = _instance._getPrivateKey();
 }

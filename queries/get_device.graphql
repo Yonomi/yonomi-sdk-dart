@@ -1,5 +1,0 @@
-query getDevice($deviceId: ID!) {
-    device(id: $deviceId) {
-        ... DeviceDetails
-    }
-}
