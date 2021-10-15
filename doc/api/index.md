@@ -135,35 +135,15 @@ print("Date of my user's last activity: ${userFromRequest?.lastActivityAt}");
 
 ## Libraries
 
-##### [account_repository](repository_account_repository/repository_account_repository-library.md)
+##### [schema.docs.ast.gql](third_party_yonomi_graphql_schema_schema.docs.ast.gql/third_party_yonomi_graphql_schema_schema.docs.ast.gql-library.md)
  
 
 
-##### [artemis_client](repository_artemis_client/repository_artemis_client-library.md)
+##### [schema.docs.schema.gql](third_party_yonomi_graphql_schema_schema.docs.schema.gql/third_party_yonomi_graphql_schema_schema.docs.schema.gql-library.md)
  
 
 
-##### [devices_repository](repository_devices_devices_repository/repository_devices_devices_repository-library.md)
- 
-
-
-##### [lock_repository](repository_devices_lock_repository/repository_devices_lock_repository-library.md)
- 
-
-
-##### [request](request_request/request_request-library.md)
- 
-
-
-##### [thermostat_repository](repository_devices_thermostat_repository/repository_devices_thermostat_repository-library.md)
- 
-
-
-##### [trait](traits_trait/traits_trait-library.md)
- 
-
-
-##### [user_repository](repository_user_repository/repository_user_repository-library.md)
+##### [serializers.gql](third_party_yonomi_graphql_schema_serializers.gql/third_party_yonomi_graphql_schema_serializers.gql-library.md)
  
 
 
