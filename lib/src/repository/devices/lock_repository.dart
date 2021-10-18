@@ -1,16 +1,25 @@
-// import 'package:artemis/artemis.dart';
-// import 'package:yonomi_platform_sdk/graphql/devices/lock/lock_queries.dart';
-// import 'package:yonomi_platform_sdk/request/request.dart';
+import 'package:gql_link/gql_link.dart';
+import 'package:yonomi_platform_sdk/src/queries/devices/lock/lock_unlock.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/request/request.dart';
+import 'package:gql_exec/gql_exec.dart' as gql;
 
-// import '../gql_client.dart';
+import '../gql_client.dart';
 
-// class LockRepository {
-//   static Future<void> sendLockUnlockAction(
-//       Request request, String id, bool lockUnlock) async {
-//     ArtemisClient client = ArtemisClientCreator.create(request);
-//     final actionQuery = MakeLockUnlockActionRequestMutation(
-//         variables: MakeLockUnlockActionRequestArguments(
-//             deviceId: id, lock: lockUnlock));
-//     await client.execute(actionQuery);
-//   }
-// }
+class LockRepository {
+  static Future<void> sendLockUnlockAction(
+      Request request, String id, bool lockUnlock) async {
+    Link client = GraphLinkCreator.create(request);
+    final req = GmakeLockUnlockActionRequest((b) {
+      b..vars.deviceId = id;
+      b..vars.lock = lockUnlock;
+    });
+    final res = await client
+        .request(
+            gql.Request(operation: req.operation, variables: req.vars.toJson()))
+        .first;
+    final errors = res.errors;
+    if (errors != null && errors.isNotEmpty) {
+      throw errors.first;
+    }
+  }
+}
