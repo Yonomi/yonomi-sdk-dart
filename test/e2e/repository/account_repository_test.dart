@@ -20,7 +20,6 @@ void main() {
     var integrationsList = await AccountRepository.getAllIntegrations(request);
 
     Link myClient = GraphLinkCreator.create(request);
-    // print(integrationsList);
     integrationsList.forEach((integration) async {
       String url = await AccountRepository.generateAccountUrl(
           integration.id, request,
@@ -46,7 +45,7 @@ void main() {
 
     var listOfLinkedAccounts =
         await AccountRepository.getLinkedAccounts(request, graphLink: myClient);
-
+    // print(listOfLinkedAccounts);
     expect(listOfLinkedAccounts.isNotEmpty, true);
-  }, skip: 'links coming empty');
+  });
 }

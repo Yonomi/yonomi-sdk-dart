@@ -64,7 +64,8 @@ class AccountRepository {
     if (errors != null && errors.isNotEmpty) {
       throw errors.first;
     }
-    return GlinkedAccountsData_me.fromJson(res.data!)!
+    return GlinkedAccountsData.fromJson(res.data!)!
+        .me
         .linkedAccounts
         .edges
         .map((e) => e.node)

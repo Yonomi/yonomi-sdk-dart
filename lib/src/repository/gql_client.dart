@@ -27,7 +27,6 @@ class GraphLinkCreator {
     builder.issuer = 'www.example.com';
     builder.setClaim('https://platform.yonomi.cloud/tenant', tenantId);
     var signer = JWTRsaSha256Signer(privateKey: privateKey);
-
     return builder.getSignedToken(signer).toString();
   }
 }
