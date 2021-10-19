@@ -103,6 +103,9 @@ class DevicesRepository {
   static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
     // There are two generated types which probably should be same
     // We probably can clean it up a little bit to avoid duplications
+    if ((deviceTraits as List).length == 0) {
+      return [];
+    }
 
     if (deviceTraits is List<GgetDeviceData_device_traits>) {
       return deviceTraits.map((trait) {
@@ -111,7 +114,7 @@ class DevicesRepository {
             .toLowerCase()
             .contains('thermostat_setting')) {
           return ThermostatTrait(
-              'thermostatSetting',
+              'thermostat_setting',
               TargetTemperature((trait
                       as GgetDeviceData_device_traits__asThermostatSettingDeviceTrait)
                   .state
@@ -121,7 +124,7 @@ class DevicesRepository {
         }
         if (trait.name.toString().toLowerCase().contains('lock')) {
           return LockTrait(
-              'lockunlock',
+              'lock',
               IsLocked(
                   (trait as GgetDeviceData_device_traits__asLockDeviceTrait)
                       .state
@@ -139,7 +142,7 @@ class DevicesRepository {
             .toLowerCase()
             .contains('thermostat_setting')) {
           return ThermostatTrait(
-              'thermostatSetting',
+              'thermostat_setting',
               TargetTemperature((trait
                       as GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait)
                   .state
@@ -149,7 +152,7 @@ class DevicesRepository {
         }
         if (trait.name.toString().toLowerCase().contains('lock')) {
           return LockTrait(
-              'lockunlock',
+              'lock',
               IsLocked((trait
                       as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait)
                   .state
