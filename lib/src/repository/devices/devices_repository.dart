@@ -60,80 +60,64 @@ class DevicesRepository {
         responseToDeviceTraitConverter(device.traits.asList()));
   }
 
-//   static Future<Device> getThermostatDetails(Request request, String id) async {
-//     ArtemisClient client = ArtemisClientCreator.create(request);
-//     final deviceQuery =
-//         GetDeviceQuery(variables: GetDeviceArguments(deviceId: id));
-//     final deviceResponse = await client.execute(deviceQuery);
-//     return Device(
-//         deviceResponse.data.device.id,
-//         deviceResponse.data.device.displayName,
-//         deviceResponse.data.device.description,
-//         deviceResponse.data.device.manufacturerName,
-//         deviceResponse.data.device.model,
-//         deviceResponse.data.device.firmwareVersion,
-//         deviceResponse.data.device.softwareVersion,
-//         deviceResponse.data.device.serialNumber,
-//         deviceResponse.data.device.createdAt,
-//         deviceResponse.data.device.updatedAt,
-//         deviceResponse.data.device.traits
-//             .where((trait) => trait.name
-//                 .toString()
-//                 .toLowerCase()
-//                 .contains('thermostatsetting'))
-//             .map((trait) {
-//           return ThermostatTrait(
-//               'thermostatSetting',
-//               TargetTemperature((trait as dynamic)
-//                   ?.state
-//                   ?.targetTemperature
-//                   ?.reported
-//                   ?.value));
-//         }).toList());
-//   }
+  static Future<Device> getThermostatDetails(Request request, String id) async {
+    final device = await getDeviceDetails(request, id);
+    // For now thermostatDeviceTrait is device with only lock trait so stripping
+    // out all the other traits
+    final thermostatDeviceTrait = device.traits
+        .where((element) => element.name == 'thermostatsetting')
+        .toList();
+    final thermostatDevice = Device(
+        device.id,
+        device.displayName,
+        device.description,
+        device.manufacturerName,
+        device.model,
+        device.serialNumber,
+        device.createdAt,
+        device.updatedAt,
+        thermostatDeviceTrait);
+    return thermostatDevice;
+  }
 
-  // static Future<Device> getLockDetails(Request request, String id) async {
-  //   Link client = GraphLinkCreator.create(request);
-  //   final deviceQuery =
-  //       GetDeviceQuery(variables: GetDeviceArguments(deviceId: id));
-  //   final deviceResponse = await client.execute(deviceQuery);
-
-  //   return Device(
-  //       deviceResponse.data.device.id,
-  //       deviceResponse.data.device.displayName,
-  //       deviceResponse.data.device.description,
-  //       deviceResponse.data.device.manufacturerName,
-  //       deviceResponse.data.device.model,
-  //       deviceResponse.data.device.firmwareVersion,
-  //       deviceResponse.data.device.softwareVersion,
-  //       deviceResponse.data.device.serialNumber,
-  //       deviceResponse.data.device.createdAt,
-  //       deviceResponse.data.device.updatedAt,
-  //       deviceResponse.data.device.traits
-  //           .where((trait) =>
-  //               trait.name.toString().toLowerCase().contains('lockunlock'))
-  //           .map((trait) {
-  //         return LockUnlockTrait('lockunlock',
-  //             IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value));
-  //       }).toList());
-  // }
+  // This method needs to be cleaned up we can just leverage deviceDetails
+  static Future<Device> getLockDetails(Request request, String id) async {
+    final device = await getDeviceDetails(request, id);
+    // For now lockDeviceTrait is device with only lock trait so stripping out
+    // all the other traits
+    final lockDeviceTrait =
+        device.traits.where((element) => element.name == 'lock').toList();
+    final lockDevice = Device(
+        device.id,
+        device.displayName,
+        device.description,
+        device.manufacturerName,
+        device.model,
+        device.serialNumber,
+        device.createdAt,
+        device.updatedAt,
+        lockDeviceTrait);
+    return lockDevice;
+  }
 
   static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
     // There are two generated types which probably should be same
-    // Right now we are not able to take advantage of the type because this method has to handle
-    // multiple generated representations of 'traits' type
+    // We probably can clean it up a little bit to avoid duplications
 
     if (deviceTraits is List<GgetDeviceData_device_traits>) {
       return deviceTraits.map((trait) {
-        if (trait.name.toString().toLowerCase().contains('thermostatsetting')) {
+        if (trait.name
+            .toString()
+            .toLowerCase()
+            .contains('thermostat_setting')) {
           return ThermostatTrait(
               'thermostatSetting',
               TargetTemperature((trait
                       as GgetDeviceData_device_traits__asThermostatSettingDeviceTrait)
                   .state
                   .targetTemperature
-                  .reported!
-                  .value));
+                  .reported
+                  ?.value));
         }
         if (trait.name.toString().toLowerCase().contains('lock')) {
           return LockTrait(
@@ -150,15 +134,18 @@ class DevicesRepository {
     } else if (deviceTraits
         is List<GgetDevicesData_me_devices_edges_node_traits>) {
       return deviceTraits.map((trait) {
-        if (trait.name.toString().toLowerCase().contains('thermostatsetting')) {
+        if (trait.name
+            .toString()
+            .toLowerCase()
+            .contains('thermostat_setting')) {
           return ThermostatTrait(
               'thermostatSetting',
               TargetTemperature((trait
                       as GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait)
                   .state
                   .targetTemperature
-                  .reported!
-                  .value));
+                  .reported
+                  ?.value));
         }
         if (trait.name.toString().toLowerCase().contains('lock')) {
           return LockTrait(
@@ -219,8 +206,8 @@ class IsLocked extends State<bool> {
   IsLocked(bool value) : super('LockUnlock', value);
 }
 
-class TargetTemperature extends State<double> {
-  TargetTemperature(double value) : super('TargetTemperature', value);
+class TargetTemperature extends State<double?> {
+  TargetTemperature(double? value) : super('TargetTemperature', value);
 }
 
 class UnknownState extends State<String> {

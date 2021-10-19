@@ -18,7 +18,7 @@ void main() {
 
     request = tester.buildRequest();
 
-    // testThermostatId = await tester.getThermostatDeviceId(request);
+    testThermostatId = await tester.getThermostatDeviceId(request);
 
     testLockId = await tester.getLockUnlockDeviceId(request);
   });
@@ -28,38 +28,36 @@ void main() {
     expect(devices, isNotEmpty);
   });
 
-  // test(
-  //     'getDeviceDetails on a Thermostat Device returns thermostat-relevant details',
-  //     () async {
-  //   final device =
-  //       await DevicesRepository.getDeviceDetails(request, testThermostatId);
-  //   expect(device, isNotNull);
-  //   expect(device.traits.first.runtimeType, ThermostatTrait);
-  // });
+  test(
+      'getDeviceDetails on a Thermostat Device returns thermostat-relevant details',
+      () async {
+    final device =
+        await DevicesRepository.getDeviceDetails(request, testThermostatId);
+    expect(device, isNotNull);
+    expect(
+        device.traits
+            .where((element) => element.runtimeType == ThermostatTrait)
+            .first is ThermostatTrait,
+        true);
+  });
 
-  // test('getThermostatDetails gets thermostat details', () async {
-  //   final device =
-  //       await DevicesRepository.getThermostatDetails(request, testThermostatId);
-  //   expect(device, isNotNull);
-  // });
+  test('getThermostatDetails gets thermostat details', () async {
+    final device =
+        await DevicesRepository.getThermostatDetails(request, testThermostatId);
+    expect(device, isNotNull);
+  });
 
-  // test('setPoint sets thermostat action', () async {
-  //   await ThermostatRepository.setPointThermostat(
-  //       request, testThermostatId, 22);
-  //   expect(true, isTrue);
-  // });
+  test('setPoint sets thermostat action', () async {
+    await ThermostatRepository.setPointThermostat(
+        request, testThermostatId, 22);
+    expect(true, isTrue);
+  });
 
-  // test('setFanMode sets fanmode', () async {
-  //   await ThermostatRepository.setPointThermostat(
-  //       request, testThermostatId, 22);
-  //   expect(true, isTrue);
-  // });
-
-  // test('setFanMode sets fan mode', () async {
-  //   await ThermostatRepository.setMode(
-  //       request, testThermostatId, GThermostatMode.HEAT);
-  //   expect(true, isTrue);
-  // });
+  test('setFanMode sets fan mode', () async {
+    await ThermostatRepository.setMode(
+        request, testThermostatId, GThermostatMode.HEAT);
+    expect(true, isTrue);
+  });
 
   test('getDeviceDetails on a Lock Device returns Lock-relevant details',
       () async {
@@ -69,103 +67,26 @@ void main() {
     expect(device.traits.first.runtimeType, LockTrait);
   });
 
-  // test('getLockDetails gets lock details', () async {
-  //   final device = await DevicesRepository.getLockDetails(request, testLockId);
-  //   expect(device, isNotNull);
-  // });
+  test('getLockDetails gets lock details', () async {
+    final device = await DevicesRepository.getLockDetails(request, testLockId);
+    expect(device, isNotNull);
+  });
 
-  // test('deviceAction lock executes as expected', () async {
-  //   await LockRepository.sendLockUnlockAction(request, testLockId, false);
-  //   expect(true, isTrue);
-  // });
+  test('deviceAction lock executes as expected', () async {
+    await LockRepository.sendLockUnlockAction(request, testLockId, false);
+    expect(true, isTrue);
+  });
 
   // test('responseToDeviceTraitConverter maps empty response to empty list',
-  //     () async {
-  //   List<DeviceDetailsMixin$DeviceTrait> responseTraits = [];
-
-  //   List<Trait> mappedTraits =
-  //       DevicesRepository.responseToDeviceTraitConverter(responseTraits);
-
-  //   expect(mappedTraits, isEmpty);
-  // });
 
   // test(
   //     'responseToDeviceTraitConverter maps single Lock DeviceTrait to LockUnlockTrait',
-  //     () async {
-  //   List<DeviceDetailsMixin$DeviceTrait> responseTraits = [
-  //     DeviceDetailsMixin$DeviceTrait.fromJson(
-  //       {
-  //         "__typename": "LockUnlockDeviceTrait",
-  //         "name": "LOCK_UNLOCK",
-  //         "properties": {"supportsIsJammed": true},
-  //         "state": {
-  //           "isLocked": {
-  //             "reported": {"value": false},
-  //           },
-  //         },
-  //       },
-  //     ),
-  //   ];
-
-  //   List<Trait> mappedTraits =
-  //       DevicesRepository.responseToDeviceTraitConverter(responseTraits);
-
-  //   expect(mappedTraits[0].runtimeType, LockUnlockTrait);
-  // });
 
   // test(
   //     'responseToDeviceTraitConverter maps single Thermostat DeviceTrait to ThermostatTrait',
-  //     () async {
-  //   List<DeviceDetailsMixin$DeviceTrait> responseTraits = [
-  //     DeviceDetailsMixin$DeviceTrait.fromJson(
-  //       {
-  //         "__typename": "ThermostatSettingDeviceTrait",
-  //         "name": "THERMOSTAT_SETTING",
-  //         "properties": {"supportsIsJammed": true},
-  //         "state": {
-  //           "targetTemperature": {
-  //             "reported": {"value": 22.0},
-  //           },
-  //         },
-  //       },
-  //     ),
-  //   ];
-
-  //   List<Trait> mappedTraits =
-  //       DevicesRepository.responseToDeviceTraitConverter(responseTraits);
-
-  //   expect(mappedTraits[0].runtimeType, ThermostatTrait);
-  // });
 
   // test(
   //     'responseToDeviceTraitConverter maps multiple responses to correct Trait objects',
-  //     () async {
-  //   List<DeviceDetailsMixin$DeviceTrait> responseTraits = [
-  //     DeviceDetailsMixin$DeviceTrait.fromJson(
-  //       {
-  //         "__typename": "LockUnlockDeviceTrait",
-  //         "name": "LOCK_UNLOCK",
-  //         "properties": {"supportsIsJammed": true},
-  //         "state": {
-  //           "isLocked": {
-  //             "reported": {"value": false},
-  //           },
-  //         },
-  //       },
-  //     ),
-  //     DeviceDetailsMixin$DeviceTrait.fromJson(
-  //       {
-  //         "__typename": "ThermostatSettingDeviceTrait",
-  //         "name": "THERMOSTAT_SETTING",
-  //         "properties": {"supportsIsJammed": true},
-  //         "state": {
-  //           "targetTemperature": {
-  //             "reported": {"value": 22.0},
-  //           },
-  //         },
-  //       },
-  //     ),
-  //   ];
 
   //   List<Trait> mappedTraits =
   //       DevicesRepository.responseToDeviceTraitConverter(responseTraits);
@@ -175,44 +96,6 @@ void main() {
   // });
 
   // test('responseToDeviceTraitConverter only maps Traits we support', () async {
-  //   List<DeviceDetailsMixin$DeviceTrait> responseTraits = [
-  //     DeviceDetailsMixin$DeviceTrait.fromJson(
-  //       {
-  //         "__typename": "LockUnlockDeviceTrait",
-  //         "name": "LOCK_UNLOCK",
-  //         "properties": {"supportsIsJammed": true},
-  //         "state": {
-  //           "isLocked": {
-  //             "reported": {"value": false},
-  //           },
-  //         },
-  //       },
-  //     ),
-  //     DeviceDetailsMixin$DeviceTrait.fromJson(
-  //       {
-  //         "__typename": "ThermostatSettingDeviceTrait",
-  //         "name": "THERMOSTAT_SETTING",
-  //         "properties": {"supportsIsJammed": true},
-  //         "state": {
-  //           "targetTemperature": {
-  //             "reported": {"value": 22.0},
-  //           },
-  //         },
-  //       },
-  //     ),
-  //     DeviceDetailsMixin$DeviceTrait.fromJson(
-  //       {
-  //         "__typename": "PowerDeviceTrait",
-  //         "name": "POWER",
-  //         "properties": {"supportsToggle": true},
-  //         "state": {
-  //           "power": {
-  //             "reported": {"value": true},
-  //           },
-  //         },
-  //       },
-  //     ),
-  //   ];
 
   //   List<Trait> mappedTraits =
   //       DevicesRepository.responseToDeviceTraitConverter(responseTraits);

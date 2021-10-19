@@ -22,7 +22,9 @@ class TestFixtures {
     List<Device> devices = await DevicesRepository.getDevices(request);
     return devices
         .firstWhere((device) => deviceIsOfTrait(device, ThermostatTrait),
-            orElse: () => throw 'No thermostat device found')
+            orElse: () => throw '''No thermostat device found. Most likely 
+            caused by thermostat device like ecobee got unlinked.
+            Link the account and try again''')
         .id;
   }
 
