@@ -1,4 +1,6 @@
 import 'package:gql_link/gql_link.dart';
+import 'package:yonomi_platform_sdk/src/queries/get_device.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/get_device.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/get_devices.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/get_devices.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
@@ -17,8 +19,8 @@ class DevicesRepository {
     if (errors != null && errors.isNotEmpty) {
       throw errors.first;
     }
-
-    return GgetDevicesData_me.fromJson(res.data!)!
+    return GgetDevicesData.fromJson(res.data!)!
+        .me
         .devices
         .edges
         .map((device) => Device(
@@ -34,25 +36,29 @@ class DevicesRepository {
         .toList();
   }
 
-//   static Future<Device> getDeviceDetails(Request request, String id) async {
-//     ArtemisClient client = ArtemisClientCreator.create(request);
-//     final deviceQuery =
-//         GetDeviceQuery(variables: GetDeviceArguments(deviceId: id));
-//     final deviceResponse = await client.execute(deviceQuery);
-
-//     return Device(
-//         deviceResponse.data.device.id,
-//         deviceResponse.data.device.displayName,
-//         deviceResponse.data.device.description,
-//         deviceResponse.data.device.manufacturerName,
-//         deviceResponse.data.device.model,
-//         deviceResponse.data.device.firmwareVersion,
-//         deviceResponse.data.device.softwareVersion,
-//         deviceResponse.data.device.serialNumber,
-//         deviceResponse.data.device.createdAt,
-//         deviceResponse.data.device.updatedAt,
-//         responseToDeviceTraitConverter(deviceResponse.data.device.traits));
-//   }
+  static Future<Device> getDeviceDetails(Request request, String id) async {
+    Link client = GraphLinkCreator.create(request);
+    final req = GgetDevice((b) => b..vars.deviceId = id);
+    final res = await client
+        .request(
+            gql.Request(operation: req.operation, variables: req.vars.toJson()))
+        .first;
+    final errors = res.errors;
+    if (errors != null && errors.isNotEmpty) {
+      throw errors.first;
+    }
+    final device = GgetDeviceData.fromJson(res.data!)!.device;
+    return Device(
+        device!.id,
+        device.displayName,
+        device.productInformation.description,
+        device.productInformation.manufacturer,
+        device.productInformation.model,
+        device.productInformation.serialNumber,
+        device.createdAt,
+        device.updatedAt,
+        responseToDeviceTraitConverter(device.traits.asList()));
+  }
 
 //   static Future<Device> getThermostatDetails(Request request, String id) async {
 //     ArtemisClient client = ArtemisClientCreator.create(request);
@@ -86,54 +92,89 @@ class DevicesRepository {
 //         }).toList());
 //   }
 
-//   static Future<Device> getLockDetails(Request request, String id) async {
-//     ArtemisClient client = ArtemisClientCreator.create(request);
-//     final deviceQuery =
-//         GetDeviceQuery(variables: GetDeviceArguments(deviceId: id));
-//     final deviceResponse = await client.execute(deviceQuery);
+  // static Future<Device> getLockDetails(Request request, String id) async {
+  //   Link client = GraphLinkCreator.create(request);
+  //   final deviceQuery =
+  //       GetDeviceQuery(variables: GetDeviceArguments(deviceId: id));
+  //   final deviceResponse = await client.execute(deviceQuery);
 
-//     return Device(
-//         deviceResponse.data.device.id,
-//         deviceResponse.data.device.displayName,
-//         deviceResponse.data.device.description,
-//         deviceResponse.data.device.manufacturerName,
-//         deviceResponse.data.device.model,
-//         deviceResponse.data.device.firmwareVersion,
-//         deviceResponse.data.device.softwareVersion,
-//         deviceResponse.data.device.serialNumber,
-//         deviceResponse.data.device.createdAt,
-//         deviceResponse.data.device.updatedAt,
-//         deviceResponse.data.device.traits
-//             .where((trait) =>
-//                 trait.name.toString().toLowerCase().contains('lockunlock'))
-//             .map((trait) {
-//           return LockUnlockTrait('lockunlock',
-//               IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value));
-//         }).toList());
-//   }
+  //   return Device(
+  //       deviceResponse.data.device.id,
+  //       deviceResponse.data.device.displayName,
+  //       deviceResponse.data.device.description,
+  //       deviceResponse.data.device.manufacturerName,
+  //       deviceResponse.data.device.model,
+  //       deviceResponse.data.device.firmwareVersion,
+  //       deviceResponse.data.device.softwareVersion,
+  //       deviceResponse.data.device.serialNumber,
+  //       deviceResponse.data.device.createdAt,
+  //       deviceResponse.data.device.updatedAt,
+  //       deviceResponse.data.device.traits
+  //           .where((trait) =>
+  //               trait.name.toString().toLowerCase().contains('lockunlock'))
+  //           .map((trait) {
+  //         return LockUnlockTrait('lockunlock',
+  //             IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value));
+  //       }).toList());
+  // }
 
-  static List<Trait> responseToDeviceTraitConverter(
-      List<GgetDevicesData_me_devices_edges_node_traits> deviceTraits) {
-    return deviceTraits.toList().fold([], (listTraits, trait) {
-      var name = trait.name.toString().toLowerCase();
-      if (name.contains("thermostatsetting")) {
-        listTraits.add(
-          ThermostatTrait(
+  static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
+    // There are two generated types which probably should be same
+    // Right now we are not able to take advantage of the type because this method has to handle
+    // multiple generated representations of 'traits' type
+
+    if (deviceTraits is List<GgetDeviceData_device_traits>) {
+      return deviceTraits.map((trait) {
+        if (trait.name.toString().toLowerCase().contains('thermostatsetting')) {
+          return ThermostatTrait(
               'thermostatSetting',
-              TargetTemperature((trait as dynamic)
-                  ?.state
-                  ?.targetTemperature
-                  ?.reported
-                  ?.value)),
-        );
-      } else if (name.contains("lockunlock")) {
-        listTraits.add(LockUnlockTrait(
-          'lockUnlock',
-          IsLocked((trait as dynamic)?.state?.isLocked?.reported?.value),
-        ));
-      }
-      return listTraits;
-    });
+              TargetTemperature((trait
+                      as GgetDeviceData_device_traits__asThermostatSettingDeviceTrait)
+                  .state
+                  .targetTemperature
+                  .reported!
+                  .value));
+        }
+        if (trait.name.toString().toLowerCase().contains('lock')) {
+          return LockTrait(
+              'lockunlock',
+              IsLocked(
+                  (trait as GgetDeviceData_device_traits__asLockDeviceTrait)
+                      .state
+                      .isLocked
+                      .reported!
+                      .value));
+        }
+        return UnknownTrait();
+      }).toList();
+    } else if (deviceTraits
+        is List<GgetDevicesData_me_devices_edges_node_traits>) {
+      return deviceTraits.map((trait) {
+        if (trait.name.toString().toLowerCase().contains('thermostatsetting')) {
+          return ThermostatTrait(
+              'thermostatSetting',
+              TargetTemperature((trait
+                      as GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait)
+                  .state
+                  .targetTemperature
+                  .reported!
+                  .value));
+        }
+        if (trait.name.toString().toLowerCase().contains('lock')) {
+          return LockTrait(
+              'lockunlock',
+              IsLocked((trait
+                      as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait)
+                  .state
+                  .isLocked
+                  .reported!
+                  .value));
+        }
+        return UnknownTrait();
+      }).toList();
+    } else {
+      throw ArgumentError.value(deviceTraits);
+    }
   }
 }
 
@@ -161,8 +202,8 @@ class Device {
 }
 
 abstract class Trait {
-  final String name;
-  final State state;
+  late final String name;
+  late final State state;
 
   Trait(this.name, this.state);
 }
@@ -182,10 +223,18 @@ class TargetTemperature extends State<double> {
   TargetTemperature(double value) : super('TargetTemperature', value);
 }
 
-class LockUnlockTrait extends Trait {
-  LockUnlockTrait(String name, State state) : super(name, state);
+class UnknownState extends State<String> {
+  UnknownState() : super('Unknown', 'Unknown');
+}
+
+class LockTrait extends Trait {
+  LockTrait(String name, State state) : super(name, state);
 }
 
 class ThermostatTrait extends Trait {
   ThermostatTrait(String name, State state) : super(name, state);
+}
+
+class UnknownTrait extends Trait {
+  UnknownTrait() : super('Unknown', UnknownState());
 }

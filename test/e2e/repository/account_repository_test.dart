@@ -45,7 +45,6 @@ void main() {
 
     var listOfLinkedAccounts =
         await AccountRepository.getLinkedAccounts(request, graphLink: myClient);
-    // print(listOfLinkedAccounts);
     expect(listOfLinkedAccounts.isNotEmpty, true);
   });
 }

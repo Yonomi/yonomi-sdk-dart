@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 
@@ -17,26 +18,27 @@ class TestFixtures {
     return request;
   }
 
-  // Future<String> getThermostatDeviceId(yoRequest.Request request) async {
-  //   List<Device> devices = await DevicesRepository.getDevices(request);
-  //   return devices
-  //       .firstWhere((device) => deviceIsOfTrait(device, ThermostatTrait),
-  //           orElse: () => null)
-  //       .id;
-  // }
+  Future<String> getThermostatDeviceId(yoRequest.Request request) async {
+    List<Device> devices = await DevicesRepository.getDevices(request);
+    return devices
+        .firstWhere((device) => deviceIsOfTrait(device, ThermostatTrait),
+            orElse: () => throw 'No thermostat device found')
+        .id;
+  }
 
-  // Future<String> getLockUnlockDeviceId(yoRequest.Request request) async {
-  //   List<Device> devices = await DevicesRepository.getDevices(request);
-  //   return devices
-  //       .firstWhere((device) => deviceIsOfTrait(device, LockUnlockTrait),
-  //           orElse: () => null)
-  //       ?.id;
-  // }
+  Future<String> getLockUnlockDeviceId(yoRequest.Request request) async {
+    List<Device> devices = await DevicesRepository.getDevices(request);
+    return devices
+        .firstWhere((device) => deviceIsOfTrait(device, LockTrait),
+            orElse: () => throw 'No lock device found')
+        .id;
+  }
 
-  // bool deviceIsOfTrait(Device device, Type desiredTrait) {
-  //   return device.traits.firstWhere(
-  //           (trait) => trait.runtimeType == desiredTrait,
-  //           orElse: () => null) !=
-  //       null;
-  // }
+  bool deviceIsOfTrait(Device device, Type desiredTrait) {
+    return device.traits
+            .firstWhere((trait) => trait.runtimeType == desiredTrait,
+                orElse: () => UnknownTrait())
+            .name !=
+        'Unknown';
+  }
 }
