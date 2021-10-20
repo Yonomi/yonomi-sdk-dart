@@ -47,6 +47,7 @@ class DevicesRepository {
     if (errors != null && errors.isNotEmpty) {
       throw errors.first;
     }
+
     final device = GgetDeviceData.fromJson(res.data!)!.device;
     return Device(
         device!.id,

@@ -5,7 +5,6 @@ import 'package:yonomi_platform_sdk/src/repository/devices/lock_repository.dart'
 import 'package:yonomi_platform_sdk/src/repository/devices/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/get_device.data.gql.dart';
 
 import '../../utils/test_fixtures.dart';
 
@@ -82,68 +81,4 @@ void main() {
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter([]);
     expect(convertedValue, isEmpty);
   });
-
-  test(
-      'responseToDeviceTraitConverter maps single Lock DeviceTrait to LockUnlockTrait',
-      () {
-    final lockDevice = GgetDeviceData_device.fromJson({
-      'id': 'id',
-      'displayName': 'displayName',
-      'updatedAt': '2020-04-01T12:00:00.000Z',
-      'createdAt': '2020-04-01T12:00:00.000Z',
-      'productInformation': {
-        'manufacturer': 'abc',
-        'model': 'model',
-        'description': 'lock',
-      },
-      'traits': [
-        {
-          '__typename': 'LockDeviceTrait',
-          'name': 'LOCK',
-          'instance': 'default',
-          'properties': {'supportsIsJammed': true},
-          'state': {
-            'isLocked': {
-              'reported': {
-                'value': false,
-                'sampledAt': '2021-10-19T20: 06: 40.294Z',
-                'createdAt': '2021-10-19T20: 06: 41.176Z'
-              },
-              'desired': {
-                'value': false,
-                'delta': null,
-                'updatedAt': '2021-10-19T20: 06: 41.176Z'
-              }
-            }
-          }
-        }
-      ]
-    });
-    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
-        lockDevice!.traits.asList());
-    expect(convertedValue.first.name, 'lock');
-  });
-
-  // test(
-  //     'responseToDeviceTraitConverter maps single Thermostat DeviceTrait to ThermostatTrait',
-
-  // test(
-  //     'responseToDeviceTraitConverter maps multiple responses to correct Trait objects',
-
-  //   List<Trait> mappedTraits =
-  //       DevicesRepository.responseToDeviceTraitConverter(responseTraits);
-
-  //   expect(mappedTraits[0].runtimeType, LockUnlockTrait);
-  //   expect(mappedTraits[1].runtimeType, ThermostatTrait);
-  // });
-
-  // test('responseToDeviceTraitConverter only maps Traits we support', () async {
-
-  //   List<Trait> mappedTraits =
-  //       DevicesRepository.responseToDeviceTraitConverter(responseTraits);
-
-  //   expect(mappedTraits[0].runtimeType, LockUnlockTrait);
-  //   expect(mappedTraits[1].runtimeType, ThermostatTrait);
-  //   expect(mappedTraits.length, equals(2));
-  // });
 }
