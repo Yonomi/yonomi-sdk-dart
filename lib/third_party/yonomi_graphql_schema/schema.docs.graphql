@@ -1,0 +1,1757 @@
+type Health {
+  ok: Boolean!
+}
+
+type Query {
+  health: Health!
+
+  # The currently logged in user. This is the primary entry point into a user's data graph
+  me: User!
+  integrations(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+  ): IntegrationConnection!
+  integration(
+    # The id of the integration
+    id: ID!
+  ): Integration!
+
+  # The currently logged in user's tenant.
+  tenant: Tenant!
+
+  # Query for a specific device.
+  device(
+    # The id of a specific device.
+    id: ID!
+  ): Device
+
+  # (MOCK INTEGRATION): fetch all recent requests that have hit the the mock connector for a specific integration ID.
+  MOCK_CONNECTOR_getRequests(
+    # The id of the mock integration.
+    integrationId: ID!
+
+    # Timestamp filters to constrain request results to.
+    filter: MockConnectorRequestsFilters
+  ): [JSON!]!
+
+  # (MOCK INTEGRATION): get all connector access tokens granted to an integration
+  MOCK_CONNECTOR_getAllConnectorAccessTokens(
+    # The id of the mock integration.
+    integrationId: ID!
+  ): [String!]
+}
+
+# The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+scalar JSON
+
+input MockConnectorRequestsFilters {
+  # filtering before a certain timestamp. Timestamp should be in ISO 8601 format e.g. 2020-12-08T21:32:050Z
+  before: String
+
+  # filtering after a certain timestamp
+  after: String
+}
+
+type Mutation {
+  # This mutation allows the user to remove their data from the platform.
+  removeMyUser: ID!
+
+  # Generate an account linking URL for a specific integration.
+  generateAccountLinkingUrl(
+    # The id of the integration
+    integrationId: ID!
+  ): GeneratedAccountLinkingUrl!
+
+  # Remove a linked account
+  removeLinkedAccount(
+    # The id of the linked account
+    linkedAccountId: ID!
+  ): RemoveLinkedAccountResponse!
+
+  # Set the absolute brightness of this device.
+  actionBrightnessSetBrightnessPercentage(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The new absolute brightness value.
+    brightness: Int!
+  ): CreateActionResponse!
+
+  # Lock (true) or unlock (false) the device.
+  actionLockSetLocked(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # True to lock, false to unlock.
+    lock: Boolean!
+  ): CreateActionResponse!
+
+  # Add a PIN code credential to the device.
+  actionPinCodeCredentialCreatePinCodeCredential(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The PIN code credential to add to list of PIN code credentials.
+    pinCodeCredential: PinCodeCredentialInput!
+  ): CreateActionResponse!
+
+  # Update an existing PIN code credential on the device.
+  actionPinCodeCredentialUpdatePinCodeCredential(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The PIN code credential to update in the list of PIN code credentials.
+    pinCodeCredential: PinCodeCredentialInput!
+  ): CreateActionResponse!
+
+  # Revoke access for the PIN code credential with `pinCode` from the device.
+  actionPinCodeCredentialDeletePinCodeCredential(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The `pinCode` of the PIN code credential to remove.
+    #
+    pinCode: String!
+  ): CreateActionResponse!
+
+  # Whether to turn the device on or off. Should update to reflect argument is only a boolean.
+  actionPowerSetOn(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # Whether to turn the device on (true) or off (false).
+    on: Boolean!
+  ): CreateActionResponse!
+
+  # Set the mode of the device.
+  actionThermostatSettingSetThermostatMode(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The mode to set the device to.
+    mode: ThermostatMode!
+  ): CreateActionResponse!
+
+  # Set the target temperature of the device for the associated mode.
+  actionThermostatSettingSetTargetTemperature(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The temperature to set the device to in Celsius.
+    targetTemperature: Float!
+  ): CreateActionResponse!
+
+  # Set the fan mode of the device.
+  actionThermostatSettingSetFanMode(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The fan mode to set the device to.
+    fanMode: FanMode!
+  ): CreateActionResponse!
+
+  # Set a temperature range for the device while in a mode that supports a TargetTemperatureRange (auto).
+  actionThermostatSettingSetTargetTemperatureRange(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The low temperature, in Celsius, to set on the device while in a TargetTemperatureRange mode (auto).
+    setPointLow: Float!
+
+    # The high temperature, in Celsius, to set on the device while in a TargetTemperatureRange mode (auto).
+    setPointHigh: Float!
+  ): CreateActionResponse!
+
+  # This mutation allows ownership of a device to be claimed.
+  CLAIMABLE_claimOwnership(
+    # ID of device to attempt to claim.
+    deviceId: String!
+  ): ClaimableDevice!
+
+  # This mutation allows an owner to unclaim a device.
+  CLAIMABLE_unclaimOwnership(
+    # ID of device to unclaim.
+    deviceId: String!
+  ): ClaimableDevice!
+
+  # (MOCK INTEGRATION): Install a discovery payload in the mock integration, the integration will respond to the platform with this payload once.
+  MOCK_CONNECTOR_installDiscoveryPayload(
+    # The id of the mock integration.
+    integrationId: ID!
+
+    # The list of devices
+    deviceManifest: [JSONObject]!
+    customAccountData: JSONObject
+  ): Boolean!
+
+  # (MOCK INTEGRATION): Request a valid access token from the platform.
+  MOCK_CONNECTOR_sendStaleAccessTokenRequest(
+    # The id of the mock integration
+    integrationId: ID!
+
+    # Connector access token
+    connectorAccessToken: String!
+  ): JSON!
+
+  # (MOCK INTEGRATION): Request a kick-off of a DiscoveryDirective from the platform.
+  MOCK_CONNECTOR_requestDiscoveryEvent(
+    # The id of the mock integration
+    integrationId: ID!
+
+    # Connector access token
+    connectorAccessToken: String!
+  ): JSON!
+
+  # (MOCK INTEGRATION): Report state implemented as a list type
+  MOCK_CONNECTOR_reportListState(
+    # The id of the mock integration
+    integrationId: ID!
+
+    # The physical ID of the device
+    physicalId: ID!
+
+    # Connector access token
+    connectorAccessToken: String!
+
+    # The trait being updated.
+    traitName: TraitName!
+
+    # The specific trait instance being updated.
+    traitInstance: String! = "default"
+
+    # The state field being updated
+    fieldName: String!
+
+    # The reported value.
+    value: MockReportedListStateValue!
+
+    # The date to report this state being sampled at.
+    sampledAt: DateTime
+  ): JSON!
+
+  # (MOCK INTEGRATION): Report state
+  MOCK_CONNECTOR_reportState(
+    # The id of the mock integration
+    integrationId: ID!
+
+    # The physical ID of the device
+    physicalId: ID!
+
+    # Connector access token
+    connectorAccessToken: String!
+
+    # The trait being updated.
+    traitName: TraitName!
+
+    # The specific trait instance being updated.
+    traitInstance: String! = "default"
+
+    # The state field being updated
+    fieldName: String!
+
+    # The reported value
+    value: JSON!
+
+    # The date to report this state being sampled at.
+    sampledAt: DateTime
+  ): JSON!
+
+  # (MOCK INTEGRATION): Register Device identity
+  MOCK_CONNECTOR_registerDeviceIdentity(
+    # The id of the mock integration
+    integrationId: ID!
+
+    # The physical ID of the device
+    physicalId: ID!
+  ): JSON!
+
+  # (VIRTUAL CONNECTOR): simulate discovery for a virtual connector
+  VIRTUAL_CONNECTOR_discover(
+    # The (arbitrary) value to use as the Linked Account ID. This is only used for permissions.
+    linkedAccountId: ID!
+
+    # Number of new locks to discover (LOCK and PIN_CODE_CREDENTIAL trait)
+    locks: Int! = 0
+
+    # Number of new switches to discover (POWER trait)
+    switches: Int! = 0
+
+    # Number of lights to discover (POWER and BRIGHTNESS traits)
+    lights: Int! = 0
+
+    # Number of thermostats to discover (THERMOSTATSETTING trait)
+    thermostats: Int! = 0
+  ): [Device!]!
+
+  # (VIRTUAL CONNECTOR): simulate reporting state for a device.
+  VIRTUAL_CONNECTOR_reportState(
+    # The value to use as the Linked Account ID. This is only used for permissions.
+    linkedAccountId: ID!
+
+    # The device ID that should be updated.
+    deviceId: ID!
+
+    # The trait being updated.
+    traitName: TraitName!
+
+    # The specific trait instance being updated.
+    traitInstance: String! = "default"
+
+    # The state field being updated
+    fieldName: String!
+
+    # The date to report this state being sampled at.
+    sampledAt: DateTime
+
+    # The reported value.
+    value: JSON!
+  ): Device!
+
+  # (VIRTUAL CONNECTOR): simulate reporting list state for a device.
+  VIRTUAL_CONNECTOR_reportListState(
+    # The value to use as the Linked Account ID. This is only used for permissions.
+    linkedAccountId: ID!
+
+    # The device ID that should be updated.
+    deviceId: ID!
+
+    # The trait being updated.
+    traitName: TraitName!
+
+    # The specific trait instance being updated.
+    traitInstance: String! = "default"
+
+    # The state field being updated
+    fieldName: String!
+
+    # The date to report this state being sampled at.
+    sampledAt: DateTime
+
+    # The reported value.
+    value: JSONObject!
+  ): Device!
+
+  # (VIRTUAL CONNECTOR): update a simulated device's configuration
+  VIRTUAL_CONNECTOR_configureDevice(
+    # The value to use as the Linked Account ID. This is only used for permissions.
+    linkedAccountId: ID!
+
+    # The device ID that should be updated.
+    deviceId: ID!
+
+    # Traits to update the device with
+    traits: JSON!
+  ): Device!
+
+  # (VIRTUAL CONNECTOR): simulate updating an actions status
+  VIRTUAL_CONNECTOR_updateActionStatus(
+    # The value to use as the Linked Account ID. This is only used for permissions.
+    linkedAccountId: ID!
+
+    # The device ID that should be updated.
+    deviceId: ID!
+
+    # The action ID that should be updated.
+    actionId: ID!
+
+    # The status the action should be set to
+    status: VIRTUAL_CONNECTOR_ActionStatus! = REJECTED
+  ): Device!
+
+  # (PARTNER API): Create a new integration
+  PARTNER_createIntegration(
+    # The display name of the the integration
+    displayName: String
+    oAuth: JSON
+  ): Integration!
+
+  # (PARTNER API): Create a new integration that uses a deployed test connector and auth server
+  PARTNER_createMockIntegration(
+    # The display name of the the integration
+    displayName: String
+
+    # The type of the integration
+    integrationType: IntegrationType
+  ): JSON!
+
+  # (ADMIN API): Set the enabled integrations for current tenant
+  ADMIN_setIntegrations(
+    # The IDs of all the integrations to enable
+    integrationIds: [ID!]!
+  ): [Integration!]!
+}
+
+# Mutation input: Encapsulates PIN code credential data
+input PinCodeCredentialInput {
+  # A PIN code. This is also the unique identifier for the PIN code credential data.
+  pinCode: String!
+
+  # A human-readable name for the PIN code credential data.
+  name: String!
+
+  # A set of schedules by which the device may be accessed via the PIN code credential.
+  schedules: [RRuleSchedule!]!
+}
+
+# Represents a date-time schedule (temporary, recurring).
+scalar RRuleSchedule
+
+# The various modes a thermostat can be set to.
+enum ThermostatMode {
+  # All activity is suspended.
+  OFF
+
+  # Both heating and cooling mode can engage in order to support
+  # keeping the temperature within a specific range.
+  #
+  AUTO
+
+  # The heater can engage.
+  HEAT
+
+  # The A/C can engage.
+  COOL
+
+  # Neither the heater nor A/C is engaged, but the fan is running.
+  FANONLY
+
+  # The thermostat is in `dehumidify` mode.
+  DEHUMIDIFY
+
+  # The thermostat is in `airflow` mode.
+  AIRFLOW
+}
+
+# The various possible fan modes for a device.
+enum FanMode {
+  # The fan is always on.
+  ON
+
+  # The fan runs when needed.
+  AUTO
+
+  # The fan runs in order circulate air.
+  CIRCULATE
+
+  # The fan is in `sway` mode.
+  SWAY
+
+  # The fan is in `wind` mode.
+  WIND
+
+  # The fan is in `health` mode.
+  HEALTH
+
+  # The fan is in `humidity` mode.
+  HUMIDITY
+
+  # The fan is in `eco` mode.
+  ECO
+
+  # The fan is in `energy` mode.
+  ENERGY
+
+  # The fan is in `fresh` mode.
+  FRESH
+
+  # The fan is in `taste` mode.
+  TASTE
+
+  # The fan is on the `low` setting.
+  LOW
+
+  # The fan is on the `medium` setting.
+  MEDIUM
+
+  # The fan is on the `high` setting.
+  HIGH
+}
+
+# The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+scalar JSONObject
+
+enum TraitName {
+  # Functionality for devices that report their current battery level.
+  BATTERY_LEVEL
+
+  # Functionality for devices that can have their brightness adjusted.
+  BRIGHTNESS
+
+  # Functionality for devices that can be locked or unlocked.
+  LOCK
+
+  # Functionality for devices that can be accessed via a PIN code credential.
+  PIN_CODE_CREDENTIAL
+
+  # Functionality for devices that can be turned on or off.
+  POWER
+
+  # Functionality for devices that are used to control and monitor temperature.
+  THERMOSTAT_SETTING
+}
+
+# The value of a reported list state.
+input MockReportedListStateValue {
+  # Items to upsert (update if exists, add if does not exist) in the list state
+  upsert: [JSONObject!]
+
+  # A list of keys that uniquely identify items in the list state to remove
+  delete: [String!]
+}
+
+# A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+scalar DateTime
+
+enum VIRTUAL_CONNECTOR_ActionStatus {
+  RESOLVED
+  REJECTED
+}
+
+enum IntegrationType {
+  firstParty
+  thirdParty
+}
+
+type PageInfo {
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+  startCursor: String!
+  endCursor: String!
+}
+
+type CreateActionResponse {
+  # The device that was targeted by this action
+  device: Device!
+
+  # The transaction ID for this action
+  transactionId: ID!
+
+  # The ID for this action
+  actionId: ID!
+}
+
+type User {
+  id: ID!
+  firstActivityAt: DateTime!
+  lastActivityAt: DateTime!
+
+  # All devices this user can access.
+  devices(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: DeviceFilterInput
+  ): DeviceConnection!
+
+  # Linked accounts
+  linkedAccounts(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    id: ID
+  ): LinkedAccountConnection!
+}
+
+# A filter that can be used to narrow device queries based on various criteria.
+input DeviceFilterInput {
+  # If provided, this query will only return devices that have at least one trait in the list.
+  traits: [TraitName!]!
+}
+
+# A single edge from a connection to User nodes.
+type UserEdge {
+  cursor: String!
+  node: User!
+}
+
+# A connection to a collection of User edges.
+type UserConnection {
+  pageInfo: PageInfo!
+  edges: [UserEdge!]!
+}
+
+# A 3rd party integration
+type Integration {
+  # 3rd party integration ID
+  id: String!
+
+  # 3rd party integration display name
+  displayName: String!
+}
+
+# A single edge from a connection to Integration nodes.
+type IntegrationEdge {
+  cursor: String!
+  node: Integration!
+}
+
+# A connection to a collection of Integration edges.
+type IntegrationConnection {
+  pageInfo: PageInfo!
+  edges: [IntegrationEdge!]!
+}
+
+type LinkedAccount {
+  # Linked account ID
+  id: ID!
+
+  # Datetime when account was first authorized
+  createdAt: DateTime!
+  devices(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: DeviceFilterInput
+  ): DeviceConnection!
+  status: LinkedAccountAuthorizedStatus!
+  integration: Integration!
+}
+
+enum LinkedAccountAuthorizedStatus {
+  # The account is authorized
+  AUTHORIZED
+
+  # The account exists but is not authorized
+  NOT_AUTHORIZED
+}
+
+# A single edge from a connection to LinkedAccount nodes.
+type LinkedAccountEdge {
+  cursor: String!
+  node: LinkedAccount!
+}
+
+# A connection to a collection of LinkedAccount edges.
+type LinkedAccountConnection {
+  pageInfo: PageInfo!
+  edges: [LinkedAccountEdge!]!
+}
+
+type GeneratedAccountLinkingUrl {
+  # A single-use URL to kick-off an account linking instance.
+  url: String!
+
+  # Timestamp when the account linking URL will expire
+  expiresAt: DateTime!
+  integration: Integration!
+}
+
+type RemoveLinkedAccountResponse {
+  # The currently logged in user. This is the primary entry point into a user's data graph
+  me: User!
+}
+
+type Tenant {
+  id: ID!
+  displayName: String!
+}
+
+interface DeviceEvent {
+  # When this event occurred.
+  createdAt: DateTime!
+}
+
+type DeviceActionCreatedEvent implements DeviceEvent {
+  # When this event occurred.
+  createdAt: DateTime!
+
+  # The device ID that this action event relates to.
+  deviceId: ID!
+
+  # The user ID of the user that created the action.
+  userId: ID!
+
+  # The action ID of the action this event relates to.
+  actionId: ID!
+  traitName: TraitName!
+
+  # The identifier for the specific trait instance this event targeted.
+  traitInstance: String!
+
+  # The parameters of the action.
+  actionParameters: JSONObject!
+}
+
+type DeviceActionUpdatedEvent implements DeviceEvent {
+  # When this event occurred.
+  createdAt: DateTime!
+
+  # The device ID that this action event relates to.
+  deviceId: ID!
+
+  # The action ID of the action this event relates to.
+  actionId: ID!
+  traitName: TraitName!
+
+  # The identifier for the specific trait instance this event targeted.
+  traitInstance: String!
+
+  # The status state that the action is in.
+  status: DeviceActionStatus!
+}
+
+enum DeviceActionStatus {
+  # the action has been queued for processing
+  PENDING
+
+  # the action has been resolved by the device
+  RESOLVED
+
+  # the action has been rejected by the device
+  REJECTED
+
+  # an internal issue with Yonomi has occurred
+  ERROR
+
+  # Yonomi has processed the action, but is unable to dispatch action to the device
+  FAILED
+
+  # timed out before action was resolved or rejected by the device
+  TIMEOUT
+
+  # a pending action was canceled due to a conflicting in-flight operation
+  CANCELED
+}
+
+type DeviceStateUpdatedEvent implements DeviceEvent {
+  # When this event occurred.
+  createdAt: DateTime!
+  deviceId: ID!
+  traitName: TraitName!
+
+  # The identifier for the specific trait instance this event targeted.
+  traitInstance: String!
+
+  # The state field being updated.
+  fieldName: String!
+  value: JSON
+
+  # The actionId of the corresponding action.
+  actionId: ID
+
+  # When this event occurred.
+  sampledAt: DateTime!
+}
+
+type DeviceStateClearedEvent implements DeviceEvent {
+  # When this event occurred.
+  createdAt: DateTime!
+  deviceId: ID!
+  traitName: TraitName!
+
+  # The identifier for the specific trait instance this event targeted.
+  traitInstance: String!
+
+  # The state field being updated.
+  fieldName: String!
+}
+
+type DeviceConfiguredEvent implements DeviceEvent {
+  # When this event occurred.
+  createdAt: DateTime!
+  deviceId: ID!
+  traits: [JSONObject!]!
+}
+
+# A single edge from a connection to DeviceEvent nodes.
+type DeviceEventEdge {
+  cursor: String!
+  node: DeviceEvent!
+}
+
+# A connection to a collection of DeviceEvent edges.
+type DeviceEventConnection {
+  pageInfo: PageInfo!
+  edges: [DeviceEventEdge!]!
+}
+
+# Represents an inclusive range between two integers.
+type IntRange {
+  min: Int!
+  max: Int!
+}
+
+# Represents an inclusive range between two floats.
+type FloatRange {
+  min: Float!
+  max: Float!
+}
+
+# The base DeviceTrait interface.
+interface DeviceTrait {
+  # The name of this device trait.
+  name: TraitName!
+
+  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
+  instance: String!
+
+  # The trait filtered events of this device.
+  events(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: TraitFilteredEventFilterInput
+    sort: DeviceEventSortInput
+  ): DeviceEventConnection!
+}
+
+# A filter that can be used to narrow event queries based on various criteria.
+input TraitFilteredEventFilterInput {
+  # Type of device events to return, such as a state updated event.
+  eventType: DeviceEventTypeName
+
+  # If provided, this query will only return events from before the timestamp.
+  before: DateTime
+
+  # If provided, this query will only return events from after the timestamp.
+  after: DateTime
+}
+
+enum DeviceEventTypeName {
+  # Event of type "action created"
+  DEVICE_ACTION_CREATED
+
+  # Event of type "action updated"
+  DEVICE_ACTION_UPDATED
+
+  # Event of type "state updated".
+  DEVICE_STATE_UPDATED
+
+  # Event of type "state cleared".
+  DEVICE_STATE_CLEARED
+
+  # Event of type "device configured".
+  DEVICE_CONFIGURED
+}
+
+# If provided, returned events will be sorted based on timestamp.
+enum DeviceEventSortInput {
+  # Order events by ascending timestamps.
+  ASCENDING
+
+  # Order events be descending timestamps.
+  DESCENDING
+}
+
+# The base trait reported state field interface.
+interface ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+}
+
+# The base trait desired state field interface.
+interface DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+}
+
+# This represents a range of floating point numbers with min and max values that are dynamic.
+type DynamicFloatRange {
+  # The minimum floating point number value allowed.
+  min: Float!
+
+  # The maximum floating point number value allowed.
+  max: Float!
+}
+
+# Encapsulates PIN code credential data
+type PinCodeCredential {
+  # A PIN code. This is also the unique identifier for the PIN code credential data.
+  pinCode: String!
+
+  # A human-readable name for the PIN code credential data.
+  name: String!
+
+  # A set of schedules by which the device may be accessed via the PIN code credential.
+  schedules: [RRuleSchedule!]!
+}
+
+# Information about the reported BatteryLevel state for the percentage field.
+type BatteryLevelStateReportedPercentage implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Current battery level percentage of the device.
+  value: Int!
+}
+
+# Information about the desired BatteryLevel state for the percentage field.
+type BatteryLevelStateDesiredPercentage implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Current battery level percentage of the device.
+  value: Int!
+
+  # Current battery level percentage of the device.
+  delta: Int
+}
+
+# Information about the BatteryLevel state for the percentage field
+type BatteryLevelStatePercentageField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: BatteryLevelStateReportedPercentage
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: BatteryLevelStateDesiredPercentage
+}
+
+# The state information for the BatteryLevel trait
+type BatteryLevelState {
+  # Current battery level percentage of the device.
+  percentage: BatteryLevelStatePercentageField!
+}
+
+type BatteryLevelDeviceTrait implements DeviceTrait {
+  # The name of this device trait.
+  name: TraitName!
+
+  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
+  instance: String!
+
+  # The trait filtered events of this device.
+  events(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: TraitFilteredEventFilterInput
+    sort: DeviceEventSortInput
+  ): DeviceEventConnection!
+
+  # The BatteryLevel state of this device.
+  state: BatteryLevelState!
+}
+
+# Information about the reported Brightness state for the brightness field.
+type BrightnessStateReportedBrightness implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Current absolute brightness level of this device.
+  value: Int!
+}
+
+# Information about the desired Brightness state for the brightness field.
+type BrightnessStateDesiredBrightness implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Current absolute brightness level of this device.
+  value: Int!
+
+  # Current absolute brightness level of this device.
+  delta: Int
+}
+
+# Information about the Brightness state for the brightness field
+type BrightnessStateBrightnessField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: BrightnessStateReportedBrightness
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: BrightnessStateDesiredBrightness
+}
+
+# The state information for the Brightness trait
+type BrightnessState {
+  # Current absolute brightness level of this device.
+  brightness: BrightnessStateBrightnessField!
+}
+
+type BrightnessDeviceTrait implements DeviceTrait {
+  # The name of this device trait.
+  name: TraitName!
+
+  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
+  instance: String!
+
+  # The trait filtered events of this device.
+  events(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: TraitFilteredEventFilterInput
+    sort: DeviceEventSortInput
+  ): DeviceEventConnection!
+
+  # The Brightness state of this device.
+  state: BrightnessState!
+}
+
+# Information about the reported Lock state for the isLocked field.
+type LockStateReportedIsLocked implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Indicates whether the device is currently locked.
+  value: Boolean!
+}
+
+# Information about the desired Lock state for the isLocked field.
+type LockStateDesiredIsLocked implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Indicates whether the device is currently locked.
+  value: Boolean!
+
+  # Indicates whether the device is currently locked.
+  delta: Boolean
+}
+
+# Information about the Lock state for the isLocked field
+type LockStateIsLockedField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: LockStateReportedIsLocked
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: LockStateDesiredIsLocked
+}
+
+# Information about the reported Lock state for the isJammed field.
+type LockStateReportedIsJammed implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Indicates whether the device is currently jammed, hence the locked
+  # status couldn’t be determined.
+  #
+  value: Boolean!
+}
+
+# Information about the desired Lock state for the isJammed field.
+type LockStateDesiredIsJammed implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Indicates whether the device is currently jammed, hence the locked
+  # status couldn’t be determined.
+  #
+  value: Boolean!
+
+  # Indicates whether the device is currently jammed, hence the locked
+  # status couldn’t be determined.
+  #
+  delta: Boolean
+}
+
+# Information about the Lock state for the isJammed field
+type LockStateIsJammedField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: LockStateReportedIsJammed
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: LockStateDesiredIsJammed
+}
+
+# The state information for the Lock trait
+type LockState {
+  # Indicates whether the device is currently locked.
+  isLocked: LockStateIsLockedField!
+
+  # Indicates whether the device is currently jammed, hence the locked
+  # status couldn’t be determined.
+  #
+  isJammed: LockStateIsJammedField!
+}
+
+# The properties (trait configuration) payload for the Lock trait
+type LockProperties {
+  # Indicates if the lock supports reporting its state as jammed implying that its lock status cannot be determined.
+  #
+  supportsIsJammed: Boolean
+}
+
+type LockDeviceTrait implements DeviceTrait {
+  # The name of this device trait.
+  name: TraitName!
+
+  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
+  instance: String!
+
+  # The trait filtered events of this device.
+  events(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: TraitFilteredEventFilterInput
+    sort: DeviceEventSortInput
+  ): DeviceEventConnection!
+
+  # The Lock configuration for this device.
+  properties: LockProperties!
+
+  # The Lock state of this device.
+  state: LockState!
+}
+
+# A single edge from a connection to PinCodeCredential nodes.
+type PinCodeCredentialEdge {
+  cursor: String!
+  node: PinCodeCredential!
+}
+
+# A connection to a collection of PinCodeCredential edges.
+type PinCodeCredentialConnection {
+  pageInfo: PageInfo!
+  edges: [PinCodeCredentialEdge!]!
+}
+
+# Information about the reported PinCodeCredential state for the pinCodeCredentials field.
+type PinCodeCredentialStateReportedPinCodeCredentials implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Current list of PIN code credentials that have been granted access to the device.
+  value(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+  ): PinCodeCredentialConnection!
+}
+
+# Information about the desired PinCodeCredential state for the pinCodeCredentials field.
+type PinCodeCredentialStateDesiredPinCodeCredentials implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Current list of PIN code credentials that have been granted access to the device.
+  value(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+  ): PinCodeCredentialConnection!
+
+  # Current list of PIN code credentials that have been granted access to the device.
+  delta(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+  ): PinCodeCredentialConnection
+}
+
+# Information about the PinCodeCredential state for the pinCodeCredentials field
+type PinCodeCredentialStatePinCodeCredentialsField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: PinCodeCredentialStateReportedPinCodeCredentials
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: PinCodeCredentialStateDesiredPinCodeCredentials
+}
+
+# The state information for the PinCodeCredential trait
+type PinCodeCredentialState {
+  # Current list of PIN code credentials that have been granted access to the device.
+  pinCodeCredentials: PinCodeCredentialStatePinCodeCredentialsField!
+}
+
+# The properties (trait configuration) payload for the PinCodeCredential trait
+type PinCodeCredentialProperties {
+  # The maximum number of PIN code credentials that may be registered on a device.
+  #
+  maxNumberOfPinCodeCredentials: Int
+
+  # The maximum number of schedules that may be included on a PIN code credential.
+  #
+  maxNumberOfSchedulesPerPinCodeCredential: Int
+
+  # The allowed number of characters in a name for this device's PIN code credentials.
+  #
+  supportedPinCodeCredentialNameRange: IntRange
+
+  # The allowed number of digits in a PIN code for this device's PIN code credentials.
+  #
+  supportedPinCodeRange: IntRange
+}
+
+type PinCodeCredentialDeviceTrait implements DeviceTrait {
+  # The name of this device trait.
+  name: TraitName!
+
+  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
+  instance: String!
+
+  # The trait filtered events of this device.
+  events(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: TraitFilteredEventFilterInput
+    sort: DeviceEventSortInput
+  ): DeviceEventConnection!
+
+  # The PinCodeCredential configuration for this device.
+  properties: PinCodeCredentialProperties!
+
+  # The PinCodeCredential state of this device.
+  state: PinCodeCredentialState!
+}
+
+# Information about the reported Power state for the isOn field.
+type PowerStateReportedIsOn implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Whether a device’s power state is on or off.
+  value: Boolean!
+}
+
+# Information about the desired Power state for the isOn field.
+type PowerStateDesiredIsOn implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Whether a device’s power state is on or off.
+  value: Boolean!
+
+  # Whether a device’s power state is on or off.
+  delta: Boolean
+}
+
+# Information about the Power state for the isOn field
+type PowerStateIsOnField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: PowerStateReportedIsOn
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: PowerStateDesiredIsOn
+}
+
+# The state information for the Power trait
+type PowerState {
+  # Whether a device’s power state is on or off.
+  isOn: PowerStateIsOnField!
+}
+
+# The properties (trait configuration) payload for the Power trait
+type PowerProperties {
+  # Indicates if the device actually has distinct On and Off features as opposed to a single power button.
+  supportsDiscreteOnOff: Boolean
+}
+
+type PowerDeviceTrait implements DeviceTrait {
+  # The name of this device trait.
+  name: TraitName!
+
+  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
+  instance: String!
+
+  # The trait filtered events of this device.
+  events(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: TraitFilteredEventFilterInput
+    sort: DeviceEventSortInput
+  ): DeviceEventConnection!
+
+  # The Power configuration for this device.
+  properties: PowerProperties!
+
+  # The Power state of this device.
+  state: PowerState!
+}
+
+# Information about the reported ThermostatSetting state for the mode field.
+type ThermostatSettingStateReportedMode implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Current mode of the device, within the range of values as defined by availableThermostatModes.
+  value: ThermostatMode!
+}
+
+# Information about the desired ThermostatSetting state for the mode field.
+type ThermostatSettingStateDesiredMode implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Current mode of the device, within the range of values as defined by availableThermostatModes.
+  value: ThermostatMode!
+
+  # Current mode of the device, within the range of values as defined by availableThermostatModes.
+  delta: ThermostatMode
+}
+
+# Information about the ThermostatSetting state for the mode field
+type ThermostatSettingStateModeField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: ThermostatSettingStateReportedMode
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: ThermostatSettingStateDesiredMode
+}
+
+# Information about the reported ThermostatSetting state for the targetTemperature field.
+type ThermostatSettingStateReportedTargetTemperature implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Single temperature set point the device is currently programmed at.
+  value: Float!
+}
+
+# Information about the desired ThermostatSetting state for the targetTemperature field.
+type ThermostatSettingStateDesiredTargetTemperature implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Single temperature set point the device is currently programmed at.
+  value: Float!
+
+  # Single temperature set point the device is currently programmed at.
+  delta: Float
+}
+
+# Information about the ThermostatSetting state for the targetTemperature field
+type ThermostatSettingStateTargetTemperatureField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: ThermostatSettingStateReportedTargetTemperature
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: ThermostatSettingStateDesiredTargetTemperature
+}
+
+# Information about the reported ThermostatSetting state for the ambientTemperature field.
+type ThermostatSettingStateReportedAmbientTemperature implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Current observed temperature in temperatureUnit.
+  value: Float!
+}
+
+# Information about the desired ThermostatSetting state for the ambientTemperature field.
+type ThermostatSettingStateDesiredAmbientTemperature implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Current observed temperature in temperatureUnit.
+  value: Float!
+
+  # Current observed temperature in temperatureUnit.
+  delta: Float
+}
+
+# Information about the ThermostatSetting state for the ambientTemperature field
+type ThermostatSettingStateAmbientTemperatureField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: ThermostatSettingStateReportedAmbientTemperature
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: ThermostatSettingStateDesiredAmbientTemperature
+}
+
+# Information about the reported ThermostatSetting state for the setPointHigh field.
+type ThermostatSettingStateReportedSetPointHigh implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Higher end of the range for auto mode.
+  value: Float!
+}
+
+# Information about the desired ThermostatSetting state for the setPointHigh field.
+type ThermostatSettingStateDesiredSetPointHigh implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Higher end of the range for auto mode.
+  value: Float!
+
+  # Higher end of the range for auto mode.
+  delta: Float
+}
+
+# Information about the ThermostatSetting state for the setPointHigh field
+type ThermostatSettingStateSetPointHighField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: ThermostatSettingStateReportedSetPointHigh
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: ThermostatSettingStateDesiredSetPointHigh
+}
+
+# Information about the reported ThermostatSetting state for the setPointLow field.
+type ThermostatSettingStateReportedSetPointLow implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Lower end of the range for auto mode.
+  value: Float!
+}
+
+# Information about the desired ThermostatSetting state for the setPointLow field.
+type ThermostatSettingStateDesiredSetPointLow implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Lower end of the range for auto mode.
+  value: Float!
+
+  # Lower end of the range for auto mode.
+  delta: Float
+}
+
+# Information about the ThermostatSetting state for the setPointLow field
+type ThermostatSettingStateSetPointLowField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: ThermostatSettingStateReportedSetPointLow
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: ThermostatSettingStateDesiredSetPointLow
+}
+
+# Information about the reported ThermostatSetting state for the ambientHumidity field.
+type ThermostatSettingStateReportedAmbientHumidity implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Observed humidity.
+  value: Float!
+}
+
+# Information about the desired ThermostatSetting state for the ambientHumidity field.
+type ThermostatSettingStateDesiredAmbientHumidity implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Observed humidity.
+  value: Float!
+
+  # Observed humidity.
+  delta: Float
+}
+
+# Information about the ThermostatSetting state for the ambientHumidity field
+type ThermostatSettingStateAmbientHumidityField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: ThermostatSettingStateReportedAmbientHumidity
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: ThermostatSettingStateDesiredAmbientHumidity
+}
+
+# Information about the reported ThermostatSetting state for the targetHumidity field.
+type ThermostatSettingStateReportedTargetHumidity implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Single humidity set point the device is currently programmed at.
+  value: Float!
+}
+
+# Information about the desired ThermostatSetting state for the targetHumidity field.
+type ThermostatSettingStateDesiredTargetHumidity implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Single humidity set point the device is currently programmed at.
+  value: Float!
+
+  # Single humidity set point the device is currently programmed at.
+  delta: Float
+}
+
+# Information about the ThermostatSetting state for the targetHumidity field
+type ThermostatSettingStateTargetHumidityField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: ThermostatSettingStateReportedTargetHumidity
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: ThermostatSettingStateDesiredTargetHumidity
+}
+
+# Information about the reported ThermostatSetting state for the fanMode field.
+type ThermostatSettingStateReportedFanMode implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Current Fan mode of the device, within the range of values as defined by availableFanModes.
+  value: FanMode!
+}
+
+# Information about the desired ThermostatSetting state for the fanMode field.
+type ThermostatSettingStateDesiredFanMode implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Current Fan mode of the device, within the range of values as defined by availableFanModes.
+  value: FanMode!
+
+  # Current Fan mode of the device, within the range of values as defined by availableFanModes.
+  delta: FanMode
+}
+
+# Information about the ThermostatSetting state for the fanMode field
+type ThermostatSettingStateFanModeField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: ThermostatSettingStateReportedFanMode
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: ThermostatSettingStateDesiredFanMode
+}
+
+# The state information for the ThermostatSetting trait
+type ThermostatSettingState {
+  # Current mode of the device, within the range of values as defined by availableThermostatModes.
+  mode: ThermostatSettingStateModeField!
+
+  # Single temperature set point the device is currently programmed at.
+  targetTemperature: ThermostatSettingStateTargetTemperatureField!
+
+  # Current observed temperature in temperatureUnit.
+  ambientTemperature: ThermostatSettingStateAmbientTemperatureField!
+
+  # Higher end of the range for auto mode.
+  setPointHigh: ThermostatSettingStateSetPointHighField!
+
+  # Lower end of the range for auto mode.
+  setPointLow: ThermostatSettingStateSetPointLowField!
+
+  # Observed humidity.
+  ambientHumidity: ThermostatSettingStateAmbientHumidityField!
+
+  # Single humidity set point the device is currently programmed at.
+  targetHumidity: ThermostatSettingStateTargetHumidityField!
+
+  # Current Fan mode of the device, within the range of values as defined by availableFanModes.
+  fanMode: ThermostatSettingStateFanModeField!
+}
+
+# The properties (trait configuration) payload for the ThermostatSetting trait
+type ThermostatSettingProperties {
+  # Supported modes by the device.
+  availableThermostatModes: [ThermostatMode!]
+
+  # Supported fan modes by the device.
+  availableFanModes: [FanMode!]
+
+  # The allowable range to set the device to in Celsius when heating.
+  #
+  heatSetPointRange: DynamicFloatRange
+
+  # The allowable range to set the device to in Celsius when cooling.
+  #
+  coolSetPointRange: DynamicFloatRange
+
+  # The allowed thermostat mode(s) for the setTargetTemperature action.
+  #
+  allowedTargetTemperatureModes: [ThermostatMode!]
+
+  # The allowed thermostat mode(s) for the setTargetTemperatureRange action.
+  #
+  allowedTargetTemperatureRangeModes: [ThermostatMode!]
+}
+
+type ThermostatSettingDeviceTrait implements DeviceTrait {
+  # The name of this device trait.
+  name: TraitName!
+
+  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
+  instance: String!
+
+  # The trait filtered events of this device.
+  events(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: TraitFilteredEventFilterInput
+    sort: DeviceEventSortInput
+  ): DeviceEventConnection!
+
+  # The ThermostatSetting configuration for this device.
+  properties: ThermostatSettingProperties!
+
+  # The ThermostatSetting state of this device.
+  state: ThermostatSettingState!
+}
+
+type ProductInformation {
+  # A description of this device.
+  description: String!
+
+  # The manufacturer of this device.
+  manufacturer: String!
+
+  # Model number or model name of this device.
+  model: String!
+
+  # Serial number of this device.
+  serialNumber: String
+}
+
+type Device {
+  id: ID!
+
+  # The display name of this device.
+  displayName: String!
+
+  # Information about the hardware product
+  productInformation: ProductInformation!
+
+  # When this device was created.
+  createdAt: DateTime!
+
+  # When the trait configuration of this device was last updated. Does not include displayName or device product information such as serialNumber.
+  updatedAt: DateTime!
+
+  # All of the instances of the traits that this device implements.
+  traits: [DeviceTrait!]!
+
+  # All events for this device.
+  events(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: DeviceEventFilterInput
+    sort: DeviceEventSortInput
+  ): DeviceEventConnection!
+}
+
+# A filter that can be used to narrow event queries based on various criteria.
+input DeviceEventFilterInput {
+  # type of device events to return, such as a state updated event.
+  eventType: DeviceEventTypeName
+
+  # If provided, this query will only return events from before the timestamp.
+  before: DateTime
+
+  # If provided, this query will only return events from after the timestamp.
+  after: DateTime
+
+  # If provided, filter events by this trait instance.
+  traitInstance: String
+
+  # If provided, filter events by list of traits.
+  traits: [TraitName!]
+}
+
+# A single edge from a connection to Device nodes.
+type DeviceEdge {
+  cursor: String!
+  node: Device!
+}
+
+# A connection to a collection of Device edges.
+type DeviceConnection {
+  pageInfo: PageInfo!
+  edges: [DeviceEdge!]!
+}
+
+type DeviceOwner {
+  tenantId: String
+  userId: String
+}
+
+type ClaimableDevice {
+  deviceId: String!
+  integrationId: String!
+  owner: DeviceOwner
+}

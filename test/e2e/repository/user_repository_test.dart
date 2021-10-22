@@ -1,13 +1,13 @@
-import 'package:artemis/client.dart';
+import 'package:gql_link/gql_link.dart';
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/repository/artemis_client.dart';
-import 'package:yonomi_platform_sdk/repository/user_repository.dart';
-import 'package:yonomi_platform_sdk/request/request.dart' as yoRequest;
+import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
+import 'package:yonomi_platform_sdk/src/repository/user_repository.dart';
+import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 
 import '../../utils/test_fixtures.dart';
 
 void main() {
-  yoRequest.Request request;
+  late yoRequest.Request request;
 
   setUpAll(() {
     var tester = TestFixtures();
@@ -15,10 +15,10 @@ void main() {
   });
 
   test('getUserDetails() returns populated fields', () async {
-    ArtemisClient myClient = ArtemisClientCreator.create(request);
+    Link myClient = GraphLinkCreator.create(request);
 
-    User user = await UserRepository.getUserDetails(request, client: myClient);
-
+    User user =
+        await UserRepository.getUserDetails(request, graphLink: myClient);
     expect(user.id, isA<String>());
     expect(user.firstActivityAt, isA<DateTime>());
     expect(user.lastActivityAt, isA<DateTime>());
