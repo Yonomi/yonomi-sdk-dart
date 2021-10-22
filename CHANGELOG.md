@@ -1,3 +1,17 @@
+## [1.0.6](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.5...v1.0.6) (2021-10-22)
+
+
+### Bug Fixes
+
+* added device detail and related tests ([796fd58](https://github.com/Yonomi/yonomi-sdk-dart/commit/796fd584b699c06ac95e18cc53f4a308c7dd759c))
+* added more test for coverage ([5624318](https://github.com/Yonomi/yonomi-sdk-dart/commit/5624318020b52e65692289e7ed50df946e31e6a8))
+* added user repository test ([1f04107](https://github.com/Yonomi/yonomi-sdk-dart/commit/1f041075dd121f1d6c66f232587e88947de10f09))
+* flutter minimum version change ([750a7d2](https://github.com/Yonomi/yonomi-sdk-dart/commit/750a7d2cd5065f5701c871cdae6e04b8d207c3ba))
+* link account test ([5fe2171](https://github.com/Yonomi/yonomi-sdk-dart/commit/5fe217157c2811ae81c45b82c94160a591092344))
+* thermostat related tests ([60d5f60](https://github.com/Yonomi/yonomi-sdk-dart/commit/60d5f6054708b457ba0851b18325a24801837f59))
+* updated repository methods to use gql_build classes ([f2dc4e2](https://github.com/Yonomi/yonomi-sdk-dart/commit/f2dc4e20121f0c2da0d30f2a0df03a4b25898629))
+* upgrade flutter ([57a66ac](https://github.com/Yonomi/yonomi-sdk-dart/commit/57a66ac32238d66229ca0a12a2e1517a526a9c85))
+
 ## [1.0.5](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.4...v1.0.5) (2021-06-01)
 
 
