@@ -107,6 +107,13 @@
  
 
 
+##### [ThermostatRepository](../yonomi-sdk/ThermostatRepository-class.md)
+
+
+
+ 
+
+
 ##### [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)
 
 
