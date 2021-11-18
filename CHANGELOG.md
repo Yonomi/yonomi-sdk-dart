@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.6...v1.0.7) (2021-11-18)
+
+
+### Bug Fixes
+
+* **yonomi-sdk.dart:** export missing thermostat_repository.dart file ([daeb854](https://github.com/Yonomi/yonomi-sdk-dart/commit/daeb854526930590deb68983184d6bf78bf598bb))
+
 ## [1.0.6](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.5...v1.0.6) (2021-10-22)
 
 
