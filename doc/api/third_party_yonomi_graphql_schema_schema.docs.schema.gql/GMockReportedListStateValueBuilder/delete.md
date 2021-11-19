@@ -11,7 +11,7 @@
 
 
 
-[ListBuilder](https://pub.dev/documentation/built_collection/5.0.0/built_collection/ListBuilder-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)> delete
+[ListBuilder](https://pub.dev/documentation/built_collection/5.1.1/built_collection/ListBuilder-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)> delete
   
 
 
@@ -31,7 +31,7 @@ ListBuilder<String> get delete =>
 
 
 delete=
-([ListBuilder](https://pub.dev/documentation/built_collection/5.0.0/built_collection/ListBuilder-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>? delete)  
+([ListBuilder](https://pub.dev/documentation/built_collection/5.1.1/built_collection/ListBuilder-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>? delete)  
 
 
 

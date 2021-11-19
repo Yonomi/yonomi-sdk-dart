@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Built](https://pub.dev/documentation/built_value/8.1.2/built_value/Built-class.html)&lt;[GPinCodeCredentialInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput-class.md), [GPinCodeCredentialInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInputBuilder-class.md)>
+- [Built](https://pub.dev/documentation/built_value/8.1.3/built_value/Built-class.html)&lt;[GPinCodeCredentialInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput-class.md), [GPinCodeCredentialInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInputBuilder-class.md)>
 
 
 
@@ -68,7 +68,7 @@ _read-only, inherited_
 
 
 
-##### [schedules](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput/schedules.md) &#8594; [BuiltList](https://pub.dev/documentation/built_collection/5.0.0/built_collection/BuiltList-class.html)&lt;[GRRuleSchedule](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GRRuleSchedule-class.md)>
+##### [schedules](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput/schedules.md) &#8594; [BuiltList](https://pub.dev/documentation/built_collection/5.1.1/built_collection/BuiltList-class.html)&lt;[GRRuleSchedule](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GRRuleSchedule-class.md)>
 
 
 
@@ -89,20 +89,20 @@ _inherited_
 
 
 
-##### [rebuild](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/rebuild.html)(dynamic updates([GPinCodeCredentialInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInputBuilder-class.md))) [GPinCodeCredentialInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput-class.md)
+##### [rebuild](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/rebuild.html)(dynamic updates([GPinCodeCredentialInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInputBuilder-class.md))) [GPinCodeCredentialInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput-class.md)
 
 
 
-Rebuilds the instance. [...](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/rebuild.html)  
+Rebuilds the instance. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/rebuild.html)  
 _inherited_
 
 
 
-##### [toBuilder](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/toBuilder.html)() [GPinCodeCredentialInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInputBuilder-class.md)
+##### [toBuilder](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/toBuilder.html)() [GPinCodeCredentialInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInputBuilder-class.md)
 
 
 
-Converts the instance to a builder <code>B</code>. [...](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/toBuilder.html)  
+Converts the instance to a builder <code>B</code>. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/toBuilder.html)  
 _inherited_
 
 
@@ -140,7 +140,7 @@ _inherited_
 
 ## Static Properties
 
-##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.2/serializer/Serializer-class.html)&lt;[GPinCodeCredentialInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput-class.md)>
+##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.3/serializer/Serializer-class.html)&lt;[GPinCodeCredentialInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput-class.md)>
 
 
 

@@ -11,7 +11,7 @@
 
 
 
-[ListBuilder](https://pub.dev/documentation/built_collection/5.0.0/built_collection/ListBuilder-class.html)&lt;[GJSONObject](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSONObject-class.md)> upsert
+[ListBuilder](https://pub.dev/documentation/built_collection/5.1.1/built_collection/ListBuilder-class.html)&lt;[GJSONObject](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSONObject-class.md)> upsert
   
 
 
@@ -31,7 +31,7 @@ ListBuilder<GJSONObject> get upsert =>
 
 
 upsert=
-([ListBuilder](https://pub.dev/documentation/built_collection/5.0.0/built_collection/ListBuilder-class.html)&lt;[GJSONObject](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSONObject-class.md)>? upsert)  
+([ListBuilder](https://pub.dev/documentation/built_collection/5.1.1/built_collection/ListBuilder-class.html)&lt;[GJSONObject](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSONObject-class.md)>? upsert)  
 
 
 

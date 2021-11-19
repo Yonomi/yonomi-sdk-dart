@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Builder](https://pub.dev/documentation/built_value/8.1.2/built_value/Builder-class.html)&lt;[GMockConnectorRequestsFilters](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockConnectorRequestsFilters-class.md), [GMockConnectorRequestsFiltersBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockConnectorRequestsFiltersBuilder-class.md)>
+- [Builder](https://pub.dev/documentation/built_value/8.1.3/built_value/Builder-class.html)&lt;[GMockConnectorRequestsFilters](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockConnectorRequestsFilters-class.md), [GMockConnectorRequestsFiltersBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockConnectorRequestsFiltersBuilder-class.md)>
 
 
 

@@ -11,7 +11,7 @@
 
 
 
-[ListBuilder](https://pub.dev/documentation/built_collection/5.0.0/built_collection/ListBuilder-class.html)&lt;[GTraitName](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName-class.md)> traits
+[ListBuilder](https://pub.dev/documentation/built_collection/5.1.1/built_collection/ListBuilder-class.html)&lt;[GTraitName](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName-class.md)> traits
   
 
 
@@ -31,7 +31,7 @@ ListBuilder<GTraitName> get traits =>
 
 
 traits=
-([ListBuilder](https://pub.dev/documentation/built_collection/5.0.0/built_collection/ListBuilder-class.html)&lt;[GTraitName](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName-class.md)>? traits)  
+([ListBuilder](https://pub.dev/documentation/built_collection/5.1.1/built_collection/ListBuilder-class.html)&lt;[GTraitName](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName-class.md)>? traits)  
 
 
 
