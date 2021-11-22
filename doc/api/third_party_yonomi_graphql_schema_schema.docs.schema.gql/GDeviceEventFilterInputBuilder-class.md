@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Builder](https://pub.dev/documentation/built_value/8.1.2/built_value/Builder-class.html)&lt;[GDeviceEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput-class.md), [GDeviceEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder-class.md)>
+- [Builder](https://pub.dev/documentation/built_value/8.1.3/built_value/Builder-class.html)&lt;[GDeviceEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput-class.md), [GDeviceEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder-class.md)>
 
 
 
@@ -86,7 +86,7 @@ _read / write_
 
 
 
-##### [traits](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder/traits.md) &#8596; [ListBuilder](https://pub.dev/documentation/built_collection/5.0.0/built_collection/ListBuilder-class.html)&lt;[GTraitName](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName-class.md)>
+##### [traits](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder/traits.md) &#8596; [ListBuilder](https://pub.dev/documentation/built_collection/5.1.1/built_collection/ListBuilder-class.html)&lt;[GTraitName](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName-class.md)>
 
 
 

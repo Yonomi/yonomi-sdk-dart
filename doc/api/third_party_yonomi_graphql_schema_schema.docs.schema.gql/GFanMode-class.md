@@ -17,7 +17,7 @@
 **Inheritance**
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [EnumClass](https://pub.dev/documentation/built_value/8.1.2/built_value/EnumClass-class.html)
+- [EnumClass](https://pub.dev/documentation/built_value/8.1.3/built_value/EnumClass-class.html)
 - GFanMode
 
 
@@ -37,7 +37,7 @@ _read-only, inherited_
 
 
 
-##### [name](https://pub.dev/documentation/built_value/8.1.2/built_value/EnumClass/name.html) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](https://pub.dev/documentation/built_value/8.1.3/built_value/EnumClass/name.html) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
@@ -67,11 +67,11 @@ _inherited_
 
 
 
-##### [toString](https://pub.dev/documentation/built_value/8.1.2/built_value/EnumClass/toString.html)() [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [toString](https://pub.dev/documentation/built_value/8.1.3/built_value/EnumClass/toString.html)() [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
-A string representation of this object. [...](https://pub.dev/documentation/built_value/8.1.2/built_value/EnumClass/toString.html)  
+A string representation of this object. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/EnumClass/toString.html)  
 _inherited_
 
 
@@ -91,7 +91,7 @@ _inherited_
 
 ## Static Properties
 
-##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GFanMode/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.2/serializer/Serializer-class.html)&lt;[GFanMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GFanMode-class.md)>
+##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GFanMode/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.3/serializer/Serializer-class.html)&lt;[GFanMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GFanMode-class.md)>
 
 
 
@@ -100,7 +100,7 @@ _read-only_
 
 
 
-##### [values](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GFanMode/values.md) &#8594; [BuiltSet](https://pub.dev/documentation/built_collection/5.0.0/built_collection/BuiltSet-class.html)&lt;[GFanMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GFanMode-class.md)>
+##### [values](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GFanMode/values.md) &#8594; [BuiltSet](https://pub.dev/documentation/built_collection/5.1.1/built_collection/BuiltSet-class.html)&lt;[GFanMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GFanMode-class.md)>
 
 
 

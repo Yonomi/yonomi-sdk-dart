@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Built](https://pub.dev/documentation/built_value/8.1.2/built_value/Built-class.html)&lt;[GMockReportedListStateValue](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue-class.md), [GMockReportedListStateValueBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder-class.md)>
+- [Built](https://pub.dev/documentation/built_value/8.1.3/built_value/Built-class.html)&lt;[GMockReportedListStateValue](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue-class.md), [GMockReportedListStateValueBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder-class.md)>
 
 
 
@@ -32,7 +32,7 @@
 
 ## Properties
 
-##### [delete](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue/delete.md) &#8594; [BuiltList](https://pub.dev/documentation/built_collection/5.0.0/built_collection/BuiltList-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>?
+##### [delete](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue/delete.md) &#8594; [BuiltList](https://pub.dev/documentation/built_collection/5.1.1/built_collection/BuiltList-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>?
 
 
 
@@ -59,7 +59,7 @@ _read-only, inherited_
 
 
 
-##### [upsert](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue/upsert.md) &#8594; [BuiltList](https://pub.dev/documentation/built_collection/5.0.0/built_collection/BuiltList-class.html)&lt;[GJSONObject](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSONObject-class.md)>?
+##### [upsert](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue/upsert.md) &#8594; [BuiltList](https://pub.dev/documentation/built_collection/5.1.1/built_collection/BuiltList-class.html)&lt;[GJSONObject](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSONObject-class.md)>?
 
 
 
@@ -80,20 +80,20 @@ _inherited_
 
 
 
-##### [rebuild](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/rebuild.html)(dynamic updates([GMockReportedListStateValueBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder-class.md))) [GMockReportedListStateValue](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue-class.md)
+##### [rebuild](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/rebuild.html)(dynamic updates([GMockReportedListStateValueBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder-class.md))) [GMockReportedListStateValue](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue-class.md)
 
 
 
-Rebuilds the instance. [...](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/rebuild.html)  
+Rebuilds the instance. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/rebuild.html)  
 _inherited_
 
 
 
-##### [toBuilder](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/toBuilder.html)() [GMockReportedListStateValueBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder-class.md)
+##### [toBuilder](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/toBuilder.html)() [GMockReportedListStateValueBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder-class.md)
 
 
 
-Converts the instance to a builder <code>B</code>. [...](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/toBuilder.html)  
+Converts the instance to a builder <code>B</code>. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/toBuilder.html)  
 _inherited_
 
 
@@ -131,7 +131,7 @@ _inherited_
 
 ## Static Properties
 
-##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.2/serializer/Serializer-class.html)&lt;[GMockReportedListStateValue](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue-class.md)>
+##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.3/serializer/Serializer-class.html)&lt;[GMockReportedListStateValue](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue-class.md)>
 
 
 
