@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.7...v2.0.0) (2021-11-22)
+
+
+* Merge pull request #43 from Yonomi/update/package ([743e5fb](https://github.com/Yonomi/yonomi-sdk-dart/commit/743e5fb00693b103fc221f1b5fd0cf6ceef37ad8)), closes [#43](https://github.com/Yonomi/yonomi-sdk-dart/issues/43)
+
+
+### BREAKING CHANGES
+
+* update package
+
 ## [1.0.7](https://github.com/Yonomi/yonomi-sdk-dart/compare/v1.0.6...v1.0.7) (2021-11-18)
 
 
