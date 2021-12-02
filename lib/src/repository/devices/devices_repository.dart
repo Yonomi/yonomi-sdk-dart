@@ -1,6 +1,8 @@
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/devices/get_device_name_id_pairs/query.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/devices/get_device_name_id_pairs/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
@@ -99,6 +101,23 @@ class DevicesRepository {
         device.updatedAt,
         lockDeviceTrait);
     return lockDevice;
+  }
+
+  static Future<List<DeviceNameId>> getDeviceNameIds(Request request) async {
+    Link client = GraphLinkCreator.create(request);
+    final req = GgetDeviceNameIds();
+    final res =
+        await client.request(gql.Request(operation: req.operation)).first;
+    final errors = res.errors;
+    if (errors != null && errors.isNotEmpty) {
+      throw errors.first;
+    }
+    return GgetDeviceNameIdsData.fromJson(res.data!)!
+        .me
+        .devices
+        .edges
+        .map((device) => DeviceNameId(device.node.id, device.node.displayName))
+        .toList();
   }
 
   static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
@@ -228,4 +247,11 @@ class ThermostatTrait extends Trait {
 
 class UnknownTrait extends Trait {
   UnknownTrait() : super('Unknown', UnknownState());
+}
+
+class DeviceNameId {
+  final String id;
+  final String name;
+
+  DeviceNameId(this.id, this.name);
 }

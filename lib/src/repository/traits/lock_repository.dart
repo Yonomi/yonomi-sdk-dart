@@ -1,11 +1,9 @@
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/lock/make_lock_unlock_action_request/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/request/request.dart';
+
+import '../../../yonomi-sdk.dart';
 import 'package:gql_exec/gql_exec.dart' as gql;
 
-import '../gql_client.dart';
-
-@Deprecated('Use the new trait-based API')
 class LockRepository {
   static Future<void> sendLockUnlockAction(
       Request request, String id, bool lockUnlock) async {
