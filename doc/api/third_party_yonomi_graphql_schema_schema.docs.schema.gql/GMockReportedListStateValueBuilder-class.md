@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Builder](https://pub.dev/documentation/built_value/8.1.2/built_value/Builder-class.html)&lt;[GMockReportedListStateValue](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue-class.md), [GMockReportedListStateValueBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder-class.md)>
+- [Builder](https://pub.dev/documentation/built_value/8.1.3/built_value/Builder-class.html)&lt;[GMockReportedListStateValue](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue-class.md), [GMockReportedListStateValueBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder-class.md)>
 
 
 
@@ -32,7 +32,7 @@
 
 ## Properties
 
-##### [delete](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder/delete.md) &#8596; [ListBuilder](https://pub.dev/documentation/built_collection/5.0.0/built_collection/ListBuilder-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>
+##### [delete](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder/delete.md) &#8596; [ListBuilder](https://pub.dev/documentation/built_collection/5.1.1/built_collection/ListBuilder-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>
 
 
 
@@ -59,7 +59,7 @@ _read-only, inherited_
 
 
 
-##### [upsert](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder/upsert.md) &#8596; [ListBuilder](https://pub.dev/documentation/built_collection/5.0.0/built_collection/ListBuilder-class.html)&lt;[GJSONObject](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSONObject-class.md)>
+##### [upsert](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder/upsert.md) &#8596; [ListBuilder](https://pub.dev/documentation/built_collection/5.1.1/built_collection/ListBuilder-class.html)&lt;[GJSONObject](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSONObject-class.md)>
 
 
 

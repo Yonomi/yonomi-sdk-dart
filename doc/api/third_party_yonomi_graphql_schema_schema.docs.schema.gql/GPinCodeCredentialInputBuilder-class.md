@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Builder](https://pub.dev/documentation/built_value/8.1.2/built_value/Builder-class.html)&lt;[GPinCodeCredentialInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput-class.md), [GPinCodeCredentialInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInputBuilder-class.md)>
+- [Builder](https://pub.dev/documentation/built_value/8.1.3/built_value/Builder-class.html)&lt;[GPinCodeCredentialInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInput-class.md), [GPinCodeCredentialInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInputBuilder-class.md)>
 
 
 
@@ -68,7 +68,7 @@ _read-only, inherited_
 
 
 
-##### [schedules](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInputBuilder/schedules.md) &#8596; [ListBuilder](https://pub.dev/documentation/built_collection/5.0.0/built_collection/ListBuilder-class.html)&lt;[GRRuleSchedule](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GRRuleSchedule-class.md)>
+##### [schedules](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialInputBuilder/schedules.md) &#8596; [ListBuilder](https://pub.dev/documentation/built_collection/5.1.1/built_collection/ListBuilder-class.html)&lt;[GRRuleSchedule](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GRRuleSchedule-class.md)>
 
 
 

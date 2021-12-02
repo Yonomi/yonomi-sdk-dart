@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Built](https://pub.dev/documentation/built_value/8.1.2/built_value/Built-class.html)&lt;[GDeviceEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput-class.md), [GDeviceEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder-class.md)>
+- [Built](https://pub.dev/documentation/built_value/8.1.3/built_value/Built-class.html)&lt;[GDeviceEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput-class.md), [GDeviceEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder-class.md)>
 
 
 
@@ -86,7 +86,7 @@ _read-only_
 
 
 
-##### [traits](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput/traits.md) &#8594; [BuiltList](https://pub.dev/documentation/built_collection/5.0.0/built_collection/BuiltList-class.html)&lt;[GTraitName](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName-class.md)>?
+##### [traits](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput/traits.md) &#8594; [BuiltList](https://pub.dev/documentation/built_collection/5.1.1/built_collection/BuiltList-class.html)&lt;[GTraitName](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName-class.md)>?
 
 
 
@@ -107,20 +107,20 @@ _inherited_
 
 
 
-##### [rebuild](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/rebuild.html)(dynamic updates([GDeviceEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder-class.md))) [GDeviceEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput-class.md)
+##### [rebuild](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/rebuild.html)(dynamic updates([GDeviceEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder-class.md))) [GDeviceEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput-class.md)
 
 
 
-Rebuilds the instance. [...](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/rebuild.html)  
+Rebuilds the instance. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/rebuild.html)  
 _inherited_
 
 
 
-##### [toBuilder](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/toBuilder.html)() [GDeviceEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder-class.md)
+##### [toBuilder](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/toBuilder.html)() [GDeviceEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder-class.md)
 
 
 
-Converts the instance to a builder <code>B</code>. [...](https://pub.dev/documentation/built_value/8.1.2/built_value/Built/toBuilder.html)  
+Converts the instance to a builder <code>B</code>. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/toBuilder.html)  
 _inherited_
 
 
@@ -158,7 +158,7 @@ _inherited_
 
 ## Static Properties
 
-##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.2/serializer/Serializer-class.html)&lt;[GDeviceEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput-class.md)>
+##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.3/serializer/Serializer-class.html)&lt;[GDeviceEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput-class.md)>
 
 
 

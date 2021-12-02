@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Builder](https://pub.dev/documentation/built_value/8.1.2/built_value/Builder-class.html)&lt;[GTraitFilteredEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInput-class.md), [GTraitFilteredEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInputBuilder-class.md)>
+- [Builder](https://pub.dev/documentation/built_value/8.1.3/built_value/Builder-class.html)&lt;[GTraitFilteredEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInput-class.md), [GTraitFilteredEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInputBuilder-class.md)>
 
 
 

@@ -11,7 +11,7 @@
 
 
 
-[BuiltSet](https://pub.dev/documentation/built_collection/5.0.0/built_collection/BuiltSet-class.html)&lt;[GThermostatMode](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatMode-class.md)> values
+[BuiltSet](https://pub.dev/documentation/built_collection/5.1.1/built_collection/BuiltSet-class.html)&lt;[GThermostatMode](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatMode-class.md)> values
   
 
 

@@ -11,9 +11,9 @@
 
 
 
-[Serializer](https://pub.dev/documentation/built_value/8.1.2/serializer/Serializer-class.html)&lt;[GJSONObject](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSONObject-class.md)> serializer
+[Serializer](https://pub.dev/documentation/built_value/8.1.3/serializer/Serializer-class.html)&lt;[GJSONObject](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSONObject-class.md)> serializer
   
-_@[BuiltValueSerializer](https://pub.dev/documentation/built_value/8.1.2/built_value/BuiltValueSerializer-class.html)(custom: true)_
+_@[BuiltValueSerializer](https://pub.dev/documentation/built_value/8.1.3/built_value/BuiltValueSerializer-class.html)(custom: true)_
 
 
 
