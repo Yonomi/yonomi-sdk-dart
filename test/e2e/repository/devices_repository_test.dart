@@ -3,6 +3,8 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/thermostat_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart'
+    as traits;
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
@@ -74,6 +76,12 @@ void main() {
 
   test('deviceAction lock executes as expected', () async {
     await LockRepository.sendLockUnlockAction(request, testLockId, false);
+    expect(true, isTrue);
+  });
+
+  test('lock trait deviceAction lock executes as expected', () async {
+    await traits.LockRepository.sendLockUnlockAction(
+        request, testLockId, false);
     expect(true, isTrue);
   });
 
