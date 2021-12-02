@@ -1,5 +1,5 @@
 import 'package:gql_link/gql_link.dart';
-import 'package:yonomi_platform_sdk/src/queries/devices/lock/lock_unlock.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/lock/make_lock_unlock_action_request/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:gql_exec/gql_exec.dart' as gql;
 

@@ -380,6 +380,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GgetDeviceData_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature_reported
               .serializer)
       ..add(GgetDeviceData_device_traits__base.serializer)
+      ..add(GgetDeviceNameIds.serializer)
+      ..add(GgetDeviceNameIdsData.serializer)
+      ..add(GgetDeviceNameIdsData_me.serializer)
+      ..add(GgetDeviceNameIdsData_me_devices.serializer)
+      ..add(GgetDeviceNameIdsData_me_devices_edges.serializer)
+      ..add(GgetDeviceNameIdsData_me_devices_edges_node.serializer)
+      ..add(GgetDeviceNameIdsData_me_devices_pageInfo.serializer)
+      ..add(GgetDeviceNameIdsVars.serializer)
       ..add(GgetDeviceVars.serializer)
       ..add(GgetDevices.serializer)
       ..add(GgetDevicesData.serializer)
@@ -834,6 +842,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GgetDeviceData_device_traits__asPinCodeCredentialDeviceTrait_state_pinCodeCredentials_reported_value_edges>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GgetDeviceNameIdsData_me_devices_edges)]),
+          () => new ListBuilder<GgetDeviceNameIdsData_me_devices_edges>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(GgetDevicesData_me_devices_edges)]),
