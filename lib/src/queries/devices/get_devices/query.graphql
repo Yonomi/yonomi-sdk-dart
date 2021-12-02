@@ -1,0 +1,14 @@
+# import "../device_details_fragment/query.fragment.graphql"
+
+query getDevices {
+    me {
+        devices {
+            pageInfo { hasNextPage }
+            edges {
+                node {
+                    ... DeviceDetails
+                }
+            }
+        }
+    }
+}
