@@ -1,8 +1,7 @@
+import 'package:gql_exec/gql_exec.dart' as gql;
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.req.gql.dart';
-
-import '../../../yonomi-sdk.dart';
-import 'package:gql_exec/gql_exec.dart' as gql;
+import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 
 class PowerRepository {
   static Future<void> sendPowerAction(
