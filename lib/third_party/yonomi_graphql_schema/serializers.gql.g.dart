@@ -628,6 +628,28 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__base
               .serializer)
       ..add(GmakeLockUnlockActionRequestVars.serializer)
+      ..add(GmakePowerActionRequest.serializer)
+      ..add(GmakePowerActionRequestData.serializer)
+      ..add(GmakePowerActionRequestData_actionPowerSetOn.serializer)
+      ..add(GmakePowerActionRequestData_actionPowerSetOn_device.serializer)
+      ..add(
+          GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait
+              .serializer)
+      ..add(
+          GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state
+              .serializer)
+      ..add(
+          GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn
+              .serializer)
+      ..add(
+          GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_desired
+              .serializer)
+      ..add(
+          GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_reported
+              .serializer)
+      ..add(GmakePowerActionRequestData_actionPowerSetOn_device_traits__base
+          .serializer)
+      ..add(GmakePowerActionRequestVars.serializer)
       ..add(GmakeSetModeRequest.serializer)
       ..add(GmakeSetModeRequestData.serializer)
       ..add(GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode
@@ -888,6 +910,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GmakePowerActionRequestData_actionPowerSetOn_device_traits)
+          ]),
+          () => new ListBuilder<
+              GmakePowerActionRequestData_actionPowerSetOn_device_traits>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(

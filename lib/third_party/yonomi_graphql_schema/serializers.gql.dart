@@ -301,6 +301,22 @@ import 'package:yonomi_platform_sdk/src/queries/lock/make_lock_unlock_action_req
     show GmakeLockUnlockActionRequest;
 import 'package:yonomi_platform_sdk/src/queries/lock/make_lock_unlock_action_request/query.var.gql.dart'
     show GmakeLockUnlockActionRequestVars;
+import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.data.gql.dart'
+    show
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits,
+        GmakePowerActionRequestData,
+        GmakePowerActionRequestData_actionPowerSetOn,
+        GmakePowerActionRequestData_actionPowerSetOn_device,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_desired,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_reported,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__base;
+import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.req.gql.dart'
+    show GmakePowerActionRequest;
+import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.var.gql.dart'
+    show GmakePowerActionRequestVars;
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.data.gql.dart'
     show
         GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits,
@@ -372,6 +388,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(GgetDevicesData_me_devices_edges_node_traits.serializer)
   ..add(GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits
       .serializer)
+  ..add(GmakePowerActionRequestData_actionPowerSetOn_device_traits.serializer)
   ..add(
       GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits
           .serializer)
@@ -653,6 +670,17 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_state_isLocked_reported,
   GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__base,
   GmakeLockUnlockActionRequestVars,
+  GmakePowerActionRequest,
+  GmakePowerActionRequestData,
+  GmakePowerActionRequestData_actionPowerSetOn,
+  GmakePowerActionRequestData_actionPowerSetOn_device,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_desired,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_reported,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__base,
+  GmakePowerActionRequestVars,
   GmakeSetModeRequest,
   GmakeSetModeRequestData,
   GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode,
