@@ -227,5 +227,5 @@ class ThermostatTrait extends Trait {
 }
 
 class UnknownTrait extends Trait {
-  UnknownTrait() : super('Unknown', UnknownState());
+  UnknownTrait(String name) : super(name, UnknownState());
 }
