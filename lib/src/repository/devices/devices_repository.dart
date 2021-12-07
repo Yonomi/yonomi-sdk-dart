@@ -152,7 +152,7 @@ class DevicesRepository {
                       .reported!
                       .value));
         }
-        return UnknownTrait();
+        return UnknownTrait(trait.name.toString());
       }).toList();
     } else if (deviceTraits
         is List<GgetDevicesData_me_devices_edges_node_traits>) {
@@ -180,7 +180,7 @@ class DevicesRepository {
                   .reported!
                   .value));
         }
-        return UnknownTrait();
+        return UnknownTrait(trait.name.toString());
       }).toList();
     } else {
       throw ArgumentError.value(deviceTraits);
@@ -246,7 +246,7 @@ class ThermostatTrait extends Trait {
 }
 
 class UnknownTrait extends Trait {
-  UnknownTrait() : super('Unknown', UnknownState());
+  UnknownTrait(String name) : super(name, UnknownState());
 }
 
 class DeviceNameId {

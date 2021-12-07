@@ -56,7 +56,7 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                     .reported!
                     .value));
       }
-      return UnknownTrait();
+      return UnknownTrait(trait.name.toString());
     }).toList();
   } else if (deviceTraits
       is List<GgetDevicesData_me_devices_edges_node_traits>) {
@@ -84,7 +84,7 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                 .reported!
                 .value));
       }
-      return UnknownTrait();
+      return UnknownTrait(trait.name.toString());
     }).toList();
   } else {
     throw ArgumentError.value(deviceTraits);
