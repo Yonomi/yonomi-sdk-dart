@@ -1,7 +1,7 @@
 
 
 
-# LockRepository class
+# PowerRepository class
 
 
 
@@ -15,17 +15,9 @@
 
 
 
-
-
-
-
-**Annotations**
-
-- @[Deprecated](https://api.flutter.dev/flutter/dart-core/Deprecated-class.html)(&#39;Use the new trait-based API&#39;)
-
 ## Constructors
 
-[LockRepository](../yonomi-sdk/LockRepository/LockRepository.md) ()
+[PowerRepository](../yonomi-sdk/PowerRepository/PowerRepository.md) ()
 
     
 
@@ -87,7 +79,7 @@ _inherited_
 
 ## Static Methods
 
-##### [sendLockUnlockAction](../yonomi-sdk/LockRepository/sendLockUnlockAction.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id, [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) lockUnlock) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;void>
+##### [sendPowerAction](../yonomi-sdk/PowerRepository/sendPowerAction.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id, [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) onOff) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;void>
 
 
 

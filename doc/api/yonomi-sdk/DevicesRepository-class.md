@@ -88,6 +88,15 @@ _inherited_
 
 
 
+##### [getDeviceNameIds](../yonomi-sdk/DevicesRepository/getDeviceNameIds.md)([Request](../yonomi-sdk/Request-class.md) request) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[DeviceNameId](../yonomi-sdk/DeviceNameId-class.md)>>
+
+
+
+   
+
+
+
+
 ##### [getDevices](../yonomi-sdk/DevicesRepository/getDevices.md)([Request](../yonomi-sdk/Request-class.md) request) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Device](../yonomi-sdk/Device-class.md)>>
 
 
