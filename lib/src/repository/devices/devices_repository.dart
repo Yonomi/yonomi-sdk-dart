@@ -103,23 +103,6 @@ class DevicesRepository {
     return lockDevice;
   }
 
-  static Future<List<DeviceNameId>> getDeviceNameIds(Request request) async {
-    Link client = GraphLinkCreator.create(request);
-    final req = GgetDeviceNameIds();
-    final res =
-        await client.request(gql.Request(operation: req.operation)).first;
-    final errors = res.errors;
-    if (errors != null && errors.isNotEmpty) {
-      throw errors.first;
-    }
-    return GgetDeviceNameIdsData.fromJson(res.data!)!
-        .me
-        .devices
-        .edges
-        .map((device) => DeviceNameId(device.node.id, device.node.displayName))
-        .toList();
-  }
-
   static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
     // There are two generated types which probably should be same
     // We probably can clean it up a little bit to avoid duplications
