@@ -15,14 +15,6 @@
 
 
 
-
-
-
-
-**Annotations**
-
-- @[Deprecated](https://api.flutter.dev/flutter/dart-core/Deprecated-class.html)(&#39;Use the new trait-based API&#39;)
-
 ## Constructors
 
 [LockRepository](../yonomi-sdk/LockRepository/LockRepository.md) ()

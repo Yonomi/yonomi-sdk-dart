@@ -65,7 +65,7 @@
  
 
 
-##### [~~LockRepository~~](../yonomi-sdk/LockRepository-class.md)
+##### [LockRepository](../yonomi-sdk/LockRepository-class.md)
 
 
 
