@@ -18,7 +18,6 @@ void main() {
       "AccountRepository.generateAccountUrl - generates an account linking url",
       () async {
     var integrationsList = await AccountRepository.getAllIntegrations(request);
-    print(request.headers.values.toString());
     Link myClient = GraphLinkCreator.create(request);
     integrationsList.forEach((integration) async {
       String url = await AccountRepository.generateAccountUrl(
