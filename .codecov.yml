@@ -15,15 +15,13 @@ coverage:
         flags:
           - unit
         paths:
-          - "lib/src"
+          - "*/**/lib/src/"
         # advanced settings
         branches:
           - main
         if_ci_failed: error #success, failure, error, ignore
         informational: false
         only_pulls: false
-        ignore:
-          - "**/queries/*"
 
 parsers:
   gcov:
@@ -37,3 +35,7 @@ comment:
   layout: "reach,diff,flags,files,footer"
   behavior: default
   require_changes: no
+
+ignore:
+  - "*/**/queries/*/*.dart"
+  - "*/**/test/*/*.dart"
