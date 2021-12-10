@@ -5,6 +5,9 @@ coverage:
   precision: 2
   round: down
   range: "90...100"
+  ignore:
+    - "**/third_party/*"
+    - "**/queries/*"
   status:
     project:
       default:
@@ -35,7 +38,3 @@ comment:
   layout: "reach,diff,flags,files,footer"
   behavior: default
   require_changes: no
-
-ignore:
-  - "**/third_party/*"
-  - "**/queries/*"
