@@ -1,6 +1,6 @@
 import 'package:gql_link/gql_link.dart';
-import 'package:yonomi_platform_sdk/src/queries/devices/thermostat/set_mode.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/devices/thermostat/set_point.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:gql_exec/gql_exec.dart' as gql;
 

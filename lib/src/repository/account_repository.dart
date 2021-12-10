@@ -1,13 +1,13 @@
 import 'package:gql_exec/gql_exec.dart' as gql;
 import 'package:gql_link/gql_link.dart';
-import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url.data.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/accounts/get_all_integrations.data.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/accounts/get_all_integrations.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/accounts/get_linked_accounts.data.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/accounts/get_linked_accounts.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_account.data.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_account.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url/query.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/accounts/get_all_integrations/query.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/accounts/get_all_integrations/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/accounts/get_linked_accounts/query.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/accounts/get_linked_accounts/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/query.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 
 import 'gql_client.dart';

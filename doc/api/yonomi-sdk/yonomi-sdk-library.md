@@ -37,6 +37,13 @@
  
 
 
+##### [DeviceNameId](../yonomi-sdk/DeviceNameId-class.md)
+
+
+
+ 
+
+
 ##### [DevicesRepository](../yonomi-sdk/DevicesRepository-class.md)
 
 
@@ -66,6 +73,13 @@
 
 
 ##### [LockTrait](../yonomi-sdk/LockTrait-class.md)
+
+
+
+ 
+
+
+##### [PowerRepository](../yonomi-sdk/PowerRepository-class.md)
 
 
 

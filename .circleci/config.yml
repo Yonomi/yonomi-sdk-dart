@@ -49,9 +49,9 @@ commands:
       - run: echo $REPO_TYPE
       - run:
           name: command to run all tests
-          command: PRIVATE_KEY=$(echo "$PRIVATE_KEY_ENCODED" | base64 --decode) flutter test --coverage && lcov --remove coverage/lcov.info 'lib/graphql/*' > coverage/lcov1.info
+          command: PRIVATE_KEY=$(echo "$PRIVATE_KEY_ENCODED" | base64 --decode) flutter test --coverage && lcov --remove coverage/lcov.info 'lib/third_party/*' 'lib/src/queries/*' -o coverage/new_lcov.info
       - codecov/upload:
-          file: coverage/lcov1.info
+          file: coverage/new_lcov.info
   setup-github:
     description: "Git Setup"
     steps:

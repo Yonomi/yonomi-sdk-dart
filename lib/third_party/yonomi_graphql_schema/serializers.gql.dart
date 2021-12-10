@@ -3,26 +3,26 @@ import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart' show StandardJsonPlugin;
 import 'package:gql_code_builder/src/serializers/operation_serializer.dart'
     show OperationSerializer;
-import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url.data.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url/query.data.gql.dart'
     show
         GgenerateAccountLinkingUrlData,
         GgenerateAccountLinkingUrlData_generateAccountLinkingUrl,
         GgenerateAccountLinkingUrlData_generateAccountLinkingUrl_integration;
-import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url.req.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url/query.req.gql.dart'
     show GgenerateAccountLinkingUrl;
-import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url.var.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url/query.var.gql.dart'
     show GgenerateAccountLinkingUrlVars;
-import 'package:yonomi_platform_sdk/src/queries/accounts/get_all_integrations.data.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/get_all_integrations/query.data.gql.dart'
     show
         GgetAllIntegrationsData,
         GgetAllIntegrationsData_integrations,
         GgetAllIntegrationsData_integrations_edges,
         GgetAllIntegrationsData_integrations_edges_node;
-import 'package:yonomi_platform_sdk/src/queries/accounts/get_all_integrations.req.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/get_all_integrations/query.req.gql.dart'
     show GgetAllIntegrations;
-import 'package:yonomi_platform_sdk/src/queries/accounts/get_all_integrations.var.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/get_all_integrations/query.var.gql.dart'
     show GgetAllIntegrationsVars;
-import 'package:yonomi_platform_sdk/src/queries/accounts/get_linked_accounts.data.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/get_linked_accounts/query.data.gql.dart'
     show
         GlinkedAccountsData,
         GlinkedAccountsData_me,
@@ -30,20 +30,20 @@ import 'package:yonomi_platform_sdk/src/queries/accounts/get_linked_accounts.dat
         GlinkedAccountsData_me_linkedAccounts_edges,
         GlinkedAccountsData_me_linkedAccounts_edges_node,
         GlinkedAccountsData_me_linkedAccounts_edges_node_integration;
-import 'package:yonomi_platform_sdk/src/queries/accounts/get_linked_accounts.req.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/get_linked_accounts/query.req.gql.dart'
     show GlinkedAccounts;
-import 'package:yonomi_platform_sdk/src/queries/accounts/get_linked_accounts.var.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/get_linked_accounts/query.var.gql.dart'
     show GlinkedAccountsVars;
-import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_account.data.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/query.data.gql.dart'
     show
         GremoveLinkedAccountData,
         GremoveLinkedAccountData_removeLinkedAccount,
         GremoveLinkedAccountData_removeLinkedAccount_me;
-import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_account.req.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/query.req.gql.dart'
     show GremoveLinkedAccount;
-import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_account.var.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/query.var.gql.dart'
     show GremoveLinkedAccountVars;
-import 'package:yonomi_platform_sdk/src/queries/device_details.fragment.data.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/devices/device_details_fragment/query.fragment.data.gql.dart'
     show
         GDeviceDetailsData_traits,
         GDeviceDetailsData,
@@ -114,60 +114,9 @@ import 'package:yonomi_platform_sdk/src/queries/device_details.fragment.data.gql
         GDeviceDetailsData_traits__asThermostatSettingDeviceTrait_state_targetTemperature_desired,
         GDeviceDetailsData_traits__asThermostatSettingDeviceTrait_state_targetTemperature_reported,
         GDeviceDetailsData_traits__base;
-import 'package:yonomi_platform_sdk/src/queries/device_details.fragment.var.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/devices/device_details_fragment/query.fragment.var.gql.dart'
     show GDeviceDetailsVars;
-import 'package:yonomi_platform_sdk/src/queries/devices/lock/lock_unlock.data.gql.dart'
-    show
-        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits,
-        GmakeLockUnlockActionRequestData,
-        GmakeLockUnlockActionRequestData_actionLockSetLocked,
-        GmakeLockUnlockActionRequestData_actionLockSetLocked_device,
-        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait,
-        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_properties,
-        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_state,
-        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_state_isLocked,
-        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_state_isLocked_desired,
-        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_state_isLocked_reported,
-        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__base;
-import 'package:yonomi_platform_sdk/src/queries/devices/lock/lock_unlock.req.gql.dart'
-    show GmakeLockUnlockActionRequest;
-import 'package:yonomi_platform_sdk/src/queries/devices/lock/lock_unlock.var.gql.dart'
-    show GmakeLockUnlockActionRequestVars;
-import 'package:yonomi_platform_sdk/src/queries/devices/thermostat/set_mode.data.gql.dart'
-    show
-        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits,
-        GmakeSetModeRequestData,
-        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode,
-        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device,
-        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait,
-        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait_properties,
-        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait_state,
-        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait_state_mode,
-        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired,
-        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported,
-        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__base;
-import 'package:yonomi_platform_sdk/src/queries/devices/thermostat/set_mode.req.gql.dart'
-    show GmakeSetModeRequest;
-import 'package:yonomi_platform_sdk/src/queries/devices/thermostat/set_mode.var.gql.dart'
-    show GmakeSetModeRequestVars;
-import 'package:yonomi_platform_sdk/src/queries/devices/thermostat/set_point.data.gql.dart'
-    show
-        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits,
-        GmakeSetTargetTemperatureRequestData,
-        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature,
-        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device,
-        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait,
-        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait_properties,
-        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait_state,
-        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature,
-        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature_desired,
-        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature_reported,
-        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__base;
-import 'package:yonomi_platform_sdk/src/queries/devices/thermostat/set_point.req.gql.dart'
-    show GmakeSetTargetTemperatureRequest;
-import 'package:yonomi_platform_sdk/src/queries/devices/thermostat/set_point.var.gql.dart'
-    show GmakeSetTargetTemperatureRequestVars;
-import 'package:yonomi_platform_sdk/src/queries/get_device.data.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart'
     show
         GgetDeviceData_device_traits,
         GgetDeviceData,
@@ -239,11 +188,23 @@ import 'package:yonomi_platform_sdk/src/queries/get_device.data.gql.dart'
         GgetDeviceData_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature_desired,
         GgetDeviceData_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature_reported,
         GgetDeviceData_device_traits__base;
-import 'package:yonomi_platform_sdk/src/queries/get_device.req.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart'
     show GgetDevice;
-import 'package:yonomi_platform_sdk/src/queries/get_device.var.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.var.gql.dart'
     show GgetDeviceVars;
-import 'package:yonomi_platform_sdk/src/queries/get_devices.data.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/devices/get_device_name_id_pairs/query.data.gql.dart'
+    show
+        GgetDeviceNameIdsData,
+        GgetDeviceNameIdsData_me,
+        GgetDeviceNameIdsData_me_devices,
+        GgetDeviceNameIdsData_me_devices_edges,
+        GgetDeviceNameIdsData_me_devices_edges_node,
+        GgetDeviceNameIdsData_me_devices_pageInfo;
+import 'package:yonomi_platform_sdk/src/queries/devices/get_device_name_id_pairs/query.req.gql.dart'
+    show GgetDeviceNameIds;
+import 'package:yonomi_platform_sdk/src/queries/devices/get_device_name_id_pairs/query.var.gql.dart'
+    show GgetDeviceNameIdsVars;
+import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart'
     show
         GgetDevicesData_me_devices_edges_node_traits,
         GgetDevicesData,
@@ -319,10 +280,77 @@ import 'package:yonomi_platform_sdk/src/queries/get_devices.data.gql.dart'
         GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait_state_targetTemperature_reported,
         GgetDevicesData_me_devices_edges_node_traits__base,
         GgetDevicesData_me_devices_pageInfo;
-import 'package:yonomi_platform_sdk/src/queries/get_devices.req.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart'
     show GgetDevices;
-import 'package:yonomi_platform_sdk/src/queries/get_devices.var.gql.dart'
+import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.var.gql.dart'
     show GgetDevicesVars;
+import 'package:yonomi_platform_sdk/src/queries/lock/make_lock_unlock_action_request/query.data.gql.dart'
+    show
+        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits,
+        GmakeLockUnlockActionRequestData,
+        GmakeLockUnlockActionRequestData_actionLockSetLocked,
+        GmakeLockUnlockActionRequestData_actionLockSetLocked_device,
+        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait,
+        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_properties,
+        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_state,
+        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_state_isLocked,
+        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_state_isLocked_desired,
+        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_state_isLocked_reported,
+        GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__base;
+import 'package:yonomi_platform_sdk/src/queries/lock/make_lock_unlock_action_request/query.req.gql.dart'
+    show GmakeLockUnlockActionRequest;
+import 'package:yonomi_platform_sdk/src/queries/lock/make_lock_unlock_action_request/query.var.gql.dart'
+    show GmakeLockUnlockActionRequestVars;
+import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.data.gql.dart'
+    show
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits,
+        GmakePowerActionRequestData,
+        GmakePowerActionRequestData_actionPowerSetOn,
+        GmakePowerActionRequestData_actionPowerSetOn_device,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_desired,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_reported,
+        GmakePowerActionRequestData_actionPowerSetOn_device_traits__base;
+import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.req.gql.dart'
+    show GmakePowerActionRequest;
+import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.var.gql.dart'
+    show GmakePowerActionRequestVars;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.data.gql.dart'
+    show
+        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits,
+        GmakeSetModeRequestData,
+        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode,
+        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device,
+        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait,
+        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait_properties,
+        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait_state,
+        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait_state_mode,
+        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired,
+        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported,
+        GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits__base;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.req.gql.dart'
+    show GmakeSetModeRequest;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.var.gql.dart'
+    show GmakeSetModeRequestVars;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.data.gql.dart'
+    show
+        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits,
+        GmakeSetTargetTemperatureRequestData,
+        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature,
+        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device,
+        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait,
+        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait_properties,
+        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait_state,
+        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature,
+        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature_desired,
+        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature_reported,
+        GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits__base;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.req.gql.dart'
+    show GmakeSetTargetTemperatureRequest;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.var.gql.dart'
+    show GmakeSetTargetTemperatureRequestVars;
 import 'package:yonomi_platform_sdk/src/queries/user/user.query.data.gql.dart'
     show GuserData, GuserData_me, GuserData_tenant;
 import 'package:yonomi_platform_sdk/src/queries/user/user.query.req.gql.dart'
@@ -360,6 +388,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(GgetDevicesData_me_devices_edges_node_traits.serializer)
   ..add(GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits
       .serializer)
+  ..add(GmakePowerActionRequestData_actionPowerSetOn_device_traits.serializer)
   ..add(
       GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits
           .serializer)
@@ -537,6 +566,14 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GgetDeviceData_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature_desired,
   GgetDeviceData_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature_reported,
   GgetDeviceData_device_traits__base,
+  GgetDeviceNameIds,
+  GgetDeviceNameIdsData,
+  GgetDeviceNameIdsData_me,
+  GgetDeviceNameIdsData_me_devices,
+  GgetDeviceNameIdsData_me_devices_edges,
+  GgetDeviceNameIdsData_me_devices_edges_node,
+  GgetDeviceNameIdsData_me_devices_pageInfo,
+  GgetDeviceNameIdsVars,
   GgetDeviceVars,
   GgetDevices,
   GgetDevicesData,
@@ -633,6 +670,17 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__asLockDeviceTrait_state_isLocked_reported,
   GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__base,
   GmakeLockUnlockActionRequestVars,
+  GmakePowerActionRequest,
+  GmakePowerActionRequestData,
+  GmakePowerActionRequestData_actionPowerSetOn,
+  GmakePowerActionRequestData_actionPowerSetOn_device,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_desired,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_reported,
+  GmakePowerActionRequestData_actionPowerSetOn_device_traits__base,
+  GmakePowerActionRequestVars,
   GmakeSetModeRequest,
   GmakeSetModeRequestData,
   GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode,

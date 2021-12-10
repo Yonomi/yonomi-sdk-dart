@@ -1,0 +1,19 @@
+mutation makePowerActionRequest ($deviceId: ID!, $onOff: Boolean!) {
+	actionPowerSetOn (deviceId: $deviceId on: $onOff) {
+    actionId
+    transactionId
+    device {
+ 	    traits {
+       name instance
+       ... on PowerDeviceTrait {
+         state {
+          isOn {
+            reported { value sampledAt createdAt }
+            desired { value delta updatedAt }
+            }
+          }
+        }
+      }
+    }
+  }
+}

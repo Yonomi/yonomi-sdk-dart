@@ -1,0 +1,15 @@
+query getDeviceNameIds {
+  me {
+    devices {
+      pageInfo {
+        hasNextPage
+      }
+      edges {
+        node {
+          id
+          displayName
+        }
+      }
+    }
+  }
+}

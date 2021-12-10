@@ -380,6 +380,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GgetDeviceData_device_traits__asThermostatSettingDeviceTrait_state_targetTemperature_reported
               .serializer)
       ..add(GgetDeviceData_device_traits__base.serializer)
+      ..add(GgetDeviceNameIds.serializer)
+      ..add(GgetDeviceNameIdsData.serializer)
+      ..add(GgetDeviceNameIdsData_me.serializer)
+      ..add(GgetDeviceNameIdsData_me_devices.serializer)
+      ..add(GgetDeviceNameIdsData_me_devices_edges.serializer)
+      ..add(GgetDeviceNameIdsData_me_devices_edges_node.serializer)
+      ..add(GgetDeviceNameIdsData_me_devices_pageInfo.serializer)
+      ..add(GgetDeviceNameIdsVars.serializer)
       ..add(GgetDeviceVars.serializer)
       ..add(GgetDevices.serializer)
       ..add(GgetDevicesData.serializer)
@@ -620,6 +628,28 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits__base
               .serializer)
       ..add(GmakeLockUnlockActionRequestVars.serializer)
+      ..add(GmakePowerActionRequest.serializer)
+      ..add(GmakePowerActionRequestData.serializer)
+      ..add(GmakePowerActionRequestData_actionPowerSetOn.serializer)
+      ..add(GmakePowerActionRequestData_actionPowerSetOn_device.serializer)
+      ..add(
+          GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait
+              .serializer)
+      ..add(
+          GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state
+              .serializer)
+      ..add(
+          GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn
+              .serializer)
+      ..add(
+          GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_desired
+              .serializer)
+      ..add(
+          GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_reported
+              .serializer)
+      ..add(GmakePowerActionRequestData_actionPowerSetOn_device_traits__base
+          .serializer)
+      ..add(GmakePowerActionRequestVars.serializer)
       ..add(GmakeSetModeRequest.serializer)
       ..add(GmakeSetModeRequestData.serializer)
       ..add(GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode
@@ -836,6 +866,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
               GgetDeviceData_device_traits__asPinCodeCredentialDeviceTrait_state_pinCodeCredentials_reported_value_edges>())
       ..addBuilderFactory(
           const FullType(BuiltList,
+              const [const FullType(GgetDeviceNameIdsData_me_devices_edges)]),
+          () => new ListBuilder<GgetDeviceNameIdsData_me_devices_edges>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
               const [const FullType(GgetDevicesData_me_devices_edges)]),
           () => new ListBuilder<GgetDevicesData_me_devices_edges>())
       ..addBuilderFactory(
@@ -876,6 +910,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GmakePowerActionRequestData_actionPowerSetOn_device_traits)
+          ]),
+          () => new ListBuilder<
+              GmakePowerActionRequestData_actionPowerSetOn_device_traits>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(

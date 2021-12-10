@@ -39,7 +39,7 @@ class TestFixtures {
   bool deviceIsOfTrait(Device device, Type desiredTrait) {
     return device.traits
             .firstWhere((trait) => trait.runtimeType == desiredTrait,
-                orElse: () => UnknownTrait())
+                orElse: () => UnknownTrait('Unknown'))
             .name !=
         'Unknown';
   }

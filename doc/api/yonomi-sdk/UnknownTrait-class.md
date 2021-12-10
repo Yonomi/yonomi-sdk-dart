@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[UnknownTrait](../yonomi-sdk/UnknownTrait/UnknownTrait.md) ()
+[UnknownTrait](../yonomi-sdk/UnknownTrait/UnknownTrait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name)
 
     
 
