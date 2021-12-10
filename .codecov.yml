@@ -5,9 +5,6 @@ coverage:
   precision: 2
   round: down
   range: "90...100"
-  ignore:
-    - "**/third_party/*"
-    - "**/queries/*"
   status:
     project:
       default:
@@ -18,13 +15,15 @@ coverage:
         flags:
           - unit
         paths:
-          - "lib"
+          - "lib/src"
         # advanced settings
         branches:
           - main
         if_ci_failed: error #success, failure, error, ignore
         informational: false
         only_pulls: false
+        ignore:
+          - "**/queries/*"
 
 parsers:
   gcov:
