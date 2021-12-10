@@ -1,8 +1,6 @@
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/devices/get_device_name_id_pairs/query.data.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/devices/get_device_name_id_pairs/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';

@@ -4,9 +4,9 @@ import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 
 class PowerRepository {
-  static Future<void> sendPowerAction(
-      Request request, String id, bool onOff) async {
-    Link client = GraphLinkCreator.create(request);
+  static Future<void> sendPowerAction(Request request, String id, bool onOff,
+      {Link? injectedClient}) async {
+    Link client = injectedClient ?? GraphLinkCreator.create(request);
     final req = GmakePowerActionRequest((b) {
       b..vars.deviceId = id;
       b..vars.onOff = onOff;
