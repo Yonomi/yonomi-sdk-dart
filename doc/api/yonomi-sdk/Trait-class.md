@@ -20,6 +20,7 @@
 **Implementers**
 
 - [LockTrait](../yonomi-sdk/LockTrait-class.md)
+- [PowerTrait](../yonomi-sdk/PowerTrait-class.md)
 - [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)
 - [UnknownTrait](../yonomi-sdk/UnknownTrait-class.md)
 

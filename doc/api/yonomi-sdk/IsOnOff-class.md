@@ -1,7 +1,7 @@
 
 
 
-# State&lt;T> class
+# IsOnOff class
 
 
 
@@ -14,21 +14,20 @@
 
 
 
+**Inheritance**
+
+- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
+- [State](../yonomi-sdk/State-class.md)&lt;[bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)>
+- IsOnOff
 
 
 
-**Implementers**
-
-- [IsLocked](../yonomi-sdk/IsLocked-class.md)
-- [IsOnOff](../yonomi-sdk/IsOnOff-class.md)
-- [TargetTemperature](../yonomi-sdk/TargetTemperature-class.md)
-- [UnknownState](../yonomi-sdk/UnknownState-class.md)
 
 
 
 ## Constructors
 
-[State](../yonomi-sdk/State/State.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, T value)
+[IsOnOff](../yonomi-sdk/IsOnOff/IsOnOff.md) ([bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) value)
 
     
 
@@ -49,7 +48,7 @@ _read-only, inherited_
 
 
    
-_final_
+_final, inherited_
 
 
 
@@ -62,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [value](../yonomi-sdk/State/value.md) &#8594; T
+##### [value](../yonomi-sdk/State/value.md) &#8594; [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)
 
 
 
    
-_final_
+_final, inherited_
 
 
 

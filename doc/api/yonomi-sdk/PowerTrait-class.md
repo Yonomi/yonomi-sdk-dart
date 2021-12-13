@@ -1,7 +1,7 @@
 
 
 
-# State&lt;T> class
+# PowerTrait class
 
 
 
@@ -14,21 +14,20 @@
 
 
 
+**Inheritance**
+
+- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
+- [Trait](../yonomi-sdk/Trait-class.md)
+- PowerTrait
 
 
 
-**Implementers**
-
-- [IsLocked](../yonomi-sdk/IsLocked-class.md)
-- [IsOnOff](../yonomi-sdk/IsOnOff-class.md)
-- [TargetTemperature](../yonomi-sdk/TargetTemperature-class.md)
-- [UnknownState](../yonomi-sdk/UnknownState-class.md)
 
 
 
 ## Constructors
 
-[State](../yonomi-sdk/State/State.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, T value)
+[PowerTrait](../yonomi-sdk/PowerTrait/PowerTrait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [State](../yonomi-sdk/State-class.md) state)
 
     
 
@@ -44,12 +43,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/State/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](../yonomi-sdk/Trait/name.md) &#8596; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_final_
+_late, final, inherited_
 
 
 
@@ -62,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [value](../yonomi-sdk/State/value.md) &#8594; T
+##### [state](../yonomi-sdk/Trait/state.md) &#8596; [State](../yonomi-sdk/State-class.md)
 
 
 
    
-_final_
+_late, final, inherited_
 
 
 
