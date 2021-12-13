@@ -247,8 +247,11 @@ void main() {
         ]
       }
     });
+
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
         thermostatDevice!.device!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(ThermostatTrait));
     expect(convertedValue.first.name, 'thermostat_setting');
   });
   test('''responseToDeviceTraitConverter maps single Lock 
@@ -286,8 +289,54 @@ void main() {
         }
       ]
     });
+
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
         lockDevice!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(LockTrait));
     expect(convertedValue.first.name, 'lock');
+  });
+
+  test('''responseToDeviceTraitConverter maps single Power 
+      DeviceTrait to PowerTrait''', () {
+    final powerDevice = GgetDeviceData_device.fromJson({
+      'id': 'id',
+      'displayName': 'displayName',
+      'updatedAt': '2020-04-01T12:00:00.000Z',
+      'createdAt': '2020-04-01T12:00:00.000Z',
+      'productInformation': {
+        'manufacturer': 'abc',
+        'model': 'model',
+        'description': 'lock',
+      },
+      'traits': [
+        {
+          '__typename': 'PowerDeviceTrait',
+          'name': 'POWER',
+          'instance': 'default',
+          'properties': {'supportsDiscreteOnOff': true},
+          'state': {
+            'isOn': {
+              'reported': {
+                'value': false,
+                'sampledAt': '2021-01-04T21:45:19.364Z',
+                'createdAt': '2021-01-04T21:45:19.364Z'
+              },
+              'desired': {
+                'value': false,
+                'delta': null,
+                'updatedAt': '2021-01-04T21:45:19.364Z'
+              }
+            }
+          }
+        }
+      ]
+    });
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        powerDevice!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(PowerTrait));
+    expect(convertedValue.first.name, 'power');
   });
 }

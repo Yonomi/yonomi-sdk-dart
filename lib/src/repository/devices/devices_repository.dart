@@ -133,6 +133,16 @@ class DevicesRepository {
                       .reported!
                       .value));
         }
+        if (trait.name.toString().toLowerCase().contains('power')) {
+          return PowerTrait(
+            'power',
+            IsOnOff((trait as GgetDeviceData_device_traits__asPowerDeviceTrait)
+                .state
+                .isOn
+                .reported!
+                .value),
+          );
+        }
         return UnknownTrait(trait.name.toString());
       }).toList();
     } else if (deviceTraits
