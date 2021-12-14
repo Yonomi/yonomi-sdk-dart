@@ -116,12 +116,13 @@ class DevicesRepository {
             .contains('thermostat_setting')) {
           return ThermostatTrait(
               'thermostat_setting',
-              TargetTemperature((trait
-                      as GgetDeviceData_device_traits__asThermostatSettingDeviceTrait)
-                  .state
-                  .targetTemperature
-                  .reported
-                  ?.value));
+              TargetTemperature(
+                  (trait as GgetDeviceData_device_traits__asThermostatSettingDeviceTrait)
+                          .state
+                          .targetTemperature
+                          .reported
+                          ?.value ??
+                      0.0));
         }
         if (trait.name.toString().toLowerCase().contains('lock')) {
           return LockTrait(
@@ -137,10 +138,11 @@ class DevicesRepository {
           return PowerTrait(
             'power',
             IsOnOff((trait as GgetDeviceData_device_traits__asPowerDeviceTrait)
-                .state
-                .isOn
-                .reported!
-                .value),
+                    .state
+                    .isOn
+                    .reported
+                    ?.value ??
+                false),
           );
         }
         return UnknownTrait(trait.name.toString());
@@ -154,22 +156,36 @@ class DevicesRepository {
             .contains('thermostat_setting')) {
           return ThermostatTrait(
               'thermostat_setting',
-              TargetTemperature((trait
-                      as GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait)
-                  .state
-                  .targetTemperature
-                  .reported
-                  ?.value));
+              TargetTemperature(
+                  (trait as GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait)
+                          .state
+                          .targetTemperature
+                          .reported
+                          ?.value ??
+                      0.0));
         }
         if (trait.name.toString().toLowerCase().contains('lock')) {
           return LockTrait(
               'lock',
-              IsLocked((trait
-                      as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait)
-                  .state
-                  .isLocked
-                  .reported!
-                  .value));
+              IsLocked(
+                  (trait as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait)
+                          .state
+                          .isLocked
+                          .reported
+                          ?.value ??
+                      false));
+        }
+        if (trait.name.toString().toLowerCase().contains('power')) {
+          return PowerTrait(
+            'power',
+            IsOnOff(
+                (trait as GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait)
+                        .state
+                        .isOn
+                        .reported
+                        ?.value ??
+                    false),
+          );
         }
         return UnknownTrait(trait.name.toString());
       }).toList();
