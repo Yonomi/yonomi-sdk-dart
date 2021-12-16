@@ -1,10 +1,10 @@
+import 'package:gql_exec/gql_exec.dart' as gql;
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
-import 'package:gql_exec/gql_exec.dart' as gql;
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
 import '../gql_client.dart';
@@ -116,12 +116,13 @@ class DevicesRepository {
             .contains('thermostat_setting')) {
           return ThermostatTrait(
               'thermostat_setting',
-              TargetTemperature((trait
-                      as GgetDeviceData_device_traits__asThermostatSettingDeviceTrait)
-                  .state
-                  .targetTemperature
-                  .reported
-                  ?.value));
+              TargetTemperature(
+                  (trait as GgetDeviceData_device_traits__asThermostatSettingDeviceTrait)
+                          .state
+                          .targetTemperature
+                          .reported
+                          ?.value ??
+                      0.0));
         }
         if (trait.name.toString().toLowerCase().contains('lock')) {
           return LockTrait(
@@ -132,6 +133,17 @@ class DevicesRepository {
                       .isLocked
                       .reported!
                       .value));
+        }
+        if (trait.name.toString().toLowerCase().contains('power')) {
+          return PowerTrait(
+            'power',
+            IsOnOff((trait as GgetDeviceData_device_traits__asPowerDeviceTrait)
+                    .state
+                    .isOn
+                    .reported
+                    ?.value ??
+                false),
+          );
         }
         return UnknownTrait(trait.name.toString());
       }).toList();
@@ -144,22 +156,36 @@ class DevicesRepository {
             .contains('thermostat_setting')) {
           return ThermostatTrait(
               'thermostat_setting',
-              TargetTemperature((trait
-                      as GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait)
-                  .state
-                  .targetTemperature
-                  .reported
-                  ?.value));
+              TargetTemperature(
+                  (trait as GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait)
+                          .state
+                          .targetTemperature
+                          .reported
+                          ?.value ??
+                      0.0));
         }
         if (trait.name.toString().toLowerCase().contains('lock')) {
           return LockTrait(
               'lock',
-              IsLocked((trait
-                      as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait)
-                  .state
-                  .isLocked
-                  .reported!
-                  .value));
+              IsLocked(
+                  (trait as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait)
+                          .state
+                          .isLocked
+                          .reported
+                          ?.value ??
+                      false));
+        }
+        if (trait.name.toString().toLowerCase().contains('power')) {
+          return PowerTrait(
+            'power',
+            IsOnOff(
+                (trait as GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait)
+                        .state
+                        .isOn
+                        .reported
+                        ?.value ??
+                    false),
+          );
         }
         return UnknownTrait(trait.name.toString());
       }).toList();
@@ -206,6 +232,10 @@ abstract class State<T> {
   State(this.name, this.value);
 }
 
+class IsOnOff extends State<bool> {
+  IsOnOff(bool value) : super('Power', value);
+}
+
 class IsLocked extends State<bool> {
   IsLocked(bool value) : super('LockUnlock', value);
 }
@@ -220,6 +250,10 @@ class UnknownState extends State<String> {
 
 class LockTrait extends Trait {
   LockTrait(String name, State state) : super(name, state);
+}
+
+class PowerTrait extends Trait {
+  PowerTrait(String name, State state) : super(name, state);
 }
 
 class ThermostatTrait extends Trait {

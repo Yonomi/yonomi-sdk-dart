@@ -65,6 +65,13 @@
  
 
 
+##### [IsOnOff](../yonomi-sdk/IsOnOff-class.md)
+
+
+
+ 
+
+
 ##### [LockRepository](../yonomi-sdk/LockRepository-class.md)
 
 
@@ -80,6 +87,13 @@
 
 
 ##### [PowerRepository](../yonomi-sdk/PowerRepository-class.md)
+
+
+
+ 
+
+
+##### [PowerTrait](../yonomi-sdk/PowerTrait-class.md)
 
 
 

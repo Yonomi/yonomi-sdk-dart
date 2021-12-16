@@ -1,5 +1,6 @@
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
 
 void main() {
@@ -247,8 +248,11 @@ void main() {
         ]
       }
     });
+
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
         thermostatDevice!.device!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(ThermostatTrait));
     expect(convertedValue.first.name, 'thermostat_setting');
   });
   test('''responseToDeviceTraitConverter maps single Lock 
@@ -286,8 +290,97 @@ void main() {
         }
       ]
     });
+
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
         lockDevice!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(LockTrait));
     expect(convertedValue.first.name, 'lock');
+  });
+
+  test('''#1. responseToDeviceTraitConverter maps single Power 
+      DeviceTrait to PowerTrait''', () {
+    final powerDevice = GgetDeviceData_device.fromJson({
+      'id': 'id',
+      'displayName': 'displayName',
+      'updatedAt': '2020-04-01T12:00:00.000Z',
+      'createdAt': '2020-04-01T12:00:00.000Z',
+      'productInformation': {
+        'manufacturer': 'abc',
+        'model': 'model',
+        'description': 'lock',
+      },
+      'traits': [
+        {
+          '__typename': 'PowerDeviceTrait',
+          'name': 'POWER',
+          'instance': 'default',
+          'properties': {'supportsDiscreteOnOff': true},
+          'state': {
+            'isOn': {
+              'reported': {
+                'value': false,
+                'sampledAt': '2021-01-04T21:45:19.364Z',
+                'createdAt': '2021-01-04T21:45:19.364Z'
+              },
+              'desired': {
+                'value': false,
+                'delta': null,
+                'updatedAt': '2021-01-04T21:45:19.364Z'
+              }
+            }
+          }
+        }
+      ]
+    });
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        powerDevice!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(PowerTrait));
+    expect(convertedValue.first.name, 'power');
+  });
+
+  test('''#2. responseToDeviceTraitConverter maps single Power 
+      DeviceTrait to PowerTrait''', () {
+    final powerDevice = GgetDevicesData_me_devices_edges_node.fromJson({
+      'id': 'id',
+      'displayName': 'displayName',
+      'updatedAt': '2020-04-01T12:00:00.000Z',
+      'createdAt': '2020-04-01T12:00:00.000Z',
+      'productInformation': {
+        'manufacturer': 'abc',
+        'model': 'model',
+        'description': 'lock',
+      },
+      'traits': [
+        {
+          '__typename': 'PowerDeviceTrait',
+          'name': 'POWER',
+          'instance': 'default',
+          'properties': {'supportsDiscreteOnOff': true},
+          'state': {
+            'isOn': {
+              'reported': {
+                'value': false,
+                'sampledAt': '2021-01-04T21:45:19.364Z',
+                'createdAt': '2021-01-04T21:45:19.364Z'
+              },
+              'desired': {
+                'value': false,
+                'delta': null,
+                'updatedAt': '2021-01-04T21:45:19.364Z'
+              }
+            }
+          }
+        }
+      ]
+    });
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        powerDevice!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(PowerTrait));
+    expect(convertedValue.first.name, 'power');
   });
 }
