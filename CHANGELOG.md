@@ -1,3 +1,16 @@
+# [2.2.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.1.0...v2.2.0) (2021-12-16)
+
+
+### Bug Fixes
+
+* **devices_repository:** add missing conversions for PowerTrait ([f959476](https://github.com/Yonomi/yonomi-sdk-dart/commit/f959476b8efd4b1a41fa15048aa3cf504bcc955b))
+
+
+### Features
+
+* **devices_repository:** add Power Trait and IsOnOff State class ([8d3a4cf](https://github.com/Yonomi/yonomi-sdk-dart/commit/8d3a4cf918f68e59b55898e34ef1ebdd7c3fda07))
+* **devices_repository:** convert Powertrait responses into PowerTrait ([19f3ee6](https://github.com/Yonomi/yonomi-sdk-dart/commit/19f3ee602fcf7bc956f546a2fed5a61ef9b85a06))
+
 # [2.1.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.0.0...v2.1.0) (2021-12-10)
 
 
