@@ -2,6 +2,7 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.ast.gql.dart';
 
 void main() {
   test('responseToDeviceTraitConverter converts mixed trait device', () {
@@ -117,9 +118,10 @@ void main() {
         deviceWithMultipleTraits!.device!.traits.asList());
     expect(convertedTraits, hasLength(3));
     expect(convertedTraits, contains(isA<LockTrait>()));
+    expect(convertedTraits, contains(isA<BatteryLevelTrait>()));
     expect(convertedTraits, contains(isA<UnknownTrait>()));
   });
-  test('''responseToDeviceTraitConverter maps single Thermostat 
+  test('''responseToDeviceTraitConverter maps single Thermostat
       DeviceTrait to ThermostatTrait''', () {
     final thermostatDevice = GgetDeviceData.fromJson({
       "device": {
@@ -255,7 +257,7 @@ void main() {
     expect(convertedValue.first.runtimeType, equals(ThermostatTrait));
     expect(convertedValue.first.name, 'thermostat_setting');
   });
-  test('''responseToDeviceTraitConverter maps single Lock 
+  test('''responseToDeviceTraitConverter maps single Lock
       DeviceTrait to LockUnlockTrait''', () {
     final lockDevice = GgetDeviceData_device.fromJson({
       'id': 'id',
@@ -298,7 +300,7 @@ void main() {
     expect(convertedValue.first.name, 'lock');
   });
 
-  test('''#1. responseToDeviceTraitConverter maps single Power 
+  test('''#1. responseToDeviceTraitConverter maps single Power
       DeviceTrait to PowerTrait''', () {
     final powerDevice = GgetDeviceData_device.fromJson({
       'id': 'id',
@@ -341,7 +343,7 @@ void main() {
     expect(convertedValue.first.name, 'power');
   });
 
-  test('''#2. responseToDeviceTraitConverter maps single Power 
+  test('''#2. responseToDeviceTraitConverter maps single Power
       DeviceTrait to PowerTrait''', () {
     final powerDevice = GgetDevicesData_me_devices_edges_node.fromJson({
       'id': 'id',
@@ -382,5 +384,47 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(PowerTrait));
     expect(convertedValue.first.name, 'power');
+  });
+
+    test('''#1. responseToDeviceTraitConverter maps single Battery Level
+      DeviceTrait to BatteryLevelTrait''', () {
+    final batteryLevelDevice = GgetDeviceData_device.fromJson({
+      'id': 'id',
+      'displayName': 'displayName',
+      'updatedAt': '2020-04-01T12:00:00.000Z',
+      'createdAt': '2020-04-01T12:00:00.000Z',
+      'productInformation': {
+        'manufacturer': 'abc',
+        'model': 'model',
+        'description': 'battery_level',
+      },
+      'traits': [
+        {
+          '__typename': 'BatteryLevelDeviceTrait',
+          'name': 'BATTERY_LEVEL',
+          'instance': 'default',
+          'state': {
+            'batteryLevel': {
+              'reported': {
+                'value': 50,
+                'sampledAt': '2021-01-04T21:45:19.364Z',
+                'createdAt': '2021-01-04T21:45:19.364Z'
+              },
+              'desired': {
+                'value': 50,
+                'delta': 0,
+                'updatedAt': '2021-01-04T21:45:19.364Z'
+              }
+            }
+          }
+        }
+      ]
+    });
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        batteryLevelDevice!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(BatteryLevelTrait));
+    expect(convertedValue.first.name, 'battery_level');
   });
 }

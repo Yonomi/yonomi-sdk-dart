@@ -123,8 +123,7 @@ class DevicesRepository {
                           .reported
                           ?.value ??
                       0.0));
-        }
-        if (trait.name.toString().toLowerCase().contains('lock')) {
+        } else if (trait.name.toString().toLowerCase().contains('lock')) {
           return LockTrait(
               'lock',
               IsLocked(
@@ -133,8 +132,7 @@ class DevicesRepository {
                       .isLocked
                       .reported!
                       .value));
-        }
-        if (trait.name.toString().toLowerCase().contains('power')) {
+        } else if (trait.name.toString().toLowerCase().contains('power')) {
           return PowerTrait(
             'power',
             IsOnOff((trait as GgetDeviceData_device_traits__asPowerDeviceTrait)
@@ -144,8 +142,22 @@ class DevicesRepository {
                     ?.value ??
                 false),
           );
+        } else if (trait.name
+            .toString()
+            .toLowerCase()
+            .contains('battery_level')) {
+          return BatteryLevelTrait(
+              'battery_level',
+              BatteryLevel(
+                  (trait as GgetDeviceData_device_traits__asBatteryLevelDeviceTrait)
+                          .state
+                          .percentage
+                          .reported
+                          ?.value ??
+                      0));
+        } else {
+          return UnknownTrait(trait.name.toString());
         }
-        return UnknownTrait(trait.name.toString());
       }).toList();
     } else if (deviceTraits
         is List<GgetDevicesData_me_devices_edges_node_traits>) {
@@ -163,8 +175,7 @@ class DevicesRepository {
                           .reported
                           ?.value ??
                       0.0));
-        }
-        if (trait.name.toString().toLowerCase().contains('lock')) {
+        } else if (trait.name.toString().toLowerCase().contains('lock')) {
           return LockTrait(
               'lock',
               IsLocked(
@@ -174,8 +185,7 @@ class DevicesRepository {
                           .reported
                           ?.value ??
                       false));
-        }
-        if (trait.name.toString().toLowerCase().contains('power')) {
+        } else if (trait.name.toString().toLowerCase().contains('power')) {
           return PowerTrait(
             'power',
             IsOnOff(
@@ -186,8 +196,22 @@ class DevicesRepository {
                         ?.value ??
                     false),
           );
+        } else if (trait.name
+            .toString()
+            .toLowerCase()
+            .contains('battery_level')) {
+          return BatteryLevelTrait(
+              'battery_level',
+              BatteryLevel(
+                  (trait as GgetDevicesData_me_devices_edges_node_traits__asBatteryLevelDeviceTrait)
+                          .state
+                          .percentage
+                          .reported
+                          ?.value ??
+                      0));
+        } else {
+          return UnknownTrait(trait.name.toString());
         }
-        return UnknownTrait(trait.name.toString());
       }).toList();
     } else {
       throw ArgumentError.value(deviceTraits);
@@ -244,6 +268,10 @@ class TargetTemperature extends State<double?> {
   TargetTemperature(double? value) : super('TargetTemperature', value);
 }
 
+class BatteryLevel extends State<int> {
+  BatteryLevel(int value) : super('BatteryLevel', value);
+}
+
 class UnknownState extends State<String> {
   UnknownState() : super('Unknown', 'Unknown');
 }
@@ -262,6 +290,10 @@ class ThermostatTrait extends Trait {
 
 class UnknownTrait extends Trait {
   UnknownTrait(String name) : super(name, UnknownState());
+}
+
+class BatteryLevelTrait extends Trait {
+  BatteryLevelTrait(String name, State state) : super(name, state);
 }
 
 class DeviceNameId {
