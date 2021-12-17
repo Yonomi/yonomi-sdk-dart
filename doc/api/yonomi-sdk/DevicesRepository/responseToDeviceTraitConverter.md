@@ -46,8 +46,7 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                         .reported
                         ?.value ??
                     0.0));
-      }
-      if (trait.name.toString().toLowerCase().contains('lock')) {
+      } else if (trait.name.toString().toLowerCase().contains('lock')) {
         return LockTrait(
             'lock',
             IsLocked(
@@ -56,8 +55,7 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                     .isLocked
                     .reported!
                     .value));
-      }
-      if (trait.name.toString().toLowerCase().contains('power')) {
+      } else if (trait.name.toString().toLowerCase().contains('power')) {
         return PowerTrait(
           'power',
           IsOnOff((trait as GgetDeviceData_device_traits__asPowerDeviceTrait)
@@ -67,8 +65,22 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                   ?.value ??
               false),
         );
+      } else if (trait.name
+          .toString()
+          .toLowerCase()
+          .contains('battery_level')) {
+        return BatteryLevelTrait(
+            'battery_level',
+            BatteryLevel(
+                (trait as GgetDeviceData_device_traits__asBatteryLevelDeviceTrait)
+                        .state
+                        .percentage
+                        .reported
+                        ?.value ??
+                    0));
+      } else {
+        return UnknownTrait(trait.name.toString());
       }
-      return UnknownTrait(trait.name.toString());
     }).toList();
   } else if (deviceTraits
       is List<GgetDevicesData_me_devices_edges_node_traits>) {
@@ -86,8 +98,7 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                         .reported
                         ?.value ??
                     0.0));
-      }
-      if (trait.name.toString().toLowerCase().contains('lock')) {
+      } else if (trait.name.toString().toLowerCase().contains('lock')) {
         return LockTrait(
             'lock',
             IsLocked(
@@ -97,8 +108,7 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                         .reported
                         ?.value ??
                     false));
-      }
-      if (trait.name.toString().toLowerCase().contains('power')) {
+      } else if (trait.name.toString().toLowerCase().contains('power')) {
         return PowerTrait(
           'power',
           IsOnOff(
@@ -109,8 +119,22 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                       ?.value ??
                   false),
         );
+      } else if (trait.name
+          .toString()
+          .toLowerCase()
+          .contains('battery_level')) {
+        return BatteryLevelTrait(
+            'battery_level',
+            BatteryLevel(
+                (trait as GgetDevicesData_me_devices_edges_node_traits__asBatteryLevelDeviceTrait)
+                        .state
+                        .percentage
+                        .reported
+                        ?.value ??
+                    0));
+      } else {
+        return UnknownTrait(trait.name.toString());
       }
-      return UnknownTrait(trait.name.toString());
     }).toList();
   } else {
     throw ArgumentError.value(deviceTraits);

@@ -1,7 +1,7 @@
 
 
 
-# Trait class
+# BatteryLevel class
 
 
 
@@ -14,22 +14,20 @@
 
 
 
+**Inheritance**
+
+- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
+- [State](../yonomi-sdk/State-class.md)&lt;[int](https://api.flutter.dev/flutter/dart-core/int-class.html)>
+- BatteryLevel
 
 
 
-**Implementers**
-
-- [BatteryLevelTrait](../yonomi-sdk/BatteryLevelTrait-class.md)
-- [LockTrait](../yonomi-sdk/LockTrait-class.md)
-- [PowerTrait](../yonomi-sdk/PowerTrait-class.md)
-- [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)
-- [UnknownTrait](../yonomi-sdk/UnknownTrait-class.md)
 
 
 
 ## Constructors
 
-[Trait](../yonomi-sdk/Trait/Trait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [State](../yonomi-sdk/State-class.md) state)
+[BatteryLevel](../yonomi-sdk/BatteryLevel/BatteryLevel.md) ([int](https://api.flutter.dev/flutter/dart-core/int-class.html) value)
 
     
 
@@ -45,12 +43,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/Trait/name.md) &#8596; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](../yonomi-sdk/State/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_late, final_
+_final, inherited_
 
 
 
@@ -63,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [state](../yonomi-sdk/Trait/state.md) &#8596; [State](../yonomi-sdk/State-class.md)
+##### [value](../yonomi-sdk/State/value.md) &#8594; [int](https://api.flutter.dev/flutter/dart-core/int-class.html)
 
 
 
    
-_late, final_
+_final, inherited_
 
 
 
