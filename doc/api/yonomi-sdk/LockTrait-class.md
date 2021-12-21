@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[LockTrait](../yonomi-sdk/LockTrait/LockTrait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [State](../yonomi-sdk/State-class.md) state)
+[LockTrait](../yonomi-sdk/LockTrait/LockTrait.md) ([State](../yonomi-sdk/State-class.md) state)
 
     
 

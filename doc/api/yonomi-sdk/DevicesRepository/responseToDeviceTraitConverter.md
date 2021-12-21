@@ -33,12 +33,10 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
 
   if (deviceTraits is List<GgetDeviceData_device_traits>) {
     return deviceTraits.map((trait) {
-      if (trait.name
-          .toString()
-          .toLowerCase()
-          .contains('thermostat_setting')) {
+      final traitName = trait.name.toString().toLowerCase();
+
+      if (traitName.contains('thermostat_setting')) {
         return ThermostatTrait(
-            'thermostat_setting',
             TargetTemperature(
                 (trait as GgetDeviceData_device_traits__asThermostatSettingDeviceTrait)
                         .state
@@ -46,18 +44,16 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                         .reported
                         ?.value ??
                     0.0));
-      } else if (trait.name.toString().toLowerCase().contains('lock')) {
+      } else if (traitName.contains('lock')) {
         return LockTrait(
-            'lock',
             IsLocked(
                 (trait as GgetDeviceData_device_traits__asLockDeviceTrait)
                     .state
                     .isLocked
                     .reported!
                     .value));
-      } else if (trait.name.toString().toLowerCase().contains('power')) {
+      } else if (traitName.contains('power')) {
         return PowerTrait(
-          'power',
           IsOnOff((trait as GgetDeviceData_device_traits__asPowerDeviceTrait)
                   .state
                   .isOn
@@ -65,12 +61,8 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                   ?.value ??
               false),
         );
-      } else if (trait.name
-          .toString()
-          .toLowerCase()
-          .contains('battery_level')) {
+      } else if (traitName.contains('battery_level')) {
         return BatteryLevelTrait(
-            'battery_level',
             BatteryLevel(
                 (trait as GgetDeviceData_device_traits__asBatteryLevelDeviceTrait)
                         .state
@@ -85,12 +77,9 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
   } else if (deviceTraits
       is List<GgetDevicesData_me_devices_edges_node_traits>) {
     return deviceTraits.map((trait) {
-      if (trait.name
-          .toString()
-          .toLowerCase()
-          .contains('thermostat_setting')) {
+      final traitName = trait.name.toString().toLowerCase();
+      if (traitName.contains('thermostat_setting')) {
         return ThermostatTrait(
-            'thermostat_setting',
             TargetTemperature(
                 (trait as GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait)
                         .state
@@ -98,9 +87,8 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                         .reported
                         ?.value ??
                     0.0));
-      } else if (trait.name.toString().toLowerCase().contains('lock')) {
+      } else if (traitName.contains('lock')) {
         return LockTrait(
-            'lock',
             IsLocked(
                 (trait as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait)
                         .state
@@ -108,9 +96,8 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                         .reported
                         ?.value ??
                     false));
-      } else if (trait.name.toString().toLowerCase().contains('power')) {
+      } else if (traitName.contains('power')) {
         return PowerTrait(
-          'power',
           IsOnOff(
               (trait as GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait)
                       .state
@@ -119,12 +106,8 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                       ?.value ??
                   false),
         );
-      } else if (trait.name
-          .toString()
-          .toLowerCase()
-          .contains('battery_level')) {
+      } else if (traitName.contains('battery_level')) {
         return BatteryLevelTrait(
-            'battery_level',
             BatteryLevel(
                 (trait as GgetDevicesData_me_devices_edges_node_traits__asBatteryLevelDeviceTrait)
                         .state
@@ -133,7 +116,7 @@ static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
                         ?.value ??
                     0));
       } else {
-        return UnknownTrait(trait.name.toString());
+        return UnknownTrait(traitName);
       }
     }).toList();
   } else {

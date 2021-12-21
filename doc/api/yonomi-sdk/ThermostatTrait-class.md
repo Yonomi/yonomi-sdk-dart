@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[ThermostatTrait](../yonomi-sdk/ThermostatTrait/ThermostatTrait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [State](../yonomi-sdk/State-class.md) state)
+[ThermostatTrait](../yonomi-sdk/ThermostatTrait/ThermostatTrait.md) ([State](../yonomi-sdk/State-class.md) state)
 
     
 

@@ -10,7 +10,7 @@
 
 
 
-BatteryLevelTrait([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [State](../../yonomi-sdk/State-class.md) state)
+BatteryLevelTrait([State](../../yonomi-sdk/State-class.md) state)
 
 
 
@@ -19,7 +19,7 @@ BatteryLevelTrait([String](https://api.flutter.dev/flutter/dart-core/String-clas
 ## Implementation
 
 ```dart
-BatteryLevelTrait(String name, State state) : super(name, state);
+BatteryLevelTrait(State state) : super('battery_level', state);
 ```
 
 
