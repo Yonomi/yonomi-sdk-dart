@@ -386,7 +386,7 @@ void main() {
     expect(convertedValue.first.name, 'power');
   });
 
-    test('''#1. responseToDeviceTraitConverter maps single Battery Level
+  test('''#1. responseToDeviceTraitConverter maps single Battery Level
       DeviceTrait to BatteryLevelTrait''', () {
     final batteryLevelDevice = GgetDeviceData_device.fromJson({
       'id': 'id',
@@ -426,5 +426,33 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(BatteryLevelTrait));
     expect(convertedValue.first.name, 'battery_level');
+  });
+
+  test(
+      '''#getThermostatTrait should throw argumentError if trait object is not correct type''',
+      () {
+    expect(() => DevicesRepository.getThermostatTrait(null),
+        throwsA(isA<ArgumentError>()));
+  });
+
+  test(
+      '''#getLockTrait should throw argumentError if trait object is not correct type''',
+      () {
+    expect(() => DevicesRepository.getLockTrait(null),
+        throwsA(isA<ArgumentError>()));
+  });
+
+  test(
+      '''#getPowerTrait should throw argumentError if trait object is not correct type''',
+      () {
+    expect(() => DevicesRepository.getPowerTrait(null),
+        throwsA(isA<ArgumentError>()));
+  });
+
+  test(
+      '''#getBatteryLevelTrait should throw argumentError if trait object is not correct type''',
+      () {
+    expect(() => DevicesRepository.getBatteryLevelTrait(null),
+        throwsA(isA<ArgumentError>()));
   });
 }
