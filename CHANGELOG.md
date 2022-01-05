@@ -1,3 +1,15 @@
+# [2.3.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.2.0...v2.3.0) (2022-01-05)
+
+
+### Bug Fixes
+
+* cleanup if else ([795b20e](https://github.com/Yonomi/yonomi-sdk-dart/commit/795b20ef1cf8595fe67d8b5e5a109bf9b3e7859e))
+
+
+### Features
+
+* **devices_repository.dart,devices_repository_test.dart:** Add BatteryLevelTrait to repository ([a12c0ba](https://github.com/Yonomi/yonomi-sdk-dart/commit/a12c0baad5edb9dd8668b2807c5b5b0d3de232fd))
+
 # [2.2.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.1.0...v2.2.0) (2021-12-16)
 
 
