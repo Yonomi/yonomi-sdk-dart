@@ -1,7 +1,7 @@
 
 
 
-# ThermostatTrait class
+# BatteryLevelTrait class
 
 
 
@@ -18,7 +18,7 @@
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
 - [Trait](../yonomi-sdk/Trait-class.md)
-- ThermostatTrait
+- BatteryLevelTrait
 
 
 
@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[ThermostatTrait](../yonomi-sdk/ThermostatTrait/ThermostatTrait.md) ([State](../yonomi-sdk/State-class.md) state)
+[BatteryLevelTrait](../yonomi-sdk/BatteryLevelTrait/BatteryLevelTrait.md) ([State](../yonomi-sdk/State-class.md) state)
 
     
 

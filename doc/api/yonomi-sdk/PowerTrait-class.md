@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[PowerTrait](../yonomi-sdk/PowerTrait/PowerTrait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [State](../yonomi-sdk/State-class.md) state)
+[PowerTrait](../yonomi-sdk/PowerTrait/PowerTrait.md) ([State](../yonomi-sdk/State-class.md) state)
 
     
 

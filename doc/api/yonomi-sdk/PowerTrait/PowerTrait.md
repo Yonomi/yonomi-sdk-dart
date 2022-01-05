@@ -10,7 +10,7 @@
 
 
 
-PowerTrait([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [State](../../yonomi-sdk/State-class.md) state)
+PowerTrait([State](../../yonomi-sdk/State-class.md) state)
 
 
 
@@ -19,7 +19,7 @@ PowerTrait([String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 ## Implementation
 
 ```dart
-PowerTrait(String name, State state) : super(name, state);
+PowerTrait(State state) : super('power', state);
 ```
 
 

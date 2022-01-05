@@ -30,6 +30,20 @@
  
 
 
+##### [BatteryLevel](../yonomi-sdk/BatteryLevel-class.md)
+
+
+
+ 
+
+
+##### [BatteryLevelTrait](../yonomi-sdk/BatteryLevelTrait-class.md)
+
+
+
+ 
+
+
 ##### [Device](../yonomi-sdk/Device-class.md)
 
 

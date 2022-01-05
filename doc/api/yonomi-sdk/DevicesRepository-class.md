@@ -79,6 +79,15 @@ _inherited_
 
 ## Static Methods
 
+##### [getBatteryLevelTrait](../yonomi-sdk/DevicesRepository/getBatteryLevelTrait.md)(dynamic trait) [BatteryLevelTrait](../yonomi-sdk/BatteryLevelTrait-class.md)
+
+
+
+   
+
+
+
+
 ##### [getDeviceDetails](../yonomi-sdk/DevicesRepository/getDeviceDetails.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[Device](../yonomi-sdk/Device-class.md)>
 
 
@@ -106,7 +115,34 @@ _inherited_
 
 
 
+##### [getLockTrait](../yonomi-sdk/DevicesRepository/getLockTrait.md)(dynamic trait) [LockTrait](../yonomi-sdk/LockTrait-class.md)
+
+
+
+   
+
+
+
+
+##### [getPowerTrait](../yonomi-sdk/DevicesRepository/getPowerTrait.md)(dynamic trait) [PowerTrait](../yonomi-sdk/PowerTrait-class.md)
+
+
+
+   
+
+
+
+
 ##### [getThermostatDetails](../yonomi-sdk/DevicesRepository/getThermostatDetails.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[Device](../yonomi-sdk/Device-class.md)>
+
+
+
+   
+
+
+
+
+##### [getThermostatTrait](../yonomi-sdk/DevicesRepository/getThermostatTrait.md)(dynamic trait) [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)
 
 
 

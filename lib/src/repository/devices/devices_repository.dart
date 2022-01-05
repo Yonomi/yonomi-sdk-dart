@@ -1,3 +1,4 @@
+import 'package:gql/schema.dart';
 import 'package:gql_exec/gql_exec.dart' as gql;
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
@@ -5,6 +6,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
+import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.ast.gql.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
 import '../gql_client.dart';
@@ -108,89 +110,61 @@ class DevicesRepository {
       return [];
     }
 
-    if (deviceTraits is List<GgetDeviceData_device_traits>) {
-      return deviceTraits.map((trait) {
-        if (trait.name
-            .toString()
-            .toLowerCase()
-            .contains('thermostat_setting')) {
-          return ThermostatTrait(
-              'thermostat_setting',
-              TargetTemperature(
-                  (trait as GgetDeviceData_device_traits__asThermostatSettingDeviceTrait)
-                          .state
-                          .targetTemperature
-                          .reported
-                          ?.value ??
-                      0.0));
-        }
-        if (trait.name.toString().toLowerCase().contains('lock')) {
-          return LockTrait(
-              'lock',
-              IsLocked(
-                  (trait as GgetDeviceData_device_traits__asLockDeviceTrait)
-                      .state
-                      .isLocked
-                      .reported!
-                      .value));
-        }
-        if (trait.name.toString().toLowerCase().contains('power')) {
-          return PowerTrait(
-            'power',
-            IsOnOff((trait as GgetDeviceData_device_traits__asPowerDeviceTrait)
-                    .state
-                    .isOn
-                    .reported
-                    ?.value ??
-                false),
-          );
-        }
-        return UnknownTrait(trait.name.toString());
-      }).toList();
-    } else if (deviceTraits
-        is List<GgetDevicesData_me_devices_edges_node_traits>) {
-      return deviceTraits.map((trait) {
-        if (trait.name
-            .toString()
-            .toLowerCase()
-            .contains('thermostat_setting')) {
-          return ThermostatTrait(
-              'thermostat_setting',
-              TargetTemperature(
-                  (trait as GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait)
-                          .state
-                          .targetTemperature
-                          .reported
-                          ?.value ??
-                      0.0));
-        }
-        if (trait.name.toString().toLowerCase().contains('lock')) {
-          return LockTrait(
-              'lock',
-              IsLocked(
-                  (trait as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait)
-                          .state
-                          .isLocked
-                          .reported
-                          ?.value ??
-                      false));
-        }
-        if (trait.name.toString().toLowerCase().contains('power')) {
-          return PowerTrait(
-            'power',
-            IsOnOff(
-                (trait as GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait)
-                        .state
-                        .isOn
-                        .reported
-                        ?.value ??
-                    false),
-          );
-        }
-        return UnknownTrait(trait.name.toString());
-      }).toList();
+    return deviceTraits.map((trait) {
+      switch (trait.name) {
+        case GTraitName.THERMOSTAT_SETTING:
+          return getThermostatTrait(trait);
+        case GTraitName.LOCK:
+          return getLockTrait(trait);
+        case GTraitName.BATTERY_LEVEL:
+          return getBatteryLevelTrait(trait);
+        case GTraitName.POWER:
+          return getPowerTrait(trait);
+        default:
+          return UnknownTrait(trait.name.toString());
+      }
+    }).toList();
+  }
+
+  static ThermostatTrait getThermostatTrait(dynamic trait) {
+    if (trait is GgetDeviceData_device_traits__asThermostatSettingDeviceTrait ||
+        trait
+            is GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait) {
+      return ThermostatTrait(TargetTemperature(
+          trait.state.targetTemperature.reported?.value ?? 0.0));
     } else {
-      throw ArgumentError.value(deviceTraits);
+      throw ArgumentError.value(trait);
+    }
+  }
+
+  static LockTrait getLockTrait(dynamic trait) {
+    if (trait is GgetDeviceData_device_traits__asLockDeviceTrait ||
+        trait
+            is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait) {
+      return LockTrait(IsLocked(trait.state.isLocked.reported?.value ?? false));
+    } else {
+      throw ArgumentError.value(trait);
+    }
+  }
+
+  static PowerTrait getPowerTrait(dynamic trait) {
+    if (trait is GgetDeviceData_device_traits__asPowerDeviceTrait ||
+        trait
+            is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait) {
+      return PowerTrait(IsOnOff(trait.state.isOn.reported?.value ?? false));
+    } else {
+      throw ArgumentError.value(trait);
+    }
+  }
+
+  static BatteryLevelTrait getBatteryLevelTrait(dynamic trait) {
+    if (trait is GgetDeviceData_device_traits__asBatteryLevelDeviceTrait ||
+        trait
+            is GgetDevicesData_me_devices_edges_node_traits__asBatteryLevelDeviceTrait) {
+      return BatteryLevelTrait(
+          BatteryLevel(trait.state.percentage.reported?.value ?? 0));
+    } else {
+      throw ArgumentError.value(trait);
     }
   }
 }
@@ -244,24 +218,32 @@ class TargetTemperature extends State<double?> {
   TargetTemperature(double? value) : super('TargetTemperature', value);
 }
 
+class BatteryLevel extends State<int> {
+  BatteryLevel(int value) : super('BatteryLevel', value);
+}
+
 class UnknownState extends State<String> {
   UnknownState() : super('Unknown', 'Unknown');
 }
 
 class LockTrait extends Trait {
-  LockTrait(String name, State state) : super(name, state);
+  LockTrait(State state) : super('lock', state);
 }
 
 class PowerTrait extends Trait {
-  PowerTrait(String name, State state) : super(name, state);
+  PowerTrait(State state) : super('power', state);
 }
 
 class ThermostatTrait extends Trait {
-  ThermostatTrait(String name, State state) : super(name, state);
+  ThermostatTrait(State state) : super('thermostat_setting', state);
 }
 
 class UnknownTrait extends Trait {
   UnknownTrait(String name) : super(name, UnknownState());
+}
+
+class BatteryLevelTrait extends Trait {
+  BatteryLevelTrait(State state) : super('battery_level', state);
 }
 
 class DeviceNameId {
