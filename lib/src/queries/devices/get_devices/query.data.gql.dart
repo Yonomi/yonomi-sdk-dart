@@ -740,6 +740,7 @@ abstract class GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   bool? get supportsDiscreteOnOff;
+  bool? get supportsToggle;
   static Serializer<
           GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_properties>
       get serializer =>

@@ -2,7 +2,6 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
-import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.ast.gql.dart';
 
 void main() {
   test('responseToDeviceTraitConverter converts mixed trait device', () {
@@ -317,7 +316,7 @@ void main() {
           '__typename': 'PowerDeviceTrait',
           'name': 'POWER',
           'instance': 'default',
-          'properties': {'supportsDiscreteOnOff': true},
+          'properties': {'supportsDiscreteOnOff': true, 'supportsToggle': true},
           'state': {
             'isOn': {
               'reported': {
@@ -360,7 +359,7 @@ void main() {
           '__typename': 'PowerDeviceTrait',
           'name': 'POWER',
           'instance': 'default',
-          'properties': {'supportsDiscreteOnOff': true},
+          'properties': {'supportsDiscreteOnOff': true, 'supportsToggle': true},
           'state': {
             'isOn': {
               'reported': {
@@ -384,6 +383,13 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(PowerTrait));
     expect(convertedValue.first.name, 'power');
+
+    final powerProperties = (convertedValue.first as PowerTrait).properties;
+    expect(
+        powerProperties.whereType<SupportsToggle>().first.value,
+        equals(true));
+    expect(powerProperties.whereType<SupportsDiscreteOnOff>().first.value,
+        equals(true));
   });
 
   test('''#1. responseToDeviceTraitConverter maps single Battery Level

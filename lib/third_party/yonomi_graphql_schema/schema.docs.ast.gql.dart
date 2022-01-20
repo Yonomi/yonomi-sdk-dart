@@ -2892,6 +2892,12 @@ const PowerProperties = _i1.ObjectTypeDefinitionNode(
           directives: [],
           args: [],
           type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'supportsToggle'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'Boolean'), isNonNull: false))
     ]);
 const PowerDeviceTrait = _i1.ObjectTypeDefinitionNode(

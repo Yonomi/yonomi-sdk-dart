@@ -585,6 +585,7 @@ abstract class GgetDeviceData_device_traits__asPowerDeviceTrait_properties
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   bool? get supportsDiscreteOnOff;
+  bool? get supportsToggle;
   static Serializer<GgetDeviceData_device_traits__asPowerDeviceTrait_properties>
       get serializer =>
           _$ggetDeviceDataDeviceTraitsAsPowerDeviceTraitPropertiesSerializer;
