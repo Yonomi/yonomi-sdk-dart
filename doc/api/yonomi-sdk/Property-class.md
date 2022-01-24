@@ -20,6 +20,7 @@
 **Implementers**
 
 - [SupportsDiscreteOnOff](../yonomi-sdk/SupportsDiscreteOnOff-class.md)
+- [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)
 
 
 

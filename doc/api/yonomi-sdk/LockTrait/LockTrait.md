@@ -10,7 +10,7 @@
 
 
 
-LockTrait([State](../../yonomi-sdk/State-class.md) state)
+LockTrait([State](../../yonomi-sdk/State-class.md) state, [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../../yonomi-sdk/Property-class.md)> properties)
 
 
 
@@ -19,7 +19,8 @@ LockTrait([State](../../yonomi-sdk/State-class.md) state)
 ## Implementation
 
 ```dart
-LockTrait(State state) : super('lock', state, []);
+LockTrait(State state, List<Property> properties)
+    : super('lock', state, properties);
 ```
 
 
