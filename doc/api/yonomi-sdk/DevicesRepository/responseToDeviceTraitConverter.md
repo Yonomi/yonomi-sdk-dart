@@ -12,7 +12,7 @@
 
 
 [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Trait](../../yonomi-sdk/Trait-class.md)> responseToDeviceTraitConverter
-(dynamic deviceTraits)
+([List](https://api.flutter.dev/flutter/dart-core/List-class.html) deviceTraits)
 
 
 
@@ -24,10 +24,10 @@
 ## Implementation
 
 ```dart
-static List<Trait> responseToDeviceTraitConverter(dynamic deviceTraits) {
+static List<Trait> responseToDeviceTraitConverter(List deviceTraits) {
   // There are two generated types which probably should be same
   // We probably can clean it up a little bit to avoid duplications
-  if ((deviceTraits as List).length == 0) {
+  if (deviceTraits.length == 0) {
     return [];
   }
 

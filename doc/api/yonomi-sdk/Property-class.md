@@ -1,7 +1,7 @@
 
 
 
-# PowerTrait class
+# Property&lt;T> class
 
 
 
@@ -14,20 +14,18 @@
 
 
 
-**Inheritance**
-
-- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [Trait](../yonomi-sdk/Trait-class.md)
-- PowerTrait
 
 
 
+**Implementers**
+
+- [SupportsDiscreteOnOff](../yonomi-sdk/SupportsDiscreteOnOff-class.md)
 
 
 
 ## Constructors
 
-[PowerTrait](../yonomi-sdk/PowerTrait/PowerTrait.md) ([State](../yonomi-sdk/State-class.md) state, [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[Property](../yonomi-sdk/Property/Property.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, T value)
 
     
 
@@ -43,21 +41,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/Trait/name.md) &#8596; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](../yonomi-sdk/Property/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_late, final, inherited_
-
-
-
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
-
-
-
-   
-_late, final, inherited_
+_final_
 
 
 
@@ -70,12 +59,12 @@ _read-only, inherited_
 
 
 
-##### [state](../yonomi-sdk/Trait/state.md) &#8596; [State](../yonomi-sdk/State-class.md)
+##### [value](../yonomi-sdk/Property/value.md) &#8594; T
 
 
 
    
-_late, final, inherited_
+_final_
 
 
 
