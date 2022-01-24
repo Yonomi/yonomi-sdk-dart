@@ -1717,13 +1717,6 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_propert
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
-    value = object.supportsToggle;
-    if (value != null) {
-      result
-        ..add('supportsToggle')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
-    }
     return result;
   }
 
@@ -1746,10 +1739,6 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_propert
           break;
         case 'supportsDiscreteOnOff':
           result.supportsDiscreteOnOff = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
-          break;
-        case 'supportsToggle':
-          result.supportsToggle = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
           break;
       }
@@ -8962,8 +8951,6 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_propert
   final String G__typename;
   @override
   final bool? supportsDiscreteOnOff;
-  @override
-  final bool? supportsToggle;
 
   factory _$GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_properties(
           [void Function(
@@ -8974,9 +8961,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_propert
           .build();
 
   _$GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_properties._(
-      {required this.G__typename,
-      this.supportsDiscreteOnOff,
-      this.supportsToggle})
+      {required this.G__typename, this.supportsDiscreteOnOff})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -9004,15 +8989,13 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_propert
     return other
             is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_properties &&
         G__typename == other.G__typename &&
-        supportsDiscreteOnOff == other.supportsDiscreteOnOff &&
-        supportsToggle == other.supportsToggle;
+        supportsDiscreteOnOff == other.supportsDiscreteOnOff;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc(0, G__typename.hashCode), supportsDiscreteOnOff.hashCode),
-        supportsToggle.hashCode));
+    return $jf(
+        $jc($jc(0, G__typename.hashCode), supportsDiscreteOnOff.hashCode));
   }
 
   @override
@@ -9020,8 +9003,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_propert
     return (newBuiltValueToStringHelper(
             'GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_properties')
           ..add('G__typename', G__typename)
-          ..add('supportsDiscreteOnOff', supportsDiscreteOnOff)
-          ..add('supportsToggle', supportsToggle))
+          ..add('supportsDiscreteOnOff', supportsDiscreteOnOff))
         .toString();
   }
 }
@@ -9043,11 +9025,6 @@ class GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_propertie
   set supportsDiscreteOnOff(bool? supportsDiscreteOnOff) =>
       _$this._supportsDiscreteOnOff = supportsDiscreteOnOff;
 
-  bool? _supportsToggle;
-  bool? get supportsToggle => _$this._supportsToggle;
-  set supportsToggle(bool? supportsToggle) =>
-      _$this._supportsToggle = supportsToggle;
-
   GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_propertiesBuilder() {
     GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_properties
         ._initializeBuilder(this);
@@ -9059,7 +9036,6 @@ class GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_propertie
     if ($v != null) {
       _G__typename = $v.G__typename;
       _supportsDiscreteOnOff = $v.supportsDiscreteOnOff;
-      _supportsToggle = $v.supportsToggle;
       _$v = null;
     }
     return this;
@@ -9092,8 +9068,7 @@ class GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_propertie
                 G__typename,
                 'GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_properties',
                 'G__typename'),
-            supportsDiscreteOnOff: supportsDiscreteOnOff,
-            supportsToggle: supportsToggle);
+            supportsDiscreteOnOff: supportsDiscreteOnOff);
     replace(_$result);
     return _$result;
   }

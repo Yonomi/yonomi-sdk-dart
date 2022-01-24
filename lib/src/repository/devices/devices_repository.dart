@@ -152,7 +152,6 @@ class DevicesRepository {
         trait
             is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait) {
       final properties = [
-        SupportsToggle(trait.properties.supportsToggle ?? false),
         SupportsDiscreteOnOff(trait.properties.supportsDiscreteOnOff ?? false)
       ];
 
@@ -238,10 +237,6 @@ abstract class Property<T> {
   final T value;
 
   Property(this.name, this.value);
-}
-
-class SupportsToggle extends Property<bool> {
-  SupportsToggle(bool value) : super('supportsToggle', value);
 }
 
 class SupportsDiscreteOnOff extends Property<bool> {

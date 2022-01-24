@@ -30,7 +30,7 @@ fragment DeviceDetails on Device {
       }
     }
     ... on PowerDeviceTrait {
-      properties { supportsDiscreteOnOff, supportsToggle }
+      properties { supportsDiscreteOnOff }
       state {
         isOn {
           reported { value sampledAt createdAt }

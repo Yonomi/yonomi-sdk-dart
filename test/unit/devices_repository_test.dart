@@ -316,7 +316,7 @@ void main() {
           '__typename': 'PowerDeviceTrait',
           'name': 'POWER',
           'instance': 'default',
-          'properties': {'supportsDiscreteOnOff': true, 'supportsToggle': true},
+          'properties': {'supportsDiscreteOnOff': true},
           'state': {
             'isOn': {
               'reported': {
@@ -359,7 +359,7 @@ void main() {
           '__typename': 'PowerDeviceTrait',
           'name': 'POWER',
           'instance': 'default',
-          'properties': {'supportsDiscreteOnOff': true, 'supportsToggle': true},
+          'properties': {'supportsDiscreteOnOff': true},
           'state': {
             'isOn': {
               'reported': {
@@ -385,9 +385,6 @@ void main() {
     expect(convertedValue.first.name, 'power');
 
     final powerProperties = (convertedValue.first as PowerTrait).properties;
-    expect(
-        powerProperties.whereType<SupportsToggle>().first.value,
-        equals(true));
     expect(powerProperties.whereType<SupportsDiscreteOnOff>().first.value,
         equals(true));
   });

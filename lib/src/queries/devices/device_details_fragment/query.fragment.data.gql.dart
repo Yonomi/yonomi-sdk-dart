@@ -145,7 +145,6 @@ abstract class GDeviceDetails_traits__asPowerDeviceTrait
 abstract class GDeviceDetails_traits__asPowerDeviceTrait_properties {
   String get G__typename;
   bool? get supportsDiscreteOnOff;
-  bool? get supportsToggle;
   Map<String, dynamic> toJson();
 }
 
@@ -1128,7 +1127,6 @@ abstract class GDeviceDetailsData_traits__asPowerDeviceTrait_properties
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   bool? get supportsDiscreteOnOff;
-  bool? get supportsToggle;
   static Serializer<GDeviceDetailsData_traits__asPowerDeviceTrait_properties>
       get serializer =>
           _$gDeviceDetailsDataTraitsAsPowerDeviceTraitPropertiesSerializer;

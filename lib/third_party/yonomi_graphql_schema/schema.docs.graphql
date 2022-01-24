@@ -1302,8 +1302,7 @@ type PowerState {
 # The properties (trait configuration) payload for the Power trait
 type PowerProperties {
   # Indicates if the device actually has distinct On and Off features as opposed to a single power button.
-  supportsDiscreteOnOff: Boolean,
-  supportsToggle: Boolean,
+  supportsDiscreteOnOff: Boolean
 }
 
 type PowerDeviceTrait implements DeviceTrait {

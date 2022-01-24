@@ -1378,13 +1378,6 @@ class _$GDeviceDetailsData_traits__asPowerDeviceTrait_propertiesSerializer
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
-    value = object.supportsToggle;
-    if (value != null) {
-      result
-        ..add('supportsToggle')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
-    }
     return result;
   }
 
@@ -1407,10 +1400,6 @@ class _$GDeviceDetailsData_traits__asPowerDeviceTrait_propertiesSerializer
           break;
         case 'supportsDiscreteOnOff':
           result.supportsDiscreteOnOff = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
-          break;
-        case 'supportsToggle':
-          result.supportsToggle = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
           break;
       }
@@ -7846,8 +7835,6 @@ class _$GDeviceDetailsData_traits__asPowerDeviceTrait_properties
   final String G__typename;
   @override
   final bool? supportsDiscreteOnOff;
-  @override
-  final bool? supportsToggle;
 
   factory _$GDeviceDetailsData_traits__asPowerDeviceTrait_properties(
           [void Function(
@@ -7858,9 +7845,7 @@ class _$GDeviceDetailsData_traits__asPowerDeviceTrait_properties
           .build();
 
   _$GDeviceDetailsData_traits__asPowerDeviceTrait_properties._(
-      {required this.G__typename,
-      this.supportsDiscreteOnOff,
-      this.supportsToggle})
+      {required this.G__typename, this.supportsDiscreteOnOff})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -7885,15 +7870,13 @@ class _$GDeviceDetailsData_traits__asPowerDeviceTrait_properties
     if (identical(other, this)) return true;
     return other is GDeviceDetailsData_traits__asPowerDeviceTrait_properties &&
         G__typename == other.G__typename &&
-        supportsDiscreteOnOff == other.supportsDiscreteOnOff &&
-        supportsToggle == other.supportsToggle;
+        supportsDiscreteOnOff == other.supportsDiscreteOnOff;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc(0, G__typename.hashCode), supportsDiscreteOnOff.hashCode),
-        supportsToggle.hashCode));
+    return $jf(
+        $jc($jc(0, G__typename.hashCode), supportsDiscreteOnOff.hashCode));
   }
 
   @override
@@ -7901,8 +7884,7 @@ class _$GDeviceDetailsData_traits__asPowerDeviceTrait_properties
     return (newBuiltValueToStringHelper(
             'GDeviceDetailsData_traits__asPowerDeviceTrait_properties')
           ..add('G__typename', G__typename)
-          ..add('supportsDiscreteOnOff', supportsDiscreteOnOff)
-          ..add('supportsToggle', supportsToggle))
+          ..add('supportsDiscreteOnOff', supportsDiscreteOnOff))
         .toString();
   }
 }
@@ -7922,11 +7904,6 @@ class GDeviceDetailsData_traits__asPowerDeviceTrait_propertiesBuilder
   set supportsDiscreteOnOff(bool? supportsDiscreteOnOff) =>
       _$this._supportsDiscreteOnOff = supportsDiscreteOnOff;
 
-  bool? _supportsToggle;
-  bool? get supportsToggle => _$this._supportsToggle;
-  set supportsToggle(bool? supportsToggle) =>
-      _$this._supportsToggle = supportsToggle;
-
   GDeviceDetailsData_traits__asPowerDeviceTrait_propertiesBuilder() {
     GDeviceDetailsData_traits__asPowerDeviceTrait_properties._initializeBuilder(
         this);
@@ -7937,7 +7914,6 @@ class GDeviceDetailsData_traits__asPowerDeviceTrait_propertiesBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _supportsDiscreteOnOff = $v.supportsDiscreteOnOff;
-      _supportsToggle = $v.supportsToggle;
       _$v = null;
     }
     return this;
@@ -7965,8 +7941,7 @@ class GDeviceDetailsData_traits__asPowerDeviceTrait_propertiesBuilder
                 G__typename,
                 'GDeviceDetailsData_traits__asPowerDeviceTrait_properties',
                 'G__typename'),
-            supportsDiscreteOnOff: supportsDiscreteOnOff,
-            supportsToggle: supportsToggle);
+            supportsDiscreteOnOff: supportsDiscreteOnOff);
     replace(_$result);
     return _$result;
   }
