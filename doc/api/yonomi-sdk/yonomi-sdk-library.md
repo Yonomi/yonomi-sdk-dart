@@ -114,6 +114,13 @@
  
 
 
+##### [Property](../yonomi-sdk/Property-class.md)&lt;T>
+
+
+
+ 
+
+
 ##### [Request](../yonomi-sdk/Request-class.md)
 
 
@@ -129,6 +136,13 @@
 
 
 ##### [State](../yonomi-sdk/State-class.md)&lt;T>
+
+
+
+ 
+
+
+##### [SupportsDiscreteOnOff](../yonomi-sdk/SupportsDiscreteOnOff-class.md)
 
 
 

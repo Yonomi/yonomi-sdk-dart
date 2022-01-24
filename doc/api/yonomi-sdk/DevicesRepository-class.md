@@ -151,7 +151,7 @@ _inherited_
 
 
 
-##### [responseToDeviceTraitConverter](../yonomi-sdk/DevicesRepository/responseToDeviceTraitConverter.md)(dynamic deviceTraits) [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Trait](../yonomi-sdk/Trait-class.md)>
+##### [responseToDeviceTraitConverter](../yonomi-sdk/DevicesRepository/responseToDeviceTraitConverter.md)([List](https://api.flutter.dev/flutter/dart-core/List-class.html) deviceTraits) [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Trait](../yonomi-sdk/Trait-class.md)>
 
 
 
