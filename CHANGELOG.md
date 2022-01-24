@@ -1,3 +1,15 @@
+# [2.4.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.3.0...v2.4.0) (2022-01-24)
+
+
+### Bug Fixes
+
+* Remove isToggle as it's not used in upcoming docs ([3e05220](https://github.com/Yonomi/yonomi-sdk-dart/commit/3e05220ad30c7a61babb99e88f8d63f333e22005))
+
+
+### Features
+
+* Add support for Power Trait supportsDiscreteOnOff and supportsToggle properties ([329009c](https://github.com/Yonomi/yonomi-sdk-dart/commit/329009c2dfc20ff518daf91050bccfdcb799048d))
+
 # [2.3.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.2.0...v2.3.0) (2022-01-05)
 
 
