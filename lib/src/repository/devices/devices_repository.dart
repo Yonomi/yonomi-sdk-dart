@@ -1,4 +1,3 @@
-import 'package:gql/schema.dart';
 import 'package:gql_exec/gql_exec.dart' as gql;
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
@@ -6,7 +5,6 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
-import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.ast.gql.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
 import '../gql_client.dart';
@@ -151,9 +149,9 @@ class DevicesRepository {
     if (trait is GgetDeviceData_device_traits__asPowerDeviceTrait ||
         trait
             is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait) {
-      final properties = [
+      final properties = {
         SupportsDiscreteOnOff(trait.properties.supportsDiscreteOnOff ?? false)
-      ];
+      };
 
       return PowerTrait(
           IsOnOff(trait.state.isOn.reported?.value ?? false), properties);
@@ -200,7 +198,7 @@ class Device {
 abstract class Trait {
   late final String name;
   late final State state;
-  late final List<Property> properties;
+  late final Set<Property> properties;
 
   Trait(this.name, this.state, this.properties);
 }
@@ -224,6 +222,10 @@ class TargetTemperature extends State<double?> {
   TargetTemperature(double? value) : super('TargetTemperature', value);
 }
 
+class FanMode extends State<String> {
+  FanMode(String value) : super('FanMode', value);
+}
+
 class BatteryLevel extends State<int> {
   BatteryLevel(int value) : super('BatteryLevel', value);
 }
@@ -244,26 +246,26 @@ class SupportsDiscreteOnOff extends Property<bool> {
 }
 
 class LockTrait extends Trait {
-  LockTrait(State state) : super('lock', state, []);
+  LockTrait(State state) : super('lock', state, {});
 }
 
 class PowerTrait extends Trait {
-  PowerTrait(State state, List<Property> properties)
+  PowerTrait(State state, Set<Property> properties)
       : super('power', state, properties);
 }
 
 class ThermostatTrait extends Trait {
   ThermostatTrait(
     State state,
-  ) : super('thermostat_setting', state, []);
+  ) : super('thermostat_setting', state, {});
 }
 
 class UnknownTrait extends Trait {
-  UnknownTrait(String name) : super(name, UnknownState(), []);
+  UnknownTrait(String name) : super(name, UnknownState(), {});
 }
 
 class BatteryLevelTrait extends Trait {
-  BatteryLevelTrait(State state) : super('battery_level', state, []);
+  BatteryLevelTrait(State state) : super('battery_level', state, {});
 }
 
 class DeviceNameId {
