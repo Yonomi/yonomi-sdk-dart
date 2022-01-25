@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.4.0...v2.5.0) (2022-01-25)
+
+
+### Features
+
+* **devices_repository.dart:** add support for LockTrait supportsIsJammed property ([22041c6](https://github.com/Yonomi/yonomi-sdk-dart/commit/22041c695078d249a58bc3fc4131a9ebd5144ce1))
+
 # [2.4.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.3.0...v2.4.0) (2022-01-24)
 
 
