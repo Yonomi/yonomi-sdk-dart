@@ -19,7 +19,7 @@ LockTrait([State](../../yonomi-sdk/State-class.md) state)
 ## Implementation
 
 ```dart
-LockTrait(State state) : super('lock', state, []);
+LockTrait(State state) : super('lock', state, {});
 ```
 
 

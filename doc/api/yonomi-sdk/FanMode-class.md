@@ -1,7 +1,7 @@
 
 
 
-# Trait class
+# FanMode class
 
 
 
@@ -14,22 +14,20 @@
 
 
 
+**Inheritance**
+
+- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
+- [State](../yonomi-sdk/State-class.md)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>
+- FanMode
 
 
 
-**Implementers**
-
-- [BatteryLevelTrait](../yonomi-sdk/BatteryLevelTrait-class.md)
-- [LockTrait](../yonomi-sdk/LockTrait-class.md)
-- [PowerTrait](../yonomi-sdk/PowerTrait-class.md)
-- [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)
-- [UnknownTrait](../yonomi-sdk/UnknownTrait-class.md)
 
 
 
 ## Constructors
 
-[Trait](../yonomi-sdk/Trait/Trait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [State](../yonomi-sdk/State-class.md) state, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[FanMode](../yonomi-sdk/FanMode/FanMode.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) value)
 
     
 
@@ -45,21 +43,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/Trait/name.md) &#8596; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](../yonomi-sdk/State/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_late, final_
-
-
-
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
-
-
-
-   
-_late, final_
+_final, inherited_
 
 
 
@@ -72,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [state](../yonomi-sdk/Trait/state.md) &#8596; [State](../yonomi-sdk/State-class.md)
+##### [value](../yonomi-sdk/State/value.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_late, final_
+_final, inherited_
 
 
 

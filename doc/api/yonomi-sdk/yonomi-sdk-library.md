@@ -65,6 +65,13 @@
  
 
 
+##### [FanMode](../yonomi-sdk/FanMode-class.md)
+
+
+
+ 
+
+
 ##### [GraphLinkCreator](../yonomi-sdk/GraphLinkCreator-class.md)
 
 
