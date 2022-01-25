@@ -1,4 +1,3 @@
-import 'package:gql/schema.dart';
 import 'package:gql_exec/gql_exec.dart' as gql;
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
@@ -6,7 +5,6 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
-import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.ast.gql.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
 import '../gql_client.dart';
@@ -141,7 +139,12 @@ class DevicesRepository {
     if (trait is GgetDeviceData_device_traits__asLockDeviceTrait ||
         trait
             is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait) {
-      return LockTrait(IsLocked(trait.state.isLocked.reported?.value ?? false));
+      final properties = [
+        SupportsIsJammed(trait.properties.supportsIsJammed ?? false)
+      ];
+
+      return LockTrait(
+          IsLocked(trait.state.isLocked.reported?.value ?? false), properties);
     } else {
       throw ArgumentError.value(trait);
     }
@@ -243,8 +246,13 @@ class SupportsDiscreteOnOff extends Property<bool> {
   SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
 }
 
+class SupportsIsJammed extends Property<bool> {
+  SupportsIsJammed(bool value) : super('supportsIsJammed', value);
+}
+
 class LockTrait extends Trait {
-  LockTrait(State state) : super('lock', state, []);
+  LockTrait(State state, List<Property> properties)
+      : super('lock', state, properties);
 }
 
 class PowerTrait extends Trait {

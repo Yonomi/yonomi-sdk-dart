@@ -1,7 +1,7 @@
 
 
 
-# LockTrait class
+# SupportsIsJammed class
 
 
 
@@ -17,8 +17,8 @@
 **Inheritance**
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [Trait](../yonomi-sdk/Trait-class.md)
-- LockTrait
+- [Property](../yonomi-sdk/Property-class.md)&lt;[bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)>
+- SupportsIsJammed
 
 
 
@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[LockTrait](../yonomi-sdk/LockTrait/LockTrait.md) ([State](../yonomi-sdk/State-class.md) state, [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[SupportsIsJammed](../yonomi-sdk/SupportsIsJammed/SupportsIsJammed.md) ([bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) value)
 
     
 
@@ -43,21 +43,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/Trait/name.md) &#8596; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](../yonomi-sdk/Property/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_late, final, inherited_
-
-
-
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
-
-
-
-   
-_late, final, inherited_
+_final, inherited_
 
 
 
@@ -70,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [state](../yonomi-sdk/Trait/state.md) &#8596; [State](../yonomi-sdk/State-class.md)
+##### [value](../yonomi-sdk/Property/value.md) &#8594; [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)
 
 
 
    
-_late, final, inherited_
+_final, inherited_
 
 
 
