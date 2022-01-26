@@ -44,14 +44,14 @@
  
 
 
-##### [Device](../yonomi-sdk/Device-class.md)
+##### [BatteryRepository](../yonomi-sdk/BatteryRepository-class.md)
 
 
 
  
 
 
-##### [DeviceNameId](../yonomi-sdk/DeviceNameId-class.md)
+##### [Device](../yonomi-sdk/Device-class.md)
 
 
 
