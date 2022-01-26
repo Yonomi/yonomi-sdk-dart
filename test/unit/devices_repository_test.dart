@@ -120,6 +120,7 @@ void main() {
     expect(convertedTraits, contains(isA<BatteryLevelTrait>()));
     expect(convertedTraits, contains(isA<UnknownTrait>()));
   });
+
   test('''responseToDeviceTraitConverter maps single Thermostat
       DeviceTrait to ThermostatTrait''', () {
     final thermostatDevice = GgetDeviceData.fromJson({
@@ -297,6 +298,10 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(LockTrait));
     expect(convertedValue.first.name, 'lock');
+
+    final lockProperties = (convertedValue.first as LockTrait).properties;
+    expect(
+        lockProperties.whereType<SupportsIsJammed>().first.value, equals(true));
   });
 
   test('''#1. responseToDeviceTraitConverter maps single Power

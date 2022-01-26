@@ -149,6 +149,13 @@
  
 
 
+##### [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)
+
+
+
+ 
+
+
 ##### [TargetTemperature](../yonomi-sdk/TargetTemperature-class.md)
 
 
