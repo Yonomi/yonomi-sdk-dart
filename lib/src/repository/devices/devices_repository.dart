@@ -143,8 +143,12 @@ class DevicesRepository {
         SupportsIsJammed(trait.properties.supportsIsJammed ?? false)
       ];
 
-      return LockTrait(
-          IsLocked(trait.state.isLocked.reported?.value ?? false), properties);
+      List<State> states = <State>[
+        IsLocked(trait.state.isLocked.reported?.value ?? false),
+        IsJammed(trait.state.isJammed.reported?.value ?? false),
+      ];
+
+      return LockTrait.multipleStates(states, properties);
     } else {
       throw ArgumentError.value(trait);
     }
@@ -202,10 +206,10 @@ class Device {
 
 abstract class Trait {
   late final String name;
-  late final State state;
+  late final List<State> states;
   late final List<Property> properties;
 
-  Trait(this.name, this.state, this.properties);
+  Trait(this.name, this.states, this.properties);
 }
 
 abstract class State<T> {
@@ -221,6 +225,10 @@ class IsOnOff extends State<bool> {
 
 class IsLocked extends State<bool> {
   IsLocked(bool value) : super('LockUnlock', value);
+}
+
+class IsJammed extends State<bool> {
+  IsJammed(bool value) : super('LockUnlock', value);
 }
 
 class TargetTemperature extends State<double?> {
@@ -244,6 +252,8 @@ abstract class Property<T> {
 
 class SupportsDiscreteOnOff extends Property<bool> {
   SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
+  // Thoughts on below?
+  // super((SupportsDiscreteOnOff).toString(), value);
 }
 
 class SupportsIsJammed extends Property<bool> {
@@ -251,27 +261,32 @@ class SupportsIsJammed extends Property<bool> {
 }
 
 class LockTrait extends Trait {
+  // For backwards-compatibility
   LockTrait(State state, List<Property> properties)
+      : super('lock', [state], properties);
+
+  // Constructor receiving multiple states
+  LockTrait.multipleStates(List<State> state, List<Property> properties)
       : super('lock', state, properties);
 }
 
 class PowerTrait extends Trait {
   PowerTrait(State state, List<Property> properties)
-      : super('power', state, properties);
+      : super('power', [state], properties);
 }
 
 class ThermostatTrait extends Trait {
   ThermostatTrait(
     State state,
-  ) : super('thermostat_setting', state, []);
+  ) : super('thermostat_setting', [state], []);
 }
 
 class UnknownTrait extends Trait {
-  UnknownTrait(String name) : super(name, UnknownState(), []);
+  UnknownTrait(String name) : super(name, [UnknownState()], []);
 }
 
 class BatteryLevelTrait extends Trait {
-  BatteryLevelTrait(State state) : super('battery_level', state, []);
+  BatteryLevelTrait(State state) : super('battery_level', [state], []);
 }
 
 class DeviceNameId {
