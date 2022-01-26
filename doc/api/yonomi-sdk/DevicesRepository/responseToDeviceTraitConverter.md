@@ -34,13 +34,13 @@ static List<Trait> responseToDeviceTraitConverter(List deviceTraits) {
   return deviceTraits.map((trait) {
     switch (trait.name) {
       case GTraitName.THERMOSTAT_SETTING:
-        return getThermostatTrait(trait);
+        return ThermostatRepository.getThermostatTrait(trait);
       case GTraitName.LOCK:
-        return getLockTrait(trait);
+        return LockRepository.getLockTrait(trait);
       case GTraitName.BATTERY_LEVEL:
-        return getBatteryLevelTrait(trait);
+        return BatteryRepository.getBatteryLevelTrait(trait);
       case GTraitName.POWER:
-        return getPowerTrait(trait);
+        return PowerRepository.getPowerTrait(trait);
       default:
         return UnknownTrait(trait.name.toString());
     }

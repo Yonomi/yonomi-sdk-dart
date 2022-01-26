@@ -79,6 +79,24 @@ _inherited_
 
 ## Static Methods
 
+##### [getLockDetails](../yonomi-sdk/LockRepository/getLockDetails.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[Device](../yonomi-sdk/Device-class.md)>
+
+
+
+   
+
+
+
+
+##### [getLockTrait](../yonomi-sdk/LockRepository/getLockTrait.md)(dynamic trait) [LockTrait](../yonomi-sdk/LockTrait-class.md)
+
+
+
+   
+
+
+
+
 ##### [sendLockUnlockAction](../yonomi-sdk/LockRepository/sendLockUnlockAction.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id, [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) lockUnlock) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;void>
 
 
