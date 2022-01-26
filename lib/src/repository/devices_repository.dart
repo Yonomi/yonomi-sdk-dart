@@ -8,7 +8,7 @@ import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 
-import '../gql_client.dart';
+import 'gql_client.dart';
 
 class DevicesRepository {
   static Future<List<Device>> getDevices(Request request) async {
