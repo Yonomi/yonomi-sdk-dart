@@ -1,7 +1,7 @@
 import 'package:test/test.dart';
 
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/devices/thermostat_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
@@ -42,8 +42,8 @@ void main() {
   });
 
   test('getThermostatDetails gets thermostat details', () async {
-    final device =
-        await DevicesRepository.getThermostatDetails(request, testThermostatId);
+    final device = await ThermostatRepository.getThermostatDetails(
+        request, testThermostatId);
     expect(device, isNotNull);
   });
 
@@ -68,7 +68,7 @@ void main() {
   });
 
   test('getLockDetails gets lock details', () async {
-    final device = await DevicesRepository.getLockDetails(request, testLockId);
+    final device = await LockRepository.getLockDetails(request, testLockId);
     expect(device, isNotNull);
   });
 

@@ -1,7 +1,7 @@
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
-import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 
 void main() {
   test('responseToDeviceTraitConverter converts mixed trait device', () {
@@ -434,28 +434,28 @@ void main() {
   test(
       '''#getThermostatTrait should throw argumentError if trait object is not correct type''',
       () {
-    expect(() => DevicesRepository.getThermostatTrait(null),
+    expect(() => ThermostatRepository.getThermostatTrait(null),
         throwsA(isA<ArgumentError>()));
   });
 
   test(
       '''#getLockTrait should throw argumentError if trait object is not correct type''',
       () {
-    expect(() => DevicesRepository.getLockTrait(null),
-        throwsA(isA<ArgumentError>()));
+    expect(
+        () => LockRepository.getLockTrait(null), throwsA(isA<ArgumentError>()));
   });
 
   test(
       '''#getPowerTrait should throw argumentError if trait object is not correct type''',
       () {
-    expect(() => DevicesRepository.getPowerTrait(null),
+    expect(() => PowerRepository.getPowerTrait(null),
         throwsA(isA<ArgumentError>()));
   });
 
   test(
       '''#getBatteryLevelTrait should throw argumentError if trait object is not correct type''',
       () {
-    expect(() => DevicesRepository.getBatteryLevelTrait(null),
+    expect(() => BatteryRepository.getBatteryLevelTrait(null),
         throwsA(isA<ArgumentError>()));
   });
 }

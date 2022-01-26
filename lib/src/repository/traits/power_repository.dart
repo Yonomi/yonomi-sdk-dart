@@ -1,5 +1,7 @@
 import 'package:gql_exec/gql_exec.dart' as gql;
 import 'package:gql_link/gql_link.dart';
+import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 
@@ -20,4 +22,31 @@ class PowerRepository {
       throw errors.first;
     }
   }
+
+  static PowerTrait getPowerTrait(dynamic trait) {
+    if (trait is GgetDeviceData_device_traits__asPowerDeviceTrait ||
+        trait
+            is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait) {
+      final properties = [
+        SupportsDiscreteOnOff(trait.properties.supportsDiscreteOnOff ?? false)
+      ];
+      return PowerTrait(
+          IsOnOff(trait.state.isOn.reported?.value ?? false), properties);
+    } else {
+      throw ArgumentError.value(trait);
+    }
+  }
+}
+
+class IsOnOff extends State<bool> {
+  IsOnOff(bool value) : super('Power', value);
+}
+
+class SupportsDiscreteOnOff extends Property<bool> {
+  SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
+}
+
+class PowerTrait extends Trait {
+  PowerTrait(State state, List<Property> properties)
+      : super('power', state, properties);
 }
