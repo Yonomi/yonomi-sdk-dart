@@ -139,7 +139,12 @@ class DevicesRepository {
     if (trait is GgetDeviceData_device_traits__asLockDeviceTrait ||
         trait
             is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait) {
-      return LockTrait(IsLocked(trait.state.isLocked.reported?.value ?? false));
+      final properties = {
+        SupportsIsJammed(trait.properties.supportsIsJammed ?? false)
+      };
+
+      return LockTrait(
+          IsLocked(trait.state.isLocked.reported?.value ?? false), properties);
     } else {
       throw ArgumentError.value(trait);
     }
@@ -245,8 +250,13 @@ class SupportsDiscreteOnOff extends Property<bool> {
   SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
 }
 
+class SupportsIsJammed extends Property<bool> {
+  SupportsIsJammed(bool value) : super('supportsIsJammed', value);
+}
+
 class LockTrait extends Trait {
-  LockTrait(State state) : super('lock', state, {});
+  LockTrait(State state, Set<Property> properties)
+      : super('lock', state, properties);
 }
 
 class PowerTrait extends Trait {
