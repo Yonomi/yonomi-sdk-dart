@@ -27,12 +27,21 @@
 
 ## Constructors
 
-[LockTrait](../yonomi-sdk/LockTrait/LockTrait.md) ([State](../yonomi-sdk/State-class.md) state, [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[LockTrait](../yonomi-sdk/LockTrait/LockTrait.md) ([State](../yonomi-sdk/State-class.md) state, [[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>? properties])
 
     
 
 
 ## Properties
+
+##### [defaultProperties](../yonomi-sdk/LockTrait/defaultProperties.md) &#8594; [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)>
+
+
+
+   
+_final_
+
+
 
 ##### [hashCode](https://api.flutter.dev/flutter/dart-core/Object/hashCode.html) &#8594; [int](https://api.flutter.dev/flutter/dart-core/int-class.html)
 
