@@ -64,8 +64,9 @@ class IsLocked extends State<bool> {
 }
 
 class LockTrait extends Trait {
-  LockTrait(State state, List<Property> properties)
-      : super('lock', state, properties);
+  final defaultProperties = [SupportsIsJammed(false)];
+  LockTrait(State state, [List<Property>? properties])
+      : super('lock', state, properties ?? [SupportsIsJammed(false)]);
 }
 
 class SupportsIsJammed extends Property<bool> {
