@@ -21,7 +21,7 @@ ThermostatTrait([State](../../yonomi-sdk/State-class.md) state)
 ```dart
 ThermostatTrait(
   State state,
-) : super('thermostat_setting', state, []);
+) : super('thermostat_setting', [state], []);
 ```
 
 

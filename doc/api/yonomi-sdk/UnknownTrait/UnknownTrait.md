@@ -19,7 +19,7 @@ UnknownTrait([String](https://api.flutter.dev/flutter/dart-core/String-class.htm
 ## Implementation
 
 ```dart
-UnknownTrait(String name) : super(name, UnknownState(), []);
+UnknownTrait(String name) : super(name, [UnknownState()], []);
 ```
 
 

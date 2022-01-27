@@ -32,8 +32,12 @@ static LockTrait getLockTrait(dynamic trait) {
       SupportsIsJammed(trait.properties.supportsIsJammed ?? false)
     ];
 
-    return LockTrait(
-        IsLocked(trait.state.isLocked.reported?.value ?? false), properties);
+    List<State> states = <State>[
+      IsLocked(trait.state.isLocked.reported?.value ?? false),
+      IsJammed(trait.state.isJammed.reported?.value ?? false),
+    ];
+
+    return LockTrait.multipleStates(states, properties);
   } else {
     throw ArgumentError.value(trait);
   }

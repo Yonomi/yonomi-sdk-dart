@@ -20,6 +20,7 @@
 **Implementers**
 
 - [BatteryLevel](../yonomi-sdk/BatteryLevel-class.md)
+- [IsJammed](../yonomi-sdk/IsJammed-class.md)
 - [IsLocked](../yonomi-sdk/IsLocked-class.md)
 - [IsOnOff](../yonomi-sdk/IsOnOff-class.md)
 - [TargetTemperature](../yonomi-sdk/TargetTemperature-class.md)

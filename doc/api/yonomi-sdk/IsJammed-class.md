@@ -1,7 +1,7 @@
 
 
 
-# LockTrait class
+# IsJammed class
 
 
 
@@ -17,8 +17,8 @@
 **Inheritance**
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [Trait](../yonomi-sdk/Trait-class.md)
-- LockTrait
+- [State](../yonomi-sdk/State-class.md)&lt;[bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)>
+- IsJammed
 
 
 
@@ -27,11 +27,7 @@
 
 ## Constructors
 
-[LockTrait](../yonomi-sdk/LockTrait/LockTrait.md) ([State](../yonomi-sdk/State-class.md) state, [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
-
-    
-
-[LockTrait.multipleStates](../yonomi-sdk/LockTrait/LockTrait.multipleStates.md) ([List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[State](../yonomi-sdk/State-class.md)> state, [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[IsJammed](../yonomi-sdk/IsJammed/IsJammed.md) ([bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) value)
 
     
 
@@ -47,21 +43,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/Trait/name.md) &#8596; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](../yonomi-sdk/State/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_late, final, inherited_
-
-
-
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
-
-
-
-   
-_late, final, inherited_
+_final, inherited_
 
 
 
@@ -74,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [states](../yonomi-sdk/Trait/states.md) &#8596; [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[State](../yonomi-sdk/State-class.md)>
+##### [value](../yonomi-sdk/State/value.md) &#8594; [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)
 
 
 
    
-_late, final, inherited_
+_final, inherited_
 
 
 

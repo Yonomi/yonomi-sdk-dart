@@ -20,7 +20,7 @@ PowerTrait([State](../../yonomi-sdk/State-class.md) state, [List](https://api.fl
 
 ```dart
 PowerTrait(State state, List<Property> properties)
-    : super('power', state, properties);
+    : super('power', [state], properties);
 ```
 
 
