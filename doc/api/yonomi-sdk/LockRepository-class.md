@@ -79,7 +79,16 @@ _inherited_
 
 ## Static Methods
 
-##### [getLockDetails](../yonomi-sdk/LockRepository/getLockDetails.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[Device](../yonomi-sdk/Device-class.md)>
+##### [addIsJammedStateToQuery](../yonomi-sdk/LockRepository/addIsJammedStateToQuery.md)([DocumentNode](https://pub.dev/documentation/gql/0.13.0/ast/DocumentNode-class.html) currentNode) [DocumentNode](https://pub.dev/documentation/gql/0.13.0/ast/DocumentNode-class.html)
+
+
+
+   
+
+
+
+
+##### [getLockDetails](../yonomi-sdk/LockRepository/getLockDetails.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id, {[bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)? isJammed}) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[Device](../yonomi-sdk/Device-class.md)>
 
 
 

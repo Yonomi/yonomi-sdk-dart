@@ -23,6 +23,13 @@
  
 
 
+##### [AddStateToLockQuery](../yonomi-sdk/AddStateToLockQuery-class.md)
+
+
+
+ 
+
+
 ##### [AuthorizedClient](../yonomi-sdk/AuthorizedClient-class.md)
 
 
