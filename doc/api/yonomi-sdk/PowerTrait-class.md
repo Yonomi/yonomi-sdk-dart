@@ -70,7 +70,7 @@ _read-only, inherited_
 
 
 
-##### [state](../yonomi-sdk/Trait/state.md) &#8596; [State](../yonomi-sdk/State-class.md)
+##### [states](../yonomi-sdk/Trait/states.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)>
 
 
 

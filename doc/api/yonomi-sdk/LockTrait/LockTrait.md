@@ -20,7 +20,7 @@ LockTrait([State](../../yonomi-sdk/State-class.md) state, [Set](https://api.flut
 
 ```dart
 LockTrait(State state, Set<Property> properties)
-    : super('lock', state, properties);
+    : super('lock', {state}, properties);
 ```
 
 

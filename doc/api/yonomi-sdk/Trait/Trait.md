@@ -10,7 +10,7 @@
 
 
 
-Trait([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [State](../../yonomi-sdk/State-class.md) state, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../../yonomi-sdk/Property-class.md)> properties)
+Trait([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../../yonomi-sdk/State-class.md)> states, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../../yonomi-sdk/Property-class.md)> properties)
 
 
 
@@ -19,7 +19,7 @@ Trait([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name
 ## Implementation
 
 ```dart
-Trait(this.name, this.state, this.properties);
+Trait(this.name, this.states, this.properties);
 ```
 
 

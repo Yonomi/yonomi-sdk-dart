@@ -1,7 +1,7 @@
 
 
 
-# ThermostatTrait class
+# AvailableFanMode class
 
 
 
@@ -17,8 +17,8 @@
 **Inheritance**
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [Trait](../yonomi-sdk/Trait-class.md)
-- ThermostatTrait
+- [Property](../yonomi-sdk/Property-class.md)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>
+- AvailableFanMode
 
 
 
@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[ThermostatTrait](../yonomi-sdk/ThermostatTrait/ThermostatTrait.md) ([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)> states, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[AvailableFanMode](../yonomi-sdk/AvailableFanMode/AvailableFanMode.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) value)
 
     
 
@@ -43,21 +43,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/Trait/name.md) &#8596; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](../yonomi-sdk/Property/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_late, final, inherited_
-
-
-
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
-
-
-
-   
-_late, final, inherited_
+_final, inherited_
 
 
 
@@ -70,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [states](../yonomi-sdk/Trait/states.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)>
+##### [value](../yonomi-sdk/Property/value.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_late, final, inherited_
+_final, inherited_
 
 
 
