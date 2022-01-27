@@ -1,0 +1,7 @@
+# import "./query.fragment.graphql"
+
+query getLock($deviceId: ID!) {
+    device(id: $deviceId) {
+        ... LockDetails
+    }
+}

@@ -284,6 +284,37 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gq
     show GgetDevices;
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.var.gql.dart'
     show GgetDevicesVars;
+import 'package:yonomi_platform_sdk/src/queries/lock/get_lock_details/query.data.gql.dart'
+    show
+        GgetLockData_device_traits,
+        GgetLockData,
+        GgetLockData_device,
+        GgetLockData_device_productInformation,
+        GgetLockData_device_traits__asLockDeviceTrait,
+        GgetLockData_device_traits__asLockDeviceTrait_properties,
+        GgetLockData_device_traits__asLockDeviceTrait_state,
+        GgetLockData_device_traits__asLockDeviceTrait_state_isLocked,
+        GgetLockData_device_traits__asLockDeviceTrait_state_isLocked_desired,
+        GgetLockData_device_traits__asLockDeviceTrait_state_isLocked_reported,
+        GgetLockData_device_traits__base;
+import 'package:yonomi_platform_sdk/src/queries/lock/get_lock_details/query.fragment.data.gql.dart'
+    show
+        GLockDetailsData_traits,
+        GLockDetailsData,
+        GLockDetailsData_productInformation,
+        GLockDetailsData_traits__asLockDeviceTrait,
+        GLockDetailsData_traits__asLockDeviceTrait_properties,
+        GLockDetailsData_traits__asLockDeviceTrait_state,
+        GLockDetailsData_traits__asLockDeviceTrait_state_isLocked,
+        GLockDetailsData_traits__asLockDeviceTrait_state_isLocked_desired,
+        GLockDetailsData_traits__asLockDeviceTrait_state_isLocked_reported,
+        GLockDetailsData_traits__base;
+import 'package:yonomi_platform_sdk/src/queries/lock/get_lock_details/query.fragment.var.gql.dart'
+    show GLockDetailsVars;
+import 'package:yonomi_platform_sdk/src/queries/lock/get_lock_details/query.req.gql.dart'
+    show GgetLock;
+import 'package:yonomi_platform_sdk/src/queries/lock/get_lock_details/query.var.gql.dart'
+    show GgetLockVars;
 import 'package:yonomi_platform_sdk/src/queries/lock/make_lock_unlock_action_request/query.data.gql.dart'
     show
         GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits,
@@ -384,8 +415,10 @@ part 'serializers.gql.g.dart';
 final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(OperationSerializer())
   ..add(GDeviceDetailsData_traits.serializer)
+  ..add(GLockDetailsData_traits.serializer)
   ..add(GgetDeviceData_device_traits.serializer)
   ..add(GgetDevicesData_me_devices_edges_node_traits.serializer)
+  ..add(GgetLockData_device_traits.serializer)
   ..add(GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits
       .serializer)
   ..add(GmakePowerActionRequestData_actionPowerSetOn_device_traits.serializer)
@@ -477,6 +510,16 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GJSON,
   GJSONObject,
   GLinkedAccountAuthorizedStatus,
+  GLockDetailsData,
+  GLockDetailsData_productInformation,
+  GLockDetailsData_traits__asLockDeviceTrait,
+  GLockDetailsData_traits__asLockDeviceTrait_properties,
+  GLockDetailsData_traits__asLockDeviceTrait_state,
+  GLockDetailsData_traits__asLockDeviceTrait_state_isLocked,
+  GLockDetailsData_traits__asLockDeviceTrait_state_isLocked_desired,
+  GLockDetailsData_traits__asLockDeviceTrait_state_isLocked_reported,
+  GLockDetailsData_traits__base,
+  GLockDetailsVars,
   GMockConnectorRequestsFilters,
   GMockReportedListStateValue,
   GPinCodeCredentialInput,
@@ -650,6 +693,18 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GgetDevicesData_me_devices_edges_node_traits__base,
   GgetDevicesData_me_devices_pageInfo,
   GgetDevicesVars,
+  GgetLock,
+  GgetLockData,
+  GgetLockData_device,
+  GgetLockData_device_productInformation,
+  GgetLockData_device_traits__asLockDeviceTrait,
+  GgetLockData_device_traits__asLockDeviceTrait_properties,
+  GgetLockData_device_traits__asLockDeviceTrait_state,
+  GgetLockData_device_traits__asLockDeviceTrait_state_isLocked,
+  GgetLockData_device_traits__asLockDeviceTrait_state_isLocked_desired,
+  GgetLockData_device_traits__asLockDeviceTrait_state_isLocked_reported,
+  GgetLockData_device_traits__base,
+  GgetLockVars,
   GlinkedAccounts,
   GlinkedAccountsData,
   GlinkedAccountsData_me,

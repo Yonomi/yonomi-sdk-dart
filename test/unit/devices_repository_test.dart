@@ -1,7 +1,9 @@
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/lock/get_lock_details/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
+import 'package:gql/language.dart' as lang;
 
 void main() {
   test('responseToDeviceTraitConverter converts mixed trait device', () {
@@ -259,47 +261,49 @@ void main() {
   });
   test('''responseToDeviceTraitConverter maps single Lock
       DeviceTrait to LockUnlockTrait''', () {
-    final lockDevice = GgetDeviceData_device.fromJson({
-      'id': 'id',
-      'displayName': 'displayName',
-      'updatedAt': '2020-04-01T12:00:00.000Z',
-      'createdAt': '2020-04-01T12:00:00.000Z',
-      'productInformation': {
-        'manufacturer': 'abc',
-        'model': 'model',
-        'description': 'lock',
-      },
-      'traits': [
-        {
-          '__typename': 'LockDeviceTrait',
-          'name': 'LOCK',
-          'instance': 'default',
-          'properties': {'supportsIsJammed': true},
-          'state': {
-            'isLocked': {
-              'reported': {
-                'value': false,
-                'sampledAt': '2021-10-19T20: 06: 40.294Z',
-                'createdAt': '2021-10-19T20: 06: 41.176Z'
-              },
-              'desired': {
-                'value': false,
-                'delta': null,
-                'updatedAt': '2021-10-19T20: 06: 41.176Z'
+    final lockDevice = GgetLockData.fromJson({
+      'device': {
+        'id': 'id',
+        'displayName': 'displayName',
+        'updatedAt': '2020-04-01T12:00:00.000Z',
+        'createdAt': '2020-04-01T12:00:00.000Z',
+        'productInformation': {
+          'manufacturer': 'abc',
+          'model': 'model',
+          'description': 'lock',
+        },
+        'traits': [
+          {
+            '__typename': 'LockDeviceTrait',
+            'name': 'LOCK',
+            'instance': 'default',
+            'properties': {'supportsIsJammed': true},
+            'state': {
+              'isLocked': {
+                'reported': {
+                  'value': false,
+                  'sampledAt': '2021-10-19T20: 06: 40.294Z',
+                  'createdAt': '2021-10-19T20: 06: 41.176Z'
+                },
+                'desired': {
+                  'value': false,
+                  'delta': null,
+                  'updatedAt': '2021-10-19T20: 06: 41.176Z'
+                }
               }
             }
           }
-        }
-      ]
+        ]
+      }
     });
 
-    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
-        lockDevice!.traits.asList());
+    final convertedValue =
+        LockRepository.getLockTrait(lockDevice!.device!.traits.asList()[0]);
 
-    expect(convertedValue.first.runtimeType, equals(LockTrait));
-    expect(convertedValue.first.name, 'lock');
+    expect(convertedValue.runtimeType, equals(LockTrait));
+    expect(convertedValue.name, 'lock');
 
-    final lockProperties = (convertedValue.first as LockTrait).properties;
+    final lockProperties = (convertedValue).properties;
     expect(
         lockProperties.whereType<SupportsIsJammed>().first.value, equals(true));
   });
@@ -448,6 +452,37 @@ void main() {
       () {
     expect(
         () => LockRepository.getLockTrait(null), throwsA(isA<ArgumentError>()));
+  });
+
+  test('''#addIsJammedStateToQuery adds isJammedState when isJammed is true''',
+      () {
+    final currentNode = lang.parseString(
+      r"""
+      query UserInfo($id: ID!, $articleId: ID!) {
+        user(id: $id) {
+          id
+          name
+        }
+       state {
+          isLocked
+          description
+        }
+      }
+    """,
+    );
+    final addedNode = LockRepository.addIsJammedStateToQuery(currentNode);
+    expect(lang.printNode(addedNode),
+        """query UserInfo(\$id: ID!, \$articleId: ID!) {
+  user(id: \$id) {
+    id
+    name
+  }
+  state {
+    isLocked
+    description
+    isJammed
+  }
+}""");
   });
 
   test(

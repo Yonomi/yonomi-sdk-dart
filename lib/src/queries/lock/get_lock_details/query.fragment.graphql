@@ -1,0 +1,25 @@
+fragment LockDetails on Device {
+  id
+  displayName
+  updatedAt
+  productInformation {
+    description
+    manufacturer
+    model
+    serialNumber
+  }
+  createdAt
+  traits {
+    __typename
+    name instance
+    ... on LockDeviceTrait {
+      properties { supportsIsJammed }
+      state {
+        isLocked {
+          reported { value sampledAt createdAt }
+          desired { value delta updatedAt }
+        }
+      }
+    }
+  }
+}

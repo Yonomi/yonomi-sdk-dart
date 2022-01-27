@@ -184,6 +184,19 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GJSON.serializer)
       ..add(GJSONObject.serializer)
       ..add(GLinkedAccountAuthorizedStatus.serializer)
+      ..add(GLockDetailsData.serializer)
+      ..add(GLockDetailsData_productInformation.serializer)
+      ..add(GLockDetailsData_traits__asLockDeviceTrait.serializer)
+      ..add(GLockDetailsData_traits__asLockDeviceTrait_properties.serializer)
+      ..add(GLockDetailsData_traits__asLockDeviceTrait_state.serializer)
+      ..add(
+          GLockDetailsData_traits__asLockDeviceTrait_state_isLocked.serializer)
+      ..add(GLockDetailsData_traits__asLockDeviceTrait_state_isLocked_desired
+          .serializer)
+      ..add(GLockDetailsData_traits__asLockDeviceTrait_state_isLocked_reported
+          .serializer)
+      ..add(GLockDetailsData_traits__base.serializer)
+      ..add(GLockDetailsVars.serializer)
       ..add(GMockConnectorRequestsFilters.serializer)
       ..add(GMockReportedListStateValue.serializer)
       ..add(GPinCodeCredentialInput.serializer)
@@ -592,6 +605,22 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GgetDevicesData_me_devices_edges_node_traits__base.serializer)
       ..add(GgetDevicesData_me_devices_pageInfo.serializer)
       ..add(GgetDevicesVars.serializer)
+      ..add(GgetLock.serializer)
+      ..add(GgetLockData.serializer)
+      ..add(GgetLockData_device.serializer)
+      ..add(GgetLockData_device_productInformation.serializer)
+      ..add(GgetLockData_device_traits__asLockDeviceTrait.serializer)
+      ..add(GgetLockData_device_traits__asLockDeviceTrait_properties.serializer)
+      ..add(GgetLockData_device_traits__asLockDeviceTrait_state.serializer)
+      ..add(GgetLockData_device_traits__asLockDeviceTrait_state_isLocked
+          .serializer)
+      ..add(GgetLockData_device_traits__asLockDeviceTrait_state_isLocked_desired
+          .serializer)
+      ..add(
+          GgetLockData_device_traits__asLockDeviceTrait_state_isLocked_reported
+              .serializer)
+      ..add(GgetLockData_device_traits__base.serializer)
+      ..add(GgetLockVars.serializer)
       ..add(GlinkedAccounts.serializer)
       ..add(GlinkedAccountsData.serializer)
       ..add(GlinkedAccountsData_me.serializer)
@@ -751,6 +780,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GLockDetailsData_traits)]),
+          () => new ListBuilder<GLockDetailsData_traits>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GRRuleSchedule)]),
           () => new ListBuilder<GRRuleSchedule>())
       ..addBuilderFactory(
@@ -898,6 +931,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GgetDevicesData_me_devices_edges_node_traits__asPinCodeCredentialDeviceTrait_state_pinCodeCredentials_reported_value_edges>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GgetLockData_device_traits)]),
+          () => new ListBuilder<GgetLockData_device_traits>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(GlinkedAccountsData_me_linkedAccounts_edges)
