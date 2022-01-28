@@ -34,7 +34,7 @@ static ThermostatTrait getThermostatTrait(dynamic trait) {
 
     return ThermostatTrait({
       TargetTemperature(trait.state.targetTemperature.reported?.value ?? 0.0),
-      FanMode(trait.state.fanMode.reported.value?.toString() ?? 'Unknown'),
+      FanMode(trait.state.fanMode.reported?.value.toString() ?? 'Unknown'),
     }, properties);
   } else {
     throw ArgumentError.value(trait);
