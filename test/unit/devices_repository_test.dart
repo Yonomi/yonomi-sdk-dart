@@ -256,6 +256,16 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(ThermostatTrait));
     expect(convertedValue.first.name, 'thermostat_setting');
+    expect(
+        convertedValue.first.properties
+            .firstWhere((mode) => mode.value == 'ON'),
+        isNotNull,
+        reason: 'Does not have ON fan mode available');
+    expect(
+        convertedValue.first.properties
+            .firstWhere((mode) => mode.value == 'AUTO'),
+        isNotNull,
+        reason: 'Does not have AUTO fan mode available');
   });
   test('''responseToDeviceTraitConverter maps single Lock
       DeviceTrait to LockUnlockTrait''', () {
