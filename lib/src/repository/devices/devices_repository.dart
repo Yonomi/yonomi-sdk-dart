@@ -133,7 +133,8 @@ class DevicesRepository {
           .map((mode) => AvailableFanMode((mode as GFanMode).name)));
 
       return ThermostatTrait({
-        TargetTemperature(trait.state.targetTemperature.reported?.value ?? 0.0)
+        TargetTemperature(trait.state.targetTemperature.reported?.value ?? 0.0),
+        FanMode(trait.state.fanMode.reported.value?.toString() ?? 'Unknown'),
       }, properties);
     } else {
       throw ArgumentError.value(trait);
