@@ -32,21 +32,17 @@ void main() {
       'getDeviceDetails on a Thermostat Device returns thermostat-relevant details',
       () async {
     final device =
-        await DevicesRepository.getDeviceDetails(
-        request, testThermostatId);
+        await DevicesRepository.getDeviceDetails(request, testThermostatId);
     expect(device, isNotNull);
 
-    final thermostatTrait =
-        device.traits.whereType<ThermostatTrait>().first;
+    final thermostatTrait = device.traits.whereType<ThermostatTrait>().first;
     expect(thermostatTrait, isNotNull);
-    expect(thermostatTrait.states.whereType<FanMode>().first,
-        isNotNull);
+    expect(thermostatTrait.states.whereType<FanMode>().first, isNotNull);
   });
 
   test('getThermostatDetails gets thermostat details', () async {
     final device =
-        await DevicesRepository.getThermostatDetails(
-        request, testThermostatId);
+        await DevicesRepository.getThermostatDetails(request, testThermostatId);
     expect(device, isNotNull);
   });
 
@@ -65,15 +61,13 @@ void main() {
   test('getDeviceDetails on a Lock Device returns Lock-relevant details',
       () async {
     final device =
-        await DevicesRepository.getDeviceDetails(
-        request, testLockId);
+        await DevicesRepository.getDeviceDetails(request, testLockId);
     expect(device, isNotNull);
     expect(device.traits.first.runtimeType, LockTrait);
   });
 
   test('getLockDetails gets lock details', () async {
-    final device = await DevicesRepository.getLockDetails(
-        request, testLockId);
+    final device = await DevicesRepository.getLockDetails(request, testLockId);
     expect(device, isNotNull);
   });
 
@@ -88,8 +82,7 @@ void main() {
   });
 
   test('responseToDeviceTraitConverter maps empty response to empty list', () {
-    final convertedValue =
-        DevicesRepository.responseToDeviceTraitConverter([]);
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter([]);
     expect(convertedValue, isEmpty);
   });
 }
