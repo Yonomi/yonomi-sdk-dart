@@ -348,6 +348,20 @@ import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/
     show GmakePowerActionRequest;
 import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.var.gql.dart'
     show GmakePowerActionRequestVars;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/get_properties/query.data.gql.dart'
+    show
+        GgetThermostatSettingPropertiesData_device_traits,
+        GgetThermostatSettingPropertiesData,
+        GgetThermostatSettingPropertiesData_device,
+        GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait,
+        GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait_properties,
+        GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait_properties_coolSetPointRange,
+        GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait_properties_heatSetPointRange,
+        GgetThermostatSettingPropertiesData_device_traits__base;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/get_properties/query.req.gql.dart'
+    show GgetThermostatSettingProperties;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/get_properties/query.var.gql.dart'
+    show GgetThermostatSettingPropertiesVars;
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.data.gql.dart'
     show
         GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits,
@@ -419,6 +433,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(GgetDeviceData_device_traits.serializer)
   ..add(GgetDevicesData_me_devices_edges_node_traits.serializer)
   ..add(GgetLockData_device_traits.serializer)
+  ..add(GgetThermostatSettingPropertiesData_device_traits.serializer)
   ..add(GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits
       .serializer)
   ..add(GmakePowerActionRequestData_actionPowerSetOn_device_traits.serializer)
@@ -705,6 +720,15 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GgetLockData_device_traits__asLockDeviceTrait_state_isLocked_reported,
   GgetLockData_device_traits__base,
   GgetLockVars,
+  GgetThermostatSettingProperties,
+  GgetThermostatSettingPropertiesData,
+  GgetThermostatSettingPropertiesData_device,
+  GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait,
+  GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait_properties,
+  GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait_properties_coolSetPointRange,
+  GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait_properties_heatSetPointRange,
+  GgetThermostatSettingPropertiesData_device_traits__base,
+  GgetThermostatSettingPropertiesVars,
   GlinkedAccounts,
   GlinkedAccountsData,
   GlinkedAccountsData_me,

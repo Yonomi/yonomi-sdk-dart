@@ -1,6 +1,7 @@
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/thermostat/get_properties/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
@@ -76,6 +77,22 @@ class ThermostatRepository {
     } else {
       throw ArgumentError.value(trait);
     }
+  }
+
+  static dynamic getThermostatProperties(Request request, String id) async {
+    Link client = GraphLinkCreator.create(request);
+    final req = GgetThermostatSettingProperties((b) {
+      b..vars.deviceId = id;
+    });
+    final result = await client
+        .request(
+            gql.Request(operation: req.operation, variables: req.vars.toJson()))
+        .first;
+    final errors = result.errors;
+    if (errors != null && errors.isNotEmpty) {
+      throw errors.first;
+    }
+    return result;
   }
 }
 

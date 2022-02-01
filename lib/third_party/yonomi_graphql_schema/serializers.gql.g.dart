@@ -621,6 +621,23 @@ Serializers _$serializers = (new Serializers().toBuilder()
               .serializer)
       ..add(GgetLockData_device_traits__base.serializer)
       ..add(GgetLockVars.serializer)
+      ..add(GgetThermostatSettingProperties.serializer)
+      ..add(GgetThermostatSettingPropertiesData.serializer)
+      ..add(GgetThermostatSettingPropertiesData_device.serializer)
+      ..add(
+          GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait
+              .serializer)
+      ..add(
+          GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait_properties
+              .serializer)
+      ..add(
+          GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait_properties_coolSetPointRange
+              .serializer)
+      ..add(
+          GgetThermostatSettingPropertiesData_device_traits__asThermostatSettingDeviceTrait_properties_heatSetPointRange
+              .serializer)
+      ..add(GgetThermostatSettingPropertiesData_device_traits__base.serializer)
+      ..add(GgetThermostatSettingPropertiesVars.serializer)
       ..add(GlinkedAccounts.serializer)
       ..add(GlinkedAccountsData.serializer)
       ..add(GlinkedAccountsData_me.serializer)
@@ -862,6 +879,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(GThermostatMode)]),
           () => new ListBuilder<GThermostatMode>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GThermostatMode)]),
+          () => new ListBuilder<GThermostatMode>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GFanMode)]),
+          () => new ListBuilder<GFanMode>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GThermostatMode)]),
+          () => new ListBuilder<GThermostatMode>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GThermostatMode)]),
+          () => new ListBuilder<GThermostatMode>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GTraitName)]),
           () => new ListBuilder<GTraitName>())
       ..addBuilderFactory(
@@ -935,6 +964,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GgetLockData_device_traits)]),
           () => new ListBuilder<GgetLockData_device_traits>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GgetThermostatSettingPropertiesData_device_traits)
+          ]),
+          () => new ListBuilder<
+              GgetThermostatSettingPropertiesData_device_traits>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(GlinkedAccountsData_me_linkedAccounts_edges)
