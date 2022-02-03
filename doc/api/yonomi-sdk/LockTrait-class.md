@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[LockTrait](../yonomi-sdk/LockTrait/LockTrait.md) ([State](../yonomi-sdk/State-class.md) state, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[LockTrait](../yonomi-sdk/LockTrait/LockTrait.md) ([State](../yonomi-sdk/State-class.md) state, {required [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md) supportsIsJammed})
 
     
 
@@ -79,6 +79,15 @@ _late, final, inherited_
 
 
 
+##### [supportsIsJammed](../yonomi-sdk/LockTrait/supportsIsJammed.md) &#8594; [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)
+
+
+
+   
+_final_
+
+
+
 
 ## Methods
 
@@ -87,6 +96,24 @@ _late, final, inherited_
 
 
 Invoked when a non-existent method or property is accessed. [...](https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html)  
+_inherited_
+
+
+
+##### [propertiesWhereType](../yonomi-sdk/Trait/propertiesWhereType.md)&lt;T extends [Property](../yonomi-sdk/Property-class.md)>() [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;T>
+
+
+
+   
+_inherited_
+
+
+
+##### [stateWhereType](../yonomi-sdk/Trait/stateWhereType.md)&lt;T extends [State](../yonomi-sdk/State-class.md)>() [State](../yonomi-sdk/State-class.md)
+
+
+
+   
 _inherited_
 
 

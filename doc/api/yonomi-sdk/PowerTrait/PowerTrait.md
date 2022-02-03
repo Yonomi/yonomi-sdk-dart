@@ -10,7 +10,7 @@
 
 
 
-PowerTrait([State](../../yonomi-sdk/State-class.md) state, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../../yonomi-sdk/Property-class.md)> properties)
+PowerTrait([State](../../yonomi-sdk/State-class.md) state, {required [SupportsDiscreteOnOff](../../yonomi-sdk/SupportsDiscreteOnOff-class.md) supportsDiscreteOnOff})
 
 
 
@@ -19,8 +19,8 @@ PowerTrait([State](../../yonomi-sdk/State-class.md) state, [Set](https://api.flu
 ## Implementation
 
 ```dart
-PowerTrait(State state, Set<Property> properties)
-    : super('power', {state}, properties);
+PowerTrait(State state, {required this.supportsDiscreteOnOff})
+    : super('power', {state}, {supportsDiscreteOnOff});
 ```
 
 
