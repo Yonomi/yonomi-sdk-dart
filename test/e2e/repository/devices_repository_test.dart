@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:test/test.dart';
 
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
@@ -37,7 +39,8 @@ void main() {
 
     final thermostatTrait = device.traits.whereType<ThermostatTrait>().first;
     expect(thermostatTrait, isNotNull);
-    expect(thermostatTrait.states.whereType<FanMode>().first, isNotNull);
+    expect(thermostatTrait.stateWhereType<FanMode>(), isNotNull);
+    expect(thermostatTrait.propertiesWhereType<AvailableFanMode>(), isNotEmpty);
   });
 
   test('getThermostatDetails gets thermostat details', () async {

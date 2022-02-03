@@ -10,7 +10,7 @@
 
 
 
-ThermostatTrait([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../../yonomi-sdk/State-class.md)> states, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../../yonomi-sdk/Property-class.md)> properties)
+ThermostatTrait([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../../yonomi-sdk/State-class.md)> states, {[Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../../yonomi-sdk/AvailableFanMode-class.md)> availableFanModes = const {}})
 
 
 
@@ -19,10 +19,8 @@ ThermostatTrait([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&
 ## Implementation
 
 ```dart
-ThermostatTrait(
-  Set<State> states,
-  Set<Property> properties,
-) : super('thermostat_setting', states, properties);
+ThermostatTrait(Set<State> states, {this.availableFanModes = const {}})
+    : super('thermostat_setting', states, availableFanModes);
 ```
 
 
