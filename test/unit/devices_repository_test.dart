@@ -260,6 +260,8 @@ void main() {
     expect(
         convertedValue.first.stateWhereType<TargetTemperature>().value, 22.0);
     expect(
+        convertedValue.first.stateWhereType<IsLocked>(), isA<UnknownState>());
+    expect(
         thermostatTrait.availableFanModes
             .firstWhere((mode) => mode.value == 'ON'),
         isNotNull,
