@@ -203,8 +203,17 @@ class Device {
 abstract class Trait {
   late final String name;
   late final Set<State> states;
+  late final Set<Property> properties;
+  Trait(this.name, this.states, this.properties);
 
-  Trait(this.name, this.states);
+  State<dynamic> stateWhereType<T extends State<dynamic>>() {
+    return states.firstWhere((state) => state is T,
+        orElse: () => UnknownState());
+  }
+
+  Set<T> propertiesWhereType<T extends Property>() {
+    return properties.whereType<T>().toSet();
+  }
 }
 
 abstract class State<T> {
@@ -260,27 +269,27 @@ class SupportsIsJammed extends Property<bool> {
 class LockTrait extends Trait {
   final SupportsIsJammed supportsIsJammed;
   LockTrait(State state, {required this.supportsIsJammed})
-      : super('lock', {state});
+      : super('lock', {state}, {supportsIsJammed});
 }
 
 class PowerTrait extends Trait {
   final SupportsDiscreteOnOff supportsDiscreteOnOff;
   PowerTrait(State state, {required this.supportsDiscreteOnOff})
-      : super('power', {state});
+      : super('power', {state}, {supportsDiscreteOnOff});
 }
 
 class ThermostatTrait extends Trait {
   final Set<AvailableFanMode> availableFanModes;
   ThermostatTrait(Set<State> states, {this.availableFanModes = const {}})
-      : super('thermostat_setting', states);
+      : super('thermostat_setting', states, availableFanModes);
 }
 
 class UnknownTrait extends Trait {
-  UnknownTrait(String name) : super(name, {UnknownState()});
+  UnknownTrait(String name) : super(name, {UnknownState()}, {});
 }
 
 class BatteryLevelTrait extends Trait {
-  BatteryLevelTrait(State state) : super('battery_level', {state});
+  BatteryLevelTrait(State state) : super('battery_level', {state}, {});
 }
 
 class DeviceNameId {

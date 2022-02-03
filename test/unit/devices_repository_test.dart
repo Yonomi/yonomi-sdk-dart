@@ -258,6 +258,8 @@ void main() {
 
     expect(convertedValue.first.name, 'thermostat_setting');
     expect(
+        convertedValue.first.stateWhereType<TargetTemperature>().value, 22.0);
+    expect(
         thermostatTrait.availableFanModes
             .firstWhere((mode) => mode.value == 'ON'),
         isNotNull,
@@ -267,7 +269,14 @@ void main() {
             .firstWhere((mode) => mode.value == 'AUTO'),
         isNotNull,
         reason: 'Does not have AUTO fan mode available');
+    expect(
+        thermostatTrait
+            .propertiesWhereType<AvailableFanMode>()
+            .firstWhere((mode) => mode.value == 'AUTO'),
+        isNotNull,
+        reason: 'Does not have AUTO fan mode available in base properties');
   });
+
   test('''responseToDeviceTraitConverter maps single Lock
       DeviceTrait to LockUnlockTrait''', () {
     final lockDevice = GgetDeviceData_device.fromJson({
