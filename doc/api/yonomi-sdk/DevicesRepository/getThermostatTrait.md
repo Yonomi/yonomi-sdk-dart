@@ -28,14 +28,14 @@ static ThermostatTrait getThermostatTrait(dynamic trait) {
   if (trait is GgetDeviceData_device_traits__asThermostatSettingDeviceTrait ||
       trait
           is GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait) {
-    final properties = new Set<Property>.from(trait
+    final availableFanMode = new Set<AvailableFanMode>.from(trait
         .properties.availableFanModes
         .map((mode) => AvailableFanMode((mode as GFanMode).name)));
 
     return ThermostatTrait({
       TargetTemperature(trait.state.targetTemperature.reported?.value ?? 0.0),
       FanMode(trait.state.fanMode.reported?.value.toString() ?? 'Unknown'),
-    }, properties);
+    }, availableFanModes: availableFanMode);
   } else {
     throw ArgumentError.value(trait);
   }

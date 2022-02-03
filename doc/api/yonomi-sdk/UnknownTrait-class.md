@@ -91,6 +91,24 @@ _inherited_
 
 
 
+##### [propertiesWhereType](../yonomi-sdk/Trait/propertiesWhereType.md)&lt;T extends [Property](../yonomi-sdk/Property-class.md)>() [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;T>
+
+
+
+   
+_inherited_
+
+
+
+##### [stateWhereType](../yonomi-sdk/Trait/stateWhereType.md)&lt;T extends [State](../yonomi-sdk/State-class.md)>() [State](../yonomi-sdk/State-class.md)
+
+
+
+   
+_inherited_
+
+
+
 ##### [toString](https://api.flutter.dev/flutter/dart-core/Object/toString.html)() [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
