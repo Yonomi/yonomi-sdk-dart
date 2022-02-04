@@ -19,7 +19,7 @@ class ThermostatRepository {
 
       return ThermostatTrait(<State>{
         TargetTemperature(trait.state.targetTemperature.reported?.value ?? 0.0),
-        FanMode(trait.state.fanMode.reported?.value.toString() ?? 'Unknown'),
+        FanMode(trait.state.fanMode.reported?.value ?? AvailableFanMode.ON),
       }, availableFanModes: availableFanMode);
     } else {
       throw ArgumentError.value(trait);
@@ -58,8 +58,8 @@ class TargetTemperature extends State<double?> {
   TargetTemperature(double? value) : super('TargetTemperature', value);
 }
 
-class FanMode extends State<String> {
-  FanMode(String value) : super('FanMode', value);
+class FanMode extends State<AvailableFanMode> {
+  FanMode(AvailableFanMode value) : super('FanMode', value);
 }
 
 class AvailableFanModes extends Property<Set<AvailableFanMode>> {
