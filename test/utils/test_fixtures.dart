@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/devices/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 
@@ -22,7 +23,7 @@ class TestFixtures {
     List<Device> devices = await DevicesRepository.getDevices(request);
     return devices
         .firstWhere((device) => deviceIsOfTrait(device, ThermostatTrait),
-            orElse: () => throw '''No thermostat device found. Most likely 
+            orElse: () => throw '''No thermostat device found. Most likely
             caused by thermostat device like ecobee got unlinked.
             Link the account and try again''')
         .id;

@@ -4,6 +4,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gq
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/repository/devices/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
@@ -110,10 +111,10 @@ class DevicesRepository {
       return [];
     }
 
-    return deviceTraits.map((trait) {
+    return deviceTraits.map<Trait>((trait) {
       switch (trait.name) {
         case GTraitName.THERMOSTAT_SETTING:
-          return getThermostatTrait(trait);
+          return ThermostatRepository.getThermostatTrait(trait);
         case GTraitName.LOCK:
           return getLockTrait(trait);
         case GTraitName.BATTERY_LEVEL:
@@ -124,22 +125,6 @@ class DevicesRepository {
           return UnknownTrait(trait.name.toString());
       }
     }).toList();
-  }
-
-  static ThermostatTrait getThermostatTrait(dynamic trait) {
-    if (trait is GgetDeviceData_device_traits__asThermostatSettingDeviceTrait ||
-        trait
-            is GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait) {
-      final Set<AvailableFanMode> availableFanMode =
-          new Set<AvailableFanMode>.from(trait.properties.availableFanModes);
-
-      return ThermostatTrait({
-        TargetTemperature(trait.state.targetTemperature.reported?.value ?? 0.0),
-        FanMode(trait.state.fanMode.reported?.value.toString() ?? 'Unknown'),
-      }, availableFanModes: availableFanMode);
-    } else {
-      throw ArgumentError.value(trait);
-    }
   }
 
   static LockTrait getLockTrait(dynamic trait) {
@@ -232,14 +217,6 @@ class IsLocked extends State<bool> {
   IsLocked(bool value) : super('LockUnlock', value);
 }
 
-class TargetTemperature extends State<double?> {
-  TargetTemperature(double? value) : super('TargetTemperature', value);
-}
-
-class FanMode extends State<String> {
-  FanMode(String value) : super('FanMode', value);
-}
-
 class BatteryLevel extends State<int> {
   BatteryLevel(int value) : super('BatteryLevel', value);
 }
@@ -259,11 +236,6 @@ class SupportsDiscreteOnOff extends Property<bool> {
   SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
 }
 
-class AvailableFanModes extends Property<Set<AvailableFanMode>> {
-  AvailableFanModes(Set<AvailableFanMode> modes)
-      : super('availableFanModes', modes);
-}
-
 class SupportsIsJammed extends Property<bool> {
   SupportsIsJammed(bool value) : super('supportsIsJammed', value);
 }
@@ -278,13 +250,6 @@ class PowerTrait extends Trait {
   final SupportsDiscreteOnOff supportsDiscreteOnOff;
   PowerTrait(State state, {required this.supportsDiscreteOnOff})
       : super('power', {state}, {supportsDiscreteOnOff});
-}
-
-class ThermostatTrait extends Trait {
-  final Set<AvailableFanMode> availableFanModes;
-  ThermostatTrait(Set<State> states,
-      {this.availableFanModes = const <AvailableFanMode>{}})
-      : super('thermostat_setting', states, availableFanModes);
 }
 
 class UnknownTrait extends Trait {
