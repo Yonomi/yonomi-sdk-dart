@@ -142,15 +142,6 @@ _inherited_
 
 
 
-##### [getThermostatTrait](../yonomi-sdk/DevicesRepository/getThermostatTrait.md)(dynamic trait) [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)
-
-
-
-   
-
-
-
-
 ##### [responseToDeviceTraitConverter](../yonomi-sdk/DevicesRepository/responseToDeviceTraitConverter.md)([List](https://api.flutter.dev/flutter/dart-core/List-class.html) deviceTraits) [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Trait](../yonomi-sdk/Trait-class.md)>
 
 
