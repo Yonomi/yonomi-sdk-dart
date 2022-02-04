@@ -29,7 +29,7 @@
 
 ## Constructors
 
-[Trait](../yonomi-sdk/Trait/Trait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)> states, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[Trait](../yonomi-sdk/Trait/Trait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)> states, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html) properties)
 
     
 
@@ -54,7 +54,7 @@ _late, final_
 
 
 
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
+##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)
 
 
 
@@ -93,7 +93,7 @@ _inherited_
 
 
 
-##### [propertiesWhereType](../yonomi-sdk/Trait/propertiesWhereType.md)&lt;T extends [Property](../yonomi-sdk/Property-class.md)>() [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;T>
+##### [propertiesWhereType](../yonomi-sdk/Trait/propertiesWhereType.md)&lt;T>() [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;T>
 
 
 

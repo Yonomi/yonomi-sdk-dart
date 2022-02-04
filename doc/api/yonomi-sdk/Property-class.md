@@ -19,7 +19,7 @@
 
 **Implementers**
 
-- [AvailableFanMode](../yonomi-sdk/AvailableFanMode-class.md)
+- [AvailableFanModes](../yonomi-sdk/AvailableFanModes-class.md)
 - [SupportsDiscreteOnOff](../yonomi-sdk/SupportsDiscreteOnOff-class.md)
 - [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)
 

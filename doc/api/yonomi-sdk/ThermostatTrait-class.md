@@ -27,14 +27,14 @@
 
 ## Constructors
 
-[ThermostatTrait](../yonomi-sdk/ThermostatTrait/ThermostatTrait.md) ([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)> states, {[Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode-class.md)> availableFanModes = const {}})
+[ThermostatTrait](../yonomi-sdk/ThermostatTrait/ThermostatTrait.md) ([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)> states, {[Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)> availableFanModes = const <AvailableFanMode>{}})
 
     
 
 
 ## Properties
 
-##### [availableFanModes](../yonomi-sdk/ThermostatTrait/availableFanModes.md) &#8594; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode-class.md)>
+##### [availableFanModes](../yonomi-sdk/ThermostatTrait/availableFanModes.md) &#8594; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)>
 
 
 
@@ -61,7 +61,7 @@ _late, final, inherited_
 
 
 
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
+##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)
 
 
 
@@ -100,7 +100,7 @@ _inherited_
 
 
 
-##### [propertiesWhereType](../yonomi-sdk/Trait/propertiesWhereType.md)&lt;T extends [Property](../yonomi-sdk/Property-class.md)>() [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;T>
+##### [propertiesWhereType](../yonomi-sdk/Trait/propertiesWhereType.md)&lt;T>() [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;T>
 
 
 
