@@ -9,6 +9,6 @@ class LockRepository {
       b..vars.deviceId = id;
       b..vars.lock = lockUnlock;
     });
-    BaseRepository.mutate(req);
+    BaseRepository.mutate(request, req);
   }
 }

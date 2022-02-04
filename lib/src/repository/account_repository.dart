@@ -76,11 +76,12 @@ class AccountRepository {
   static Future<String> removeLinkedAccount(
       String linkedAccountId, Request request,
       {Link? graphqlLink}) async {
-    if (graphqlLink == null) graphqlLink = GraphLinkCreator.create(request);
+    graphqlLink = graphqlLink ?? GraphLinkCreator.create(request);
 
     final req =
         GremoveLinkedAccount((b) => b..vars.linkedAccountId = linkedAccountId);
-    final res = await BaseRepository.mutate(req);
+    final res =
+        await BaseRepository.mutate(request, req, injectedClient: graphqlLink);
 
     return GremoveLinkedAccountData_removeLinkedAccount_me.fromJson(res.data!)!
         .id;
