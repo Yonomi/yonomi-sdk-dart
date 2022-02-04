@@ -4,7 +4,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gq
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/repository/devices/thermostat_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
@@ -47,8 +47,8 @@ class DevicesRepository {
             gql.Request(operation: req.operation, variables: req.vars.toJson()))
         .first;
     final errors = res.errors;
-    if (errors != null && errors.isNotEmpty) {
-      throw errors.first;
+    if (errors?.isNotEmpty == true) {
+      throw errors!.first;
     }
 
     final device = GgetDeviceData.fromJson(res.data!)!.device;
@@ -68,9 +68,8 @@ class DevicesRepository {
     final device = await getDeviceDetails(request, id);
     // For now thermostatDeviceTrait is device with only lock trait so stripping
     // out all the other traits
-    final thermostatDeviceTrait = device.traits
-        .where((element) => element.name == 'thermostatsetting')
-        .toList();
+    final thermostatDeviceTrait =
+        device.traits.whereType<ThermostatTrait>().toList();
     final thermostatDevice = Device(
         device.id,
         device.displayName,

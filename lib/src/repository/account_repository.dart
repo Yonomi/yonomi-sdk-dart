@@ -10,6 +10,7 @@ import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/
 import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 
+import 'base_repository.dart';
 import 'gql_client.dart';
 
 class AccountRepository {
@@ -77,16 +78,9 @@ class AccountRepository {
       {Link? graphqlLink}) async {
     if (graphqlLink == null) graphqlLink = GraphLinkCreator.create(request);
 
-    var req =
+    final req =
         GremoveLinkedAccount((b) => b..vars.linkedAccountId = linkedAccountId);
-    var res = await graphqlLink
-        .request(
-            gql.Request(operation: req.operation, variables: req.vars.toJson()))
-        .first;
-    var errors = res.errors;
-    if (errors != null && errors.isNotEmpty) {
-      throw errors.first;
-    }
+    final res = await BaseRepository.mutate(req);
 
     return GremoveLinkedAccountData_removeLinkedAccount_me.fromJson(res.data!)!
         .id;

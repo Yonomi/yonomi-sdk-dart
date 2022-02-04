@@ -1,14 +1,13 @@
-import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_fan_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
-import 'package:gql_exec/gql_exec.dart' as gql;
 
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
-import '../gql_client.dart';
 
 class ThermostatRepository {
   static ThermostatTrait getThermostatTrait(dynamic trait) {
@@ -29,43 +28,29 @@ class ThermostatRepository {
 
   static Future<void> setPointThermostat(
       Request request, String id, double temperature) async {
-    Link client = GraphLinkCreator.create(request);
     final req = GmakeSetTargetTemperatureRequest((b) {
       b..vars.deviceId = id;
       b..vars.targetTemperature = temperature;
     });
-    final res = await client
-        .request(
-          gql.Request(operation: req.operation, variables: req.vars.toJson()),
-        )
-        .first;
-    final errors = res.errors;
-    if (errors != null && errors.isNotEmpty) {
-      throw errors.first;
-    }
+    BaseRepository.mutate(req);
   }
 
   static Future<void> setMode(
       Request request, String id, GThermostatMode mode) async {
-    Link client = GraphLinkCreator.create(request);
     final req = GmakeSetModeRequest((b) {
       b..vars.deviceId = id;
       b..vars.mode = mode;
     });
-    final res = await client
-        .request(
-          gql.Request(operation: req.operation, variables: req.vars.toJson()),
-        )
-        .first;
-    final errors = res.errors;
-    if (errors != null && errors.isNotEmpty) {
-      throw errors.first;
-    }
+    BaseRepository.mutate(req);
   }
 
   static Future<void> setFanMode(
-      Request request, String id, AvailableFanMode mode) {
-    return Future.value(null);
+      Request request, String id, AvailableFanMode mode) async {
+    final req = GmakeSetFanModeRequest((b) {
+      b..vars.deviceId = id;
+      b..vars.mode = mode;
+    });
+    BaseRepository.mutate(req);
   }
 }
 
