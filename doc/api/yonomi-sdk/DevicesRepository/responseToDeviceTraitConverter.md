@@ -31,10 +31,10 @@ static List<Trait> responseToDeviceTraitConverter(List deviceTraits) {
     return [];
   }
 
-  return deviceTraits.map((trait) {
+  return deviceTraits.map<Trait>((trait) {
     switch (trait.name) {
       case GTraitName.THERMOSTAT_SETTING:
-        return getThermostatTrait(trait);
+        return ThermostatRepository.getThermostatTrait(trait);
       case GTraitName.LOCK:
         return getLockTrait(trait);
       case GTraitName.BATTERY_LEVEL:

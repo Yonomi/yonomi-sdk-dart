@@ -79,6 +79,24 @@ _inherited_
 
 ## Static Methods
 
+##### [getThermostatTrait](../yonomi-sdk/ThermostatRepository/getThermostatTrait.md)(dynamic trait) [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)
+
+
+
+   
+
+
+
+
+##### [setFanMode](../yonomi-sdk/ThermostatRepository/setFanMode.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id, [AvailableFanMode](../yonomi-sdk/AvailableFanMode.md) mode) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;void>
+
+
+
+   
+
+
+
+
 ##### [setMode](../yonomi-sdk/ThermostatRepository/setMode.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id, [GThermostatMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatMode-class.md) mode) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;void>
 
 
