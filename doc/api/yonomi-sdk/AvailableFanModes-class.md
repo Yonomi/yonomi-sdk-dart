@@ -1,7 +1,7 @@
 
 
 
-# LockTrait class
+# AvailableFanModes class
 
 
 
@@ -17,8 +17,8 @@
 **Inheritance**
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [Trait](../yonomi-sdk/Trait-class.md)
-- LockTrait
+- [Property](../yonomi-sdk/Property-class.md)&lt;[Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)>>
+- AvailableFanModes
 
 
 
@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[LockTrait](../yonomi-sdk/LockTrait/LockTrait.md) ([State](../yonomi-sdk/State-class.md) state, {required [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md) supportsIsJammed})
+[AvailableFanModes](../yonomi-sdk/AvailableFanModes/AvailableFanModes.md) ([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)> modes)
 
     
 
@@ -43,21 +43,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/Trait/name.md) &#8596; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](../yonomi-sdk/Property/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_late, final, inherited_
-
-
-
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)
-
-
-
-   
-_late, final, inherited_
+_final, inherited_
 
 
 
@@ -70,21 +61,12 @@ _read-only, inherited_
 
 
 
-##### [states](../yonomi-sdk/Trait/states.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)>
+##### [value](../yonomi-sdk/Property/value.md) &#8594; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)>
 
 
 
    
-_late, final, inherited_
-
-
-
-##### [supportsIsJammed](../yonomi-sdk/LockTrait/supportsIsJammed.md) &#8594; [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)
-
-
-
-   
-_final_
+_final, inherited_
 
 
 
@@ -96,24 +78,6 @@ _final_
 
 
 Invoked when a non-existent method or property is accessed. [...](https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html)  
-_inherited_
-
-
-
-##### [propertiesWhereType](../yonomi-sdk/Trait/propertiesWhereType.md)&lt;T>() [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;T>
-
-
-
-   
-_inherited_
-
-
-
-##### [stateWhereType](../yonomi-sdk/Trait/stateWhereType.md)&lt;T extends [State](../yonomi-sdk/State-class.md)>() [State](../yonomi-sdk/State-class.md)
-
-
-
-   
 _inherited_
 
 

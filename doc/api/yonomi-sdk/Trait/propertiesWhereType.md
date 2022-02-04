@@ -1,7 +1,7 @@
 
 
 
-# propertiesWhereType&lt;T extends Property> method
+# propertiesWhereType&lt;T> method
 
 
 
@@ -12,7 +12,7 @@
 
 
 [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;T> propertiesWhereType
-&lt;T extends Property>()
+&lt;T>()
 
 
 
@@ -24,7 +24,7 @@
 ## Implementation
 
 ```dart
-Set<T> propertiesWhereType<T extends Property>() {
+Set<T> propertiesWhereType<T>() {
   return properties.whereType<T>().toSet();
 }
 ```

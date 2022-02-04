@@ -263,18 +263,18 @@ void main() {
         convertedValue.first.stateWhereType<IsLocked>(), isA<UnknownState>());
     expect(
         thermostatTrait.availableFanModes
-            .firstWhere((mode) => mode.value == 'ON'),
+            .firstWhere((mode) => mode.name == 'ON'),
         isNotNull,
         reason: 'Does not have ON fan mode available');
     expect(
         thermostatTrait.availableFanModes
-            .firstWhere((mode) => mode.value == 'AUTO'),
+            .firstWhere((mode) => mode.name == 'AUTO'),
         isNotNull,
         reason: 'Does not have AUTO fan mode available');
     expect(
         thermostatTrait
             .propertiesWhereType<AvailableFanMode>()
-            .firstWhere((mode) => mode.value == 'AUTO'),
+            .firstWhere((mode) => mode.name == 'AUTO'),
         isNotNull,
         reason: 'Does not have AUTO fan mode available in base properties');
   });

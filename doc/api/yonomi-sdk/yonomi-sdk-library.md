@@ -30,7 +30,7 @@
  
 
 
-##### [AvailableFanMode](../yonomi-sdk/AvailableFanMode-class.md)
+##### [AvailableFanModes](../yonomi-sdk/AvailableFanModes-class.md)
 
 
 
@@ -235,6 +235,19 @@
 
 
 
+
+
+
+
+
+## Typedefs
+
+
+  ##### [AvailableFanMode](../yonomi-sdk/AvailableFanMode.md) = [GFanMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GFanMode-class.md)
+
+
+
+   
 
 
 
