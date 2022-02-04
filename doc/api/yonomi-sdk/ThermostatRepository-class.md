@@ -88,6 +88,15 @@ _inherited_
 
 
 
+##### [getThermostatProperties](../yonomi-sdk/ThermostatRepository/getThermostatProperties.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id) dynamic
+
+
+
+   
+
+
+
+
 ##### [getThermostatTrait](../yonomi-sdk/ThermostatRepository/getThermostatTrait.md)(dynamic trait) [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)
 
 
