@@ -26,19 +26,11 @@
 ```dart
 static Future<void> sendPowerAction(Request request, String id, bool onOff,
     {Link? injectedClient}) async {
-  Link client = injectedClient ?? GraphLinkCreator.create(request);
   final req = GmakePowerActionRequest((b) {
     b..vars.deviceId = id;
     b..vars.onOff = onOff;
   });
-  final res = await client
-      .request(
-          gql.Request(operation: req.operation, variables: req.vars.toJson()))
-      .first;
-  final errors = res.errors;
-  if (errors != null && errors.isNotEmpty) {
-    throw errors.first;
-  }
+  BaseRepository.mutate(request, req, injectedClient: injectedClient);
 }
 ```
 

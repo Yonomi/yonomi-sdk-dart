@@ -25,8 +25,12 @@
 
 ```dart
 static Future<void> setFanMode(
-    Request request, String id, AvailableFanMode mode) {
-  return Future.value(null);
+    Request request, String id, AvailableFanMode mode) async {
+  final req = GmakeSetFanModeRequest((b) {
+    b..vars.deviceId = id;
+    b..vars.mode = mode;
+  });
+  BaseRepository.mutate(request, req);
 }
 ```
 

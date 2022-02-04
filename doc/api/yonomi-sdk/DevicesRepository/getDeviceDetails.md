@@ -32,8 +32,8 @@ static Future<Device> getDeviceDetails(Request request, String id) async {
           gql.Request(operation: req.operation, variables: req.vars.toJson()))
       .first;
   final errors = res.errors;
-  if (errors != null && errors.isNotEmpty) {
-    throw errors.first;
+  if (errors?.isNotEmpty == true) {
+    throw errors!.first;
   }
 
   final device = GgetDeviceData.fromJson(res.data!)!.device;
