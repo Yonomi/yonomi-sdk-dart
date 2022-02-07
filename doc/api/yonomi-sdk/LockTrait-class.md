@@ -27,21 +27,12 @@
 
 ## Constructors
 
-[LockTrait](../yonomi-sdk/LockTrait/LockTrait.md) ([State](../yonomi-sdk/State-class.md) state, [[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>? properties])
+[LockTrait](../yonomi-sdk/LockTrait/LockTrait.md) ([State](../yonomi-sdk/State-class.md) state, [[LockProperties](../yonomi-sdk/LockProperties.md)? properties])
 
     
 
 
 ## Properties
-
-##### [defaultProperties](../yonomi-sdk/LockTrait/defaultProperties.md) &#8594; [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)>
-
-
-
-   
-_final_
-
-
 
 ##### [hashCode](https://api.flutter.dev/flutter/dart-core/Object/hashCode.html) &#8594; [int](https://api.flutter.dev/flutter/dart-core/int-class.html)
 
@@ -61,7 +52,7 @@ _late, final, inherited_
 
 
 
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
+##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Map](https://api.flutter.dev/flutter/dart-core/Map-class.html)
 
 
 
@@ -119,6 +110,17 @@ _inherited_
 The equality operator. [...](https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html)  
 _inherited_
 
+
+
+
+## Static Properties
+
+##### [defaultProperties](../yonomi-sdk/LockTrait/defaultProperties.md) &#8594; [Map](https://api.flutter.dev/flutter/dart-core/Map-class.html)&lt;[LockPropertyNames](../yonomi-sdk/LockPropertyNames.md), [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)>
+
+
+
+   
+_final_
 
 
 

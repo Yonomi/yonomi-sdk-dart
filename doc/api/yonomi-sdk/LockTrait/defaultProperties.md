@@ -9,7 +9,7 @@
     *[<Null safety>](https://dart.dev/null-safety)*
 
 
-[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[SupportsIsJammed](../../yonomi-sdk/SupportsIsJammed-class.md)> defaultProperties
+[Map](https://api.flutter.dev/flutter/dart-core/Map-class.html)&lt;[LockPropertyNames](../../yonomi-sdk/LockPropertyNames.md), [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)> defaultProperties
   
 _final_
 
@@ -21,7 +21,9 @@ _final_
 ## Implementation
 
 ```dart
-final defaultProperties = [SupportsIsJammed(false)];
+static final defaultProperties = {
+  LockPropertyNames.supportsIsJammed: false,
+};
 
 
 ```

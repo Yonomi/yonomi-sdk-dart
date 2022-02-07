@@ -121,13 +121,6 @@
  
 
 
-##### [Property](../yonomi-sdk/Property-class.md)&lt;T>
-
-
-
- 
-
-
 ##### [Request](../yonomi-sdk/Request-class.md)
 
 
@@ -143,20 +136,6 @@
 
 
 ##### [State](../yonomi-sdk/State-class.md)&lt;T>
-
-
-
- 
-
-
-##### [SupportsDiscreteOnOff](../yonomi-sdk/SupportsDiscreteOnOff-class.md)
-
-
-
- 
-
-
-##### [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)
 
 
 
@@ -228,6 +207,75 @@
 
 
 
+
+
+
+
+## Enums
+
+##### [LockPropertyNames](../yonomi-sdk/LockPropertyNames.md)
+
+
+
+ 
+
+
+##### [PowerPropertyNames](../yonomi-sdk/PowerPropertyNames.md)
+
+
+
+ 
+
+
+##### [ThermostatPropertyNames](../yonomi-sdk/ThermostatPropertyNames.md)
+
+
+
+ 
+
+
+
+## Typedefs
+
+
+  ##### [LockProperties](../yonomi-sdk/LockProperties.md) = [Map](https://api.flutter.dev/flutter/dart-core/Map-class.html)&lt;[LockPropertyNames](../yonomi-sdk/LockPropertyNames.md), dynamic>
+
+
+
+   
+
+
+
+
+
+
+  ##### [PowerProperties](../yonomi-sdk/PowerProperties.md) = [Map](https://api.flutter.dev/flutter/dart-core/Map-class.html)&lt;[PowerPropertyNames](../yonomi-sdk/PowerPropertyNames.md), dynamic>
+
+
+
+   
+
+
+
+
+
+
+  ##### [ThermostatMode](../yonomi-sdk/ThermostatMode.md) = [GThermostatMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatMode-class.md)
+
+
+
+   
+
+
+
+
+
+
+  ##### [ThermostatProperties](../yonomi-sdk/ThermostatProperties.md) = [Map](https://api.flutter.dev/flutter/dart-core/Map-class.html)&lt;[ThermostatPropertyNames](../yonomi-sdk/ThermostatPropertyNames.md), dynamic>
+
+
+
+   
 
 
 

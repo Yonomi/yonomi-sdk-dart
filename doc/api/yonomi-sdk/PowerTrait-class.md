@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[PowerTrait](../yonomi-sdk/PowerTrait/PowerTrait.md) ([State](../yonomi-sdk/State-class.md) state, [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[PowerTrait](../yonomi-sdk/PowerTrait/PowerTrait.md) ([State](../yonomi-sdk/State-class.md) state, [[PowerProperties](../yonomi-sdk/PowerProperties.md)? properties])
 
     
 
@@ -52,7 +52,7 @@ _late, final, inherited_
 
 
 
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
+##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Map](https://api.flutter.dev/flutter/dart-core/Map-class.html)
 
 
 
@@ -110,6 +110,17 @@ _inherited_
 The equality operator. [...](https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html)  
 _inherited_
 
+
+
+
+## Static Properties
+
+##### [defaultProperties](../yonomi-sdk/PowerTrait/defaultProperties.md) &#8594; [Map](https://api.flutter.dev/flutter/dart-core/Map-class.html)
+
+
+
+   
+_final_
 
 
 

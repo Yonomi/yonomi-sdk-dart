@@ -10,7 +10,7 @@
 
 
 
-LockTrait([State](../../yonomi-sdk/State-class.md) state, [[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../../yonomi-sdk/Property-class.md)>? properties])
+LockTrait([State](../../yonomi-sdk/State-class.md) state, [[LockProperties](../../yonomi-sdk/LockProperties.md)? properties])
 
 
 
@@ -19,8 +19,8 @@ LockTrait([State](../../yonomi-sdk/State-class.md) state, [[List](https://api.fl
 ## Implementation
 
 ```dart
-LockTrait(State state, [List<Property>? properties])
-    : super('lock', state, properties ?? [SupportsIsJammed(false)]);
+LockTrait(State state, [LockProperties? properties])
+    : super('lock', state, properties ?? defaultProperties);
 ```
 
 

@@ -29,9 +29,10 @@ static LockTrait getLockTrait(dynamic trait) {
       trait
           is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait ||
       trait is GgetLockData_device_traits__asLockDeviceTrait) {
-    final properties = [
-      SupportsIsJammed(trait.properties.supportsIsJammed ?? false)
-    ];
+    final supportsIsJammed = trait.properties.supportsIsJammed ?? false;
+    final properties = {
+      LockPropertyNames.supportsIsJammed: supportsIsJammed,
+    };
 
     return LockTrait(
         IsLocked(trait.state.isLocked.reported?.value ?? false), properties);

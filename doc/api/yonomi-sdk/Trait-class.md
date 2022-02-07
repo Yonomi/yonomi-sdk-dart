@@ -29,7 +29,7 @@
 
 ## Constructors
 
-[Trait](../yonomi-sdk/Trait/Trait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [State](../yonomi-sdk/State-class.md) state, [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[Trait](../yonomi-sdk/Trait/Trait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [State](../yonomi-sdk/State-class.md) state, [Map](https://api.flutter.dev/flutter/dart-core/Map-class.html) properties)
 
     
 
@@ -54,7 +54,7 @@ _late, final_
 
 
 
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
+##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Map](https://api.flutter.dev/flutter/dart-core/Map-class.html)
 
 
 

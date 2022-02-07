@@ -9,7 +9,7 @@
     *[<Null safety>](https://dart.dev/null-safety)*
 
 
-[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;[Property](../../yonomi-sdk/Property-class.md)> properties
+[Map](https://api.flutter.dev/flutter/dart-core/Map-class.html) properties
   
 _late, final_
 
@@ -21,7 +21,7 @@ _late, final_
 ## Implementation
 
 ```dart
-late final List<Property> properties;
+late final Map<dynamic, dynamic> properties;
 
 
 ```
