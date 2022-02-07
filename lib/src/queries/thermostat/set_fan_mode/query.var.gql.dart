@@ -19,7 +19,7 @@ abstract class GmakeSetFanModeRequestVars
       _$GmakeSetFanModeRequestVars;
 
   String get deviceId;
-  _i1.GFanMode get mode;
+  _i1.GFanMode get fanMode;
   static Serializer<GmakeSetFanModeRequestVars> get serializer =>
       _$gmakeSetFanModeRequestVarsSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(

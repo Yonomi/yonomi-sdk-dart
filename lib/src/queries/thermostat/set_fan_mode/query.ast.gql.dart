@@ -13,7 +13,7 @@ const makeSetFanModeRequest = _i1.OperationDefinitionNode(
           defaultValue: _i1.DefaultValueNode(value: null),
           directives: []),
       _i1.VariableDefinitionNode(
-          variable: _i1.VariableNode(name: _i1.NameNode(value: 'mode')),
+          variable: _i1.VariableNode(name: _i1.NameNode(value: 'fanMode')),
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'FanMode'), isNonNull: true),
           defaultValue: _i1.DefaultValueNode(value: null),
@@ -29,8 +29,8 @@ const makeSetFanModeRequest = _i1.OperationDefinitionNode(
                 name: _i1.NameNode(value: 'deviceId'),
                 value: _i1.VariableNode(name: _i1.NameNode(value: 'deviceId'))),
             _i1.ArgumentNode(
-                name: _i1.NameNode(value: 'mode'),
-                value: _i1.VariableNode(name: _i1.NameNode(value: 'mode')))
+                name: _i1.NameNode(value: 'fanMode'),
+                value: _i1.VariableNode(name: _i1.NameNode(value: 'fanMode')))
           ],
           directives: [],
           selectionSet: _i1.SelectionSetNode(selections: [

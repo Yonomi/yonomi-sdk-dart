@@ -1,5 +1,5 @@
-mutation makeSetFanModeRequest ($deviceId: ID! $mode: FanMode!) {
-	actionThermostatSettingSetFanMode (deviceId: $deviceId mode: $mode) {
+mutation makeSetFanModeRequest ($deviceId: ID! $fanMode: FanMode!) {
+	actionThermostatSettingSetFanMode (deviceId: $deviceId fanMode: $fanMode) {
     actionId
     device {
  	    traits {

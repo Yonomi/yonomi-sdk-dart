@@ -27,8 +27,8 @@ class _$GmakeSetFanModeRequestVarsSerializer
       'deviceId',
       serializers.serialize(object.deviceId,
           specifiedType: const FullType(String)),
-      'mode',
-      serializers.serialize(object.mode,
+      'fanMode',
+      serializers.serialize(object.fanMode,
           specifiedType: const FullType(_i1.GFanMode)),
     ];
 
@@ -51,8 +51,8 @@ class _$GmakeSetFanModeRequestVarsSerializer
           result.deviceId = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'mode':
-          result.mode = serializers.deserialize(value,
+        case 'fanMode':
+          result.fanMode = serializers.deserialize(value,
               specifiedType: const FullType(_i1.GFanMode)) as _i1.GFanMode;
           break;
       }
@@ -66,18 +66,19 @@ class _$GmakeSetFanModeRequestVars extends GmakeSetFanModeRequestVars {
   @override
   final String deviceId;
   @override
-  final _i1.GFanMode mode;
+  final _i1.GFanMode fanMode;
 
   factory _$GmakeSetFanModeRequestVars(
           [void Function(GmakeSetFanModeRequestVarsBuilder)? updates]) =>
       (new GmakeSetFanModeRequestVarsBuilder()..update(updates)).build();
 
-  _$GmakeSetFanModeRequestVars._({required this.deviceId, required this.mode})
+  _$GmakeSetFanModeRequestVars._(
+      {required this.deviceId, required this.fanMode})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         deviceId, 'GmakeSetFanModeRequestVars', 'deviceId');
     BuiltValueNullFieldError.checkNotNull(
-        mode, 'GmakeSetFanModeRequestVars', 'mode');
+        fanMode, 'GmakeSetFanModeRequestVars', 'fanMode');
   }
 
   @override
@@ -94,19 +95,19 @@ class _$GmakeSetFanModeRequestVars extends GmakeSetFanModeRequestVars {
     if (identical(other, this)) return true;
     return other is GmakeSetFanModeRequestVars &&
         deviceId == other.deviceId &&
-        mode == other.mode;
+        fanMode == other.fanMode;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, deviceId.hashCode), mode.hashCode));
+    return $jf($jc($jc(0, deviceId.hashCode), fanMode.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GmakeSetFanModeRequestVars')
           ..add('deviceId', deviceId)
-          ..add('mode', mode))
+          ..add('fanMode', fanMode))
         .toString();
   }
 }
@@ -120,9 +121,9 @@ class GmakeSetFanModeRequestVarsBuilder
   String? get deviceId => _$this._deviceId;
   set deviceId(String? deviceId) => _$this._deviceId = deviceId;
 
-  _i1.GFanMode? _mode;
-  _i1.GFanMode? get mode => _$this._mode;
-  set mode(_i1.GFanMode? mode) => _$this._mode = mode;
+  _i1.GFanMode? _fanMode;
+  _i1.GFanMode? get fanMode => _$this._fanMode;
+  set fanMode(_i1.GFanMode? fanMode) => _$this._fanMode = fanMode;
 
   GmakeSetFanModeRequestVarsBuilder();
 
@@ -130,7 +131,7 @@ class GmakeSetFanModeRequestVarsBuilder
     final $v = _$v;
     if ($v != null) {
       _deviceId = $v.deviceId;
-      _mode = $v.mode;
+      _fanMode = $v.fanMode;
       _$v = null;
     }
     return this;
@@ -153,8 +154,8 @@ class GmakeSetFanModeRequestVarsBuilder
         new _$GmakeSetFanModeRequestVars._(
             deviceId: BuiltValueNullFieldError.checkNotNull(
                 deviceId, 'GmakeSetFanModeRequestVars', 'deviceId'),
-            mode: BuiltValueNullFieldError.checkNotNull(
-                mode, 'GmakeSetFanModeRequestVars', 'mode'));
+            fanMode: BuiltValueNullFieldError.checkNotNull(
+                fanMode, 'GmakeSetFanModeRequestVars', 'fanMode'));
     replace(_$result);
     return _$result;
   }
