@@ -10,8 +10,6 @@ import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.doc
 
 import '../gql_client.dart';
 
-typedef AvailableFanMode = GFanMode;
-
 class DevicesRepository {
   static Future<List<Device>> getDevices(Request request) async {
     Link client = GraphLinkCreator.create(request);

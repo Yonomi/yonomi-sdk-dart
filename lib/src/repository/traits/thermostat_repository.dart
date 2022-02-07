@@ -9,6 +9,9 @@ import 'package:yonomi_platform_sdk/src/request/request.dart';
 
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
+typedef AvailableFanMode = GFanMode;
+typedef AvailableThermostatMode = GThermostatMode;
+
 class ThermostatRepository {
   static ThermostatTrait getThermostatTrait(dynamic trait) {
     if (trait is GgetDeviceData_device_traits__asThermostatSettingDeviceTrait ||
@@ -17,10 +20,18 @@ class ThermostatRepository {
       final Set<AvailableFanMode> availableFanMode =
           new Set<AvailableFanMode>.from(trait.properties.availableFanModes);
 
+      final Set<AvailableThermostatMode> availableThermostatModes =
+          new Set<AvailableThermostatMode>.from(
+              trait.properties.availableThermostatModes);
+
       return ThermostatTrait(<State>{
         TargetTemperature(trait.state.targetTemperature.reported?.value ?? 0.0),
         FanMode(trait.state.fanMode.reported?.value ?? AvailableFanMode.ON),
-      }, availableFanModes: availableFanMode);
+        ThermostatMode(
+            trait.state.mode.reported?.value ?? AvailableThermostatMode.OFF),
+      },
+          availableFanModes: availableFanMode,
+          availableThermostatModes: availableThermostatModes);
     } else {
       throw ArgumentError.value(trait);
     }
@@ -55,11 +66,15 @@ class ThermostatRepository {
 }
 
 class TargetTemperature extends State<double?> {
-  TargetTemperature(double? value) : super('TargetTemperature', value);
+  TargetTemperature(double? value) : super('targetTemperature', value);
 }
 
 class FanMode extends State<AvailableFanMode> {
-  FanMode(AvailableFanMode value) : super('FanMode', value);
+  FanMode(AvailableFanMode value) : super('fanMode', value);
+}
+
+class ThermostatMode extends State<AvailableThermostatMode> {
+  ThermostatMode(AvailableThermostatMode value) : super('mode', value);
 }
 
 class AvailableFanModes extends Property<Set<AvailableFanMode>> {
@@ -67,9 +82,17 @@ class AvailableFanModes extends Property<Set<AvailableFanMode>> {
       : super('availableFanModes', modes);
 }
 
+class AvailableThermostatModes extends Property<Set<AvailableThermostatMode>> {
+  AvailableThermostatModes(Set<AvailableThermostatMode> modes)
+      : super('availableThermostatModes', modes);
+}
+
 class ThermostatTrait extends Trait {
   final Set<AvailableFanMode> availableFanModes;
+  final Set<AvailableThermostatMode> availableThermostatModes;
   ThermostatTrait(Set<State> states,
-      {this.availableFanModes = const <AvailableFanMode>{}})
-      : super('thermostat_setting', states, availableFanModes);
+      {this.availableFanModes = const <AvailableFanMode>{},
+      this.availableThermostatModes = const <AvailableThermostatMode>{}})
+      : super('thermostat_setting', states,
+            {...availableFanModes, ...availableThermostatModes});
 }
