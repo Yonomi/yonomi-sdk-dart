@@ -7,7 +7,7 @@ mutation makeSetFanModeRequest ($deviceId: ID! $mode: FanMode!) {
        ... on ThermostatSettingDeviceTrait {
          properties { availableFanModes }
          state {
-          mode {
+          fanMode {
             reported { value sampledAt createdAt }
             desired { value delta updatedAt }
             }
