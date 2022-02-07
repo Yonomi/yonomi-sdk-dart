@@ -59,7 +59,7 @@ class ThermostatRepository {
       Request request, String id, AvailableFanMode mode) async {
     final req = GmakeSetFanModeRequest((b) {
       b..vars.deviceId = id;
-      b..vars.mode = mode;
+      b..vars.fanMode = mode;
     });
     BaseRepository.mutate(request, req);
   }

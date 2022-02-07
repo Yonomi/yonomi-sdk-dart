@@ -31,17 +31,17 @@ Serializer<
     _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateSerializer =
     new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_stateSerializer();
 Serializer<
-        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode>
-    _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateModeSerializer =
-    new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeSerializer();
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode>
+    _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateFanModeSerializer =
+    new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeSerializer();
 Serializer<
-        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported>
-    _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateModeReportedSerializer =
-    new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedSerializer();
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported>
+    _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateFanModeReportedSerializer =
+    new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedSerializer();
 Serializer<
-        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired>
-    _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateModeDesiredSerializer =
-    new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredSerializer();
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired>
+    _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateFanModeDesiredSerializer =
+    new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredSerializer();
 
 class _$GmakeSetFanModeRequestDataSerializer
     implements StructuredSerializer<GmakeSetFanModeRequestData> {
@@ -473,10 +473,10 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
-      'mode',
-      serializers.serialize(object.mode,
+      'fanMode',
+      serializers.serialize(object.fanMode,
           specifiedType: const FullType(
-              GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode)),
+              GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode)),
     ];
 
     return result;
@@ -499,11 +499,11 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'mode':
-          result.mode.replace(serializers.deserialize(value,
+        case 'fanMode':
+          result.fanMode.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode))!
-              as GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode);
+                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode))!
+              as GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode);
           break;
       }
     }
@@ -512,23 +512,23 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
   }
 }
 
-class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeSerializer
+class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeSerializer
     implements
         StructuredSerializer<
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode> {
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode> {
   @override
   final Iterable<Type> types = const [
-    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode,
-    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode,
+    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
   ];
   @override
   final String wireName =
-      'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode';
+      'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode';
 
   @override
   Iterable<Object?> serialize(
       Serializers serializers,
-      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
           object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
@@ -543,7 +543,7 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
         ..add('reported')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
-                GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported)));
+                GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported)));
     }
     value = object.desired;
     if (value != null) {
@@ -551,17 +551,17 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
         ..add('desired')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
-                GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired)));
+                GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired)));
     }
     return result;
   }
 
   @override
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder();
+        new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -576,14 +576,14 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
         case 'reported':
           result.reported.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported))!
-              as GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported);
+                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported))!
+              as GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported);
           break;
         case 'desired':
           result.desired.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired))!
-              as GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired);
+                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired))!
+              as GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired);
           break;
       }
     }
@@ -592,23 +592,23 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
   }
 }
 
-class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedSerializer
+class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedSerializer
     implements
         StructuredSerializer<
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported> {
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported> {
   @override
   final Iterable<Type> types = const [
-    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported,
-    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported,
+    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
   ];
   @override
   final String wireName =
-      'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported';
+      'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported';
 
   @override
   Iterable<Object?> serialize(
       Serializers serializers,
-      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
           object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
@@ -617,7 +617,7 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
           specifiedType: const FullType(String)),
       'value',
       serializers.serialize(object.value,
-          specifiedType: const FullType(_i2.GThermostatMode)),
+          specifiedType: const FullType(_i2.GFanMode)),
       'sampledAt',
       serializers.serialize(object.sampledAt,
           specifiedType: const FullType(_i2.GDateTime)),
@@ -630,11 +630,11 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
   }
 
   @override
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder();
+        new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -648,8 +648,7 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
           break;
         case 'value':
           result.value = serializers.deserialize(value,
-                  specifiedType: const FullType(_i2.GThermostatMode))
-              as _i2.GThermostatMode;
+              specifiedType: const FullType(_i2.GFanMode)) as _i2.GFanMode;
           break;
         case 'sampledAt':
           result.sampledAt.replace(serializers.deserialize(value,
@@ -666,23 +665,23 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
   }
 }
 
-class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredSerializer
+class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredSerializer
     implements
         StructuredSerializer<
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired> {
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired> {
   @override
   final Iterable<Type> types = const [
-    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired,
-    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired,
+    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
   ];
   @override
   final String wireName =
-      'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired';
+      'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired';
 
   @override
   Iterable<Object?> serialize(
       Serializers serializers,
-      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
           object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
@@ -691,7 +690,7 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
           specifiedType: const FullType(String)),
       'value',
       serializers.serialize(object.value,
-          specifiedType: const FullType(_i2.GThermostatMode)),
+          specifiedType: const FullType(_i2.GFanMode)),
       'updatedAt',
       serializers.serialize(object.updatedAt,
           specifiedType: const FullType(_i2.GDateTime)),
@@ -702,17 +701,17 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
       result
         ..add('delta')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GThermostatMode)));
+            specifiedType: const FullType(_i2.GFanMode)));
     }
     return result;
   }
 
   @override
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder();
+        new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -726,13 +725,11 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
           break;
         case 'value':
           result.value = serializers.deserialize(value,
-                  specifiedType: const FullType(_i2.GThermostatMode))
-              as _i2.GThermostatMode;
+              specifiedType: const FullType(_i2.GFanMode)) as _i2.GFanMode;
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-                  specifiedType: const FullType(_i2.GThermostatMode))
-              as _i2.GThermostatMode?;
+              specifiedType: const FullType(_i2.GFanMode)) as _i2.GFanMode?;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -1713,8 +1710,8 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
   @override
   final String G__typename;
   @override
-  final GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
-      mode;
+  final GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
+      fanMode;
 
   factory _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state(
           [void Function(
@@ -1725,16 +1722,16 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
           .build();
 
   _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state._(
-      {required this.G__typename, required this.mode})
+      {required this.G__typename, required this.fanMode})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
         'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state',
         'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        mode,
+        fanMode,
         'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state',
-        'mode');
+        'fanMode');
   }
 
   @override
@@ -1757,12 +1754,12 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
     return other
             is GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state &&
         G__typename == other.G__typename &&
-        mode == other.mode;
+        fanMode == other.fanMode;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, G__typename.hashCode), mode.hashCode));
+    return $jf($jc($jc(0, G__typename.hashCode), fanMode.hashCode));
   }
 
   @override
@@ -1770,7 +1767,7 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
     return (newBuiltValueToStringHelper(
             'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state')
           ..add('G__typename', G__typename)
-          ..add('mode', mode))
+          ..add('fanMode', fanMode))
         .toString();
   }
 }
@@ -1787,15 +1784,15 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder?
-      _mode;
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder
-      get mode => _$this._mode ??=
-          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder();
-  set mode(
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder?
-              mode) =>
-      _$this._mode = mode;
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder?
+      _fanMode;
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder
+      get fanMode => _$this._fanMode ??=
+          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder();
+  set fanMode(
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder?
+              fanMode) =>
+      _$this._fanMode = fanMode;
 
   GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_stateBuilder() {
     GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state
@@ -1807,7 +1804,7 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _mode = $v.mode.toBuilder();
+      _fanMode = $v.fanMode.toBuilder();
       _$v = null;
     }
     return this;
@@ -1843,12 +1840,12 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
                   G__typename,
                   'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state',
                   'G__typename'),
-              mode: mode.build());
+              fanMode: fanMode.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'mode';
-        mode.build();
+        _$failedField = 'fanMode';
+        fanMode.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state',
@@ -1862,53 +1859,53 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
   }
 }
 
-class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
-    extends GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode {
+class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
+    extends GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode {
   @override
   final String G__typename;
   @override
-  final GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported?
+  final GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported?
       reported;
   @override
-  final GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired?
+  final GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired?
       desired;
 
-  factory _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode(
+  factory _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode(
           [void Function(
-                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder)?
+                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder)?
               updates]) =>
-      (new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder()
+      (new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder()
             ..update(updates))
           .build();
 
-  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode._(
+  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode._(
       {required this.G__typename, this.reported, this.desired})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
-        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode',
+        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode',
         'G__typename');
   }
 
   @override
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
       rebuild(
               void Function(
-                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder)
+                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder)
                   updates) =>
           (toBuilder()..update(updates)).build();
 
   @override
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder
       toBuilder() =>
-          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder()
+          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder()
             ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other
-            is GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode &&
+            is GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode &&
         G__typename == other.G__typename &&
         reported == other.reported &&
         desired == other.desired;
@@ -1923,7 +1920,7 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode')
+            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode')
           ..add('G__typename', G__typename)
           ..add('reported', reported)
           ..add('desired', desired))
@@ -1931,44 +1928,44 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
   }
 }
 
-class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder
+class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder
     implements
         Builder<
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode,
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder> {
-  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode?
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode,
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder> {
+  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode?
       _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder?
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder?
       _reported;
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder
       get reported => _$this._reported ??=
-          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder();
+          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder();
   set reported(
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder?
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder?
               reported) =>
       _$this._reported = reported;
 
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder?
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder?
       _desired;
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder
       get desired => _$this._desired ??=
-          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder();
+          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder();
   set desired(
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder?
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder?
               desired) =>
       _$this._desired = desired;
 
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder() {
-    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder() {
+    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
         ._initializeBuilder(this);
   }
 
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
@@ -1982,33 +1979,33 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
 
   @override
   void replace(
-      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
           other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other
-        as _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode;
+        as _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode;
   }
 
   @override
   void update(
       void Function(
-              GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder)?
+              GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
       build() {
-    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
         _$result;
     try {
       _$result = _$v ??
-          new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+          new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
                   ._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
                   G__typename,
-                  'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode',
+                  'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode',
                   'G__typename'),
               reported: _reported?.build(),
               desired: _desired?.build());
@@ -2021,7 +2018,7 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
         _desired?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode',
+            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode',
             _$failedField,
             e.toString());
       }
@@ -2032,26 +2029,26 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
   }
 }
 
-class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
-    extends GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported {
+class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
+    extends GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported {
   @override
   final String G__typename;
   @override
-  final _i2.GThermostatMode value;
+  final _i2.GFanMode value;
   @override
   final _i2.GDateTime sampledAt;
   @override
   final _i2.GDateTime createdAt;
 
-  factory _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported(
+  factory _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported(
           [void Function(
-                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder)?
+                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder)?
               updates]) =>
-      (new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder()
+      (new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder()
             ..update(updates))
           .build();
 
-  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported._(
+  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported._(
       {required this.G__typename,
       required this.value,
       required this.sampledAt,
@@ -2059,41 +2056,41 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
-        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported',
+        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported',
         'G__typename');
     BuiltValueNullFieldError.checkNotNull(
         value,
-        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported',
+        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported',
         'value');
     BuiltValueNullFieldError.checkNotNull(
         sampledAt,
-        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported',
+        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported',
         'sampledAt');
     BuiltValueNullFieldError.checkNotNull(
         createdAt,
-        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported',
+        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported',
         'createdAt');
   }
 
   @override
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
       rebuild(
               void Function(
-                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder)
+                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder)
                   updates) =>
           (toBuilder()..update(updates)).build();
 
   @override
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder
       toBuilder() =>
-          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder()
+          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder()
             ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other
-            is GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported &&
+            is GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported &&
         G__typename == other.G__typename &&
         value == other.value &&
         sampledAt == other.sampledAt &&
@@ -2111,7 +2108,7 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported')
+            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported')
           ..add('G__typename', G__typename)
           ..add('value', value)
           ..add('sampledAt', sampledAt)
@@ -2120,21 +2117,21 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
   }
 }
 
-class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder
+class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder
     implements
         Builder<
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported,
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder> {
-  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported?
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported,
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder> {
+  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported?
       _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.GThermostatMode? _value;
-  _i2.GThermostatMode? get value => _$this._value;
-  set value(_i2.GThermostatMode? value) => _$this._value = value;
+  _i2.GFanMode? _value;
+  _i2.GFanMode? get value => _$this._value;
+  set value(_i2.GFanMode? value) => _$this._value = value;
 
   _i2.GDateTimeBuilder? _sampledAt;
   _i2.GDateTimeBuilder get sampledAt =>
@@ -2148,12 +2145,12 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder() {
-    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder() {
+    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
         ._initializeBuilder(this);
   }
 
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
@@ -2168,37 +2165,37 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
 
   @override
   void replace(
-      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
           other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other
-        as _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported;
+        as _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported;
   }
 
   @override
   void update(
       void Function(
-              GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder)?
+              GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
       build() {
-    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
         _$result;
     try {
       _$result = _$v ??
-          new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+          new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
                   ._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
                   G__typename,
-                  'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported',
+                  'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported',
                   'G__typename'),
               value: BuiltValueNullFieldError.checkNotNull(
                   value,
-                  'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported',
+                  'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported',
                   'value'),
               sampledAt: sampledAt.build(),
               createdAt: createdAt.build());
@@ -2211,7 +2208,7 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
         createdAt.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported',
+            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported',
             _$failedField,
             e.toString());
       }
@@ -2222,26 +2219,26 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
   }
 }
 
-class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
-    extends GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired {
+class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
+    extends GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired {
   @override
   final String G__typename;
   @override
-  final _i2.GThermostatMode value;
+  final _i2.GFanMode value;
   @override
-  final _i2.GThermostatMode? delta;
+  final _i2.GFanMode? delta;
   @override
   final _i2.GDateTime updatedAt;
 
-  factory _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired(
+  factory _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired(
           [void Function(
-                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder)?
+                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder)?
               updates]) =>
-      (new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder()
+      (new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder()
             ..update(updates))
           .build();
 
-  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired._(
+  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired._(
       {required this.G__typename,
       required this.value,
       this.delta,
@@ -2249,37 +2246,37 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
-        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired',
+        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired',
         'G__typename');
     BuiltValueNullFieldError.checkNotNull(
         value,
-        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired',
+        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired',
         'value');
     BuiltValueNullFieldError.checkNotNull(
         updatedAt,
-        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired',
+        'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired',
         'updatedAt');
   }
 
   @override
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
       rebuild(
               void Function(
-                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder)
+                      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder)
                   updates) =>
           (toBuilder()..update(updates)).build();
 
   @override
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder
       toBuilder() =>
-          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder()
+          new GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder()
             ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other
-            is GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired &&
+            is GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired &&
         G__typename == other.G__typename &&
         value == other.value &&
         delta == other.delta &&
@@ -2296,7 +2293,7 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired')
+            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired')
           ..add('G__typename', G__typename)
           ..add('value', value)
           ..add('delta', delta)
@@ -2305,25 +2302,25 @@ class _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_trai
   }
 }
 
-class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder
+class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder
     implements
         Builder<
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired,
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder> {
-  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired?
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired,
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder> {
+  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired?
       _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.GThermostatMode? _value;
-  _i2.GThermostatMode? get value => _$this._value;
-  set value(_i2.GThermostatMode? value) => _$this._value = value;
+  _i2.GFanMode? _value;
+  _i2.GFanMode? get value => _$this._value;
+  set value(_i2.GFanMode? value) => _$this._value = value;
 
-  _i2.GThermostatMode? _delta;
-  _i2.GThermostatMode? get delta => _$this._delta;
-  set delta(_i2.GThermostatMode? delta) => _$this._delta = delta;
+  _i2.GFanMode? _delta;
+  _i2.GFanMode? get delta => _$this._delta;
+  set delta(_i2.GFanMode? delta) => _$this._delta = delta;
 
   _i2.GDateTimeBuilder? _updatedAt;
   _i2.GDateTimeBuilder get updatedAt =>
@@ -2331,12 +2328,12 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
   set updatedAt(_i2.GDateTimeBuilder? updatedAt) =>
       _$this._updatedAt = updatedAt;
 
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder() {
-    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder() {
+    GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
         ._initializeBuilder(this);
   }
 
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
@@ -2351,37 +2348,37 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
 
   @override
   void replace(
-      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
           other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other
-        as _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired;
+        as _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired;
   }
 
   @override
   void update(
       void Function(
-              GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder)?
+              GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+  _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
       build() {
-    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+    _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
         _$result;
     try {
       _$result = _$v ??
-          new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+          new _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
                   ._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
                   G__typename,
-                  'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired',
+                  'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired',
                   'G__typename'),
               value: BuiltValueNullFieldError.checkNotNull(
                   value,
-                  'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired',
+                  'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired',
                   'value'),
               delta: delta,
               updatedAt: updatedAt.build());
@@ -2392,7 +2389,7 @@ class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
         updatedAt.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired',
+            'GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired',
             _$failedField,
             e.toString());
       }

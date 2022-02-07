@@ -272,8 +272,8 @@ abstract class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_devi
       b..G__typename = 'ThermostatSettingState';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
-      get mode;
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
+      get fanMode;
   static Serializer<
           GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state>
       get serializer =>
@@ -289,117 +289,117 @@ abstract class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_devi
           json);
 }
 
-abstract class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+abstract class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
     implements
         Built<
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode,
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder> {
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode._();
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode,
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder> {
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode._();
 
-  factory GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode(
+  factory GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode(
           [Function(
-                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder
+                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder
                       b)
               updates]) =
-      _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode;
+      _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode;
 
   static void _initializeBuilder(
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_modeBuilder
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanModeBuilder
               b) =>
-      b..G__typename = 'ThermostatSettingStateModeField';
+      b..G__typename = 'ThermostatSettingStateFanModeField';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported?
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported?
       get reported;
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired?
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired?
       get desired;
   static Serializer<
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode>
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode>
       get serializer =>
-          _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateModeSerializer;
+          _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateFanModeSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
           .serializer,
       this) as Map<String, dynamic>);
-  static GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode?
+  static GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
               .serializer,
           json);
 }
 
-abstract class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+abstract class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
     implements
         Built<
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported,
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder> {
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported._();
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported,
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder> {
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported._();
 
-  factory GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported(
+  factory GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported(
           [Function(
-                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder
+                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder
                       b)
               updates]) =
-      _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported;
+      _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported;
 
   static void _initializeBuilder(
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reportedBuilder
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reportedBuilder
               b) =>
-      b..G__typename = 'ThermostatSettingStateReportedMode';
+      b..G__typename = 'ThermostatSettingStateReportedFanMode';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.GThermostatMode get value;
+  _i2.GFanMode get value;
   _i2.GDateTime get sampledAt;
   _i2.GDateTime get createdAt;
   static Serializer<
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported>
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported>
       get serializer =>
-          _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateModeReportedSerializer;
+          _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateFanModeReportedSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
           .serializer,
       this) as Map<String, dynamic>);
-  static GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported?
+  static GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_reported
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
               .serializer,
           json);
 }
 
-abstract class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+abstract class GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
     implements
         Built<
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired,
-            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder> {
-  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired._();
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired,
+            GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder> {
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired._();
 
-  factory GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired(
+  factory GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired(
           [Function(
-                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder
+                  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder
                       b)
               updates]) =
-      _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired;
+      _$GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired;
 
   static void _initializeBuilder(
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desiredBuilder
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desiredBuilder
               b) =>
-      b..G__typename = 'ThermostatSettingStateDesiredMode';
+      b..G__typename = 'ThermostatSettingStateDesiredFanMode';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.GThermostatMode get value;
-  _i2.GThermostatMode? get delta;
+  _i2.GFanMode get value;
+  _i2.GFanMode? get delta;
   _i2.GDateTime get updatedAt;
   static Serializer<
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired>
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired>
       get serializer =>
-          _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateModeDesiredSerializer;
+          _$gmakeSetFanModeRequestDataActionThermostatSettingSetFanModeDeviceTraitsAsThermostatSettingDeviceTraitStateFanModeDesiredSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
           .serializer,
       this) as Map<String, dynamic>);
-  static GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired?
+  static GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_mode_desired
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
               .serializer,
           json);
 }
