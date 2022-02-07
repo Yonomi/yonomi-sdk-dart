@@ -1,7 +1,7 @@
 
 
 
-# Property&lt;T> class
+# ThermostatMode class
 
 
 
@@ -14,21 +14,20 @@
 
 
 
+**Inheritance**
+
+- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
+- [State](../yonomi-sdk/State-class.md)&lt;[AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)>
+- ThermostatMode
 
 
 
-**Implementers**
-
-- [AvailableFanModes](../yonomi-sdk/AvailableFanModes-class.md)
-- [AvailableThermostatModes](../yonomi-sdk/AvailableThermostatModes-class.md)
-- [SupportsDiscreteOnOff](../yonomi-sdk/SupportsDiscreteOnOff-class.md)
-- [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)
 
 
 
 ## Constructors
 
-[Property](../yonomi-sdk/Property/Property.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, T value)
+[ThermostatMode](../yonomi-sdk/ThermostatMode/ThermostatMode.md) ([AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md) value)
 
     
 
@@ -44,12 +43,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/Property/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](../yonomi-sdk/State/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_final_
+_final, inherited_
 
 
 
@@ -62,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [value](../yonomi-sdk/Property/value.md) &#8594; T
+##### [value](../yonomi-sdk/State/value.md) &#8594; [AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)
 
 
 
    
-_final_
+_final, inherited_
 
 
 
