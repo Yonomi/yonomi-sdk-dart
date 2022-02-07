@@ -304,8 +304,7 @@ void main() {
     expect(convertedValue.name, 'lock');
 
     final lockProperties = (convertedValue).properties;
-    expect(
-        lockProperties.whereType<SupportsIsJammed>().first.value, equals(true));
+    expect(lockProperties[LockPropertyNames.supportsIsJammed], equals(true));
   });
 
   test('''#1. responseToDeviceTraitConverter maps single Power
@@ -394,7 +393,7 @@ void main() {
     expect(convertedValue.first.name, 'power');
 
     final powerProperties = (convertedValue.first as PowerTrait).properties;
-    expect(powerProperties.whereType<SupportsDiscreteOnOff>().first.value,
+    expect(powerProperties[PowerPropertyNames.supportsDiscreteOnOff],
         equals(true));
   });
 

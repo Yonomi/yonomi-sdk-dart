@@ -79,9 +79,10 @@ class LockRepository {
         trait
             is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait ||
         trait is GgetLockData_device_traits__asLockDeviceTrait) {
-      final properties = [
-        SupportsIsJammed(trait.properties.supportsIsJammed ?? false)
-      ];
+      final supportsIsJammed = trait.properties.supportsIsJammed ?? false;
+      final properties = {
+        LockPropertyNames.supportsIsJammed: supportsIsJammed,
+      };
 
       return LockTrait(
           IsLocked(trait.state.isLocked.reported?.value ?? false), properties);
@@ -96,14 +97,19 @@ class IsLocked extends State<bool> {
 }
 
 class LockTrait extends Trait {
-  final defaultProperties = [SupportsIsJammed(false)];
-  LockTrait(State state, [List<Property>? properties])
-      : super('lock', state, properties ?? [SupportsIsJammed(false)]);
+  static final defaultProperties = {
+    LockPropertyNames.supportsIsJammed: false,
+  };
+
+  LockTrait(State state, [LockProperties? properties])
+      : super('lock', state, properties ?? defaultProperties);
 }
 
-class SupportsIsJammed extends Property<bool> {
-  SupportsIsJammed(bool value) : super('supportsIsJammed', value);
+enum LockPropertyNames {
+  supportsIsJammed,
 }
+
+typedef LockProperties = Map<LockPropertyNames, dynamic>;
 
 class AddStateToLockQuery extends ast.TransformingVisitor {
   late final supportsIsJammed;

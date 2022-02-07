@@ -112,7 +112,7 @@ class Device {
 abstract class Trait {
   late final String name;
   late final State state;
-  late final List<Property> properties;
+  late final Map<dynamic, dynamic> properties;
 
   Trait(this.name, this.state, this.properties);
 }
@@ -128,13 +128,6 @@ class UnknownState extends State<String> {
   UnknownState() : super('Unknown', 'Unknown');
 }
 
-abstract class Property<T> {
-  final String name;
-  final T value;
-
-  Property(this.name, this.value);
-}
-
 class UnknownTrait extends Trait {
-  UnknownTrait(String name) : super(name, UnknownState(), []);
+  UnknownTrait(String name) : super(name, UnknownState(), {});
 }

@@ -20,5 +20,5 @@ class BatteryLevel extends State<int> {
 }
 
 class BatteryLevelTrait extends Trait {
-  BatteryLevelTrait(State state) : super('battery_level', state, []);
+  BatteryLevelTrait(State state) : super('battery_level', state, {});
 }

@@ -1,6 +1,7 @@
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/thermostat/get_properties/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/get_properties/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.req.gql.dart';
@@ -96,6 +97,19 @@ class ThermostatRepository {
   }
 }
 
+enum ThermostatPropertyNames {
+  availableThermostatModes,
+  availableFanModes,
+  heatSetPointRange,
+  coolSetPointRange,
+  allowedTargetTemperatureModes,
+  allowedTargetTemperatureRangeModes
+}
+
+typedef ThermostatMode = GThermostatMode;
+
+typedef ThermostatProperties = Map<ThermostatPropertyNames, dynamic>;
+
 class TargetTemperature extends State<double?> {
   TargetTemperature(double? value) : super('TargetTemperature', value);
 }
@@ -103,5 +117,5 @@ class TargetTemperature extends State<double?> {
 class ThermostatTrait extends Trait {
   ThermostatTrait(
     State state,
-  ) : super('thermostat_setting', state, []);
+  ) : super('thermostat_setting', state, {});
 }

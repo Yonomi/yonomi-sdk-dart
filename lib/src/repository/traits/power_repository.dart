@@ -27,9 +27,11 @@ class PowerRepository {
     if (trait is GgetDeviceData_device_traits__asPowerDeviceTrait ||
         trait
             is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait) {
-      final properties = [
-        SupportsDiscreteOnOff(trait.properties.supportsDiscreteOnOff ?? false)
-      ];
+      final supportsDiscreteOnOff = trait.properties.supportsDiscreteOnOff;
+      final properties = {
+        PowerPropertyNames.supportsDiscreteOnOff: supportsDiscreteOnOff,
+      };
+
       return PowerTrait(
           IsOnOff(trait.state.isOn.reported?.value ?? false), properties);
     } else {
@@ -38,15 +40,16 @@ class PowerRepository {
   }
 }
 
+enum PowerPropertyNames { supportsDiscreteOnOff }
+
+typedef PowerProperties = Map<PowerPropertyNames, dynamic>;
+
 class IsOnOff extends State<bool> {
   IsOnOff(bool value) : super('Power', value);
 }
 
-class SupportsDiscreteOnOff extends Property<bool> {
-  SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
-}
-
 class PowerTrait extends Trait {
-  PowerTrait(State state, List<Property> properties)
-      : super('power', state, properties);
+  static final defaultProperties = {};
+  PowerTrait(State state, [PowerProperties? properties])
+      : super('power', state, properties ?? defaultProperties);
 }
