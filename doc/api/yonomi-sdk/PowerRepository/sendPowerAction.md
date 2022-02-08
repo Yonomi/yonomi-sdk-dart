@@ -30,7 +30,8 @@ static Future<void> sendPowerAction(Request request, String id, bool onOff,
     b..vars.deviceId = id;
     b..vars.onOff = onOff;
   });
-  BaseRepository.mutate(request, req, injectedClient: injectedClient);
+  BaseRepository.mutate(request, req.operation, req.vars.toJson(),
+      injectedClient: injectedClient);
 }
 ```
 
