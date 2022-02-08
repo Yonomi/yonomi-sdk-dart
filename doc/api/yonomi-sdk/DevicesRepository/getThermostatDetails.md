@@ -28,9 +28,8 @@ static Future<Device> getThermostatDetails(Request request, String id) async {
   final device = await getDeviceDetails(request, id);
   // For now thermostatDeviceTrait is device with only lock trait so stripping
   // out all the other traits
-  final thermostatDeviceTrait = device.traits
-      .where((element) => element.name == 'thermostatsetting')
-      .toList();
+  final thermostatDeviceTrait =
+      device.traits.whereType<ThermostatTrait>().toList();
   final thermostatDevice = Device(
       device.id,
       device.displayName,

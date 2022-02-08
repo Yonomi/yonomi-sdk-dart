@@ -2,6 +2,7 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 
 void main() {
   test('responseToDeviceTraitConverter converts mixed trait device', () {
@@ -459,7 +460,7 @@ void main() {
   test(
       '''#getThermostatTrait should throw argumentError if trait object is not correct type''',
       () {
-    expect(() => DevicesRepository.getThermostatTrait(null),
+    expect(() => ThermostatRepository.getThermostatTrait(null),
         throwsA(isA<ArgumentError>()));
   });
 

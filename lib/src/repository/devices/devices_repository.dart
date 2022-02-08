@@ -4,6 +4,8 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gq
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
@@ -13,14 +15,7 @@ typedef AvailableFanMode = GFanMode;
 
 class DevicesRepository {
   static Future<List<Device>> getDevices(Request request) async {
-    Link client = GraphLinkCreator.create(request);
-    final req = GgetDevices();
-    final res =
-        await client.request(gql.Request(operation: req.operation)).first;
-    final errors = res.errors;
-    if (errors != null && errors.isNotEmpty) {
-      throw errors.first;
-    }
+    final res = await BaseRepository.fetch(request, GgetDevices().operation);
     return GgetDevicesData.fromJson(res.data!)!
         .me
         .devices
@@ -46,8 +41,8 @@ class DevicesRepository {
             gql.Request(operation: req.operation, variables: req.vars.toJson()))
         .first;
     final errors = res.errors;
-    if (errors != null && errors.isNotEmpty) {
-      throw errors.first;
+    if (errors?.isNotEmpty == true) {
+      throw errors!.first;
     }
 
     final device = GgetDeviceData.fromJson(res.data!)!.device;
@@ -67,9 +62,8 @@ class DevicesRepository {
     final device = await getDeviceDetails(request, id);
     // For now thermostatDeviceTrait is device with only lock trait so stripping
     // out all the other traits
-    final thermostatDeviceTrait = device.traits
-        .where((element) => element.name == 'thermostatsetting')
-        .toList();
+    final thermostatDeviceTrait =
+        device.traits.whereType<ThermostatTrait>().toList();
     final thermostatDevice = Device(
         device.id,
         device.displayName,
@@ -110,10 +104,10 @@ class DevicesRepository {
       return [];
     }
 
-    return deviceTraits.map((trait) {
+    return deviceTraits.map<Trait>((trait) {
       switch (trait.name) {
         case GTraitName.THERMOSTAT_SETTING:
-          return getThermostatTrait(trait);
+          return ThermostatRepository.getThermostatTrait(trait);
         case GTraitName.LOCK:
           return getLockTrait(trait);
         case GTraitName.BATTERY_LEVEL:
@@ -124,22 +118,6 @@ class DevicesRepository {
           return UnknownTrait(trait.name.toString());
       }
     }).toList();
-  }
-
-  static ThermostatTrait getThermostatTrait(dynamic trait) {
-    if (trait is GgetDeviceData_device_traits__asThermostatSettingDeviceTrait ||
-        trait
-            is GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait) {
-      final Set<AvailableFanMode> availableFanMode =
-          new Set<AvailableFanMode>.from(trait.properties.availableFanModes);
-
-      return ThermostatTrait({
-        TargetTemperature(trait.state.targetTemperature.reported?.value ?? 0.0),
-        FanMode(trait.state.fanMode.reported?.value.toString() ?? 'Unknown'),
-      }, availableFanModes: availableFanMode);
-    } else {
-      throw ArgumentError.value(trait);
-    }
   }
 
   static LockTrait getLockTrait(dynamic trait) {
@@ -232,14 +210,6 @@ class IsLocked extends State<bool> {
   IsLocked(bool value) : super('LockUnlock', value);
 }
 
-class TargetTemperature extends State<double?> {
-  TargetTemperature(double? value) : super('TargetTemperature', value);
-}
-
-class FanMode extends State<String> {
-  FanMode(String value) : super('FanMode', value);
-}
-
 class BatteryLevel extends State<int> {
   BatteryLevel(int value) : super('BatteryLevel', value);
 }
@@ -273,13 +243,6 @@ class PowerTrait extends Trait {
   final SupportsDiscreteOnOff supportsDiscreteOnOff;
   PowerTrait(State state, {required this.supportsDiscreteOnOff})
       : super('power', {state}, {supportsDiscreteOnOff});
-}
-
-class ThermostatTrait extends Trait {
-  final Set<AvailableFanMode> availableFanModes;
-  ThermostatTrait(Set<State> states,
-      {this.availableFanModes = const <AvailableFanMode>{}})
-      : super('thermostat_setting', states, availableFanModes);
 }
 
 class UnknownTrait extends Trait {

@@ -27,18 +27,14 @@
 static Future<String> removeLinkedAccount(
     String linkedAccountId, Request request,
     {Link? graphqlLink}) async {
-  if (graphqlLink == null) graphqlLink = GraphLinkCreator.create(request);
+  graphqlLink = graphqlLink ?? GraphLinkCreator.create(request);
 
-  var req =
+  final req =
       GremoveLinkedAccount((b) => b..vars.linkedAccountId = linkedAccountId);
-  var res = await graphqlLink
-      .request(
-          gql.Request(operation: req.operation, variables: req.vars.toJson()))
-      .first;
-  var errors = res.errors;
-  if (errors != null && errors.isNotEmpty) {
-    throw errors.first;
-  }
+  final res =
+      await BaseRepository.mutate(
+      request, req.operation, req.vars.toJson(),
+      injectedClient: graphqlLink);
 
   return GremoveLinkedAccountData_removeLinkedAccount_me.fromJson(res.data!)!
       .id;

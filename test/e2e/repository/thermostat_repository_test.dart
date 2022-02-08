@@ -2,13 +2,13 @@ import 'package:test/test.dart';
 
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
+import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
 import '../../utils/test_fixtures.dart';
 
 void main() {
-  late String testThermostatId, testLockId;
+  late String testThermostatId;
 
   late yoRequest.Request request;
 
@@ -18,8 +18,6 @@ void main() {
     request = tester.buildRequest();
 
     testThermostatId = await tester.getThermostatDeviceId(request);
-
-    testLockId = await tester.getLockUnlockDeviceId(request);
   });
 
   test('getDevices returns device list for all traits', () async {
@@ -44,33 +42,24 @@ void main() {
     final device =
         await DevicesRepository.getThermostatDetails(request, testThermostatId);
     expect(device, isNotNull);
+    expect(device.traits.whereType<ThermostatTrait>(), isNotEmpty);
   });
 
-  test('getDeviceDetails on a Lock Device returns Lock-relevant details',
-      () async {
-    final device =
-        await DevicesRepository.getDeviceDetails(request, testLockId);
-    expect(device, isNotNull);
-    expect(device.traits.first.runtimeType, LockTrait);
-  });
-
-  test('getLockDetails gets lock details', () async {
-    final device = await DevicesRepository.getLockDetails(request, testLockId);
-    expect(device, isNotNull);
-  });
-
-  test('deviceAction lock executes as expected', () async {
-    await LockRepository.sendLockUnlockAction(request, testLockId, false);
+  test('setPoint sets thermostat action', () async {
+    await ThermostatRepository.setPointThermostat(
+        request, testThermostatId, 22);
     expect(true, isTrue);
   });
 
-  test('lock trait deviceAction lock executes as expected', () async {
-    await LockRepository.sendLockUnlockAction(request, testLockId, false);
+  test('setMode sets mode', () async {
+    await ThermostatRepository.setMode(
+        request, testThermostatId, GThermostatMode.HEAT);
     expect(true, isTrue);
   });
 
-  test('responseToDeviceTraitConverter maps empty response to empty list', () {
-    final convertedValue = DevicesRepository.responseToDeviceTraitConverter([]);
-    expect(convertedValue, isEmpty);
+  test('setFanMode sets fan mode', () async {
+    await ThermostatRepository.setFanMode(
+        request, testThermostatId, AvailableFanMode.CIRCULATE);
+    expect(true, isTrue);
   });
 }

@@ -10,7 +10,7 @@
 
 
 
-FanMode([String](https://api.flutter.dev/flutter/dart-core/String-class.html) value)
+FanMode([AvailableFanMode](../../yonomi-sdk/AvailableFanMode.md) value)
 
 
 
@@ -19,7 +19,7 @@ FanMode([String](https://api.flutter.dev/flutter/dart-core/String-class.html) va
 ## Implementation
 
 ```dart
-FanMode(String value) : super('FanMode', value);
+FanMode(AvailableFanMode value) : super('fanMode', value);
 ```
 
 

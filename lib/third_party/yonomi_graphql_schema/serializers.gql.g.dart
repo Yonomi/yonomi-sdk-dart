@@ -650,6 +650,34 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GmakePowerActionRequestData_actionPowerSetOn_device_traits__base
           .serializer)
       ..add(GmakePowerActionRequestVars.serializer)
+      ..add(GmakeSetFanModeRequest.serializer)
+      ..add(GmakeSetFanModeRequestData.serializer)
+      ..add(GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode
+          .serializer)
+      ..add(GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device
+          .serializer)
+      ..add(
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait
+              .serializer)
+      ..add(
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_properties
+              .serializer)
+      ..add(
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state
+              .serializer)
+      ..add(
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode
+              .serializer)
+      ..add(
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired
+              .serializer)
+      ..add(
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported
+              .serializer)
+      ..add(
+          GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__base
+              .serializer)
+      ..add(GmakeSetFanModeRequestVars.serializer)
       ..add(GmakeSetModeRequest.serializer)
       ..add(GmakeSetModeRequestData.serializer)
       ..add(GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode
@@ -744,6 +772,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GDeviceDetailsData_traits__asPinCodeCredentialDeviceTrait_state_pinCodeCredentials_reported_value_edges>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GFanMode)]),
+          () => new ListBuilder<GFanMode>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GJSONObject)]),
           () => new ListBuilder<GJSONObject>())
@@ -917,6 +948,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GmakePowerActionRequestData_actionPowerSetOn_device_traits>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits)
+          ]),
+          () => new ListBuilder<
+              GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
