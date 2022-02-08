@@ -30,13 +30,6 @@
  
 
 
-##### [AvailableFanModes](../yonomi-sdk/AvailableFanModes-class.md)
-
-
-
- 
-
-
 ##### [BatteryLevel](../yonomi-sdk/BatteryLevel-class.md)
 
 
