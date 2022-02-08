@@ -30,7 +30,7 @@ static Future<void> setFanMode(
     b..vars.deviceId = id;
     b..vars.fanMode = mode;
   });
-  BaseRepository.mutate(request, req);
+  BaseRepository.mutate(request, req.operation, req.vars.toJson());
 }
 ```
 
