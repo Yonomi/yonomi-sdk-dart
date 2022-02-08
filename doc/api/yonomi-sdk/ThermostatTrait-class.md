@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[ThermostatTrait](../yonomi-sdk/ThermostatTrait/ThermostatTrait.md) ([State](../yonomi-sdk/State-class.md) state)
+[ThermostatTrait](../yonomi-sdk/ThermostatTrait/ThermostatTrait.md) ([State](../yonomi-sdk/State-class.md) state, [[ThermostatProperties](../yonomi-sdk/ThermostatProperties.md)? properties])
 
     
 
@@ -110,6 +110,17 @@ _inherited_
 The equality operator. [...](https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html)  
 _inherited_
 
+
+
+
+## Static Properties
+
+##### [defaultProperties](../yonomi-sdk/ThermostatTrait/defaultProperties.md) &#8594; [Map](https://api.flutter.dev/flutter/dart-core/Map-class.html)&lt;[ThermostatPropertyNames](../yonomi-sdk/ThermostatPropertyNames.md), [Null](https://api.flutter.dev/flutter/dart-core/Null-class.html)>
+
+
+
+   
+_final_
 
 
 

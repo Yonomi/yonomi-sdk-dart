@@ -10,7 +10,7 @@
 
 
 
-ThermostatTrait([State](../../yonomi-sdk/State-class.md) state)
+ThermostatTrait([State](../../yonomi-sdk/State-class.md) state, [[ThermostatProperties](../../yonomi-sdk/ThermostatProperties.md)? properties])
 
 
 
@@ -19,9 +19,12 @@ ThermostatTrait([State](../../yonomi-sdk/State-class.md) state)
 ## Implementation
 
 ```dart
-ThermostatTrait(
-  State state,
-) : super('thermostat_setting', state, {});
+ThermostatTrait(State state, [ThermostatProperties? properties])
+    : super(
+        'thermostat_setting',
+        state,
+        properties ?? defaultProperties,
+      );
 ```
 
 
