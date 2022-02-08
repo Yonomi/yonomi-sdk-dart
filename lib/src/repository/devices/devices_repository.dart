@@ -4,6 +4,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gq
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
@@ -14,14 +15,7 @@ typedef AvailableFanMode = GFanMode;
 
 class DevicesRepository {
   static Future<List<Device>> getDevices(Request request) async {
-    Link client = GraphLinkCreator.create(request);
-    final req = GgetDevices();
-    final res =
-        await client.request(gql.Request(operation: req.operation)).first;
-    final errors = res.errors;
-    if (errors != null && errors.isNotEmpty) {
-      throw errors.first;
-    }
+    final res = await BaseRepository.fetch(request, GgetDevices().operation);
     return GgetDevicesData.fromJson(res.data!)!
         .me
         .devices

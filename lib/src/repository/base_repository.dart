@@ -11,15 +11,29 @@ class BaseRepository {
     Link client = injectedClient ?? GraphLinkCreator.create(request);
     final res = await client
         .request(
-          gql.Request(
-              operation: operation, variables: vars),
+          gql.Request(operation: operation, variables: vars),
         )
         .first;
-    final errors = res.errors;
+
+    _handleErrors(res.errors);
+
+    return res;
+  }
+
+  static Future<gql.Response> fetch(
+      yoRequest.Request request, Operation operation,
+      {Link? injectedClient}) async {
+    Link client = injectedClient ?? GraphLinkCreator.create(request);
+    final res = await client.request(gql.Request(operation: operation)).first;
+
+    _handleErrors(res.errors);
+
+    return res;
+  }
+
+  static _handleErrors(List<GraphQLError>? errors) {
     if (errors?.isNotEmpty == true) {
       throw errors!.first;
     }
-
-    return res;
   }
 }

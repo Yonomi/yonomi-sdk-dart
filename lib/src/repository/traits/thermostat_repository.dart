@@ -55,11 +55,11 @@ class ThermostatRepository {
 }
 
 class TargetTemperature extends State<double?> {
-  TargetTemperature(double? value) : super('TargetTemperature', value);
+  TargetTemperature(double? value) : super('targetTemperature', value);
 }
 
 class FanMode extends State<AvailableFanMode> {
-  FanMode(AvailableFanMode value) : super('FanMode', value);
+  FanMode(AvailableFanMode value) : super('fanMode', value);
 }
 
 class ThermostatTrait extends Trait {
