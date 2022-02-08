@@ -259,11 +259,6 @@ class SupportsDiscreteOnOff extends Property<bool> {
   SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
 }
 
-class AvailableFanModes extends Property<Set<AvailableFanMode>> {
-  AvailableFanModes(Set<AvailableFanMode> modes)
-      : super('availableFanModes', modes);
-}
-
 class SupportsIsJammed extends Property<bool> {
   SupportsIsJammed(bool value) : super('supportsIsJammed', value);
 }
