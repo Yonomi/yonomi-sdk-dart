@@ -32,7 +32,7 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.targetTemperature = temperature;
     });
-    BaseRepository.mutate(request, req);
+    BaseRepository.mutate(request, req.operation, req.vars.toJson());
   }
 
   static Future<void> setMode(
@@ -41,7 +41,7 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.mode = mode;
     });
-    BaseRepository.mutate(request, req);
+    BaseRepository.mutate(request, req.operation, req.vars.toJson());
   }
 
   static Future<void> setFanMode(
@@ -50,7 +50,7 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.fanMode = mode;
     });
-    BaseRepository.mutate(request, req);
+    BaseRepository.mutate(request, req.operation, req.vars.toJson());
   }
 }
 

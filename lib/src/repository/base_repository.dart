@@ -6,14 +6,13 @@ import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 
 class BaseRepository {
   static Future<Response> mutate(
-      yoRequest.Request request, dynamic actionRequest,
+      yoRequest.Request request, Operation operation, Map<String, dynamic> vars,
       {Link? injectedClient}) async {
     Link client = injectedClient ?? GraphLinkCreator.create(request);
     final res = await client
         .request(
           gql.Request(
-              operation: actionRequest.operation,
-              variables: actionRequest.vars.toJson()),
+              operation: operation, variables: vars),
         )
         .first;
     final errors = res.errors;
