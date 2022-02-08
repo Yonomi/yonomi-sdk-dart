@@ -77,16 +77,6 @@ class ThermostatMode extends State<AvailableThermostatMode> {
   ThermostatMode(AvailableThermostatMode value) : super('mode', value);
 }
 
-class AvailableFanModes extends Property<Set<AvailableFanMode>> {
-  AvailableFanModes(Set<AvailableFanMode> modes)
-      : super('availableFanModes', modes);
-}
-
-class AvailableThermostatModes extends Property<Set<AvailableThermostatMode>> {
-  AvailableThermostatModes(Set<AvailableThermostatMode> modes)
-      : super('availableThermostatModes', modes);
-}
-
 class ThermostatTrait extends Trait {
   final Set<AvailableFanMode> availableFanModes;
   final Set<AvailableThermostatMode> availableThermostatModes;
