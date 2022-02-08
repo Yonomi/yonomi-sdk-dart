@@ -5,7 +5,6 @@ import 'package:yonomi_platform_sdk/src/queries/lock/get_lock_details/query.data
 import 'package:yonomi_platform_sdk/src/queries/lock/get_lock_details/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/lock/make_lock_unlock_action_request/query.req.gql.dart';
 import 'package:gql/ast.dart' as ast;
-import 'package:gql/language.dart' as lang;
 
 import '../../../yonomi-sdk.dart';
 import 'package:gql_exec/gql_exec.dart' as gql;
