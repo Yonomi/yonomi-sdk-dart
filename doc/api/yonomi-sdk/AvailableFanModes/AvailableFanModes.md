@@ -10,7 +10,7 @@
 
 
 
-AvailableFanModes([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../../yonomi-sdk/AvailableFanMode.md)> modes)
+AvailableFanModes([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../../yonomi-sdk/AvailableFanMode.md)> value)
 
 
 
@@ -19,8 +19,8 @@ AvailableFanModes([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html
 ## Implementation
 
 ```dart
-AvailableFanModes(Set<AvailableFanMode> modes)
-    : super('availableFanModes', modes);
+AvailableFanModes(Set<AvailableFanMode> value)
+    : super('availableFanModes', value);
 ```
 
 

@@ -30,6 +30,20 @@
  
 
 
+##### [AvailableFanModes](../yonomi-sdk/AvailableFanModes-class.md)
+
+
+
+ 
+
+
+##### [AvailableThermostatModes](../yonomi-sdk/AvailableThermostatModes-class.md)
+
+
+
+ 
+
+
 ##### [BatteryLevel](../yonomi-sdk/BatteryLevel-class.md)
 
 

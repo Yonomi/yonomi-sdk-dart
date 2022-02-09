@@ -22,8 +22,10 @@ ThermostatTrait([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&
 ThermostatTrait(Set<State> states,
     {this.availableFanModes = const <AvailableFanMode>{},
     this.availableThermostatModes = const <AvailableThermostatMode>{}})
-    : super('thermostat_setting', states,
-          {...availableFanModes, ...availableThermostatModes});
+    : super('thermostat_setting', states, {
+        AvailableFanModes(availableFanModes),
+        AvailableThermostatModes(availableThermostatModes)
+      });
 ```
 
 

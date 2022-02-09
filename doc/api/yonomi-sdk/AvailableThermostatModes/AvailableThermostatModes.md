@@ -10,7 +10,7 @@
 
 
 
-AvailableThermostatModes([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableThermostatMode](../../yonomi-sdk/AvailableThermostatMode.md)> modes)
+AvailableThermostatModes([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableThermostatMode](../../yonomi-sdk/AvailableThermostatMode.md)> value)
 
 
 
@@ -19,8 +19,8 @@ AvailableThermostatModes([Set](https://api.flutter.dev/flutter/dart-core/Set-cla
 ## Implementation
 
 ```dart
-AvailableThermostatModes(Set<AvailableThermostatMode> modes)
-    : super('availableThermostatModes', modes);
+AvailableThermostatModes(Set<AvailableThermostatMode> value)
+    : super('availableThermostatModes', value);
 ```
 
 

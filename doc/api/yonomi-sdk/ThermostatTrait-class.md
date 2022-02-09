@@ -70,7 +70,7 @@ _late, final, inherited_
 
 
 
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)
+##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
 
 
 
@@ -109,7 +109,7 @@ _inherited_
 
 
 
-##### [propertiesWhereType](../yonomi-sdk/Trait/propertiesWhereType.md)&lt;T>() [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;T>
+##### [propertyWhereType](../yonomi-sdk/Trait/propertyWhereType.md)&lt;T extends [Property](../yonomi-sdk/Property-class.md)>() T
 
 
 

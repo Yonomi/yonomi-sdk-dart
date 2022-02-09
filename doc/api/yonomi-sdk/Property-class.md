@@ -19,6 +19,8 @@
 
 **Implementers**
 
+- [AvailableFanModes](../yonomi-sdk/AvailableFanModes-class.md)
+- [AvailableThermostatModes](../yonomi-sdk/AvailableThermostatModes-class.md)
 - [SupportsDiscreteOnOff](../yonomi-sdk/SupportsDiscreteOnOff-class.md)
 - [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)
 

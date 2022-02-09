@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[AvailableFanModes](../yonomi-sdk/AvailableFanModes/AvailableFanModes.md) ([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)> modes)
+[AvailableFanModes](../yonomi-sdk/AvailableFanModes/AvailableFanModes.md) ([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)> value)
 
     
 

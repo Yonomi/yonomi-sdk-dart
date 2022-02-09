@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[AvailableThermostatModes](../yonomi-sdk/AvailableThermostatModes/AvailableThermostatModes.md) ([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)> modes)
+[AvailableThermostatModes](../yonomi-sdk/AvailableThermostatModes/AvailableThermostatModes.md) ([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)> value)
 
     
 
