@@ -9,9 +9,11 @@
     *[<Null safety>](https://dart.dev/null-safety)*
 
 
+
+
 [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableThermostatMode](../../yonomi-sdk/AvailableThermostatMode.md)> availableThermostatModes
   
-_final_
+
 
 
 
@@ -21,10 +23,12 @@ _final_
 ## Implementation
 
 ```dart
-final Set<AvailableThermostatMode> availableThermostatModes;
-
-
+Set<AvailableThermostatMode> get availableThermostatModes =>
+    propertyWhereType<AvailableThermostatModes>()
+        .value
+        .cast<AvailableThermostatMode>();
 ```
+
 
 
 

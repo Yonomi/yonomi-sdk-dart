@@ -9,9 +9,11 @@
     *[<Null safety>](https://dart.dev/null-safety)*
 
 
-[Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../../yonomi-sdk/AvailableFanMode.md)> availableFanModes
+
+
+[Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanModes](../../yonomi-sdk/AvailableFanModes-class.md)> availableFanModes
   
-_final_
+
 
 
 
@@ -21,10 +23,10 @@ _final_
 ## Implementation
 
 ```dart
-final Set<AvailableFanMode> availableFanModes;
-
-
+Set<AvailableFanModes> get availableFanModes =>
+    propertyWhereType<AvailableFanModes>().value.cast<AvailableFanModes>();
 ```
+
 
 
 
