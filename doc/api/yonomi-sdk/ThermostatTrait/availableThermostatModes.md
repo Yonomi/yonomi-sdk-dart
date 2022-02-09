@@ -25,8 +25,7 @@
 ```dart
 Set<AvailableThermostatMode> get availableThermostatModes =>
     propertyWhereType<AvailableThermostatModes>()
-        .value
-        .cast<AvailableThermostatMode>();
+        .value;
 ```
 
 

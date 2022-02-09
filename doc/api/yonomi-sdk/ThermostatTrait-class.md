@@ -34,7 +34,7 @@
 
 ## Properties
 
-##### [availableFanModes](../yonomi-sdk/ThermostatTrait/availableFanModes.md) &#8594; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanModes](../yonomi-sdk/AvailableFanModes-class.md)>
+##### [availableFanModes](../yonomi-sdk/ThermostatTrait/availableFanModes.md) &#8594; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)>
 
 
 

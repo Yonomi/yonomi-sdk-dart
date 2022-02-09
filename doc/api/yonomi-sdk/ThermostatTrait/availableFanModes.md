@@ -11,7 +11,7 @@
 
 
 
-[Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanModes](../../yonomi-sdk/AvailableFanModes-class.md)> availableFanModes
+[Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableFanMode](../../yonomi-sdk/AvailableFanMode.md)> availableFanModes
   
 
 
@@ -23,8 +23,8 @@
 ## Implementation
 
 ```dart
-Set<AvailableFanModes> get availableFanModes =>
-    propertyWhereType<AvailableFanModes>().value.cast<AvailableFanModes>();
+Set<AvailableFanMode> get availableFanModes =>
+    propertyWhereType<AvailableFanModes>().value;
 ```
 
 
