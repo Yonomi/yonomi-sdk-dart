@@ -80,10 +80,11 @@ class AccountRepository {
 
     final req =
         GremoveLinkedAccount((b) => b..vars.linkedAccountId = linkedAccountId);
-    final res =
-        await BaseRepository.mutate(
-        request, req.operation, req.vars.toJson(),
-        injectedClient: graphqlLink);
+    final res = await BaseRepository.mutate(
+      graphqlLink,
+      req.operation,
+      req.vars.toJson(),
+    );
 
     return GremoveLinkedAccountData_removeLinkedAccount_me.fromJson(res.data!)!
         .id;

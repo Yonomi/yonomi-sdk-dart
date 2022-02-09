@@ -5,15 +5,15 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
-import '../gql_client.dart';
-
 class DevicesRepository {
   static Future<List<Device>> getDevices(Request request) async {
-    final res = await BaseRepository.fetch(request, GgetDevices().operation);
+    final link = GraphLinkCreator.create(request);
+    final res = await BaseRepository.fetch(link, GgetDevices().operation);
     return GgetDevicesData.fromJson(res.data!)!
         .me
         .devices

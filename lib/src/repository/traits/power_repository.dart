@@ -6,11 +6,15 @@ import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 class PowerRepository {
   static Future<void> sendPowerAction(Request request, String id, bool onOff,
       {Link? injectedClient}) async {
+    final link = injectedClient ?? GraphLinkCreator.create(request);
     final req = GmakePowerActionRequest((b) {
       b..vars.deviceId = id;
       b..vars.onOff = onOff;
     });
-    BaseRepository.mutate(request, req.operation, req.vars.toJson(),
-        injectedClient: injectedClient);
+    BaseRepository.mutate(
+      link,
+      req.operation,
+      req.vars.toJson(),
+    );
   }
 }

@@ -17,7 +17,8 @@ void main() {
   test(
       "AccountRepository.generateAccountUrl - generates an account linking url",
       () async {
-    var integrationsList = await AccountRepository.getAllIntegrations(request);
+    final integrationsList =
+        await AccountRepository.getAllIntegrations(request);
     Link myClient = GraphLinkCreator.create(request);
     integrationsList.forEach((integration) async {
       String url = await AccountRepository.generateAccountUrl(
@@ -33,7 +34,8 @@ void main() {
       () async {
     Link myClient = GraphLinkCreator.create(request);
 
-    var listOfIntegrations = await AccountRepository.getAllIntegrations(request,
+    final listOfIntegrations = await AccountRepository.getAllIntegrations(
+        request,
         graphLink: myClient);
     expect(listOfIntegrations.isNotEmpty, true);
   });
@@ -42,7 +44,7 @@ void main() {
       () async {
     Link myClient = GraphLinkCreator.create(request);
 
-    var listOfLinkedAccounts =
+    final listOfLinkedAccounts =
         await AccountRepository.getLinkedAccounts(request, graphLink: myClient);
     expect(listOfLinkedAccounts.isNotEmpty, true);
   });

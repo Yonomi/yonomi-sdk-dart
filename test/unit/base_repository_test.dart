@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:gql/ast.dart';
 import 'package:gql_exec/gql_exec.dart';
 import 'package:mockito/mockito.dart';
@@ -18,9 +16,7 @@ void main() {
         ]));
 
     expect(
-        BaseRepository.fetch(yoRequest.Request('', Map<String, String>()),
-            Operation(document: DocumentNode()),
-            injectedClient: link),
+        BaseRepository.fetch(link, Operation(document: DocumentNode())),
         throwsA(isA<GraphQLError>()));
   });
 
@@ -32,9 +28,8 @@ void main() {
         ]));
 
     expect(
-        BaseRepository.mutate(yoRequest.Request('', Map<String, String>()),
-            Operation(document: DocumentNode()), Map<String, dynamic>(),
-            injectedClient: link),
+        BaseRepository.mutate(
+            link, Operation(document: DocumentNode()), Map<String, dynamic>()),
         throwsA(isA<GraphQLError>()));
   });
 }

@@ -5,10 +5,11 @@ import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 class LockRepository {
   static Future<void> sendLockUnlockAction(
       Request request, String id, bool lockUnlock) async {
+    final link = GraphLinkCreator.create(request);
     final req = GmakeLockUnlockActionRequest((b) {
       b..vars.deviceId = id;
       b..vars.lock = lockUnlock;
     });
-    BaseRepository.mutate(request, req.operation, req.vars.toJson());
+    BaseRepository.mutate(link, req.operation, req.vars.toJson());
   }
 }
