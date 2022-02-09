@@ -30,9 +30,10 @@ class ThermostatRepository {
         FanMode(trait.state.fanMode.reported?.value ?? AvailableFanMode.ON),
         ThermostatMode(
             trait.state.mode.reported?.value ?? AvailableThermostatMode.OFF),
-      },
-          availableFanModes: availableFanMode,
-          availableThermostatModes: availableThermostatModes);
+      }, {
+        AvailableFanModes(availableFanMode),
+        AvailableThermostatModes(availableThermostatModes)
+      });
     } else {
       throw ArgumentError.value(trait);
     }
@@ -92,13 +93,13 @@ class AvailableThermostatModes extends Property<Set<AvailableThermostatMode>> {
 }
 
 class ThermostatTrait extends Trait {
-  final Set<AvailableFanMode> availableFanModes;
-  final Set<AvailableThermostatMode> availableThermostatModes;
-  ThermostatTrait(Set<State> states,
-      {this.availableFanModes = const <AvailableFanMode>{},
-      this.availableThermostatModes = const <AvailableThermostatMode>{}})
-      : super('thermostat_setting', states, {
-          AvailableFanModes(availableFanModes),
-          AvailableThermostatModes(availableThermostatModes)
-        });
+  ThermostatTrait(Set<State> states, Set<Property> properties)
+      : super('thermostat_setting', states, properties);
+
+  Set<AvailableFanModes> get availableFanModes =>
+      propertyWhereType<AvailableFanModes>().value.cast<AvailableFanModes>();
+  Set<AvailableThermostatMode> get availableThermostatModes =>
+      propertyWhereType<AvailableThermostatModes>()
+          .value
+          .cast<AvailableThermostatMode>();
 }
