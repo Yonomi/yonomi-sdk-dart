@@ -96,10 +96,9 @@ class ThermostatTrait extends Trait {
   ThermostatTrait(Set<State> states, Set<Property> properties)
       : super('thermostat_setting', states, properties);
 
-  Set<AvailableFanModes> get availableFanModes =>
-      propertyWhereType<AvailableFanModes>().value.cast<AvailableFanModes>();
+  Set<AvailableFanMode> get availableFanModes =>
+      propertyWhereType<AvailableFanModes>().value;
   Set<AvailableThermostatMode> get availableThermostatModes =>
       propertyWhereType<AvailableThermostatModes>()
-          .value
-          .cast<AvailableThermostatMode>();
+          .value;
 }
