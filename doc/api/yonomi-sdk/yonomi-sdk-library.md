@@ -177,6 +177,13 @@
  
 
 
+##### [ThermostatMode](../yonomi-sdk/ThermostatMode-class.md)
+
+
+
+ 
+
+
 ##### [ThermostatRepository](../yonomi-sdk/ThermostatRepository-class.md)
 
 
@@ -237,6 +244,17 @@
 
 
   ##### [AvailableFanMode](../yonomi-sdk/AvailableFanMode.md) = [GFanMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GFanMode-class.md)
+
+
+
+   
+
+
+
+
+
+
+  ##### [AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md) = [GThermostatMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatMode-class.md)
 
 
 

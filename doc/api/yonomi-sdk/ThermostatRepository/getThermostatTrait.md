@@ -31,10 +31,18 @@ static ThermostatTrait getThermostatTrait(dynamic trait) {
     final Set<AvailableFanMode> availableFanMode =
         new Set<AvailableFanMode>.from(trait.properties.availableFanModes);
 
+    final Set<AvailableThermostatMode> availableThermostatModes =
+        new Set<AvailableThermostatMode>.from(
+            trait.properties.availableThermostatModes);
+
     return ThermostatTrait(<State>{
       TargetTemperature(trait.state.targetTemperature.reported?.value ?? 0.0),
       FanMode(trait.state.fanMode.reported?.value ?? AvailableFanMode.ON),
-    }, availableFanModes: availableFanMode);
+      ThermostatMode(
+          trait.state.mode.reported?.value ?? AvailableThermostatMode.OFF),
+    },
+        availableFanModes: availableFanMode,
+        availableThermostatModes: availableThermostatModes);
   } else {
     throw ArgumentError.value(trait);
   }

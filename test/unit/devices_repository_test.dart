@@ -262,22 +262,31 @@ void main() {
         convertedValue.first.stateWhereType<TargetTemperature>().value, 22.0);
     expect(
         convertedValue.first.stateWhereType<IsLocked>(), isA<UnknownState>());
-    expect(
-        thermostatTrait.availableFanModes
-            .firstWhere((mode) => mode.name == 'ON'),
-        isNotNull,
+    expect(thermostatTrait.availableFanModes, contains(AvailableFanMode.ON),
         reason: 'Does not have ON fan mode available');
-    expect(
-        thermostatTrait.availableFanModes
-            .firstWhere((mode) => mode.name == 'AUTO'),
-        isNotNull,
+    expect(thermostatTrait.availableFanModes, contains(AvailableFanMode.AUTO),
         reason: 'Does not have AUTO fan mode available');
     expect(
         thermostatTrait
             .propertiesWhereType<AvailableFanMode>()
-            .firstWhere((mode) => mode.name == 'AUTO'),
+            .firstWhere((mode) => mode == AvailableFanMode.AUTO),
         isNotNull,
         reason: 'Does not have AUTO fan mode available in base properties');
+
+    expect(thermostatTrait.availableThermostatModes.length, 4);
+    expect(thermostatTrait.availableThermostatModes,
+        contains(AvailableThermostatMode.OFF));
+    expect(thermostatTrait.availableThermostatModes,
+        contains(AvailableThermostatMode.AUTO));
+    expect(thermostatTrait.availableThermostatModes,
+        contains(AvailableThermostatMode.HEAT));
+    expect(thermostatTrait.availableThermostatModes,
+        contains(AvailableThermostatMode.COOL));
+    expect(
+        thermostatTrait
+            .propertiesWhereType<AvailableThermostatMode>()
+            .firstWhere((mode) => mode == AvailableThermostatMode.AUTO),
+        isNotNull);
   });
 
   test('''responseToDeviceTraitConverter maps single Lock

@@ -1,7 +1,7 @@
 
 
 
-# State&lt;T> class
+# AvailableThermostatModes class
 
 
 
@@ -14,24 +14,20 @@
 
 
 
+**Inheritance**
+
+- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
+- [Property](../yonomi-sdk/Property-class.md)&lt;[Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)>>
+- AvailableThermostatModes
 
 
 
-**Implementers**
-
-- [BatteryLevel](../yonomi-sdk/BatteryLevel-class.md)
-- [FanMode](../yonomi-sdk/FanMode-class.md)
-- [IsLocked](../yonomi-sdk/IsLocked-class.md)
-- [IsOnOff](../yonomi-sdk/IsOnOff-class.md)
-- [TargetTemperature](../yonomi-sdk/TargetTemperature-class.md)
-- [ThermostatMode](../yonomi-sdk/ThermostatMode-class.md)
-- [UnknownState](../yonomi-sdk/UnknownState-class.md)
 
 
 
 ## Constructors
 
-[State](../yonomi-sdk/State/State.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, T value)
+[AvailableThermostatModes](../yonomi-sdk/AvailableThermostatModes/AvailableThermostatModes.md) ([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)> modes)
 
     
 
@@ -47,12 +43,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/State/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](../yonomi-sdk/Property/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_final_
+_final, inherited_
 
 
 
@@ -65,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [value](../yonomi-sdk/State/value.md) &#8594; T
+##### [value](../yonomi-sdk/Property/value.md) &#8594; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)>
 
 
 
    
-_final_
+_final, inherited_
 
 
 
