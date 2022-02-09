@@ -27,14 +27,8 @@
 static Future<Device> getDeviceDetails(Request request, String id) async {
   Link client = GraphLinkCreator.create(request);
   final req = GgetDevice((b) => b..vars.deviceId = id);
-  final res = await client
-      .request(
-          gql.Request(operation: req.operation, variables: req.vars.toJson()))
-      .first;
-  final errors = res.errors;
-  if (errors?.isNotEmpty == true) {
-    throw errors!.first;
-  }
+  final res = await BaseRepository.fetch(client, req.operation,
+      variables: req.vars.toJson());
 
   final device = GgetDeviceData.fromJson(res.data!)!.device;
   return Device(
