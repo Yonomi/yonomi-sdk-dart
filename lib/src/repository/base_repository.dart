@@ -16,9 +16,11 @@ class BaseRepository {
     return res;
   }
 
-  static Future<gql.Response> fetch(
-      Link client, Operation operation) async {
-    final res = await client.request(gql.Request(operation: operation)).first;
+  static Future<gql.Response> fetch(Link client, Operation operation,
+      {Map<String, dynamic> variables = const <String, dynamic>{}}) async {
+    final res = await client
+        .request(gql.Request(operation: operation, variables: variables))
+        .first;
 
     _handleErrors(res.errors);
 
