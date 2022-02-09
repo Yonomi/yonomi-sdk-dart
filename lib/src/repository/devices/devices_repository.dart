@@ -180,7 +180,7 @@ class Device {
 abstract class Trait {
   late final String name;
   late final Set<State> states;
-  late final Set<dynamic> properties;
+  late final Set<Property> properties;
   Trait(this.name, this.states, this.properties);
 
   State<dynamic> stateWhereType<T extends State<dynamic>>() {
@@ -188,8 +188,8 @@ abstract class Trait {
         orElse: () => UnknownState());
   }
 
-  Set<T> propertiesWhereType<T>() {
-    return properties.whereType<T>().toSet();
+  T propertyWhereType<T extends Property>() {
+    return properties.whereType<T>().first;
   }
 }
 

@@ -268,7 +268,8 @@ void main() {
         reason: 'Does not have AUTO fan mode available');
     expect(
         thermostatTrait
-            .propertiesWhereType<AvailableFanMode>()
+            .propertyWhereType<AvailableFanModes>()
+            .value
             .firstWhere((mode) => mode == AvailableFanMode.AUTO),
         isNotNull,
         reason: 'Does not have AUTO fan mode available in base properties');
@@ -284,7 +285,8 @@ void main() {
         contains(AvailableThermostatMode.COOL));
     expect(
         thermostatTrait
-            .propertiesWhereType<AvailableThermostatMode>()
+            .propertyWhereType<AvailableThermostatModes>()
+            .value
             .firstWhere((mode) => mode == AvailableThermostatMode.AUTO),
         isNotNull);
   });

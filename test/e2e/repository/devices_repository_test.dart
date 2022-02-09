@@ -37,7 +37,10 @@ void main() {
     final thermostatTrait = device.traits.whereType<ThermostatTrait>().first;
     expect(thermostatTrait, isNotNull);
     expect(thermostatTrait.stateWhereType<FanMode>(), isNotNull);
-    expect(thermostatTrait.propertiesWhereType<AvailableFanMode>(), isNotEmpty);
+    expect(thermostatTrait.propertyWhereType<AvailableFanModes>().value,
+        isNotEmpty);
+    expect(thermostatTrait.propertyWhereType<AvailableThermostatModes>().value,
+        isNotEmpty);
   });
 
   test('getThermostatDetails gets thermostat details', () async {
