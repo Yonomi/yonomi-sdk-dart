@@ -26,11 +26,12 @@
 ```dart
 static Future<void> setMode(
     Request request, String id, GThermostatMode mode) async {
+  final link = GraphLinkCreator.create(request);
   final req = GmakeSetModeRequest((b) {
     b..vars.deviceId = id;
     b..vars.mode = mode;
   });
-  BaseRepository.mutate(request, req.operation, req.vars.toJson());
+  BaseRepository.mutate(link, req.operation, req.vars.toJson());
 }
 ```
 

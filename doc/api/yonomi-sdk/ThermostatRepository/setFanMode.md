@@ -26,11 +26,12 @@
 ```dart
 static Future<void> setFanMode(
     Request request, String id, AvailableFanMode mode) async {
+  final link = GraphLinkCreator.create(request);
   final req = GmakeSetFanModeRequest((b) {
     b..vars.deviceId = id;
     b..vars.fanMode = mode;
   });
-  BaseRepository.mutate(request, req.operation, req.vars.toJson());
+  BaseRepository.mutate(link, req.operation, req.vars.toJson());
 }
 ```
 

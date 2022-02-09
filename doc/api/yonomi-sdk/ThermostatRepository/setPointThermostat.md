@@ -26,11 +26,12 @@
 ```dart
 static Future<void> setPointThermostat(
     Request request, String id, double temperature) async {
+  final link = GraphLinkCreator.create(request);
   final req = GmakeSetTargetTemperatureRequest((b) {
     b..vars.deviceId = id;
     b..vars.targetTemperature = temperature;
   });
-  BaseRepository.mutate(request, req.operation, req.vars.toJson());
+  BaseRepository.mutate(link, req.operation, req.vars.toJson());
 }
 ```
 
