@@ -317,6 +317,23 @@ import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/
     show GmakePowerActionRequest;
 import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.var.gql.dart'
     show GmakePowerActionRequestVars;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_fan_mode/query.data.gql.dart'
+    show
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits,
+        GmakeSetFanModeRequestData,
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode,
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device,
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait,
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_properties,
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state,
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode,
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired,
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported,
+        GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__base;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_fan_mode/query.req.gql.dart'
+    show GmakeSetFanModeRequest;
+import 'package:yonomi_platform_sdk/src/queries/thermostat/set_fan_mode/query.var.gql.dart'
+    show GmakeSetFanModeRequestVars;
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.data.gql.dart'
     show
         GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits,
@@ -389,6 +406,9 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits
       .serializer)
   ..add(GmakePowerActionRequestData_actionPowerSetOn_device_traits.serializer)
+  ..add(
+      GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits
+          .serializer)
   ..add(
       GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode_device_traits
           .serializer)
@@ -681,6 +701,18 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GmakePowerActionRequestData_actionPowerSetOn_device_traits__asPowerDeviceTrait_state_isOn_reported,
   GmakePowerActionRequestData_actionPowerSetOn_device_traits__base,
   GmakePowerActionRequestVars,
+  GmakeSetFanModeRequest,
+  GmakeSetFanModeRequestData,
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode,
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device,
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait,
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_properties,
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state,
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode,
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_desired,
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__asThermostatSettingDeviceTrait_state_fanMode_reported,
+  GmakeSetFanModeRequestData_actionThermostatSettingSetFanMode_device_traits__base,
+  GmakeSetFanModeRequestVars,
   GmakeSetModeRequest,
   GmakeSetModeRequestData,
   GmakeSetModeRequestData_actionThermostatSettingSetThermostatMode,

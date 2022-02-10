@@ -19,7 +19,7 @@ TargetTemperature([double](https://api.flutter.dev/flutter/dart-core/double-clas
 ## Implementation
 
 ```dart
-TargetTemperature(double? value) : super('TargetTemperature', value);
+TargetTemperature(double? value) : super('targetTemperature', value);
 ```
 
 

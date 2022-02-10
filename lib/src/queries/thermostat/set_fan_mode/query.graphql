@@ -1,0 +1,19 @@
+mutation makeSetFanModeRequest ($deviceId: ID! $fanMode: FanMode!) {
+	actionThermostatSettingSetFanMode (deviceId: $deviceId fanMode: $fanMode) {
+    actionId
+    device {
+ 	    traits {
+       __typename name instance
+       ... on ThermostatSettingDeviceTrait {
+         properties { availableFanModes }
+         state {
+          fanMode {
+            reported { value sampledAt createdAt }
+            desired { value delta updatedAt }
+            }
+          }
+        }
+      }
+    }
+  }
+}

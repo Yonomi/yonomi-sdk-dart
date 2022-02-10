@@ -26,19 +26,12 @@
 ```dart
 static Future<void> sendLockUnlockAction(
     Request request, String id, bool lockUnlock) async {
-  Link client = GraphLinkCreator.create(request);
+  final link = GraphLinkCreator.create(request);
   final req = GmakeLockUnlockActionRequest((b) {
     b..vars.deviceId = id;
     b..vars.lock = lockUnlock;
   });
-  final res = await client
-      .request(
-          gql.Request(operation: req.operation, variables: req.vars.toJson()))
-      .first;
-  final errors = res.errors;
-  if (errors != null && errors.isNotEmpty) {
-    throw errors.first;
-  }
+  BaseRepository.mutate(link, req.operation, req.vars.toJson());
 }
 ```
 

@@ -2,6 +2,7 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 
 void main() {
   test('responseToDeviceTraitConverter converts mixed trait device', () {
@@ -254,9 +255,42 @@ void main() {
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
         thermostatDevice!.device!.traits.asList());
 
-    expect(convertedValue.first.runtimeType, equals(ThermostatTrait));
+    final thermostatTrait = convertedValue.whereType<ThermostatTrait>().first;
+
     expect(convertedValue.first.name, 'thermostat_setting');
+    expect(
+        convertedValue.first.stateWhereType<TargetTemperature>().value, 22.0);
+    expect(
+        convertedValue.first.stateWhereType<IsLocked>(), isA<UnknownState>());
+    expect(thermostatTrait.availableFanModes, contains(AvailableFanMode.ON),
+        reason: 'Does not have ON fan mode available');
+    expect(thermostatTrait.availableFanModes, contains(AvailableFanMode.AUTO),
+        reason: 'Does not have AUTO fan mode available');
+    expect(
+        thermostatTrait
+            .propertyWhereType<AvailableFanModes>()
+            .value
+            .firstWhere((mode) => mode == AvailableFanMode.AUTO),
+        isNotNull,
+        reason: 'Does not have AUTO fan mode available in base properties');
+
+    expect(thermostatTrait.availableThermostatModes.length, 4);
+    expect(thermostatTrait.availableThermostatModes,
+        contains(AvailableThermostatMode.OFF));
+    expect(thermostatTrait.availableThermostatModes,
+        contains(AvailableThermostatMode.AUTO));
+    expect(thermostatTrait.availableThermostatModes,
+        contains(AvailableThermostatMode.HEAT));
+    expect(thermostatTrait.availableThermostatModes,
+        contains(AvailableThermostatMode.COOL));
+    expect(
+        thermostatTrait
+            .propertyWhereType<AvailableThermostatModes>()
+            .value
+            .firstWhere((mode) => mode == AvailableThermostatMode.AUTO),
+        isNotNull);
   });
+
   test('''responseToDeviceTraitConverter maps single Lock
       DeviceTrait to LockUnlockTrait''', () {
     final lockDevice = GgetDeviceData_device.fromJson({
@@ -299,9 +333,8 @@ void main() {
     expect(convertedValue.first.runtimeType, equals(LockTrait));
     expect(convertedValue.first.name, 'lock');
 
-    final lockProperties = (convertedValue.first as LockTrait).properties;
-    expect(
-        lockProperties.whereType<SupportsIsJammed>().first.value, equals(true));
+    expect((convertedValue.first as LockTrait).supportsIsJammed.value,
+        equals(true));
   });
 
   test('''#1. responseToDeviceTraitConverter maps single Power
@@ -389,8 +422,7 @@ void main() {
     expect(convertedValue.first.runtimeType, equals(PowerTrait));
     expect(convertedValue.first.name, 'power');
 
-    final powerProperties = (convertedValue.first as PowerTrait).properties;
-    expect(powerProperties.whereType<SupportsDiscreteOnOff>().first.value,
+    expect((convertedValue.first as PowerTrait).supportsDiscreteOnOff.value,
         equals(true));
   });
 
@@ -439,7 +471,7 @@ void main() {
   test(
       '''#getThermostatTrait should throw argumentError if trait object is not correct type''',
       () {
-    expect(() => DevicesRepository.getThermostatTrait(null),
+    expect(() => ThermostatRepository.getThermostatTrait(null),
         throwsA(isA<ArgumentError>()));
   });
 

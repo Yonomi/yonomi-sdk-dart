@@ -19,7 +19,7 @@ BatteryLevelTrait([State](../../yonomi-sdk/State-class.md) state)
 ## Implementation
 
 ```dart
-BatteryLevelTrait(State state) : super('battery_level', state, []);
+BatteryLevelTrait(State state) : super('battery_level', {state}, {});
 ```
 
 

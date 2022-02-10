@@ -30,14 +30,8 @@ static Future<String> generateAccountUrl(
   if (graphLink == null) graphLink = GraphLinkCreator.create(request);
   final req = GgenerateAccountLinkingUrl(
       (b) => b..vars.integrationId = integrationId);
-  final res = await graphLink
-      .request(
-          gql.Request(operation: req.operation, variables: req.vars.toJson()))
-      .first;
-  final errors = res.errors;
-  if (errors != null && errors.isNotEmpty) {
-    throw errors.first;
-  }
+  final res = await BaseRepository.mutate(
+      graphLink, req.operation, req.vars.toJson());
 
   return GgenerateAccountLinkingUrlData.fromJson(res.data!)!
       .generateAccountLinkingUrl

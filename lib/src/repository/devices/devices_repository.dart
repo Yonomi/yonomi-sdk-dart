@@ -4,21 +4,16 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gq
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
-import '../gql_client.dart';
-
 class DevicesRepository {
   static Future<List<Device>> getDevices(Request request) async {
-    Link client = GraphLinkCreator.create(request);
-    final req = GgetDevices();
-    final res =
-        await client.request(gql.Request(operation: req.operation)).first;
-    final errors = res.errors;
-    if (errors != null && errors.isNotEmpty) {
-      throw errors.first;
-    }
+    final link = GraphLinkCreator.create(request);
+    final res = await BaseRepository.fetch(link, GgetDevices().operation);
     return GgetDevicesData.fromJson(res.data!)!
         .me
         .devices
@@ -39,14 +34,8 @@ class DevicesRepository {
   static Future<Device> getDeviceDetails(Request request, String id) async {
     Link client = GraphLinkCreator.create(request);
     final req = GgetDevice((b) => b..vars.deviceId = id);
-    final res = await client
-        .request(
-            gql.Request(operation: req.operation, variables: req.vars.toJson()))
-        .first;
-    final errors = res.errors;
-    if (errors != null && errors.isNotEmpty) {
-      throw errors.first;
-    }
+    final res = await BaseRepository.fetch(client, req.operation,
+        variables: req.vars.toJson());
 
     final device = GgetDeviceData.fromJson(res.data!)!.device;
     return Device(
@@ -65,9 +54,8 @@ class DevicesRepository {
     final device = await getDeviceDetails(request, id);
     // For now thermostatDeviceTrait is device with only lock trait so stripping
     // out all the other traits
-    final thermostatDeviceTrait = device.traits
-        .where((element) => element.name == 'thermostatsetting')
-        .toList();
+    final thermostatDeviceTrait =
+        device.traits.whereType<ThermostatTrait>().toList();
     final thermostatDevice = Device(
         device.id,
         device.displayName,
@@ -108,10 +96,10 @@ class DevicesRepository {
       return [];
     }
 
-    return deviceTraits.map((trait) {
+    return deviceTraits.map<Trait>((trait) {
       switch (trait.name) {
         case GTraitName.THERMOSTAT_SETTING:
-          return getThermostatTrait(trait);
+          return ThermostatRepository.getThermostatTrait(trait);
         case GTraitName.LOCK:
           return getLockTrait(trait);
         case GTraitName.BATTERY_LEVEL:
@@ -124,27 +112,13 @@ class DevicesRepository {
     }).toList();
   }
 
-  static ThermostatTrait getThermostatTrait(dynamic trait) {
-    if (trait is GgetDeviceData_device_traits__asThermostatSettingDeviceTrait ||
-        trait
-            is GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait) {
-      return ThermostatTrait(TargetTemperature(
-          trait.state.targetTemperature.reported?.value ?? 0.0));
-    } else {
-      throw ArgumentError.value(trait);
-    }
-  }
-
   static LockTrait getLockTrait(dynamic trait) {
     if (trait is GgetDeviceData_device_traits__asLockDeviceTrait ||
         trait
             is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait) {
-      final properties = [
-        SupportsIsJammed(trait.properties.supportsIsJammed ?? false)
-      ];
-
-      return LockTrait(
-          IsLocked(trait.state.isLocked.reported?.value ?? false), properties);
+      return LockTrait(IsLocked(trait.state.isLocked.reported?.value ?? false),
+          supportsIsJammed:
+              SupportsIsJammed(trait.properties.supportsIsJammed ?? false));
     } else {
       throw ArgumentError.value(trait);
     }
@@ -154,12 +128,9 @@ class DevicesRepository {
     if (trait is GgetDeviceData_device_traits__asPowerDeviceTrait ||
         trait
             is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait) {
-      final properties = [
-        SupportsDiscreteOnOff(trait.properties.supportsDiscreteOnOff ?? false)
-      ];
-
-      return PowerTrait(
-          IsOnOff(trait.state.isOn.reported?.value ?? false), properties);
+      return PowerTrait(IsOnOff(trait.state.isOn.reported?.value ?? false),
+          supportsDiscreteOnOff: SupportsDiscreteOnOff(
+              trait.properties.supportsDiscreteOnOff ?? false));
     } else {
       throw ArgumentError.value(trait);
     }
@@ -202,10 +173,18 @@ class Device {
 
 abstract class Trait {
   late final String name;
-  late final State state;
-  late final List<Property> properties;
+  late final Set<State> states;
+  late final Set<Property> properties;
+  Trait(this.name, this.states, this.properties);
 
-  Trait(this.name, this.state, this.properties);
+  State<dynamic> stateWhereType<T extends State<dynamic>>() {
+    return states.firstWhere((state) => state is T,
+        orElse: () => UnknownState());
+  }
+
+  T propertyWhereType<T extends Property>() {
+    return properties.whereType<T>().first;
+  }
 }
 
 abstract class State<T> {
@@ -221,10 +200,6 @@ class IsOnOff extends State<bool> {
 
 class IsLocked extends State<bool> {
   IsLocked(bool value) : super('LockUnlock', value);
-}
-
-class TargetTemperature extends State<double?> {
-  TargetTemperature(double? value) : super('TargetTemperature', value);
 }
 
 class BatteryLevel extends State<int> {
@@ -251,27 +226,23 @@ class SupportsIsJammed extends Property<bool> {
 }
 
 class LockTrait extends Trait {
-  LockTrait(State state, List<Property> properties)
-      : super('lock', state, properties);
+  final SupportsIsJammed supportsIsJammed;
+  LockTrait(State state, {required this.supportsIsJammed})
+      : super('lock', {state}, {supportsIsJammed});
 }
 
 class PowerTrait extends Trait {
-  PowerTrait(State state, List<Property> properties)
-      : super('power', state, properties);
-}
-
-class ThermostatTrait extends Trait {
-  ThermostatTrait(
-    State state,
-  ) : super('thermostat_setting', state, []);
+  final SupportsDiscreteOnOff supportsDiscreteOnOff;
+  PowerTrait(State state, {required this.supportsDiscreteOnOff})
+      : super('power', {state}, {supportsDiscreteOnOff});
 }
 
 class UnknownTrait extends Trait {
-  UnknownTrait(String name) : super(name, UnknownState(), []);
+  UnknownTrait(String name) : super(name, {UnknownState()}, {});
 }
 
 class BatteryLevelTrait extends Trait {
-  BatteryLevelTrait(State state) : super('battery_level', state, []);
+  BatteryLevelTrait(State state) : super('battery_level', {state}, {});
 }
 
 class DeviceNameId {

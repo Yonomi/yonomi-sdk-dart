@@ -20,9 +20,11 @@
 **Implementers**
 
 - [BatteryLevel](../yonomi-sdk/BatteryLevel-class.md)
+- [FanMode](../yonomi-sdk/FanMode-class.md)
 - [IsLocked](../yonomi-sdk/IsLocked-class.md)
 - [IsOnOff](../yonomi-sdk/IsOnOff-class.md)
 - [TargetTemperature](../yonomi-sdk/TargetTemperature-class.md)
+- [ThermostatMode](../yonomi-sdk/ThermostatMode-class.md)
 - [UnknownState](../yonomi-sdk/UnknownState-class.md)
 
 

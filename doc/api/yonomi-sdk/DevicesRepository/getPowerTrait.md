@@ -28,12 +28,9 @@ static PowerTrait getPowerTrait(dynamic trait) {
   if (trait is GgetDeviceData_device_traits__asPowerDeviceTrait ||
       trait
           is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait) {
-    final properties = [
-      SupportsDiscreteOnOff(trait.properties.supportsDiscreteOnOff ?? false)
-    ];
-
-    return PowerTrait(
-        IsOnOff(trait.state.isOn.reported?.value ?? false), properties);
+    return PowerTrait(IsOnOff(trait.state.isOn.reported?.value ?? false),
+        supportsDiscreteOnOff: SupportsDiscreteOnOff(
+            trait.properties.supportsDiscreteOnOff ?? false));
   } else {
     throw ArgumentError.value(trait);
   }
