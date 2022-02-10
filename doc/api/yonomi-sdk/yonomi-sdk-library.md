@@ -23,6 +23,13 @@
  
 
 
+##### [AmbientTemperature](../yonomi-sdk/AmbientTemperature-class.md)
+
+
+
+ 
+
+
 ##### [AuthorizedClient](../yonomi-sdk/AuthorizedClient-class.md)
 
 

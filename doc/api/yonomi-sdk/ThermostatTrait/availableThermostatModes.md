@@ -24,8 +24,7 @@
 
 ```dart
 Set<AvailableThermostatMode> get availableThermostatModes =>
-    propertyWhereType<AvailableThermostatModes>()
-        .value;
+    propertyWhereType<AvailableThermostatModes>().value;
 ```
 
 
