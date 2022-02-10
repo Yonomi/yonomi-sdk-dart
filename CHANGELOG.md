@@ -1,3 +1,21 @@
+# [2.6.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.5.0...v2.6.0) (2022-02-10)
+
+
+### Bug Fixes
+
+* Fix field on setting fan mode ([370d44f](https://github.com/Yonomi/yonomi-sdk-dart/commit/370d44f21931c6d8221076c80e8e7a590ea696f1))
+* Fix field on setting fan mode ([8618b12](https://github.com/Yonomi/yonomi-sdk-dart/commit/8618b122bad7b63f74fe87af7aaeba8c011dba7f))
+* Fix types for thermostat properties ([3dc036f](https://github.com/Yonomi/yonomi-sdk-dart/commit/3dc036f8abb18880012c4e79c88a67986f328449))
+* Make signatures match for setting fan mode ([54431aa](https://github.com/Yonomi/yonomi-sdk-dart/commit/54431aa0140efe278d77907d266bb698f6084e16))
+* Make signatures match for setting fan mode ([c9ee3d0](https://github.com/Yonomi/yonomi-sdk-dart/commit/c9ee3d03ca1ab304f99e668f7066343f5c50ef74))
+
+
+### Features
+
+* **devices_repository.dart:** Return the fanMode state ([37b80d5](https://github.com/Yonomi/yonomi-sdk-dart/commit/37b80d5977bc6bdbe2712f6f6b99dacf3fc0dd74))
+* Add ability to get thermostat mode data from sdk ([64ce71e](https://github.com/Yonomi/yonomi-sdk-dart/commit/64ce71e97d4ad8b628cae47b7d71c701e1dbf910))
+* Add available fan modes ([c31934c](https://github.com/Yonomi/yonomi-sdk-dart/commit/c31934c35d956c9eeeb724d827f9536eb3078ce9))
+
 # [2.5.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.4.0...v2.5.0) (2022-01-25)
 
 
