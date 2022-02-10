@@ -262,6 +262,10 @@ void main() {
         convertedValue.first.stateWhereType<TargetTemperature>().value, 22.0);
     expect(
         convertedValue.first.stateWhereType<IsLocked>(), isA<UnknownState>());
+    expect(
+      convertedValue.first.stateWhereType<AmbientTemperature>().value,
+      22.4,
+    );
     expect(thermostatTrait.availableFanModes, contains(AvailableFanMode.ON),
         reason: 'Does not have ON fan mode available');
     expect(thermostatTrait.availableFanModes, contains(AvailableFanMode.AUTO),

@@ -30,6 +30,8 @@ class ThermostatRepository {
         FanMode(trait.state.fanMode.reported?.value ?? AvailableFanMode.ON),
         ThermostatMode(
             trait.state.mode.reported?.value ?? AvailableThermostatMode.OFF),
+        AmbientTemperature(
+            trait.state.ambientTemperature.reported?.value ?? 0.0),
       }, {
         AvailableFanModes(availableFanMode),
         AvailableThermostatModes(availableThermostatModes)
@@ -74,6 +76,10 @@ class TargetTemperature extends State<double?> {
   TargetTemperature(double? value) : super('targetTemperature', value);
 }
 
+class AmbientTemperature extends State<double?> {
+  AmbientTemperature(double? value) : super('ambientTemperature', value);
+}
+
 class FanMode extends State<AvailableFanMode> {
   FanMode(AvailableFanMode value) : super('fanMode', value);
 }
@@ -99,6 +105,5 @@ class ThermostatTrait extends Trait {
   Set<AvailableFanMode> get availableFanModes =>
       propertyWhereType<AvailableFanModes>().value;
   Set<AvailableThermostatMode> get availableThermostatModes =>
-      propertyWhereType<AvailableThermostatModes>()
-          .value;
+      propertyWhereType<AvailableThermostatModes>().value;
 }
