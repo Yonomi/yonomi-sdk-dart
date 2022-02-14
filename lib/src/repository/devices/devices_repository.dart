@@ -202,6 +202,10 @@ class IsLocked extends State<bool> {
   IsLocked(bool value) : super('LockUnlock', value);
 }
 
+class IsJammed extends State<bool> {
+  IsJammed(bool value) : super('LockUnlock', value);
+}
+
 class BatteryLevel extends State<int> {
   BatteryLevel(int value) : super('BatteryLevel', value);
 }
