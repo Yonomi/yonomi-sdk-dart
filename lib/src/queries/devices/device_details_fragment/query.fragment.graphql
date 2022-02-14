@@ -27,6 +27,10 @@ fragment DeviceDetails on Device {
           reported { value sampledAt createdAt }
           desired { value delta updatedAt }
         }
+        isJammed {
+          reported { value sampledAt createdAt }
+          desired { value delta updatedAt }
+        }
       }
     }
     ... on PowerDeviceTrait {
