@@ -3,8 +3,8 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.g
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_fan_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 
@@ -34,7 +34,13 @@ class ThermostatRepository {
             trait.state.ambientTemperature.reported?.value ?? 0.0),
       }, {
         AvailableFanModes(availableFanMode),
-        AvailableThermostatModes(availableThermostatModes)
+        AvailableThermostatModes(availableThermostatModes),
+        HeatSetPointRange(TemperatureRange(
+            min: trait.properties.heatSetPointRange.min ?? 0.0,
+            max: trait.properties.heatSetPointRange.max ?? 0.0)),
+        CoolSetPointRange(TemperatureRange(
+            min: trait.properties.coolSetPointRange.min ?? 0.0,
+            max: trait.properties.coolSetPointRange.max ?? 0.0)),
       });
     } else {
       throw ArgumentError.value(trait);
@@ -48,7 +54,7 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.targetTemperature = temperature;
     });
-    BaseRepository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(link, req.operation, req.vars.toJson());
   }
 
   static Future<void> setMode(
@@ -58,7 +64,7 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.mode = mode;
     });
-    BaseRepository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(link, req.operation, req.vars.toJson());
   }
 
   static Future<void> setFanMode(
@@ -68,7 +74,7 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.fanMode = mode;
     });
-    BaseRepository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(link, req.operation, req.vars.toJson());
   }
 }
 
@@ -93,6 +99,23 @@ class AvailableFanModes extends Property<Set<AvailableFanMode>> {
       : super('availableFanModes', value);
 }
 
+class TemperatureRange {
+  final double min;
+  final double max;
+
+  TemperatureRange({required double min, required double max})
+      : min = min,
+        max = max;
+}
+
+class HeatSetPointRange extends Property<TemperatureRange> {
+  HeatSetPointRange(TemperatureRange value) : super('maxTemperature', value);
+}
+
+class CoolSetPointRange extends Property<TemperatureRange> {
+  CoolSetPointRange(TemperatureRange value) : super('minTemperature', value);
+}
+
 class AvailableThermostatModes extends Property<Set<AvailableThermostatMode>> {
   AvailableThermostatModes(Set<AvailableThermostatMode> value)
       : super('availableThermostatModes', value);
@@ -106,4 +129,10 @@ class ThermostatTrait extends Trait {
       propertyWhereType<AvailableFanModes>().value;
   Set<AvailableThermostatMode> get availableThermostatModes =>
       propertyWhereType<AvailableThermostatModes>().value;
+
+  TemperatureRange get heatSetPointRange =>
+      propertyWhereType<HeatSetPointRange>().value;
+
+  TemperatureRange get coolSetPointRange =>
+      propertyWhereType<CoolSetPointRange>().value;
 }

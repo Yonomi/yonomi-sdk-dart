@@ -9,7 +9,7 @@ import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/
 import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 
-import 'base_repository.dart';
+import 'repository.dart';
 import 'gql_client.dart';
 
 class AccountRepository {
@@ -17,7 +17,7 @@ class AccountRepository {
       getAllIntegrations(Request request, {Link? graphLink}) async {
     if (graphLink == null) graphLink = GraphLinkCreator.create(request);
     final req = GgetAllIntegrations();
-    final res = await BaseRepository.fetch(graphLink, req.operation);
+    final res = await Repository.fetch(graphLink, req.operation);
 
     GgetAllIntegrationsData.fromJson(res.data!)!.integrations;
     return GgetAllIntegrationsData.fromJson(res.data!)!
@@ -33,8 +33,8 @@ class AccountRepository {
     if (graphLink == null) graphLink = GraphLinkCreator.create(request);
     final req = GgenerateAccountLinkingUrl(
         (b) => b..vars.integrationId = integrationId);
-    final res = await BaseRepository.mutate(
-        graphLink, req.operation, req.vars.toJson());
+    final res =
+        await Repository.mutate(graphLink, req.operation, req.vars.toJson());
 
     return GgenerateAccountLinkingUrlData.fromJson(res.data!)!
         .generateAccountLinkingUrl
@@ -46,7 +46,7 @@ class AccountRepository {
     if (graphLink == null) graphLink = GraphLinkCreator.create(request);
 
     final req = GlinkedAccounts();
-    final res = await BaseRepository.fetch(graphLink, req.operation);
+    final res = await Repository.fetch(graphLink, req.operation);
 
     return GlinkedAccountsData.fromJson(res.data!)!
         .me
@@ -63,7 +63,7 @@ class AccountRepository {
 
     final req =
         GremoveLinkedAccount((b) => b..vars.linkedAccountId = linkedAccountId);
-    final res = await BaseRepository.mutate(
+    final res = await Repository.mutate(
       graphqlLink,
       req.operation,
       req.vars.toJson(),
