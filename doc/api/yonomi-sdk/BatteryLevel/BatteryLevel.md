@@ -19,7 +19,7 @@ BatteryLevel([int](https://api.flutter.dev/flutter/dart-core/int-class.html) val
 ## Implementation
 
 ```dart
-BatteryLevel(int value) : super('BatteryLevel', value);
+BatteryLevel(int value) : super('batteryLevel', value);
 ```
 
 
