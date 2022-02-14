@@ -2,7 +2,10 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
+
+import '../utils/test_fixtures.dart';
 
 void main() {
   test('responseToDeviceTraitConverter converts mixed trait device', () {
@@ -295,50 +298,52 @@ void main() {
         isNotNull);
   });
 
-  test('''responseToDeviceTraitConverter maps single Lock
-      DeviceTrait to LockUnlockTrait''', () {
-    final lockDevice = GgetDeviceData_device.fromJson({
-      'id': 'id',
-      'displayName': 'displayName',
-      'updatedAt': '2020-04-01T12:00:00.000Z',
-      'createdAt': '2020-04-01T12:00:00.000Z',
-      'productInformation': {
-        'manufacturer': 'abc',
-        'model': 'model',
-        'description': 'lock',
-      },
-      'traits': [
-        {
-          '__typename': 'LockDeviceTrait',
-          'name': 'LOCK',
-          'instance': 'default',
-          'properties': {'supportsIsJammed': true},
-          'state': {
-            'isLocked': {
-              'reported': {
-                'value': false,
-                'sampledAt': '2021-10-19T20: 06: 40.294Z',
-                'createdAt': '2021-10-19T20: 06: 41.176Z'
-              },
-              'desired': {
-                'value': false,
-                'delta': null,
-                'updatedAt': '2021-10-19T20: 06: 41.176Z'
-              }
-            }
-          }
-        }
-      ]
-    });
+  test(
+      'responseToDeviceTraitConverter maps single Lock DeviceTrait to LockUnlockTrait',
+      () {
+    final lockDevice = GgetDeviceData_device.fromJson(
+      TestFixtures.buildLockJsonResponse(
+        supportsIsJammed: true,
+        isLocked: true,
+        isJammed: true,
+      ),
+    );
 
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
         lockDevice!.traits.asList());
 
     expect(convertedValue.first.runtimeType, equals(LockTrait));
-    expect(convertedValue.first.name, 'lock');
 
-    expect((convertedValue.first as LockTrait).supportsIsJammed.value,
-        equals(true));
+    var traitUnderTest = convertedValue.first as LockTrait;
+    expect(traitUnderTest.name, 'lock');
+    expect(traitUnderTest.supportsIsJammed, equals(true));
+    expect(traitUnderTest.stateWhereType<IsJammed>().value, equals(true));
+    expect(traitUnderTest.stateWhereType<IsLocked>().value, equals(true));
+  });
+
+  test(
+      'responseToDeviceTraitConverter maps single Lock DeviceTrait to LockUnlockTrait',
+      () {
+    final lockDevice = GgetDeviceData_device.fromJson(
+      TestFixtures.buildLockJsonResponse(
+        supportsIsJammed: false,
+        isLocked: true,
+      ),
+    );
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        lockDevice!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(LockTrait));
+
+    var traitUnderTest = convertedValue.first as LockTrait;
+    expect(traitUnderTest.name, 'lock');
+    expect(traitUnderTest.stateWhereType<IsLocked>().value, equals(true));
+
+    expect(traitUnderTest.supportsIsJammed, equals(false));
+    // Since isJammed is false, should not return the IsJammed State
+    expect(traitUnderTest.stateWhereType<IsJammed>().runtimeType,
+        equals(UnknownState));
   });
 
   test('''#1. responseToDeviceTraitConverter maps single Power
@@ -482,8 +487,8 @@ void main() {
   test(
       '''#getLockTrait should throw argumentError if trait object is not correct type''',
       () {
-    expect(() => DevicesRepository.getLockTrait(null),
-        throwsA(isA<ArgumentError>()));
+    expect(
+        () => LockRepository.getLockTrait(null), throwsA(isA<ArgumentError>()));
   });
 
   test(

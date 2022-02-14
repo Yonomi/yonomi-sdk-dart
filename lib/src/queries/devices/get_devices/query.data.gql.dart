@@ -548,6 +548,8 @@ abstract class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_s
   String get G__typename;
   GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked
       get isLocked;
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+      get isJammed;
   static Serializer<
           GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state>
       get serializer =>
@@ -674,6 +676,121 @@ abstract class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_s
   static GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked_desired?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
           GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked_desired
+              .serializer,
+          json);
+}
+
+abstract class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+    implements
+        Built<
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed,
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder> {
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed._();
+
+  factory GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed(
+          [Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder
+                      b)
+              updates]) =
+      _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed;
+
+  static void _initializeBuilder(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder
+              b) =>
+      b..G__typename = 'LockStateIsJammedField';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported?
+      get reported;
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired?
+      get desired;
+  static Serializer<
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed>
+      get serializer =>
+          _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsLockDeviceTraitStateIsJammedSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+              .serializer,
+          json);
+}
+
+abstract class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+    implements
+        Built<
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported,
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder> {
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported._();
+
+  factory GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported(
+          [Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder
+                      b)
+              updates]) =
+      _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported;
+
+  static void _initializeBuilder(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder
+              b) =>
+      b..G__typename = 'LockStateReportedIsJammed';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  bool get value;
+  _i3.GDateTime get sampledAt;
+  _i3.GDateTime get createdAt;
+  static Serializer<
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported>
+      get serializer =>
+          _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsLockDeviceTraitStateIsJammedReportedSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+              .serializer,
+          json);
+}
+
+abstract class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+    implements
+        Built<
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired,
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder> {
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired._();
+
+  factory GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired(
+          [Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder
+                      b)
+              updates]) =
+      _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired;
+
+  static void _initializeBuilder(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder
+              b) =>
+      b..G__typename = 'LockStateDesiredIsJammed';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  bool get value;
+  bool? get delta;
+  _i3.GDateTime get updatedAt;
+  static Serializer<
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired>
+      get serializer =>
+          _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsLockDeviceTraitStateIsJammedDesiredSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
               .serializer,
           json);
 }

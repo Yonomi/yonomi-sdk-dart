@@ -3,6 +3,8 @@ import 'package:gql_exec/gql_exec.dart';
 import 'package:gql_link/gql_link.dart';
 
 class Repository {
+  _Repository() {}
+
   static Future<Response> mutate(
       Link client, Operation operation, Map<String, dynamic> vars) async {
     final res = await client

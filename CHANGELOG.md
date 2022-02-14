@@ -1,3 +1,24 @@
+# [2.8.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.7.0...v2.8.0) (2022-02-14)
+
+
+### Bug Fixes
+
+* **thermostat_repository.dart:** Remove default to 0.0 from ambient and target temp ([4e6e694](https://github.com/Yonomi/yonomi-sdk-dart/commit/4e6e6949a58097eecd198b866c4bd625acbc91ad))
+* Fix introduced unmerged changes ([2114d3b](https://github.com/Yonomi/yonomi-sdk-dart/commit/2114d3b5e26d33134f0da6e6a163de23a51e584e))
+
+
+### Features
+
+* **thermostat_repository.dart:** Add ambient temp state to thermostat trait ([db56057](https://github.com/Yonomi/yonomi-sdk-dart/commit/db5605700d18ed513d198f5babd1db9bc356351b))
+
+# [2.7.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.6.0...v2.7.0) (2022-02-14)
+
+
+### Features
+
+* **devices_repository:** introduce IsJammed state object ([fc9da39](https://github.com/Yonomi/yonomi-sdk-dart/commit/fc9da39a54ff25912ede5aa812065cf2ea248ddb))
+* **query.fragment.graphql:** query for isJammed state ([e355515](https://github.com/Yonomi/yonomi-sdk-dart/commit/e3555153275a85425b344a20b4f32386b79f17ee))
+
 # [2.6.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.5.0...v2.6.0) (2022-02-10)
 
 
