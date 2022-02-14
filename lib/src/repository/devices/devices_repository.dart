@@ -5,6 +5,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.g
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
@@ -100,7 +101,7 @@ class DevicesRepository {
         case GTraitName.THERMOSTAT_SETTING:
           return ThermostatRepository.getThermostatTrait(trait);
         case GTraitName.LOCK:
-          return getLockTrait(trait);
+          return LockRepository.getLockTrait(trait);
         case GTraitName.BATTERY_LEVEL:
           return getBatteryLevelTrait(trait);
         case GTraitName.POWER:
@@ -109,18 +110,6 @@ class DevicesRepository {
           return UnknownTrait(trait.name.toString());
       }
     }).toList();
-  }
-
-  static LockTrait getLockTrait(dynamic trait) {
-    if (trait is GgetDeviceData_device_traits__asLockDeviceTrait ||
-        trait
-            is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait) {
-      return LockTrait(IsLocked(trait.state.isLocked.reported?.value ?? false),
-          supportsIsJammed:
-              SupportsIsJammed(trait.properties.supportsIsJammed ?? false));
-    } else {
-      throw ArgumentError.value(trait);
-    }
   }
 
   static PowerTrait getPowerTrait(dynamic trait) {
@@ -197,10 +186,13 @@ class IsOnOff extends State<bool> {
   IsOnOff(bool value) : super('isOn', value);
 }
 
+<<<<<<< HEAD
 class IsLocked extends State<bool> {
   IsLocked(bool value) : super('isLocked', value);
 }
 
+=======
+>>>>>>> main
 class BatteryLevel extends State<int> {
   BatteryLevel(int value) : super('batteryLevel', value);
 }
@@ -218,16 +210,6 @@ abstract class Property<T> {
 
 class SupportsDiscreteOnOff extends Property<bool> {
   SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
-}
-
-class SupportsIsJammed extends Property<bool> {
-  SupportsIsJammed(bool value) : super('supportsIsJammed', value);
-}
-
-class LockTrait extends Trait {
-  final SupportsIsJammed supportsIsJammed;
-  LockTrait(State state, {required this.supportsIsJammed})
-      : super('lock', {state}, {supportsIsJammed});
 }
 
 class PowerTrait extends Trait {

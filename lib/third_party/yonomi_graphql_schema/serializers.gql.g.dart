@@ -36,6 +36,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GDeviceDetailsData_traits__asLockDeviceTrait.serializer)
       ..add(GDeviceDetailsData_traits__asLockDeviceTrait_properties.serializer)
       ..add(GDeviceDetailsData_traits__asLockDeviceTrait_state.serializer)
+      ..add(GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed
+          .serializer)
+      ..add(GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desired
+          .serializer)
+      ..add(GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reported
+          .serializer)
       ..add(GDeviceDetailsData_traits__asLockDeviceTrait_state_isLocked
           .serializer)
       ..add(GDeviceDetailsData_traits__asLockDeviceTrait_state_isLocked_desired
@@ -236,6 +242,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(
           GgetDeviceData_device_traits__asLockDeviceTrait_properties.serializer)
       ..add(GgetDeviceData_device_traits__asLockDeviceTrait_state.serializer)
+      ..add(GgetDeviceData_device_traits__asLockDeviceTrait_state_isJammed
+          .serializer)
+      ..add(
+          GgetDeviceData_device_traits__asLockDeviceTrait_state_isJammed_desired
+              .serializer)
+      ..add(
+          GgetDeviceData_device_traits__asLockDeviceTrait_state_isJammed_reported
+              .serializer)
       ..add(GgetDeviceData_device_traits__asLockDeviceTrait_state_isLocked
           .serializer)
       ..add(
@@ -433,6 +447,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
               .serializer)
       ..add(
           GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state
+              .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+              .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+              .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
               .serializer)
       ..add(
           GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked

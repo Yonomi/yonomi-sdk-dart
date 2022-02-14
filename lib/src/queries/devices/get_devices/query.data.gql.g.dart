@@ -70,6 +70,18 @@ Serializer<
         GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked_desired>
     _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsLockDeviceTraitStateIsLockedDesiredSerializer =
     new _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked_desiredSerializer();
+Serializer<
+        GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed>
+    _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsLockDeviceTraitStateIsJammedSerializer =
+    new _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedSerializer();
+Serializer<
+        GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported>
+    _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsLockDeviceTraitStateIsJammedReportedSerializer =
+    new _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedSerializer();
+Serializer<
+        GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired>
+    _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsLockDeviceTraitStateIsJammedDesiredSerializer =
+    new _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredSerializer();
 Serializer<GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait>
     _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsPowerDeviceTraitSerializer =
     new _$GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTraitSerializer();
@@ -1338,6 +1350,10 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_stateSer
       serializers.serialize(object.isLocked,
           specifiedType: const FullType(
               GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked)),
+      'isJammed',
+      serializers.serialize(object.isJammed,
+          specifiedType: const FullType(
+              GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed)),
     ];
 
     return result;
@@ -1365,6 +1381,12 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_stateSer
                   specifiedType: const FullType(
                       GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked))!
               as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked);
+          break;
+        case 'isJammed':
+          result.isJammed.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed))!
+              as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed);
           break;
       }
     }
@@ -1571,6 +1593,234 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_is
           {FullType specifiedType = FullType.unspecified}) {
     final result =
         new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked_desiredBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'value':
+          result.value = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'delta':
+          result.delta = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'updatedAt':
+          result.updatedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedSerializer
+    implements
+        StructuredSerializer<
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed,
+    _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+  ];
+  @override
+  final String wireName =
+      'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.reported;
+    if (value != null) {
+      result
+        ..add('reported')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported)));
+    }
+    value = object.desired;
+    if (value != null) {
+      result
+        ..add('desired')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired)));
+    }
+    return result;
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'reported':
+          result.reported.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported))!
+              as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported);
+          break;
+        case 'desired':
+          result.desired.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired))!
+              as GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedSerializer
+    implements
+        StructuredSerializer<
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported,
+    _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+  ];
+  @override
+  final String wireName =
+      'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(bool)),
+      'sampledAt',
+      serializers.serialize(object.sampledAt,
+          specifiedType: const FullType(_i3.GDateTime)),
+      'createdAt',
+      serializers.serialize(object.createdAt,
+          specifiedType: const FullType(_i3.GDateTime)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'value':
+          result.value = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'sampledAt':
+          result.sampledAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredSerializer
+    implements
+        StructuredSerializer<
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired,
+    _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+  ];
+  @override
+  final String wireName =
+      'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(bool)),
+      'updatedAt',
+      serializers.serialize(object.updatedAt,
+          specifiedType: const FullType(_i3.GDateTime)),
+    ];
+    Object? value;
+    value = object.delta;
+    if (value != null) {
+      result
+        ..add('delta')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    return result;
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -8047,6 +8297,9 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state
   @override
   final GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked
       isLocked;
+  @override
+  final GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+      isJammed;
 
   factory _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state(
           [void Function(
@@ -8057,7 +8310,9 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state
           .build();
 
   _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state._(
-      {required this.G__typename, required this.isLocked})
+      {required this.G__typename,
+      required this.isLocked,
+      required this.isJammed})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -8067,6 +8322,10 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state
         isLocked,
         'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state',
         'isLocked');
+    BuiltValueNullFieldError.checkNotNull(
+        isJammed,
+        'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state',
+        'isJammed');
   }
 
   @override
@@ -8088,12 +8347,14 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state
     return other
             is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state &&
         G__typename == other.G__typename &&
-        isLocked == other.isLocked;
+        isLocked == other.isLocked &&
+        isJammed == other.isJammed;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, G__typename.hashCode), isLocked.hashCode));
+    return $jf($jc($jc($jc(0, G__typename.hashCode), isLocked.hashCode),
+        isJammed.hashCode));
   }
 
   @override
@@ -8101,7 +8362,8 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state
     return (newBuiltValueToStringHelper(
             'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state')
           ..add('G__typename', G__typename)
-          ..add('isLocked', isLocked))
+          ..add('isLocked', isLocked)
+          ..add('isJammed', isJammed))
         .toString();
   }
 }
@@ -8127,6 +8389,16 @@ class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_stateBuild
               isLocked) =>
       _$this._isLocked = isLocked;
 
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder?
+      _isJammed;
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder
+      get isJammed => _$this._isJammed ??=
+          new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder();
+  set isJammed(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder?
+              isJammed) =>
+      _$this._isJammed = isJammed;
+
   GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_stateBuilder() {
     GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state
         ._initializeBuilder(this);
@@ -8138,6 +8410,7 @@ class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_stateBuild
     if ($v != null) {
       _G__typename = $v.G__typename;
       _isLocked = $v.isLocked.toBuilder();
+      _isJammed = $v.isJammed.toBuilder();
       _$v = null;
     }
     return this;
@@ -8173,12 +8446,15 @@ class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_stateBuild
                   G__typename,
                   'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state',
                   'G__typename'),
-              isLocked: isLocked.build());
+              isLocked: isLocked.build(),
+              isJammed: isJammed.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'isLocked';
         isLocked.build();
+        _$failedField = 'isJammed';
+        isJammed.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state',
@@ -8723,6 +8999,547 @@ class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLo
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isLocked_desired',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+    extends GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed {
+  @override
+  final String G__typename;
+  @override
+  final GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported?
+      reported;
+  @override
+  final GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired?
+      desired;
+
+  factory _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed(
+          [void Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder)?
+              updates]) =>
+      (new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed._(
+      {required this.G__typename, this.reported, this.desired})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed',
+        'G__typename');
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+      rebuild(
+              void Function(
+                      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder
+      toBuilder() =>
+          new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed &&
+        G__typename == other.G__typename &&
+        reported == other.reported &&
+        desired == other.desired;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc($jc(0, G__typename.hashCode), reported.hashCode),
+        desired.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed')
+          ..add('G__typename', G__typename)
+          ..add('reported', reported)
+          ..add('desired', desired))
+        .toString();
+  }
+}
+
+class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder
+    implements
+        Builder<
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed,
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder> {
+  _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder?
+      _reported;
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder
+      get reported => _$this._reported ??=
+          new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder();
+  set reported(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder?
+              reported) =>
+      _$this._reported = reported;
+
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder?
+      _desired;
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder
+      get desired => _$this._desired ??=
+          new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder();
+  set desired(
+          GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder?
+              desired) =>
+      _$this._desired = desired;
+
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder() {
+    GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+        ._initializeBuilder(this);
+  }
+
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _reported = $v.reported?.toBuilder();
+      _desired = $v.desired?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammedBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+      build() {
+    _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed
+                  ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed',
+                  'G__typename'),
+              reported: _reported?.build(),
+              desired: _desired?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'reported';
+        _reported?.build();
+        _$failedField = 'desired';
+        _desired?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+    extends GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported {
+  @override
+  final String G__typename;
+  @override
+  final bool value;
+  @override
+  final _i3.GDateTime sampledAt;
+  @override
+  final _i3.GDateTime createdAt;
+
+  factory _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported(
+          [void Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder)?
+              updates]) =>
+      (new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported._(
+      {required this.G__typename,
+      required this.value,
+      required this.sampledAt,
+      required this.createdAt})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        value,
+        'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported',
+        'value');
+    BuiltValueNullFieldError.checkNotNull(
+        sampledAt,
+        'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported',
+        'sampledAt');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt,
+        'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported',
+        'createdAt');
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+      rebuild(
+              void Function(
+                      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder
+      toBuilder() =>
+          new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported &&
+        G__typename == other.G__typename &&
+        value == other.value &&
+        sampledAt == other.sampledAt &&
+        createdAt == other.createdAt;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), value.hashCode),
+            sampledAt.hashCode),
+        createdAt.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported')
+          ..add('G__typename', G__typename)
+          ..add('value', value)
+          ..add('sampledAt', sampledAt)
+          ..add('createdAt', createdAt))
+        .toString();
+  }
+}
+
+class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder
+    implements
+        Builder<
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported,
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder> {
+  _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  bool? _value;
+  bool? get value => _$this._value;
+  set value(bool? value) => _$this._value = value;
+
+  _i3.GDateTimeBuilder? _sampledAt;
+  _i3.GDateTimeBuilder get sampledAt =>
+      _$this._sampledAt ??= new _i3.GDateTimeBuilder();
+  set sampledAt(_i3.GDateTimeBuilder? sampledAt) =>
+      _$this._sampledAt = sampledAt;
+
+  _i3.GDateTimeBuilder? _createdAt;
+  _i3.GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new _i3.GDateTimeBuilder();
+  set createdAt(_i3.GDateTimeBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder() {
+    GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+        ._initializeBuilder(this);
+  }
+
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _value = $v.value;
+      _sampledAt = $v.sampledAt.toBuilder();
+      _createdAt = $v.createdAt.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reportedBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+      build() {
+    _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported
+                  ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported',
+                  'G__typename'),
+              value: BuiltValueNullFieldError.checkNotNull(
+                  value,
+                  'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported',
+                  'value'),
+              sampledAt: sampledAt.build(),
+              createdAt: createdAt.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'sampledAt';
+        sampledAt.build();
+        _$failedField = 'createdAt';
+        createdAt.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_reported',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+    extends GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired {
+  @override
+  final String G__typename;
+  @override
+  final bool value;
+  @override
+  final bool? delta;
+  @override
+  final _i3.GDateTime updatedAt;
+
+  factory _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired(
+          [void Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder)?
+              updates]) =>
+      (new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired._(
+      {required this.G__typename,
+      required this.value,
+      this.delta,
+      required this.updatedAt})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        value,
+        'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired',
+        'value');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt,
+        'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired',
+        'updatedAt');
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+      rebuild(
+              void Function(
+                      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder
+      toBuilder() =>
+          new GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired &&
+        G__typename == other.G__typename &&
+        value == other.value &&
+        delta == other.delta &&
+        updatedAt == other.updatedAt;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), value.hashCode), delta.hashCode),
+        updatedAt.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired')
+          ..add('G__typename', G__typename)
+          ..add('value', value)
+          ..add('delta', delta)
+          ..add('updatedAt', updatedAt))
+        .toString();
+  }
+}
+
+class GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder
+    implements
+        Builder<
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired,
+            GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder> {
+  _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  bool? _value;
+  bool? get value => _$this._value;
+  set value(bool? value) => _$this._value = value;
+
+  bool? _delta;
+  bool? get delta => _$this._delta;
+  set delta(bool? delta) => _$this._delta = delta;
+
+  _i3.GDateTimeBuilder? _updatedAt;
+  _i3.GDateTimeBuilder get updatedAt =>
+      _$this._updatedAt ??= new _i3.GDateTimeBuilder();
+  set updatedAt(_i3.GDateTimeBuilder? updatedAt) =>
+      _$this._updatedAt = updatedAt;
+
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder() {
+    GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+        ._initializeBuilder(this);
+  }
+
+  GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _value = $v.value;
+      _delta = $v.delta;
+      _updatedAt = $v.updatedAt.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desiredBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+      build() {
+    _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired
+                  ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired',
+                  'G__typename'),
+              value: BuiltValueNullFieldError.checkNotNull(
+                  value,
+                  'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired',
+                  'value'),
+              delta: delta,
+              updatedAt: updatedAt.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'updatedAt';
+        updatedAt.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_isJammed_desired',
             _$failedField,
             e.toString());
       }

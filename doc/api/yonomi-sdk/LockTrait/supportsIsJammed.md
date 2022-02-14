@@ -9,9 +9,11 @@
     *[<Null safety>](https://dart.dev/null-safety)*
 
 
-[SupportsIsJammed](../../yonomi-sdk/SupportsIsJammed-class.md) supportsIsJammed
+
+
+[bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) supportsIsJammed
   
-_final_
+
 
 
 
@@ -21,10 +23,9 @@ _final_
 ## Implementation
 
 ```dart
-final SupportsIsJammed supportsIsJammed;
-
-
+bool get supportsIsJammed => propertyWhereType<SupportsIsJammed>().value;
 ```
+
 
 
 

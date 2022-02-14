@@ -105,6 +105,7 @@ abstract class GDeviceDetails_traits__asLockDeviceTrait_properties {
 abstract class GDeviceDetails_traits__asLockDeviceTrait_state {
   String get G__typename;
   GDeviceDetails_traits__asLockDeviceTrait_state_isLocked get isLocked;
+  GDeviceDetails_traits__asLockDeviceTrait_state_isJammed get isJammed;
   Map<String, dynamic> toJson();
 }
 
@@ -125,6 +126,30 @@ abstract class GDeviceDetails_traits__asLockDeviceTrait_state_isLocked_reported 
 }
 
 abstract class GDeviceDetails_traits__asLockDeviceTrait_state_isLocked_desired {
+  String get G__typename;
+  bool get value;
+  bool? get delta;
+  _i1.GDateTime get updatedAt;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GDeviceDetails_traits__asLockDeviceTrait_state_isJammed {
+  String get G__typename;
+  GDeviceDetails_traits__asLockDeviceTrait_state_isJammed_reported?
+      get reported;
+  GDeviceDetails_traits__asLockDeviceTrait_state_isJammed_desired? get desired;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GDeviceDetails_traits__asLockDeviceTrait_state_isJammed_reported {
+  String get G__typename;
+  bool get value;
+  _i1.GDateTime get sampledAt;
+  _i1.GDateTime get createdAt;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GDeviceDetails_traits__asLockDeviceTrait_state_isJammed_desired {
   String get G__typename;
   bool get value;
   bool? get delta;
@@ -955,6 +980,7 @@ abstract class GDeviceDetailsData_traits__asLockDeviceTrait_state
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GDeviceDetailsData_traits__asLockDeviceTrait_state_isLocked get isLocked;
+  GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed get isJammed;
   static Serializer<GDeviceDetailsData_traits__asLockDeviceTrait_state>
       get serializer =>
           _$gDeviceDetailsDataTraitsAsLockDeviceTraitStateSerializer;
@@ -1075,6 +1101,118 @@ abstract class GDeviceDetailsData_traits__asLockDeviceTrait_state_isLocked_desir
   static GDeviceDetailsData_traits__asLockDeviceTrait_state_isLocked_desired?
       fromJson(Map<String, dynamic> json) => _i2.serializers.deserializeWith(
           GDeviceDetailsData_traits__asLockDeviceTrait_state_isLocked_desired
+              .serializer,
+          json);
+}
+
+abstract class GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed
+    implements
+        Built<GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed,
+            GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammedBuilder> {
+  GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed._();
+
+  factory GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed(
+      [Function(
+              GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammedBuilder
+                  b)
+          updates]) = _$GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed;
+
+  static void _initializeBuilder(
+          GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammedBuilder
+              b) =>
+      b..G__typename = 'LockStateIsJammedField';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reported?
+      get reported;
+  GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desired?
+      get desired;
+  static Serializer<GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed>
+      get serializer =>
+          _$gDeviceDetailsDataTraitsAsLockDeviceTraitStateIsJammedSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+      GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed.serializer,
+      this) as Map<String, dynamic>);
+  static GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+          GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed
+              .serializer,
+          json);
+}
+
+abstract class GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reported
+    implements
+        Built<
+            GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reported,
+            GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reportedBuilder> {
+  GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reported._();
+
+  factory GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reported(
+          [Function(
+                  GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reportedBuilder
+                      b)
+              updates]) =
+      _$GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reported;
+
+  static void _initializeBuilder(
+          GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reportedBuilder
+              b) =>
+      b..G__typename = 'LockStateReportedIsJammed';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  bool get value;
+  _i1.GDateTime get sampledAt;
+  _i1.GDateTime get createdAt;
+  static Serializer<
+          GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reported>
+      get serializer =>
+          _$gDeviceDetailsDataTraitsAsLockDeviceTraitStateIsJammedReportedSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+      GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reported
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reported?
+      fromJson(Map<String, dynamic> json) => _i2.serializers.deserializeWith(
+          GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_reported
+              .serializer,
+          json);
+}
+
+abstract class GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desired
+    implements
+        Built<
+            GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desired,
+            GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desiredBuilder> {
+  GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desired._();
+
+  factory GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desired(
+          [Function(
+                  GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desiredBuilder
+                      b)
+              updates]) =
+      _$GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desired;
+
+  static void _initializeBuilder(
+          GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desiredBuilder
+              b) =>
+      b..G__typename = 'LockStateDesiredIsJammed';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  bool get value;
+  bool? get delta;
+  _i1.GDateTime get updatedAt;
+  static Serializer<
+          GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desired>
+      get serializer =>
+          _$gDeviceDetailsDataTraitsAsLockDeviceTraitStateIsJammedDesiredSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+      GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desired
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desired?
+      fromJson(Map<String, dynamic> json) => _i2.serializers.deserializeWith(
+          GDeviceDetailsData_traits__asLockDeviceTrait_state_isJammed_desired
               .serializer,
           json);
 }
