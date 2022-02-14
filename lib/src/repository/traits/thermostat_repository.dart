@@ -3,7 +3,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.g
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_fan_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
@@ -48,7 +48,7 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.targetTemperature = temperature;
     });
-    BaseRepository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(link, req.operation, req.vars.toJson());
   }
 
   static Future<void> setMode(
@@ -58,7 +58,7 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.mode = mode;
     });
-    BaseRepository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(link, req.operation, req.vars.toJson());
   }
 
   static Future<void> setFanMode(
@@ -68,7 +68,7 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.fanMode = mode;
     });
-    BaseRepository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(link, req.operation, req.vars.toJson());
   }
 }
 

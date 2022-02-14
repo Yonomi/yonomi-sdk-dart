@@ -1,5 +1,5 @@
 import 'package:yonomi_platform_sdk/src/queries/lock/make_lock_unlock_action_request/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 
 class LockRepository {
@@ -10,6 +10,6 @@ class LockRepository {
       b..vars.deviceId = id;
       b..vars.lock = lockUnlock;
     });
-    BaseRepository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(link, req.operation, req.vars.toJson());
   }
 }

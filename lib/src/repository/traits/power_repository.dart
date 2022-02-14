@@ -1,6 +1,6 @@
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 
 class PowerRepository {
@@ -11,7 +11,7 @@ class PowerRepository {
       b..vars.deviceId = id;
       b..vars.onOff = onOff;
     });
-    BaseRepository.mutate(
+    Repository.mutate(
       link,
       req.operation,
       req.vars.toJson(),
