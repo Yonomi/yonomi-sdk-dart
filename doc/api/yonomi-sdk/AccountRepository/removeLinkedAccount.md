@@ -31,7 +31,7 @@ static Future<String> removeLinkedAccount(
 
   final req =
       GremoveLinkedAccount((b) => b..vars.linkedAccountId = linkedAccountId);
-  final res = await BaseRepository.mutate(
+  final res = await Repository.mutate(
     graphqlLink,
     req.operation,
     req.vars.toJson(),

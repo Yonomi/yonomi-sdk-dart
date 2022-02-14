@@ -26,7 +26,7 @@
 ```dart
 static Future<List<Device>> getDevices(Request request) async {
   final link = GraphLinkCreator.create(request);
-  final res = await BaseRepository.fetch(link, GgetDevices().operation);
+  final res = await Repository.fetch(link, GgetDevices().operation);
   return GgetDevicesData.fromJson(res.data!)!
       .me
       .devices

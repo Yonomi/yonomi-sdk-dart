@@ -28,7 +28,7 @@ static Future<List<GgetAllIntegrationsData_integrations_edges_node>>
     getAllIntegrations(Request request, {Link? graphLink}) async {
   if (graphLink == null) graphLink = GraphLinkCreator.create(request);
   final req = GgetAllIntegrations();
-  final res = await BaseRepository.fetch(graphLink, req.operation);
+  final res = await Repository.fetch(graphLink, req.operation);
 
   GgetAllIntegrationsData.fromJson(res.data!)!.integrations;
   return GgetAllIntegrationsData.fromJson(res.data!)!

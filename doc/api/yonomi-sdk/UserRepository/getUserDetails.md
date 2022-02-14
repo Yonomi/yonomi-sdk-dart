@@ -28,7 +28,7 @@ static Future<User> getUserDetails(Request request, {Link? graphLink}) async {
   if (graphLink == null) graphLink = GraphLinkCreator.create(request);
 
   final req = Guser();
-  final res = await BaseRepository.fetch(graphLink, req.operation);
+  final res = await Repository.fetch(graphLink, req.operation);
 
   final userData = GuserData.fromJson(res.data!);
   return User.fromGUser(
