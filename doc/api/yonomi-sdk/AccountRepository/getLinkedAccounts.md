@@ -29,7 +29,7 @@ static Future<List<GlinkedAccountsData_me_linkedAccounts_edges_node>>
   if (graphLink == null) graphLink = GraphLinkCreator.create(request);
 
   final req = GlinkedAccounts();
-  final res = await BaseRepository.fetch(graphLink, req.operation);
+  final res = await Repository.fetch(graphLink, req.operation);
 
   return GlinkedAccountsData.fromJson(res.data!)!
       .me

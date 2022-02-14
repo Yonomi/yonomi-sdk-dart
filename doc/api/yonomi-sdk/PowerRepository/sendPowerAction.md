@@ -31,7 +31,7 @@ static Future<void> sendPowerAction(Request request, String id, bool onOff,
     b..vars.deviceId = id;
     b..vars.onOff = onOff;
   });
-  BaseRepository.mutate(
+  Repository.mutate(
     link,
     req.operation,
     req.vars.toJson(),

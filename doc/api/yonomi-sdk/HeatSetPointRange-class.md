@@ -1,7 +1,7 @@
 
 
 
-# Property&lt;T> class
+# HeatSetPointRange class
 
 
 
@@ -14,23 +14,20 @@
 
 
 
+**Inheritance**
+
+- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
+- [Property](../yonomi-sdk/Property-class.md)&lt;[TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)>
+- HeatSetPointRange
 
 
 
-**Implementers**
-
-- [AvailableFanModes](../yonomi-sdk/AvailableFanModes-class.md)
-- [AvailableThermostatModes](../yonomi-sdk/AvailableThermostatModes-class.md)
-- [CoolSetPointRange](../yonomi-sdk/CoolSetPointRange-class.md)
-- [HeatSetPointRange](../yonomi-sdk/HeatSetPointRange-class.md)
-- [SupportsDiscreteOnOff](../yonomi-sdk/SupportsDiscreteOnOff-class.md)
-- [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)
 
 
 
 ## Constructors
 
-[Property](../yonomi-sdk/Property/Property.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, T value)
+[HeatSetPointRange](../yonomi-sdk/HeatSetPointRange/HeatSetPointRange.md) ([TemperatureRange](../yonomi-sdk/TemperatureRange-class.md) value)
 
     
 
@@ -51,7 +48,7 @@ _read-only, inherited_
 
 
    
-_final_
+_final, inherited_
 
 
 
@@ -64,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [value](../yonomi-sdk/Property/value.md) &#8594; T
+##### [value](../yonomi-sdk/Property/value.md) &#8594; [TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)
 
 
 
    
-_final_
+_final, inherited_
 
 
 

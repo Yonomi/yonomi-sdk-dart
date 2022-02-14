@@ -27,7 +27,7 @@
 static Future<Device> getDeviceDetails(Request request, String id) async {
   Link client = GraphLinkCreator.create(request);
   final req = GgetDevice((b) => b..vars.deviceId = id);
-  final res = await BaseRepository.fetch(client, req.operation,
+  final res = await Repository.fetch(client, req.operation,
       variables: req.vars.toJson());
 
   final device = GgetDeviceData.fromJson(res.data!)!.device;

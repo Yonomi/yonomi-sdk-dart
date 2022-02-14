@@ -65,6 +65,13 @@
  
 
 
+##### [CoolSetPointRange](../yonomi-sdk/CoolSetPointRange-class.md)
+
+
+
+ 
+
+
 ##### [Device](../yonomi-sdk/Device-class.md)
 
 
@@ -94,6 +101,13 @@
 
 
 ##### [GraphLinkCreator](../yonomi-sdk/GraphLinkCreator-class.md)
+
+
+
+ 
+
+
+##### [HeatSetPointRange](../yonomi-sdk/HeatSetPointRange-class.md)
 
 
 
@@ -185,6 +199,13 @@
 
 
 ##### [TargetTemperature](../yonomi-sdk/TargetTemperature-class.md)
+
+
+
+ 
+
+
+##### [TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)
 
 
 
