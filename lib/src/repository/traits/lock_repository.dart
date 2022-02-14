@@ -17,8 +17,7 @@ class LockRepository {
         if (trait.properties.supportsIsJammed)
           IsJammed(trait.state.isJammed.reported?.value ?? false),
       };
-      LockTrait toReturn = LockTrait(states, properties);
-      return toReturn;
+      return LockTrait(states, properties);
     } else {
       throw ArgumentError.value(trait);
     }
