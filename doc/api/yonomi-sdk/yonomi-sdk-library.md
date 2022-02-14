@@ -93,6 +93,13 @@
  
 
 
+##### [IsJammed](../yonomi-sdk/IsJammed-class.md)
+
+
+
+ 
+
+
 ##### [IsLocked](../yonomi-sdk/IsLocked-class.md)
 
 

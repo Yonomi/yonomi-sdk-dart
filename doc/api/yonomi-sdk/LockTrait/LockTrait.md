@@ -10,7 +10,7 @@
 
 
 
-LockTrait([State](../../yonomi-sdk/State-class.md) state, {required [SupportsIsJammed](../../yonomi-sdk/SupportsIsJammed-class.md) supportsIsJammed})
+LockTrait([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../../yonomi-sdk/State-class.md)> states, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../../yonomi-sdk/Property-class.md)> properties)
 
 
 
@@ -19,8 +19,8 @@ LockTrait([State](../../yonomi-sdk/State-class.md) state, {required [SupportsIsJ
 ## Implementation
 
 ```dart
-LockTrait(State state, {required this.supportsIsJammed})
-    : super('lock', {state}, {supportsIsJammed});
+LockTrait(Set<State> states, Set<Property> properties)
+    : super('lock', states, properties);
 ```
 
 

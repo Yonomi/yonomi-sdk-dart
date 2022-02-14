@@ -115,15 +115,6 @@ _inherited_
 
 
 
-##### [getLockTrait](../yonomi-sdk/DevicesRepository/getLockTrait.md)(dynamic trait) [LockTrait](../yonomi-sdk/LockTrait-class.md)
-
-
-
-   
-
-
-
-
 ##### [getPowerTrait](../yonomi-sdk/DevicesRepository/getPowerTrait.md)(dynamic trait) [PowerTrait](../yonomi-sdk/PowerTrait-class.md)
 
 

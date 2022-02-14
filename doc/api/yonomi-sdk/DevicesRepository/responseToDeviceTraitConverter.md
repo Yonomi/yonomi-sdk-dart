@@ -36,7 +36,7 @@ static List<Trait> responseToDeviceTraitConverter(List deviceTraits) {
       case GTraitName.THERMOSTAT_SETTING:
         return ThermostatRepository.getThermostatTrait(trait);
       case GTraitName.LOCK:
-        return getLockTrait(trait);
+        return LockRepository.getLockTrait(trait);
       case GTraitName.BATTERY_LEVEL:
         return getBatteryLevelTrait(trait);
       case GTraitName.POWER:
