@@ -265,26 +265,6 @@
 
 
 
-## Properties
-
-##### [HEAD](../yonomi-sdk/HEAD.md) &#8596; dynamic
-
-
-
-   
-_read / write_
-
-
-
-##### [main](../yonomi-sdk/main.md) &#8596; dynamic
-
-
-
-   
-_read / write_
-
-
-
 
 
 

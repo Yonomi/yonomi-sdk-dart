@@ -186,13 +186,6 @@ class IsOnOff extends State<bool> {
   IsOnOff(bool value) : super('isOn', value);
 }
 
-<<<<<<< HEAD
-class IsLocked extends State<bool> {
-  IsLocked(bool value) : super('isLocked', value);
-}
-
-=======
->>>>>>> main
 class BatteryLevel extends State<int> {
   BatteryLevel(int value) : super('batteryLevel', value);
 }
