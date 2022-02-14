@@ -9,10 +9,10 @@ class LockRepository {
     if (trait is GgetDeviceData_device_traits__asLockDeviceTrait ||
         trait
             is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait) {
-      var properties = {
+      final Set<Property> properties = {
         SupportsIsJammed(trait.properties.supportsIsJammed ?? false)
       };
-      var states = <State>{
+      final Set<State> states = <State>{
         IsLocked(trait.state.isLocked.reported?.value ?? false),
         if (trait.properties.supportsIsJammed)
           IsJammed(trait.state.isJammed.reported?.value ?? false),
