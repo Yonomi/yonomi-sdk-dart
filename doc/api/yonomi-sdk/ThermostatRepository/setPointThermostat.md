@@ -31,7 +31,7 @@ static Future<void> setPointThermostat(
     b..vars.deviceId = id;
     b..vars.targetTemperature = temperature;
   });
-  BaseRepository.mutate(link, req.operation, req.vars.toJson());
+  Repository.mutate(link, req.operation, req.vars.toJson());
 }
 ```
 

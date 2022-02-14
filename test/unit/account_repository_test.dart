@@ -1,7 +1,6 @@
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/account_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
 
 import 'power_repository_test.mocks.dart';
 

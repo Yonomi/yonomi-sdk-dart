@@ -2,7 +2,7 @@ import 'package:gql/ast.dart';
 import 'package:gql_exec/gql_exec.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 
 import 'power_repository_test.mocks.dart';
 
@@ -15,7 +15,7 @@ void main() {
         ]));
 
     expect(
-        BaseRepository.fetch(link, Operation(document: DocumentNode())),
+        Repository.fetch(link, Operation(document: DocumentNode())),
         throwsA(isA<GraphQLError>()));
   });
 
@@ -27,7 +27,7 @@ void main() {
         ]));
 
     expect(
-        BaseRepository.mutate(
+        Repository.mutate(
             link, Operation(document: DocumentNode()), Map<String, dynamic>()),
         throwsA(isA<GraphQLError>()));
   });

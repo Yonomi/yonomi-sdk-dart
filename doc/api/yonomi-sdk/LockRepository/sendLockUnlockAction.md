@@ -31,7 +31,7 @@ static Future<void> sendLockUnlockAction(
     b..vars.deviceId = id;
     b..vars.lock = lockUnlock;
   });
-  BaseRepository.mutate(link, req.operation, req.vars.toJson());
+  Repository.mutate(link, req.operation, req.vars.toJson());
 }
 ```
 

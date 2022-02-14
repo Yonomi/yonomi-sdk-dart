@@ -1,7 +1,7 @@
-import 'package:gql_exec/gql_exec.dart' as gql_exec;
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/user/user.query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/user/user.query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
@@ -12,13 +12,8 @@ class UserRepository {
     if (graphLink == null) graphLink = GraphLinkCreator.create(request);
 
     final req = Guser();
-    final res = await graphLink
-        .request(gql_exec.Request(operation: req.operation))
-        .first;
-    final errors = res.errors;
-    if (errors != null && errors.isNotEmpty) {
-      throw errors.first;
-    }
+    final res = await Repository.fetch(graphLink, req.operation);
+
     final userData = GuserData.fromJson(res.data!);
     return User.fromGUser(
         userData!.me.id,

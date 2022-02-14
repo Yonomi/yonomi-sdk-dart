@@ -3,7 +3,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.g
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_fan_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/repository/base_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
@@ -26,10 +26,12 @@ class ThermostatRepository {
               trait.properties.availableThermostatModes);
 
       return ThermostatTrait(<State>{
-        TargetTemperature(trait.state.targetTemperature.reported?.value ?? 0.0),
+        TargetTemperature(trait.state.targetTemperature.reported?.value),
         FanMode(trait.state.fanMode.reported?.value ?? AvailableFanMode.ON),
         ThermostatMode(
             trait.state.mode.reported?.value ?? AvailableThermostatMode.OFF),
+        AmbientTemperature(
+            trait.state.ambientTemperature.reported?.value),
       }, {
         AvailableFanModes(availableFanMode),
         AvailableThermostatModes(availableThermostatModes)
@@ -46,7 +48,7 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.targetTemperature = temperature;
     });
-    BaseRepository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(link, req.operation, req.vars.toJson());
   }
 
   static Future<void> setMode(
@@ -56,7 +58,7 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.mode = mode;
     });
-    BaseRepository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(link, req.operation, req.vars.toJson());
   }
 
   static Future<void> setFanMode(
@@ -66,12 +68,16 @@ class ThermostatRepository {
       b..vars.deviceId = id;
       b..vars.fanMode = mode;
     });
-    BaseRepository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(link, req.operation, req.vars.toJson());
   }
 }
 
 class TargetTemperature extends State<double?> {
   TargetTemperature(double? value) : super('targetTemperature', value);
+}
+
+class AmbientTemperature extends State<double?> {
+  AmbientTemperature(double? value) : super('ambientTemperature', value);
 }
 
 class FanMode extends State<AvailableFanMode> {
@@ -99,6 +105,5 @@ class ThermostatTrait extends Trait {
   Set<AvailableFanMode> get availableFanModes =>
       propertyWhereType<AvailableFanModes>().value;
   Set<AvailableThermostatMode> get availableThermostatModes =>
-      propertyWhereType<AvailableThermostatModes>()
-          .value;
+      propertyWhereType<AvailableThermostatModes>().value;
 }
