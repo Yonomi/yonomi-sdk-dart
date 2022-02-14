@@ -1,4 +1,3 @@
-import 'package:gql_exec/gql_exec.dart' as gql;
 import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
@@ -195,15 +194,15 @@ abstract class State<T> {
 }
 
 class IsOnOff extends State<bool> {
-  IsOnOff(bool value) : super('Power', value);
+  IsOnOff(bool value) : super('isOn', value);
 }
 
 class IsLocked extends State<bool> {
-  IsLocked(bool value) : super('LockUnlock', value);
+  IsLocked(bool value) : super('isLocked', value);
 }
 
 class BatteryLevel extends State<int> {
-  BatteryLevel(int value) : super('BatteryLevel', value);
+  BatteryLevel(int value) : super('batteryLevel', value);
 }
 
 class UnknownState extends State<String> {
