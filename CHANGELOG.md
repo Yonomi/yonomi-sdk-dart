@@ -1,3 +1,11 @@
+# [2.7.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.6.0...v2.7.0) (2022-02-14)
+
+
+### Features
+
+* **devices_repository:** introduce IsJammed state object ([fc9da39](https://github.com/Yonomi/yonomi-sdk-dart/commit/fc9da39a54ff25912ede5aa812065cf2ea248ddb))
+* **query.fragment.graphql:** query for isJammed state ([e355515](https://github.com/Yonomi/yonomi-sdk-dart/commit/e3555153275a85425b344a20b4f32386b79f17ee))
+
 # [2.6.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.5.0...v2.6.0) (2022-02-10)
 
 
