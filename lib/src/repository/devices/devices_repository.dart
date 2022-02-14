@@ -186,14 +186,6 @@ class IsOnOff extends State<bool> {
   IsOnOff(bool value) : super('Power', value);
 }
 
-class IsLocked extends State<bool> {
-  IsLocked(bool value) : super('LockUnlock', value);
-}
-
-class IsJammed extends State<bool> {
-  IsJammed(bool value) : super('LockUnlock', value);
-}
-
 class BatteryLevel extends State<int> {
   BatteryLevel(int value) : super('BatteryLevel', value);
 }
@@ -211,16 +203,6 @@ abstract class Property<T> {
 
 class SupportsDiscreteOnOff extends Property<bool> {
   SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
-}
-
-class SupportsIsJammed extends Property<bool> {
-  SupportsIsJammed(bool value) : super('supportsIsJammed', value);
-}
-
-class LockTrait extends Trait {
-  final SupportsIsJammed supportsIsJammed;
-  LockTrait(State state, {required this.supportsIsJammed})
-      : super('lock', {state}, {supportsIsJammed});
 }
 
 class PowerTrait extends Trait {

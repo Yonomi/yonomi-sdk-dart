@@ -9,9 +9,16 @@ class LockRepository {
     if (trait is GgetDeviceData_device_traits__asLockDeviceTrait ||
         trait
             is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait) {
-      return LockTrait(IsLocked(trait.state.isLocked.reported?.value ?? false),
-          supportsIsJammed:
-              SupportsIsJammed(trait.properties.supportsIsJammed ?? false));
+      var properties = {
+        SupportsIsJammed(trait.properties.supportsIsJammed ?? false)
+      };
+      var states = <State>{
+        IsLocked(trait.state.isLocked.reported?.value ?? false),
+        if (trait.properties.supportsIsJammed)
+          IsJammed(trait.state.isJammed.reported?.value ?? false),
+      };
+      LockTrait toReturn = LockTrait(states, properties);
+      return toReturn;
     } else {
       throw ArgumentError.value(trait);
     }
@@ -26,4 +33,22 @@ class LockRepository {
     });
     BaseRepository.mutate(link, req.operation, req.vars.toJson());
   }
+}
+
+class IsLocked extends State<bool> {
+  IsLocked(bool value) : super('LockUnlock', value);
+}
+
+class IsJammed extends State<bool> {
+  IsJammed(bool value) : super('LockUnlock', value);
+}
+
+class SupportsIsJammed extends Property<bool> {
+  SupportsIsJammed(bool value) : super('supportsIsJammed', value);
+}
+
+class LockTrait extends Trait {
+  bool get supportsIsJammed => propertyWhereType<SupportsIsJammed>().value;
+  LockTrait(Set<State> states, Set<Property> properties)
+      : super('lock', states, properties);
 }
