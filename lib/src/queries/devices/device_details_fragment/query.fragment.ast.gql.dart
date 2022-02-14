@@ -246,6 +246,65 @@ const DeviceDetails = _i1.FragmentDefinitionNode(
                                         directives: [],
                                         selectionSet: null)
                                   ]))
+                            ])),
+                        _i1.FieldNode(
+                            name: _i1.NameNode(value: 'isJammed'),
+                            alias: null,
+                            arguments: [],
+                            directives: [],
+                            selectionSet: _i1.SelectionSetNode(selections: [
+                              _i1.FieldNode(
+                                  name: _i1.NameNode(value: 'reported'),
+                                  alias: null,
+                                  arguments: [],
+                                  directives: [],
+                                  selectionSet:
+                                      _i1.SelectionSetNode(selections: [
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'value'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'sampledAt'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'createdAt'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null)
+                                  ])),
+                              _i1.FieldNode(
+                                  name: _i1.NameNode(value: 'desired'),
+                                  alias: null,
+                                  arguments: [],
+                                  directives: [],
+                                  selectionSet:
+                                      _i1.SelectionSetNode(selections: [
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'value'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'delta'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'updatedAt'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null)
+                                  ]))
                             ]))
                       ]))
                 ])),
