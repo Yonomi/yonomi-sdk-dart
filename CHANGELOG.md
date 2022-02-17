@@ -1,3 +1,10 @@
+## [2.8.1](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.8.0...v2.8.1) (2022-02-17)
+
+
+### Bug Fixes
+
+* **lock_repository:** fix State class names ([b155e45](https://github.com/Yonomi/yonomi-sdk-dart/commit/b155e4516fbf226a533ed8c7e664304e6d435941))
+
 # [2.8.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.7.0...v2.8.0) (2022-02-14)
 
 
