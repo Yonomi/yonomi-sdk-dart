@@ -41,4 +41,11 @@ void main() {
         injectedClient: client);
     verify(client.request(any, any)).called(1);
   });
+
+  test(
+      '''#getPowerTrait should throw argumentError if trait object is not correct type''',
+      () {
+    expect(() => PowerRepository.getPowerTrait(null),
+        throwsA(isA<ArgumentError>()));
+  });
 }
