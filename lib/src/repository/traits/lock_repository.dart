@@ -35,11 +35,11 @@ class LockRepository {
 }
 
 class IsLocked extends State<bool> {
-  IsLocked(bool value) : super('LockUnlock', value);
+  IsLocked(bool value) : super('IsLocked', value);
 }
 
 class IsJammed extends State<bool> {
-  IsJammed(bool value) : super('LockUnlock', value);
+  IsJammed(bool value) : super('IsJammed', value);
 }
 
 class SupportsIsJammed extends Property<bool> {
