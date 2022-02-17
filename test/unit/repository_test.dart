@@ -14,8 +14,7 @@ void main() {
           Response(errors: [GraphQLError(message: 'errrr')])
         ]));
 
-    expect(
-        Repository.fetch(link, Operation(document: DocumentNode())),
+    expect(Repository.fetch(link, Operation(document: DocumentNode())),
         throwsA(isA<GraphQLError>()));
   });
 
