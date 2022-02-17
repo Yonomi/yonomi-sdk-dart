@@ -36,12 +36,6 @@ void main() {
 
     final thermostatTrait = device.traits.whereType<ThermostatTrait>().first;
 
-    print('Cool');
-    print(thermostatTrait
-        .propertyWhereType<CoolSetPointRange>()
-        .value
-        .min
-        .toString());
     expect(thermostatTrait, isNotNull);
     expect(thermostatTrait.stateWhereType<FanMode>(), isNotNull);
     expect(thermostatTrait.propertyWhereType<AvailableFanModes>().value,
