@@ -23,4 +23,11 @@ void main() {
     verify(request.graphUrl).called(1);
     verify(request.headers).called(1);
   });
+
+  test(
+      '''#getBrightnessTrait should throw argumentError if trait object is not correct type''',
+      () {
+    expect(() => BrightnessRepository.getBrightnessTrait(null),
+        throwsA(isA<ArgumentError>()));
+  });
 }

@@ -2,6 +2,7 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
@@ -114,15 +115,35 @@ void main() {
                 }
               }
             }
+          },
+          {
+            "__typename": "BrightnessDeviceTrait",
+            "name": "BRIGHTNESS",
+            "instance": "default",
+            "state": {
+              "brightness": {
+                "reported": {
+                  "value": 91,
+                  "sampledAt": "2021-10-20T02:01:36.000Z",
+                  "createdAt": "2021-10-20T02:51:18.564Z"
+                },
+                "desired": {
+                  "value": 81,
+                  "delta": null,
+                  "updatedAt": "2021-10-20T02:51:18.564Z"
+                }
+              }
+            }
           }
         ]
       }
     });
     final convertedTraits = DevicesRepository.responseToDeviceTraitConverter(
         deviceWithMultipleTraits!.device!.traits.asList());
-    expect(convertedTraits, hasLength(3));
+    expect(convertedTraits, hasLength(4));
     expect(convertedTraits, contains(isA<LockTrait>()));
     expect(convertedTraits, contains(isA<BatteryLevelTrait>()));
+    expect(convertedTraits, contains(isA<BrightnessTrait>()));
     expect(convertedTraits, contains(isA<UnknownTrait>()));
   });
 
@@ -347,6 +368,49 @@ void main() {
         equals(UnknownState));
   });
 
+  test('''#1. responseToDeviceTraitConverter maps single Brightness
+      DeviceTrait to BrightnessTrait''', () {
+    final brightnessDevice = GgetDeviceData_device.fromJson({
+      'id': 'id',
+      'displayName': 'displayName',
+      'updatedAt': '2020-04-01T12:00:00.000Z',
+      'createdAt': '2020-04-01T12:00:00.000Z',
+      'productInformation': {
+        'manufacturer': 'abc',
+        'model': 'model',
+        'description': 'light',
+      },
+      'traits': [
+        {
+          '__typename': 'BrightnessDeviceTrait',
+          'name': 'BRIGHTNESS',
+          'instance': 'default',
+          'properties': {},
+          'state': {
+            'brightness': {
+              'reported': {
+                'value': 91,
+                'sampledAt': '2021-01-04T21:45:19.364Z',
+                'createdAt': '2021-01-04T21:45:19.364Z'
+              },
+              'desired': {
+                'value': 81,
+                'delta': null,
+                'updatedAt': '2021-01-04T21:45:19.364Z'
+              }
+            }
+          }
+        }
+      ]
+    });
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        brightnessDevice!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(BrightnessTrait));
+    expect(convertedValue.first.name, 'brightness');
+  });
+
   test('''#1. responseToDeviceTraitConverter maps single Power
       DeviceTrait to PowerTrait''', () {
     final powerDevice = GgetDeviceData_device.fromJson({
@@ -476,27 +540,6 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(BatteryLevelTrait));
     expect(convertedValue.first.name, 'battery_level');
-  });
-
-  test(
-      '''#getThermostatTrait should throw argumentError if trait object is not correct type''',
-      () {
-    expect(() => ThermostatRepository.getThermostatTrait(null),
-        throwsA(isA<ArgumentError>()));
-  });
-
-  test(
-      '''#getLockTrait should throw argumentError if trait object is not correct type''',
-      () {
-    expect(
-        () => LockRepository.getLockTrait(null), throwsA(isA<ArgumentError>()));
-  });
-
-  test(
-      '''#getPowerTrait should throw argumentError if trait object is not correct type''',
-      () {
-    expect(() => PowerRepository.getPowerTrait(null),
-        throwsA(isA<ArgumentError>()));
   });
 
   test(
