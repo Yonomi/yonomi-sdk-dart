@@ -4,6 +4,7 @@ import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.da
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 
 import 'config.dart';
@@ -35,6 +36,14 @@ class TestFixtures {
     return devices
         .firstWhere((device) => deviceIsOfTrait(device, LockTrait),
             orElse: () => throw 'No lock device found')
+        .id;
+  }
+
+  Future<String> getBrightnessDeviceId(yoRequest.Request request) async {
+    List<Device> devices = await DevicesRepository.getDevices(request);
+    return devices
+        .firstWhere((device) => deviceIsOfTrait(device, BrightnessTrait),
+            orElse: () => throw 'No brightness device found')
         .id;
   }
 
