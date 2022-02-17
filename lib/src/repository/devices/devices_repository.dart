@@ -106,23 +106,11 @@ class DevicesRepository {
         case GTraitName.BATTERY_LEVEL:
           return getBatteryLevelTrait(trait);
         case GTraitName.POWER:
-          return getPowerTrait(trait);
+          return PowerRepository.getPowerTrait(trait);
         default:
           return UnknownTrait(trait.name.toString());
       }
     }).toList();
-  }
-
-  static PowerTrait getPowerTrait(dynamic trait) {
-    if (trait is GgetDeviceData_device_traits__asPowerDeviceTrait ||
-        trait
-            is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait) {
-      return PowerTrait(IsOnOff(trait.state.isOn.reported?.value ?? false),
-          supportsDiscreteOnOff: SupportsDiscreteOnOff(
-              trait.properties.supportsDiscreteOnOff ?? false));
-    } else {
-      throw ArgumentError.value(trait);
-    }
   }
 
   static BatteryLevelTrait getBatteryLevelTrait(dynamic trait) {

@@ -495,7 +495,7 @@ void main() {
   test(
       '''#getPowerTrait should throw argumentError if trait object is not correct type''',
       () {
-    expect(() => DevicesRepository.getPowerTrait(null),
+    expect(() => PowerRepository.getPowerTrait(null),
         throwsA(isA<ArgumentError>()));
   });
 
