@@ -14,6 +14,17 @@ import 'power_repository_test.mocks.dart';
   MockSpec<sdk.Request>(as: #MockRequest, returnNullOnMissingStub: true)
 ])
 void main() {
+  test('powerRepository calls client request with passed id', () async {
+    final request = MockRequest();
+    when(request.headers).thenReturn(Map<String, String>());
+    when(request.graphUrl).thenReturn('https://somegraph.ql');
+    final onOff = true;
+    final id = 'id';
+    await sdk.PowerRepository.sendPowerAction(request, id, onOff);
+    verify(request.graphUrl).called(1);
+    verify(request.headers).called(1);
+  });
+
   test('powerRepository calls client request with passed id and onOff',
       () async {
     final client = MockLink();
