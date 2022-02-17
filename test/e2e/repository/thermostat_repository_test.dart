@@ -20,11 +20,6 @@ void main() {
     testThermostatId = await tester.getThermostatDeviceId(request);
   });
 
-  test('getDevices returns device list for all traits', () async {
-    List<Device> devices = await DevicesRepository.getDevices(request);
-    expect(devices, isNotEmpty);
-  });
-
   test(
       'getDeviceDetails on a Thermostat Device returns thermostat-relevant details',
       () async {
