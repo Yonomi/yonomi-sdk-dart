@@ -6,6 +6,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gq
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
@@ -182,10 +183,6 @@ abstract class State<T> {
   State(this.name, this.value);
 }
 
-class IsOnOff extends State<bool> {
-  IsOnOff(bool value) : super('isOn', value);
-}
-
 class BatteryLevel extends State<int> {
   BatteryLevel(int value) : super('batteryLevel', value);
 }
@@ -199,16 +196,6 @@ abstract class Property<T> {
   final T value;
 
   Property(this.name, this.value);
-}
-
-class SupportsDiscreteOnOff extends Property<bool> {
-  SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
-}
-
-class PowerTrait extends Trait {
-  final SupportsDiscreteOnOff supportsDiscreteOnOff;
-  PowerTrait(State state, {required this.supportsDiscreteOnOff})
-      : super('power', {state}, {supportsDiscreteOnOff});
 }
 
 class UnknownTrait extends Trait {

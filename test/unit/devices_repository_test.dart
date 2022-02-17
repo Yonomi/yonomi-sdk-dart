@@ -3,6 +3,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gq
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 
 import '../utils/test_fixtures.dart';

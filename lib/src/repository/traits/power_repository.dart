@@ -18,3 +18,17 @@ class PowerRepository {
     );
   }
 }
+
+class SupportsDiscreteOnOff extends Property<bool> {
+  SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
+}
+
+class IsOnOff extends State<bool> {
+  IsOnOff(bool value) : super('isOn', value);
+}
+
+class PowerTrait extends Trait {
+  final SupportsDiscreteOnOff supportsDiscreteOnOff;
+  PowerTrait(State state, {required this.supportsDiscreteOnOff})
+      : super('power', {state}, {supportsDiscreteOnOff});
+}
