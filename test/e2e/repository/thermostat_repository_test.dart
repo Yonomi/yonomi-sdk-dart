@@ -41,8 +41,8 @@ void main() {
     expect(thermostatTrait.propertyWhereType<AvailableFanModes>().value,
         isNotEmpty);
     expect(thermostatTrait.availableThermostatModes, isNotEmpty);
-    expect(thermostatTrait.coolSetPointRange, isNotEmpty);
-    expect(thermostatTrait.heatSetPointRange, isNotEmpty);
+    expect(thermostatTrait.coolSetPointRange, isA<TemperatureRange>());
+    expect(thermostatTrait.heatSetPointRange, isA<TemperatureRange>());
     expect(thermostatTrait.heatSetPointRange.min, isA<double>());
     expect(thermostatTrait.heatSetPointRange.max, isA<double>());
     expect(thermostatTrait.coolSetPointRange.min, isA<double>());
