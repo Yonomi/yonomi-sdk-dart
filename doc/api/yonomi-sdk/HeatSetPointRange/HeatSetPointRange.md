@@ -19,7 +19,7 @@ HeatSetPointRange([TemperatureRange](../../yonomi-sdk/TemperatureRange-class.md)
 ## Implementation
 
 ```dart
-HeatSetPointRange(TemperatureRange value) : super('maxTemperature', value);
+HeatSetPointRange(TemperatureRange value) : super('heatSetPointRange', value);
 ```
 
 

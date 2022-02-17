@@ -40,8 +40,7 @@ static ThermostatTrait getThermostatTrait(dynamic trait) {
       FanMode(trait.state.fanMode.reported?.value ?? AvailableFanMode.ON),
       ThermostatMode(
           trait.state.mode.reported?.value ?? AvailableThermostatMode.OFF),
-      AmbientTemperature(
-          trait.state.ambientTemperature.reported?.value),
+      AmbientTemperature(trait.state.ambientTemperature.reported?.value),
     }, {
       AvailableFanModes(availableFanMode),
       AvailableThermostatModes(availableThermostatModes),
