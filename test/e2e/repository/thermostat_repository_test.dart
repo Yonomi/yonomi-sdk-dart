@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:test/test.dart';
 
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';

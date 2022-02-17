@@ -30,8 +30,7 @@ class ThermostatRepository {
         FanMode(trait.state.fanMode.reported?.value ?? AvailableFanMode.ON),
         ThermostatMode(
             trait.state.mode.reported?.value ?? AvailableThermostatMode.OFF),
-        AmbientTemperature(
-            trait.state.ambientTemperature.reported?.value),
+        AmbientTemperature(trait.state.ambientTemperature.reported?.value),
       }, {
         AvailableFanModes(availableFanMode),
         AvailableThermostatModes(availableThermostatModes),
@@ -109,11 +108,11 @@ class TemperatureRange {
 }
 
 class HeatSetPointRange extends Property<TemperatureRange> {
-  HeatSetPointRange(TemperatureRange value) : super('maxTemperature', value);
+  HeatSetPointRange(TemperatureRange value) : super('heatSetPointRange', value);
 }
 
 class CoolSetPointRange extends Property<TemperatureRange> {
-  CoolSetPointRange(TemperatureRange value) : super('minTemperature', value);
+  CoolSetPointRange(TemperatureRange value) : super('coolSetPointRange', value);
 }
 
 class AvailableThermostatModes extends Property<Set<AvailableThermostatMode>> {
