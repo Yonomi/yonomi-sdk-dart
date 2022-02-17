@@ -45,11 +45,11 @@ static ThermostatTrait getThermostatTrait(dynamic trait) {
       AvailableFanModes(availableFanMode),
       AvailableThermostatModes(availableThermostatModes),
       HeatSetPointRange(TemperatureRange(
-          min: trait.properties.heatSetPointRange.min ?? 0.0,
-          max: trait.properties.heatSetPointRange.max ?? 0.0)),
+          min: trait.properties.heatSetPointRange.min!,
+          max: trait.properties.heatSetPointRange.max!)),
       CoolSetPointRange(TemperatureRange(
-          min: trait.properties.coolSetPointRange.min ?? 0.0,
-          max: trait.properties.coolSetPointRange.max ?? 0.0)),
+          min: trait.properties.coolSetPointRange.min!,
+          max: trait.properties.coolSetPointRange.max!)),
     });
   } else {
     throw ArgumentError.value(trait);
