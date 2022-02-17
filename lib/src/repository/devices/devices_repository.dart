@@ -5,6 +5,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.g
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
@@ -107,6 +108,8 @@ class DevicesRepository {
           return getBatteryLevelTrait(trait);
         case GTraitName.POWER:
           return PowerRepository.getPowerTrait(trait);
+        case GTraitName.BRIGHTNESS:
+          return BrightnessRepository.getBrightnessTrait(trait);
         default:
           return UnknownTrait(trait.name.toString());
       }
