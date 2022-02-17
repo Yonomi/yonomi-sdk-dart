@@ -41,16 +41,12 @@ void main() {
     expect(thermostatTrait.propertyWhereType<AvailableFanModes>().value,
         isNotEmpty);
     expect(thermostatTrait.availableThermostatModes, isNotEmpty);
-    expect(thermostatTrait.propertyWhereType<AvailableThermostatModes>().value,
-        isNotEmpty);
-    expect(thermostatTrait.propertyWhereType<HeatSetPointRange>().value.max,
-        isA<double>());
-    expect(thermostatTrait.propertyWhereType<HeatSetPointRange>().value.min,
-        isA<double>());
-    expect(thermostatTrait.propertyWhereType<CoolSetPointRange>().value.max,
-        isA<double>());
-    expect(thermostatTrait.propertyWhereType<CoolSetPointRange>().value.min,
-        isA<double>());
+    expect(thermostatTrait.coolSetPointRange, isNotEmpty);
+    expect(thermostatTrait.heatSetPointRange, isNotEmpty);
+    expect(thermostatTrait.heatSetPointRange.min, isA<double>());
+    expect(thermostatTrait.heatSetPointRange.max, isA<double>());
+    expect(thermostatTrait.coolSetPointRange.min, isA<double>());
+    expect(thermostatTrait.coolSetPointRange.max, isA<double>());
   });
 
   test('getThermostatDetails gets thermostat details', () async {
