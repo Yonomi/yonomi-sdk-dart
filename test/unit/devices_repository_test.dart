@@ -548,4 +548,10 @@ void main() {
     expect(() => DevicesRepository.getBatteryLevelTrait(null),
         throwsA(isA<ArgumentError>()));
   });
+
+  test('verify constructor of #DeviceNameId', () {
+    final id = DeviceNameId('id', 'name');
+    expect(id.id, equals('id'));
+    expect(id.name, equals('name'));
+  });
 }
