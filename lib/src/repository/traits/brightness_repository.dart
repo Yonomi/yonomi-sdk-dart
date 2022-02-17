@@ -11,7 +11,7 @@ class BrightnessRepository {
     if (trait is GgetDeviceData_device_traits__asBrightnessDeviceTrait ||
         trait
             is GgetDevicesData_me_devices_edges_node_traits__asBrightnessDeviceTrait) {
-      final int brightness = trait.brightness.reported;
+      final int? brightness = trait.state.brightness.reported.value;
 
       return BrightnessTrait(Brightness(brightness));
     } else {
