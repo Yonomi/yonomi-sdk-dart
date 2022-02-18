@@ -3,6 +3,7 @@ import 'package:gql_exec/gql_exec.dart';
 import 'package:gql_link/gql_link.dart';
 
 class Repository {
+  // ignore: unused_element
   _Repository() {}
 
   static Future<Response> mutate(
