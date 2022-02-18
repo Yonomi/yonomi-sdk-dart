@@ -40,7 +40,9 @@ static List<Trait> responseToDeviceTraitConverter(List deviceTraits) {
       case GTraitName.BATTERY_LEVEL:
         return getBatteryLevelTrait(trait);
       case GTraitName.POWER:
-        return getPowerTrait(trait);
+        return PowerRepository.getPowerTrait(trait);
+      case GTraitName.BRIGHTNESS:
+        return BrightnessRepository.getBrightnessTrait(trait);
       default:
         return UnknownTrait(trait.name.toString());
     }
