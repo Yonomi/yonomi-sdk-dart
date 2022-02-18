@@ -52,12 +52,30 @@ _read-only_
 
 
 
+##### [coolSetPointRange](../yonomi-sdk/ThermostatTrait/coolSetPointRange.md) &#8594; [TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)
+
+
+
+   
+_read-only_
+
+
+
 ##### [hashCode](https://api.flutter.dev/flutter/dart-core/Object/hashCode.html) &#8594; [int](https://api.flutter.dev/flutter/dart-core/int-class.html)
 
 
 
 The hash code for this object. [...](https://api.flutter.dev/flutter/dart-core/Object/hashCode.html)  
 _read-only, inherited_
+
+
+
+##### [heatSetPointRange](../yonomi-sdk/ThermostatTrait/heatSetPointRange.md) &#8594; [TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)
+
+
+
+   
+_read-only_
 
 
 

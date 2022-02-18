@@ -34,8 +34,7 @@ class AccountRepository {
     final req = GgenerateAccountLinkingUrl(
         (b) => b..vars.integrationId = integrationId);
     final res =
-        await Repository.mutate(
-        graphLink, req.operation, req.vars.toJson());
+        await Repository.mutate(graphLink, req.operation, req.vars.toJson());
 
     return GgenerateAccountLinkingUrlData.fromJson(res.data!)!
         .generateAccountLinkingUrl

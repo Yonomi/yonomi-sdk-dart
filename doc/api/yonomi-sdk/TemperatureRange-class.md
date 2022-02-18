@@ -1,7 +1,7 @@
 
 
 
-# Property&lt;T> class
+# TemperatureRange class
 
 
 
@@ -15,22 +15,9 @@
 
 
 
-
-
-**Implementers**
-
-- [AvailableFanModes](../yonomi-sdk/AvailableFanModes-class.md)
-- [AvailableThermostatModes](../yonomi-sdk/AvailableThermostatModes-class.md)
-- [CoolSetPointRange](../yonomi-sdk/CoolSetPointRange-class.md)
-- [HeatSetPointRange](../yonomi-sdk/HeatSetPointRange-class.md)
-- [SupportsDiscreteOnOff](../yonomi-sdk/SupportsDiscreteOnOff-class.md)
-- [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)
-
-
-
 ## Constructors
 
-[Property](../yonomi-sdk/Property/Property.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, T value)
+[TemperatureRange](../yonomi-sdk/TemperatureRange/TemperatureRange.md) ({required [double](https://api.flutter.dev/flutter/dart-core/double-class.html) min, required [double](https://api.flutter.dev/flutter/dart-core/double-class.html) max})
 
     
 
@@ -46,7 +33,16 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/Property/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [max](../yonomi-sdk/TemperatureRange/max.md) &#8594; [double](https://api.flutter.dev/flutter/dart-core/double-class.html)
+
+
+
+   
+_final_
+
+
+
+##### [min](../yonomi-sdk/TemperatureRange/min.md) &#8594; [double](https://api.flutter.dev/flutter/dart-core/double-class.html)
 
 
 
@@ -61,15 +57,6 @@ _final_
 
 A representation of the runtime type of the object.   
 _read-only, inherited_
-
-
-
-##### [value](../yonomi-sdk/Property/value.md) &#8594; T
-
-
-
-   
-_final_
 
 
 
