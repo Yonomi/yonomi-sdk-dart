@@ -1,7 +1,7 @@
 
 
 
-# State&lt;T> class
+# BrightnessRepository class
 
 
 
@@ -15,26 +15,9 @@
 
 
 
-
-
-**Implementers**
-
-- [AmbientTemperature](../yonomi-sdk/AmbientTemperature-class.md)
-- [BatteryLevel](../yonomi-sdk/BatteryLevel-class.md)
-- [Brightness](../yonomi-sdk/Brightness-class.md)
-- [FanMode](../yonomi-sdk/FanMode-class.md)
-- [IsJammed](../yonomi-sdk/IsJammed-class.md)
-- [IsLocked](../yonomi-sdk/IsLocked-class.md)
-- [IsOnOff](../yonomi-sdk/IsOnOff-class.md)
-- [TargetTemperature](../yonomi-sdk/TargetTemperature-class.md)
-- [ThermostatMode](../yonomi-sdk/ThermostatMode-class.md)
-- [UnknownState](../yonomi-sdk/UnknownState-class.md)
-
-
-
 ## Constructors
 
-[State](../yonomi-sdk/State/State.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, T value)
+[BrightnessRepository](../yonomi-sdk/BrightnessRepository/BrightnessRepository.md) ()
 
     
 
@@ -50,30 +33,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/State/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
-
-
-
-   
-_final_
-
-
-
 ##### [runtimeType](https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html) &#8594; [Type](https://api.flutter.dev/flutter/dart-core/Type-class.html)
 
 
 
 A representation of the runtime type of the object.   
 _read-only, inherited_
-
-
-
-##### [value](../yonomi-sdk/State/value.md) &#8594; T
-
-
-
-   
-_final_
 
 
 
@@ -108,6 +73,26 @@ _inherited_
 The equality operator. [...](https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html)  
 _inherited_
 
+
+
+
+
+## Static Methods
+
+##### [getBrightnessTrait](../yonomi-sdk/BrightnessRepository/getBrightnessTrait.md)(dynamic trait) [BrightnessTrait](../yonomi-sdk/BrightnessTrait-class.md)
+
+
+
+   
+
+
+
+
+##### [setBrightnessAction](../yonomi-sdk/BrightnessRepository/setBrightnessAction.md)([Request](../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id, [int](https://api.flutter.dev/flutter/dart-core/int-class.html) brightness) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;void>
+
+
+
+   
 
 
 

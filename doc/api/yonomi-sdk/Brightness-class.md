@@ -1,7 +1,7 @@
 
 
 
-# Trait class
+# Brightness class
 
 
 
@@ -14,23 +14,20 @@
 
 
 
+**Inheritance**
+
+- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
+- [State](../yonomi-sdk/State-class.md)&lt;[int](https://api.flutter.dev/flutter/dart-core/int-class.html)?>
+- Brightness
 
 
 
-**Implementers**
-
-- [BatteryLevelTrait](../yonomi-sdk/BatteryLevelTrait-class.md)
-- [BrightnessTrait](../yonomi-sdk/BrightnessTrait-class.md)
-- [LockTrait](../yonomi-sdk/LockTrait-class.md)
-- [PowerTrait](../yonomi-sdk/PowerTrait-class.md)
-- [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)
-- [UnknownTrait](../yonomi-sdk/UnknownTrait-class.md)
 
 
 
 ## Constructors
 
-[Trait](../yonomi-sdk/Trait/Trait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)> states, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[Brightness](../yonomi-sdk/Brightness/Brightness.md) ([int](https://api.flutter.dev/flutter/dart-core/int-class.html)? brightness)
 
     
 
@@ -46,21 +43,12 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/Trait/name.md) &#8596; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](../yonomi-sdk/State/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
    
-_late, final_
-
-
-
-##### [properties](../yonomi-sdk/Trait/properties.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)>
-
-
-
-   
-_late, final_
+_final, inherited_
 
 
 
@@ -73,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [states](../yonomi-sdk/Trait/states.md) &#8596; [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)>
+##### [value](../yonomi-sdk/State/value.md) &#8594; [int](https://api.flutter.dev/flutter/dart-core/int-class.html)?
 
 
 
    
-_late, final_
+_final, inherited_
 
 
 
@@ -91,24 +79,6 @@ _late, final_
 
 Invoked when a non-existent method or property is accessed. [...](https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html)  
 _inherited_
-
-
-
-##### [propertyWhereType](../yonomi-sdk/Trait/propertyWhereType.md)&lt;T extends [Property](../yonomi-sdk/Property-class.md)>() T
-
-
-
-   
-
-
-
-
-##### [stateWhereType](../yonomi-sdk/Trait/stateWhereType.md)&lt;T extends [State](../yonomi-sdk/State-class.md)>() [State](../yonomi-sdk/State-class.md)
-
-
-
-   
-
 
 
 

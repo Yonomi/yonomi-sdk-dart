@@ -1,7 +1,7 @@
 
 
 
-# Trait class
+# BrightnessTrait class
 
 
 
@@ -14,23 +14,20 @@
 
 
 
+**Inheritance**
+
+- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
+- [Trait](../yonomi-sdk/Trait-class.md)
+- BrightnessTrait
 
 
 
-**Implementers**
-
-- [BatteryLevelTrait](../yonomi-sdk/BatteryLevelTrait-class.md)
-- [BrightnessTrait](../yonomi-sdk/BrightnessTrait-class.md)
-- [LockTrait](../yonomi-sdk/LockTrait-class.md)
-- [PowerTrait](../yonomi-sdk/PowerTrait-class.md)
-- [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)
-- [UnknownTrait](../yonomi-sdk/UnknownTrait-class.md)
 
 
 
 ## Constructors
 
-[Trait](../yonomi-sdk/Trait/Trait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)> states, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[BrightnessTrait](../yonomi-sdk/BrightnessTrait/BrightnessTrait.md) ([Brightness](../yonomi-sdk/Brightness-class.md) brightness)
 
     
 
@@ -51,7 +48,7 @@ _read-only, inherited_
 
 
    
-_late, final_
+_late, final, inherited_
 
 
 
@@ -60,7 +57,7 @@ _late, final_
 
 
    
-_late, final_
+_late, final, inherited_
 
 
 
@@ -78,7 +75,7 @@ _read-only, inherited_
 
 
    
-_late, final_
+_late, final, inherited_
 
 
 
@@ -99,7 +96,7 @@ _inherited_
 
 
    
-
+_inherited_
 
 
 
@@ -108,7 +105,7 @@ _inherited_
 
 
    
-
+_inherited_
 
 
 
