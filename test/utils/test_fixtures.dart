@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 

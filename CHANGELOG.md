@@ -1,3 +1,13 @@
+## [2.8.2](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.8.1...v2.8.2) (2022-02-18)
+
+
+### Bug Fixes
+
+* added properties for temperatureRange ([6a79b72](https://github.com/Yonomi/yonomi-sdk-dart/commit/6a79b7278e170e6319f0dab8c6d0e3a05689e9f0))
+* code review comments ([2f49612](https://github.com/Yonomi/yonomi-sdk-dart/commit/2f496124181ad14f0e218635534f8ce655d70df2))
+* tests ([0c37004](https://github.com/Yonomi/yonomi-sdk-dart/commit/0c37004c36564cb88e3d8b2823d22a1cd29a9b4e))
+* tests to refer to correct getter ([4c593f5](https://github.com/Yonomi/yonomi-sdk-dart/commit/4c593f596a7e38376b803604155aaac9d100d49b))
+
 ## [2.8.1](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.8.0...v2.8.1) (2022-02-17)
 
 

@@ -65,6 +65,7 @@
  
 
 
+<<<<<<< HEAD
 ##### [Brightness](../yonomi-sdk/Brightness-class.md)
 
 
@@ -80,6 +81,9 @@
 
 
 ##### [BrightnessTrait](../yonomi-sdk/BrightnessTrait-class.md)
+=======
+##### [CoolSetPointRange](../yonomi-sdk/CoolSetPointRange-class.md)
+>>>>>>> main
 
 
 
@@ -115,6 +119,13 @@
 
 
 ##### [GraphLinkCreator](../yonomi-sdk/GraphLinkCreator-class.md)
+
+
+
+ 
+
+
+##### [HeatSetPointRange](../yonomi-sdk/HeatSetPointRange-class.md)
 
 
 
@@ -213,6 +224,13 @@
 
 
 ##### [TargetTemperature](../yonomi-sdk/TargetTemperature-class.md)
+
+
+
+ 
+
+
+##### [TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)
 
 
 

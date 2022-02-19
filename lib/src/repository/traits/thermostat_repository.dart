@@ -4,7 +4,7 @@ import 'package:yonomi_platform_sdk/src/queries/thermostat/set_fan_mode/query.re
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 
@@ -30,11 +30,16 @@ class ThermostatRepository {
         FanMode(trait.state.fanMode.reported?.value ?? AvailableFanMode.ON),
         ThermostatMode(
             trait.state.mode.reported?.value ?? AvailableThermostatMode.OFF),
-        AmbientTemperature(
-            trait.state.ambientTemperature.reported?.value),
+        AmbientTemperature(trait.state.ambientTemperature.reported?.value),
       }, {
         AvailableFanModes(availableFanMode),
-        AvailableThermostatModes(availableThermostatModes)
+        AvailableThermostatModes(availableThermostatModes),
+        HeatSetPointRange(TemperatureRange(
+            min: trait.properties.heatSetPointRange.min!,
+            max: trait.properties.heatSetPointRange.max!)),
+        CoolSetPointRange(TemperatureRange(
+            min: trait.properties.coolSetPointRange.min!,
+            max: trait.properties.coolSetPointRange.max!)),
       });
     } else {
       throw ArgumentError.value(trait);
@@ -93,6 +98,23 @@ class AvailableFanModes extends Property<Set<AvailableFanMode>> {
       : super('availableFanModes', value);
 }
 
+class TemperatureRange {
+  final double min;
+  final double max;
+
+  TemperatureRange({required double min, required double max})
+      : min = min,
+        max = max;
+}
+
+class HeatSetPointRange extends Property<TemperatureRange> {
+  HeatSetPointRange(TemperatureRange value) : super('heatSetPointRange', value);
+}
+
+class CoolSetPointRange extends Property<TemperatureRange> {
+  CoolSetPointRange(TemperatureRange value) : super('coolSetPointRange', value);
+}
+
 class AvailableThermostatModes extends Property<Set<AvailableThermostatMode>> {
   AvailableThermostatModes(Set<AvailableThermostatMode> value)
       : super('availableThermostatModes', value);
@@ -106,4 +128,10 @@ class ThermostatTrait extends Trait {
       propertyWhereType<AvailableFanModes>().value;
   Set<AvailableThermostatMode> get availableThermostatModes =>
       propertyWhereType<AvailableThermostatModes>().value;
+
+  TemperatureRange get heatSetPointRange =>
+      propertyWhereType<HeatSetPointRange>().value;
+
+  TemperatureRange get coolSetPointRange =>
+      propertyWhereType<CoolSetPointRange>().value;
 }

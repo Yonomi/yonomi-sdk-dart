@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 
-import 'package:yonomi_platform_sdk/src/repository/devices/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
@@ -28,13 +28,18 @@ void main() {
     expect(device, isNotNull);
 
     final thermostatTrait = device.traits.whereType<ThermostatTrait>().first;
+
     expect(thermostatTrait, isNotNull);
     expect(thermostatTrait.stateWhereType<FanMode>(), isNotNull);
     expect(thermostatTrait.propertyWhereType<AvailableFanModes>().value,
         isNotEmpty);
     expect(thermostatTrait.availableThermostatModes, isNotEmpty);
-    expect(thermostatTrait.propertyWhereType<AvailableThermostatModes>().value,
-        isNotEmpty);
+    expect(thermostatTrait.coolSetPointRange, isA<TemperatureRange>());
+    expect(thermostatTrait.heatSetPointRange, isA<TemperatureRange>());
+    expect(thermostatTrait.heatSetPointRange.min, isA<double>());
+    expect(thermostatTrait.heatSetPointRange.max, isA<double>());
+    expect(thermostatTrait.coolSetPointRange.min, isA<double>());
+    expect(thermostatTrait.coolSetPointRange.max, isA<double>());
   });
 
   test('getThermostatDetails gets thermostat details', () async {
