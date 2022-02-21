@@ -123,14 +123,14 @@ void main() {
             "state": {
               "brightness": {
                 "reported": {
-                  "value": 91,
-                  "sampledAt": "2021-10-20T02:01:36.000Z",
-                  "createdAt": "2021-10-20T02:51:18.564Z"
+                  "value": 100,
+                  "sampledAt": "2022-02-21T20:05:25.013Z",
+                  "createdAt": "2022-02-21T20:05:26.398Z"
                 },
                 "desired": {
-                  "value": 81,
+                  "value": 100,
                   "delta": null,
-                  "updatedAt": "2021-10-20T02:51:18.564Z"
+                  "updatedAt": "2022-02-21T20:05:26.398Z"
                 }
               }
             }
@@ -371,32 +371,52 @@ void main() {
   test('''#1. responseToDeviceTraitConverter maps single Brightness
       DeviceTrait to BrightnessTrait''', () {
     final brightnessDevice = GgetDeviceData_device.fromJson({
-      'id': 'id',
-      'displayName': 'displayName',
-      'updatedAt': '2020-04-01T12:00:00.000Z',
-      'createdAt': '2020-04-01T12:00:00.000Z',
-      'productInformation': {
-        'manufacturer': 'abc',
-        'model': 'model',
-        'description': 'light',
+      "id": "442f2edb-6183-4671-92e8-c92b68bc9785",
+      "displayName": "Hue White Bulb",
+      "updatedAt": "2022-02-21T20:05:26.210Z",
+      "productInformation": {
+        "description": "Hue white lamp",
+        "manufacturer": "Signify Netherlands B.V.",
+        "model": "LWB014",
+        "serialNumber": null
       },
-      'traits': [
+      "createdAt": "2022-02-21T20:05:26.210Z",
+      "traits": [
         {
-          '__typename': 'BrightnessDeviceTrait',
-          'name': 'BRIGHTNESS',
-          'instance': 'default',
-          'properties': {},
-          'state': {
-            'brightness': {
-              'reported': {
-                'value': 91,
-                'sampledAt': '2021-01-04T21:45:19.364Z',
-                'createdAt': '2021-01-04T21:45:19.364Z'
+          "__typename": "PowerDeviceTrait",
+          "name": "POWER",
+          "instance": "default",
+          "properties": {"supportsDiscreteOnOff": null},
+          "state": {
+            "isOn": {
+              "reported": {
+                "value": false,
+                "sampledAt": "2022-02-21T20:05:25.013Z",
+                "createdAt": "2022-02-21T20:05:26.297Z"
               },
-              'desired': {
-                'value': 81,
-                'delta': null,
-                'updatedAt': '2021-01-04T21:45:19.364Z'
+              "desired": {
+                "value": false,
+                "delta": null,
+                "updatedAt": "2022-02-21T20:05:26.297Z"
+              }
+            }
+          }
+        },
+        {
+          "__typename": "BrightnessDeviceTrait",
+          "name": "BRIGHTNESS",
+          "instance": "default",
+          "state": {
+            "brightness": {
+              "reported": {
+                "value": 100,
+                "sampledAt": "2022-02-21T20:05:25.013Z",
+                "createdAt": "2022-02-21T20:05:26.398Z"
+              },
+              "desired": {
+                "value": 100,
+                "delta": null,
+                "updatedAt": "2022-02-21T20:05:26.398Z"
               }
             }
           }
@@ -406,9 +426,13 @@ void main() {
 
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
         brightnessDevice!.traits.asList());
+    final brightnessTrait = convertedValue.whereType<BrightnessTrait>().first;
+    final powerTrait = convertedValue.whereType<PowerTrait>().first;
 
-    expect(convertedValue.first.runtimeType, equals(BrightnessTrait));
-    expect(convertedValue.first.name, 'brightness');
+    expect(brightnessDevice.id, equals('442f2edb-6183-4671-92e8-c92b68bc9785'));
+    expect(brightnessTrait.name, equals('brightness'));
+    expect(brightnessTrait.stateWhereType<Brightness>().value, equals(100));
+    expect(powerTrait.stateWhereType<IsOnOff>().value, isFalse);
   });
 
   test('''#1. responseToDeviceTraitConverter maps single Power
