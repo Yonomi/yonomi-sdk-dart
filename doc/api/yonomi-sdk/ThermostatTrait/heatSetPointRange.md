@@ -11,7 +11,7 @@
 
 
 
-[TemperatureRange](../../yonomi-sdk/TemperatureRange-class.md) heatSetPointRange
+[TemperatureRange](../../yonomi-sdk/TemperatureRange-class.md)? heatSetPointRange
   
 
 
@@ -23,7 +23,7 @@
 ## Implementation
 
 ```dart
-TemperatureRange get heatSetPointRange =>
+TemperatureRange? get heatSetPointRange =>
     propertyWhereType<HeatSetPointRange>().value;
 ```
 
