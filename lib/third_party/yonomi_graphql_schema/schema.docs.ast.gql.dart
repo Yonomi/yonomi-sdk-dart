@@ -1033,6 +1033,10 @@ const TraitName = _i1.EnumTypeDefinitionNode(
       _i1.EnumValueDefinitionNode(
           name: _i1.NameNode(value: 'BRIGHTNESS'), directives: []),
       _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'COLOR'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'COLOR_TEMPERATURE'), directives: []),
+      _i1.EnumValueDefinitionNode(
           name: _i1.NameNode(value: 'LOCK'), directives: []),
       _i1.EnumValueDefinitionNode(
           name: _i1.NameNode(value: 'PIN_CODE_CREDENTIAL'), directives: []),
