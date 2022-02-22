@@ -25,6 +25,20 @@ class ThermostatRepository {
           new Set<AvailableThermostatMode>.from(
               trait.properties.availableThermostatModes);
 
+      final TemperatureRange? coolTempRange =
+          (trait.properties.coolSetPointRange != null)
+              ? new TemperatureRange(
+                  min: trait.properties.coolSetPointRange.min,
+                  max: trait.properties.coolSetPointRange.max)
+              : null;
+
+      final TemperatureRange? heatTempRange =
+          (trait.properties.heatSetPointRange != null)
+              ? new TemperatureRange(
+                  min: trait.properties.heatSetPointRange.min,
+                  max: trait.properties.heatSetPointRange.max)
+              : null;
+
       return ThermostatTrait(<State>{
         TargetTemperature(trait.state.targetTemperature.reported?.value),
         FanMode(trait.state.fanMode.reported?.value ?? AvailableFanMode.ON),
@@ -34,12 +48,8 @@ class ThermostatRepository {
       }, {
         AvailableFanModes(availableFanMode),
         AvailableThermostatModes(availableThermostatModes),
-        HeatSetPointRange(TemperatureRange(
-            min: trait.properties.heatSetPointRange.min!,
-            max: trait.properties.heatSetPointRange.max!)),
-        CoolSetPointRange(TemperatureRange(
-            min: trait.properties.coolSetPointRange.min!,
-            max: trait.properties.coolSetPointRange.max!)),
+        HeatSetPointRange(heatTempRange),
+        CoolSetPointRange(coolTempRange),
       });
     } else {
       throw ArgumentError.value(trait);
@@ -107,12 +117,14 @@ class TemperatureRange {
         max = max;
 }
 
-class HeatSetPointRange extends Property<TemperatureRange> {
-  HeatSetPointRange(TemperatureRange value) : super('heatSetPointRange', value);
+class HeatSetPointRange extends Property<TemperatureRange?> {
+  HeatSetPointRange(TemperatureRange? value)
+      : super('heatSetPointRange', value);
 }
 
-class CoolSetPointRange extends Property<TemperatureRange> {
-  CoolSetPointRange(TemperatureRange value) : super('coolSetPointRange', value);
+class CoolSetPointRange extends Property<TemperatureRange?> {
+  CoolSetPointRange(TemperatureRange? value)
+      : super('coolSetPointRange', value);
 }
 
 class AvailableThermostatModes extends Property<Set<AvailableThermostatMode>> {
@@ -129,9 +141,9 @@ class ThermostatTrait extends Trait {
   Set<AvailableThermostatMode> get availableThermostatModes =>
       propertyWhereType<AvailableThermostatModes>().value;
 
-  TemperatureRange get heatSetPointRange =>
+  TemperatureRange? get heatSetPointRange =>
       propertyWhereType<HeatSetPointRange>().value;
 
-  TemperatureRange get coolSetPointRange =>
+  TemperatureRange? get coolSetPointRange =>
       propertyWhereType<CoolSetPointRange>().value;
 }
