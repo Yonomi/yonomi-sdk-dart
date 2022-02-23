@@ -149,137 +149,10 @@ void main() {
 
   test('''responseToDeviceTraitConverter maps single Thermostat
       DeviceTrait to ThermostatTrait''', () {
-    final thermostatDevice = GgetDeviceData.fromJson({
-      "device": {
-        "id": "bf006631-35b8-4369-ac28-cb383e365c47",
-        "displayName": "939 office",
-        "updatedAt": "2021-10-20T12:00:32.492Z",
-        "productInformation": {
-          "description": "ecobee Thermostat",
-          "manufacturer": "ecobee",
-          "model": "athenaSmart",
-          "serialNumber": "313896089153"
-        },
-        "createdAt": "2021-10-19T18:00:06.638Z",
-        "traits": [
-          {
-            "__typename": "ThermostatSettingDeviceTrait",
-            "name": "THERMOSTAT_SETTING",
-            "instance": "default",
-            "properties": {
-              "availableThermostatModes": ["OFF", "AUTO", "HEAT", "COOL"],
-              "availableFanModes": ["ON", "AUTO"],
-              "heatSetPointRange": {"min": 7.2, "max": 26.1},
-              "coolSetPointRange": {"min": 18.3, "max": 33.3},
-              "allowedTargetTemperatureModes": ["HEAT", "COOL"],
-              "allowedTargetTemperatureRangeModes": ["AUTO"]
-            },
-            "state": {
-              "mode": {
-                "reported": {
-                  "value": "HEAT",
-                  "sampledAt": "2021-10-20T12:00:30.109Z",
-                  "createdAt": "2021-10-20T12:00:32.651Z"
-                },
-                "desired": {
-                  "value": "HEAT",
-                  "delta": null,
-                  "updatedAt": "2021-10-20T12:00:32.651Z"
-                }
-              },
-              "targetTemperature": {
-                "reported": {
-                  "value": 22,
-                  "sampledAt": "2021-10-20T11:59:47.000Z",
-                  "createdAt": "2021-10-20T12:00:33.089Z"
-                },
-                "desired": {
-                  "value": 22,
-                  "delta": null,
-                  "updatedAt": "2021-10-20T12:00:33.089Z"
-                }
-              },
-              "ambientTemperature": {
-                "reported": {
-                  "value": 22.4,
-                  "sampledAt": "2021-10-20T11:59:47.000Z",
-                  "createdAt": "2021-10-20T12:00:32.953Z"
-                },
-                "desired": {
-                  "value": 22.4,
-                  "delta": null,
-                  "updatedAt": "2021-10-20T12:00:32.953Z"
-                }
-              },
-              "setPointHigh": {
-                "reported": {
-                  "value": 27.8,
-                  "sampledAt": "2021-10-19T18:54:51.000Z",
-                  "createdAt": "2021-10-19T22:24:02.422Z"
-                },
-                "desired": {
-                  "value": 27.8,
-                  "delta": null,
-                  "updatedAt": "2021-10-19T22:24:02.422Z"
-                }
-              },
-              "setPointLow": {
-                "reported": {
-                  "value": 18.3,
-                  "sampledAt": "2021-10-19T18:54:51.000Z",
-                  "createdAt": "2021-10-19T22:24:02.422Z"
-                },
-                "desired": {
-                  "value": 18.3,
-                  "delta": null,
-                  "updatedAt": "2021-10-19T22:24:02.422Z"
-                }
-              },
-              "ambientHumidity": {
-                "reported": {
-                  "value": 22,
-                  "sampledAt": "2021-10-20T11:59:47.000Z",
-                  "createdAt": "2021-10-20T12:00:33.335Z"
-                },
-                "desired": {
-                  "value": 22,
-                  "delta": null,
-                  "updatedAt": "2021-10-20T12:00:33.335Z"
-                }
-              },
-              "targetHumidity": {
-                "reported": {
-                  "value": 60,
-                  "sampledAt": "2021-10-20T11:59:47.000Z",
-                  "createdAt": "2021-10-20T12:00:33.495Z"
-                },
-                "desired": {
-                  "value": 60,
-                  "delta": null,
-                  "updatedAt": "2021-10-20T12:00:33.495Z"
-                }
-              },
-              "fanMode": {
-                "reported": {
-                  "value": "AUTO",
-                  "sampledAt": "2021-10-20T11:59:47.000Z",
-                  "createdAt": "2021-10-20T12:00:33.213Z"
-                },
-                "desired": {
-                  "value": "AUTO",
-                  "delta": null,
-                  "updatedAt": "2021-10-20T12:00:33.213Z"
-                }
-              }
-            }
-          }
-        ]
-      }
-    });
-
+    final thermostatDevice =
+        GgetDeviceData.fromJson(TestFixtures.buildThermostatJsonResponse());
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
         thermostatDevice!.device!.traits.asList());
-
     final thermostatTrait = convertedValue.whereType<ThermostatTrait>().first;
 
     expect(convertedValue.first.name, 'thermostat_setting');
@@ -295,14 +168,9 @@ void main() {
         reason: 'Does not have ON fan mode available');
     expect(thermostatTrait.availableFanModes, contains(AvailableFanMode.AUTO),
         reason: 'Does not have AUTO fan mode available');
-    expect(
-        thermostatTrait
-            .propertyWhereType<AvailableFanModes>()
-            .value
-            .firstWhere((mode) => mode == AvailableFanMode.AUTO),
-        isNotNull,
+    expect(thermostatTrait.propertyWhereType<AvailableFanModes>().value,
+        contains(AvailableFanMode.AUTO),
         reason: 'Does not have AUTO fan mode available in base properties');
-
     expect(thermostatTrait.availableThermostatModes.length, 4);
     expect(thermostatTrait.availableThermostatModes,
         contains(AvailableThermostatMode.OFF));
@@ -312,12 +180,28 @@ void main() {
         contains(AvailableThermostatMode.HEAT));
     expect(thermostatTrait.availableThermostatModes,
         contains(AvailableThermostatMode.COOL));
-    expect(
-        thermostatTrait
-            .propertyWhereType<AvailableThermostatModes>()
-            .value
-            .firstWhere((mode) => mode == AvailableThermostatMode.AUTO),
-        isNotNull);
+    expect(thermostatTrait.propertyWhereType<AvailableThermostatModes>().value,
+        contains(AvailableThermostatMode.AUTO));
+
+    expect(thermostatTrait.coolSetPointRange.min, 18.3);
+    expect(thermostatTrait.coolSetPointRange.max, 33.3);
+    expect(thermostatTrait.heatSetPointRange.min, 7.2);
+    expect(thermostatTrait.heatSetPointRange.max, 26.1);
+  });
+
+  test('''responseToDeviceTraitConverter maps single Thermostat
+      DeviceTrait to ThermostatTrait''', () {
+    final thermostatDevice = GgetDeviceData.fromJson(
+        TestFixtures.buildThermostatJsonResponse(
+            nullCoolSetPointRange: true, nullHeatSetPointRange: true));
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        thermostatDevice!.device!.traits.asList());
+    final thermostatTrait = convertedValue.whereType<ThermostatTrait>().first;
+
+    expect(thermostatTrait.coolSetPointRange.min, -double.maxFinite);
+    expect(thermostatTrait.coolSetPointRange.max, double.maxFinite);
+    expect(thermostatTrait.heatSetPointRange.min, -double.maxFinite);
+    expect(thermostatTrait.heatSetPointRange.max, double.maxFinite);
   });
 
   test(
