@@ -1,0 +1,45 @@
+
+
+
+# getPowerTrait method
+
+
+
+
+    *[<Null safety>](https://dart.dev/null-safety)*
+
+
+
+
+[PowerTrait](../../yonomi-sdk/PowerTrait-class.md) getPowerTrait
+(dynamic trait)
+
+
+
+
+
+
+
+
+## Implementation
+
+```dart
+static PowerTrait getPowerTrait(dynamic trait) {
+  if (trait is GgetDeviceData_device_traits__asPowerDeviceTrait ||
+      trait
+          is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait) {
+    return PowerTrait(IsOnOff(trait.state.isOn.reported?.value ?? false),
+        supportsDiscreteOnOff: SupportsDiscreteOnOff(
+            trait.properties.supportsDiscreteOnOff ?? false));
+  } else {
+    throw ArgumentError.value(trait);
+  }
+}
+```
+
+
+
+
+
+
+
