@@ -27,9 +27,9 @@
 static Future<void> setBrightnessAction(
     Request request, String id, int brightness) async {
   final link = GraphLinkCreator.create(request);
-  final req = GmakeBrightnessActionRequest((b) {
-    b..vars.deviceId = id;
-    b..vars.brightness = brightness;
+  final req = GmakeBrightnessActionRequest((builder) {
+    builder..vars.deviceId = id;
+    builder..vars.brightness = brightness;
   });
   Repository.mutate(link, req.operation, req.vars.toJson());
 }

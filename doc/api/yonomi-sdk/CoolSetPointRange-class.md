@@ -17,7 +17,7 @@
 **Inheritance**
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [Property](../yonomi-sdk/Property-class.md)&lt;[TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)?>
+- [Property](../yonomi-sdk/Property-class.md)&lt;[TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)>
 - CoolSetPointRange
 
 
@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[CoolSetPointRange](../yonomi-sdk/CoolSetPointRange/CoolSetPointRange.md) ([TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)? value)
+[CoolSetPointRange](../yonomi-sdk/CoolSetPointRange/CoolSetPointRange.md) ([TemperatureRange](../yonomi-sdk/TemperatureRange-class.md) value)
 
     
 
@@ -61,7 +61,7 @@ _read-only, inherited_
 
 
 
-##### [value](../yonomi-sdk/Property/value.md) &#8594; [TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)?
+##### [value](../yonomi-sdk/Property/value.md) &#8594; [TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)
 
 
 

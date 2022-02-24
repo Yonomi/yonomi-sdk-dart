@@ -52,7 +52,7 @@ _read-only_
 
 
 
-##### [coolSetPointRange](../yonomi-sdk/ThermostatTrait/coolSetPointRange.md) &#8594; [TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)?
+##### [coolSetPointRange](../yonomi-sdk/ThermostatTrait/coolSetPointRange.md) &#8594; [TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)
 
 
 
@@ -70,7 +70,7 @@ _read-only, inherited_
 
 
 
-##### [heatSetPointRange](../yonomi-sdk/ThermostatTrait/heatSetPointRange.md) &#8594; [TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)?
+##### [heatSetPointRange](../yonomi-sdk/ThermostatTrait/heatSetPointRange.md) &#8594; [TemperatureRange](../yonomi-sdk/TemperatureRange-class.md)
 
 
 

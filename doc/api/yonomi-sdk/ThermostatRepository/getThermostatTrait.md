@@ -24,7 +24,7 @@
 ## Implementation
 
 ```dart
-static ThermostatTrait getThermostatTrait(dynamic trait) {
+static ThermostatTrait getThermostatTrait(trait) {
   if (trait is GgetDeviceData_device_traits__asThermostatSettingDeviceTrait ||
       trait
           is GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait) {
@@ -35,19 +35,13 @@ static ThermostatTrait getThermostatTrait(dynamic trait) {
         new Set<AvailableThermostatMode>.from(
             trait.properties.availableThermostatModes);
 
-    final TemperatureRange? coolTempRange =
-        (trait.properties.coolSetPointRange != null)
-            ? new TemperatureRange(
-                min: trait.properties.coolSetPointRange.min,
-                max: trait.properties.coolSetPointRange.max)
-            : null;
+    final TemperatureRange coolTempRange = new TemperatureRange(
+        min: trait.properties.coolSetPointRange?.min ?? -double.maxFinite,
+        max: trait.properties.coolSetPointRange?.max ?? double.maxFinite);
 
-    final TemperatureRange? heatTempRange =
-        (trait.properties.heatSetPointRange != null)
-            ? new TemperatureRange(
-                min: trait.properties.heatSetPointRange.min,
-                max: trait.properties.heatSetPointRange.max)
-            : null;
+    final TemperatureRange heatTempRange = new TemperatureRange(
+        min: trait.properties.heatSetPointRange?.min ?? -double.maxFinite,
+        max: trait.properties.heatSetPointRange?.max ?? double.maxFinite);
 
     return ThermostatTrait(<State>{
       TargetTemperature(trait.state.targetTemperature.reported?.value),

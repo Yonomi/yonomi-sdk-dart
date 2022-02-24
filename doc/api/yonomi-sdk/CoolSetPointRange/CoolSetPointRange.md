@@ -10,7 +10,7 @@
 
 
 
-CoolSetPointRange([TemperatureRange](../../yonomi-sdk/TemperatureRange-class.md)? value)
+CoolSetPointRange([TemperatureRange](../../yonomi-sdk/TemperatureRange-class.md) value)
 
 
 
@@ -19,8 +19,7 @@ CoolSetPointRange([TemperatureRange](../../yonomi-sdk/TemperatureRange-class.md)
 ## Implementation
 
 ```dart
-CoolSetPointRange(TemperatureRange? value)
-    : super('coolSetPointRange', value);
+CoolSetPointRange(TemperatureRange value) : super('coolSetPointRange', value);
 ```
 
 
