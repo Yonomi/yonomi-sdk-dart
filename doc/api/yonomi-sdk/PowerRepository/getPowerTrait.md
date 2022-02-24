@@ -25,14 +25,12 @@
 
 ```dart
 static PowerTrait getPowerTrait(dynamic trait) {
-  if (trait is GgetDeviceData_device_traits__asPowerDeviceTrait ||
-      trait
-          is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait) {
-    return PowerTrait(IsOnOff(trait.state.isOn.reported?.value ?? false),
-        supportsDiscreteOnOff: SupportsDiscreteOnOff(
-            trait.properties.supportsDiscreteOnOff ?? false));
-  } else {
-    throw ArgumentError.value(trait);
+  try {
+    return PowerTrait(IsOnOff(trait.state.isOn.reported?.value),
+        supportsDiscreteOnOff:
+            SupportsDiscreteOnOff(trait.properties.supportsDiscreteOnOff));
+  } on NoSuchMethodError {
+    throw ArgumentError.value(trait, 'PowerTrait', 'Invalid PowerTrait');
   }
 }
 ```

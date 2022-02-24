@@ -79,7 +79,7 @@ _late, final, inherited_
 
 
 
-##### [supportsIsJammed](../yonomi-sdk/LockTrait/supportsIsJammed.md) &#8594; [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)
+##### [supportsIsJammed](../yonomi-sdk/LockTrait/supportsIsJammed.md) &#8594; [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)?
 
 
 

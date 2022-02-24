@@ -17,7 +17,7 @@
 
 ## Constructors
 
-[TemperatureRange](../yonomi-sdk/TemperatureRange/TemperatureRange.md) ({required [double](https://api.flutter.dev/flutter/dart-core/double-class.html) min, required [double](https://api.flutter.dev/flutter/dart-core/double-class.html) max})
+[TemperatureRange](../yonomi-sdk/TemperatureRange/TemperatureRange.md) ({required [double](https://api.flutter.dev/flutter/dart-core/double-class.html)? min, required [double](https://api.flutter.dev/flutter/dart-core/double-class.html)? max})
 
     
 
@@ -33,7 +33,7 @@ _read-only, inherited_
 
 
 
-##### [max](../yonomi-sdk/TemperatureRange/max.md) &#8594; [double](https://api.flutter.dev/flutter/dart-core/double-class.html)
+##### [max](../yonomi-sdk/TemperatureRange/max.md) &#8594; [double](https://api.flutter.dev/flutter/dart-core/double-class.html)?
 
 
 
@@ -42,7 +42,7 @@ _final_
 
 
 
-##### [min](../yonomi-sdk/TemperatureRange/min.md) &#8594; [double](https://api.flutter.dev/flutter/dart-core/double-class.html)
+##### [min](../yonomi-sdk/TemperatureRange/min.md) &#8594; [double](https://api.flutter.dev/flutter/dart-core/double-class.html)?
 
 
 

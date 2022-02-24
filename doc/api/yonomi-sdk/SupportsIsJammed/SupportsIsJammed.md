@@ -10,7 +10,7 @@
 
 
 
-SupportsIsJammed([bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) value)
+SupportsIsJammed([bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)? value)
 
 
 
@@ -19,7 +19,7 @@ SupportsIsJammed([bool](https://api.flutter.dev/flutter/dart-core/bool-class.htm
 ## Implementation
 
 ```dart
-SupportsIsJammed(bool value) : super('supportsIsJammed', value);
+SupportsIsJammed(bool? value) : super('supportsIsJammed', value);
 ```
 
 

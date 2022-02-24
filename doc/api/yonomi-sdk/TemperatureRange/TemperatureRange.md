@@ -10,7 +10,7 @@
 
 
 
-TemperatureRange({required [double](https://api.flutter.dev/flutter/dart-core/double-class.html) min, required [double](https://api.flutter.dev/flutter/dart-core/double-class.html) max})
+TemperatureRange({required [double](https://api.flutter.dev/flutter/dart-core/double-class.html)? min, required [double](https://api.flutter.dev/flutter/dart-core/double-class.html)? max})
 
 
 
@@ -19,7 +19,7 @@ TemperatureRange({required [double](https://api.flutter.dev/flutter/dart-core/do
 ## Implementation
 
 ```dart
-TemperatureRange({required double min, required double max})
+TemperatureRange({required double? min, required double? max})
     : min = min,
       max = max;
 ```

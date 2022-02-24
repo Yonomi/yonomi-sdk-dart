@@ -9,7 +9,7 @@
     *[<Null safety>](https://dart.dev/null-safety)*
 
 
-[double](https://api.flutter.dev/flutter/dart-core/double-class.html) min
+[double](https://api.flutter.dev/flutter/dart-core/double-class.html)? min
   
 _final_
 
@@ -21,7 +21,7 @@ _final_
 ## Implementation
 
 ```dart
-final double min;
+final double? min;
 
 
 ```

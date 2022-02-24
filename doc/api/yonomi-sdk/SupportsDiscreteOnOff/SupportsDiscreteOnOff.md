@@ -10,7 +10,7 @@
 
 
 
-SupportsDiscreteOnOff([bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) value)
+SupportsDiscreteOnOff([bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)? value)
 
 
 
@@ -19,7 +19,7 @@ SupportsDiscreteOnOff([bool](https://api.flutter.dev/flutter/dart-core/bool-clas
 ## Implementation
 
 ```dart
-SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
+SupportsDiscreteOnOff(bool? value) : super('supportsDiscreteOnOff', value);
 ```
 
 

@@ -11,7 +11,7 @@
 
 
 
-[bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) supportsIsJammed
+[bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)? supportsIsJammed
   
 
 
@@ -23,7 +23,7 @@
 ## Implementation
 
 ```dart
-bool get supportsIsJammed => propertyWhereType<SupportsIsJammed>().value;
+bool? get supportsIsJammed => propertyWhereType<SupportsIsJammed>().value;
 ```
 
 
