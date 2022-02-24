@@ -198,10 +198,10 @@ void main() {
         thermostatDevice!.device!.traits.asList());
     final thermostatTrait = convertedValue.whereType<ThermostatTrait>().first;
 
-    expect(thermostatTrait.coolSetPointRange.min, -double.maxFinite);
-    expect(thermostatTrait.coolSetPointRange.max, double.maxFinite);
-    expect(thermostatTrait.heatSetPointRange.min, -double.maxFinite);
-    expect(thermostatTrait.heatSetPointRange.max, double.maxFinite);
+    expect(thermostatTrait.coolSetPointRange.min, null);
+    expect(thermostatTrait.coolSetPointRange.max, null);
+    expect(thermostatTrait.heatSetPointRange.min, null);
+    expect(thermostatTrait.heatSetPointRange.max, null);
   });
 
   test(
