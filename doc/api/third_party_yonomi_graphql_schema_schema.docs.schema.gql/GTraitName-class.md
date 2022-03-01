@@ -142,6 +142,24 @@ _read-only_
 
 
 
+##### [COLOR](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName/COLOR-constant.md) const [GTraitName](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName-class.md)
+
+
+
+   
+
+
+
+
+##### [COLOR_TEMPERATURE](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName/COLOR_TEMPERATURE-constant.md) const [GTraitName](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName-class.md)
+
+
+
+   
+
+
+
+
 ##### [LOCK](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName/LOCK-constant.md) const [GTraitName](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitName-class.md)
 
 

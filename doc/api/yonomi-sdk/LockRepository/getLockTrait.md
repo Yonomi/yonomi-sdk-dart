@@ -25,20 +25,18 @@
 
 ```dart
 static LockTrait getLockTrait(trait) {
-  if (trait is GgetDeviceData_device_traits__asLockDeviceTrait ||
-      trait
-          is GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait) {
+  try {
     final Set<Property> properties = {
-      SupportsIsJammed(trait.properties.supportsIsJammed ?? false)
+      SupportsIsJammed(trait.properties.supportsIsJammed)
     };
     final Set<State> states = <State>{
-      IsLocked(trait.state.isLocked.reported?.value ?? false),
+      IsLocked(trait.state.isLocked.reported?.value),
       if (trait.properties.supportsIsJammed)
-        IsJammed(trait.state.isJammed.reported?.value ?? false),
+        IsJammed(trait.state.isJammed.reported?.value),
     };
     return LockTrait(states, properties);
-  } else {
-    throw ArgumentError.value(trait);
+  } on NoSuchMethodError {
+    throw ArgumentError.value(trait, 'LockTrait', 'Invalid LockTrait');
   }
 }
 ```

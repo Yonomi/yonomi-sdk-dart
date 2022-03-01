@@ -624,6 +624,33 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GlinkedAccountsData_me_linkedAccounts_edges_node_integration
           .serializer)
       ..add(GlinkedAccountsVars.serializer)
+      ..add(GmakeBrightnessActionRequest.serializer)
+      ..add(GmakeBrightnessActionRequestData.serializer)
+      ..add(
+          GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage
+              .serializer)
+      ..add(
+          GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device
+              .serializer)
+      ..add(
+          GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait
+              .serializer)
+      ..add(
+          GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state
+              .serializer)
+      ..add(
+          GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state_brightness
+              .serializer)
+      ..add(
+          GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state_brightness_desired
+              .serializer)
+      ..add(
+          GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state_brightness_reported
+              .serializer)
+      ..add(
+          GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__base
+              .serializer)
+      ..add(GmakeBrightnessActionRequestVars.serializer)
       ..add(GmakeLockUnlockActionRequest.serializer)
       ..add(GmakeLockUnlockActionRequestData.serializer)
       ..add(GmakeLockUnlockActionRequestData_actionLockSetLocked.serializer)
@@ -957,6 +984,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
             const FullType(GlinkedAccountsData_me_linkedAccounts_edges)
           ]),
           () => new ListBuilder<GlinkedAccountsData_me_linkedAccounts_edges>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits)
+          ]),
+          () => new ListBuilder<
+              GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(

@@ -43,6 +43,22 @@ import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/
     show GremoveLinkedAccount;
 import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/query.var.gql.dart'
     show GremoveLinkedAccountVars;
+import 'package:yonomi_platform_sdk/src/queries/brightness/make_brightness_action_request/query.data.gql.dart'
+    show
+        GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits,
+        GmakeBrightnessActionRequestData,
+        GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage,
+        GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device,
+        GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait,
+        GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state,
+        GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state_brightness,
+        GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state_brightness_desired,
+        GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state_brightness_reported,
+        GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__base;
+import 'package:yonomi_platform_sdk/src/queries/brightness/make_brightness_action_request/query.req.gql.dart'
+    show GmakeBrightnessActionRequest;
+import 'package:yonomi_platform_sdk/src/queries/brightness/make_brightness_action_request/query.var.gql.dart'
+    show GmakeBrightnessActionRequestVars;
 import 'package:yonomi_platform_sdk/src/queries/devices/device_details_fragment/query.fragment.data.gql.dart'
     show
         GDeviceDetailsData_traits,
@@ -412,6 +428,9 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(GDeviceDetailsData_traits.serializer)
   ..add(GgetDeviceData_device_traits.serializer)
   ..add(GgetDevicesData_me_devices_edges_node_traits.serializer)
+  ..add(
+      GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits
+          .serializer)
   ..add(GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits
       .serializer)
   ..add(GmakePowerActionRequestData_actionPowerSetOn_device_traits.serializer)
@@ -696,6 +715,17 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GlinkedAccountsData_me_linkedAccounts_edges_node,
   GlinkedAccountsData_me_linkedAccounts_edges_node_integration,
   GlinkedAccountsVars,
+  GmakeBrightnessActionRequest,
+  GmakeBrightnessActionRequestData,
+  GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage,
+  GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device,
+  GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait,
+  GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state,
+  GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state_brightness,
+  GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state_brightness_desired,
+  GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state_brightness_reported,
+  GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__base,
+  GmakeBrightnessActionRequestVars,
   GmakeLockUnlockActionRequest,
   GmakeLockUnlockActionRequestData,
   GmakeLockUnlockActionRequestData_actionLockSetLocked,

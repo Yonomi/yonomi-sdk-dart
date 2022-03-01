@@ -510,6 +510,12 @@ enum TraitName {
   # Functionality for devices that can have their brightness adjusted.
   BRIGHTNESS
 
+  # Functionality for devices that can have their color adjusted.
+  COLOR
+
+  # Functionality for devices that can have their color temperature adjusted.
+  COLOR_TEMPERATURE
+
   # Functionality for devices that can be locked or unlocked.
   LOCK
 

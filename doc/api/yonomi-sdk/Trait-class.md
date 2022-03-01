@@ -20,6 +20,7 @@
 **Implementers**
 
 - [BatteryLevelTrait](../yonomi-sdk/BatteryLevelTrait-class.md)
+- [BrightnessTrait](../yonomi-sdk/BrightnessTrait-class.md)
 - [LockTrait](../yonomi-sdk/LockTrait-class.md)
 - [PowerTrait](../yonomi-sdk/PowerTrait-class.md)
 - [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)

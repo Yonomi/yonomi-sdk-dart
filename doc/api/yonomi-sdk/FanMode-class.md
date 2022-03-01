@@ -17,7 +17,7 @@
 **Inheritance**
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [State](../yonomi-sdk/State-class.md)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)>
+- [State](../yonomi-sdk/State-class.md)&lt;[AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)?>
 - FanMode
 
 
@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[FanMode](../yonomi-sdk/FanMode/FanMode.md) ([AvailableFanMode](../yonomi-sdk/AvailableFanMode.md) value)
+[FanMode](../yonomi-sdk/FanMode/FanMode.md) ([AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)? value)
 
     
 
@@ -61,7 +61,7 @@ _read-only, inherited_
 
 
 
-##### [value](../yonomi-sdk/State/value.md) &#8594; [AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)
+##### [value](../yonomi-sdk/State/value.md) &#8594; [AvailableFanMode](../yonomi-sdk/AvailableFanMode.md)?
 
 
 

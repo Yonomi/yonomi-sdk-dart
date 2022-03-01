@@ -10,7 +10,7 @@
 
 
 
-ThermostatMode([AvailableThermostatMode](../../yonomi-sdk/AvailableThermostatMode.md) value)
+ThermostatMode([AvailableThermostatMode](../../yonomi-sdk/AvailableThermostatMode.md)? value)
 
 
 
@@ -19,7 +19,7 @@ ThermostatMode([AvailableThermostatMode](../../yonomi-sdk/AvailableThermostatMod
 ## Implementation
 
 ```dart
-ThermostatMode(AvailableThermostatMode value) : super('mode', value);
+ThermostatMode(AvailableThermostatMode? value) : super('mode', value);
 ```
 
 

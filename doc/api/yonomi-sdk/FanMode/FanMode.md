@@ -10,7 +10,7 @@
 
 
 
-FanMode([AvailableFanMode](../../yonomi-sdk/AvailableFanMode.md) value)
+FanMode([AvailableFanMode](../../yonomi-sdk/AvailableFanMode.md)? value)
 
 
 
@@ -19,7 +19,7 @@ FanMode([AvailableFanMode](../../yonomi-sdk/AvailableFanMode.md) value)
 ## Implementation
 
 ```dart
-FanMode(AvailableFanMode value) : super('fanMode', value);
+FanMode(AvailableFanMode? value) : super('fanMode', value);
 ```
 
 
