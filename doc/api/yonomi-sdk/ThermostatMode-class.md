@@ -17,7 +17,7 @@
 **Inheritance**
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [State](../yonomi-sdk/State-class.md)&lt;[AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)>
+- [State](../yonomi-sdk/State-class.md)&lt;[AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)?>
 - ThermostatMode
 
 
@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[ThermostatMode](../yonomi-sdk/ThermostatMode/ThermostatMode.md) ([AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md) value)
+[ThermostatMode](../yonomi-sdk/ThermostatMode/ThermostatMode.md) ([AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)? value)
 
     
 
@@ -61,7 +61,7 @@ _read-only, inherited_
 
 
 
-##### [value](../yonomi-sdk/State/value.md) &#8594; [AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)
+##### [value](../yonomi-sdk/State/value.md) &#8594; [AvailableThermostatMode](../yonomi-sdk/AvailableThermostatMode.md)?
 
 
 

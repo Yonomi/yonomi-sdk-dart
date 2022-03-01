@@ -156,6 +156,10 @@ class GTraitName extends EnumClass {
 
   static const GTraitName BRIGHTNESS = _$gTraitNameBRIGHTNESS;
 
+  static const GTraitName COLOR = _$gTraitNameCOLOR;
+
+  static const GTraitName COLOR_TEMPERATURE = _$gTraitNameCOLOR_TEMPERATURE;
+
   static const GTraitName LOCK = _$gTraitNameLOCK;
 
   static const GTraitName PIN_CODE_CREDENTIAL = _$gTraitNamePIN_CODE_CREDENTIAL;

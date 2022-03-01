@@ -17,7 +17,7 @@
 **Inheritance**
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [State](../yonomi-sdk/State-class.md)&lt;[bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)>
+- [State](../yonomi-sdk/State-class.md)&lt;[bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)?>
 - IsOnOff
 
 
@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[IsOnOff](../yonomi-sdk/IsOnOff/IsOnOff.md) ([bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) value)
+[IsOnOff](../yonomi-sdk/IsOnOff/IsOnOff.md) ([bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)? value)
 
     
 
@@ -61,7 +61,7 @@ _read-only, inherited_
 
 
 
-##### [value](../yonomi-sdk/State/value.md) &#8594; [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)
+##### [value](../yonomi-sdk/State/value.md) &#8594; [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)?
 
 
 

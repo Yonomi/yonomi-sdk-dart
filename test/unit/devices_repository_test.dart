@@ -2,7 +2,9 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 
 import '../utils/test_fixtures.dart';
@@ -113,140 +115,22 @@ void main() {
                 }
               }
             }
-          }
-        ]
-      }
-    });
-    final convertedTraits = DevicesRepository.responseToDeviceTraitConverter(
-        deviceWithMultipleTraits!.device!.traits.asList());
-    expect(convertedTraits, hasLength(3));
-    expect(convertedTraits, contains(isA<LockTrait>()));
-    expect(convertedTraits, contains(isA<BatteryLevelTrait>()));
-    expect(convertedTraits, contains(isA<UnknownTrait>()));
-  });
-
-  test('''responseToDeviceTraitConverter maps single Thermostat
-      DeviceTrait to ThermostatTrait''', () {
-    final thermostatDevice = GgetDeviceData.fromJson({
-      "device": {
-        "id": "bf006631-35b8-4369-ac28-cb383e365c47",
-        "displayName": "939 office",
-        "updatedAt": "2021-10-20T12:00:32.492Z",
-        "productInformation": {
-          "description": "ecobee Thermostat",
-          "manufacturer": "ecobee",
-          "model": "athenaSmart",
-          "serialNumber": "313896089153"
-        },
-        "createdAt": "2021-10-19T18:00:06.638Z",
-        "traits": [
+          },
           {
-            "__typename": "ThermostatSettingDeviceTrait",
-            "name": "THERMOSTAT_SETTING",
+            "__typename": "BrightnessDeviceTrait",
+            "name": "BRIGHTNESS",
             "instance": "default",
-            "properties": {
-              "availableThermostatModes": ["OFF", "AUTO", "HEAT", "COOL"],
-              "availableFanModes": ["ON", "AUTO"],
-              "heatSetPointRange": {"min": 7.2, "max": 26.1},
-              "coolSetPointRange": {"min": 18.3, "max": 33.3},
-              "allowedTargetTemperatureModes": ["HEAT", "COOL"],
-              "allowedTargetTemperatureRangeModes": ["AUTO"]
-            },
             "state": {
-              "mode": {
+              "brightness": {
                 "reported": {
-                  "value": "HEAT",
-                  "sampledAt": "2021-10-20T12:00:30.109Z",
-                  "createdAt": "2021-10-20T12:00:32.651Z"
+                  "value": 100,
+                  "sampledAt": "2022-02-21T20:05:25.013Z",
+                  "createdAt": "2022-02-21T20:05:26.398Z"
                 },
                 "desired": {
-                  "value": "HEAT",
+                  "value": 100,
                   "delta": null,
-                  "updatedAt": "2021-10-20T12:00:32.651Z"
-                }
-              },
-              "targetTemperature": {
-                "reported": {
-                  "value": 22,
-                  "sampledAt": "2021-10-20T11:59:47.000Z",
-                  "createdAt": "2021-10-20T12:00:33.089Z"
-                },
-                "desired": {
-                  "value": 22,
-                  "delta": null,
-                  "updatedAt": "2021-10-20T12:00:33.089Z"
-                }
-              },
-              "ambientTemperature": {
-                "reported": {
-                  "value": 22.4,
-                  "sampledAt": "2021-10-20T11:59:47.000Z",
-                  "createdAt": "2021-10-20T12:00:32.953Z"
-                },
-                "desired": {
-                  "value": 22.4,
-                  "delta": null,
-                  "updatedAt": "2021-10-20T12:00:32.953Z"
-                }
-              },
-              "setPointHigh": {
-                "reported": {
-                  "value": 27.8,
-                  "sampledAt": "2021-10-19T18:54:51.000Z",
-                  "createdAt": "2021-10-19T22:24:02.422Z"
-                },
-                "desired": {
-                  "value": 27.8,
-                  "delta": null,
-                  "updatedAt": "2021-10-19T22:24:02.422Z"
-                }
-              },
-              "setPointLow": {
-                "reported": {
-                  "value": 18.3,
-                  "sampledAt": "2021-10-19T18:54:51.000Z",
-                  "createdAt": "2021-10-19T22:24:02.422Z"
-                },
-                "desired": {
-                  "value": 18.3,
-                  "delta": null,
-                  "updatedAt": "2021-10-19T22:24:02.422Z"
-                }
-              },
-              "ambientHumidity": {
-                "reported": {
-                  "value": 22,
-                  "sampledAt": "2021-10-20T11:59:47.000Z",
-                  "createdAt": "2021-10-20T12:00:33.335Z"
-                },
-                "desired": {
-                  "value": 22,
-                  "delta": null,
-                  "updatedAt": "2021-10-20T12:00:33.335Z"
-                }
-              },
-              "targetHumidity": {
-                "reported": {
-                  "value": 60,
-                  "sampledAt": "2021-10-20T11:59:47.000Z",
-                  "createdAt": "2021-10-20T12:00:33.495Z"
-                },
-                "desired": {
-                  "value": 60,
-                  "delta": null,
-                  "updatedAt": "2021-10-20T12:00:33.495Z"
-                }
-              },
-              "fanMode": {
-                "reported": {
-                  "value": "AUTO",
-                  "sampledAt": "2021-10-20T11:59:47.000Z",
-                  "createdAt": "2021-10-20T12:00:33.213Z"
-                },
-                "desired": {
-                  "value": "AUTO",
-                  "delta": null,
-                  "updatedAt": "2021-10-20T12:00:33.213Z"
+                  "updatedAt": "2022-02-21T20:05:26.398Z"
                 }
               }
             }
@@ -254,10 +138,21 @@ void main() {
         ]
       }
     });
+    final convertedTraits = DevicesRepository.responseToDeviceTraitConverter(
+        deviceWithMultipleTraits!.device!.traits.asList());
+    expect(convertedTraits, hasLength(4));
+    expect(convertedTraits, contains(isA<LockTrait>()));
+    expect(convertedTraits, contains(isA<BatteryLevelTrait>()));
+    expect(convertedTraits, contains(isA<BrightnessTrait>()));
+    expect(convertedTraits, contains(isA<UnknownTrait>()));
+  });
 
+  test('''responseToDeviceTraitConverter maps single Thermostat
+      DeviceTrait to ThermostatTrait''', () {
+    final thermostatDevice =
+        GgetDeviceData.fromJson(TestFixtures.buildThermostatJsonResponse());
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
         thermostatDevice!.device!.traits.asList());
-
     final thermostatTrait = convertedValue.whereType<ThermostatTrait>().first;
 
     expect(convertedValue.first.name, 'thermostat_setting');
@@ -273,14 +168,9 @@ void main() {
         reason: 'Does not have ON fan mode available');
     expect(thermostatTrait.availableFanModes, contains(AvailableFanMode.AUTO),
         reason: 'Does not have AUTO fan mode available');
-    expect(
-        thermostatTrait
-            .propertyWhereType<AvailableFanModes>()
-            .value
-            .firstWhere((mode) => mode == AvailableFanMode.AUTO),
-        isNotNull,
+    expect(thermostatTrait.propertyWhereType<AvailableFanModes>().value,
+        contains(AvailableFanMode.AUTO),
         reason: 'Does not have AUTO fan mode available in base properties');
-
     expect(thermostatTrait.availableThermostatModes.length, 4);
     expect(thermostatTrait.availableThermostatModes,
         contains(AvailableThermostatMode.OFF));
@@ -290,12 +180,28 @@ void main() {
         contains(AvailableThermostatMode.HEAT));
     expect(thermostatTrait.availableThermostatModes,
         contains(AvailableThermostatMode.COOL));
-    expect(
-        thermostatTrait
-            .propertyWhereType<AvailableThermostatModes>()
-            .value
-            .firstWhere((mode) => mode == AvailableThermostatMode.AUTO),
-        isNotNull);
+    expect(thermostatTrait.propertyWhereType<AvailableThermostatModes>().value,
+        contains(AvailableThermostatMode.AUTO));
+
+    expect(thermostatTrait.coolSetPointRange.min, 18.3);
+    expect(thermostatTrait.coolSetPointRange.max, 33.3);
+    expect(thermostatTrait.heatSetPointRange.min, 7.2);
+    expect(thermostatTrait.heatSetPointRange.max, 26.1);
+  });
+
+  test('''responseToDeviceTraitConverter maps single Thermostat
+      DeviceTrait to ThermostatTrait''', () {
+    final thermostatDevice = GgetDeviceData.fromJson(
+        TestFixtures.buildThermostatJsonResponse(
+            nullCoolSetPointRange: true, nullHeatSetPointRange: true));
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        thermostatDevice!.device!.traits.asList());
+    final thermostatTrait = convertedValue.whereType<ThermostatTrait>().first;
+
+    expect(thermostatTrait.coolSetPointRange.min, null);
+    expect(thermostatTrait.coolSetPointRange.max, null);
+    expect(thermostatTrait.heatSetPointRange.min, null);
+    expect(thermostatTrait.heatSetPointRange.max, null);
   });
 
   test(
@@ -344,6 +250,73 @@ void main() {
     // Since isJammed is false, should not return the IsJammed State
     expect(traitUnderTest.stateWhereType<IsJammed>().runtimeType,
         equals(UnknownState));
+  });
+
+  test('''#1. responseToDeviceTraitConverter maps single Brightness
+      DeviceTrait to BrightnessTrait''', () {
+    final brightnessDevice = GgetDeviceData_device.fromJson({
+      "id": "442f2edb-6183-4671-92e8-c92b68bc9785",
+      "displayName": "Hue White Bulb",
+      "updatedAt": "2022-02-21T20:05:26.210Z",
+      "productInformation": {
+        "description": "Hue white lamp",
+        "manufacturer": "Signify Netherlands B.V.",
+        "model": "LWB014",
+        "serialNumber": null
+      },
+      "createdAt": "2022-02-21T20:05:26.210Z",
+      "traits": [
+        {
+          "__typename": "PowerDeviceTrait",
+          "name": "POWER",
+          "instance": "default",
+          "properties": {"supportsDiscreteOnOff": null},
+          "state": {
+            "isOn": {
+              "reported": {
+                "value": false,
+                "sampledAt": "2022-02-21T20:05:25.013Z",
+                "createdAt": "2022-02-21T20:05:26.297Z"
+              },
+              "desired": {
+                "value": false,
+                "delta": null,
+                "updatedAt": "2022-02-21T20:05:26.297Z"
+              }
+            }
+          }
+        },
+        {
+          "__typename": "BrightnessDeviceTrait",
+          "name": "BRIGHTNESS",
+          "instance": "default",
+          "state": {
+            "brightness": {
+              "reported": {
+                "value": 100,
+                "sampledAt": "2022-02-21T20:05:25.013Z",
+                "createdAt": "2022-02-21T20:05:26.398Z"
+              },
+              "desired": {
+                "value": 100,
+                "delta": null,
+                "updatedAt": "2022-02-21T20:05:26.398Z"
+              }
+            }
+          }
+        }
+      ]
+    });
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        brightnessDevice!.traits.asList());
+    final brightnessTrait = convertedValue.whereType<BrightnessTrait>().first;
+    final powerTrait = convertedValue.whereType<PowerTrait>().first;
+
+    expect(brightnessDevice.id, equals('442f2edb-6183-4671-92e8-c92b68bc9785'));
+    expect(brightnessTrait.name, equals('brightness'));
+    expect(brightnessTrait.stateWhereType<Brightness>().value, equals(100));
+    expect(powerTrait.stateWhereType<IsOnOff>().value, isFalse);
   });
 
   test('''#1. responseToDeviceTraitConverter maps single Power
@@ -478,30 +451,15 @@ void main() {
   });
 
   test(
-      '''#getThermostatTrait should throw argumentError if trait object is not correct type''',
-      () {
-    expect(() => ThermostatRepository.getThermostatTrait(null),
-        throwsA(isA<ArgumentError>()));
-  });
-
-  test(
-      '''#getLockTrait should throw argumentError if trait object is not correct type''',
-      () {
-    expect(
-        () => LockRepository.getLockTrait(null), throwsA(isA<ArgumentError>()));
-  });
-
-  test(
-      '''#getPowerTrait should throw argumentError if trait object is not correct type''',
-      () {
-    expect(() => DevicesRepository.getPowerTrait(null),
-        throwsA(isA<ArgumentError>()));
-  });
-
-  test(
       '''#getBatteryLevelTrait should throw argumentError if trait object is not correct type''',
       () {
     expect(() => DevicesRepository.getBatteryLevelTrait(null),
         throwsA(isA<ArgumentError>()));
+  });
+
+  test('verify constructor of #DeviceNameId', () {
+    final id = DeviceNameId('id', 'name');
+    expect(id.id, equals('id'));
+    expect(id.name, equals('name'));
   });
 }

@@ -1,5 +1,3 @@
-import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_fan_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.req.gql.dart';
@@ -14,10 +12,8 @@ typedef AvailableFanMode = GFanMode;
 typedef AvailableThermostatMode = GThermostatMode;
 
 class ThermostatRepository {
-  static ThermostatTrait getThermostatTrait(dynamic trait) {
-    if (trait is GgetDeviceData_device_traits__asThermostatSettingDeviceTrait ||
-        trait
-            is GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait) {
+  static ThermostatTrait getThermostatTrait(trait) {
+    try {
       final Set<AvailableFanMode> availableFanMode =
           new Set<AvailableFanMode>.from(trait.properties.availableFanModes);
 
@@ -27,22 +23,22 @@ class ThermostatRepository {
 
       return ThermostatTrait(<State>{
         TargetTemperature(trait.state.targetTemperature.reported?.value),
-        FanMode(trait.state.fanMode.reported?.value ?? AvailableFanMode.ON),
-        ThermostatMode(
-            trait.state.mode.reported?.value ?? AvailableThermostatMode.OFF),
+        FanMode(trait.state.fanMode.reported?.value),
+        ThermostatMode(trait.state.mode.reported?.value),
         AmbientTemperature(trait.state.ambientTemperature.reported?.value),
       }, {
         AvailableFanModes(availableFanMode),
         AvailableThermostatModes(availableThermostatModes),
-        HeatSetPointRange(TemperatureRange(
-            min: trait.properties.heatSetPointRange.min!,
-            max: trait.properties.heatSetPointRange.max!)),
-        CoolSetPointRange(TemperatureRange(
-            min: trait.properties.coolSetPointRange.min!,
-            max: trait.properties.coolSetPointRange.max!)),
+        HeatSetPointRange(new TemperatureRange(
+            min: trait.properties.heatSetPointRange?.min,
+            max: trait.properties.heatSetPointRange?.max)),
+        CoolSetPointRange(new TemperatureRange(
+            min: trait.properties.coolSetPointRange?.min,
+            max: trait.properties.coolSetPointRange?.max)),
       });
-    } else {
-      throw ArgumentError.value(trait);
+    } on NoSuchMethodError {
+      throw ArgumentError.value(
+          trait, 'ThermostatTrait', 'Invalid ThermostatTrait');
     }
   }
 
@@ -85,12 +81,12 @@ class AmbientTemperature extends State<double?> {
   AmbientTemperature(double? value) : super('ambientTemperature', value);
 }
 
-class FanMode extends State<AvailableFanMode> {
-  FanMode(AvailableFanMode value) : super('fanMode', value);
+class FanMode extends State<AvailableFanMode?> {
+  FanMode(AvailableFanMode? value) : super('fanMode', value);
 }
 
-class ThermostatMode extends State<AvailableThermostatMode> {
-  ThermostatMode(AvailableThermostatMode value) : super('mode', value);
+class ThermostatMode extends State<AvailableThermostatMode?> {
+  ThermostatMode(AvailableThermostatMode? value) : super('mode', value);
 }
 
 class AvailableFanModes extends Property<Set<AvailableFanMode>> {
@@ -99,10 +95,10 @@ class AvailableFanModes extends Property<Set<AvailableFanMode>> {
 }
 
 class TemperatureRange {
-  final double min;
-  final double max;
+  final double? min;
+  final double? max;
 
-  TemperatureRange({required double min, required double max})
+  TemperatureRange({required double? min, required double? max})
       : min = min,
         max = max;
 }

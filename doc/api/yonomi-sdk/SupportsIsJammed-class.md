@@ -17,7 +17,7 @@
 **Inheritance**
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [Property](../yonomi-sdk/Property-class.md)&lt;[bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)>
+- [Property](../yonomi-sdk/Property-class.md)&lt;[bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)?>
 - SupportsIsJammed
 
 
@@ -27,7 +27,7 @@
 
 ## Constructors
 
-[SupportsIsJammed](../yonomi-sdk/SupportsIsJammed/SupportsIsJammed.md) ([bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) value)
+[SupportsIsJammed](../yonomi-sdk/SupportsIsJammed/SupportsIsJammed.md) ([bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)? value)
 
     
 
@@ -61,7 +61,7 @@ _read-only, inherited_
 
 
 
-##### [value](../yonomi-sdk/Property/value.md) &#8594; [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)
+##### [value](../yonomi-sdk/Property/value.md) &#8594; [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html)?
 
 
 

@@ -120,6 +120,9 @@ final BuiltSet<GFanMode> _$gFanModeValues =
 const GTraitName _$gTraitNameBATTERY_LEVEL =
     const GTraitName._('BATTERY_LEVEL');
 const GTraitName _$gTraitNameBRIGHTNESS = const GTraitName._('BRIGHTNESS');
+const GTraitName _$gTraitNameCOLOR = const GTraitName._('COLOR');
+const GTraitName _$gTraitNameCOLOR_TEMPERATURE =
+    const GTraitName._('COLOR_TEMPERATURE');
 const GTraitName _$gTraitNameLOCK = const GTraitName._('LOCK');
 const GTraitName _$gTraitNamePIN_CODE_CREDENTIAL =
     const GTraitName._('PIN_CODE_CREDENTIAL');
@@ -133,6 +136,10 @@ GTraitName _$gTraitNameValueOf(String name) {
       return _$gTraitNameBATTERY_LEVEL;
     case 'BRIGHTNESS':
       return _$gTraitNameBRIGHTNESS;
+    case 'COLOR':
+      return _$gTraitNameCOLOR;
+    case 'COLOR_TEMPERATURE':
+      return _$gTraitNameCOLOR_TEMPERATURE;
     case 'LOCK':
       return _$gTraitNameLOCK;
     case 'PIN_CODE_CREDENTIAL':
@@ -150,6 +157,8 @@ final BuiltSet<GTraitName> _$gTraitNameValues =
     new BuiltSet<GTraitName>(const <GTraitName>[
   _$gTraitNameBATTERY_LEVEL,
   _$gTraitNameBRIGHTNESS,
+  _$gTraitNameCOLOR,
+  _$gTraitNameCOLOR_TEMPERATURE,
   _$gTraitNameLOCK,
   _$gTraitNamePIN_CODE_CREDENTIAL,
   _$gTraitNamePOWER,

@@ -65,6 +65,27 @@
  
 
 
+##### [Brightness](../yonomi-sdk/Brightness-class.md)
+
+
+
+ 
+
+
+##### [BrightnessRepository](../yonomi-sdk/BrightnessRepository-class.md)
+
+
+
+ 
+
+
+##### [BrightnessTrait](../yonomi-sdk/BrightnessTrait-class.md)
+
+
+
+ 
+
+
 ##### [CoolSetPointRange](../yonomi-sdk/CoolSetPointRange-class.md)
 
 

@@ -21,6 +21,7 @@
 
 - [AmbientTemperature](../yonomi-sdk/AmbientTemperature-class.md)
 - [BatteryLevel](../yonomi-sdk/BatteryLevel-class.md)
+- [Brightness](../yonomi-sdk/Brightness-class.md)
 - [FanMode](../yonomi-sdk/FanMode-class.md)
 - [IsJammed](../yonomi-sdk/IsJammed-class.md)
 - [IsLocked](../yonomi-sdk/IsLocked-class.md)

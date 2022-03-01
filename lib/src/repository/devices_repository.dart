@@ -5,7 +5,9 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.g
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
@@ -105,23 +107,13 @@ class DevicesRepository {
         case GTraitName.BATTERY_LEVEL:
           return getBatteryLevelTrait(trait);
         case GTraitName.POWER:
-          return getPowerTrait(trait);
+          return PowerRepository.getPowerTrait(trait);
+        case GTraitName.BRIGHTNESS:
+          return BrightnessRepository.getBrightnessTrait(trait);
         default:
           return UnknownTrait(trait.name.toString());
       }
     }).toList();
-  }
-
-  static PowerTrait getPowerTrait(dynamic trait) {
-    if (trait is GgetDeviceData_device_traits__asPowerDeviceTrait ||
-        trait
-            is GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait) {
-      return PowerTrait(IsOnOff(trait.state.isOn.reported?.value ?? false),
-          supportsDiscreteOnOff: SupportsDiscreteOnOff(
-              trait.properties.supportsDiscreteOnOff ?? false));
-    } else {
-      throw ArgumentError.value(trait);
-    }
   }
 
   static BatteryLevelTrait getBatteryLevelTrait(dynamic trait) {
@@ -182,10 +174,6 @@ abstract class State<T> {
   State(this.name, this.value);
 }
 
-class IsOnOff extends State<bool> {
-  IsOnOff(bool value) : super('isOn', value);
-}
-
 class BatteryLevel extends State<int> {
   BatteryLevel(int value) : super('batteryLevel', value);
 }
@@ -199,16 +187,6 @@ abstract class Property<T> {
   final T value;
 
   Property(this.name, this.value);
-}
-
-class SupportsDiscreteOnOff extends Property<bool> {
-  SupportsDiscreteOnOff(bool value) : super('supportsDiscreteOnOff', value);
-}
-
-class PowerTrait extends Trait {
-  final SupportsDiscreteOnOff supportsDiscreteOnOff;
-  PowerTrait(State state, {required this.supportsDiscreteOnOff})
-      : super('power', {state}, {supportsDiscreteOnOff});
 }
 
 class UnknownTrait extends Trait {
