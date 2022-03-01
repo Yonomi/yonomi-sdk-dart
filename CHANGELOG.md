@@ -1,3 +1,88 @@
+# [3.0.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.8.2...v3.0.0) (2022-03-01)
+
+
+* Dx 356 brightness trait (#59) ([eae5cdc](https://github.com/Yonomi/yonomi-sdk-dart/commit/eae5cdce4e571c8eaae3ecc73b07919a19c650b1)), closes [#59](https://github.com/Yonomi/yonomi-sdk-dart/issues/59)
+
+
+### BREAKING CHANGES
+
+* * feat: Add brightness actions query
+
+* feat(brightness_repository.dart): Add a repository to handle basic brightness related data access
+
+* refactor(devices_repository.dart,power_repository.dart): Move functions that should be in PowerRepository
+
+* feat(devices_repository.dart): Add brightness to the trait converter
+
+\
+
+* test(power_repository_test.dart): Add test to hit power repository line not test covered
+
+* test(power_repository_test.dart): Refactor tests to use more sensible references
+
+* test: Add tests for brightness trait
+
+* test: rename base_repository_test to better match the actual repository name
+
+* fix(brightness_repository.dart): Fix path calls to brightness value
+
+* test(test/e2e/repository/thermostat_repository_test.dart): Remove test that is already run in another test class
+
+* test(lock_repository_test.dart): Move some lock tests to it's own unit test for lock repository
+
+* test(test/utils/test_fixtures.dart): Add a helper for e2e brightness testing
+
+* test(test/unit/thermostat_repository_test.dart): Add a branch to make sure an exception is thrown in thermostat repo if the trait arg isn't the right type
+
+* test(test/unit/power_repository_test.dart): Add a branch to make sure an exception is thrown in power repo if the type isn't right
+
+* test(brightness_repository_test.dart,devices_repository_test.dart): Add tests for the brightness trait
+
+* test(devices_repository_test.dart): Cover constructor of DeviceNameId
+
+* docs: updated dartdocs
+
+* test(power_repository_test.dart): Remove test that likely can't pass due to internal factors
+
+* fix(yonomi-sdk.dart): Expose new repository in lib
+
+* docs: updated dartdocs
+
+* docs: updated dartdocs
+
+* test(unit/devices_repository_test.dart): Change brightness device data to actual return from query
+
+* fix(lib/src/repository/traits/brightness_repository.dart): Reported apparently is nullable on brightness
+
+* feat: Add GTraitNames for color and color temperature as they come in on Hue bulbs
+
+* docs: updated dartdocs
+
+* fix(thermostat_repository.dart-thermostat_repository_test.dart): Make temp range properties match documentation
+
+see https://developers.yonomi.com/docs/platform/util-traits/09-traits-reference/#thermostatsetting-trait as cool and heat temp range properties are nullable dynamic float ranges
+
+* docs: updated dartdocs
+
+* refactor(brightness_repository.dart): Rename b to builder to better reflect it is an action request builder
+
+* fix(repository.dart): Fix private constructor for Repository
+
+* refactor(thermostat_repository.dart): Use min/max double values rather than null to simplify range logic
+
+* docs: updated dartdocs
+
+* refactor(thermostat_repository.dart): Nulls really make more sense
+
+* fix(power_repository.dart): Don't use defaults for values that come back null
+
+* refactor: Move from if/else to try/catch for dynamic type problems and remove defaults
+
+* docs: updated dartdocs
+
+Co-authored-by: Rigoberto L. Perez <rigoberto.perez@allegion.com>
+Co-authored-by: CircleCI <developer@yonomi.co>
+
 ## [2.8.2](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.8.1...v2.8.2) (2022-02-18)
 
 
