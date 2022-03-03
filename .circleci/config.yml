@@ -151,7 +151,7 @@ jobs:
               git add doc/
               git commit -m "docs: updated dartdocs"
               REMOTE_URL="$( echo << pipeline.project.git_url >> | sed -e 's#^https://##; s#/score/$##' )"
-              git remote set-url origin "https://$REMOTE_URL.git"
+              git remote set-url origin "https://$GH_TOKEN@$REMOTE_URL.git"
               git push -u origin HEAD
             else
               echo "Nothing to check in. No new docs generated"
