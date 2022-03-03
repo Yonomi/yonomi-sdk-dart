@@ -109,7 +109,7 @@ commands:
       - run:
           name: Prepare Dartdoc
           command: |
-            pub global activate dartdoc
+            flutter pub global activate dartdoc
             flutter pub global run dartdoc:dartdoc --format md
 
 ##################
