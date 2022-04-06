@@ -1,6 +1,8 @@
 import 'package:corsac_jwt/corsac_jwt.dart';
+import 'package:gql_http_link/gql_http_link.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
+import 'package:yonomi_platform_sdk/src/request/request.dart';
 
 const String privateKey = '''
 -----BEGIN RSA PRIVATE KEY-----
@@ -78,5 +80,17 @@ void main() {
     final validator = JWTValidator();
     final errors = validator.validate(JWT.parse(token));
     expect(errors.length, 0);
+  });
+
+  test('Create graph link from user id', () {
+    final link = GraphLinkCreator.createFromUserId(RequestParam(
+        'https://platform.yonomi.cloud/graphql',
+        privateKey,
+        'tenantId',
+        'userId')) as HttpLink;
+
+    expect(link, isNotNull);
+    expect(
+        link.uri.toString(), equals('https://platform.yonomi.cloud/graphql'));
   });
 }
