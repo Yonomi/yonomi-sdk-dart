@@ -11,7 +11,7 @@ void main() {
     MockLink link = new MockLink();
 
     when(link.request(any, any)).thenAnswer((_) => Stream.fromIterable([
-          Response(errors: [GraphQLError(message: 'errrr')])
+          Response(response: {}, errors: [GraphQLError(message: 'errrr')])
         ]));
 
     expect(Repository.fetch(link, Operation(document: DocumentNode())),
@@ -22,7 +22,7 @@ void main() {
     MockLink link = new MockLink();
 
     when(link.request(any, any)).thenAnswer((_) => Stream.fromIterable([
-          Response(errors: [GraphQLError(message: 'errrr')])
+          Response(response: {}, errors: [GraphQLError(message: 'errrr')])
         ]));
 
     expect(
