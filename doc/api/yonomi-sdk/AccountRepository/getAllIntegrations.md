@@ -26,7 +26,7 @@
 ```dart
 static Future<List<GgetAllIntegrationsData_integrations_edges_node>>
     getAllIntegrations(Request request, {Link? graphLink}) async {
-  if (graphLink == null) graphLink = GraphLinkCreator.create(request);
+  graphLink = _getGraphLink(request, graphLink);
   final req = GgetAllIntegrations();
   final res = await Repository.fetch(graphLink, req.operation);
 

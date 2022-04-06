@@ -26,7 +26,7 @@
 ```dart
 static Future<List<GlinkedAccountsData_me_linkedAccounts_edges_node>>
     getLinkedAccounts(Request request, {Link? graphLink}) async {
-  if (graphLink == null) graphLink = GraphLinkCreator.create(request);
+  graphLink = _getGraphLink(request, graphLink);
 
   final req = GlinkedAccounts();
   final res = await Repository.fetch(graphLink, req.operation);

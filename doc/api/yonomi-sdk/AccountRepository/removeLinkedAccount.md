@@ -27,7 +27,7 @@
 static Future<String> removeLinkedAccount(
     String linkedAccountId, Request request,
     {Link? graphqlLink}) async {
-  graphqlLink = graphqlLink ?? GraphLinkCreator.create(request);
+  graphqlLink = _getGraphLink(request, graphqlLink);
 
   final req =
       GremoveLinkedAccount((b) => b..vars.linkedAccountId = linkedAccountId);

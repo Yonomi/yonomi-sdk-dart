@@ -27,7 +27,7 @@
 static Future<String> generateAccountUrl(
     String integrationId, Request request,
     {Link? graphLink}) async {
-  if (graphLink == null) graphLink = GraphLinkCreator.create(request);
+  graphLink = _getGraphLink(request, graphLink);
   final req = GgenerateAccountLinkingUrl(
       (b) => b..vars.integrationId = integrationId);
   final res =
