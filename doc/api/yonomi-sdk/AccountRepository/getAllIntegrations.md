@@ -12,7 +12,7 @@
 
 
 [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;GgetAllIntegrationsData_integrations_edges_node>> getAllIntegrations
-([Request](../../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.0/link/Link-class.html)? graphLink})
+([Request](../../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.2/link/Link-class.html)? graphLink})
 
 
 

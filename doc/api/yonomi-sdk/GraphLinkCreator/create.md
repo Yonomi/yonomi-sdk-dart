@@ -11,7 +11,7 @@
 
 
 
-[Link](https://pub.dev/documentation/gql_link/0.4.0/link/Link-class.html) create
+[Link](https://pub.dev/documentation/gql_link/0.4.2/link/Link-class.html) create
 ([Request](../../yonomi-sdk/Request-class.md) request)
 
 

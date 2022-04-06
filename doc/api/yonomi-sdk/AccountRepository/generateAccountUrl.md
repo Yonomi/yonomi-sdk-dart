@@ -12,7 +12,7 @@
 
 
 [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)> generateAccountUrl
-([String](https://api.flutter.dev/flutter/dart-core/String-class.html) integrationId, [Request](../../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.0/link/Link-class.html)? graphLink})
+([String](https://api.flutter.dev/flutter/dart-core/String-class.html) integrationId, [Request](../../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.2/link/Link-class.html)? graphLink})
 
 
 

@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Builder](https://pub.dev/documentation/built_value/8.1.3/built_value/Builder-class.html)&lt;[GDeviceEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput-class.md), [GDeviceEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder-class.md)>
+- [Builder](https://pub.dev/documentation/built_value/8.1.4/built_value/Builder-class.html)&lt;[GDeviceEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInput-class.md), [GDeviceEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDeviceEventFilterInputBuilder-class.md)>
 
 
 
