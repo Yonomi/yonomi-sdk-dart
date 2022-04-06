@@ -1,8 +1,8 @@
+import 'package:flutter_test/flutter_test.dart';
 import 'package:gql_exec/gql_exec.dart';
 import 'package:gql_link/gql_link.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart' as sdk;
 
 import 'lock_repository_test.mocks.dart';

@@ -1,6 +1,6 @@
 import 'package:corsac_jwt/corsac_jwt.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:gql_http_link/gql_http_link.dart';
-import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 
@@ -92,5 +92,6 @@ void main() {
     expect(link, isNotNull);
     expect(
         link.uri.toString(), equals('https://platform.yonomi.cloud/graphql'));
+    expect(AuthorizedClient('token').token, equals('token'));
   });
 }

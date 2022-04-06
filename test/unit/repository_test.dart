@@ -1,7 +1,7 @@
+import 'package:flutter_test/flutter_test.dart';
 import 'package:gql/ast.dart';
 import 'package:gql_exec/gql_exec.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 
 import 'power_repository_test.mocks.dart';
