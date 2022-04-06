@@ -79,7 +79,7 @@ _inherited_
 
 ## Static Methods
 
-##### [create](../yonomi-sdk/GraphLinkCreator/create.md)([Request](../yonomi-sdk/Request-class.md) request) [Link](https://pub.dev/documentation/gql_link/0.4.0/link/Link-class.html)
+##### [create](../yonomi-sdk/GraphLinkCreator/create.md)([Request](../yonomi-sdk/Request-class.md) request) [Link](https://pub.dev/documentation/gql_link/0.4.2/link/Link-class.html)
 
 
 
@@ -88,7 +88,7 @@ _inherited_
 
 
 
-##### [createFromUserId](../yonomi-sdk/GraphLinkCreator/createFromUserId.md)([RequestParam](../yonomi-sdk/RequestParam-class.md) requestParam) [Link](https://pub.dev/documentation/gql_link/0.4.0/link/Link-class.html)
+##### [createFromUserId](../yonomi-sdk/GraphLinkCreator/createFromUserId.md)([RequestParam](../yonomi-sdk/RequestParam-class.md) requestParam) [Link](https://pub.dev/documentation/gql_link/0.4.2/link/Link-class.html)
 
 
 

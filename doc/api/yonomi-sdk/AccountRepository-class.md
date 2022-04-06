@@ -79,7 +79,7 @@ _inherited_
 
 ## Static Methods
 
-##### [generateAccountUrl](../yonomi-sdk/AccountRepository/generateAccountUrl.md)([String](https://api.flutter.dev/flutter/dart-core/String-class.html) integrationId, [Request](../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.0/link/Link-class.html)? graphLink}) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>
+##### [generateAccountUrl](../yonomi-sdk/AccountRepository/generateAccountUrl.md)([String](https://api.flutter.dev/flutter/dart-core/String-class.html) integrationId, [Request](../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.2/link/Link-class.html)? graphLink}) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>
 
 
 
@@ -88,7 +88,7 @@ _inherited_
 
 
 
-##### [getAllIntegrations](../yonomi-sdk/AccountRepository/getAllIntegrations.md)([Request](../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.0/link/Link-class.html)? graphLink}) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;GgetAllIntegrationsData_integrations_edges_node>>
+##### [getAllIntegrations](../yonomi-sdk/AccountRepository/getAllIntegrations.md)([Request](../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.2/link/Link-class.html)? graphLink}) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;GgetAllIntegrationsData_integrations_edges_node>>
 
 
 
@@ -97,7 +97,7 @@ _inherited_
 
 
 
-##### [getLinkedAccounts](../yonomi-sdk/AccountRepository/getLinkedAccounts.md)([Request](../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.0/link/Link-class.html)? graphLink}) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;GlinkedAccountsData_me_linkedAccounts_edges_node>>
+##### [getLinkedAccounts](../yonomi-sdk/AccountRepository/getLinkedAccounts.md)([Request](../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.2/link/Link-class.html)? graphLink}) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[List](https://api.flutter.dev/flutter/dart-core/List-class.html)&lt;GlinkedAccountsData_me_linkedAccounts_edges_node>>
 
 
 
@@ -106,7 +106,7 @@ _inherited_
 
 
 
-##### [removeLinkedAccount](../yonomi-sdk/AccountRepository/removeLinkedAccount.md)([String](https://api.flutter.dev/flutter/dart-core/String-class.html) linkedAccountId, [Request](../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.0/link/Link-class.html)? graphqlLink}) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>
+##### [removeLinkedAccount](../yonomi-sdk/AccountRepository/removeLinkedAccount.md)([String](https://api.flutter.dev/flutter/dart-core/String-class.html) linkedAccountId, [Request](../yonomi-sdk/Request-class.md) request, {[Link](https://pub.dev/documentation/gql_link/0.4.2/link/Link-class.html)? graphqlLink}) [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;[String](https://api.flutter.dev/flutter/dart-core/String-class.html)>
 
 
 

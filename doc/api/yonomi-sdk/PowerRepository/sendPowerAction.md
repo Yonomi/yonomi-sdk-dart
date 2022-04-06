@@ -12,7 +12,7 @@
 
 
 [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html)&lt;void> sendPowerAction
-([Request](../../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id, [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) onOff, {[Link](https://pub.dev/documentation/gql_link/0.4.0/link/Link-class.html)? injectedClient})
+([Request](../../yonomi-sdk/Request-class.md) request, [String](https://api.flutter.dev/flutter/dart-core/String-class.html) id, [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) onOff, {[Link](https://pub.dev/documentation/gql_link/0.4.2/link/Link-class.html)? injectedClient})
 
 
 

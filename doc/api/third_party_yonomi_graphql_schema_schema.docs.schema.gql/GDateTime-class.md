@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Built](https://pub.dev/documentation/built_value/8.1.3/built_value/Built-class.html)&lt;[GDateTime](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTime-class.md), [GDateTimeBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTimeBuilder-class.md)>
+- [Built](https://pub.dev/documentation/built_value/8.1.4/built_value/Built-class.html)&lt;[GDateTime](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTime-class.md), [GDateTimeBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTimeBuilder-class.md)>
 
 
 
@@ -71,20 +71,20 @@ _inherited_
 
 
 
-##### [rebuild](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/rebuild.html)(dynamic updates([GDateTimeBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTimeBuilder-class.md))) [GDateTime](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTime-class.md)
+##### [rebuild](https://pub.dev/documentation/built_value/8.1.4/built_value/Built/rebuild.html)(dynamic updates([GDateTimeBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTimeBuilder-class.md))) [GDateTime](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTime-class.md)
 
 
 
-Rebuilds the instance. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/rebuild.html)  
+Rebuilds the instance. [...](https://pub.dev/documentation/built_value/8.1.4/built_value/Built/rebuild.html)  
 _inherited_
 
 
 
-##### [toBuilder](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/toBuilder.html)() [GDateTimeBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTimeBuilder-class.md)
+##### [toBuilder](https://pub.dev/documentation/built_value/8.1.4/built_value/Built/toBuilder.html)() [GDateTimeBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTimeBuilder-class.md)
 
 
 
-Converts the instance to a builder <code>B</code>. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/toBuilder.html)  
+Converts the instance to a builder <code>B</code>. [...](https://pub.dev/documentation/built_value/8.1.4/built_value/Built/toBuilder.html)  
 _inherited_
 
 
@@ -113,12 +113,12 @@ _inherited_
 
 ## Static Properties
 
-##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTime/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.3/serializer/Serializer-class.html)&lt;[GDateTime](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTime-class.md)>
+##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTime/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.4/serializer/Serializer-class.html)&lt;[GDateTime](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GDateTime-class.md)>
 
 
 
    
-_@[BuiltValueSerializer](https://pub.dev/documentation/built_value/8.1.3/built_value/BuiltValueSerializer-class.html)(custom: true), read-only_
+_@[BuiltValueSerializer](https://pub.dev/documentation/built_value/8.1.4/built_value/BuiltValueSerializer-class.html)(custom: true), read-only_
 
 
 
