@@ -6,6 +6,7 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart' as sdk;
 
+import '../utils/test_fixtures.dart';
 import 'brightness_repository_test.mocks.dart';
 
 @GenerateMocks([
@@ -16,36 +17,14 @@ import 'brightness_repository_test.mocks.dart';
 ])
 void main() {
   test('BrightnessRepository calls client request with passed id', () async {
-    final request = MockSdkRequest();
-    when(request.headers).thenReturn(Map<String, String>());
-    when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
+    final request = TestFixtures().buildRequest();
+    final mockRequest = MockSdkRequest();
+    when(mockRequest.graphUrl).thenReturn(request.graphUrl);
+    when(mockRequest.headers).thenReturn(request.headers);
+    await BrightnessRepository.setBrightnessAction(mockRequest, 'id', 75);
 
-    final link = MockLink();
-    final res = MockResponse();
-    when(link.request(any)).thenAnswer((_) => Stream<Response>.value(res));
-    when(res.data).thenReturn(<String, dynamic>{
-      'makeBrightnessAction': <String, dynamic>{
-        'device': <String, dynamic>{
-          'id': 'device-id',
-          'traits': <String, dynamic>{
-            'brightness': <String, dynamic>{
-              'state': <String, dynamic>{
-                'brightness': <String, dynamic>{
-                  'reported': <String, dynamic>{'value': 1}
-                }
-              }
-            }
-          }
-        }
-      }
-    });
-    when(res.errors).thenReturn(null);
-
-    await BrightnessRepository.setBrightnessAction(request, 'id', 75,
-        graphLink: link);
-
-    verify(link.request(any)).called(1);
-    verify(res.errors).called(1);
+    verify(mockRequest.graphUrl).called(1);
+    verify(mockRequest.headers).called(1);
   });
 
   test(
