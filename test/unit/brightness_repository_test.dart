@@ -12,16 +12,40 @@ import 'brightness_repository_test.mocks.dart';
   Link,
   Response
 ], customMocks: [
-  MockSpec<sdk.Request>(as: #MockRequest, returnNullOnMissingStub: true)
+  MockSpec<sdk.Request>(as: #MockSdkRequest, returnNullOnMissingStub: true)
 ])
 void main() {
   test('BrightnessRepository calls client request with passed id', () async {
-    final request = MockRequest();
+    final request = MockSdkRequest();
     when(request.headers).thenReturn(Map<String, String>());
     when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
-    await BrightnessRepository.setBrightnessAction(request, 'id', 75);
-    verify(request.graphUrl).called(1);
-    verify(request.headers).called(1);
+
+    final link = MockLink();
+    final res = MockResponse();
+    when(link.request(any)).thenAnswer((_) => Stream<Response>.value(res));
+    when(res.data).thenReturn(<String, dynamic>{
+      'makeBrightnessAction': <String, dynamic>{
+        'device': <String, dynamic>{
+          'id': 'device-id',
+          'traits': <String, dynamic>{
+            'brightness': <String, dynamic>{
+              'state': <String, dynamic>{
+                'brightness': <String, dynamic>{
+                  'reported': <String, dynamic>{'value': 1}
+                }
+              }
+            }
+          }
+        }
+      }
+    });
+    when(res.errors).thenReturn(null);
+
+    await BrightnessRepository.setBrightnessAction(request, 'id', 75,
+        graphLink: link);
+
+    verify(link.request(any)).called(1);
+    verify(res.errors).called(1);
   });
 
   test(

@@ -89,7 +89,7 @@ class MockResponse extends _i1.Mock implements _i3.Response {
 /// A class which mocks [Request].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRequest extends _i1.Mock implements _i5.Request {
+class MockSdkRequest extends _i1.Mock implements _i5.Request {
   @override
   String get graphUrl =>
       (super.noSuchMethod(Invocation.getter(#graphUrl), returnValue: '')
