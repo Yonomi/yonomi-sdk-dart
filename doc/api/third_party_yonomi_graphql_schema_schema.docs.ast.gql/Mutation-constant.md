@@ -90,6 +90,62 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
               name: _i1.NameNode(value: 'CreateActionResponse'),
               isNonNull: true)),
       _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'actionColorSetColor'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'color'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'HSBColorValueInput'),
+                    isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name:
+              _i1.NameNode(value: 'actionColorTemperatureSetColorTemperature'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'colorTemperature'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'actionLockSetLocked'),
           directives: [],
           args: [
@@ -177,6 +233,92 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(
               value: 'actionPinCodeCredentialDeletePinCodeCredential'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'pinCode'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'actionPinCodeCredentialAddPinCodeCredential'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'pinCodeCredential'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'PinCodeCredentialItemInput'),
+                    isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'actionPinCodeCredentialModifyPinCodeCredential'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'pinCodeCredential'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'PinCodeCredentialItemInput'),
+                    isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'actionPinCodeCredentialRemovePinCodeCredential'),
           directives: [],
           args: [
             _i1.InputValueDefinitionNode(
@@ -347,31 +489,78 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
               name: _i1.NameNode(value: 'CreateActionResponse'),
               isNonNull: true)),
       _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'CLAIMABLE_claimOwnership'),
+          name: _i1.NameNode(
+              value:
+                  'actionThermostatSettingSetThermostatModeAndTargetTemperature'),
           directives: [],
           args: [
             _i1.InputValueDefinitionNode(
                 name: _i1.NameNode(value: 'deviceId'),
                 directives: [],
                 type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
                     name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'mode'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ThermostatMode'),
+                    isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'targetTemperature'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Float'), isNonNull: false),
                 defaultValue: null)
           ],
           type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'ClaimableDevice'), isNonNull: true)),
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
       _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'CLAIMABLE_unclaimOwnership'),
+          name: _i1.NameNode(
+              value:
+                  'actionThermostatSettingSetThermostatModeAndTargetTemperatureRange'),
           directives: [],
           args: [
             _i1.InputValueDefinitionNode(
                 name: _i1.NameNode(value: 'deviceId'),
                 directives: [],
                 type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
                     name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'mode'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ThermostatMode'),
+                    isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'range'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ThermostatRangeInput'),
+                    isNonNull: true),
                 defaultValue: null)
           ],
           type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'ClaimableDevice'), isNonNull: true)),
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'MOCK_CONNECTOR_installDiscoveryPayload'),
           directives: [],
@@ -554,6 +743,31 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
               name: _i1.NameNode(value: 'JSON'), isNonNull: true)),
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'MOCK_CONNECTOR_registerDeviceIdentity'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'integrationId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'physicalId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceCertificate'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'JSON'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'MOCK_CONNECTOR_emitIdentityAndGetJWT'),
           directives: [],
           args: [
             _i1.InputValueDefinitionNode(

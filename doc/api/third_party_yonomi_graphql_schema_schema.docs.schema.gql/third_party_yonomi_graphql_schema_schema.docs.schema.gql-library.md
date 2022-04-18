@@ -86,6 +86,20 @@
  
 
 
+##### [GHSBColorValueInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInput-class.md)
+
+
+
+ 
+
+
+##### [GHSBColorValueInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInputBuilder-class.md)
+
+
+
+ 
+
+
 ##### [GIntegrationType](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GIntegrationType-class.md)
 
 
@@ -170,6 +184,34 @@
  
 
 
+##### [GPinCodeCredentialItemInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialItemInput-class.md)
+
+
+
+ 
+
+
+##### [GPinCodeCredentialItemInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GPinCodeCredentialItemInputBuilder-class.md)
+
+
+
+ 
+
+
+##### [GRecurringScheduleInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GRecurringScheduleInput-class.md)
+
+
+
+ 
+
+
+##### [GRecurringScheduleInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GRecurringScheduleInputBuilder-class.md)
+
+
+
+ 
+
+
 ##### [GRRuleSchedule](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GRRuleSchedule-class.md)
 
 
@@ -184,7 +226,35 @@
  
 
 
+##### [GTemporaryScheduleInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTemporaryScheduleInput-class.md)
+
+
+
+ 
+
+
+##### [GTemporaryScheduleInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTemporaryScheduleInputBuilder-class.md)
+
+
+
+ 
+
+
 ##### [GThermostatMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatMode-class.md)
+
+
+
+ 
+
+
+##### [GThermostatRangeInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatRangeInput-class.md)
+
+
+
+ 
+
+
+##### [GThermostatRangeInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatRangeInputBuilder-class.md)
 
 
 

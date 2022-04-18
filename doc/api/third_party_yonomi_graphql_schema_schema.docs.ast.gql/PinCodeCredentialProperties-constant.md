@@ -51,7 +51,27 @@ const PinCodeCredentialProperties = _i1.ObjectTypeDefinitionNode(
           directives: [],
           args: [],
           type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'IntRange'), isNonNull: false))
+              name: _i1.NameNode(value: 'IntRange'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'maxNumberOfRecurringSchedulesPerPinCodeCredential'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'maxNumberOfTemporarySchedulesPerPinCodeCredential'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'exclusiveSchedules'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false))
     ]);
 ```
 
