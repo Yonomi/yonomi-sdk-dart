@@ -136,7 +136,7 @@ jobs:
     steps:
       - dependencies
       - run-publish
-  generate_documentation:
+  generate-documentation:
     executor: default-executor
     steps:
       - dependencies
@@ -166,15 +166,15 @@ workflows:
     jobs:
       - test:
           <<: *feature-branch-filter
-      - generate_documentation:
+  main:
+    jobs:
+      - test:
+          <<: *main_only
+      - generate-documentation:
           context:
             - org-global
           requires:
             - test
-  main:
-    jobs:
-      - test:
-          <<: *main_only  
       - semantic-versioning:
           context:
             - org-global
