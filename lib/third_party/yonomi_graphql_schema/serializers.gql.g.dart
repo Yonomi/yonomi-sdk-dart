@@ -51,6 +51,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GDeviceDetailsData_traits__asColorDeviceTrait_state_color_reported_value
               .serializer)
       ..add(GDeviceDetailsData_traits__asColorTemperatureDeviceTrait.serializer)
+      ..add(GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties
+          .serializer)
+      ..add(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+              .serializer)
       ..add(GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state
           .serializer)
       ..add(
@@ -292,6 +297,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
               .serializer)
       ..add(GgetDeviceData_device_traits__asColorTemperatureDeviceTrait
           .serializer)
+      ..add(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties
+              .serializer)
+      ..add(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+              .serializer)
       ..add(GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state
           .serializer)
       ..add(
@@ -530,6 +541,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
               .serializer)
       ..add(
           GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait
+              .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+              .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
               .serializer)
       ..add(
           GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state

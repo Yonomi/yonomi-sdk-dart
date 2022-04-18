@@ -108,6 +108,8 @@ abstract class GgetDeviceData_device_traits
         GgetDeviceData_device_traits__asLockDeviceTrait,
         GgetDeviceData_device_traits__asPowerDeviceTrait,
         GgetDeviceData_device_traits__asBrightnessDeviceTrait,
+        GgetDeviceData_device_traits__asColorDeviceTrait,
+        GgetDeviceData_device_traits__asColorTemperatureDeviceTrait,
         GgetDeviceData_device_traits__asThermostatSettingDeviceTrait,
         GgetDeviceData_device_traits__asPinCodeCredentialDeviceTrait
       ]);
@@ -1031,6 +1033,560 @@ abstract class GgetDeviceData_device_traits__asBrightnessDeviceTrait_state_brigh
   static GgetDeviceData_device_traits__asBrightnessDeviceTrait_state_brightness_desired?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
           GgetDeviceData_device_traits__asBrightnessDeviceTrait_state_brightness_desired
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorDeviceTrait
+    implements
+        Built<GgetDeviceData_device_traits__asColorDeviceTrait,
+            GgetDeviceData_device_traits__asColorDeviceTraitBuilder>,
+        GgetDeviceData_device_traits {
+  GgetDeviceData_device_traits__asColorDeviceTrait._();
+
+  factory GgetDeviceData_device_traits__asColorDeviceTrait(
+      [Function(GgetDeviceData_device_traits__asColorDeviceTraitBuilder b)
+          updates]) = _$GgetDeviceData_device_traits__asColorDeviceTrait;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorDeviceTraitBuilder b) =>
+      b..G__typename = 'ColorDeviceTrait';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  _i3.GTraitName get name;
+  String get instance;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state get state;
+  static Serializer<GgetDeviceData_device_traits__asColorDeviceTrait>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+          GgetDeviceData_device_traits__asColorDeviceTrait.serializer, this)
+      as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorDeviceTrait? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorDeviceTrait.serializer, json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorDeviceTrait_state
+    implements
+        Built<GgetDeviceData_device_traits__asColorDeviceTrait_state,
+            GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder> {
+  GgetDeviceData_device_traits__asColorDeviceTrait_state._();
+
+  factory GgetDeviceData_device_traits__asColorDeviceTrait_state(
+      [Function(GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder b)
+          updates]) = _$GgetDeviceData_device_traits__asColorDeviceTrait_state;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder b) =>
+      b..G__typename = 'ColorState';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color get color;
+  static Serializer<GgetDeviceData_device_traits__asColorDeviceTrait_state>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state.serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorDeviceTrait_state? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state.serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorDeviceTrait_state_color
+    implements
+        Built<GgetDeviceData_device_traits__asColorDeviceTrait_state_color,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder> {
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color._();
+
+  factory GgetDeviceData_device_traits__asColorDeviceTrait_state_color(
+          [Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder
+              b) =>
+      b..G__typename = 'ColorStateColorField';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported?
+      get reported;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired?
+      get desired;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color.serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorDeviceTrait_state_color? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+    implements
+        Built<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder> {
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported._();
+
+  factory GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported(
+          [Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder
+              b) =>
+      b..G__typename = 'ColorStateReportedColor';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+      get value;
+  _i3.GDateTime get sampledAt;
+  _i3.GDateTime get createdAt;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorReportedSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+    implements
+        Built<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder> {
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value._();
+
+  factory GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value(
+          [Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder
+              b) =>
+      b..G__typename = 'HSBColorValue';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get h;
+  int get s;
+  int get b;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorReportedValueSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+    implements
+        Built<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder> {
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired._();
+
+  factory GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired(
+          [Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder
+              b) =>
+      b..G__typename = 'ColorStateDesiredColor';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+      get value;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta?
+      get delta;
+  _i3.GDateTime get updatedAt;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorDesiredSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+    implements
+        Built<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder> {
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value._();
+
+  factory GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value(
+          [Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder
+              b) =>
+      b..G__typename = 'HSBColorValue';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get h;
+  int get s;
+  int get b;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorDesiredValueSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+    implements
+        Built<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder> {
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta._();
+
+  factory GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta(
+          [Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder
+              b) =>
+      b..G__typename = 'HSBColorValue';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get h;
+  int get s;
+  int get b;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorDesiredDeltaSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorTemperatureDeviceTrait
+    implements
+        Built<GgetDeviceData_device_traits__asColorTemperatureDeviceTrait,
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTraitBuilder>,
+        GgetDeviceData_device_traits {
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait._();
+
+  factory GgetDeviceData_device_traits__asColorTemperatureDeviceTrait(
+      [Function(
+              GgetDeviceData_device_traits__asColorTemperatureDeviceTraitBuilder
+                  b)
+          updates]) = _$GgetDeviceData_device_traits__asColorTemperatureDeviceTrait;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTraitBuilder
+              b) =>
+      b..G__typename = 'ColorTemperatureDeviceTrait';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  _i3.GTraitName get name;
+  String get instance;
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties
+      get properties;
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state get state;
+  static Serializer<GgetDeviceData_device_traits__asColorTemperatureDeviceTrait>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorTemperatureDeviceTraitSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorTemperatureDeviceTrait.serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorTemperatureDeviceTrait? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties
+    implements
+        Built<
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties,
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_propertiesBuilder> {
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties._();
+
+  factory GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties(
+          [Function(
+                  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_propertiesBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_propertiesBuilder
+              b) =>
+      b..G__typename = 'ColorTemperatureProperties';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange?
+      get supportedColorTemperatureRange;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorTemperatureDeviceTraitPropertiesSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+    implements
+        Built<
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange,
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder> {
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange._();
+
+  factory GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange(
+          [Function(
+                  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder
+              b) =>
+      b..G__typename = 'IntRange';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get min;
+  int get max;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorTemperatureDeviceTraitPropertiesSupportedColorTemperatureRangeSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state
+    implements
+        Built<GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state,
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_stateBuilder> {
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state._();
+
+  factory GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state(
+          [Function(
+                  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_stateBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_stateBuilder
+              b) =>
+      b..G__typename = 'ColorTemperatureState';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+      get colorTemperature;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorTemperatureDeviceTraitStateSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+    implements
+        Built<
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature,
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder> {
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature._();
+
+  factory GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature(
+          [Function(
+                  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder
+              b) =>
+      b..G__typename = 'ColorTemperatureStateColorTemperatureField';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported?
+      get reported;
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired?
+      get desired;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorTemperatureDeviceTraitStateColorTemperatureSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+    implements
+        Built<
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported,
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder> {
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported._();
+
+  factory GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported(
+          [Function(
+                  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder
+              b) =>
+      b..G__typename = 'ColorTemperatureStateReportedColorTemperature';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get value;
+  _i3.GDateTime get sampledAt;
+  _i3.GDateTime get createdAt;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorTemperatureDeviceTraitStateColorTemperatureReportedSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+              .serializer,
+          json);
+}
+
+abstract class GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+    implements
+        Built<
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired,
+            GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder> {
+  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired._();
+
+  factory GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired(
+          [Function(
+                  GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder
+                      b)
+              updates]) =
+      _$GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired;
+
+  static void _initializeBuilder(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder
+              b) =>
+      b..G__typename = 'ColorTemperatureStateDesiredColorTemperature';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get value;
+  int? get delta;
+  _i3.GDateTime get updatedAt;
+  static Serializer<
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired>
+      get serializer =>
+          _$ggetDeviceDataDeviceTraitsAsColorTemperatureDeviceTraitStateColorTemperatureDesiredSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GgetDeviceData_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
               .serializer,
           json);
 }
