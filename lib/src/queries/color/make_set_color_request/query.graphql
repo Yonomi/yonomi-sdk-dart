@@ -1,0 +1,36 @@
+mutation makeColorActionRequest($deviceId: ID!, $color: HSBColorValue!) {
+  actionColorSetColor(deviceId: $deviceId, color: $color) {
+    actionId
+    device {
+      traits {
+        __typename
+        name
+        instance
+        ... on ColorDeviceTrait {
+          state {
+            color {
+              reported {
+                value {
+                  h
+                  s
+                  b
+                }
+                sampledAt
+                createdAt
+              }
+              desired {
+                value {
+                  h
+                  s
+                  b
+                }
+                delta
+                updatedAt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

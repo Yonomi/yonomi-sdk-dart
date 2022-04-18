@@ -651,6 +651,34 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__base
               .serializer)
       ..add(GmakeBrightnessActionRequestVars.serializer)
+      ..add(GmakeColorActionRequest.serializer)
+      ..add(GmakeColorActionRequestData.serializer)
+      ..add(GmakeColorActionRequestData_actionColorSetColor.serializer)
+      ..add(GmakeColorActionRequestData_actionColorSetColor_device.serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_value
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_reported
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_reported_value
+              .serializer)
+      ..add(GmakeColorActionRequestData_actionColorSetColor_device_traits__base
+          .serializer)
+      ..add(GmakeColorActionRequestVars.serializer)
       ..add(GmakeLockUnlockActionRequest.serializer)
       ..add(GmakeLockUnlockActionRequestData.serializer)
       ..add(GmakeLockUnlockActionRequestData_actionLockSetLocked.serializer)
@@ -991,6 +1019,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GmakeColorActionRequestData_actionColorSetColor_device_traits)
+          ]),
+          () => new ListBuilder<
+              GmakeColorActionRequestData_actionColorSetColor_device_traits>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
