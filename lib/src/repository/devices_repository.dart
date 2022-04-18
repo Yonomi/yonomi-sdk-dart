@@ -3,9 +3,10 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gq
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
+import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
@@ -110,6 +111,8 @@ class DevicesRepository {
           return PowerRepository.getPowerTrait(trait);
         case GTraitName.BRIGHTNESS:
           return BrightnessRepository.getBrightnessTrait(trait);
+        case GTraitName.COLOR_TEMPERATURE:
+          return ColorTemperatureRepository.getColorTemperatureTrait(trait);
         default:
           return UnknownTrait(trait.name.toString());
       }

@@ -3,6 +3,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gq
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
@@ -448,6 +449,30 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(BatteryLevelTrait));
     expect(convertedValue.first.name, 'battery_level');
+  });
+
+  test(
+      'ColorTemperature : responseToDeviceTraitConverter maps single ColorTemperature DeviceTrait to ColorTemperatureTrait',
+      () {
+    final colorTemperature = GgetDeviceData_device.fromJson(
+      TestFixtures.buildColorTemperatureJsonResponse(
+        colorTemperature: 6500,
+        rangeMin: 0,
+        rangeMax: 7000,
+      ),
+    );
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        colorTemperature!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(ColorTemperatureTrait));
+
+    var traitUnderTest = convertedValue.first as ColorTemperatureTrait;
+    expect(traitUnderTest.name, 'color_temperature');
+    expect(traitUnderTest.supportedColorTemperatureRange.min, equals(0));
+    expect(traitUnderTest.supportedColorTemperatureRange.max, equals(7000));
+    expect(
+        traitUnderTest.stateWhereType<ColorTemperature>().value, equals(6500));
   });
 
   test(
