@@ -42,8 +42,7 @@ class ColorTemperatureTrait extends Trait {
   ColorTemperatureTrait(Set<State> states, Set<Property> properties)
       : super('color_temperature', states, properties);
 
-  ColorTemperature get colorTemperature =>
-      stateWhereType<ColorTemperature>().value;
+  int? get colorTemperature => stateWhereType<ColorTemperature>().value;
 
   IntRange get supportedColorTemperatureRange =>
       propertyWhereType<SupportedColorTemperatureRange>().value;

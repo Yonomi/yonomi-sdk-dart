@@ -469,10 +469,9 @@ void main() {
 
     var traitUnderTest = convertedValue.first as ColorTemperatureTrait;
     expect(traitUnderTest.name, 'color_temperature');
+    expect(traitUnderTest.colorTemperature, equals(6500));
     expect(traitUnderTest.supportedColorTemperatureRange.min, equals(0));
     expect(traitUnderTest.supportedColorTemperatureRange.max, equals(7000));
-    expect(
-        traitUnderTest.stateWhereType<ColorTemperature>().value, equals(6500));
   });
 
   test(
