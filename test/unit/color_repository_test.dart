@@ -29,6 +29,15 @@ main() {
     verify(request.graphUrl).called(1);
   });
 
+  test('HSBColor toString override shows the correct values', () {
+    expect(sdk.HSBColor(0, 0, 0).toString(),
+        'HSBColor(hue: 0, saturation: 0, brightness: 0)');
+    expect(sdk.HSBColor(0, 0, 0).toString(),
+        'HSBColor(hue: 0, saturation: 0, brightness: 0)');
+    expect(() => sdk.HSBColor(360, 100, 100).toString(),
+        throwsA(isA<AssertionError>()));
+  });
+
   test(
       '''#getColorTrait should throw argumentError if trait object is not correct type''',
       () {
