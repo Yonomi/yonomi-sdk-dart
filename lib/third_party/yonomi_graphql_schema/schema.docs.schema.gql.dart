@@ -4,30 +4,11 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:gql_code_builder/src/serializers/default_scalar_serializer.dart'
-    as _i2;
-import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/serializers.gql.dart'
     as _i1;
+import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/serializers.gql.dart'
+    as _i2;
 
 part 'schema.docs.schema.gql.g.dart';
-
-abstract class GHSBColorValueInput
-    implements Built<GHSBColorValueInput, GHSBColorValueInputBuilder> {
-  GHSBColorValueInput._();
-
-  factory GHSBColorValueInput(
-      [Function(GHSBColorValueInputBuilder b) updates]) = _$GHSBColorValueInput;
-
-  int get h;
-  int get s;
-  int get b;
-  static Serializer<GHSBColorValueInput> get serializer =>
-      _$gHSBColorValueInputSerializer;
-  Map<String, dynamic> toJson() =>
-      (_i1.serializers.serializeWith(GHSBColorValueInput.serializer, this)
-          as Map<String, dynamic>);
-  static GHSBColorValueInput? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(GHSBColorValueInput.serializer, json);
-}
 
 abstract class GJSON implements Built<GJSON, GJSONBuilder> {
   GJSON._();
@@ -37,7 +18,7 @@ abstract class GJSON implements Built<GJSON, GJSONBuilder> {
 
   String get value;
   @BuiltValueSerializer(custom: true)
-  static Serializer<GJSON> get serializer => _i2.DefaultScalarSerializer<GJSON>(
+  static Serializer<GJSON> get serializer => _i1.DefaultScalarSerializer<GJSON>(
       (Object serialized) => GJSON((serialized as String?)));
 }
 
@@ -55,10 +36,10 @@ abstract class GMockConnectorRequestsFilters
   String? get after;
   static Serializer<GMockConnectorRequestsFilters> get serializer =>
       _$gMockConnectorRequestsFiltersSerializer;
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
       GMockConnectorRequestsFilters.serializer, this) as Map<String, dynamic>);
   static GMockConnectorRequestsFilters? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers
+      _i2.serializers
           .deserializeWith(GMockConnectorRequestsFilters.serializer, json);
 }
 
@@ -75,10 +56,10 @@ abstract class GHSBColorValueInput
   static Serializer<GHSBColorValueInput> get serializer =>
       _$gHSBColorValueInputSerializer;
   Map<String, dynamic> toJson() =>
-      (_i1.serializers.serializeWith(GHSBColorValueInput.serializer, this)
+      (_i2.serializers.serializeWith(GHSBColorValueInput.serializer, this)
           as Map<String, dynamic>);
   static GHSBColorValueInput? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(GHSBColorValueInput.serializer, json);
+      _i2.serializers.deserializeWith(GHSBColorValueInput.serializer, json);
 }
 
 abstract class GPinCodeCredentialInput
@@ -95,10 +76,10 @@ abstract class GPinCodeCredentialInput
   static Serializer<GPinCodeCredentialInput> get serializer =>
       _$gPinCodeCredentialInputSerializer;
   Map<String, dynamic> toJson() =>
-      (_i1.serializers.serializeWith(GPinCodeCredentialInput.serializer, this)
+      (_i2.serializers.serializeWith(GPinCodeCredentialInput.serializer, this)
           as Map<String, dynamic>);
   static GPinCodeCredentialInput? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(GPinCodeCredentialInput.serializer, json);
+      _i2.serializers.deserializeWith(GPinCodeCredentialInput.serializer, json);
 }
 
 abstract class GRRuleSchedule
@@ -111,7 +92,7 @@ abstract class GRRuleSchedule
   String get value;
   @BuiltValueSerializer(custom: true)
   static Serializer<GRRuleSchedule> get serializer =>
-      _i2.DefaultScalarSerializer<GRRuleSchedule>(
+      _i1.DefaultScalarSerializer<GRRuleSchedule>(
           (Object serialized) => GRRuleSchedule((serialized as String?)));
 }
 
@@ -131,10 +112,10 @@ abstract class GPinCodeCredentialItemInput
   BuiltList<GTemporaryScheduleInput> get temporarySchedules;
   static Serializer<GPinCodeCredentialItemInput> get serializer =>
       _$gPinCodeCredentialItemInputSerializer;
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
       GPinCodeCredentialItemInput.serializer, this) as Map<String, dynamic>);
   static GPinCodeCredentialItemInput? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers
+      _i2.serializers
           .deserializeWith(GPinCodeCredentialItemInput.serializer, json);
 }
 
@@ -151,10 +132,10 @@ abstract class GRecurringScheduleInput
   static Serializer<GRecurringScheduleInput> get serializer =>
       _$gRecurringScheduleInputSerializer;
   Map<String, dynamic> toJson() =>
-      (_i1.serializers.serializeWith(GRecurringScheduleInput.serializer, this)
+      (_i2.serializers.serializeWith(GRecurringScheduleInput.serializer, this)
           as Map<String, dynamic>);
   static GRecurringScheduleInput? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(GRecurringScheduleInput.serializer, json);
+      _i2.serializers.deserializeWith(GRecurringScheduleInput.serializer, json);
 }
 
 abstract class GTemporaryScheduleInput
@@ -170,10 +151,10 @@ abstract class GTemporaryScheduleInput
   static Serializer<GTemporaryScheduleInput> get serializer =>
       _$gTemporaryScheduleInputSerializer;
   Map<String, dynamic> toJson() =>
-      (_i1.serializers.serializeWith(GTemporaryScheduleInput.serializer, this)
+      (_i2.serializers.serializeWith(GTemporaryScheduleInput.serializer, this)
           as Map<String, dynamic>);
   static GTemporaryScheduleInput? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(GTemporaryScheduleInput.serializer, json);
+      _i2.serializers.deserializeWith(GTemporaryScheduleInput.serializer, json);
 }
 
 abstract class GDateTime implements Built<GDateTime, GDateTimeBuilder> {
@@ -185,7 +166,7 @@ abstract class GDateTime implements Built<GDateTime, GDateTimeBuilder> {
   String get value;
   @BuiltValueSerializer(custom: true)
   static Serializer<GDateTime> get serializer =>
-      _i2.DefaultScalarSerializer<GDateTime>(
+      _i1.DefaultScalarSerializer<GDateTime>(
           (Object serialized) => GDateTime((serialized as String?)));
 }
 
@@ -261,10 +242,10 @@ abstract class GThermostatRangeInput
   static Serializer<GThermostatRangeInput> get serializer =>
       _$gThermostatRangeInputSerializer;
   Map<String, dynamic> toJson() =>
-      (_i1.serializers.serializeWith(GThermostatRangeInput.serializer, this)
+      (_i2.serializers.serializeWith(GThermostatRangeInput.serializer, this)
           as Map<String, dynamic>);
   static GThermostatRangeInput? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(GThermostatRangeInput.serializer, json);
+      _i2.serializers.deserializeWith(GThermostatRangeInput.serializer, json);
 }
 
 abstract class GJSONObject implements Built<GJSONObject, GJSONObjectBuilder> {
@@ -276,7 +257,7 @@ abstract class GJSONObject implements Built<GJSONObject, GJSONObjectBuilder> {
   String get value;
   @BuiltValueSerializer(custom: true)
   static Serializer<GJSONObject> get serializer =>
-      _i2.DefaultScalarSerializer<GJSONObject>(
+      _i1.DefaultScalarSerializer<GJSONObject>(
           (Object serialized) => GJSONObject((serialized as String?)));
 }
 
@@ -317,10 +298,10 @@ abstract class GMockReportedListStateValue
   BuiltList<String>? get delete;
   static Serializer<GMockReportedListStateValue> get serializer =>
       _$gMockReportedListStateValueSerializer;
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
       GMockReportedListStateValue.serializer, this) as Map<String, dynamic>);
   static GMockReportedListStateValue? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers
+      _i2.serializers
           .deserializeWith(GMockReportedListStateValue.serializer, json);
 }
 
@@ -366,10 +347,10 @@ abstract class GDeviceFilterInput
   static Serializer<GDeviceFilterInput> get serializer =>
       _$gDeviceFilterInputSerializer;
   Map<String, dynamic> toJson() =>
-      (_i1.serializers.serializeWith(GDeviceFilterInput.serializer, this)
+      (_i2.serializers.serializeWith(GDeviceFilterInput.serializer, this)
           as Map<String, dynamic>);
   static GDeviceFilterInput? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(GDeviceFilterInput.serializer, json);
+      _i2.serializers.deserializeWith(GDeviceFilterInput.serializer, json);
 }
 
 class GLinkedAccountAuthorizedStatus extends EnumClass {
@@ -430,10 +411,10 @@ abstract class GDeviceEventFilterInput
   static Serializer<GDeviceEventFilterInput> get serializer =>
       _$gDeviceEventFilterInputSerializer;
   Map<String, dynamic> toJson() =>
-      (_i1.serializers.serializeWith(GDeviceEventFilterInput.serializer, this)
+      (_i2.serializers.serializeWith(GDeviceEventFilterInput.serializer, this)
           as Map<String, dynamic>);
   static GDeviceEventFilterInput? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(GDeviceEventFilterInput.serializer, json);
+      _i2.serializers.deserializeWith(GDeviceEventFilterInput.serializer, json);
 }
 
 class GDeviceEventTypeName extends EnumClass {
@@ -494,9 +475,9 @@ abstract class GTraitFilteredEventFilterInput
   GDateTime? get after;
   static Serializer<GTraitFilteredEventFilterInput> get serializer =>
       _$gTraitFilteredEventFilterInputSerializer;
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
       GTraitFilteredEventFilterInput.serializer, this) as Map<String, dynamic>);
   static GTraitFilteredEventFilterInput? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers
+      _i2.serializers
           .deserializeWith(GTraitFilteredEventFilterInput.serializer, json);
 }
