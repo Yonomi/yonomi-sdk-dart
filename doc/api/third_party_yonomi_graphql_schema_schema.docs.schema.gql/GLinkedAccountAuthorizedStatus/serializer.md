@@ -11,7 +11,7 @@
 
 
 
-[Serializer](https://pub.dev/documentation/built_value/8.1.3/serializer/Serializer-class.html)&lt;[GLinkedAccountAuthorizedStatus](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GLinkedAccountAuthorizedStatus-class.md)> serializer
+[Serializer](https://pub.dev/documentation/built_value/8.2.0/serializer/Serializer-class.html)&lt;[GLinkedAccountAuthorizedStatus](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GLinkedAccountAuthorizedStatus-class.md)> serializer
   
 
 

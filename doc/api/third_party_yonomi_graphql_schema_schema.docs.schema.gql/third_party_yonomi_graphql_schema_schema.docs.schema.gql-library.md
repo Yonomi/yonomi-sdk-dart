@@ -86,6 +86,20 @@
  
 
 
+##### [GHSBColorValueInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInput-class.md)
+
+
+
+ 
+
+
+##### [GHSBColorValueInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInputBuilder-class.md)
+
+
+
+ 
+
+
 ##### [GIntegrationType](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GIntegrationType-class.md)
 
 

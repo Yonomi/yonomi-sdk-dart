@@ -11,9 +11,9 @@
 
 
 
-[Serializer](https://pub.dev/documentation/built_value/8.1.3/serializer/Serializer-class.html)&lt;[GJSON](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSON-class.md)> serializer
+[Serializer](https://pub.dev/documentation/built_value/8.2.0/serializer/Serializer-class.html)&lt;[GJSON](../../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GJSON-class.md)> serializer
   
-_@[BuiltValueSerializer](https://pub.dev/documentation/built_value/8.1.3/built_value/BuiltValueSerializer-class.html)(custom: true)_
+_@[BuiltValueSerializer](https://pub.dev/documentation/built_value/8.2.0/built_value/BuiltValueSerializer-class.html)(custom: true)_
 
 
 
@@ -24,7 +24,7 @@ _@[BuiltValueSerializer](https://pub.dev/documentation/built_value/8.1.3/built_v
 
 ```dart
 @BuiltValueSerializer(custom: true)
-static Serializer<GJSON> get serializer => _i1.DefaultScalarSerializer<GJSON>(
+static Serializer<GJSON> get serializer => _i2.DefaultScalarSerializer<GJSON>(
     (Object serialized) => GJSON((serialized as String?)));
 ```
 

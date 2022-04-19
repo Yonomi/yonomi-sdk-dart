@@ -118,6 +118,51 @@
 
 
 
+##### [ColorDeviceTrait](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorDeviceTrait-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorState](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorState-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorStateColorField](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorStateColorField-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorStateDesiredColor](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorStateDesiredColor-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorStateReportedColor](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorStateReportedColor-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
 ##### [CreateActionResponse](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/CreateActionResponse-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
 
 
@@ -353,6 +398,24 @@
 
 
 ##### [Health](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/Health-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [HSBColorValue](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/HSBColorValue-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [HSBColorValueInput](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/HSBColorValueInput-constant.md) const [InputObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/InputObjectTypeDefinitionNode-class.html)
 
 
 
