@@ -15,7 +15,8 @@ import 'color_temperature_repository_test.mocks.dart';
   MockSpec<sdk.Request>(as: #MockRequest, returnNullOnMissingStub: true)
 ])
 void main() {
-  test('BrightnessRepository calls client request with passed id', () async {
+  test('ColorTemperatureRepository calls client request with passed id',
+      () async {
     final request = MockRequest();
     when(request.headers).thenReturn(Map<String, String>());
     when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
