@@ -25,7 +25,7 @@
 
 ```dart
 static GMockConnectorRequestsFilters? fromJson(Map<String, dynamic> json) =>
-    _i2.serializers
+    _i1.serializers
         .deserializeWith(GMockConnectorRequestsFilters.serializer, json);
 ```
 

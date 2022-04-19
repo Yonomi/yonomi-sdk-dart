@@ -25,7 +25,7 @@
 
 ```dart
 static GDeviceFilterInput? fromJson(Map<String, dynamic> json) =>
-    _i2.serializers.deserializeWith(GDeviceFilterInput.serializer, json);
+    _i1.serializers.deserializeWith(GDeviceFilterInput.serializer, json);
 ```
 
 

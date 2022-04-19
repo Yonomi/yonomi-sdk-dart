@@ -24,7 +24,7 @@
 ## Implementation
 
 ```dart
-Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
     GMockReportedListStateValue.serializer, this) as Map<String, dynamic>);
 ```
 
