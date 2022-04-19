@@ -8,10 +8,6 @@ import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.doc
 class ColorRepository {
   static ColorTrait getColorTrait(dynamic trait) {
     try {
-      final a = trait;
-      final b = trait.state;
-      final c = trait.state.color;
-      final d = trait.state.color.reported;
       final value = trait.state.color.reported?.value;
       return ColorTrait(HSBColor(value.h, value.s, value.b));
     } on NoSuchMethodError {

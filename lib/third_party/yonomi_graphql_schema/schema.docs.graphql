@@ -1364,68 +1364,10 @@ type BrightnessDeviceTrait implements DeviceTrait {
   state: BrightnessState!
 }
 
-# Information about the reported Color state for the color field.
-type ColorStateReportedColor implements ReportedStateField {
-  # The DateTime that this reported state value was persisted to the platform.
-  createdAt: DateTime!
-
-  # The DateTime that this reported state value was sampled (recorded) by the device
-  sampledAt: DateTime!
-
-  # Current HSB color of this device.
-  value: HSBColorValue!
-}
-
-# Information about the desired Color state for the color field.
-type ColorStateDesiredColor implements DesiredStateField {
-  # The datetime that this desired state value was most recently updated.
-  updatedAt: DateTime!
-
-  # Current HSB color of this device.
-  value: HSBColorValue!
-
-  # Current HSB color of this device.
-  delta: HSBColorValue
-}
-
-# Information about the Color state for the color field
-type ColorStateColorField {
-  # The most recently reported state. May be null if the device has not yet reported it's state
-  reported: ColorStateReportedColor
-
-  # The device's desired state. May be null if the device has not yet reported it's state.
-  desired: ColorStateDesiredColor
-}
-
 # The state information for the Color trait
 type ColorState {
   # Current HSB color of this device.
   color: ColorStateColorField!
-}
-
-type ColorDeviceTrait implements DeviceTrait {
-  # The name of this device trait.
-  name: TraitName!
-
-  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
-  instance: String!
-
-  # Whether this trait is in beta.
-  isBeta: Boolean
-
-  # The trait filtered events of this device.
-  events(
-    # Limit the paged response to a max number of items.
-    first: Int = 10
-
-    # Used to indicated where in the result set the paged response should start.
-    after: String
-    filter: TraitFilteredEventFilterInput
-    sort: DeviceEventSortInput
-  ): DeviceEventConnection!
-
-  # The Color state of this device.
-  state: ColorState!
 }
 
 # Information about the reported ColorTemperature state for the colorTemperature field.
@@ -1917,11 +1859,6 @@ type ColorStateColorField {
 
   # The device's desired state. May be null if the device has not yet reported it's state.
   desired: ColorStateDesiredColor
-}
-
-type ColorState {
-  # The color of the light.
-  color: ColorStateColorField!
 }
 
 type ColorDeviceTrait implements DeviceTrait {

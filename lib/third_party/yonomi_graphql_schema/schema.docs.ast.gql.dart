@@ -3011,80 +3011,6 @@ const BrightnessDeviceTrait = _i1.ObjectTypeDefinitionNode(
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'BrightnessState'), isNonNull: true))
     ]);
-const ColorStateReportedColor = _i1.ObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'ColorStateReportedColor'),
-    directives: [],
-    interfaces: [
-      _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'ReportedStateField'), isNonNull: false)
-    ],
-    fields: [
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'createdAt'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'sampledAt'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'value'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'HSBColorValue'), isNonNull: true))
-    ]);
-const ColorStateDesiredColor = _i1.ObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'ColorStateDesiredColor'),
-    directives: [],
-    interfaces: [
-      _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'DesiredStateField'), isNonNull: false)
-    ],
-    fields: [
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'updatedAt'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'value'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'HSBColorValue'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'delta'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'HSBColorValue'), isNonNull: false))
-    ]);
-const ColorStateColorField = _i1.ObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'ColorStateColorField'),
-    directives: [],
-    interfaces: [],
-    fields: [
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'reported'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'ColorStateReportedColor'),
-              isNonNull: false)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'desired'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'ColorStateDesiredColor'),
-              isNonNull: false))
-    ]);
 const ColorState = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'ColorState'),
     directives: [],
@@ -3097,73 +3023,6 @@ const ColorState = _i1.ObjectTypeDefinitionNode(
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'ColorStateColorField'),
               isNonNull: true))
-    ]);
-const ColorDeviceTrait = _i1.ObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'ColorDeviceTrait'),
-    directives: [],
-    interfaces: [
-      _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'DeviceTrait'), isNonNull: false)
-    ],
-    fields: [
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'name'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'TraitName'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'instance'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'isBeta'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'events'),
-          directives: [],
-          args: [
-            _i1.InputValueDefinitionNode(
-                name: _i1.NameNode(value: 'first'),
-                directives: [],
-                type: _i1.NamedTypeNode(
-                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
-                defaultValue: _i1.IntValueNode(value: '10')),
-            _i1.InputValueDefinitionNode(
-                name: _i1.NameNode(value: 'after'),
-                directives: [],
-                type: _i1.NamedTypeNode(
-                    name: _i1.NameNode(value: 'String'), isNonNull: false),
-                defaultValue: null),
-            _i1.InputValueDefinitionNode(
-                name: _i1.NameNode(value: 'filter'),
-                directives: [],
-                type: _i1.NamedTypeNode(
-                    name: _i1.NameNode(value: 'TraitFilteredEventFilterInput'),
-                    isNonNull: false),
-                defaultValue: null),
-            _i1.InputValueDefinitionNode(
-                name: _i1.NameNode(value: 'sort'),
-                directives: [],
-                type: _i1.NamedTypeNode(
-                    name: _i1.NameNode(value: 'DeviceEventSortInput'),
-                    isNonNull: false),
-                defaultValue: null)
-          ],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'DeviceEventConnection'),
-              isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'state'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'ColorState'), isNonNull: true))
     ]);
 const ColorTemperatureStateReportedColorTemperature =
     _i1.ObjectTypeDefinitionNode(
@@ -4319,19 +4178,6 @@ const ColorStateColorField = _i1.ObjectTypeDefinitionNode(
               name: _i1.NameNode(value: 'ColorStateDesiredColor'),
               isNonNull: false))
     ]);
-const ColorState = _i1.ObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'ColorState'),
-    directives: [],
-    interfaces: [],
-    fields: [
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'color'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'ColorStateColorField'),
-              isNonNull: true))
-    ]);
 const ColorDeviceTrait = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'ColorDeviceTrait'),
     directives: [],
@@ -5291,11 +5137,7 @@ const document = _i1.DocumentNode(definitions: [
   BrightnessStateBrightnessField,
   BrightnessState,
   BrightnessDeviceTrait,
-  ColorStateReportedColor,
-  ColorStateDesiredColor,
-  ColorStateColorField,
   ColorState,
-  ColorDeviceTrait,
   ColorTemperatureStateReportedColorTemperature,
   ColorTemperatureStateDesiredColorTemperature,
   ColorTemperatureStateColorTemperatureField,
@@ -5330,6 +5172,10 @@ const document = _i1.DocumentNode(definitions: [
   PowerState,
   PowerProperties,
   PowerDeviceTrait,
+  ColorStateReportedColor,
+  ColorStateDesiredColor,
+  ColorStateColorField,
+  ColorDeviceTrait,
   ThermostatSettingStateReportedMode,
   ThermostatSettingStateDesiredMode,
   ThermostatSettingStateModeField,
