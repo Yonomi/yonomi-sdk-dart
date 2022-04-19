@@ -3,6 +3,7 @@ export 'src/repository/devices_repository.dart';
 export 'src/repository/gql_client.dart';
 export 'src/repository/traits/battery_level_repository.dart';
 export 'src/repository/traits/brightness_repository.dart';
+export 'src/repository/traits/color_temperature_repository.dart';
 export 'src/repository/traits/lock_repository.dart';
 export 'src/repository/traits/power_repository.dart';
 export 'src/repository/traits/thermostat_repository.dart';
