@@ -18,13 +18,19 @@ main() {
       () async {
     final mockResponse = MockResponse();
     final request = MockRequest();
+    final link = MockLink();
+
     when(request.headers).thenReturn(Map<String, String>());
     when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
-
     when(mockResponse.errors).thenReturn(null);
-    await sdk.LockRepository.sendLockUnlockAction(request, 'id', true);
-    verify(request.headers).called(1);
-    verify(request.graphUrl).called(1);
+    when(mockResponse.data).thenReturn({
+      'id': 'id',
+    });
+    when(link.request(any, any)).thenAnswer((_) => Stream.value(mockResponse));
+
+    await sdk.LockRepository.sendLockUnlockAction(request, 'id', true,
+        injectedClient: link);
+    verify(link.request(any, any)).called(1);
   });
 
   test(
