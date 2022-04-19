@@ -1,0 +1,19 @@
+mutation makeColorTemperatureActionRequest($deviceId: ID!, $colorTemperature: Int!) {
+  actionColorTemperatureSetColorTemperature(deviceId: $deviceId colorTemperature: $colorTemperature) {
+    actionId
+    transactionId
+    device {
+      traits {
+        name instance
+        ... on ColorTemperatureDeviceTrait {
+          state {
+            colorTemperature {
+              reported { value sampledAt createdAt }
+              desired { value delta updatedAt }
+            }
+          }
+        }
+      }
+    }
+  }
+}
