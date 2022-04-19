@@ -162,7 +162,6 @@ jobs:
                 body: New generated dartdocs after merging `$BRANCH_NAME`
                 assignees:
                   - Yonomi/dx
-                milestone: v1.4
                 ")
             else
               echo "Nothing to check in. No new docs generated"
