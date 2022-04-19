@@ -347,11 +347,22 @@ final BuiltSet<GDeviceEventSortInput> _$gDeviceEventSortInputValues =
 Serializer<GMockConnectorRequestsFilters>
     _$gMockConnectorRequestsFiltersSerializer =
     new _$GMockConnectorRequestsFiltersSerializer();
+Serializer<GHSBColorValueInput> _$gHSBColorValueInputSerializer =
+    new _$GHSBColorValueInputSerializer();
 Serializer<GPinCodeCredentialInput> _$gPinCodeCredentialInputSerializer =
     new _$GPinCodeCredentialInputSerializer();
+Serializer<GPinCodeCredentialItemInput>
+    _$gPinCodeCredentialItemInputSerializer =
+    new _$GPinCodeCredentialItemInputSerializer();
+Serializer<GRecurringScheduleInput> _$gRecurringScheduleInputSerializer =
+    new _$GRecurringScheduleInputSerializer();
+Serializer<GTemporaryScheduleInput> _$gTemporaryScheduleInputSerializer =
+    new _$GTemporaryScheduleInputSerializer();
 Serializer<GThermostatMode> _$gThermostatModeSerializer =
     new _$GThermostatModeSerializer();
 Serializer<GFanMode> _$gFanModeSerializer = new _$GFanModeSerializer();
+Serializer<GThermostatRangeInput> _$gThermostatRangeInputSerializer =
+    new _$GThermostatRangeInputSerializer();
 Serializer<GTraitName> _$gTraitNameSerializer = new _$GTraitNameSerializer();
 Serializer<GMockReportedListStateValue>
     _$gMockReportedListStateValueSerializer =
@@ -368,15 +379,15 @@ Serializer<GLinkedAccountAuthorizedStatus>
     new _$GLinkedAccountAuthorizedStatusSerializer();
 Serializer<GDeviceActionStatus> _$gDeviceActionStatusSerializer =
     new _$GDeviceActionStatusSerializer();
-Serializer<GTraitFilteredEventFilterInput>
-    _$gTraitFilteredEventFilterInputSerializer =
-    new _$GTraitFilteredEventFilterInputSerializer();
+Serializer<GDeviceEventFilterInput> _$gDeviceEventFilterInputSerializer =
+    new _$GDeviceEventFilterInputSerializer();
 Serializer<GDeviceEventTypeName> _$gDeviceEventTypeNameSerializer =
     new _$GDeviceEventTypeNameSerializer();
 Serializer<GDeviceEventSortInput> _$gDeviceEventSortInputSerializer =
     new _$GDeviceEventSortInputSerializer();
-Serializer<GDeviceEventFilterInput> _$gDeviceEventFilterInputSerializer =
-    new _$GDeviceEventFilterInputSerializer();
+Serializer<GTraitFilteredEventFilterInput>
+    _$gTraitFilteredEventFilterInputSerializer =
+    new _$GTraitFilteredEventFilterInputSerializer();
 
 class _$GMockConnectorRequestsFiltersSerializer
     implements StructuredSerializer<GMockConnectorRequestsFilters> {
@@ -430,6 +441,63 @@ class _$GMockConnectorRequestsFiltersSerializer
         case 'after':
           result.after = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GHSBColorValueInputSerializer
+    implements StructuredSerializer<GHSBColorValueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GHSBColorValueInput,
+    _$GHSBColorValueInput
+  ];
+  @override
+  final String wireName = 'GHSBColorValueInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GHSBColorValueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'h',
+      serializers.serialize(object.h, specifiedType: const FullType(int)),
+      's',
+      serializers.serialize(object.s, specifiedType: const FullType(int)),
+      'b',
+      serializers.serialize(object.b, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GHSBColorValueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GHSBColorValueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'h':
+          result.h = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 's':
+          result.s = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'b':
+          result.b = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           break;
       }
     }
@@ -500,6 +568,192 @@ class _$GPinCodeCredentialInputSerializer
   }
 }
 
+class _$GPinCodeCredentialItemInputSerializer
+    implements StructuredSerializer<GPinCodeCredentialItemInput> {
+  @override
+  final Iterable<Type> types = const [
+    GPinCodeCredentialItemInput,
+    _$GPinCodeCredentialItemInput
+  ];
+  @override
+  final String wireName = 'GPinCodeCredentialItemInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GPinCodeCredentialItemInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'pinCode',
+      serializers.serialize(object.pinCode,
+          specifiedType: const FullType(String)),
+      'name',
+      serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'alwaysActive',
+      serializers.serialize(object.alwaysActive,
+          specifiedType: const FullType(bool)),
+      'recurringSchedules',
+      serializers.serialize(object.recurringSchedules,
+          specifiedType: const FullType(
+              BuiltList, const [const FullType(GRecurringScheduleInput)])),
+      'temporarySchedules',
+      serializers.serialize(object.temporarySchedules,
+          specifiedType: const FullType(
+              BuiltList, const [const FullType(GTemporaryScheduleInput)])),
+    ];
+
+    return result;
+  }
+
+  @override
+  GPinCodeCredentialItemInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GPinCodeCredentialItemInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'pinCode':
+          result.pinCode = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'alwaysActive':
+          result.alwaysActive = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'recurringSchedules':
+          result.recurringSchedules.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GRecurringScheduleInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'temporarySchedules':
+          result.temporarySchedules.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GTemporaryScheduleInput)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GRecurringScheduleInputSerializer
+    implements StructuredSerializer<GRecurringScheduleInput> {
+  @override
+  final Iterable<Type> types = const [
+    GRecurringScheduleInput,
+    _$GRecurringScheduleInput
+  ];
+  @override
+  final String wireName = 'GRecurringScheduleInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GRecurringScheduleInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'duration',
+      serializers.serialize(object.duration,
+          specifiedType: const FullType(int)),
+      'rrule',
+      serializers.serialize(object.rrule,
+          specifiedType: const FullType(GRRuleSchedule)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GRecurringScheduleInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GRecurringScheduleInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'duration':
+          result.duration = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'rrule':
+          result.rrule.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GRRuleSchedule))!
+              as GRRuleSchedule);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GTemporaryScheduleInputSerializer
+    implements StructuredSerializer<GTemporaryScheduleInput> {
+  @override
+  final Iterable<Type> types = const [
+    GTemporaryScheduleInput,
+    _$GTemporaryScheduleInput
+  ];
+  @override
+  final String wireName = 'GTemporaryScheduleInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GTemporaryScheduleInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'startDatetime',
+      serializers.serialize(object.startDatetime,
+          specifiedType: const FullType(GDateTime)),
+      'endDatetime',
+      serializers.serialize(object.endDatetime,
+          specifiedType: const FullType(GDateTime)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GTemporaryScheduleInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GTemporaryScheduleInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'startDatetime':
+          result.startDatetime.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'endDatetime':
+          result.endDatetime.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GThermostatModeSerializer
     implements PrimitiveSerializer<GThermostatMode> {
   @override
@@ -533,6 +787,59 @@ class _$GFanModeSerializer implements PrimitiveSerializer<GFanMode> {
   GFanMode deserialize(Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
       GFanMode.valueOf(serialized as String);
+}
+
+class _$GThermostatRangeInputSerializer
+    implements StructuredSerializer<GThermostatRangeInput> {
+  @override
+  final Iterable<Type> types = const [
+    GThermostatRangeInput,
+    _$GThermostatRangeInput
+  ];
+  @override
+  final String wireName = 'GThermostatRangeInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GThermostatRangeInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'setPointLow',
+      serializers.serialize(object.setPointLow,
+          specifiedType: const FullType(double)),
+      'setPointHigh',
+      serializers.serialize(object.setPointHigh,
+          specifiedType: const FullType(double)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GThermostatRangeInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GThermostatRangeInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'setPointLow':
+          result.setPointLow = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double;
+          break;
+        case 'setPointHigh':
+          result.setPointHigh = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double;
+          break;
+      }
+    }
+
+    return result.build();
+  }
 }
 
 class _$GTraitNameSerializer implements PrimitiveSerializer<GTraitName> {
@@ -740,114 +1047,6 @@ class _$GDeviceActionStatusSerializer
       GDeviceActionStatus.valueOf(serialized as String);
 }
 
-class _$GTraitFilteredEventFilterInputSerializer
-    implements StructuredSerializer<GTraitFilteredEventFilterInput> {
-  @override
-  final Iterable<Type> types = const [
-    GTraitFilteredEventFilterInput,
-    _$GTraitFilteredEventFilterInput
-  ];
-  @override
-  final String wireName = 'GTraitFilteredEventFilterInput';
-
-  @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GTraitFilteredEventFilterInput object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.eventType;
-    if (value != null) {
-      result
-        ..add('eventType')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GDeviceEventTypeName)));
-    }
-    value = object.before;
-    if (value != null) {
-      result
-        ..add('before')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GDateTime)));
-    }
-    value = object.after;
-    if (value != null) {
-      result
-        ..add('after')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GDateTime)));
-    }
-    return result;
-  }
-
-  @override
-  GTraitFilteredEventFilterInput deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GTraitFilteredEventFilterInputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'eventType':
-          result.eventType = serializers.deserialize(value,
-                  specifiedType: const FullType(GDeviceEventTypeName))
-              as GDeviceEventTypeName?;
-          break;
-        case 'before':
-          result.before.replace(serializers.deserialize(value,
-              specifiedType: const FullType(GDateTime))! as GDateTime);
-          break;
-        case 'after':
-          result.after.replace(serializers.deserialize(value,
-              specifiedType: const FullType(GDateTime))! as GDateTime);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GDeviceEventTypeNameSerializer
-    implements PrimitiveSerializer<GDeviceEventTypeName> {
-  @override
-  final Iterable<Type> types = const <Type>[GDeviceEventTypeName];
-  @override
-  final String wireName = 'GDeviceEventTypeName';
-
-  @override
-  Object serialize(Serializers serializers, GDeviceEventTypeName object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      object.name;
-
-  @override
-  GDeviceEventTypeName deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GDeviceEventTypeName.valueOf(serialized as String);
-}
-
-class _$GDeviceEventSortInputSerializer
-    implements PrimitiveSerializer<GDeviceEventSortInput> {
-  @override
-  final Iterable<Type> types = const <Type>[GDeviceEventSortInput];
-  @override
-  final String wireName = 'GDeviceEventSortInput';
-
-  @override
-  Object serialize(Serializers serializers, GDeviceEventSortInput object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      object.name;
-
-  @override
-  GDeviceEventSortInput deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GDeviceEventSortInput.valueOf(serialized as String);
-}
-
 class _$GDeviceEventFilterInputSerializer
     implements StructuredSerializer<GDeviceEventFilterInput> {
   @override
@@ -937,6 +1136,114 @@ class _$GDeviceEventFilterInputSerializer
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(GTraitName)]))!
               as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDeviceEventTypeNameSerializer
+    implements PrimitiveSerializer<GDeviceEventTypeName> {
+  @override
+  final Iterable<Type> types = const <Type>[GDeviceEventTypeName];
+  @override
+  final String wireName = 'GDeviceEventTypeName';
+
+  @override
+  Object serialize(Serializers serializers, GDeviceEventTypeName object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      object.name;
+
+  @override
+  GDeviceEventTypeName deserialize(Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      GDeviceEventTypeName.valueOf(serialized as String);
+}
+
+class _$GDeviceEventSortInputSerializer
+    implements PrimitiveSerializer<GDeviceEventSortInput> {
+  @override
+  final Iterable<Type> types = const <Type>[GDeviceEventSortInput];
+  @override
+  final String wireName = 'GDeviceEventSortInput';
+
+  @override
+  Object serialize(Serializers serializers, GDeviceEventSortInput object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      object.name;
+
+  @override
+  GDeviceEventSortInput deserialize(Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      GDeviceEventSortInput.valueOf(serialized as String);
+}
+
+class _$GTraitFilteredEventFilterInputSerializer
+    implements StructuredSerializer<GTraitFilteredEventFilterInput> {
+  @override
+  final Iterable<Type> types = const [
+    GTraitFilteredEventFilterInput,
+    _$GTraitFilteredEventFilterInput
+  ];
+  @override
+  final String wireName = 'GTraitFilteredEventFilterInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GTraitFilteredEventFilterInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.eventType;
+    if (value != null) {
+      result
+        ..add('eventType')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDeviceEventTypeName)));
+    }
+    value = object.before;
+    if (value != null) {
+      result
+        ..add('before')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.after;
+    if (value != null) {
+      result
+        ..add('after')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    return result;
+  }
+
+  @override
+  GTraitFilteredEventFilterInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GTraitFilteredEventFilterInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'eventType':
+          result.eventType = serializers.deserialize(value,
+                  specifiedType: const FullType(GDeviceEventTypeName))
+              as GDeviceEventTypeName?;
+          break;
+        case 'before':
+          result.before.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'after':
+          result.after.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
           break;
       }
     }
@@ -1105,6 +1412,113 @@ class GMockConnectorRequestsFiltersBuilder
   _$GMockConnectorRequestsFilters build() {
     final _$result = _$v ??
         new _$GMockConnectorRequestsFilters._(before: before, after: after);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GHSBColorValueInput extends GHSBColorValueInput {
+  @override
+  final int h;
+  @override
+  final int s;
+  @override
+  final int b;
+
+  factory _$GHSBColorValueInput(
+          [void Function(GHSBColorValueInputBuilder)? updates]) =>
+      (new GHSBColorValueInputBuilder()..update(updates)).build();
+
+  _$GHSBColorValueInput._({required this.h, required this.s, required this.b})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(h, 'GHSBColorValueInput', 'h');
+    BuiltValueNullFieldError.checkNotNull(s, 'GHSBColorValueInput', 's');
+    BuiltValueNullFieldError.checkNotNull(b, 'GHSBColorValueInput', 'b');
+  }
+
+  @override
+  GHSBColorValueInput rebuild(
+          void Function(GHSBColorValueInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GHSBColorValueInputBuilder toBuilder() =>
+      new GHSBColorValueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GHSBColorValueInput &&
+        h == other.h &&
+        s == other.s &&
+        b == other.b;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc($jc(0, h.hashCode), s.hashCode), b.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('GHSBColorValueInput')
+          ..add('h', h)
+          ..add('s', s)
+          ..add('b', b))
+        .toString();
+  }
+}
+
+class GHSBColorValueInputBuilder
+    implements Builder<GHSBColorValueInput, GHSBColorValueInputBuilder> {
+  _$GHSBColorValueInput? _$v;
+
+  int? _h;
+  int? get h => _$this._h;
+  set h(int? h) => _$this._h = h;
+
+  int? _s;
+  int? get s => _$this._s;
+  set s(int? s) => _$this._s = s;
+
+  int? _b;
+  int? get b => _$this._b;
+  set b(int? b) => _$this._b = b;
+
+  GHSBColorValueInputBuilder();
+
+  GHSBColorValueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _h = $v.h;
+      _s = $v.s;
+      _b = $v.b;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GHSBColorValueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GHSBColorValueInput;
+  }
+
+  @override
+  void update(void Function(GHSBColorValueInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GHSBColorValueInput build() {
+    final _$result = _$v ??
+        new _$GHSBColorValueInput._(
+            h: BuiltValueNullFieldError.checkNotNull(
+                h, 'GHSBColorValueInput', 'h'),
+            s: BuiltValueNullFieldError.checkNotNull(
+                s, 'GHSBColorValueInput', 's'),
+            b: BuiltValueNullFieldError.checkNotNull(
+                b, 'GHSBColorValueInput', 'b'));
     replace(_$result);
     return _$result;
   }
@@ -1315,6 +1729,574 @@ class GRRuleScheduleBuilder
   }
 }
 
+class _$GPinCodeCredentialItemInput extends GPinCodeCredentialItemInput {
+  @override
+  final String pinCode;
+  @override
+  final String name;
+  @override
+  final bool alwaysActive;
+  @override
+  final BuiltList<GRecurringScheduleInput> recurringSchedules;
+  @override
+  final BuiltList<GTemporaryScheduleInput> temporarySchedules;
+
+  factory _$GPinCodeCredentialItemInput(
+          [void Function(GPinCodeCredentialItemInputBuilder)? updates]) =>
+      (new GPinCodeCredentialItemInputBuilder()..update(updates)).build();
+
+  _$GPinCodeCredentialItemInput._(
+      {required this.pinCode,
+      required this.name,
+      required this.alwaysActive,
+      required this.recurringSchedules,
+      required this.temporarySchedules})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        pinCode, 'GPinCodeCredentialItemInput', 'pinCode');
+    BuiltValueNullFieldError.checkNotNull(
+        name, 'GPinCodeCredentialItemInput', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        alwaysActive, 'GPinCodeCredentialItemInput', 'alwaysActive');
+    BuiltValueNullFieldError.checkNotNull(recurringSchedules,
+        'GPinCodeCredentialItemInput', 'recurringSchedules');
+    BuiltValueNullFieldError.checkNotNull(temporarySchedules,
+        'GPinCodeCredentialItemInput', 'temporarySchedules');
+  }
+
+  @override
+  GPinCodeCredentialItemInput rebuild(
+          void Function(GPinCodeCredentialItemInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GPinCodeCredentialItemInputBuilder toBuilder() =>
+      new GPinCodeCredentialItemInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GPinCodeCredentialItemInput &&
+        pinCode == other.pinCode &&
+        name == other.name &&
+        alwaysActive == other.alwaysActive &&
+        recurringSchedules == other.recurringSchedules &&
+        temporarySchedules == other.temporarySchedules;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, pinCode.hashCode), name.hashCode),
+                alwaysActive.hashCode),
+            recurringSchedules.hashCode),
+        temporarySchedules.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('GPinCodeCredentialItemInput')
+          ..add('pinCode', pinCode)
+          ..add('name', name)
+          ..add('alwaysActive', alwaysActive)
+          ..add('recurringSchedules', recurringSchedules)
+          ..add('temporarySchedules', temporarySchedules))
+        .toString();
+  }
+}
+
+class GPinCodeCredentialItemInputBuilder
+    implements
+        Builder<GPinCodeCredentialItemInput,
+            GPinCodeCredentialItemInputBuilder> {
+  _$GPinCodeCredentialItemInput? _$v;
+
+  String? _pinCode;
+  String? get pinCode => _$this._pinCode;
+  set pinCode(String? pinCode) => _$this._pinCode = pinCode;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  bool? _alwaysActive;
+  bool? get alwaysActive => _$this._alwaysActive;
+  set alwaysActive(bool? alwaysActive) => _$this._alwaysActive = alwaysActive;
+
+  ListBuilder<GRecurringScheduleInput>? _recurringSchedules;
+  ListBuilder<GRecurringScheduleInput> get recurringSchedules =>
+      _$this._recurringSchedules ??= new ListBuilder<GRecurringScheduleInput>();
+  set recurringSchedules(
+          ListBuilder<GRecurringScheduleInput>? recurringSchedules) =>
+      _$this._recurringSchedules = recurringSchedules;
+
+  ListBuilder<GTemporaryScheduleInput>? _temporarySchedules;
+  ListBuilder<GTemporaryScheduleInput> get temporarySchedules =>
+      _$this._temporarySchedules ??= new ListBuilder<GTemporaryScheduleInput>();
+  set temporarySchedules(
+          ListBuilder<GTemporaryScheduleInput>? temporarySchedules) =>
+      _$this._temporarySchedules = temporarySchedules;
+
+  GPinCodeCredentialItemInputBuilder();
+
+  GPinCodeCredentialItemInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _pinCode = $v.pinCode;
+      _name = $v.name;
+      _alwaysActive = $v.alwaysActive;
+      _recurringSchedules = $v.recurringSchedules.toBuilder();
+      _temporarySchedules = $v.temporarySchedules.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GPinCodeCredentialItemInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GPinCodeCredentialItemInput;
+  }
+
+  @override
+  void update(void Function(GPinCodeCredentialItemInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GPinCodeCredentialItemInput build() {
+    _$GPinCodeCredentialItemInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GPinCodeCredentialItemInput._(
+              pinCode: BuiltValueNullFieldError.checkNotNull(
+                  pinCode, 'GPinCodeCredentialItemInput', 'pinCode'),
+              name: BuiltValueNullFieldError.checkNotNull(
+                  name, 'GPinCodeCredentialItemInput', 'name'),
+              alwaysActive: BuiltValueNullFieldError.checkNotNull(
+                  alwaysActive, 'GPinCodeCredentialItemInput', 'alwaysActive'),
+              recurringSchedules: recurringSchedules.build(),
+              temporarySchedules: temporarySchedules.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'recurringSchedules';
+        recurringSchedules.build();
+        _$failedField = 'temporarySchedules';
+        temporarySchedules.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GPinCodeCredentialItemInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GRecurringScheduleInput extends GRecurringScheduleInput {
+  @override
+  final int duration;
+  @override
+  final GRRuleSchedule rrule;
+
+  factory _$GRecurringScheduleInput(
+          [void Function(GRecurringScheduleInputBuilder)? updates]) =>
+      (new GRecurringScheduleInputBuilder()..update(updates)).build();
+
+  _$GRecurringScheduleInput._({required this.duration, required this.rrule})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        duration, 'GRecurringScheduleInput', 'duration');
+    BuiltValueNullFieldError.checkNotNull(
+        rrule, 'GRecurringScheduleInput', 'rrule');
+  }
+
+  @override
+  GRecurringScheduleInput rebuild(
+          void Function(GRecurringScheduleInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GRecurringScheduleInputBuilder toBuilder() =>
+      new GRecurringScheduleInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GRecurringScheduleInput &&
+        duration == other.duration &&
+        rrule == other.rrule;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, duration.hashCode), rrule.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('GRecurringScheduleInput')
+          ..add('duration', duration)
+          ..add('rrule', rrule))
+        .toString();
+  }
+}
+
+class GRecurringScheduleInputBuilder
+    implements
+        Builder<GRecurringScheduleInput, GRecurringScheduleInputBuilder> {
+  _$GRecurringScheduleInput? _$v;
+
+  int? _duration;
+  int? get duration => _$this._duration;
+  set duration(int? duration) => _$this._duration = duration;
+
+  GRRuleScheduleBuilder? _rrule;
+  GRRuleScheduleBuilder get rrule =>
+      _$this._rrule ??= new GRRuleScheduleBuilder();
+  set rrule(GRRuleScheduleBuilder? rrule) => _$this._rrule = rrule;
+
+  GRecurringScheduleInputBuilder();
+
+  GRecurringScheduleInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _duration = $v.duration;
+      _rrule = $v.rrule.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GRecurringScheduleInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GRecurringScheduleInput;
+  }
+
+  @override
+  void update(void Function(GRecurringScheduleInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GRecurringScheduleInput build() {
+    _$GRecurringScheduleInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GRecurringScheduleInput._(
+              duration: BuiltValueNullFieldError.checkNotNull(
+                  duration, 'GRecurringScheduleInput', 'duration'),
+              rrule: rrule.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'rrule';
+        rrule.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GRecurringScheduleInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GTemporaryScheduleInput extends GTemporaryScheduleInput {
+  @override
+  final GDateTime startDatetime;
+  @override
+  final GDateTime endDatetime;
+
+  factory _$GTemporaryScheduleInput(
+          [void Function(GTemporaryScheduleInputBuilder)? updates]) =>
+      (new GTemporaryScheduleInputBuilder()..update(updates)).build();
+
+  _$GTemporaryScheduleInput._(
+      {required this.startDatetime, required this.endDatetime})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        startDatetime, 'GTemporaryScheduleInput', 'startDatetime');
+    BuiltValueNullFieldError.checkNotNull(
+        endDatetime, 'GTemporaryScheduleInput', 'endDatetime');
+  }
+
+  @override
+  GTemporaryScheduleInput rebuild(
+          void Function(GTemporaryScheduleInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GTemporaryScheduleInputBuilder toBuilder() =>
+      new GTemporaryScheduleInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GTemporaryScheduleInput &&
+        startDatetime == other.startDatetime &&
+        endDatetime == other.endDatetime;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, startDatetime.hashCode), endDatetime.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('GTemporaryScheduleInput')
+          ..add('startDatetime', startDatetime)
+          ..add('endDatetime', endDatetime))
+        .toString();
+  }
+}
+
+class GTemporaryScheduleInputBuilder
+    implements
+        Builder<GTemporaryScheduleInput, GTemporaryScheduleInputBuilder> {
+  _$GTemporaryScheduleInput? _$v;
+
+  GDateTimeBuilder? _startDatetime;
+  GDateTimeBuilder get startDatetime =>
+      _$this._startDatetime ??= new GDateTimeBuilder();
+  set startDatetime(GDateTimeBuilder? startDatetime) =>
+      _$this._startDatetime = startDatetime;
+
+  GDateTimeBuilder? _endDatetime;
+  GDateTimeBuilder get endDatetime =>
+      _$this._endDatetime ??= new GDateTimeBuilder();
+  set endDatetime(GDateTimeBuilder? endDatetime) =>
+      _$this._endDatetime = endDatetime;
+
+  GTemporaryScheduleInputBuilder();
+
+  GTemporaryScheduleInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _startDatetime = $v.startDatetime.toBuilder();
+      _endDatetime = $v.endDatetime.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GTemporaryScheduleInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GTemporaryScheduleInput;
+  }
+
+  @override
+  void update(void Function(GTemporaryScheduleInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GTemporaryScheduleInput build() {
+    _$GTemporaryScheduleInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GTemporaryScheduleInput._(
+              startDatetime: startDatetime.build(),
+              endDatetime: endDatetime.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'startDatetime';
+        startDatetime.build();
+        _$failedField = 'endDatetime';
+        endDatetime.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GTemporaryScheduleInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDateTime extends GDateTime {
+  @override
+  final String value;
+
+  factory _$GDateTime([void Function(GDateTimeBuilder)? updates]) =>
+      (new GDateTimeBuilder()..update(updates)).build();
+
+  _$GDateTime._({required this.value}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(value, 'GDateTime', 'value');
+  }
+
+  @override
+  GDateTime rebuild(void Function(GDateTimeBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDateTimeBuilder toBuilder() => new GDateTimeBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDateTime && value == other.value;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, value.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('GDateTime')..add('value', value))
+        .toString();
+  }
+}
+
+class GDateTimeBuilder implements Builder<GDateTime, GDateTimeBuilder> {
+  _$GDateTime? _$v;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(String? value) => _$this._value = value;
+
+  GDateTimeBuilder();
+
+  GDateTimeBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _value = $v.value;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDateTime other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDateTime;
+  }
+
+  @override
+  void update(void Function(GDateTimeBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GDateTime build() {
+    final _$result = _$v ??
+        new _$GDateTime._(
+            value: BuiltValueNullFieldError.checkNotNull(
+                value, 'GDateTime', 'value'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GThermostatRangeInput extends GThermostatRangeInput {
+  @override
+  final double setPointLow;
+  @override
+  final double setPointHigh;
+
+  factory _$GThermostatRangeInput(
+          [void Function(GThermostatRangeInputBuilder)? updates]) =>
+      (new GThermostatRangeInputBuilder()..update(updates)).build();
+
+  _$GThermostatRangeInput._(
+      {required this.setPointLow, required this.setPointHigh})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        setPointLow, 'GThermostatRangeInput', 'setPointLow');
+    BuiltValueNullFieldError.checkNotNull(
+        setPointHigh, 'GThermostatRangeInput', 'setPointHigh');
+  }
+
+  @override
+  GThermostatRangeInput rebuild(
+          void Function(GThermostatRangeInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GThermostatRangeInputBuilder toBuilder() =>
+      new GThermostatRangeInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GThermostatRangeInput &&
+        setPointLow == other.setPointLow &&
+        setPointHigh == other.setPointHigh;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, setPointLow.hashCode), setPointHigh.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('GThermostatRangeInput')
+          ..add('setPointLow', setPointLow)
+          ..add('setPointHigh', setPointHigh))
+        .toString();
+  }
+}
+
+class GThermostatRangeInputBuilder
+    implements Builder<GThermostatRangeInput, GThermostatRangeInputBuilder> {
+  _$GThermostatRangeInput? _$v;
+
+  double? _setPointLow;
+  double? get setPointLow => _$this._setPointLow;
+  set setPointLow(double? setPointLow) => _$this._setPointLow = setPointLow;
+
+  double? _setPointHigh;
+  double? get setPointHigh => _$this._setPointHigh;
+  set setPointHigh(double? setPointHigh) => _$this._setPointHigh = setPointHigh;
+
+  GThermostatRangeInputBuilder();
+
+  GThermostatRangeInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _setPointLow = $v.setPointLow;
+      _setPointHigh = $v.setPointHigh;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GThermostatRangeInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GThermostatRangeInput;
+  }
+
+  @override
+  void update(void Function(GThermostatRangeInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GThermostatRangeInput build() {
+    final _$result = _$v ??
+        new _$GThermostatRangeInput._(
+            setPointLow: BuiltValueNullFieldError.checkNotNull(
+                setPointLow, 'GThermostatRangeInput', 'setPointLow'),
+            setPointHigh: BuiltValueNullFieldError.checkNotNull(
+                setPointHigh, 'GThermostatRangeInput', 'setPointHigh'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GJSONObject extends GJSONObject {
   @override
   final String value;
@@ -1498,82 +2480,6 @@ class GMockReportedListStateValueBuilder
   }
 }
 
-class _$GDateTime extends GDateTime {
-  @override
-  final String value;
-
-  factory _$GDateTime([void Function(GDateTimeBuilder)? updates]) =>
-      (new GDateTimeBuilder()..update(updates)).build();
-
-  _$GDateTime._({required this.value}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(value, 'GDateTime', 'value');
-  }
-
-  @override
-  GDateTime rebuild(void Function(GDateTimeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GDateTimeBuilder toBuilder() => new GDateTimeBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GDateTime && value == other.value;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(0, value.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('GDateTime')..add('value', value))
-        .toString();
-  }
-}
-
-class GDateTimeBuilder implements Builder<GDateTime, GDateTimeBuilder> {
-  _$GDateTime? _$v;
-
-  String? _value;
-  String? get value => _$this._value;
-  set value(String? value) => _$this._value = value;
-
-  GDateTimeBuilder();
-
-  GDateTimeBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _value = $v.value;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GDateTime other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GDateTime;
-  }
-
-  @override
-  void update(void Function(GDateTimeBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  _$GDateTime build() {
-    final _$result = _$v ??
-        new _$GDateTime._(
-            value: BuiltValueNullFieldError.checkNotNull(
-                value, 'GDateTime', 'value'));
-    replace(_$result);
-    return _$result;
-  }
-}
-
 class _$GDeviceFilterInput extends GDeviceFilterInput {
   @override
   final BuiltList<GTraitName> traits;
@@ -1659,125 +2565,6 @@ class GDeviceFilterInputBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'GDeviceFilterInput', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GTraitFilteredEventFilterInput extends GTraitFilteredEventFilterInput {
-  @override
-  final GDeviceEventTypeName? eventType;
-  @override
-  final GDateTime? before;
-  @override
-  final GDateTime? after;
-
-  factory _$GTraitFilteredEventFilterInput(
-          [void Function(GTraitFilteredEventFilterInputBuilder)? updates]) =>
-      (new GTraitFilteredEventFilterInputBuilder()..update(updates)).build();
-
-  _$GTraitFilteredEventFilterInput._({this.eventType, this.before, this.after})
-      : super._();
-
-  @override
-  GTraitFilteredEventFilterInput rebuild(
-          void Function(GTraitFilteredEventFilterInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GTraitFilteredEventFilterInputBuilder toBuilder() =>
-      new GTraitFilteredEventFilterInputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GTraitFilteredEventFilterInput &&
-        eventType == other.eventType &&
-        before == other.before &&
-        after == other.after;
-  }
-
-  @override
-  int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, eventType.hashCode), before.hashCode), after.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('GTraitFilteredEventFilterInput')
-          ..add('eventType', eventType)
-          ..add('before', before)
-          ..add('after', after))
-        .toString();
-  }
-}
-
-class GTraitFilteredEventFilterInputBuilder
-    implements
-        Builder<GTraitFilteredEventFilterInput,
-            GTraitFilteredEventFilterInputBuilder> {
-  _$GTraitFilteredEventFilterInput? _$v;
-
-  GDeviceEventTypeName? _eventType;
-  GDeviceEventTypeName? get eventType => _$this._eventType;
-  set eventType(GDeviceEventTypeName? eventType) =>
-      _$this._eventType = eventType;
-
-  GDateTimeBuilder? _before;
-  GDateTimeBuilder get before => _$this._before ??= new GDateTimeBuilder();
-  set before(GDateTimeBuilder? before) => _$this._before = before;
-
-  GDateTimeBuilder? _after;
-  GDateTimeBuilder get after => _$this._after ??= new GDateTimeBuilder();
-  set after(GDateTimeBuilder? after) => _$this._after = after;
-
-  GTraitFilteredEventFilterInputBuilder();
-
-  GTraitFilteredEventFilterInputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _eventType = $v.eventType;
-      _before = $v.before?.toBuilder();
-      _after = $v.after?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GTraitFilteredEventFilterInput other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GTraitFilteredEventFilterInput;
-  }
-
-  @override
-  void update(void Function(GTraitFilteredEventFilterInputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  _$GTraitFilteredEventFilterInput build() {
-    _$GTraitFilteredEventFilterInput _$result;
-    try {
-      _$result = _$v ??
-          new _$GTraitFilteredEventFilterInput._(
-              eventType: eventType,
-              before: _before?.build(),
-              after: _after?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'before';
-        _before?.build();
-        _$failedField = 'after';
-        _after?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'GTraitFilteredEventFilterInput', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1930,6 +2717,125 @@ class GDeviceEventFilterInputBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'GDeviceEventFilterInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GTraitFilteredEventFilterInput extends GTraitFilteredEventFilterInput {
+  @override
+  final GDeviceEventTypeName? eventType;
+  @override
+  final GDateTime? before;
+  @override
+  final GDateTime? after;
+
+  factory _$GTraitFilteredEventFilterInput(
+          [void Function(GTraitFilteredEventFilterInputBuilder)? updates]) =>
+      (new GTraitFilteredEventFilterInputBuilder()..update(updates)).build();
+
+  _$GTraitFilteredEventFilterInput._({this.eventType, this.before, this.after})
+      : super._();
+
+  @override
+  GTraitFilteredEventFilterInput rebuild(
+          void Function(GTraitFilteredEventFilterInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GTraitFilteredEventFilterInputBuilder toBuilder() =>
+      new GTraitFilteredEventFilterInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GTraitFilteredEventFilterInput &&
+        eventType == other.eventType &&
+        before == other.before &&
+        after == other.after;
+  }
+
+  @override
+  int get hashCode {
+    return $jf(
+        $jc($jc($jc(0, eventType.hashCode), before.hashCode), after.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('GTraitFilteredEventFilterInput')
+          ..add('eventType', eventType)
+          ..add('before', before)
+          ..add('after', after))
+        .toString();
+  }
+}
+
+class GTraitFilteredEventFilterInputBuilder
+    implements
+        Builder<GTraitFilteredEventFilterInput,
+            GTraitFilteredEventFilterInputBuilder> {
+  _$GTraitFilteredEventFilterInput? _$v;
+
+  GDeviceEventTypeName? _eventType;
+  GDeviceEventTypeName? get eventType => _$this._eventType;
+  set eventType(GDeviceEventTypeName? eventType) =>
+      _$this._eventType = eventType;
+
+  GDateTimeBuilder? _before;
+  GDateTimeBuilder get before => _$this._before ??= new GDateTimeBuilder();
+  set before(GDateTimeBuilder? before) => _$this._before = before;
+
+  GDateTimeBuilder? _after;
+  GDateTimeBuilder get after => _$this._after ??= new GDateTimeBuilder();
+  set after(GDateTimeBuilder? after) => _$this._after = after;
+
+  GTraitFilteredEventFilterInputBuilder();
+
+  GTraitFilteredEventFilterInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _eventType = $v.eventType;
+      _before = $v.before?.toBuilder();
+      _after = $v.after?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GTraitFilteredEventFilterInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GTraitFilteredEventFilterInput;
+  }
+
+  @override
+  void update(void Function(GTraitFilteredEventFilterInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GTraitFilteredEventFilterInput build() {
+    _$GTraitFilteredEventFilterInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GTraitFilteredEventFilterInput._(
+              eventType: eventType,
+              before: _before?.build(),
+              after: _after?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'before';
+        _before?.build();
+        _$failedField = 'after';
+        _after?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GTraitFilteredEventFilterInput', _$failedField, e.toString());
       }
       rethrow;
     }

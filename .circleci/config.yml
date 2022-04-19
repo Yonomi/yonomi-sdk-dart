@@ -7,6 +7,7 @@ version: 2.1
 # Orb declarations
 orbs:
   codecov: codecov/codecov@1.0.2
+  github-cli: circleci/github-cli@2.1.0
 
 executors:
   default-executor:
@@ -136,23 +137,31 @@ jobs:
     steps:
       - dependencies
       - run-publish
-  generate_documentation:
+  generate-documentation:
     executor: default-executor
     steps:
       - dependencies
       - generate-dartdoc
       - setup-github
       - run:
-          name: Generate and push new docs if they exist
+          name: Generate and push new docs to PR if they exist
           command: |
             if [[ `git status doc/ --porcelain` ]];
             then
               echo "New documents detected. Checking in new docs."
+              git checkout -b dart-docs
               git add doc/
               git commit -m "docs: updated dartdocs"
               REMOTE_URL="$( echo << pipeline.project.git_url >> | sed -e 's#^https://##; s#/score/$##' )"
               git remote set-url origin "https://$REMOTE_URL.git"
               git push -u origin HEAD
+              gh pr create -f <(echo "
+                title: Updated dartdocs
+                body: Updated dartdocs
+                assignees:
+                  - Yonomi/dx
+                milestone: v1.4
+                ")
             else
               echo "Nothing to check in. No new docs generated"
             fi
@@ -166,15 +175,15 @@ workflows:
     jobs:
       - test:
           <<: *feature-branch-filter
-      - generate_documentation:
+  main:
+    jobs:
+      - test:
+          <<: *main_only
+      - generate-documentation:
           context:
             - org-global
           requires:
             - test
-  main:
-    jobs:
-      - test:
-          <<: *main_only  
       - semantic-versioning:
           context:
             - org-global

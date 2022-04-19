@@ -3,9 +3,11 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gq
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
+import 'package:yonomi_platform_sdk/src/repository/repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/battery_level_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
@@ -105,11 +107,13 @@ class DevicesRepository {
         case GTraitName.LOCK:
           return LockRepository.getLockTrait(trait);
         case GTraitName.BATTERY_LEVEL:
-          return getBatteryLevelTrait(trait);
+          return BatteryLevelRepository.getBatteryLevelTrait(trait);
         case GTraitName.POWER:
           return PowerRepository.getPowerTrait(trait);
         case GTraitName.BRIGHTNESS:
           return BrightnessRepository.getBrightnessTrait(trait);
+        case GTraitName.COLOR_TEMPERATURE:
+          return ColorTemperatureRepository.getColorTemperatureTrait(trait);
         default:
           return UnknownTrait(trait.name.toString());
       }
@@ -174,10 +178,6 @@ abstract class State<T> {
   State(this.name, this.value);
 }
 
-class BatteryLevel extends State<int> {
-  BatteryLevel(int value) : super('batteryLevel', value);
-}
-
 class UnknownState extends State<String> {
   UnknownState() : super('Unknown', 'Unknown');
 }
@@ -191,10 +191,6 @@ abstract class Property<T> {
 
 class UnknownTrait extends Trait {
   UnknownTrait(String name) : super(name, {UnknownState()}, {});
-}
-
-class BatteryLevelTrait extends Trait {
-  BatteryLevelTrait(State state) : super('battery_level', {state}, {});
 }
 
 class DeviceNameId {

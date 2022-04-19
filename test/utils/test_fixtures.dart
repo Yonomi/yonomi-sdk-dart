@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
-import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 
 import 'config.dart';
@@ -233,6 +233,50 @@ class TestFixtures {
                 'value': isJammed,
                 'delta': null,
                 'updatedAt': '2021-10-19T20: 06: 41.176Z'
+              }
+            }
+          }
+        }
+      ]
+    };
+  }
+
+  static Map<String, dynamic> buildColorTemperatureJsonResponse({
+    int colorTemperature = 0,
+    int rangeMin = 0,
+    int rangeMax = 100,
+  }) {
+    assert(rangeMin < rangeMax);
+
+    return {
+      'id': 'id',
+      'displayName': 'displayName',
+      'updatedAt': '2022-04-18T12:00:00.000Z',
+      'createdAt': '2022-04-18T12:00:00.000Z',
+      'productInformation': {
+        'manufacturer': 'abc',
+        'model': 'model',
+        'description': 'ColorTemperature device',
+      },
+      'traits': [
+        {
+          '__typename': 'ColorTemperatureDeviceTrait',
+          'name': 'COLOR_TEMPERATURE',
+          'instance': 'default',
+          'properties': {
+            'supportedColorTemperatureRange': {'min': rangeMin, 'max': rangeMax}
+          },
+          'state': {
+            'colorTemperature': {
+              'reported': {
+                'value': colorTemperature,
+                'sampledAt': '2022-04-18T10: 10: 40.200Z',
+                'createdAt': '2022-04-18T10: 10: 40.200Z'
+              },
+              'desired': {
+                'value': colorTemperature,
+                'delta': null,
+                'updatedAt': '2022-04-18T10: 10: 40.200Z'
               }
             }
           }

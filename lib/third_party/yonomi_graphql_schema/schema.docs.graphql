@@ -83,6 +83,30 @@ type Mutation {
     brightness: Int!
   ): CreateActionResponse!
 
+  # Set the absolute color value of this device.
+  actionColorSetColor(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The new HSB color value.
+    color: HSBColorValueInput!
+  ): CreateActionResponse!
+
+  # Set the device's color temperature in Kelvin
+  actionColorTemperatureSetColorTemperature(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The device's color temperature in Kelvin.
+    colorTemperature: Int!
+  ): CreateActionResponse!
+
   # Lock (true) or unlock (false) the device.
   actionLockSetLocked(
     # The target device's id
@@ -95,7 +119,7 @@ type Mutation {
     lock: Boolean!
   ): CreateActionResponse!
 
-  # Add a PIN code credential to the device.
+  # DEPRECATED: use addPinCodeCredential instead : Add a PIN code credential to the device.
   actionPinCodeCredentialCreatePinCodeCredential(
     # The target device's id
     deviceId: ID!
@@ -107,7 +131,7 @@ type Mutation {
     pinCodeCredential: PinCodeCredentialInput!
   ): CreateActionResponse!
 
-  # Update an existing PIN code credential on the device.
+  # DEPRECATED: use modifyPinCodeCredential instead : Update an existing PIN code credential on the device.
   actionPinCodeCredentialUpdatePinCodeCredential(
     # The target device's id
     deviceId: ID!
@@ -119,8 +143,45 @@ type Mutation {
     pinCodeCredential: PinCodeCredentialInput!
   ): CreateActionResponse!
 
-  # Revoke access for the PIN code credential with `pinCode` from the device.
+  # DEPRECATED: use removePinCodeCredential instead : Revoke access for the PIN code credential with `pinCode` from the device.
   actionPinCodeCredentialDeletePinCodeCredential(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The `pinCode` of the PIN code credential to remove.
+    #
+    pinCode: String!
+  ): CreateActionResponse!
+
+  # Add a PIN code credential to the device.
+  actionPinCodeCredentialAddPinCodeCredential(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The PIN code credential to add to list of PIN code credentials.
+    pinCodeCredential: PinCodeCredentialItemInput!
+  ): CreateActionResponse!
+
+  # Update an existing PIN code credential on the device.
+  actionPinCodeCredentialModifyPinCodeCredential(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The PIN code credential to update in the list of PIN code credentials.
+    pinCodeCredential: PinCodeCredentialItemInput!
+  ): CreateActionResponse!
+
+  # Revoke access for the PIN code credential with `pinCode` from the device.
+  actionPinCodeCredentialRemovePinCodeCredential(
     # The target device's id
     deviceId: ID!
 
@@ -195,17 +256,35 @@ type Mutation {
     setPointHigh: Float!
   ): CreateActionResponse!
 
-  # This mutation allows ownership of a device to be claimed.
-  CLAIMABLE_claimOwnership(
-    # ID of device to attempt to claim.
-    deviceId: String!
-  ): ClaimableDevice!
+  # Set the mode of the device and optionally the targetTemperature.
+  actionThermostatSettingSetThermostatModeAndTargetTemperature(
+    # The target device's id
+    deviceId: ID!
 
-  # This mutation allows an owner to unclaim a device.
-  CLAIMABLE_unclaimOwnership(
-    # ID of device to unclaim.
-    deviceId: String!
-  ): ClaimableDevice!
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The thermostat mode to set the device to.
+    mode: ThermostatMode!
+
+    # The optional temperature value to set the device to, in Celsius.
+    targetTemperature: Float
+  ): CreateActionResponse!
+
+  # Set the mode of the device and optionally the targetTemperature.
+  actionThermostatSettingSetThermostatModeAndTargetTemperatureRange(
+    # The target device's id
+    deviceId: ID!
+
+    # The identifier for the specific trait instance this action is targeting.
+    traitInstance: String! = "default"
+
+    # The thermostat mode to set the device to.
+    mode: ThermostatMode!
+
+    # The range to set the thermostat to.
+    range: ThermostatRangeInput!
+  ): CreateActionResponse!
 
   # (MOCK INTEGRATION): Install a discovery payload in the mock integration, the integration will respond to the platform with this payload once.
   MOCK_CONNECTOR_installDiscoveryPayload(
@@ -292,6 +371,18 @@ type Mutation {
   # (MOCK INTEGRATION): Register Device identity
   MOCK_CONNECTOR_registerDeviceIdentity(
     # The id of the mock integration
+    integrationId: ID!
+
+    # The physical ID of the device
+    physicalId: ID!
+
+    # The device public key
+    deviceCertificate: String!
+  ): JSON!
+
+  # (TEST UTIL): Emit identity with a public key and get a JWT signed with the private key
+  MOCK_CONNECTOR_emitIdentityAndGetJWT(
+    # The id of the associated integration
     integrationId: ID!
 
     # The physical ID of the device
@@ -414,6 +505,18 @@ type Mutation {
   ): [Integration!]!
 }
 
+# Mutation input: Represents a color in terms of its hue, saturation, and brightness.
+input HSBColorValueInput {
+  # The value of the hue attribute for this color.
+  h: Int!
+
+  # The value of the saturation percentage attribute for this color.
+  s: Int!
+
+  # The absolute brightness percentage value for this color.
+  b: Int!
+}
+
 # Mutation input: Encapsulates PIN code credential data
 input PinCodeCredentialInput {
   # A PIN code. This is also the unique identifier for the PIN code credential data.
@@ -428,6 +531,45 @@ input PinCodeCredentialInput {
 
 # Represents a date-time schedule (temporary, recurring).
 scalar RRuleSchedule
+
+# Mutation input: Encapsulates PIN code credential data
+input PinCodeCredentialItemInput {
+  # A PIN code. This is also the unique identifier for the PIN code credential data.
+  pinCode: String!
+
+  # A human-readable name for the PIN code credential data.
+  name: String!
+
+  # Indicates that the PIN code credential should always permit access.
+  alwaysActive: Boolean!
+
+  # list of schedules that detail a repeated pattern when the PIN code credential should allow access.
+  recurringSchedules: [RecurringScheduleInput!]!
+
+  # A set of schedules that provide one-time access using this PIN code credential.
+  temporarySchedules: [TemporaryScheduleInput!]!
+}
+
+# Mutation input: A schedule that repeats based on an RRULE recurrance pattern.
+input RecurringScheduleInput {
+  # The number of minutes the schedule should last for. Begins at every time specified by a recurrance rule.
+  duration: Int!
+
+  # Repetition rule that describes when the defined schedule repeats.
+  rrule: RRuleSchedule!
+}
+
+# Mutation input: A schedule that grants access only within the start date-time and end date-time.
+input TemporaryScheduleInput {
+  # The ISO 8601 compliant start date of the schedule.
+  startDatetime: DateTime!
+
+  # The ISO 8601 compliant end date of the schedule.
+  endDatetime: DateTime!
+}
+
+# A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+scalar DateTime
 
 # The various modes a thermostat can be set to.
 enum ThermostatMode {
@@ -500,6 +642,15 @@ enum FanMode {
   HIGH
 }
 
+# Mutation input: The range of a thermostat in auto mode.
+input ThermostatRangeInput {
+  # The low temperature, in Celsius, to set on the device while in a TargetTemperatureRange mode (auto).
+  setPointLow: Float!
+
+  # The high temperature, in Celsius, to set on the device while in a TargetTemperatureRange mode (auto).
+  setPointHigh: Float!
+}
+
 # The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 scalar JSONObject
 
@@ -510,10 +661,10 @@ enum TraitName {
   # Functionality for devices that can have their brightness adjusted.
   BRIGHTNESS
 
-  # Functionality for devices that can have their color adjusted.
+  # Functionality for devices that can be set to a specific color.
   COLOR
 
-  # Functionality for devices that can have their color temperature adjusted.
+  # Describes a light appearance provided by a light bulb
   COLOR_TEMPERATURE
 
   # Functionality for devices that can be locked or unlocked.
@@ -537,9 +688,6 @@ input MockReportedListStateValue {
   # A list of keys that uniquely identify items in the list state to remove
   delete: [String!]
 }
-
-# A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
-scalar DateTime
 
 enum VIRTUAL_CONNECTOR_ActionStatus {
   RESOLVED
@@ -676,6 +824,9 @@ type GeneratedAccountLinkingUrl {
   # A single-use URL to kick-off an account linking instance.
   url: String!
 
+  # The ID of the account that will be linked.
+  linkedAccountId: String!
+
   # Timestamp when the account linking URL will expire
   expiresAt: DateTime!
   integration: Integration!
@@ -810,41 +961,53 @@ type DeviceEventConnection {
   edges: [DeviceEventEdge!]!
 }
 
-# Represents an inclusive range between two integers.
-type IntRange {
-  min: Int!
-  max: Int!
+type ProductInformation {
+  # A description of this device.
+  description: String!
+
+  # The manufacturer of this device.
+  manufacturer: String!
+
+  # Model number or model name of this device.
+  model: String!
+
+  # Serial number of this device.
+  serialNumber: String
 }
 
-# Represents an inclusive range between two floats.
-type FloatRange {
-  min: Float!
-  max: Float!
-}
+type Device {
+  id: ID!
 
-# The base DeviceTrait interface.
-interface DeviceTrait {
-  # The name of this device trait.
-  name: TraitName!
+  # The display name of this device.
+  displayName: String!
 
-  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
-  instance: String!
+  # Information about the hardware product
+  productInformation: ProductInformation!
 
-  # The trait filtered events of this device.
+  # When this device was created.
+  createdAt: DateTime!
+
+  # When the trait configuration of this device was last updated. Does not include displayName or device product information such as serialNumber.
+  updatedAt: DateTime!
+
+  # All of the instances of the traits that this device implements.
+  traits: [DeviceTrait!]!
+
+  # All events for this device.
   events(
     # Limit the paged response to a max number of items.
     first: Int = 10
 
     # Used to indicated where in the result set the paged response should start.
     after: String
-    filter: TraitFilteredEventFilterInput
+    filter: DeviceEventFilterInput
     sort: DeviceEventSortInput
   ): DeviceEventConnection!
 }
 
 # A filter that can be used to narrow event queries based on various criteria.
-input TraitFilteredEventFilterInput {
-  # Type of device events to return, such as a state updated event.
+input DeviceEventFilterInput {
+  # type of device events to return, such as a state updated event.
   eventType: DeviceEventTypeName
 
   # If provided, this query will only return events from before the timestamp.
@@ -852,6 +1015,12 @@ input TraitFilteredEventFilterInput {
 
   # If provided, this query will only return events from after the timestamp.
   after: DateTime
+
+  # If provided, filter events by this trait instance.
+  traitInstance: String
+
+  # If provided, filter events by list of traits.
+  traits: [TraitName!]
 }
 
 enum DeviceEventTypeName {
@@ -880,6 +1049,65 @@ enum DeviceEventSortInput {
   DESCENDING
 }
 
+# A single edge from a connection to Device nodes.
+type DeviceEdge {
+  cursor: String!
+  node: Device!
+}
+
+# A connection to a collection of Device edges.
+type DeviceConnection {
+  pageInfo: PageInfo!
+  edges: [DeviceEdge!]!
+}
+
+# Represents an inclusive range between two integers.
+type IntRange {
+  min: Int!
+  max: Int!
+}
+
+# Represents an inclusive range between two floats.
+type FloatRange {
+  min: Float!
+  max: Float!
+}
+
+# The base DeviceTrait interface.
+interface DeviceTrait {
+  # The name of this device trait.
+  name: TraitName!
+
+  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
+  instance: String!
+
+  # Whether this trait is in beta.
+  isBeta: Boolean
+
+  # The trait filtered events of this device.
+  events(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: TraitFilteredEventFilterInput
+    sort: DeviceEventSortInput
+  ): DeviceEventConnection!
+}
+
+# A filter that can be used to narrow event queries based on various criteria.
+input TraitFilteredEventFilterInput {
+  # Type of device events to return, such as a state updated event.
+  eventType: DeviceEventTypeName
+
+  # If provided, this query will only return events from before the timestamp.
+  before: DateTime
+
+  # If provided, this query will only return events from after the timestamp.
+  after: DateTime
+}
+
 # The base trait reported state field interface.
 interface ReportedStateField {
   # The DateTime that this reported state value was persisted to the platform.
@@ -895,6 +1123,15 @@ interface DesiredStateField {
   updatedAt: DateTime!
 }
 
+# Encapsulates card credential data
+type BetaCardCredential {
+  # A card credential.
+  credential: String!
+
+  # A unique identifier (UUID) for the card credential.
+  id: String!
+}
+
 # This represents a range of floating point numbers with min and max values that are dynamic.
 type DynamicFloatRange {
   # The minimum floating point number value allowed.
@@ -902,6 +1139,27 @@ type DynamicFloatRange {
 
   # The maximum floating point number value allowed.
   max: Float!
+}
+
+# This represents a range of integers with min and max values that are dynamic.
+type DynamicIntRange {
+  # The minimum integer value allowed.
+  min: Int!
+
+  # The maximum integer value allowed.
+  max: Int!
+}
+
+# Represents a color in terms of its hue, saturation, and brightness.
+type HSBColorValue {
+  # The value of the hue attribute for this color.
+  h: Int!
+
+  # The value of the saturation percentage attribute for this color.
+  s: Int!
+
+  # The absolute brightness percentage value for this color.
+  b: Int!
 }
 
 # Encapsulates PIN code credential data
@@ -914,6 +1172,51 @@ type PinCodeCredential {
 
   # A set of schedules by which the device may be accessed via the PIN code credential.
   schedules: [RRuleSchedule!]!
+}
+
+# Encapsulates PIN code credential data
+type PinCodeCredentialItem {
+  # A PIN code. This is also the unique identifier for the PIN code credential data.
+  pinCode: String!
+
+  # A human-readable name for the PIN code credential data.
+  name: String!
+
+  # Indicates that the PIN code credential should always permit access.
+  alwaysActive: Boolean!
+
+  # list of schedules that detail a repeated pattern when the PIN code credential should allow access.
+  recurringSchedules: [RecurringSchedule!]!
+
+  # A set of schedules that provide one-time access using this PIN code credential.
+  temporarySchedules: [TemporarySchedule!]!
+}
+
+# A schedule that repeats based on an RRULE recurrance pattern.
+type RecurringSchedule {
+  # The number of minutes the schedule should last for. Begins at every time specified by a recurrance rule.
+  duration: Int!
+
+  # Repetition rule that describes when the defined schedule repeats.
+  rrule: RRuleSchedule!
+}
+
+# A schedule that grants access only within the start date-time and end date-time.
+type TemporarySchedule {
+  # The ISO 8601 compliant start date of the schedule.
+  startDatetime: DateTime!
+
+  # The ISO 8601 compliant end date of the schedule.
+  endDatetime: DateTime!
+}
+
+# The range of a thermostat in auto mode.
+type ThermostatRange {
+  # The low temperature, in Celsius, to set on the device while in a TargetTemperatureRange mode (auto).
+  setPointLow: Float!
+
+  # The high temperature, in Celsius, to set on the device while in a TargetTemperatureRange mode (auto).
+  setPointHigh: Float!
 }
 
 # Information about the reported BatteryLevel state for the percentage field.
@@ -961,6 +1264,9 @@ type BatteryLevelDeviceTrait implements DeviceTrait {
 
   # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
   instance: String!
+
+  # Whether this trait is in beta.
+  isBeta: Boolean
 
   # The trait filtered events of this device.
   events(
@@ -1023,6 +1329,9 @@ type BrightnessDeviceTrait implements DeviceTrait {
   # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
   instance: String!
 
+  # Whether this trait is in beta.
+  isBeta: Boolean
+
   # The trait filtered events of this device.
   events(
     # Limit the paged response to a max number of items.
@@ -1036,6 +1345,143 @@ type BrightnessDeviceTrait implements DeviceTrait {
 
   # The Brightness state of this device.
   state: BrightnessState!
+}
+
+# Information about the reported Color state for the color field.
+type ColorStateReportedColor implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Current HSB color of this device.
+  value: HSBColorValue!
+}
+
+# Information about the desired Color state for the color field.
+type ColorStateDesiredColor implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Current HSB color of this device.
+  value: HSBColorValue!
+
+  # Current HSB color of this device.
+  delta: HSBColorValue
+}
+
+# Information about the Color state for the color field
+type ColorStateColorField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: ColorStateReportedColor
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: ColorStateDesiredColor
+}
+
+# The state information for the Color trait
+type ColorState {
+  # Current HSB color of this device.
+  color: ColorStateColorField!
+}
+
+type ColorDeviceTrait implements DeviceTrait {
+  # The name of this device trait.
+  name: TraitName!
+
+  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
+  instance: String!
+
+  # Whether this trait is in beta.
+  isBeta: Boolean
+
+  # The trait filtered events of this device.
+  events(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: TraitFilteredEventFilterInput
+    sort: DeviceEventSortInput
+  ): DeviceEventConnection!
+
+  # The Color state of this device.
+  state: ColorState!
+}
+
+# Information about the reported ColorTemperature state for the colorTemperature field.
+type ColorTemperatureStateReportedColorTemperature implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Current color temperature of the device in Kelvin.
+  value: Int!
+}
+
+# Information about the desired ColorTemperature state for the colorTemperature field.
+type ColorTemperatureStateDesiredColorTemperature implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Current color temperature of the device in Kelvin.
+  value: Int!
+
+  # Current color temperature of the device in Kelvin.
+  delta: Int
+}
+
+# Information about the ColorTemperature state for the colorTemperature field
+type ColorTemperatureStateColorTemperatureField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: ColorTemperatureStateReportedColorTemperature
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: ColorTemperatureStateDesiredColorTemperature
+}
+
+# The state information for the ColorTemperature trait
+type ColorTemperatureState {
+  # Current color temperature of the device in Kelvin.
+  colorTemperature: ColorTemperatureStateColorTemperatureField!
+}
+
+# The properties (trait configuration) payload for the ColorTemperature trait
+type ColorTemperatureProperties {
+  # The allowed range that the device supports for color temperature in Kelvin
+  supportedColorTemperatureRange: IntRange
+}
+
+type ColorTemperatureDeviceTrait implements DeviceTrait {
+  # The name of this device trait.
+  name: TraitName!
+
+  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
+  instance: String!
+
+  # Whether this trait is in beta.
+  isBeta: Boolean
+
+  # The trait filtered events of this device.
+  events(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+    filter: TraitFilteredEventFilterInput
+    sort: DeviceEventSortInput
+  ): DeviceEventConnection!
+
+  # The ColorTemperature configuration for this device.
+  properties: ColorTemperatureProperties!
+
+  # The ColorTemperature state of this device.
+  state: ColorTemperatureState!
 }
 
 # Information about the reported Lock state for the isLocked field.
@@ -1135,6 +1581,9 @@ type LockDeviceTrait implements DeviceTrait {
   # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
   instance: String!
 
+  # Whether this trait is in beta.
+  isBeta: Boolean
+
   # The trait filtered events of this device.
   events(
     # Limit the paged response to a max number of items.
@@ -1216,10 +1665,76 @@ type PinCodeCredentialStatePinCodeCredentialsField {
   desired: PinCodeCredentialStateDesiredPinCodeCredentials
 }
 
+# A single edge from a connection to PinCodeCredentialItem nodes.
+type PinCodeCredentialItemEdge {
+  cursor: String!
+  node: PinCodeCredentialItem!
+}
+
+# A connection to a collection of PinCodeCredentialItem edges.
+type PinCodeCredentialItemConnection {
+  pageInfo: PageInfo!
+  edges: [PinCodeCredentialItemEdge!]!
+}
+
+# Information about the reported PinCodeCredential state for the pinCodeCredentialList field.
+type PinCodeCredentialStateReportedPinCodeCredentialList implements ReportedStateField {
+  # The DateTime that this reported state value was persisted to the platform.
+  createdAt: DateTime!
+
+  # The DateTime that this reported state value was sampled (recorded) by the device
+  sampledAt: DateTime!
+
+  # Current list of PIN code credentials that have been granted access to the device.
+  value(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+  ): PinCodeCredentialItemConnection!
+}
+
+# Information about the desired PinCodeCredential state for the pinCodeCredentialList field.
+type PinCodeCredentialStateDesiredPinCodeCredentialList implements DesiredStateField {
+  # The datetime that this desired state value was most recently updated.
+  updatedAt: DateTime!
+
+  # Current list of PIN code credentials that have been granted access to the device.
+  value(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+  ): PinCodeCredentialItemConnection!
+
+  # Current list of PIN code credentials that have been granted access to the device.
+  delta(
+    # Limit the paged response to a max number of items.
+    first: Int = 10
+
+    # Used to indicated where in the result set the paged response should start.
+    after: String
+  ): PinCodeCredentialItemConnection
+}
+
+# Information about the PinCodeCredential state for the pinCodeCredentialList field
+type PinCodeCredentialStatePinCodeCredentialListField {
+  # The most recently reported state. May be null if the device has not yet reported it's state
+  reported: PinCodeCredentialStateReportedPinCodeCredentialList
+
+  # The device's desired state. May be null if the device has not yet reported it's state.
+  desired: PinCodeCredentialStateDesiredPinCodeCredentialList
+}
+
 # The state information for the PinCodeCredential trait
 type PinCodeCredentialState {
   # Current list of PIN code credentials that have been granted access to the device.
   pinCodeCredentials: PinCodeCredentialStatePinCodeCredentialsField!
+
+  # Current list of PIN code credentials that have been granted access to the device.
+  pinCodeCredentialList: PinCodeCredentialStatePinCodeCredentialListField!
 }
 
 # The properties (trait configuration) payload for the PinCodeCredential trait
@@ -1239,6 +1754,18 @@ type PinCodeCredentialProperties {
   # The allowed number of digits in a PIN code for this device's PIN code credentials.
   #
   supportedPinCodeRange: IntRange
+
+  # The maximum number of recurring schedules that may be included on a PIN code credential.
+  #
+  maxNumberOfRecurringSchedulesPerPinCodeCredential: Int
+
+  # The maximum number of temporary schedules that may be included on a PIN code credential.
+  #
+  maxNumberOfTemporarySchedulesPerPinCodeCredential: Int
+
+  # If this is set, temporary and recurring schedules cannot be mixed on a PIN code credential.
+  #
+  exclusiveSchedules: Boolean
 }
 
 type PinCodeCredentialDeviceTrait implements DeviceTrait {
@@ -1247,6 +1774,9 @@ type PinCodeCredentialDeviceTrait implements DeviceTrait {
 
   # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
   instance: String!
+
+  # Whether this trait is in beta.
+  isBeta: Boolean
 
   # The trait filtered events of this device.
   events(
@@ -1317,6 +1847,9 @@ type PowerDeviceTrait implements DeviceTrait {
 
   # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
   instance: String!
+
+  # Whether this trait is in beta.
+  isBeta: Boolean
 
   # The trait filtered events of this device.
   events(
@@ -1659,6 +2192,9 @@ type ThermostatSettingDeviceTrait implements DeviceTrait {
   # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
   instance: String!
 
+  # Whether this trait is in beta.
+  isBeta: Boolean
+
   # The trait filtered events of this device.
   events(
     # Limit the paged response to a max number of items.
@@ -1677,87 +2213,3 @@ type ThermostatSettingDeviceTrait implements DeviceTrait {
   state: ThermostatSettingState!
 }
 
-type ProductInformation {
-  # A description of this device.
-  description: String!
-
-  # The manufacturer of this device.
-  manufacturer: String!
-
-  # Model number or model name of this device.
-  model: String!
-
-  # Serial number of this device.
-  serialNumber: String
-}
-
-type Device {
-  id: ID!
-
-  # The display name of this device.
-  displayName: String!
-
-  # Information about the hardware product
-  productInformation: ProductInformation!
-
-  # When this device was created.
-  createdAt: DateTime!
-
-  # When the trait configuration of this device was last updated. Does not include displayName or device product information such as serialNumber.
-  updatedAt: DateTime!
-
-  # All of the instances of the traits that this device implements.
-  traits: [DeviceTrait!]!
-
-  # All events for this device.
-  events(
-    # Limit the paged response to a max number of items.
-    first: Int = 10
-
-    # Used to indicated where in the result set the paged response should start.
-    after: String
-    filter: DeviceEventFilterInput
-    sort: DeviceEventSortInput
-  ): DeviceEventConnection!
-}
-
-# A filter that can be used to narrow event queries based on various criteria.
-input DeviceEventFilterInput {
-  # type of device events to return, such as a state updated event.
-  eventType: DeviceEventTypeName
-
-  # If provided, this query will only return events from before the timestamp.
-  before: DateTime
-
-  # If provided, this query will only return events from after the timestamp.
-  after: DateTime
-
-  # If provided, filter events by this trait instance.
-  traitInstance: String
-
-  # If provided, filter events by list of traits.
-  traits: [TraitName!]
-}
-
-# A single edge from a connection to Device nodes.
-type DeviceEdge {
-  cursor: String!
-  node: Device!
-}
-
-# A connection to a collection of Device edges.
-type DeviceConnection {
-  pageInfo: PageInfo!
-  edges: [DeviceEdge!]!
-}
-
-type DeviceOwner {
-  tenantId: String
-  userId: String
-}
-
-type ClaimableDevice {
-  deviceId: String!
-  integrationId: String!
-  owner: DeviceOwner
-}
