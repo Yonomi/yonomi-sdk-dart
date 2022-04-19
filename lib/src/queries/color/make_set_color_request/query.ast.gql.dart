@@ -15,7 +15,7 @@ const makeColorActionRequest = _i1.OperationDefinitionNode(
       _i1.VariableDefinitionNode(
           variable: _i1.VariableNode(name: _i1.NameNode(value: 'color')),
           type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'HSBColorValue'), isNonNull: true),
+              name: _i1.NameNode(value: 'HSBColorValueInput'), isNonNull: true),
           defaultValue: _i1.DefaultValueNode(value: null),
           directives: [])
     ],
@@ -46,6 +46,12 @@ const makeColorActionRequest = _i1.OperationDefinitionNode(
                 arguments: [],
                 directives: [],
                 selectionSet: _i1.SelectionSetNode(selections: [
+                  _i1.FieldNode(
+                      name: _i1.NameNode(value: 'id'),
+                      alias: null,
+                      arguments: [],
+                      directives: [],
+                      selectionSet: null),
                   _i1.FieldNode(
                       name: _i1.NameNode(value: 'traits'),
                       alias: null,
@@ -213,7 +219,40 @@ const makeColorActionRequest = _i1.OperationDefinitionNode(
                                                             alias: null,
                                                             arguments: [],
                                                             directives: [],
-                                                            selectionSet: null),
+                                                            selectionSet: _i1
+                                                                .SelectionSetNode(
+                                                                    selections: [
+                                                                  _i1.FieldNode(
+                                                                      name: _i1.NameNode(
+                                                                          value:
+                                                                              'h'),
+                                                                      alias:
+                                                                          null,
+                                                                      arguments: [],
+                                                                      directives: [],
+                                                                      selectionSet:
+                                                                          null),
+                                                                  _i1.FieldNode(
+                                                                      name: _i1.NameNode(
+                                                                          value:
+                                                                              's'),
+                                                                      alias:
+                                                                          null,
+                                                                      arguments: [],
+                                                                      directives: [],
+                                                                      selectionSet:
+                                                                          null),
+                                                                  _i1.FieldNode(
+                                                                      name: _i1.NameNode(
+                                                                          value:
+                                                                              'b'),
+                                                                      alias:
+                                                                          null,
+                                                                      arguments: [],
+                                                                      directives: [],
+                                                                      selectionSet:
+                                                                          null)
+                                                                ])),
                                                         _i1.FieldNode(
                                                             name: _i1.NameNode(
                                                                 value:

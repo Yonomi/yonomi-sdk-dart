@@ -79,6 +79,7 @@ abstract class GmakeColorActionRequestData_actionColorSetColor_device
       b..G__typename = 'Device';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  String get id;
   BuiltList<GmakeColorActionRequestData_actionColorSetColor_device_traits>
       get traits;
   static Serializer<GmakeColorActionRequestData_actionColorSetColor_device>
@@ -371,7 +372,8 @@ abstract class GmakeColorActionRequestData_actionColorSetColor_device_traits__as
   String get G__typename;
   GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_value
       get value;
-  _i2.GHSBColorValue? get delta;
+  GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta?
+      get delta;
   _i2.GDateTime get updatedAt;
   static Serializer<
           GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired>
@@ -422,6 +424,44 @@ abstract class GmakeColorActionRequestData_actionColorSetColor_device_traits__as
   static GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_value?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
           GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_value
+              .serializer,
+          json);
+}
+
+abstract class GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta
+    implements
+        Built<
+            GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta,
+            GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder> {
+  GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta._();
+
+  factory GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta(
+          [Function(
+                  GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder
+                      b)
+              updates]) =
+      _$GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta;
+
+  static void _initializeBuilder(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder
+              b) =>
+      b..G__typename = 'HSBColorValue';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get h;
+  int get s;
+  int get b;
+  static Serializer<
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta>
+      get serializer =>
+          _$gmakeColorActionRequestDataActionColorSetColorDeviceTraitsAsColorDeviceTraitStateColorDesiredDeltaSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+      GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta
               .serializer,
           json);
 }

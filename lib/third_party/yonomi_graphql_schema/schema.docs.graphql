@@ -44,6 +44,17 @@ type Query {
   ): [String!]
 }
 
+input HSBColorValueInput {
+  # The value of the hue attribute for this color.
+  h: Int!
+
+  # The value of the saturation percentage attribute for this color.
+  s: Int!
+
+  # The absolute brightness percentage value for this color.
+  b: Int!
+}
+
 # The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 scalar JSON
 

@@ -122,6 +122,29 @@ const Query = _i1.ObjectTypeDefinitionNode(
                   name: _i1.NameNode(value: 'String'), isNonNull: true),
               isNonNull: false))
     ]);
+const HSBColorValueInput = _i1.InputObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'HSBColorValueInput'),
+    directives: [],
+    fields: [
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'h'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 's'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'b'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true),
+          defaultValue: null)
+    ]);
 const JSON = _i1.ScalarTypeDefinitionNode(
     name: _i1.NameNode(value: 'JSON'), directives: []);
 const MockConnectorRequestsFilters = _i1.InputObjectTypeDefinitionNode(
@@ -4209,6 +4232,7 @@ const ClaimableDevice = _i1.ObjectTypeDefinitionNode(
 const document = _i1.DocumentNode(definitions: [
   Health,
   Query,
+  HSBColorValueInput,
   JSON,
   MockConnectorRequestsFilters,
   Mutation,

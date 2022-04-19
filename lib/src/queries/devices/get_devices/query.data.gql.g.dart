@@ -455,7 +455,7 @@ class _$GgetDevicesData_me_devicesSerializer
           result.edges.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(GgetDevicesData_me_devices_edges)
-              ]))! as BuiltList<Object?>);
+              ]))! as BuiltList<Object>);
           break;
       }
     }
@@ -657,7 +657,7 @@ class _$GgetDevicesData_me_devices_edges_nodeSerializer
           result.traits.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(GgetDevicesData_me_devices_edges_node_traits)
-              ]))! as BuiltList<Object?>);
+              ]))! as BuiltList<Object>);
           break;
       }
     }
@@ -739,7 +739,7 @@ class _$GgetDevicesData_me_devices_edges_node_productInformationSerializer
           break;
         case 'serialNumber':
           result.serialNumber = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -1163,7 +1163,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asBatteryLevelDeviceTrait_
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+              specifiedType: const FullType(int)) as int;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -1314,7 +1314,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_properti
           break;
         case 'supportsIsJammed':
           result.supportsIsJammed = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
+              specifiedType: const FullType(bool)) as bool;
           break;
       }
     }
@@ -1610,7 +1610,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_is
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
+              specifiedType: const FullType(bool)) as bool;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -1838,7 +1838,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait_state_is
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
+              specifiedType: const FullType(bool)) as bool;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -1989,7 +1989,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_propert
           break;
         case 'supportsDiscreteOnOff':
           result.supportsDiscreteOnOff = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
+              specifiedType: const FullType(bool)) as bool;
           break;
       }
     }
@@ -2275,7 +2275,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPowerDeviceTrait_state_i
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
+              specifiedType: const FullType(bool)) as bool;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -2640,7 +2640,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asBrightnessDeviceTrait_st
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+              specifiedType: const FullType(int)) as int;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -2836,13 +2836,13 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceT
           result.availableThermostatModes.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(_i3.GThermostatMode)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
         case 'availableFanModes':
           result.availableFanModes.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(_i3.GFanMode)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
         case 'heatSetPointRange':
           result.heatSetPointRange.replace(serializers.deserialize(value,
@@ -2861,14 +2861,14 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceT
                   value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(_i3.GThermostatMode)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
         case 'allowedTargetTemperatureRangeModes':
           result.allowedTargetTemperatureRangeModes.replace(serializers
               .deserialize(value,
                   specifiedType: const FullType(BuiltList, const [
                     const FullType(_i3.GThermostatMode)
-                  ]))! as BuiltList<Object?>);
+                  ]))! as BuiltList<Object>);
           break;
       }
     }
@@ -3357,7 +3357,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceT
         case 'delta':
           result.delta = serializers.deserialize(value,
                   specifiedType: const FullType(_i3.GThermostatMode))
-              as _i3.GThermostatMode?;
+              as _i3.GThermostatMode;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -3587,7 +3587,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceT
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double?;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -3817,7 +3817,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceT
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double?;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -4047,7 +4047,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceT
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double?;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -4277,7 +4277,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceT
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double?;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -4507,7 +4507,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceT
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double?;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -4737,7 +4737,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceT
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double?;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -4967,7 +4967,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceT
           break;
         case 'delta':
           result.delta = serializers.deserialize(value,
-              specifiedType: const FullType(_i3.GFanMode)) as _i3.GFanMode?;
+              specifiedType: const FullType(_i3.GFanMode)) as _i3.GFanMode;
           break;
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
@@ -5330,7 +5330,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPinCodeCredentialDeviceT
               specifiedType: const FullType(BuiltList, const [
                 const FullType(
                     GgetDevicesData_me_devices_edges_node_traits__asPinCodeCredentialDeviceTrait_state_pinCodeCredentials_reported_value_edges)
-              ]))! as BuiltList<Object?>);
+              ]))! as BuiltList<Object>);
           break;
       }
     }
@@ -5467,7 +5467,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPinCodeCredentialDeviceT
           result.schedules.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(_i3.GRRuleSchedule)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
       }
     }
@@ -5615,7 +5615,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPinCodeCredentialDeviceT
               specifiedType: const FullType(BuiltList, const [
                 const FullType(
                     GgetDevicesData_me_devices_edges_node_traits__asPinCodeCredentialDeviceTrait_state_pinCodeCredentials_desired_value_edges)
-              ]))! as BuiltList<Object?>);
+              ]))! as BuiltList<Object>);
           break;
       }
     }
@@ -5752,7 +5752,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPinCodeCredentialDeviceT
           result.schedules.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(_i3.GRRuleSchedule)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
       }
     }
@@ -5817,7 +5817,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPinCodeCredentialDeviceT
               specifiedType: const FullType(BuiltList, const [
                 const FullType(
                     GgetDevicesData_me_devices_edges_node_traits__asPinCodeCredentialDeviceTrait_state_pinCodeCredentials_desired_delta_edges)
-              ]))! as BuiltList<Object?>);
+              ]))! as BuiltList<Object>);
           break;
       }
     }
@@ -5954,7 +5954,7 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asPinCodeCredentialDeviceT
           result.schedules.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(_i3.GRRuleSchedule)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
       }
     }
@@ -19315,4 +19315,4 @@ class GgetDevicesData_me_devices_edges_node_traits__asPinCodeCredentialDeviceTra
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

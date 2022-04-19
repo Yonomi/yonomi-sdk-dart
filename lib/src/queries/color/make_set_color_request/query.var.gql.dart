@@ -19,7 +19,7 @@ abstract class GmakeColorActionRequestVars
       _$GmakeColorActionRequestVars;
 
   String get deviceId;
-  _i1.GHSBColorValue get color;
+  _i1.GHSBColorValueInput get color;
   static Serializer<GmakeColorActionRequestVars> get serializer =>
       _$gmakeColorActionRequestVarsSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(

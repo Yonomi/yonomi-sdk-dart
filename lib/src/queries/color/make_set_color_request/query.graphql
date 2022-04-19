@@ -1,7 +1,8 @@
-mutation makeColorActionRequest($deviceId: ID!, $color: HSBColorValue!) {
+mutation makeColorActionRequest($deviceId: ID!, $color: HSBColorValueInput!) {
   actionColorSetColor(deviceId: $deviceId, color: $color) {
     actionId
     device {
+      id
       traits {
         __typename
         name
@@ -24,7 +25,11 @@ mutation makeColorActionRequest($deviceId: ID!, $color: HSBColorValue!) {
                   s
                   b
                 }
-                delta
+                delta {
+                  h
+                  s
+                  b
+                }
                 updatedAt
               }
             }
