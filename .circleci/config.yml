@@ -146,10 +146,10 @@ jobs:
       - run:
           name: Generate and push new docs to PR if they exist
           command: |
-            git checkout -b dart-docs
             if [[ `git status doc/ --porcelain` ]];
             then
               echo "New documents detected. Checking in new docs."
+              git checkout -b dart-docs
               git add doc/
               git commit -m "docs: updated dartdocs"
               REMOTE_URL="$( echo << pipeline.project.git_url >> | sed -e 's#^https://##; s#/score/$##' )"
