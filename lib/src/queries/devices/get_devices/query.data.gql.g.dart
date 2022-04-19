@@ -157,6 +157,34 @@ Serializer<
     _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsColorDeviceTraitStateColorDesiredDeltaSerializer =
     new _$GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait_state_color_desired_deltaSerializer();
 Serializer<
+        GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait>
+    _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsColorTemperatureDeviceTraitSerializer =
+    new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitSerializer();
+Serializer<
+        GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties>
+    _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsColorTemperatureDeviceTraitPropertiesSerializer =
+    new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesSerializer();
+Serializer<
+        GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange>
+    _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsColorTemperatureDeviceTraitPropertiesSupportedColorTemperatureRangeSerializer =
+    new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeSerializer();
+Serializer<
+        GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state>
+    _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsColorTemperatureDeviceTraitStateSerializer =
+    new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateSerializer();
+Serializer<
+        GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature>
+    _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsColorTemperatureDeviceTraitStateColorTemperatureSerializer =
+    new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureSerializer();
+Serializer<
+        GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported>
+    _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsColorTemperatureDeviceTraitStateColorTemperatureReportedSerializer =
+    new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedSerializer();
+Serializer<
+        GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired>
+    _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsColorTemperatureDeviceTraitStateColorTemperatureDesiredSerializer =
+    new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredSerializer();
+Serializer<
         GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTrait>
     _$ggetDevicesDataMeDevicesEdgesNodeTraitsAsThermostatSettingDeviceTraitSerializer =
     new _$GgetDevicesData_me_devices_edges_node_traits__asThermostatSettingDeviceTraitSerializer();
@@ -3261,6 +3289,512 @@ class _$GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait_state_c
         case 'b':
           result.b = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitSerializer
+    implements
+        StructuredSerializer<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait,
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait
+  ];
+  @override
+  final String wireName =
+      'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'name',
+      serializers.serialize(object.name,
+          specifiedType: const FullType(_i3.GTraitName)),
+      'instance',
+      serializers.serialize(object.instance,
+          specifiedType: const FullType(String)),
+      'properties',
+      serializers.serialize(object.properties,
+          specifiedType: const FullType(
+              GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties)),
+      'state',
+      serializers.serialize(object.state,
+          specifiedType: const FullType(
+              GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(_i3.GTraitName)) as _i3.GTraitName;
+          break;
+        case 'instance':
+          result.instance = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'properties':
+          result.properties.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties))!
+              as GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties);
+          break;
+        case 'state':
+          result.state.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state))!
+              as GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesSerializer
+    implements
+        StructuredSerializer<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties,
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+  ];
+  @override
+  final String wireName =
+      'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.supportedColorTemperatureRange;
+    if (value != null) {
+      result
+        ..add('supportedColorTemperatureRange')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange)));
+    }
+    return result;
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'supportedColorTemperatureRange':
+          result.supportedColorTemperatureRange.replace(serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange))!
+              as GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeSerializer
+    implements
+        StructuredSerializer<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange,
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+  ];
+  @override
+  final String wireName =
+      'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'min',
+      serializers.serialize(object.min, specifiedType: const FullType(int)),
+      'max',
+      serializers.serialize(object.max, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'min':
+          result.min = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'max':
+          result.max = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateSerializer
+    implements
+        StructuredSerializer<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state,
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state
+  ];
+  @override
+  final String wireName =
+      'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'colorTemperature',
+      serializers.serialize(object.colorTemperature,
+          specifiedType: const FullType(
+              GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'colorTemperature':
+          result.colorTemperature.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature))!
+              as GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureSerializer
+    implements
+        StructuredSerializer<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature,
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+  ];
+  @override
+  final String wireName =
+      'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.reported;
+    if (value != null) {
+      result
+        ..add('reported')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported)));
+    }
+    value = object.desired;
+    if (value != null) {
+      result
+        ..add('desired')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired)));
+    }
+    return result;
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'reported':
+          result.reported.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported))!
+              as GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported);
+          break;
+        case 'desired':
+          result.desired.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired))!
+              as GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedSerializer
+    implements
+        StructuredSerializer<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported,
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+  ];
+  @override
+  final String wireName =
+      'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(int)),
+      'sampledAt',
+      serializers.serialize(object.sampledAt,
+          specifiedType: const FullType(_i3.GDateTime)),
+      'createdAt',
+      serializers.serialize(object.createdAt,
+          specifiedType: const FullType(_i3.GDateTime)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'value':
+          result.value = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'sampledAt':
+          result.sampledAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredSerializer
+    implements
+        StructuredSerializer<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired,
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+  ];
+  @override
+  final String wireName =
+      'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(int)),
+      'updatedAt',
+      serializers.serialize(object.updatedAt,
+          specifiedType: const FullType(_i3.GDateTime)),
+    ];
+    Object? value;
+    value = object.delta;
+    if (value != null) {
+      result
+        ..add('delta')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'value':
+          result.value = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'delta':
+          result.delta = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'updatedAt':
+          result.updatedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
           break;
       }
     }
@@ -13495,6 +14029,1225 @@ class GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait_state_col
                 b,
                 'GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait_state_color_desired_delta',
                 'b'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait
+    extends GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait {
+  @override
+  final String G__typename;
+  @override
+  final _i3.GTraitName name;
+  @override
+  final String instance;
+  @override
+  final GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+      properties;
+  @override
+  final GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state
+      state;
+
+  factory _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait(
+          [void Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitBuilder)?
+              updates]) =>
+      (new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait._(
+      {required this.G__typename,
+      required this.name,
+      required this.instance,
+      required this.properties,
+      required this.state})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        name,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait',
+        'name');
+    BuiltValueNullFieldError.checkNotNull(
+        instance,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait',
+        'instance');
+    BuiltValueNullFieldError.checkNotNull(
+        properties,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait',
+        'properties');
+    BuiltValueNullFieldError.checkNotNull(
+        state,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait',
+        'state');
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait
+      rebuild(
+              void Function(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitBuilder
+      toBuilder() =>
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait &&
+        G__typename == other.G__typename &&
+        name == other.name &&
+        instance == other.instance &&
+        properties == other.properties &&
+        state == other.state;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, G__typename.hashCode), name.hashCode),
+                instance.hashCode),
+            properties.hashCode),
+        state.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait')
+          ..add('G__typename', G__typename)
+          ..add('name', name)
+          ..add('instance', instance)
+          ..add('properties', properties)
+          ..add('state', state))
+        .toString();
+  }
+}
+
+class GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitBuilder
+    implements
+        Builder<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait,
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitBuilder> {
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  _i3.GTraitName? _name;
+  _i3.GTraitName? get name => _$this._name;
+  set name(_i3.GTraitName? name) => _$this._name = name;
+
+  String? _instance;
+  String? get instance => _$this._instance;
+  set instance(String? instance) => _$this._instance = instance;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder?
+      _properties;
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder
+      get properties => _$this._properties ??=
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder();
+  set properties(
+          GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder?
+              properties) =>
+      _$this._properties = properties;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder?
+      _state;
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder
+      get state => _$this._state ??=
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder();
+  set state(
+          GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder?
+              state) =>
+      _$this._state = state;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitBuilder() {
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait
+        ._initializeBuilder(this);
+  }
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _name = $v.name;
+      _instance = $v.instance;
+      _properties = $v.properties.toBuilder();
+      _state = $v.state.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTraitBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait
+      build() {
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait',
+                  'G__typename'),
+              name: BuiltValueNullFieldError.checkNotNull(name,
+                  'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait', 'name'),
+              instance: BuiltValueNullFieldError.checkNotNull(
+                  instance,
+                  'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait',
+                  'instance'),
+              properties: properties.build(),
+              state: state.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'properties';
+        properties.build();
+        _$failedField = 'state';
+        state.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+    extends GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties {
+  @override
+  final String G__typename;
+  @override
+  final GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange?
+      supportedColorTemperatureRange;
+
+  factory _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties(
+          [void Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder)?
+              updates]) =>
+      (new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties._(
+      {required this.G__typename, this.supportedColorTemperatureRange})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties',
+        'G__typename');
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+      rebuild(
+              void Function(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder
+      toBuilder() =>
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties &&
+        G__typename == other.G__typename &&
+        supportedColorTemperatureRange == other.supportedColorTemperatureRange;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(0, G__typename.hashCode), supportedColorTemperatureRange.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties')
+          ..add('G__typename', G__typename)
+          ..add(
+              'supportedColorTemperatureRange', supportedColorTemperatureRange))
+        .toString();
+  }
+}
+
+class GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder
+    implements
+        Builder<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties,
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder> {
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder?
+      _supportedColorTemperatureRange;
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder
+      get supportedColorTemperatureRange => _$this
+              ._supportedColorTemperatureRange ??=
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder();
+  set supportedColorTemperatureRange(
+          GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder?
+              supportedColorTemperatureRange) =>
+      _$this._supportedColorTemperatureRange = supportedColorTemperatureRange;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder() {
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+        ._initializeBuilder(this);
+  }
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _supportedColorTemperatureRange =
+          $v.supportedColorTemperatureRange?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_propertiesBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+      build() {
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties
+                  ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties',
+                  'G__typename'),
+              supportedColorTemperatureRange:
+                  _supportedColorTemperatureRange?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'supportedColorTemperatureRange';
+        _supportedColorTemperatureRange?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+    extends GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange {
+  @override
+  final String G__typename;
+  @override
+  final int min;
+  @override
+  final int max;
+
+  factory _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange(
+          [void Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder)?
+              updates]) =>
+      (new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange._(
+      {required this.G__typename, required this.min, required this.max})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        min,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange',
+        'min');
+    BuiltValueNullFieldError.checkNotNull(
+        max,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange',
+        'max');
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+      rebuild(
+              void Function(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder
+      toBuilder() =>
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange &&
+        G__typename == other.G__typename &&
+        min == other.min &&
+        max == other.max;
+  }
+
+  @override
+  int get hashCode {
+    return $jf(
+        $jc($jc($jc(0, G__typename.hashCode), min.hashCode), max.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange')
+          ..add('G__typename', G__typename)
+          ..add('min', min)
+          ..add('max', max))
+        .toString();
+  }
+}
+
+class GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder
+    implements
+        Builder<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange,
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder> {
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _min;
+  int? get min => _$this._min;
+  set min(int? min) => _$this._min = min;
+
+  int? _max;
+  int? get max => _$this._max;
+  set max(int? max) => _$this._max = max;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder() {
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+        ._initializeBuilder(this);
+  }
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _min = $v.min;
+      _max = $v.max;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+      build() {
+    final _$result = _$v ??
+        new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+                ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange',
+                'G__typename'),
+            min: BuiltValueNullFieldError.checkNotNull(
+                min,
+                'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange',
+                'min'),
+            max: BuiltValueNullFieldError.checkNotNull(
+                max,
+                'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange',
+                'max'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state
+    extends GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state {
+  @override
+  final String G__typename;
+  @override
+  final GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+      colorTemperature;
+
+  factory _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state(
+          [void Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder)?
+              updates]) =>
+      (new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state._(
+      {required this.G__typename, required this.colorTemperature})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        colorTemperature,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state',
+        'colorTemperature');
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state
+      rebuild(
+              void Function(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder
+      toBuilder() =>
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state &&
+        G__typename == other.G__typename &&
+        colorTemperature == other.colorTemperature;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, G__typename.hashCode), colorTemperature.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state')
+          ..add('G__typename', G__typename)
+          ..add('colorTemperature', colorTemperature))
+        .toString();
+  }
+}
+
+class GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder
+    implements
+        Builder<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state,
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder> {
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder?
+      _colorTemperature;
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder
+      get colorTemperature => _$this._colorTemperature ??=
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder();
+  set colorTemperature(
+          GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder?
+              colorTemperature) =>
+      _$this._colorTemperature = colorTemperature;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder() {
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state
+        ._initializeBuilder(this);
+  }
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _colorTemperature = $v.colorTemperature.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_stateBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state
+      build() {
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state
+                  ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state',
+                  'G__typename'),
+              colorTemperature: colorTemperature.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'colorTemperature';
+        colorTemperature.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+    extends GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature {
+  @override
+  final String G__typename;
+  @override
+  final GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported?
+      reported;
+  @override
+  final GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired?
+      desired;
+
+  factory _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature(
+          [void Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder)?
+              updates]) =>
+      (new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature._(
+      {required this.G__typename, this.reported, this.desired})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature',
+        'G__typename');
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+      rebuild(
+              void Function(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder
+      toBuilder() =>
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature &&
+        G__typename == other.G__typename &&
+        reported == other.reported &&
+        desired == other.desired;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc($jc(0, G__typename.hashCode), reported.hashCode),
+        desired.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature')
+          ..add('G__typename', G__typename)
+          ..add('reported', reported)
+          ..add('desired', desired))
+        .toString();
+  }
+}
+
+class GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder
+    implements
+        Builder<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature,
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder> {
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder?
+      _reported;
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder
+      get reported => _$this._reported ??=
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder();
+  set reported(
+          GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder?
+              reported) =>
+      _$this._reported = reported;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder?
+      _desired;
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder
+      get desired => _$this._desired ??=
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder();
+  set desired(
+          GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder?
+              desired) =>
+      _$this._desired = desired;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder() {
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+        ._initializeBuilder(this);
+  }
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _reported = $v.reported?.toBuilder();
+      _desired = $v.desired?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+      build() {
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+                  ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature',
+                  'G__typename'),
+              reported: _reported?.build(),
+              desired: _desired?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'reported';
+        _reported?.build();
+        _$failedField = 'desired';
+        _desired?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+    extends GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported {
+  @override
+  final String G__typename;
+  @override
+  final int value;
+  @override
+  final _i3.GDateTime sampledAt;
+  @override
+  final _i3.GDateTime createdAt;
+
+  factory _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported(
+          [void Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder)?
+              updates]) =>
+      (new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported._(
+      {required this.G__typename,
+      required this.value,
+      required this.sampledAt,
+      required this.createdAt})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        value,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported',
+        'value');
+    BuiltValueNullFieldError.checkNotNull(
+        sampledAt,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported',
+        'sampledAt');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported',
+        'createdAt');
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+      rebuild(
+              void Function(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder
+      toBuilder() =>
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported &&
+        G__typename == other.G__typename &&
+        value == other.value &&
+        sampledAt == other.sampledAt &&
+        createdAt == other.createdAt;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), value.hashCode),
+            sampledAt.hashCode),
+        createdAt.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported')
+          ..add('G__typename', G__typename)
+          ..add('value', value)
+          ..add('sampledAt', sampledAt)
+          ..add('createdAt', createdAt))
+        .toString();
+  }
+}
+
+class GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder
+    implements
+        Builder<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported,
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder> {
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _value;
+  int? get value => _$this._value;
+  set value(int? value) => _$this._value = value;
+
+  _i3.GDateTimeBuilder? _sampledAt;
+  _i3.GDateTimeBuilder get sampledAt =>
+      _$this._sampledAt ??= new _i3.GDateTimeBuilder();
+  set sampledAt(_i3.GDateTimeBuilder? sampledAt) =>
+      _$this._sampledAt = sampledAt;
+
+  _i3.GDateTimeBuilder? _createdAt;
+  _i3.GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new _i3.GDateTimeBuilder();
+  set createdAt(_i3.GDateTimeBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder() {
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+        ._initializeBuilder(this);
+  }
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _value = $v.value;
+      _sampledAt = $v.sampledAt.toBuilder();
+      _createdAt = $v.createdAt.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+      build() {
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+                  ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported',
+                  'G__typename'),
+              value: BuiltValueNullFieldError.checkNotNull(
+                  value,
+                  'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported',
+                  'value'),
+              sampledAt: sampledAt.build(),
+              createdAt: createdAt.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'sampledAt';
+        sampledAt.build();
+        _$failedField = 'createdAt';
+        createdAt.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+    extends GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired {
+  @override
+  final String G__typename;
+  @override
+  final int value;
+  @override
+  final int? delta;
+  @override
+  final _i3.GDateTime updatedAt;
+
+  factory _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired(
+          [void Function(
+                  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder)?
+              updates]) =>
+      (new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired._(
+      {required this.G__typename,
+      required this.value,
+      this.delta,
+      required this.updatedAt})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        value,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired',
+        'value');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt,
+        'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired',
+        'updatedAt');
+  }
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+      rebuild(
+              void Function(
+                      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder
+      toBuilder() =>
+          new GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired &&
+        G__typename == other.G__typename &&
+        value == other.value &&
+        delta == other.delta &&
+        updatedAt == other.updatedAt;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), value.hashCode), delta.hashCode),
+        updatedAt.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired')
+          ..add('G__typename', G__typename)
+          ..add('value', value)
+          ..add('delta', delta)
+          ..add('updatedAt', updatedAt))
+        .toString();
+  }
+}
+
+class GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder
+    implements
+        Builder<
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired,
+            GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder> {
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _value;
+  int? get value => _$this._value;
+  set value(int? value) => _$this._value = value;
+
+  int? _delta;
+  int? get delta => _$this._delta;
+  set delta(int? delta) => _$this._delta = delta;
+
+  _i3.GDateTimeBuilder? _updatedAt;
+  _i3.GDateTimeBuilder get updatedAt =>
+      _$this._updatedAt ??= new _i3.GDateTimeBuilder();
+  set updatedAt(_i3.GDateTimeBuilder? updatedAt) =>
+      _$this._updatedAt = updatedAt;
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder() {
+    GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+        ._initializeBuilder(this);
+  }
+
+  GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _value = $v.value;
+      _delta = $v.delta;
+      _updatedAt = $v.updatedAt.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+      build() {
+    _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+                  ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired',
+                  'G__typename'),
+              value: BuiltValueNullFieldError.checkNotNull(
+                  value,
+                  'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired',
+                  'value'),
+              delta: delta,
+              updatedAt: updatedAt.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'updatedAt';
+        updatedAt.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDevicesData_me_devices_edges_node_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

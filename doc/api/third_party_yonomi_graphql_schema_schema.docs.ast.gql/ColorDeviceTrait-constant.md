@@ -12,7 +12,7 @@
 
 
 [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html) const ColorDeviceTrait
-  
+
 
 
 

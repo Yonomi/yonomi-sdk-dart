@@ -1,7 +1,14 @@
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
-import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
+import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/battery_level_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/color_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 
 import '../utils/test_fixtures.dart';
 
@@ -467,9 +474,39 @@ void main() {
   });
 
   test(
-      '''#getBatteryLevelTrait should throw argumentError if trait object is not correct type''',
+      'ColorTemperature : responseToDeviceTraitConverter maps single ColorTemperature DeviceTrait to ColorTemperatureTrait',
       () {
-    expect(() => DevicesRepository.getBatteryLevelTrait(null),
+    final colorTemperature = GgetDeviceData_device.fromJson(
+      TestFixtures.buildColorTemperatureJsonResponse(
+        colorTemperature: 6500,
+        rangeMin: 0,
+        rangeMax: 7000,
+      ),
+    );
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        colorTemperature!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(ColorTemperatureTrait));
+
+    var traitUnderTest = convertedValue.first as ColorTemperatureTrait;
+    expect(traitUnderTest.name, 'color_temperature');
+    expect(traitUnderTest.colorTemperature, equals(6500));
+    expect(traitUnderTest.supportedColorTemperatureRange.min, equals(0));
+    expect(traitUnderTest.supportedColorTemperatureRange.max, equals(7000));
+  });
+
+  test(
+      'getColorTemperatureTrait should throw argumentError if trait object is not correct type',
+      () {
+    expect(() => ColorTemperatureRepository.getColorTemperatureTrait(null),
+        throwsA(isA<ArgumentError>()));
+  });
+
+  test(
+      'getBatteryLevelTrait should throw argumentError if trait object is not correct type',
+      () {
+    expect(() => BatteryLevelRepository.getBatteryLevelTrait(null),
         throwsA(isA<ArgumentError>()));
   });
 

@@ -123,6 +123,25 @@ fragment DeviceDetails on Device {
         }
       }
     }
+    ... on ColorDeviceTrait {
+      state {
+        color {
+          reported { value { h s b } sampledAt createdAt }
+          desired { value { h s b } delta { h s b } updatedAt }
+        }
+      }
+    }
+    ... on ColorTemperatureDeviceTrait {
+      properties {
+        supportedColorTemperatureRange { min max }
+      }
+      state {
+        colorTemperature {
+          reported { value sampledAt createdAt }
+          desired { value delta updatedAt }
+        }
+      }
+    }
     ... on ThermostatSettingDeviceTrait {
       properties {
         availableThermostatModes

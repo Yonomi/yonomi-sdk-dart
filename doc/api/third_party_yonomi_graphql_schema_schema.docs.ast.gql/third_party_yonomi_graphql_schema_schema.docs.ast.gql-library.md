@@ -64,6 +64,15 @@
 
 
 
+##### [BetaCardCredential](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/BetaCardCredential-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
 ##### [BrightnessDeviceTrait](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/BrightnessDeviceTrait-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
 
 
@@ -109,7 +118,97 @@
 
 
 
-##### [ClaimableDevice](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ClaimableDevice-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+##### [ColorDeviceTrait](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorDeviceTrait-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorState](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorState-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorStateColorField](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorStateColorField-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorStateDesiredColor](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorStateDesiredColor-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorStateReportedColor](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorStateReportedColor-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorTemperatureDeviceTrait](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorTemperatureDeviceTrait-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorTemperatureProperties](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorTemperatureProperties-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorTemperatureState](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorTemperatureState-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorTemperatureStateColorTemperatureField](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorTemperatureStateColorTemperatureField-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorTemperatureStateDesiredColorTemperature](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorTemperatureStateDesiredColorTemperature-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ColorTemperatureStateReportedColorTemperature](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ColorTemperatureStateReportedColorTemperature-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
 
 
 
@@ -316,15 +415,6 @@
 
 
 
-##### [DeviceOwner](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/DeviceOwner-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
-
-
-
-   
-
-
-
-
 ##### [DeviceStateClearedEvent](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/DeviceStateClearedEvent-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
 
 
@@ -362,6 +452,15 @@
 
 
 ##### [DynamicFloatRange](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/DynamicFloatRange-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [DynamicIntRange](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/DynamicIntRange-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
 
 
 
@@ -685,6 +784,42 @@
 
 
 
+##### [PinCodeCredentialItem](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/PinCodeCredentialItem-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [PinCodeCredentialItemConnection](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/PinCodeCredentialItemConnection-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [PinCodeCredentialItemEdge](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/PinCodeCredentialItemEdge-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [PinCodeCredentialItemInput](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/PinCodeCredentialItemInput-constant.md) const [InputObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/InputObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
 ##### [PinCodeCredentialProperties](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/PinCodeCredentialProperties-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
 
 
@@ -703,6 +838,15 @@
 
 
 
+##### [PinCodeCredentialStateDesiredPinCodeCredentialList](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/PinCodeCredentialStateDesiredPinCodeCredentialList-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
 ##### [PinCodeCredentialStateDesiredPinCodeCredentials](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/PinCodeCredentialStateDesiredPinCodeCredentials-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
 
 
@@ -712,7 +856,25 @@
 
 
 
+##### [PinCodeCredentialStatePinCodeCredentialListField](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/PinCodeCredentialStatePinCodeCredentialListField-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
 ##### [PinCodeCredentialStatePinCodeCredentialsField](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/PinCodeCredentialStatePinCodeCredentialsField-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [PinCodeCredentialStateReportedPinCodeCredentialList](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/PinCodeCredentialStateReportedPinCodeCredentialList-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
 
 
 
@@ -802,6 +964,24 @@
 
 
 
+##### [RecurringSchedule](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/RecurringSchedule-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [RecurringScheduleInput](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/RecurringScheduleInput-constant.md) const [InputObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/InputObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
 ##### [RemoveLinkedAccountResponse](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/RemoveLinkedAccountResponse-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
 
 
@@ -829,6 +1009,24 @@
 
 
 
+##### [TemporarySchedule](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/TemporarySchedule-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [TemporaryScheduleInput](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/TemporaryScheduleInput-constant.md) const [InputObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/InputObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
 ##### [Tenant](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/Tenant-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
 
 
@@ -839,6 +1037,24 @@
 
 
 ##### [ThermostatMode](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ThermostatMode-constant.md) const [EnumTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/EnumTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ThermostatRange](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ThermostatRange-constant.md) const [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html)
+
+
+
+   
+
+
+
+
+##### [ThermostatRangeInput](../third_party_yonomi_graphql_schema_schema.docs.ast.gql/ThermostatRangeInput-constant.md) const [InputObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/InputObjectTypeDefinitionNode-class.html)
 
 
 

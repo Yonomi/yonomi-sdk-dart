@@ -43,6 +43,8 @@ static List<Trait> responseToDeviceTraitConverter(List deviceTraits) {
         return PowerRepository.getPowerTrait(trait);
       case GTraitName.BRIGHTNESS:
         return BrightnessRepository.getBrightnessTrait(trait);
+      case GTraitName.COLOR_TEMPERATURE:
+        return ColorTemperatureRepository.getColorTemperatureTrait(trait);
       default:
         return UnknownTrait(trait.name.toString());
     }

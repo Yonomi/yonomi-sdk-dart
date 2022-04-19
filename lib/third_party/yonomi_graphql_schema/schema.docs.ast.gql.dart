@@ -231,6 +231,62 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
               name: _i1.NameNode(value: 'CreateActionResponse'),
               isNonNull: true)),
       _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'actionColorSetColor'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'color'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'HSBColorValueInput'),
+                    isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name:
+              _i1.NameNode(value: 'actionColorTemperatureSetColorTemperature'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'colorTemperature'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'actionLockSetLocked'),
           directives: [],
           args: [
@@ -318,6 +374,92 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(
               value: 'actionPinCodeCredentialDeletePinCodeCredential'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'pinCode'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'actionPinCodeCredentialAddPinCodeCredential'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'pinCodeCredential'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'PinCodeCredentialItemInput'),
+                    isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'actionPinCodeCredentialModifyPinCodeCredential'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'pinCodeCredential'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'PinCodeCredentialItemInput'),
+                    isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'actionPinCodeCredentialRemovePinCodeCredential'),
           directives: [],
           args: [
             _i1.InputValueDefinitionNode(
@@ -529,18 +671,78 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'ClaimableDevice'), isNonNull: true)),
       _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'CLAIMABLE_unclaimOwnership'),
+          name: _i1.NameNode(
+              value:
+                  'actionThermostatSettingSetThermostatModeAndTargetTemperature'),
           directives: [],
           args: [
             _i1.InputValueDefinitionNode(
                 name: _i1.NameNode(value: 'deviceId'),
                 directives: [],
                 type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
                     name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'mode'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ThermostatMode'),
+                    isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'targetTemperature'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Float'), isNonNull: false),
                 defaultValue: null)
           ],
           type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'ClaimableDevice'), isNonNull: true)),
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value:
+                  'actionThermostatSettingSetThermostatModeAndTargetTemperatureRange'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'mode'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ThermostatMode'),
+                    isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'range'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ThermostatRangeInput'),
+                    isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'MOCK_CONNECTOR_installDiscoveryPayload'),
           directives: [],
@@ -723,6 +925,31 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
               name: _i1.NameNode(value: 'JSON'), isNonNull: true)),
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'MOCK_CONNECTOR_registerDeviceIdentity'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'integrationId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'physicalId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceCertificate'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'JSON'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'MOCK_CONNECTOR_emitIdentityAndGetJWT'),
           directives: [],
           args: [
             _i1.InputValueDefinitionNode(
@@ -994,6 +1221,29 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
                   name: _i1.NameNode(value: 'Integration'), isNonNull: true),
               isNonNull: true))
     ]);
+const HSBColorValueInput = _i1.InputObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'HSBColorValueInput'),
+    directives: [],
+    fields: [
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'h'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 's'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'b'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true),
+          defaultValue: null)
+    ]);
 const PinCodeCredentialInput = _i1.InputObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'PinCodeCredentialInput'),
     directives: [],
@@ -1021,6 +1271,83 @@ const PinCodeCredentialInput = _i1.InputObjectTypeDefinitionNode(
     ]);
 const RRuleSchedule = _i1.ScalarTypeDefinitionNode(
     name: _i1.NameNode(value: 'RRuleSchedule'), directives: []);
+const PinCodeCredentialItemInput = _i1.InputObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'PinCodeCredentialItemInput'),
+    directives: [],
+    fields: [
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'pinCode'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'name'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'alwaysActive'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'recurringSchedules'),
+          directives: [],
+          type: _i1.ListTypeNode(
+              type: _i1.NamedTypeNode(
+                  name: _i1.NameNode(value: 'RecurringScheduleInput'),
+                  isNonNull: true),
+              isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'temporarySchedules'),
+          directives: [],
+          type: _i1.ListTypeNode(
+              type: _i1.NamedTypeNode(
+                  name: _i1.NameNode(value: 'TemporaryScheduleInput'),
+                  isNonNull: true),
+              isNonNull: true),
+          defaultValue: null)
+    ]);
+const RecurringScheduleInput = _i1.InputObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'RecurringScheduleInput'),
+    directives: [],
+    fields: [
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'duration'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'rrule'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'RRuleSchedule'), isNonNull: true),
+          defaultValue: null)
+    ]);
+const TemporaryScheduleInput = _i1.InputObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'TemporaryScheduleInput'),
+    directives: [],
+    fields: [
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'startDatetime'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'endDatetime'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true),
+          defaultValue: null)
+    ]);
+const DateTime = _i1.ScalarTypeDefinitionNode(
+    name: _i1.NameNode(value: 'DateTime'), directives: []);
 const ThermostatMode = _i1.EnumTypeDefinitionNode(
     name: _i1.NameNode(value: 'ThermostatMode'),
     directives: [],
@@ -1073,6 +1400,23 @@ const FanMode = _i1.EnumTypeDefinitionNode(
       _i1.EnumValueDefinitionNode(
           name: _i1.NameNode(value: 'HIGH'), directives: [])
     ]);
+const ThermostatRangeInput = _i1.InputObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ThermostatRangeInput'),
+    directives: [],
+    fields: [
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'setPointLow'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Float'), isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'setPointHigh'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Float'), isNonNull: true),
+          defaultValue: null)
+    ]);
 const JSONObject = _i1.ScalarTypeDefinitionNode(
     name: _i1.NameNode(value: 'JSONObject'), directives: []);
 const TraitName = _i1.EnumTypeDefinitionNode(
@@ -1117,8 +1461,6 @@ const MockReportedListStateValue = _i1.InputObjectTypeDefinitionNode(
               isNonNull: false),
           defaultValue: null)
     ]);
-const DateTime = _i1.ScalarTypeDefinitionNode(
-    name: _i1.NameNode(value: 'DateTime'), directives: []);
 const VIRTUAL_CONNECTOR_ActionStatus = _i1.EnumTypeDefinitionNode(
     name: _i1.NameNode(value: 'VIRTUAL_CONNECTOR_ActionStatus'),
     directives: [],
@@ -1492,6 +1834,12 @@ const GeneratedAccountLinkingUrl = _i1.ObjectTypeDefinitionNode(
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'String'), isNonNull: true)),
       _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'linkedAccountId'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'expiresAt'),
           directives: [],
           args: [],
@@ -1824,6 +2172,215 @@ const DeviceEventConnection = _i1.ObjectTypeDefinitionNode(
                   isNonNull: true),
               isNonNull: true))
     ]);
+const ProductInformation = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ProductInformation'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'description'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'manufacturer'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'model'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'serialNumber'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: false))
+    ]);
+const Device = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'Device'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'id'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ID'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'displayName'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'productInformation'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ProductInformation'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'createdAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'updatedAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'traits'),
+          directives: [],
+          args: [],
+          type: _i1.ListTypeNode(
+              type: _i1.NamedTypeNode(
+                  name: _i1.NameNode(value: 'DeviceTrait'), isNonNull: true),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'events'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'first'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
+                defaultValue: _i1.IntValueNode(value: '10')),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'after'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: false),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'filter'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'DeviceEventFilterInput'),
+                    isNonNull: false),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'sort'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'DeviceEventSortInput'),
+                    isNonNull: false),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DeviceEventConnection'),
+              isNonNull: true))
+    ]);
+const DeviceEventFilterInput = _i1.InputObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'DeviceEventFilterInput'),
+    directives: [],
+    fields: [
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'eventType'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DeviceEventTypeName'),
+              isNonNull: false),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'before'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: false),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'after'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: false),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'traitInstance'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: false),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'traits'),
+          directives: [],
+          type: _i1.ListTypeNode(
+              type: _i1.NamedTypeNode(
+                  name: _i1.NameNode(value: 'TraitName'), isNonNull: true),
+              isNonNull: false),
+          defaultValue: null)
+    ]);
+const DeviceEventTypeName = _i1.EnumTypeDefinitionNode(
+    name: _i1.NameNode(value: 'DeviceEventTypeName'),
+    directives: [],
+    values: [
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'DEVICE_ACTION_CREATED'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'DEVICE_ACTION_UPDATED'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'DEVICE_STATE_UPDATED'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'DEVICE_STATE_CLEARED'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'DEVICE_CONFIGURED'), directives: [])
+    ]);
+const DeviceEventSortInput = _i1.EnumTypeDefinitionNode(
+    name: _i1.NameNode(value: 'DeviceEventSortInput'),
+    directives: [],
+    values: [
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'ASCENDING'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'DESCENDING'), directives: [])
+    ]);
+const DeviceEdge = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'DeviceEdge'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'cursor'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'node'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Device'), isNonNull: true))
+    ]);
+const DeviceConnection = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'DeviceConnection'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'pageInfo'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'PageInfo'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'edges'),
+          directives: [],
+          args: [],
+          type: _i1.ListTypeNode(
+              type: _i1.NamedTypeNode(
+                  name: _i1.NameNode(value: 'DeviceEdge'), isNonNull: true),
+              isNonNull: true))
+    ]);
 const IntRange = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'IntRange'),
     directives: [],
@@ -1876,6 +2433,12 @@ const DeviceTrait = _i1.InterfaceTypeDefinitionNode(
           args: [],
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'isBeta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'events'),
           directives: [],
@@ -1935,30 +2498,6 @@ const TraitFilteredEventFilterInput = _i1.InputObjectTypeDefinitionNode(
               name: _i1.NameNode(value: 'DateTime'), isNonNull: false),
           defaultValue: null)
     ]);
-const DeviceEventTypeName = _i1.EnumTypeDefinitionNode(
-    name: _i1.NameNode(value: 'DeviceEventTypeName'),
-    directives: [],
-    values: [
-      _i1.EnumValueDefinitionNode(
-          name: _i1.NameNode(value: 'DEVICE_ACTION_CREATED'), directives: []),
-      _i1.EnumValueDefinitionNode(
-          name: _i1.NameNode(value: 'DEVICE_ACTION_UPDATED'), directives: []),
-      _i1.EnumValueDefinitionNode(
-          name: _i1.NameNode(value: 'DEVICE_STATE_UPDATED'), directives: []),
-      _i1.EnumValueDefinitionNode(
-          name: _i1.NameNode(value: 'DEVICE_STATE_CLEARED'), directives: []),
-      _i1.EnumValueDefinitionNode(
-          name: _i1.NameNode(value: 'DEVICE_CONFIGURED'), directives: [])
-    ]);
-const DeviceEventSortInput = _i1.EnumTypeDefinitionNode(
-    name: _i1.NameNode(value: 'DeviceEventSortInput'),
-    directives: [],
-    values: [
-      _i1.EnumValueDefinitionNode(
-          name: _i1.NameNode(value: 'ASCENDING'), directives: []),
-      _i1.EnumValueDefinitionNode(
-          name: _i1.NameNode(value: 'DESCENDING'), directives: [])
-    ]);
 const ReportedStateField = _i1.InterfaceTypeDefinitionNode(
     name: _i1.NameNode(value: 'ReportedStateField'),
     directives: [],
@@ -1987,6 +2526,24 @@ const DesiredStateField = _i1.InterfaceTypeDefinitionNode(
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'DateTime'), isNonNull: true))
     ]);
+const BetaCardCredential = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'BetaCardCredential'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'credential'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'id'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true))
+    ]);
 const DynamicFloatRange = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'DynamicFloatRange'),
     directives: [],
@@ -2004,6 +2561,24 @@ const DynamicFloatRange = _i1.ObjectTypeDefinitionNode(
           args: [],
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'Float'), isNonNull: true))
+    ]);
+const DynamicIntRange = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'DynamicIntRange'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'min'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'max'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true))
     ]);
 const HSBColorValue = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'HSBColorValue'),
@@ -2054,6 +2629,102 @@ const PinCodeCredential = _i1.ObjectTypeDefinitionNode(
               type: _i1.NamedTypeNode(
                   name: _i1.NameNode(value: 'RRuleSchedule'), isNonNull: true),
               isNonNull: true))
+    ]);
+const PinCodeCredentialItem = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'PinCodeCredentialItem'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'pinCode'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'name'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'alwaysActive'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'recurringSchedules'),
+          directives: [],
+          args: [],
+          type: _i1.ListTypeNode(
+              type: _i1.NamedTypeNode(
+                  name: _i1.NameNode(value: 'RecurringSchedule'),
+                  isNonNull: true),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'temporarySchedules'),
+          directives: [],
+          args: [],
+          type: _i1.ListTypeNode(
+              type: _i1.NamedTypeNode(
+                  name: _i1.NameNode(value: 'TemporarySchedule'),
+                  isNonNull: true),
+              isNonNull: true))
+    ]);
+const RecurringSchedule = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'RecurringSchedule'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'duration'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'rrule'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'RRuleSchedule'), isNonNull: true))
+    ]);
+const TemporarySchedule = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'TemporarySchedule'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'startDatetime'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'endDatetime'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true))
+    ]);
+const ThermostatRange = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ThermostatRange'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'setPointLow'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Float'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'setPointHigh'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Float'), isNonNull: true))
     ]);
 const BatteryLevelStateReportedPercentage = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'BatteryLevelStateReportedPercentage'),
@@ -2162,6 +2833,12 @@ const BatteryLevelDeviceTrait = _i1.ObjectTypeDefinitionNode(
           args: [],
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'isBeta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'events'),
           directives: [],
@@ -2311,6 +2988,12 @@ const BrightnessDeviceTrait = _i1.ObjectTypeDefinitionNode(
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'String'), isNonNull: true)),
       _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'isBeta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'events'),
           directives: [],
           args: [
@@ -2350,6 +3033,341 @@ const BrightnessDeviceTrait = _i1.ObjectTypeDefinitionNode(
           args: [],
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'BrightnessState'), isNonNull: true))
+    ]);
+const ColorStateReportedColor = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ColorStateReportedColor'),
+    directives: [],
+    interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'ReportedStateField'), isNonNull: false)
+    ],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'createdAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'sampledAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'value'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'HSBColorValue'), isNonNull: true))
+    ]);
+const ColorStateDesiredColor = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ColorStateDesiredColor'),
+    directives: [],
+    interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'DesiredStateField'), isNonNull: false)
+    ],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'updatedAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'value'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'HSBColorValue'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'delta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'HSBColorValue'), isNonNull: false))
+    ]);
+const ColorStateColorField = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ColorStateColorField'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'reported'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ColorStateReportedColor'),
+              isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'desired'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ColorStateDesiredColor'),
+              isNonNull: false))
+    ]);
+const ColorState = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ColorState'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'color'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ColorStateColorField'),
+              isNonNull: true))
+    ]);
+const ColorDeviceTrait = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ColorDeviceTrait'),
+    directives: [],
+    interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'DeviceTrait'), isNonNull: false)
+    ],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'name'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'TraitName'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'instance'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'isBeta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'events'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'first'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
+                defaultValue: _i1.IntValueNode(value: '10')),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'after'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: false),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'filter'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'TraitFilteredEventFilterInput'),
+                    isNonNull: false),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'sort'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'DeviceEventSortInput'),
+                    isNonNull: false),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DeviceEventConnection'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'state'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ColorState'), isNonNull: true))
+    ]);
+const ColorTemperatureStateReportedColorTemperature =
+    _i1.ObjectTypeDefinitionNode(
+        name: _i1.NameNode(
+            value: 'ColorTemperatureStateReportedColorTemperature'),
+        directives: [],
+        interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'ReportedStateField'), isNonNull: false)
+    ],
+        fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'createdAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'sampledAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'value'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true))
+    ]);
+const ColorTemperatureStateDesiredColorTemperature =
+    _i1.ObjectTypeDefinitionNode(
+        name:
+            _i1.NameNode(value: 'ColorTemperatureStateDesiredColorTemperature'),
+        directives: [],
+        interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'DesiredStateField'), isNonNull: false)
+    ],
+        fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'updatedAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'value'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'delta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: false))
+    ]);
+const ColorTemperatureStateColorTemperatureField = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ColorTemperatureStateColorTemperatureField'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'reported'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'ColorTemperatureStateReportedColorTemperature'),
+              isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'desired'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'ColorTemperatureStateDesiredColorTemperature'),
+              isNonNull: false))
+    ]);
+const ColorTemperatureState = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ColorTemperatureState'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'colorTemperature'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'ColorTemperatureStateColorTemperatureField'),
+              isNonNull: true))
+    ]);
+const ColorTemperatureProperties = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ColorTemperatureProperties'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'supportedColorTemperatureRange'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'IntRange'), isNonNull: false))
+    ]);
+const ColorTemperatureDeviceTrait = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ColorTemperatureDeviceTrait'),
+    directives: [],
+    interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'DeviceTrait'), isNonNull: false)
+    ],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'name'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'TraitName'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'instance'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'isBeta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'events'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'first'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
+                defaultValue: _i1.IntValueNode(value: '10')),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'after'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: false),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'filter'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'TraitFilteredEventFilterInput'),
+                    isNonNull: false),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'sort'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'DeviceEventSortInput'),
+                    isNonNull: false),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DeviceEventConnection'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'properties'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ColorTemperatureProperties'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'state'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ColorTemperatureState'),
+              isNonNull: true))
     ]);
 const LockStateReportedIsLocked = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'LockStateReportedIsLocked'),
@@ -2551,6 +3569,12 @@ const LockDeviceTrait = _i1.ObjectTypeDefinitionNode(
           args: [],
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'isBeta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'events'),
           directives: [],
@@ -2761,6 +3785,170 @@ const PinCodeCredentialStatePinCodeCredentialsField =
                   value: 'PinCodeCredentialStateDesiredPinCodeCredentials'),
               isNonNull: false))
     ]);
+const PinCodeCredentialItemEdge = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'PinCodeCredentialItemEdge'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'cursor'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'node'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'PinCodeCredentialItem'),
+              isNonNull: true))
+    ]);
+const PinCodeCredentialItemConnection = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'PinCodeCredentialItemConnection'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'pageInfo'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'PageInfo'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'edges'),
+          directives: [],
+          args: [],
+          type: _i1.ListTypeNode(
+              type: _i1.NamedTypeNode(
+                  name: _i1.NameNode(value: 'PinCodeCredentialItemEdge'),
+                  isNonNull: true),
+              isNonNull: true))
+    ]);
+const PinCodeCredentialStateReportedPinCodeCredentialList =
+    _i1.ObjectTypeDefinitionNode(
+        name: _i1.NameNode(
+            value: 'PinCodeCredentialStateReportedPinCodeCredentialList'),
+        directives: [],
+        interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'ReportedStateField'), isNonNull: false)
+    ],
+        fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'createdAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'sampledAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'value'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'first'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
+                defaultValue: _i1.IntValueNode(value: '10')),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'after'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: false),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'PinCodeCredentialItemConnection'),
+              isNonNull: true))
+    ]);
+const PinCodeCredentialStateDesiredPinCodeCredentialList =
+    _i1.ObjectTypeDefinitionNode(
+        name: _i1.NameNode(
+            value: 'PinCodeCredentialStateDesiredPinCodeCredentialList'),
+        directives: [],
+        interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'DesiredStateField'), isNonNull: false)
+    ],
+        fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'updatedAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'value'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'first'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
+                defaultValue: _i1.IntValueNode(value: '10')),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'after'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: false),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'PinCodeCredentialItemConnection'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'delta'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'first'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
+                defaultValue: _i1.IntValueNode(value: '10')),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'after'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: false),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'PinCodeCredentialItemConnection'),
+              isNonNull: false))
+    ]);
+const PinCodeCredentialStatePinCodeCredentialListField =
+    _i1.ObjectTypeDefinitionNode(
+        name: _i1.NameNode(
+            value: 'PinCodeCredentialStatePinCodeCredentialListField'),
+        directives: [],
+        interfaces: [],
+        fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'reported'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'PinCodeCredentialStateReportedPinCodeCredentialList'),
+              isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'desired'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'PinCodeCredentialStateDesiredPinCodeCredentialList'),
+              isNonNull: false))
+    ]);
 const PinCodeCredentialState = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'PinCodeCredentialState'),
     directives: [],
@@ -2773,6 +3961,14 @@ const PinCodeCredentialState = _i1.ObjectTypeDefinitionNode(
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(
                   value: 'PinCodeCredentialStatePinCodeCredentialsField'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'pinCodeCredentialList'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'PinCodeCredentialStatePinCodeCredentialListField'),
               isNonNull: true))
     ]);
 const PinCodeCredentialProperties = _i1.ObjectTypeDefinitionNode(
@@ -2803,7 +3999,27 @@ const PinCodeCredentialProperties = _i1.ObjectTypeDefinitionNode(
           directives: [],
           args: [],
           type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'IntRange'), isNonNull: false))
+              name: _i1.NameNode(value: 'IntRange'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'maxNumberOfRecurringSchedulesPerPinCodeCredential'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'maxNumberOfTemporarySchedulesPerPinCodeCredential'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'exclusiveSchedules'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false))
     ]);
 const PinCodeCredentialDeviceTrait = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'PinCodeCredentialDeviceTrait'),
@@ -2825,6 +4041,12 @@ const PinCodeCredentialDeviceTrait = _i1.ObjectTypeDefinitionNode(
           args: [],
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'isBeta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'events'),
           directives: [],
@@ -2993,6 +4215,12 @@ const PowerDeviceTrait = _i1.ObjectTypeDefinitionNode(
           args: [],
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'isBeta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'events'),
           directives: [],
@@ -3954,6 +5182,12 @@ const ThermostatSettingDeviceTrait = _i1.ObjectTypeDefinitionNode(
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'String'), isNonNull: true)),
       _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'isBeta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'events'),
           directives: [],
           args: [
@@ -4002,233 +5236,6 @@ const ThermostatSettingDeviceTrait = _i1.ObjectTypeDefinitionNode(
               name: _i1.NameNode(value: 'ThermostatSettingState'),
               isNonNull: true))
     ]);
-const ProductInformation = _i1.ObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'ProductInformation'),
-    directives: [],
-    interfaces: [],
-    fields: [
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'description'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'manufacturer'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'model'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'serialNumber'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: false))
-    ]);
-const Device = _i1.ObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'Device'),
-    directives: [],
-    interfaces: [],
-    fields: [
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'id'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'ID'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'displayName'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'productInformation'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'ProductInformation'),
-              isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'createdAt'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'updatedAt'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'traits'),
-          directives: [],
-          args: [],
-          type: _i1.ListTypeNode(
-              type: _i1.NamedTypeNode(
-                  name: _i1.NameNode(value: 'DeviceTrait'), isNonNull: true),
-              isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'events'),
-          directives: [],
-          args: [
-            _i1.InputValueDefinitionNode(
-                name: _i1.NameNode(value: 'first'),
-                directives: [],
-                type: _i1.NamedTypeNode(
-                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
-                defaultValue: _i1.IntValueNode(value: '10')),
-            _i1.InputValueDefinitionNode(
-                name: _i1.NameNode(value: 'after'),
-                directives: [],
-                type: _i1.NamedTypeNode(
-                    name: _i1.NameNode(value: 'String'), isNonNull: false),
-                defaultValue: null),
-            _i1.InputValueDefinitionNode(
-                name: _i1.NameNode(value: 'filter'),
-                directives: [],
-                type: _i1.NamedTypeNode(
-                    name: _i1.NameNode(value: 'DeviceEventFilterInput'),
-                    isNonNull: false),
-                defaultValue: null),
-            _i1.InputValueDefinitionNode(
-                name: _i1.NameNode(value: 'sort'),
-                directives: [],
-                type: _i1.NamedTypeNode(
-                    name: _i1.NameNode(value: 'DeviceEventSortInput'),
-                    isNonNull: false),
-                defaultValue: null)
-          ],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'DeviceEventConnection'),
-              isNonNull: true))
-    ]);
-const DeviceEventFilterInput = _i1.InputObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'DeviceEventFilterInput'),
-    directives: [],
-    fields: [
-      _i1.InputValueDefinitionNode(
-          name: _i1.NameNode(value: 'eventType'),
-          directives: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'DeviceEventTypeName'),
-              isNonNull: false),
-          defaultValue: null),
-      _i1.InputValueDefinitionNode(
-          name: _i1.NameNode(value: 'before'),
-          directives: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'DateTime'), isNonNull: false),
-          defaultValue: null),
-      _i1.InputValueDefinitionNode(
-          name: _i1.NameNode(value: 'after'),
-          directives: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'DateTime'), isNonNull: false),
-          defaultValue: null),
-      _i1.InputValueDefinitionNode(
-          name: _i1.NameNode(value: 'traitInstance'),
-          directives: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: false),
-          defaultValue: null),
-      _i1.InputValueDefinitionNode(
-          name: _i1.NameNode(value: 'traits'),
-          directives: [],
-          type: _i1.ListTypeNode(
-              type: _i1.NamedTypeNode(
-                  name: _i1.NameNode(value: 'TraitName'), isNonNull: true),
-              isNonNull: false),
-          defaultValue: null)
-    ]);
-const DeviceEdge = _i1.ObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'DeviceEdge'),
-    directives: [],
-    interfaces: [],
-    fields: [
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'cursor'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'node'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'Device'), isNonNull: true))
-    ]);
-const DeviceConnection = _i1.ObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'DeviceConnection'),
-    directives: [],
-    interfaces: [],
-    fields: [
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'pageInfo'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'PageInfo'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'edges'),
-          directives: [],
-          args: [],
-          type: _i1.ListTypeNode(
-              type: _i1.NamedTypeNode(
-                  name: _i1.NameNode(value: 'DeviceEdge'), isNonNull: true),
-              isNonNull: true))
-    ]);
-const DeviceOwner = _i1.ObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'DeviceOwner'),
-    directives: [],
-    interfaces: [],
-    fields: [
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'tenantId'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: false)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'userId'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: false))
-    ]);
-const ClaimableDevice = _i1.ObjectTypeDefinitionNode(
-    name: _i1.NameNode(value: 'ClaimableDevice'),
-    directives: [],
-    interfaces: [],
-    fields: [
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'deviceId'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'integrationId'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: true)),
-      _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'owner'),
-          directives: [],
-          args: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'DeviceOwner'), isNonNull: false))
-    ]);
 const document = _i1.DocumentNode(definitions: [
   Health,
   Query,
@@ -4238,12 +5245,16 @@ const document = _i1.DocumentNode(definitions: [
   Mutation,
   PinCodeCredentialInput,
   RRuleSchedule,
+  PinCodeCredentialItemInput,
+  RecurringScheduleInput,
+  TemporaryScheduleInput,
+  DateTime,
   ThermostatMode,
   FanMode,
+  ThermostatRangeInput,
   JSONObject,
   TraitName,
   MockReportedListStateValue,
-  DateTime,
   VIRTUAL_CONNECTOR_ActionStatus,
   IntegrationType,
   PageInfo,
@@ -4271,17 +5282,28 @@ const document = _i1.DocumentNode(definitions: [
   DeviceConfiguredEvent,
   DeviceEventEdge,
   DeviceEventConnection,
+  ProductInformation,
+  Device,
+  DeviceEventFilterInput,
+  DeviceEventTypeName,
+  DeviceEventSortInput,
+  DeviceEdge,
+  DeviceConnection,
   IntRange,
   FloatRange,
   DeviceTrait,
   TraitFilteredEventFilterInput,
-  DeviceEventTypeName,
-  DeviceEventSortInput,
   ReportedStateField,
   DesiredStateField,
+  BetaCardCredential,
   DynamicFloatRange,
+  DynamicIntRange,
   HSBColorValue,
   PinCodeCredential,
+  PinCodeCredentialItem,
+  RecurringSchedule,
+  TemporarySchedule,
+  ThermostatRange,
   BatteryLevelStateReportedPercentage,
   BatteryLevelStateDesiredPercentage,
   BatteryLevelStatePercentageField,
@@ -4292,6 +5314,17 @@ const document = _i1.DocumentNode(definitions: [
   BrightnessStateBrightnessField,
   BrightnessState,
   BrightnessDeviceTrait,
+  ColorStateReportedColor,
+  ColorStateDesiredColor,
+  ColorStateColorField,
+  ColorState,
+  ColorDeviceTrait,
+  ColorTemperatureStateReportedColorTemperature,
+  ColorTemperatureStateDesiredColorTemperature,
+  ColorTemperatureStateColorTemperatureField,
+  ColorTemperatureState,
+  ColorTemperatureProperties,
+  ColorTemperatureDeviceTrait,
   LockStateReportedIsLocked,
   LockStateDesiredIsLocked,
   LockStateIsLockedField,
@@ -4306,6 +5339,11 @@ const document = _i1.DocumentNode(definitions: [
   PinCodeCredentialStateReportedPinCodeCredentials,
   PinCodeCredentialStateDesiredPinCodeCredentials,
   PinCodeCredentialStatePinCodeCredentialsField,
+  PinCodeCredentialItemEdge,
+  PinCodeCredentialItemConnection,
+  PinCodeCredentialStateReportedPinCodeCredentialList,
+  PinCodeCredentialStateDesiredPinCodeCredentialList,
+  PinCodeCredentialStatePinCodeCredentialListField,
   PinCodeCredentialState,
   PinCodeCredentialProperties,
   PinCodeCredentialDeviceTrait,
@@ -4315,11 +5353,6 @@ const document = _i1.DocumentNode(definitions: [
   PowerState,
   PowerProperties,
   PowerDeviceTrait,
-  ColorStateReportedColor,
-  ColorStateDesiredColor,
-  ColorStateColorField,
-  ColorState,
-  ColorDeviceTrait,
   ThermostatSettingStateReportedMode,
   ThermostatSettingStateDesiredMode,
   ThermostatSettingStateModeField,
@@ -4346,12 +5379,5 @@ const document = _i1.DocumentNode(definitions: [
   ThermostatSettingStateFanModeField,
   ThermostatSettingState,
   ThermostatSettingProperties,
-  ThermostatSettingDeviceTrait,
-  ProductInformation,
-  Device,
-  DeviceEventFilterInput,
-  DeviceEdge,
-  DeviceConnection,
-  DeviceOwner,
-  ClaimableDevice
+  ThermostatSettingDeviceTrait
 ]);

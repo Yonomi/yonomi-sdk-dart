@@ -1,3 +1,16 @@
+# [3.1.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v3.0.0...v3.1.0) (2022-04-19)
+
+
+### Bug Fixes
+
+* removed token again ([f3939c2](https://github.com/Yonomi/yonomi-sdk-dart/commit/f3939c2520b025df5c68ecd1e70c4a5c9502ee8c))
+
+
+### Features
+
+* **color_temperature_repository:** define new ([aeb2aa6](https://github.com/Yonomi/yonomi-sdk-dart/commit/aeb2aa623c6ef17df9672e979660f753780c0a95))
+* **device_details_fragment/query.fragment.graphql:** query for ColorDeviceTrait and ColorTemperatureDeviceTrait ([0515e27](https://github.com/Yonomi/yonomi-sdk-dart/commit/0515e27799b90f801afb280a8bd6a6c4f6661d43))
+
 # [3.0.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v2.8.2...v3.0.0) (2022-03-01)
 
 

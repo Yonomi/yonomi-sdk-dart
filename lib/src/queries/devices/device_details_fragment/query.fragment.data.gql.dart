@@ -307,6 +307,63 @@ abstract class GDeviceDetails_traits__asColorDeviceTrait_state_color_desired_del
   Map<String, dynamic> toJson();
 }
 
+abstract class GDeviceDetails_traits__asColorTemperatureDeviceTrait
+    implements GDeviceDetails_traits {
+  String get G__typename;
+  _i1.GTraitName get name;
+  String get instance;
+  GDeviceDetails_traits__asColorTemperatureDeviceTrait_properties
+      get properties;
+  GDeviceDetails_traits__asColorTemperatureDeviceTrait_state get state;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GDeviceDetails_traits__asColorTemperatureDeviceTrait_properties {
+  String get G__typename;
+  GDeviceDetails_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange?
+      get supportedColorTemperatureRange;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GDeviceDetails_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange {
+  String get G__typename;
+  int get min;
+  int get max;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GDeviceDetails_traits__asColorTemperatureDeviceTrait_state {
+  String get G__typename;
+  GDeviceDetails_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+      get colorTemperature;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GDeviceDetails_traits__asColorTemperatureDeviceTrait_state_colorTemperature {
+  String get G__typename;
+  GDeviceDetails_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported?
+      get reported;
+  GDeviceDetails_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired?
+      get desired;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GDeviceDetails_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported {
+  String get G__typename;
+  int get value;
+  _i1.GDateTime get sampledAt;
+  _i1.GDateTime get createdAt;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GDeviceDetails_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired {
+  String get G__typename;
+  int get value;
+  int? get delta;
+  _i1.GDateTime get updatedAt;
+  Map<String, dynamic> toJson();
+}
+
 abstract class GDeviceDetails_traits__asThermostatSettingDeviceTrait
     implements GDeviceDetails_traits {
   String get G__typename;
@@ -750,6 +807,7 @@ abstract class GDeviceDetailsData_traits implements GDeviceDetails_traits {
         GDeviceDetailsData_traits__asPowerDeviceTrait,
         GDeviceDetailsData_traits__asBrightnessDeviceTrait,
         GDeviceDetailsData_traits__asColorDeviceTrait,
+        GDeviceDetailsData_traits__asColorTemperatureDeviceTrait,
         GDeviceDetailsData_traits__asThermostatSettingDeviceTrait,
         GDeviceDetailsData_traits__asPinCodeCredentialDeviceTrait
       ]);
@@ -1934,6 +1992,265 @@ abstract class GDeviceDetailsData_traits__asColorDeviceTrait_state_color_desired
   static GDeviceDetailsData_traits__asColorDeviceTrait_state_color_desired_delta?
       fromJson(Map<String, dynamic> json) => _i2.serializers.deserializeWith(
           GDeviceDetailsData_traits__asColorDeviceTrait_state_color_desired_delta
+              .serializer,
+          json);
+}
+
+abstract class GDeviceDetailsData_traits__asColorTemperatureDeviceTrait
+    implements
+        Built<GDeviceDetailsData_traits__asColorTemperatureDeviceTrait,
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTraitBuilder>,
+        GDeviceDetailsData_traits {
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait._();
+
+  factory GDeviceDetailsData_traits__asColorTemperatureDeviceTrait(
+      [Function(
+              GDeviceDetailsData_traits__asColorTemperatureDeviceTraitBuilder b)
+          updates]) = _$GDeviceDetailsData_traits__asColorTemperatureDeviceTrait;
+
+  static void _initializeBuilder(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTraitBuilder b) =>
+      b..G__typename = 'ColorTemperatureDeviceTrait';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  _i1.GTraitName get name;
+  String get instance;
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties
+      get properties;
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state get state;
+  static Serializer<GDeviceDetailsData_traits__asColorTemperatureDeviceTrait>
+      get serializer =>
+          _$gDeviceDetailsDataTraitsAsColorTemperatureDeviceTraitSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+      GDeviceDetailsData_traits__asColorTemperatureDeviceTrait.serializer,
+      this) as Map<String, dynamic>);
+  static GDeviceDetailsData_traits__asColorTemperatureDeviceTrait? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait.serializer,
+          json);
+}
+
+abstract class GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties
+    implements
+        Built<
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties,
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_propertiesBuilder> {
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties._();
+
+  factory GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties(
+          [Function(
+                  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_propertiesBuilder
+                      b)
+              updates]) =
+      _$GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties;
+
+  static void _initializeBuilder(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_propertiesBuilder
+              b) =>
+      b..G__typename = 'ColorTemperatureProperties';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange?
+      get supportedColorTemperatureRange;
+  static Serializer<
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties>
+      get serializer =>
+          _$gDeviceDetailsDataTraitsAsColorTemperatureDeviceTraitPropertiesSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+      GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties?
+      fromJson(Map<String, dynamic> json) => _i2.serializers.deserializeWith(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties
+              .serializer,
+          json);
+}
+
+abstract class GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+    implements
+        Built<
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange,
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder> {
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange._();
+
+  factory GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange(
+          [Function(
+                  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder
+                      b)
+              updates]) =
+      _$GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange;
+
+  static void _initializeBuilder(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRangeBuilder
+              b) =>
+      b..G__typename = 'IntRange';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get min;
+  int get max;
+  static Serializer<
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange>
+      get serializer =>
+          _$gDeviceDetailsDataTraitsAsColorTemperatureDeviceTraitPropertiesSupportedColorTemperatureRangeSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+      GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange?
+      fromJson(Map<String, dynamic> json) => _i2.serializers.deserializeWith(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_properties_supportedColorTemperatureRange
+              .serializer,
+          json);
+}
+
+abstract class GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state
+    implements
+        Built<GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state,
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_stateBuilder> {
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state._();
+
+  factory GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state(
+          [Function(
+                  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_stateBuilder
+                      b)
+              updates]) =
+      _$GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state;
+
+  static void _initializeBuilder(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_stateBuilder
+              b) =>
+      b..G__typename = 'ColorTemperatureState';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+      get colorTemperature;
+  static Serializer<
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state>
+      get serializer =>
+          _$gDeviceDetailsDataTraitsAsColorTemperatureDeviceTraitStateSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+      GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state.serializer,
+      this) as Map<String, dynamic>);
+  static GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state?
+      fromJson(Map<String, dynamic> json) => _i2.serializers.deserializeWith(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state
+              .serializer,
+          json);
+}
+
+abstract class GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+    implements
+        Built<
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature,
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder> {
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature._();
+
+  factory GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature(
+          [Function(
+                  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder
+                      b)
+              updates]) =
+      _$GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature;
+
+  static void _initializeBuilder(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperatureBuilder
+              b) =>
+      b..G__typename = 'ColorTemperatureStateColorTemperatureField';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported?
+      get reported;
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired?
+      get desired;
+  static Serializer<
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature>
+      get serializer =>
+          _$gDeviceDetailsDataTraitsAsColorTemperatureDeviceTraitStateColorTemperatureSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+      GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature?
+      fromJson(Map<String, dynamic> json) => _i2.serializers.deserializeWith(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+              .serializer,
+          json);
+}
+
+abstract class GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+    implements
+        Built<
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported,
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder> {
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported._();
+
+  factory GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported(
+          [Function(
+                  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder
+                      b)
+              updates]) =
+      _$GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported;
+
+  static void _initializeBuilder(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reportedBuilder
+              b) =>
+      b..G__typename = 'ColorTemperatureStateReportedColorTemperature';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get value;
+  _i1.GDateTime get sampledAt;
+  _i1.GDateTime get createdAt;
+  static Serializer<
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported>
+      get serializer =>
+          _$gDeviceDetailsDataTraitsAsColorTemperatureDeviceTraitStateColorTemperatureReportedSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+      GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported?
+      fromJson(Map<String, dynamic> json) => _i2.serializers.deserializeWith(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+              .serializer,
+          json);
+}
+
+abstract class GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+    implements
+        Built<
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired,
+            GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder> {
+  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired._();
+
+  factory GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired(
+          [Function(
+                  GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder
+                      b)
+              updates]) =
+      _$GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired;
+
+  static void _initializeBuilder(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desiredBuilder
+              b) =>
+      b..G__typename = 'ColorTemperatureStateDesiredColorTemperature';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get value;
+  int? get delta;
+  _i1.GDateTime get updatedAt;
+  static Serializer<
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired>
+      get serializer =>
+          _$gDeviceDetailsDataTraitsAsColorTemperatureDeviceTraitStateColorTemperatureDesiredSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+      GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+          .serializer,
+      this) as Map<String, dynamic>);
+  static GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired?
+      fromJson(Map<String, dynamic> json) => _i2.serializers.deserializeWith(
+          GDeviceDetailsData_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
               .serializer,
           json);
 }

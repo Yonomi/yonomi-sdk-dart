@@ -606,6 +606,242 @@ const DeviceDetails = _i1.FragmentDefinitionNode(
             _i1.InlineFragmentNode(
                 typeCondition: _i1.TypeConditionNode(
                     on: _i1.NamedTypeNode(
+                        name: _i1.NameNode(value: 'ColorDeviceTrait'),
+                        isNonNull: false)),
+                directives: [],
+                selectionSet: _i1.SelectionSetNode(selections: [
+                  _i1.FieldNode(
+                      name: _i1.NameNode(value: 'state'),
+                      alias: null,
+                      arguments: [],
+                      directives: [],
+                      selectionSet: _i1.SelectionSetNode(selections: [
+                        _i1.FieldNode(
+                            name: _i1.NameNode(value: 'color'),
+                            alias: null,
+                            arguments: [],
+                            directives: [],
+                            selectionSet: _i1.SelectionSetNode(selections: [
+                              _i1.FieldNode(
+                                  name: _i1.NameNode(value: 'reported'),
+                                  alias: null,
+                                  arguments: [],
+                                  directives: [],
+                                  selectionSet:
+                                      _i1.SelectionSetNode(selections: [
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'value'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet:
+                                            _i1.SelectionSetNode(selections: [
+                                          _i1.FieldNode(
+                                              name: _i1.NameNode(value: 'h'),
+                                              alias: null,
+                                              arguments: [],
+                                              directives: [],
+                                              selectionSet: null),
+                                          _i1.FieldNode(
+                                              name: _i1.NameNode(value: 's'),
+                                              alias: null,
+                                              arguments: [],
+                                              directives: [],
+                                              selectionSet: null),
+                                          _i1.FieldNode(
+                                              name: _i1.NameNode(value: 'b'),
+                                              alias: null,
+                                              arguments: [],
+                                              directives: [],
+                                              selectionSet: null)
+                                        ])),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'sampledAt'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'createdAt'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null)
+                                  ])),
+                              _i1.FieldNode(
+                                  name: _i1.NameNode(value: 'desired'),
+                                  alias: null,
+                                  arguments: [],
+                                  directives: [],
+                                  selectionSet:
+                                      _i1.SelectionSetNode(selections: [
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'value'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet:
+                                            _i1.SelectionSetNode(selections: [
+                                          _i1.FieldNode(
+                                              name: _i1.NameNode(value: 'h'),
+                                              alias: null,
+                                              arguments: [],
+                                              directives: [],
+                                              selectionSet: null),
+                                          _i1.FieldNode(
+                                              name: _i1.NameNode(value: 's'),
+                                              alias: null,
+                                              arguments: [],
+                                              directives: [],
+                                              selectionSet: null),
+                                          _i1.FieldNode(
+                                              name: _i1.NameNode(value: 'b'),
+                                              alias: null,
+                                              arguments: [],
+                                              directives: [],
+                                              selectionSet: null)
+                                        ])),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'delta'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet:
+                                            _i1.SelectionSetNode(selections: [
+                                          _i1.FieldNode(
+                                              name: _i1.NameNode(value: 'h'),
+                                              alias: null,
+                                              arguments: [],
+                                              directives: [],
+                                              selectionSet: null),
+                                          _i1.FieldNode(
+                                              name: _i1.NameNode(value: 's'),
+                                              alias: null,
+                                              arguments: [],
+                                              directives: [],
+                                              selectionSet: null),
+                                          _i1.FieldNode(
+                                              name: _i1.NameNode(value: 'b'),
+                                              alias: null,
+                                              arguments: [],
+                                              directives: [],
+                                              selectionSet: null)
+                                        ])),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'updatedAt'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null)
+                                  ]))
+                            ]))
+                      ]))
+                ])),
+            _i1.InlineFragmentNode(
+                typeCondition: _i1.TypeConditionNode(
+                    on: _i1.NamedTypeNode(
+                        name:
+                            _i1.NameNode(value: 'ColorTemperatureDeviceTrait'),
+                        isNonNull: false)),
+                directives: [],
+                selectionSet: _i1.SelectionSetNode(selections: [
+                  _i1.FieldNode(
+                      name: _i1.NameNode(value: 'properties'),
+                      alias: null,
+                      arguments: [],
+                      directives: [],
+                      selectionSet: _i1.SelectionSetNode(selections: [
+                        _i1.FieldNode(
+                            name: _i1.NameNode(
+                                value: 'supportedColorTemperatureRange'),
+                            alias: null,
+                            arguments: [],
+                            directives: [],
+                            selectionSet: _i1.SelectionSetNode(selections: [
+                              _i1.FieldNode(
+                                  name: _i1.NameNode(value: 'min'),
+                                  alias: null,
+                                  arguments: [],
+                                  directives: [],
+                                  selectionSet: null),
+                              _i1.FieldNode(
+                                  name: _i1.NameNode(value: 'max'),
+                                  alias: null,
+                                  arguments: [],
+                                  directives: [],
+                                  selectionSet: null)
+                            ]))
+                      ])),
+                  _i1.FieldNode(
+                      name: _i1.NameNode(value: 'state'),
+                      alias: null,
+                      arguments: [],
+                      directives: [],
+                      selectionSet: _i1.SelectionSetNode(selections: [
+                        _i1.FieldNode(
+                            name: _i1.NameNode(value: 'colorTemperature'),
+                            alias: null,
+                            arguments: [],
+                            directives: [],
+                            selectionSet: _i1.SelectionSetNode(selections: [
+                              _i1.FieldNode(
+                                  name: _i1.NameNode(value: 'reported'),
+                                  alias: null,
+                                  arguments: [],
+                                  directives: [],
+                                  selectionSet:
+                                      _i1.SelectionSetNode(selections: [
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'value'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'sampledAt'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'createdAt'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null)
+                                  ])),
+                              _i1.FieldNode(
+                                  name: _i1.NameNode(value: 'desired'),
+                                  alias: null,
+                                  arguments: [],
+                                  directives: [],
+                                  selectionSet:
+                                      _i1.SelectionSetNode(selections: [
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'value'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'delta'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null),
+                                    _i1.FieldNode(
+                                        name: _i1.NameNode(value: 'updatedAt'),
+                                        alias: null,
+                                        arguments: [],
+                                        directives: [],
+                                        selectionSet: null)
+                                  ]))
+                            ]))
+                      ]))
+                ])),
+            _i1.InlineFragmentNode(
+                typeCondition: _i1.TypeConditionNode(
+                    on: _i1.NamedTypeNode(
                         name:
                             _i1.NameNode(value: 'ThermostatSettingDeviceTrait'),
                         isNonNull: false)),
