@@ -11,86 +11,217 @@ fragment DeviceDetails on Device {
   createdAt
   traits {
     __typename
-    name instance
+    name
+    instance
     ... on BatteryLevelDeviceTrait {
       state {
         percentage {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
       }
     }
     ... on LockDeviceTrait {
-      properties { supportsIsJammed }
+      properties {
+        supportsIsJammed
+      }
       state {
         isLocked {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
         isJammed {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
       }
     }
     ... on PowerDeviceTrait {
-      properties { supportsDiscreteOnOff }
+      properties {
+        supportsDiscreteOnOff
+      }
       state {
         isOn {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
       }
     }
     ... on BrightnessDeviceTrait {
       state {
         brightness {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
+        }
+      }
+    }
+    ... on ColorDeviceTrait {
+      state {
+        color {
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
       }
     }
     ... on ThermostatSettingDeviceTrait {
       properties {
-        availableThermostatModes,
-        availableFanModes,
-        heatSetPointRange { min, max }
-        coolSetPointRange { min, max }
-        allowedTargetTemperatureModes,
-        allowedTargetTemperatureRangeModes,
-    	}
+        availableThermostatModes
+        availableFanModes
+        heatSetPointRange {
+          min
+          max
+        }
+        coolSetPointRange {
+          min
+          max
+        }
+        allowedTargetTemperatureModes
+        allowedTargetTemperatureRangeModes
+      }
       state {
         mode {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
         targetTemperature {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
         ambientTemperature {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
         setPointHigh {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
         setPointLow {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
         ambientHumidity {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
         targetHumidity {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
         fanMode {
-          reported { value sampledAt createdAt }
-          desired { value delta updatedAt }
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
         }
       }
     }

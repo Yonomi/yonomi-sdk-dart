@@ -9,7 +9,7 @@ import 'gql_client.dart';
 
 class UserRepository {
   static Future<User> getUserDetails(Request request, {Link? graphLink}) async {
-    if (graphLink == null) graphLink = GraphLinkCreator.create(request);
+    graphLink = graphLink ?? GraphLinkCreator.create(request);
 
     final req = Guser();
     final res = await Repository.fetch(graphLink, req.operation);

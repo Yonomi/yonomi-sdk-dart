@@ -1,11 +1,7 @@
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
-import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
+import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 
 import '../utils/test_fixtures.dart';
 
@@ -134,17 +130,37 @@ void main() {
                 }
               }
             }
-          }
+          },
+          {
+            "__typename": "ColorDeviceTrait",
+            "name": "COLOR",
+            "instance": "default",
+            "state": {
+              "color": {
+                "reported": {
+                  "value": {"h": 0, "s": 0, "b": 0},
+                  "sampledAt": "2021-10-20T02:01:36.000Z",
+                  "createdAt": "2021-10-20T02:51:18.190Z"
+                },
+                "desired": {
+                  "value": {"h": 100, "s": 50, "b": 50},
+                  "delta": null,
+                  "updatedAt": "2021-10-20T02:51:18.190Z"
+                }
+              }
+            }
+          },
         ]
       }
     });
     final convertedTraits = DevicesRepository.responseToDeviceTraitConverter(
         deviceWithMultipleTraits!.device!.traits.asList());
-    expect(convertedTraits, hasLength(4));
+    expect(convertedTraits, hasLength(5));
     expect(convertedTraits, contains(isA<LockTrait>()));
     expect(convertedTraits, contains(isA<BatteryLevelTrait>()));
     expect(convertedTraits, contains(isA<BrightnessTrait>()));
     expect(convertedTraits, contains(isA<UnknownTrait>()));
+    expect(convertedTraits, contains(isA<ColorTrait>()));
   });
 
   test('''responseToDeviceTraitConverter maps single Thermostat
