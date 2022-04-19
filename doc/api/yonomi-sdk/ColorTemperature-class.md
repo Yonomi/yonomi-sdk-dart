@@ -1,7 +1,7 @@
 
 
 
-# State&lt;T> class
+# ColorTemperature class
 
 
 
@@ -14,28 +14,20 @@
 
 
 
+**Inheritance**
+
+- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
+- [State](../yonomi-sdk/State-class.md)&lt;[int](https://api.flutter.dev/flutter/dart-core/int-class.html)?>
+- ColorTemperature
 
 
 
-**Implementers**
-
-- [AmbientTemperature](../yonomi-sdk/AmbientTemperature-class.md)
-- [BatteryLevel](../yonomi-sdk/BatteryLevel-class.md)
-- [Brightness](../yonomi-sdk/Brightness-class.md)
-- [ColorTemperature](../yonomi-sdk/ColorTemperature-class.md)
-- [FanMode](../yonomi-sdk/FanMode-class.md)
-- [IsJammed](../yonomi-sdk/IsJammed-class.md)
-- [IsLocked](../yonomi-sdk/IsLocked-class.md)
-- [IsOnOff](../yonomi-sdk/IsOnOff-class.md)
-- [TargetTemperature](../yonomi-sdk/TargetTemperature-class.md)
-- [ThermostatMode](../yonomi-sdk/ThermostatMode-class.md)
-- [UnknownState](../yonomi-sdk/UnknownState-class.md)
 
 
 
 ## Constructors
 
-[State](../yonomi-sdk/State/State.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, T value)
+[ColorTemperature](../yonomi-sdk/ColorTemperature/ColorTemperature.md) ([int](https://api.flutter.dev/flutter/dart-core/int-class.html)? colorTemperature)
 
     
 
@@ -56,7 +48,7 @@ _read-only, inherited_
 
 
    
-_final_
+_final, inherited_
 
 
 
@@ -69,12 +61,12 @@ _read-only, inherited_
 
 
 
-##### [value](../yonomi-sdk/State/value.md) &#8594; T
+##### [value](../yonomi-sdk/State/value.md) &#8594; [int](https://api.flutter.dev/flutter/dart-core/int-class.html)?
 
 
 
    
-_final_
+_final, inherited_
 
 
 

@@ -38,7 +38,7 @@ static List<Trait> responseToDeviceTraitConverter(List deviceTraits) {
       case GTraitName.LOCK:
         return LockRepository.getLockTrait(trait);
       case GTraitName.BATTERY_LEVEL:
-        return getBatteryLevelTrait(trait);
+        return BatteryLevelRepository.getBatteryLevelTrait(trait);
       case GTraitName.POWER:
         return PowerRepository.getPowerTrait(trait);
       case GTraitName.BRIGHTNESS:
