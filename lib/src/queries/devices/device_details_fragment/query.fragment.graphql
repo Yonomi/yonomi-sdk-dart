@@ -99,13 +99,25 @@ fragment DeviceDetails on Device {
       state {
         color {
           reported {
-            value
+            value {
+              h
+              s
+              b
+            }
             sampledAt
             createdAt
           }
           desired {
-            value
-            delta
+            value {
+              h
+              s
+              b
+            }
+            delta {
+              h
+              s
+              b
+            }
             updatedAt
           }
         }

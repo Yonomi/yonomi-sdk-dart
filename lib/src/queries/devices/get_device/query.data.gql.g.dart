@@ -101,6 +101,34 @@ Serializer<
         GgetDeviceData_device_traits__asBrightnessDeviceTrait_state_brightness_desired>
     _$ggetDeviceDataDeviceTraitsAsBrightnessDeviceTraitStateBrightnessDesiredSerializer =
     new _$GgetDeviceData_device_traits__asBrightnessDeviceTrait_state_brightness_desiredSerializer();
+Serializer<GgetDeviceData_device_traits__asColorDeviceTrait>
+    _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitSerializer =
+    new _$GgetDeviceData_device_traits__asColorDeviceTraitSerializer();
+Serializer<GgetDeviceData_device_traits__asColorDeviceTrait_state>
+    _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateSerializer =
+    new _$GgetDeviceData_device_traits__asColorDeviceTrait_stateSerializer();
+Serializer<GgetDeviceData_device_traits__asColorDeviceTrait_state_color>
+    _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorSerializer =
+    new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_colorSerializer();
+Serializer<
+        GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported>
+    _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorReportedSerializer =
+    new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedSerializer();
+Serializer<
+        GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value>
+    _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorReportedValueSerializer =
+    new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueSerializer();
+Serializer<GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired>
+    _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorDesiredSerializer =
+    new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredSerializer();
+Serializer<
+        GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value>
+    _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorDesiredValueSerializer =
+    new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueSerializer();
+Serializer<
+        GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta>
+    _$ggetDeviceDataDeviceTraitsAsColorDeviceTraitStateColorDesiredDeltaSerializer =
+    new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaSerializer();
 Serializer<GgetDeviceData_device_traits__asThermostatSettingDeviceTrait>
     _$ggetDeviceDataDeviceTraitsAsThermostatSettingDeviceTraitSerializer =
     new _$GgetDeviceData_device_traits__asThermostatSettingDeviceTraitSerializer();
@@ -2362,6 +2390,585 @@ class _$GgetDeviceData_device_traits__asBrightnessDeviceTrait_state_brightness_d
         case 'updatedAt':
           result.updatedAt.replace(serializers.deserialize(value,
               specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTraitSerializer
+    implements
+        StructuredSerializer<GgetDeviceData_device_traits__asColorDeviceTrait> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDeviceData_device_traits__asColorDeviceTrait,
+    _$GgetDeviceData_device_traits__asColorDeviceTrait
+  ];
+  @override
+  final String wireName = 'GgetDeviceData_device_traits__asColorDeviceTrait';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GgetDeviceData_device_traits__asColorDeviceTrait object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'name',
+      serializers.serialize(object.name,
+          specifiedType: const FullType(_i3.GTraitName)),
+      'instance',
+      serializers.serialize(object.instance,
+          specifiedType: const FullType(String)),
+      'state',
+      serializers.serialize(object.state,
+          specifiedType: const FullType(
+              GgetDeviceData_device_traits__asColorDeviceTrait_state)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDeviceData_device_traits__asColorDeviceTraitBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(_i3.GTraitName)) as _i3.GTraitName;
+          break;
+        case 'instance':
+          result.instance = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'state':
+          result.state.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDeviceData_device_traits__asColorDeviceTrait_state))!
+              as GgetDeviceData_device_traits__asColorDeviceTrait_state);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_stateSerializer
+    implements
+        StructuredSerializer<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDeviceData_device_traits__asColorDeviceTrait_state,
+    _$GgetDeviceData_device_traits__asColorDeviceTrait_state
+  ];
+  @override
+  final String wireName =
+      'GgetDeviceData_device_traits__asColorDeviceTrait_state';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GgetDeviceData_device_traits__asColorDeviceTrait_state object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'color',
+      serializers.serialize(object.color,
+          specifiedType: const FullType(
+              GgetDeviceData_device_traits__asColorDeviceTrait_state_color)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'color':
+          result.color.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDeviceData_device_traits__asColorDeviceTrait_state_color))!
+              as GgetDeviceData_device_traits__asColorDeviceTrait_state_color);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_colorSerializer
+    implements
+        StructuredSerializer<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color,
+    _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color
+  ];
+  @override
+  final String wireName =
+      'GgetDeviceData_device_traits__asColorDeviceTrait_state_color';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.reported;
+    if (value != null) {
+      result
+        ..add('reported')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported)));
+    }
+    value = object.desired;
+    if (value != null) {
+      result
+        ..add('desired')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired)));
+    }
+    return result;
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'reported':
+          result.reported.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported))!
+              as GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported);
+          break;
+        case 'desired':
+          result.desired.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired))!
+              as GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedSerializer
+    implements
+        StructuredSerializer<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported,
+    _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+  ];
+  @override
+  final String wireName =
+      'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'value',
+      serializers.serialize(object.value,
+          specifiedType: const FullType(
+              GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value)),
+      'sampledAt',
+      serializers.serialize(object.sampledAt,
+          specifiedType: const FullType(_i3.GDateTime)),
+      'createdAt',
+      serializers.serialize(object.createdAt,
+          specifiedType: const FullType(_i3.GDateTime)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'value':
+          result.value.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value))!
+              as GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value);
+          break;
+        case 'sampledAt':
+          result.sampledAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueSerializer
+    implements
+        StructuredSerializer<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value,
+    _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+  ];
+  @override
+  final String wireName =
+      'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'h',
+      serializers.serialize(object.h, specifiedType: const FullType(int)),
+      's',
+      serializers.serialize(object.s, specifiedType: const FullType(int)),
+      'b',
+      serializers.serialize(object.b, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'h':
+          result.h = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 's':
+          result.s = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'b':
+          result.b = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredSerializer
+    implements
+        StructuredSerializer<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired,
+    _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+  ];
+  @override
+  final String wireName =
+      'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'value',
+      serializers.serialize(object.value,
+          specifiedType: const FullType(
+              GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value)),
+      'updatedAt',
+      serializers.serialize(object.updatedAt,
+          specifiedType: const FullType(_i3.GDateTime)),
+    ];
+    Object? value;
+    value = object.delta;
+    if (value != null) {
+      result
+        ..add('delta')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta)));
+    }
+    return result;
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'value':
+          result.value.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value))!
+              as GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value);
+          break;
+        case 'delta':
+          result.delta.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta))!
+              as GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta);
+          break;
+        case 'updatedAt':
+          result.updatedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueSerializer
+    implements
+        StructuredSerializer<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value,
+    _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+  ];
+  @override
+  final String wireName =
+      'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'h',
+      serializers.serialize(object.h, specifiedType: const FullType(int)),
+      's',
+      serializers.serialize(object.s, specifiedType: const FullType(int)),
+      'b',
+      serializers.serialize(object.b, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'h':
+          result.h = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 's':
+          result.s = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'b':
+          result.b = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaSerializer
+    implements
+        StructuredSerializer<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta> {
+  @override
+  final Iterable<Type> types = const [
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta,
+    _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+  ];
+  @override
+  final String wireName =
+      'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'h',
+      serializers.serialize(object.h, specifiedType: const FullType(int)),
+      's',
+      serializers.serialize(object.s, specifiedType: const FullType(int)),
+      'b',
+      serializers.serialize(object.b, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'h':
+          result.h = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 's':
+          result.s = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'b':
+          result.b = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           break;
       }
     }
@@ -10486,6 +11093,1378 @@ class GgetDeviceData_device_traits__asBrightnessDeviceTrait_state_brightness_des
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait
+    extends GgetDeviceData_device_traits__asColorDeviceTrait {
+  @override
+  final String G__typename;
+  @override
+  final _i3.GTraitName name;
+  @override
+  final String instance;
+  @override
+  final GgetDeviceData_device_traits__asColorDeviceTrait_state state;
+
+  factory _$GgetDeviceData_device_traits__asColorDeviceTrait(
+          [void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTraitBuilder)?
+              updates]) =>
+      (new GgetDeviceData_device_traits__asColorDeviceTraitBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDeviceData_device_traits__asColorDeviceTrait._(
+      {required this.G__typename,
+      required this.name,
+      required this.instance,
+      required this.state})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        'GgetDeviceData_device_traits__asColorDeviceTrait', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        name, 'GgetDeviceData_device_traits__asColorDeviceTrait', 'name');
+    BuiltValueNullFieldError.checkNotNull(instance,
+        'GgetDeviceData_device_traits__asColorDeviceTrait', 'instance');
+    BuiltValueNullFieldError.checkNotNull(
+        state, 'GgetDeviceData_device_traits__asColorDeviceTrait', 'state');
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait rebuild(
+          void Function(GgetDeviceData_device_traits__asColorDeviceTraitBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTraitBuilder toBuilder() =>
+      new GgetDeviceData_device_traits__asColorDeviceTraitBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GgetDeviceData_device_traits__asColorDeviceTrait &&
+        G__typename == other.G__typename &&
+        name == other.name &&
+        instance == other.instance &&
+        state == other.state;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), name.hashCode),
+            instance.hashCode),
+        state.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDeviceData_device_traits__asColorDeviceTrait')
+          ..add('G__typename', G__typename)
+          ..add('name', name)
+          ..add('instance', instance)
+          ..add('state', state))
+        .toString();
+  }
+}
+
+class GgetDeviceData_device_traits__asColorDeviceTraitBuilder
+    implements
+        Builder<GgetDeviceData_device_traits__asColorDeviceTrait,
+            GgetDeviceData_device_traits__asColorDeviceTraitBuilder> {
+  _$GgetDeviceData_device_traits__asColorDeviceTrait? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  _i3.GTraitName? _name;
+  _i3.GTraitName? get name => _$this._name;
+  set name(_i3.GTraitName? name) => _$this._name = name;
+
+  String? _instance;
+  String? get instance => _$this._instance;
+  set instance(String? instance) => _$this._instance = instance;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder? _state;
+  GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder get state =>
+      _$this._state ??=
+          new GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder();
+  set state(
+          GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder?
+              state) =>
+      _$this._state = state;
+
+  GgetDeviceData_device_traits__asColorDeviceTraitBuilder() {
+    GgetDeviceData_device_traits__asColorDeviceTrait._initializeBuilder(this);
+  }
+
+  GgetDeviceData_device_traits__asColorDeviceTraitBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _name = $v.name;
+      _instance = $v.instance;
+      _state = $v.state.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GgetDeviceData_device_traits__asColorDeviceTrait other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GgetDeviceData_device_traits__asColorDeviceTrait;
+  }
+
+  @override
+  void update(
+      void Function(GgetDeviceData_device_traits__asColorDeviceTraitBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDeviceData_device_traits__asColorDeviceTrait build() {
+    _$GgetDeviceData_device_traits__asColorDeviceTrait _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDeviceData_device_traits__asColorDeviceTrait._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDeviceData_device_traits__asColorDeviceTrait',
+                  'G__typename'),
+              name: BuiltValueNullFieldError.checkNotNull(name,
+                  'GgetDeviceData_device_traits__asColorDeviceTrait', 'name'),
+              instance: BuiltValueNullFieldError.checkNotNull(
+                  instance,
+                  'GgetDeviceData_device_traits__asColorDeviceTrait',
+                  'instance'),
+              state: state.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'state';
+        state.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDeviceData_device_traits__asColorDeviceTrait',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state
+    extends GgetDeviceData_device_traits__asColorDeviceTrait_state {
+  @override
+  final String G__typename;
+  @override
+  final GgetDeviceData_device_traits__asColorDeviceTrait_state_color color;
+
+  factory _$GgetDeviceData_device_traits__asColorDeviceTrait_state(
+          [void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder)?
+              updates]) =>
+      (new GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state._(
+      {required this.G__typename, required this.color})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(color,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state', 'color');
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state rebuild(
+          void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder toBuilder() =>
+      new GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GgetDeviceData_device_traits__asColorDeviceTrait_state &&
+        G__typename == other.G__typename &&
+        color == other.color;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, G__typename.hashCode), color.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDeviceData_device_traits__asColorDeviceTrait_state')
+          ..add('G__typename', G__typename)
+          ..add('color', color))
+        .toString();
+  }
+}
+
+class GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder
+    implements
+        Builder<GgetDeviceData_device_traits__asColorDeviceTrait_state,
+            GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder> {
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder? _color;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder
+      get color => _$this._color ??=
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder();
+  set color(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder?
+              color) =>
+      _$this._color = color;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder() {
+    GgetDeviceData_device_traits__asColorDeviceTrait_state._initializeBuilder(
+        this);
+  }
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _color = $v.color.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GgetDeviceData_device_traits__asColorDeviceTrait_state other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GgetDeviceData_device_traits__asColorDeviceTrait_state;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDeviceData_device_traits__asColorDeviceTrait_stateBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state build() {
+    _$GgetDeviceData_device_traits__asColorDeviceTrait_state _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDeviceData_device_traits__asColorDeviceTrait_state._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDeviceData_device_traits__asColorDeviceTrait_state',
+                  'G__typename'),
+              color: color.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'color';
+        color.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDeviceData_device_traits__asColorDeviceTrait_state',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color
+    extends GgetDeviceData_device_traits__asColorDeviceTrait_state_color {
+  @override
+  final String G__typename;
+  @override
+  final GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported?
+      reported;
+  @override
+  final GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired?
+      desired;
+
+  factory _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color(
+          [void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder)?
+              updates]) =>
+      (new GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color._(
+      {required this.G__typename, this.reported, this.desired})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color',
+        'G__typename');
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color rebuild(
+          void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder
+      toBuilder() =>
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDeviceData_device_traits__asColorDeviceTrait_state_color &&
+        G__typename == other.G__typename &&
+        reported == other.reported &&
+        desired == other.desired;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc($jc(0, G__typename.hashCode), reported.hashCode),
+        desired.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDeviceData_device_traits__asColorDeviceTrait_state_color')
+          ..add('G__typename', G__typename)
+          ..add('reported', reported)
+          ..add('desired', desired))
+        .toString();
+  }
+}
+
+class GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder
+    implements
+        Builder<GgetDeviceData_device_traits__asColorDeviceTrait_state_color,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder> {
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder?
+      _reported;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder
+      get reported => _$this._reported ??=
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder();
+  set reported(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder?
+              reported) =>
+      _$this._reported = reported;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder?
+      _desired;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder
+      get desired => _$this._desired ??=
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder();
+  set desired(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder?
+              desired) =>
+      _$this._desired = desired;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder() {
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color
+        ._initializeBuilder(this);
+  }
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _reported = $v.reported?.toBuilder();
+      _desired = $v.desired?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v =
+        other as _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDeviceData_device_traits__asColorDeviceTrait_state_colorBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color build() {
+    _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDeviceData_device_traits__asColorDeviceTrait_state_color',
+                  'G__typename'),
+              reported: _reported?.build(),
+              desired: _desired?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'reported';
+        _reported?.build();
+        _$failedField = 'desired';
+        _desired?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDeviceData_device_traits__asColorDeviceTrait_state_color',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+    extends GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported {
+  @override
+  final String G__typename;
+  @override
+  final GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+      value;
+  @override
+  final _i3.GDateTime sampledAt;
+  @override
+  final _i3.GDateTime createdAt;
+
+  factory _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported(
+          [void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder)?
+              updates]) =>
+      (new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported._(
+      {required this.G__typename,
+      required this.value,
+      required this.sampledAt,
+      required this.createdAt})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        value,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported',
+        'value');
+    BuiltValueNullFieldError.checkNotNull(
+        sampledAt,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported',
+        'sampledAt');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported',
+        'createdAt');
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported rebuild(
+          void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder
+      toBuilder() =>
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported &&
+        G__typename == other.G__typename &&
+        value == other.value &&
+        sampledAt == other.sampledAt &&
+        createdAt == other.createdAt;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), value.hashCode),
+            sampledAt.hashCode),
+        createdAt.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported')
+          ..add('G__typename', G__typename)
+          ..add('value', value)
+          ..add('sampledAt', sampledAt)
+          ..add('createdAt', createdAt))
+        .toString();
+  }
+}
+
+class GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder
+    implements
+        Builder<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder> {
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder?
+      _value;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder
+      get value => _$this._value ??=
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder();
+  set value(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder?
+              value) =>
+      _$this._value = value;
+
+  _i3.GDateTimeBuilder? _sampledAt;
+  _i3.GDateTimeBuilder get sampledAt =>
+      _$this._sampledAt ??= new _i3.GDateTimeBuilder();
+  set sampledAt(_i3.GDateTimeBuilder? sampledAt) =>
+      _$this._sampledAt = sampledAt;
+
+  _i3.GDateTimeBuilder? _createdAt;
+  _i3.GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new _i3.GDateTimeBuilder();
+  set createdAt(_i3.GDateTimeBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder() {
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+        ._initializeBuilder(this);
+  }
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _value = $v.value.toBuilder();
+      _sampledAt = $v.sampledAt.toBuilder();
+      _createdAt = $v.createdAt.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reportedBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+      build() {
+    _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+                  ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported',
+                  'G__typename'),
+              value: value.build(),
+              sampledAt: sampledAt.build(),
+              createdAt: createdAt.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'value';
+        value.build();
+        _$failedField = 'sampledAt';
+        sampledAt.build();
+        _$failedField = 'createdAt';
+        createdAt.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+    extends GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value {
+  @override
+  final String G__typename;
+  @override
+  final int h;
+  @override
+  final int s;
+  @override
+  final int b;
+
+  factory _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value(
+          [void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder)?
+              updates]) =>
+      (new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value._(
+      {required this.G__typename,
+      required this.h,
+      required this.s,
+      required this.b})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        h,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value',
+        'h');
+    BuiltValueNullFieldError.checkNotNull(
+        s,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value',
+        's');
+    BuiltValueNullFieldError.checkNotNull(
+        b,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value',
+        'b');
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+      rebuild(
+              void Function(
+                      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder
+      toBuilder() =>
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value &&
+        G__typename == other.G__typename &&
+        h == other.h &&
+        s == other.s &&
+        b == other.b;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), h.hashCode), s.hashCode),
+        b.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value')
+          ..add('G__typename', G__typename)
+          ..add('h', h)
+          ..add('s', s)
+          ..add('b', b))
+        .toString();
+  }
+}
+
+class GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder
+    implements
+        Builder<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder> {
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _h;
+  int? get h => _$this._h;
+  set h(int? h) => _$this._h = h;
+
+  int? _s;
+  int? get s => _$this._s;
+  set s(int? s) => _$this._s = s;
+
+  int? _b;
+  int? get b => _$this._b;
+  set b(int? b) => _$this._b = b;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder() {
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+        ._initializeBuilder(this);
+  }
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _h = $v.h;
+      _s = $v.s;
+      _b = $v.b;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_valueBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+      build() {
+    final _$result = _$v ??
+        new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value',
+                'G__typename'),
+            h: BuiltValueNullFieldError.checkNotNull(
+                h,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value',
+                'h'),
+            s: BuiltValueNullFieldError.checkNotNull(
+                s,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value',
+                's'),
+            b: BuiltValueNullFieldError.checkNotNull(
+                b,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value',
+                'b'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+    extends GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired {
+  @override
+  final String G__typename;
+  @override
+  final GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+      value;
+  @override
+  final GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta?
+      delta;
+  @override
+  final _i3.GDateTime updatedAt;
+
+  factory _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired(
+          [void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder)?
+              updates]) =>
+      (new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired._(
+      {required this.G__typename,
+      required this.value,
+      this.delta,
+      required this.updatedAt})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        value,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired',
+        'value');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired',
+        'updatedAt');
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired rebuild(
+          void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder
+      toBuilder() =>
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired &&
+        G__typename == other.G__typename &&
+        value == other.value &&
+        delta == other.delta &&
+        updatedAt == other.updatedAt;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), value.hashCode), delta.hashCode),
+        updatedAt.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired')
+          ..add('G__typename', G__typename)
+          ..add('value', value)
+          ..add('delta', delta)
+          ..add('updatedAt', updatedAt))
+        .toString();
+  }
+}
+
+class GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder
+    implements
+        Builder<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder> {
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder?
+      _value;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder
+      get value => _$this._value ??=
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder();
+  set value(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder?
+              value) =>
+      _$this._value = value;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder?
+      _delta;
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder
+      get delta => _$this._delta ??=
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder();
+  set delta(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder?
+              delta) =>
+      _$this._delta = delta;
+
+  _i3.GDateTimeBuilder? _updatedAt;
+  _i3.GDateTimeBuilder get updatedAt =>
+      _$this._updatedAt ??= new _i3.GDateTimeBuilder();
+  set updatedAt(_i3.GDateTimeBuilder? updatedAt) =>
+      _$this._updatedAt = updatedAt;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder() {
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+        ._initializeBuilder(this);
+  }
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _value = $v.value.toBuilder();
+      _delta = $v.delta?.toBuilder();
+      _updatedAt = $v.updatedAt.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desiredBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+      build() {
+    _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+                  ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired',
+                  'G__typename'),
+              value: value.build(),
+              delta: _delta?.build(),
+              updatedAt: updatedAt.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'value';
+        value.build();
+        _$failedField = 'delta';
+        _delta?.build();
+        _$failedField = 'updatedAt';
+        updatedAt.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+    extends GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value {
+  @override
+  final String G__typename;
+  @override
+  final int h;
+  @override
+  final int s;
+  @override
+  final int b;
+
+  factory _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value(
+          [void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder)?
+              updates]) =>
+      (new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value._(
+      {required this.G__typename,
+      required this.h,
+      required this.s,
+      required this.b})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        h,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value',
+        'h');
+    BuiltValueNullFieldError.checkNotNull(
+        s,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value',
+        's');
+    BuiltValueNullFieldError.checkNotNull(
+        b,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value',
+        'b');
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+      rebuild(
+              void Function(
+                      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder
+      toBuilder() =>
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value &&
+        G__typename == other.G__typename &&
+        h == other.h &&
+        s == other.s &&
+        b == other.b;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), h.hashCode), s.hashCode),
+        b.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value')
+          ..add('G__typename', G__typename)
+          ..add('h', h)
+          ..add('s', s)
+          ..add('b', b))
+        .toString();
+  }
+}
+
+class GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder
+    implements
+        Builder<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder> {
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _h;
+  int? get h => _$this._h;
+  set h(int? h) => _$this._h = h;
+
+  int? _s;
+  int? get s => _$this._s;
+  set s(int? s) => _$this._s = s;
+
+  int? _b;
+  int? get b => _$this._b;
+  set b(int? b) => _$this._b = b;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder() {
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+        ._initializeBuilder(this);
+  }
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _h = $v.h;
+      _s = $v.s;
+      _b = $v.b;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_valueBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+      build() {
+    final _$result = _$v ??
+        new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value',
+                'G__typename'),
+            h: BuiltValueNullFieldError.checkNotNull(
+                h,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value',
+                'h'),
+            s: BuiltValueNullFieldError.checkNotNull(
+                s,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value',
+                's'),
+            b: BuiltValueNullFieldError.checkNotNull(
+                b,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value',
+                'b'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+    extends GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta {
+  @override
+  final String G__typename;
+  @override
+  final int h;
+  @override
+  final int s;
+  @override
+  final int b;
+
+  factory _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta(
+          [void Function(
+                  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder)?
+              updates]) =>
+      (new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder()
+            ..update(updates))
+          .build();
+
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta._(
+      {required this.G__typename,
+      required this.h,
+      required this.s,
+      required this.b})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        h,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta',
+        'h');
+    BuiltValueNullFieldError.checkNotNull(
+        s,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta',
+        's');
+    BuiltValueNullFieldError.checkNotNull(
+        b,
+        'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta',
+        'b');
+  }
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+      rebuild(
+              void Function(
+                      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder
+      toBuilder() =>
+          new GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta &&
+        G__typename == other.G__typename &&
+        h == other.h &&
+        s == other.s &&
+        b == other.b;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), h.hashCode), s.hashCode),
+        b.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta')
+          ..add('G__typename', G__typename)
+          ..add('h', h)
+          ..add('s', s)
+          ..add('b', b))
+        .toString();
+  }
+}
+
+class GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder
+    implements
+        Builder<
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta,
+            GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder> {
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _h;
+  int? get h => _$this._h;
+  set h(int? h) => _$this._h = h;
+
+  int? _s;
+  int? get s => _$this._s;
+  set s(int? s) => _$this._s = s;
+
+  int? _b;
+  int? get b => _$this._b;
+  set b(int? b) => _$this._b = b;
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder() {
+    GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+        ._initializeBuilder(this);
+  }
+
+  GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _h = $v.h;
+      _s = $v.s;
+      _b = $v.b;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta;
+  }
+
+  @override
+  void update(
+      void Function(
+              GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_deltaBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+      build() {
+    final _$result = _$v ??
+        new _$GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta',
+                'G__typename'),
+            h: BuiltValueNullFieldError.checkNotNull(
+                h,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta',
+                'h'),
+            s: BuiltValueNullFieldError.checkNotNull(
+                s,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta',
+                's'),
+            b: BuiltValueNullFieldError.checkNotNull(
+                b,
+                'GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta',
+                'b'));
     replace(_$result);
     return _$result;
   }

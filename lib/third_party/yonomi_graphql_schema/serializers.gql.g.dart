@@ -33,6 +33,23 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(
           GDeviceDetailsData_traits__asBrightnessDeviceTrait_state_brightness_reported
               .serializer)
+      ..add(GDeviceDetailsData_traits__asColorDeviceTrait.serializer)
+      ..add(GDeviceDetailsData_traits__asColorDeviceTrait_state.serializer)
+      ..add(
+          GDeviceDetailsData_traits__asColorDeviceTrait_state_color.serializer)
+      ..add(GDeviceDetailsData_traits__asColorDeviceTrait_state_color_desired
+          .serializer)
+      ..add(
+          GDeviceDetailsData_traits__asColorDeviceTrait_state_color_desired_delta
+              .serializer)
+      ..add(
+          GDeviceDetailsData_traits__asColorDeviceTrait_state_color_desired_value
+              .serializer)
+      ..add(GDeviceDetailsData_traits__asColorDeviceTrait_state_color_reported
+          .serializer)
+      ..add(
+          GDeviceDetailsData_traits__asColorDeviceTrait_state_color_reported_value
+              .serializer)
       ..add(GDeviceDetailsData_traits__asLockDeviceTrait.serializer)
       ..add(GDeviceDetailsData_traits__asLockDeviceTrait_properties.serializer)
       ..add(GDeviceDetailsData_traits__asLockDeviceTrait_state.serializer)
@@ -239,6 +256,24 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(
           GgetDeviceData_device_traits__asBrightnessDeviceTrait_state_brightness_reported
               .serializer)
+      ..add(GgetDeviceData_device_traits__asColorDeviceTrait.serializer)
+      ..add(GgetDeviceData_device_traits__asColorDeviceTrait_state.serializer)
+      ..add(GgetDeviceData_device_traits__asColorDeviceTrait_state_color
+          .serializer)
+      ..add(GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired
+          .serializer)
+      ..add(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_delta
+              .serializer)
+      ..add(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_desired_value
+              .serializer)
+      ..add(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported
+              .serializer)
+      ..add(
+          GgetDeviceData_device_traits__asColorDeviceTrait_state_color_reported_value
+              .serializer)
       ..add(GgetDeviceData_device_traits__asLockDeviceTrait.serializer)
       ..add(
           GgetDeviceData_device_traits__asLockDeviceTrait_properties.serializer)
@@ -440,6 +475,29 @@ Serializers _$serializers = (new Serializers().toBuilder()
               .serializer)
       ..add(
           GgetDevicesData_me_devices_edges_node_traits__asBrightnessDeviceTrait_state_brightness_reported
+              .serializer)
+      ..add(GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait
+          .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait_state
+              .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait_state_color
+              .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait_state_color_desired
+              .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait_state_color_desired_delta
+              .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait_state_color_desired_value
+              .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait_state_color_reported
+              .serializer)
+      ..add(
+          GgetDevicesData_me_devices_edges_node_traits__asColorDeviceTrait_state_color_reported_value
               .serializer)
       ..add(GgetDevicesData_me_devices_edges_node_traits__asLockDeviceTrait
           .serializer)
