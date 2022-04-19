@@ -18,15 +18,17 @@ main() {
       () async {
     final mockResponse = MockResponse();
     final request = MockRequest();
+    final link = MockLink();
+    when(link.request(any, any)).thenAnswer((_) => Stream.value(mockResponse));
     when(request.headers).thenReturn(Map<String, String>());
     when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
 
     when(mockResponse.errors).thenReturn(null);
 
     await sdk.ColorRepository.sendSetColorAction(
-        request, 'id', sdk.HSBColor(0, 0, 0));
-    verify(request.headers).called(1);
-    verify(request.graphUrl).called(1);
+        request, 'id', sdk.HSBColor(0, 0, 0), injectedClient: link);
+
+    verify(link.request(any, any)).called(1);
   });
 
   test('HSBColor toString override shows the correct values', () {
