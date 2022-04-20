@@ -23,12 +23,12 @@ class LockRepository {
   static Future<void> sendLockUnlockAction(
       Request request, String id, bool lockUnlock,
       {Link? injectedClient}) async {
-    final link = injectedClient ?? GraphLinkCreator.create(request);
+    injectedClient ??= GraphLinkCreator.create(request);
     final req = GmakeLockUnlockActionRequest((b) {
       b..vars.deviceId = id;
       b..vars.lock = lockUnlock;
     });
-    Repository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(injectedClient, req.operation, req.vars.toJson());
   }
 }
 

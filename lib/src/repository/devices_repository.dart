@@ -178,7 +178,7 @@ abstract class State<T> {
   final String name;
   final T value;
 
-  State(this.name, this.value);
+  const State(this.name, this.value);
 }
 
 class UnknownState extends State<String> {

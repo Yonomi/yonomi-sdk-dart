@@ -19,7 +19,7 @@ class ColorRepository {
   static Future<void> sendSetColorAction(
       Request request, String id, HSBColor color,
       {Link? injectedClient}) async {
-    final link = injectedClient ?? GraphLinkCreator.create(request);
+    injectedClient ??= GraphLinkCreator.create(request);
     final req = GmakeColorActionRequest((builder) {
       builder..vars.deviceId = id;
       builder
@@ -29,7 +29,7 @@ class ColorRepository {
           builder..b = color.brightness;
         }).toBuilder();
     });
-    Repository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(injectedClient, req.operation, req.vars.toJson());
   }
 }
 
