@@ -70,8 +70,14 @@ void main() {
   });
 
   test('setFanMode sets fan mode', () async {
+    final device =
+        await DevicesRepository.getDeviceDetails(request, testThermostatId);
+    expect(device, isNotNull);
+
+    final thermostatTrait = device.traits.whereType<ThermostatTrait>().first;
+
     await ThermostatRepository.setFanMode(
-        request, testThermostatId, AvailableFanMode.CIRCULATE);
+        request, testThermostatId, thermostatTrait.availableFanModes.last);
     expect(true, isTrue);
   });
 }
