@@ -16,12 +16,18 @@ import 'brightness_repository_test.mocks.dart';
 ])
 void main() {
   test('BrightnessRepository calls client request with passed id', () async {
+    final mockResponse = MockResponse();
     final request = MockRequest();
+    final link = MockLink();
+
+    when(link.request(any, any)).thenAnswer((_) => Stream.value(mockResponse));
     when(request.headers).thenReturn(Map<String, String>());
     when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
-    await BrightnessRepository.setBrightnessAction(request, 'id', 75);
-    verify(request.graphUrl).called(1);
-    verify(request.headers).called(1);
+    when(mockResponse.errors).thenReturn(null);
+
+    await BrightnessRepository.setBrightnessAction(request, 'id', 75,
+        injectedClient: link);
+    verify(link.request(any, any)).called(1);
   });
 
   test(

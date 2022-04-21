@@ -19,10 +19,10 @@ main() {
     final mockResponse = MockResponse();
     final request = MockRequest();
     final link = MockLink();
+
     when(link.request(any, any)).thenAnswer((_) => Stream.value(mockResponse));
     when(request.headers).thenReturn(Map<String, String>());
     when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
-
     when(mockResponse.errors).thenReturn(null);
 
     await sdk.ColorRepository.sendSetColorAction(
