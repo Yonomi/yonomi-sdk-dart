@@ -153,9 +153,16 @@ abstract class Trait {
   late final Set<Property> properties;
   Trait(this.name, this.states, this.properties);
 
-  State<dynamic> stateWhereType<T extends State<dynamic>>() {
-    return states.firstWhere((state) => state is T,
-        orElse: () => UnknownState());
+  State<dynamic>? stateWhereType<T extends State<dynamic>>() {
+    final state =
+        states.firstWhere((state) => state is T, orElse: () => UnknownState());
+
+    switch (state.runtimeType) {
+      case UnknownState:
+        return null;
+      default:
+        return state;
+    }
   }
 
   T propertyWhereType<T extends Property>() {

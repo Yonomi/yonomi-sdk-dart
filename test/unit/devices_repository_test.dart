@@ -180,11 +180,11 @@ void main() {
 
     expect(convertedValue.first.name, 'thermostat_setting');
     expect(
-        convertedValue.first.stateWhereType<TargetTemperature>().value, 22.0);
+        convertedValue.first.stateWhereType<TargetTemperature>()?.value, 22.0);
     expect(
-        convertedValue.first.stateWhereType<IsLocked>(), isA<UnknownState>());
+        convertedValue.first.stateWhereType<IsLocked>(), null);
     expect(
-      convertedValue.first.stateWhereType<AmbientTemperature>().value,
+      convertedValue.first.stateWhereType<AmbientTemperature>()?.value,
       22.4,
     );
     expect(thermostatTrait.availableFanModes, contains(AvailableFanMode.ON),
@@ -246,8 +246,8 @@ void main() {
     var traitUnderTest = convertedValue.first as LockTrait;
     expect(traitUnderTest.name, 'lock');
     expect(traitUnderTest.supportsIsJammed, equals(true));
-    expect(traitUnderTest.stateWhereType<IsJammed>().value, equals(true));
-    expect(traitUnderTest.stateWhereType<IsLocked>().value, equals(true));
+    expect(traitUnderTest.stateWhereType<IsJammed>()?.value, equals(true));
+    expect(traitUnderTest.stateWhereType<IsLocked>()?.value, equals(true));
   });
 
   test(
@@ -267,12 +267,11 @@ void main() {
 
     var traitUnderTest = convertedValue.first as LockTrait;
     expect(traitUnderTest.name, 'lock');
-    expect(traitUnderTest.stateWhereType<IsLocked>().value, equals(true));
+    expect(traitUnderTest.stateWhereType<IsLocked>()?.value, equals(true));
 
     expect(traitUnderTest.supportsIsJammed, equals(false));
     // Since isJammed is false, should not return the IsJammed State
-    expect(traitUnderTest.stateWhereType<IsJammed>().runtimeType,
-        equals(UnknownState));
+    expect(traitUnderTest.stateWhereType<IsJammed>(), null);
   });
 
   test('''#1. responseToDeviceTraitConverter maps single Brightness
@@ -338,8 +337,8 @@ void main() {
 
     expect(brightnessDevice.id, equals('442f2edb-6183-4671-92e8-c92b68bc9785'));
     expect(brightnessTrait.name, equals('brightness'));
-    expect(brightnessTrait.stateWhereType<Brightness>().value, equals(100));
-    expect(powerTrait.stateWhereType<IsOnOff>().value, isFalse);
+    expect(brightnessTrait.stateWhereType<Brightness>()?.value, equals(100));
+    expect(powerTrait.stateWhereType<IsOnOff>()?.value, isFalse);
   });
 
   test('''#1. responseToDeviceTraitConverter maps single Power
