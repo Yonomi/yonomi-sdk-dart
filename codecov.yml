@@ -6,19 +6,6 @@ coverage:
   round: down
   range: "90...100"
   status:
-    patch:
-      target: auto
-      threshold: 0%
-      base: auto
-      # advanced
-      branches:
-        - main
-      if_ci_failed: error #success, failure, error, ignore
-      only_pulls: false
-      flags:
-        - unit
-      paths:
-        - "*/**/lib/src/"
     project:
       default:
         # basic
