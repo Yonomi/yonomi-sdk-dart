@@ -1,3 +1,27 @@
+# [4.0.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v3.1.0...v4.0.0) (2022-04-25)
+
+
+### Bug Fixes
+
+* Correct definitions of color trait ([e439ba6](https://github.com/Yonomi/yonomi-sdk-dart/commit/e439ba65cb2862622082e904171a41725ca5ead9))
+* Expose color repository ([9ad94d1](https://github.com/Yonomi/yonomi-sdk-dart/commit/9ad94d145d4209b63c348aedc1a729ea504958f6))
+* **devices_repository.dart:** Remove code that is not relevant to device repo ([2cd2be2](https://github.com/Yonomi/yonomi-sdk-dart/commit/2cd2be2e81542dac3181ddac3eb794ad98b72c0d))
+* No longer return a separate state if a state isn't found ([f1d043c](https://github.com/Yonomi/yonomi-sdk-dart/commit/f1d043cbd4fc4920dcd1b5f06569271c2e314688))
+* Remove duplicate hsb value from schema ([45e8e64](https://github.com/Yonomi/yonomi-sdk-dart/commit/45e8e64e03d196245ef2baeff1d96447f4ee0938))
+* Remove more duplicate types in schema ([da80b22](https://github.com/Yonomi/yonomi-sdk-dart/commit/da80b22ab2d2a4a25b0f51cff88e882fecd40bfd))
+* Remove UnknownTrait from this ([82f8cd6](https://github.com/Yonomi/yonomi-sdk-dart/commit/82f8cd67c1479c71b091cccaf8e9b77f2e71ebf9))
+* Update pubspec.yaml deps and fix syntax of color graphql ([1285bbd](https://github.com/Yonomi/yonomi-sdk-dart/commit/1285bbdfb2cd2184b97f7a22b23ea244e235fdb5))
+
+
+### Features
+
+* Add the Color trait ([987481e](https://github.com/Yonomi/yonomi-sdk-dart/commit/987481e7b30b67e61ad3fc03028bbeb0d0057945))
+
+
+### BREAKING CHANGES
+
+* **devices_repository.dart:**
+
 # [3.1.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v3.0.0...v3.1.0) (2022-04-19)
 
 
