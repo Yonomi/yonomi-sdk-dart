@@ -1,7 +1,7 @@
 
 
 
-# Trait class
+# ColorTemperatureTrait class
 
 
 
@@ -14,29 +14,34 @@
 
 
 
+**Inheritance**
+
+- [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
+- [Trait](../yonomi-sdk/Trait-class.md)
+- ColorTemperatureTrait
 
 
 
-**Implementers**
-
-- [BatteryLevelTrait](../yonomi-sdk/BatteryLevelTrait-class.md)
-- [BrightnessTrait](../yonomi-sdk/BrightnessTrait-class.md)
-- [ColorTemperatureTrait](../yonomi-sdk/ColorTemperatureTrait-class.md)
-- [LockTrait](../yonomi-sdk/LockTrait-class.md)
-- [PowerTrait](../yonomi-sdk/PowerTrait-class.md)
-- [ThermostatTrait](../yonomi-sdk/ThermostatTrait-class.md)
-- [UnknownTrait](../yonomi-sdk/UnknownTrait-class.md)
 
 
 
 ## Constructors
 
-[Trait](../yonomi-sdk/Trait/Trait.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)> states, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
+[ColorTemperatureTrait](../yonomi-sdk/ColorTemperatureTrait/ColorTemperatureTrait.md) ([Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[State](../yonomi-sdk/State-class.md)> states, [Set](https://api.flutter.dev/flutter/dart-core/Set-class.html)&lt;[Property](../yonomi-sdk/Property-class.md)> properties)
 
     
 
 
 ## Properties
+
+##### [colorTemperature](../yonomi-sdk/ColorTemperatureTrait/colorTemperature.md) &#8594; [int](https://api.flutter.dev/flutter/dart-core/int-class.html)?
+
+
+
+   
+_read-only_
+
+
 
 ##### [hashCode](https://api.flutter.dev/flutter/dart-core/Object/hashCode.html) &#8594; [int](https://api.flutter.dev/flutter/dart-core/int-class.html)
 
@@ -52,7 +57,7 @@ _read-only, inherited_
 
 
    
-_late, final_
+_late, final, inherited_
 
 
 
@@ -61,7 +66,7 @@ _late, final_
 
 
    
-_late, final_
+_late, final, inherited_
 
 
 
@@ -79,7 +84,16 @@ _read-only, inherited_
 
 
    
-_late, final_
+_late, final, inherited_
+
+
+
+##### [supportedColorTemperatureRange](../yonomi-sdk/ColorTemperatureTrait/supportedColorTemperatureRange.md) &#8594; [IntRange](../yonomi-sdk/IntRange-class.md)
+
+
+
+   
+_read-only_
 
 
 
@@ -100,7 +114,7 @@ _inherited_
 
 
    
-
+_inherited_
 
 
 
@@ -109,7 +123,7 @@ _inherited_
 
 
    
-
+_inherited_
 
 
 

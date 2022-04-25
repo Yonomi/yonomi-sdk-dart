@@ -1,7 +1,7 @@
 
 
 
-# State&lt;T> class
+# IntRange class
 
 
 
@@ -15,27 +15,9 @@
 
 
 
-
-
-**Implementers**
-
-- [AmbientTemperature](../yonomi-sdk/AmbientTemperature-class.md)
-- [BatteryLevel](../yonomi-sdk/BatteryLevel-class.md)
-- [Brightness](../yonomi-sdk/Brightness-class.md)
-- [ColorTemperature](../yonomi-sdk/ColorTemperature-class.md)
-- [FanMode](../yonomi-sdk/FanMode-class.md)
-- [IsJammed](../yonomi-sdk/IsJammed-class.md)
-- [IsLocked](../yonomi-sdk/IsLocked-class.md)
-- [IsOnOff](../yonomi-sdk/IsOnOff-class.md)
-- [TargetTemperature](../yonomi-sdk/TargetTemperature-class.md)
-- [ThermostatMode](../yonomi-sdk/ThermostatMode-class.md)
-- [UnknownState](../yonomi-sdk/UnknownState-class.md)
-
-
-
 ## Constructors
 
-[State](../yonomi-sdk/State/State.md) ([String](https://api.flutter.dev/flutter/dart-core/String-class.html) name, T value)
+[IntRange](../yonomi-sdk/IntRange/IntRange.md) ({required [int](https://api.flutter.dev/flutter/dart-core/int-class.html)? min, required [int](https://api.flutter.dev/flutter/dart-core/int-class.html)? max})
 
     
 
@@ -51,7 +33,16 @@ _read-only, inherited_
 
 
 
-##### [name](../yonomi-sdk/State/name.md) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [max](../yonomi-sdk/IntRange/max.md) &#8594; [int](https://api.flutter.dev/flutter/dart-core/int-class.html)?
+
+
+
+   
+_final_
+
+
+
+##### [min](../yonomi-sdk/IntRange/min.md) &#8594; [int](https://api.flutter.dev/flutter/dart-core/int-class.html)?
 
 
 
@@ -66,15 +57,6 @@ _final_
 
 A representation of the runtime type of the object.   
 _read-only, inherited_
-
-
-
-##### [value](../yonomi-sdk/State/value.md) &#8594; T
-
-
-
-   
-_final_
 
 
 

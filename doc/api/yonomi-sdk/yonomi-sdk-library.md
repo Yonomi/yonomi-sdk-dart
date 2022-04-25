@@ -58,6 +58,13 @@
  
 
 
+##### [BatteryLevelRepository](../yonomi-sdk/BatteryLevelRepository-class.md)
+
+
+
+ 
+
+
 ##### [BatteryLevelTrait](../yonomi-sdk/BatteryLevelTrait-class.md)
 
 
@@ -80,6 +87,27 @@
 
 
 ##### [BrightnessTrait](../yonomi-sdk/BrightnessTrait-class.md)
+
+
+
+ 
+
+
+##### [ColorTemperature](../yonomi-sdk/ColorTemperature-class.md)
+
+
+
+ 
+
+
+##### [ColorTemperatureRepository](../yonomi-sdk/ColorTemperatureRepository-class.md)
+
+
+
+ 
+
+
+##### [ColorTemperatureTrait](../yonomi-sdk/ColorTemperatureTrait-class.md)
 
 
 
@@ -129,6 +157,13 @@
 
 
 ##### [HeatSetPointRange](../yonomi-sdk/HeatSetPointRange-class.md)
+
+
+
+ 
+
+
+##### [IntRange](../yonomi-sdk/IntRange-class.md)
 
 
 
@@ -206,6 +241,13 @@
 
 
 ##### [State](../yonomi-sdk/State-class.md)&lt;T>
+
+
+
+ 
+
+
+##### [SupportedColorTemperatureRange](../yonomi-sdk/SupportedColorTemperatureRange-class.md)
 
 
 
