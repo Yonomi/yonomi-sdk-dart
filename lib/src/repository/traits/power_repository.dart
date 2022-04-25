@@ -16,13 +16,13 @@ class PowerRepository {
 
   static Future<void> sendPowerAction(Request request, String id, bool onOff,
       {Link? injectedClient}) async {
-    final link = injectedClient ?? GraphLinkCreator.create(request);
+    injectedClient ??= GraphLinkCreator.create(request);
     final req = GmakePowerActionRequest((b) {
       b..vars.deviceId = id;
       b..vars.onOff = onOff;
     });
     Repository.mutate(
-      link,
+      injectedClient,
       req.operation,
       req.vars.toJson(),
     );

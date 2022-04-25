@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Builder](https://pub.dev/documentation/built_value/8.1.3/built_value/Builder-class.html)&lt;[GHSBColorValueInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInput-class.md), [GHSBColorValueInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInputBuilder-class.md)>
+- [Builder](https://pub.dev/documentation/built_value/8.2.0/built_value/Builder-class.html)&lt;[GHSBColorValueInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInput-class.md), [GHSBColorValueInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInputBuilder-class.md)>
 
 
 
@@ -27,7 +27,7 @@
 
 [GHSBColorValueInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInputBuilder/GHSBColorValueInputBuilder.md) ()
 
-    
+
 
 
 ## Properties
@@ -36,7 +36,7 @@
 
 
 
-   
+
 _read / write_
 
 
@@ -45,7 +45,7 @@ _read / write_
 
 
 
-   
+
 _read / write_
 
 
@@ -54,7 +54,7 @@ _read / write_
 
 
 
-The hash code for this object. [...](https://api.flutter.dev/flutter/dart-core/Object/hashCode.html)  
+The hash code for this object. [...](https://api.flutter.dev/flutter/dart-core/Object/hashCode.html)
 _read-only, inherited_
 
 
@@ -63,7 +63,7 @@ _read-only, inherited_
 
 
 
-A representation of the runtime type of the object.   
+A representation of the runtime type of the object.
 _read-only, inherited_
 
 
@@ -72,7 +72,7 @@ _read-only, inherited_
 
 
 
-   
+
 _read / write_
 
 
@@ -84,7 +84,7 @@ _read / write_
 
 
 
-Builds. [...](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInputBuilder/build.md)  
+Builds. [...](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInputBuilder/build.md)
 _override_
 
 
@@ -93,7 +93,7 @@ _override_
 
 
 
-Invoked when a non-existent method or property is accessed. [...](https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html)  
+Invoked when a non-existent method or property is accessed. [...](https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html)
 _inherited_
 
 
@@ -102,7 +102,7 @@ _inherited_
 
 
 
-Replaces the value in the builder with a new one. [...](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInputBuilder/replace.md)  
+Replaces the value in the builder with a new one. [...](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInputBuilder/replace.md)
 _override_
 
 
@@ -111,7 +111,7 @@ _override_
 
 
 
-A string representation of this object. [...](https://api.flutter.dev/flutter/dart-core/Object/toString.html)  
+A string representation of this object. [...](https://api.flutter.dev/flutter/dart-core/Object/toString.html)
 _inherited_
 
 
@@ -120,7 +120,7 @@ _inherited_
 
 
 
-Applies updates. [...](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInputBuilder/update.md)  
+Applies updates. [...](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GHSBColorValueInputBuilder/update.md)
 _override_
 
 
@@ -132,7 +132,7 @@ _override_
 
 
 
-The equality operator. [...](https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html)  
+The equality operator. [...](https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html)
 _inherited_
 
 

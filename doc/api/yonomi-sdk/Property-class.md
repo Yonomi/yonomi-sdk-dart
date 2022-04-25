@@ -23,6 +23,7 @@
 - [AvailableThermostatModes](../yonomi-sdk/AvailableThermostatModes-class.md)
 - [CoolSetPointRange](../yonomi-sdk/CoolSetPointRange-class.md)
 - [HeatSetPointRange](../yonomi-sdk/HeatSetPointRange-class.md)
+- [SupportedColorTemperatureRange](../yonomi-sdk/SupportedColorTemperatureRange-class.md)
 - [SupportsDiscreteOnOff](../yonomi-sdk/SupportsDiscreteOnOff-class.md)
 - [SupportsIsJammed](../yonomi-sdk/SupportsIsJammed-class.md)
 

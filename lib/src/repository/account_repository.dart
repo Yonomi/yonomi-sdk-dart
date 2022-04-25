@@ -15,7 +15,7 @@ import 'gql_client.dart';
 class AccountRepository {
   static Future<List<GgetAllIntegrationsData_integrations_edges_node>>
       getAllIntegrations(Request request, {Link? graphLink}) async {
-    if (graphLink == null) graphLink = GraphLinkCreator.create(request);
+    graphLink ??= GraphLinkCreator.create(request);
     final req = GgetAllIntegrations();
     final res = await Repository.fetch(graphLink, req.operation);
 
@@ -30,7 +30,7 @@ class AccountRepository {
   static Future<String> generateAccountUrl(
       String integrationId, Request request,
       {Link? graphLink}) async {
-    if (graphLink == null) graphLink = GraphLinkCreator.create(request);
+    graphLink ??= GraphLinkCreator.create(request);
     final req = GgenerateAccountLinkingUrl(
         (b) => b..vars.integrationId = integrationId);
     final res =
@@ -43,7 +43,7 @@ class AccountRepository {
 
   static Future<List<GlinkedAccountsData_me_linkedAccounts_edges_node>>
       getLinkedAccounts(Request request, {Link? graphLink}) async {
-    if (graphLink == null) graphLink = GraphLinkCreator.create(request);
+    graphLink ??= GraphLinkCreator.create(request);
 
     final req = GlinkedAccounts();
     final res = await Repository.fetch(graphLink, req.operation);
@@ -59,7 +59,7 @@ class AccountRepository {
   static Future<String> removeLinkedAccount(
       String linkedAccountId, Request request,
       {Link? graphqlLink}) async {
-    graphqlLink = graphqlLink ?? GraphLinkCreator.create(request);
+    graphqlLink ??= GraphLinkCreator.create(request);
 
     final req =
         GremoveLinkedAccount((b) => b..vars.linkedAccountId = linkedAccountId);

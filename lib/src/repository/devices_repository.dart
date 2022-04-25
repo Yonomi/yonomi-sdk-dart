@@ -7,6 +7,7 @@ import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/battery_level_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/color_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
@@ -112,23 +113,14 @@ class DevicesRepository {
           return PowerRepository.getPowerTrait(trait);
         case GTraitName.BRIGHTNESS:
           return BrightnessRepository.getBrightnessTrait(trait);
+        case GTraitName.COLOR:
+          return ColorRepository.getColorTrait(trait);
         case GTraitName.COLOR_TEMPERATURE:
           return ColorTemperatureRepository.getColorTemperatureTrait(trait);
         default:
           return UnknownTrait(trait.name.toString());
       }
     }).toList();
-  }
-
-  static BatteryLevelTrait getBatteryLevelTrait(dynamic trait) {
-    if (trait is GgetDeviceData_device_traits__asBatteryLevelDeviceTrait ||
-        trait
-            is GgetDevicesData_me_devices_edges_node_traits__asBatteryLevelDeviceTrait) {
-      return BatteryLevelTrait(
-          BatteryLevel(trait.state.percentage.reported?.value ?? 0));
-    } else {
-      throw ArgumentError.value(trait);
-    }
   }
 }
 
@@ -161,9 +153,13 @@ abstract class Trait {
   late final Set<Property> properties;
   Trait(this.name, this.states, this.properties);
 
-  State<dynamic> stateWhereType<T extends State<dynamic>>() {
-    return states.firstWhere((state) => state is T,
-        orElse: () => UnknownState());
+  State<dynamic>? stateWhereType<T extends State<dynamic>>() {
+    final tStates = states.whereType<T>();
+    if (tStates.isEmpty) {
+      return null;
+    } else {
+      return tStates.first;
+    }
   }
 
   T propertyWhereType<T extends Property>() {
@@ -175,7 +171,7 @@ abstract class State<T> {
   final String name;
   final T value;
 
-  State(this.name, this.value);
+  const State(this.name, this.value);
 }
 
 class UnknownState extends State<String> {

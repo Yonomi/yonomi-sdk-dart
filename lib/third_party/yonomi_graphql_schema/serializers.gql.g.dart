@@ -771,6 +771,37 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__base
               .serializer)
       ..add(GmakeBrightnessActionRequestVars.serializer)
+      ..add(GmakeColorActionRequest.serializer)
+      ..add(GmakeColorActionRequestData.serializer)
+      ..add(GmakeColorActionRequestData_actionColorSetColor.serializer)
+      ..add(GmakeColorActionRequestData_actionColorSetColor_device.serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_value
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_reported
+              .serializer)
+      ..add(
+          GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_reported_value
+              .serializer)
+      ..add(GmakeColorActionRequestData_actionColorSetColor_device_traits__base
+          .serializer)
+      ..add(GmakeColorActionRequestVars.serializer)
       ..add(GmakeColorTemperatureActionRequest.serializer)
       ..add(GmakeColorTemperatureActionRequestData.serializer)
       ..add(
@@ -1149,6 +1180,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
+                GmakeColorActionRequestData_actionColorSetColor_device_traits)
+          ]),
+          () => new ListBuilder<
+              GmakeColorActionRequestData_actionColorSetColor_device_traits>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
                 GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device_traits)
           ]),
           () => new ListBuilder<
@@ -1190,4 +1228,4 @@ Serializers _$serializers = (new Serializers().toBuilder()
               GmakeSetTargetTemperatureRequestData_actionThermostatSettingSetTargetTemperature_device_traits>()))
     .build();
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

@@ -59,6 +59,25 @@ import 'package:yonomi_platform_sdk/src/queries/brightness/make_brightness_actio
     show GmakeBrightnessActionRequest;
 import 'package:yonomi_platform_sdk/src/queries/brightness/make_brightness_action_request/query.var.gql.dart'
     show GmakeBrightnessActionRequestVars;
+import 'package:yonomi_platform_sdk/src/queries/color/make_set_color_request/query.data.gql.dart'
+    show
+        GmakeColorActionRequestData_actionColorSetColor_device_traits,
+        GmakeColorActionRequestData,
+        GmakeColorActionRequestData_actionColorSetColor,
+        GmakeColorActionRequestData_actionColorSetColor_device,
+        GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait,
+        GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state,
+        GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color,
+        GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired,
+        GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta,
+        GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_value,
+        GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_reported,
+        GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_reported_value,
+        GmakeColorActionRequestData_actionColorSetColor_device_traits__base;
+import 'package:yonomi_platform_sdk/src/queries/color/make_set_color_request/query.req.gql.dart'
+    show GmakeColorActionRequest;
+import 'package:yonomi_platform_sdk/src/queries/color/make_set_color_request/query.var.gql.dart'
+    show GmakeColorActionRequestVars;
 import 'package:yonomi_platform_sdk/src/queries/color_temperature/make_colortemperature_action_request/query.data.gql.dart'
     show
         GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device_traits,
@@ -498,6 +517,8 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
       GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits
           .serializer)
   ..add(
+      GmakeColorActionRequestData_actionColorSetColor_device_traits.serializer)
+  ..add(
       GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device_traits
           .serializer)
   ..add(GmakeLockUnlockActionRequestData_actionLockSetLocked_device_traits
@@ -845,6 +866,20 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__asBrightnessDeviceTrait_state_brightness_reported,
   GmakeBrightnessActionRequestData_actionBrightnessSetBrightnessPercentage_device_traits__base,
   GmakeBrightnessActionRequestVars,
+  GmakeColorActionRequest,
+  GmakeColorActionRequestData,
+  GmakeColorActionRequestData_actionColorSetColor,
+  GmakeColorActionRequestData_actionColorSetColor_device,
+  GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait,
+  GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state,
+  GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color,
+  GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired,
+  GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_delta,
+  GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_desired_value,
+  GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_reported,
+  GmakeColorActionRequestData_actionColorSetColor_device_traits__asColorDeviceTrait_state_color_reported_value,
+  GmakeColorActionRequestData_actionColorSetColor_device_traits__base,
+  GmakeColorActionRequestVars,
   GmakeColorTemperatureActionRequest,
   GmakeColorTemperatureActionRequestData,
   GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature,

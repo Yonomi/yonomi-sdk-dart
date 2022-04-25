@@ -25,7 +25,7 @@
 
 ```dart
 static GHSBColorValueInput? fromJson(Map<String, dynamic> json) =>
-    _i2.serializers.deserializeWith(GHSBColorValueInput.serializer, json);
+    _i1.serializers.deserializeWith(GHSBColorValueInput.serializer, json);
 ```
 
 

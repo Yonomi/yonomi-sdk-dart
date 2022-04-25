@@ -6,7 +6,7 @@ version: 2.1
 
 # Orb declarations
 orbs:
-  codecov: codecov/codecov@1.0.2
+  codecov: codecov/codecov@1.2.5
   gh: circleci/github-cli@2.1.0
 
 executors:
@@ -15,7 +15,7 @@ executors:
       - image: cirrusci/flutter
     shell: "/bin/bash -eo pipefail"
 
-anchors: 
+anchors:
   - &main_only
     filters:
       branches:

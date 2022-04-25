@@ -12,7 +12,7 @@
 
 
 [ObjectTypeDefinitionNode](https://pub.dev/documentation/gql/0.13.0/ast/ObjectTypeDefinitionNode-class.html) const Mutation
-  
+
 
 
 
@@ -489,9 +489,35 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
               name: _i1.NameNode(value: 'CreateActionResponse'),
               isNonNull: true)),
       _i1.FieldDefinitionNode(
-          name: _i1.NameNode(
-              value:
-                  'actionThermostatSettingSetThermostatModeAndTargetTemperature'),
+          name: _i1.NameNode(value: 'actionColorSetColor'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'color'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'HSBColorValue'),
+                    isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'CLAIMABLE_claimOwnership'),
           directives: [],
           args: [
             _i1.InputValueDefinitionNode(
