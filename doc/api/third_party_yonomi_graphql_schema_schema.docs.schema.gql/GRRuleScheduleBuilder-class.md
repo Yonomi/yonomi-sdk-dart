@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Builder](https://pub.dev/documentation/built_value/8.1.3/built_value/Builder-class.html)&lt;[GRRuleSchedule](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GRRuleSchedule-class.md), [GRRuleScheduleBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GRRuleScheduleBuilder-class.md)>
+- [Builder](https://pub.dev/documentation/built_value/8.2.0/built_value/Builder-class.html)&lt;[GRRuleSchedule](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GRRuleSchedule-class.md), [GRRuleScheduleBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GRRuleScheduleBuilder-class.md)>
 
 
 

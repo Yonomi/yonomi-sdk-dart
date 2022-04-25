@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Builder](https://pub.dev/documentation/built_value/8.1.3/built_value/Builder-class.html)&lt;[GMockReportedListStateValue](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue-class.md), [GMockReportedListStateValueBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder-class.md)>
+- [Builder](https://pub.dev/documentation/built_value/8.2.0/built_value/Builder-class.html)&lt;[GMockReportedListStateValue](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValue-class.md), [GMockReportedListStateValueBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GMockReportedListStateValueBuilder-class.md)>
 
 
 

@@ -436,11 +436,11 @@ class _$GMockConnectorRequestsFiltersSerializer
       switch (key) {
         case 'before':
           result.before = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'after':
           result.after = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -559,7 +559,7 @@ class _$GPinCodeCredentialInputSerializer
           result.schedules.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(GRRuleSchedule)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
       }
     }
@@ -632,13 +632,13 @@ class _$GPinCodeCredentialItemInputSerializer
           result.recurringSchedules.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(GRecurringScheduleInput)
-              ]))! as BuiltList<Object?>);
+              ]))! as BuiltList<Object>);
           break;
         case 'temporarySchedules':
           result.temporarySchedules.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(GTemporaryScheduleInput)
-              ]))! as BuiltList<Object?>);
+              ]))! as BuiltList<Object>);
           break;
       }
     }
@@ -910,13 +910,13 @@ class _$GMockReportedListStateValueSerializer
           result.upsert.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(GJSONObject)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
         case 'delete':
           result.delete.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(String)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
       }
     }
@@ -1000,7 +1000,7 @@ class _$GDeviceFilterInputSerializer
           result.traits.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(GTraitName)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
       }
     }
@@ -1117,7 +1117,7 @@ class _$GDeviceEventFilterInputSerializer
         case 'eventType':
           result.eventType = serializers.deserialize(value,
                   specifiedType: const FullType(GDeviceEventTypeName))
-              as GDeviceEventTypeName?;
+              as GDeviceEventTypeName;
           break;
         case 'before':
           result.before.replace(serializers.deserialize(value,
@@ -1129,13 +1129,13 @@ class _$GDeviceEventFilterInputSerializer
           break;
         case 'traitInstance':
           result.traitInstance = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'traits':
           result.traits.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(GTraitName)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
       }
     }
@@ -1235,7 +1235,7 @@ class _$GTraitFilteredEventFilterInputSerializer
         case 'eventType':
           result.eventType = serializers.deserialize(value,
                   specifiedType: const FullType(GDeviceEventTypeName))
-              as GDeviceEventTypeName?;
+              as GDeviceEventTypeName;
           break;
         case 'before':
           result.before.replace(serializers.deserialize(value,
@@ -2844,4 +2844,4 @@ class GTraitFilteredEventFilterInputBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

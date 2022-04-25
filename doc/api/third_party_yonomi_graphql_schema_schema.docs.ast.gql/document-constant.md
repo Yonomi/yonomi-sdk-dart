@@ -12,7 +12,7 @@
 
 
 [DocumentNode](https://pub.dev/documentation/gql/0.13.0/ast/DocumentNode-class.html) const document
-  
+
 
 
 
@@ -26,6 +26,7 @@
 const document = _i1.DocumentNode(definitions: [
   Health,
   Query,
+  HSBColorValueInput,
   JSON,
   MockConnectorRequestsFilters,
   Mutation,
@@ -140,6 +141,11 @@ const document = _i1.DocumentNode(definitions: [
   PowerState,
   PowerProperties,
   PowerDeviceTrait,
+  ColorStateReportedColor,
+  ColorStateDesiredColor,
+  ColorStateColorField,
+  ColorState,
+  ColorDeviceTrait,
   ThermostatSettingStateReportedMode,
   ThermostatSettingStateDesiredMode,
   ThermostatSettingStateModeField,
