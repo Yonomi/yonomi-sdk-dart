@@ -17,7 +17,7 @@
 **Inheritance**
 
 - [Object](https://api.flutter.dev/flutter/dart-core/Object-class.html)
-- [EnumClass](https://pub.dev/documentation/built_value/8.1.3/built_value/EnumClass-class.html)
+- [EnumClass](https://pub.dev/documentation/built_value/8.2.0/built_value/EnumClass-class.html)
 - GThermostatMode
 
 
@@ -37,7 +37,7 @@ _read-only, inherited_
 
 
 
-##### [name](https://pub.dev/documentation/built_value/8.1.3/built_value/EnumClass/name.html) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [name](https://pub.dev/documentation/built_value/8.2.0/built_value/EnumClass/name.html) &#8594; [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
@@ -67,11 +67,11 @@ _inherited_
 
 
 
-##### [toString](https://pub.dev/documentation/built_value/8.1.3/built_value/EnumClass/toString.html)() [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
+##### [toString](https://pub.dev/documentation/built_value/8.2.0/built_value/EnumClass/toString.html)() [String](https://api.flutter.dev/flutter/dart-core/String-class.html)
 
 
 
-A string representation of this object. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/EnumClass/toString.html)  
+A string representation of this object. [...](https://pub.dev/documentation/built_value/8.2.0/built_value/EnumClass/toString.html)  
 _inherited_
 
 
@@ -91,7 +91,7 @@ _inherited_
 
 ## Static Properties
 
-##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatMode/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.3/serializer/Serializer-class.html)&lt;[GThermostatMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatMode-class.md)>
+##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatMode/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.2.0/serializer/Serializer-class.html)&lt;[GThermostatMode](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GThermostatMode-class.md)>
 
 
 

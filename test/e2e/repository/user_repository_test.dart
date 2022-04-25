@@ -23,5 +23,12 @@ void main() {
     expect(user.firstActivityAt, isA<DateTime>());
     expect(user.lastActivityAt, isA<DateTime>());
     expect(user.tenant, isA<Tenant>());
+
+    User user2 =
+        User(user.id, user.firstActivityAt, user.lastActivityAt, user.tenant);
+    expect(user.id, user2.id);
+    expect(user.firstActivityAt, user2.firstActivityAt);
+    expect(user.lastActivityAt, user2.lastActivityAt);
+    expect(user.tenant, user2.tenant);
   });
 }

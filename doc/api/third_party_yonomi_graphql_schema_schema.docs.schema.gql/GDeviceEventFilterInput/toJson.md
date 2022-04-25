@@ -25,7 +25,7 @@
 
 ```dart
 Map<String, dynamic> toJson() =>
-    (_i2.serializers.serializeWith(GDeviceEventFilterInput.serializer, this)
+    (_i1.serializers.serializeWith(GDeviceEventFilterInput.serializer, this)
         as Map<String, dynamic>);
 ```
 

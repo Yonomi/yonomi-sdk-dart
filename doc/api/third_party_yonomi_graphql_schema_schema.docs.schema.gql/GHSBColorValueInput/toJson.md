@@ -25,7 +25,7 @@
 
 ```dart
 Map<String, dynamic> toJson() =>
-    (_i2.serializers.serializeWith(GHSBColorValueInput.serializer, this)
+    (_i1.serializers.serializeWith(GHSBColorValueInput.serializer, this)
         as Map<String, dynamic>);
 ```
 

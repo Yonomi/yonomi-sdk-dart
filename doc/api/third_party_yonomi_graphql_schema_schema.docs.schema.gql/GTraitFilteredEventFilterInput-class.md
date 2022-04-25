@@ -17,7 +17,7 @@
 
 **Implemented types**
 
-- [Built](https://pub.dev/documentation/built_value/8.1.3/built_value/Built-class.html)&lt;[GTraitFilteredEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInput-class.md), [GTraitFilteredEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInputBuilder-class.md)>
+- [Built](https://pub.dev/documentation/built_value/8.2.0/built_value/Built-class.html)&lt;[GTraitFilteredEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInput-class.md), [GTraitFilteredEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInputBuilder-class.md)>
 
 
 
@@ -89,20 +89,20 @@ _inherited_
 
 
 
-##### [rebuild](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/rebuild.html)(dynamic updates([GTraitFilteredEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInputBuilder-class.md))) [GTraitFilteredEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInput-class.md)
+##### [rebuild](https://pub.dev/documentation/built_value/8.2.0/built_value/Built/rebuild.html)(dynamic updates([GTraitFilteredEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInputBuilder-class.md))) [GTraitFilteredEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInput-class.md)
 
 
 
-Rebuilds the instance. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/rebuild.html)  
+Rebuilds the instance. [...](https://pub.dev/documentation/built_value/8.2.0/built_value/Built/rebuild.html)  
 _inherited_
 
 
 
-##### [toBuilder](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/toBuilder.html)() [GTraitFilteredEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInputBuilder-class.md)
+##### [toBuilder](https://pub.dev/documentation/built_value/8.2.0/built_value/Built/toBuilder.html)() [GTraitFilteredEventFilterInputBuilder](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInputBuilder-class.md)
 
 
 
-Converts the instance to a builder <code>B</code>. [...](https://pub.dev/documentation/built_value/8.1.3/built_value/Built/toBuilder.html)  
+Converts the instance to a builder <code>B</code>. [...](https://pub.dev/documentation/built_value/8.2.0/built_value/Built/toBuilder.html)  
 _inherited_
 
 
@@ -140,7 +140,7 @@ _inherited_
 
 ## Static Properties
 
-##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInput/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.1.3/serializer/Serializer-class.html)&lt;[GTraitFilteredEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInput-class.md)>
+##### [serializer](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInput/serializer.md) &#8594; [Serializer](https://pub.dev/documentation/built_value/8.2.0/serializer/Serializer-class.html)&lt;[GTraitFilteredEventFilterInput](../third_party_yonomi_graphql_schema_schema.docs.schema.gql/GTraitFilteredEventFilterInput-class.md)>
 
 
 

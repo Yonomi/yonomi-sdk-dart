@@ -25,7 +25,7 @@
 
 ```dart
 static GPinCodeCredentialInput? fromJson(Map<String, dynamic> json) =>
-    _i2.serializers.deserializeWith(GPinCodeCredentialInput.serializer, json);
+    _i1.serializers.deserializeWith(GPinCodeCredentialInput.serializer, json);
 ```
 
 
