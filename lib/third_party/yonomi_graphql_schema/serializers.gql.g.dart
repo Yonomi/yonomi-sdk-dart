@@ -802,6 +802,33 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GmakeColorActionRequestData_actionColorSetColor_device_traits__base
           .serializer)
       ..add(GmakeColorActionRequestVars.serializer)
+      ..add(GmakeColorTemperatureActionRequest.serializer)
+      ..add(GmakeColorTemperatureActionRequestData.serializer)
+      ..add(
+          GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature
+              .serializer)
+      ..add(
+          GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device
+              .serializer)
+      ..add(
+          GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device_traits__asColorTemperatureDeviceTrait
+              .serializer)
+      ..add(
+          GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device_traits__asColorTemperatureDeviceTrait_state
+              .serializer)
+      ..add(
+          GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature
+              .serializer)
+      ..add(
+          GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_desired
+              .serializer)
+      ..add(
+          GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device_traits__asColorTemperatureDeviceTrait_state_colorTemperature_reported
+              .serializer)
+      ..add(
+          GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device_traits__base
+              .serializer)
+      ..add(GmakeColorTemperatureActionRequestVars.serializer)
       ..add(GmakeLockUnlockActionRequest.serializer)
       ..add(GmakeLockUnlockActionRequestData.serializer)
       ..add(GmakeLockUnlockActionRequestData_actionLockSetLocked.serializer)
@@ -1157,6 +1184,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GmakeColorActionRequestData_actionColorSetColor_device_traits>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device_traits)
+          ]),
+          () => new ListBuilder<
+              GmakeColorTemperatureActionRequestData_actionColorTemperatureSetColorTemperature_device_traits>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(

@@ -496,13 +496,6 @@ void main() {
   });
 
   test(
-      'getColorTemperatureTrait should throw argumentError if trait object is not correct type',
-      () {
-    expect(() => ColorTemperatureRepository.getColorTemperatureTrait(null),
-        throwsA(isA<ArgumentError>()));
-  });
-
-  test(
       'getBatteryLevelTrait should throw argumentError if trait object is not correct type',
       () {
     expect(() => BatteryLevelRepository.getBatteryLevelTrait(null),
