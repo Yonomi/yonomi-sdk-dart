@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v4.0.0...v4.1.0) (2022-04-26)
+
+
+### Features
+
+* **ColorTemperatureTrait:** Set ColorTemperature Action (DX-362) ([#66](https://github.com/Yonomi/yonomi-sdk-dart/issues/66)) ([a1a0a0a](https://github.com/Yonomi/yonomi-sdk-dart/commit/a1a0a0adf1c014e8ecdb52fba739f28da9fb7766))
+
 # [4.0.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v3.1.0...v4.0.0) (2022-04-25)
 
 
