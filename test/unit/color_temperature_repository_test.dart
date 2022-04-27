@@ -18,8 +18,12 @@ void main() {
   test('ColorTemperatureRepository calls client request with passed id',
       () async {
     final request = MockRequest();
+    final mockResponse = MockResponse();
     when(request.headers).thenReturn(Map<String, String>());
     when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
+    when(mockResponse.errors).thenReturn(null);
+    when(mockResponse.data).thenReturn(Map<String, dynamic>());
+
     await ColorTemperatureRepository.setColorTemperatureAction(
         request, 'id', 6000);
     verify(request.graphUrl).called(1);
