@@ -256,18 +256,6 @@ type Mutation {
     setPointHigh: Float!
   ): CreateActionResponse!
 
-  # Set the absolute color value of this device.
-  actionColorSetColor(
-    # The target device's id
-    deviceId: ID!
-
-    # The identifier for the specific trait instance this action is targeting.
-    traitInstance: String! = "default"
-
-    # The color to set the device to.
-    color: HSBColorValue!
-  ): CreateActionResponse!
-
   # This mutation allows ownership of a device to be claimed.
   CLAIMABLE_claimOwnership(
     # ID of device to attempt to claim.
