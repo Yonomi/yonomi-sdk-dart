@@ -22,8 +22,9 @@ void main() {
     when(request.headers).thenReturn(Map<String, String>());
     when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
     when(mockResponse.errors).thenReturn(null);
+    when(mockResponse.data).thenReturn(Map<String, dynamic>());
 
-    BrightnessRepository.setBrightnessAction(request, 'id', 75);
+    await BrightnessRepository.setBrightnessAction(request, 'id', 75);
     verify(request.graphUrl).called(1);
     verify(request.headers).called(1);
   });
