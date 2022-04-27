@@ -26,11 +26,12 @@ void main() {
     when(mockResponse.errors).thenReturn(null);
     when(mockResponse.data).thenReturn(Map<String, dynamic>());
 
+    try {
     await BrightnessRepository.setBrightnessAction(request, 'id', 75,
         injectedClient: link);
 
-    verify(link.request(any, any)).called(1);
-  });
+      verify(request.headers).called(1);
+    } catch (ServerException) {}  });
 
   test(
       '''#getBrightnessTrait should throw argumentError if trait object is not correct type''',

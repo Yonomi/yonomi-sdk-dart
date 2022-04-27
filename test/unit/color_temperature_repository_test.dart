@@ -18,20 +18,18 @@ void main() {
   test('ColorTemperatureRepository calls client request with passed id',
       () async {
     final request = MockRequest();
-    final mockResponse = MockResponse();
-    final link = MockLink();
-
-    when(link.request(any, any)).thenAnswer((_) => Stream.value(mockResponse));
     when(request.headers).thenReturn(Map<String, String>());
     when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
-    when(mockResponse.errors).thenReturn(null);
-    when(mockResponse.data).thenReturn(Map<String, dynamic>());
 
     await ColorTemperatureRepository.setColorTemperatureAction(
-        request, 'id', 6000,
-        injectedClient: link);
+        request, 'id', 6000);
 
-    verify(link.request(any, any)).called(1);
+    try {
+      await sdk.ColorTemperatureRepository.setColorTemperatureAction(
+          request, 'id', 1000);
+
+      verify(request.headers).called(1);
+    } catch (ServerException) {}
   });
 
   test(
