@@ -26,6 +26,8 @@
 .pub-cache/
 .pub/
 build/
+lib/src/queries/*
+!lib/src/queries/**/*.graphql
 
 # Test Artifacts
 coverage/
