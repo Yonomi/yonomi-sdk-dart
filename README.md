@@ -2,7 +2,7 @@
 
 [![Yonomi Dart SDK][sdk-shield]][yonomi]
 [![CircleCI][circle-shield]][circle-pipeline]
-[![codecov](https://codecov.io/gh/Yonomi/yonomi-dart-sdk/branch/main/graph/badge.svg?token=L99ZQAQIOI)](https://codecov.io/gh/Yonomi/yonomi-dart-sdk)
+[![codecov](https://codecov.io/gh/Yonomi/yonomi-sdk-dart/branch/main/graph/badge.svg?token=L99ZQAQIOI)](https://codecov.io/gh/Yonomi/yonomi-dart-sdk)
 
 ---
 
@@ -201,7 +201,7 @@ This application is released under the [Apache license v2.0](LICENSE)
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-[circle-shield]: https://circleci.com/gh/Yonomi/yonomi-dart-sdk/tree/main.svg?style=shield&circle-token=470fbce0775849f45768cb551352807a5652f75f
-[circle-pipeline]: https://app.circleci.com/pipelines/github/Yonomi/yonomi-dart-sdk
+[circle-shield]: https://circleci.com/gh/Yonomi/yonomi-sdk-dart/tree/main.svg?style=shield&circle-token=470fbce0775849f45768cb551352807a5652f75f
+[circle-pipeline]: https://app.circleci.com/pipelines/github/Yonomi/yonomi-sdk-dart
 [sdk-shield]: https://img.shields.io/badge/Yonomi-SDK:_Dart-lightgrey.svg?colorA=ffd500&colorB=5c5c5c
 [yonomi]: https://www.yonomi.co/
