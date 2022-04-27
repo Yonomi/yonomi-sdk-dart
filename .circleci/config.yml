@@ -94,8 +94,10 @@ commands:
             - v1.4-dependencies-{{ arch }}-{{ checksum "pubspec.lock" }}
             - v1.4-dependencies-{{ arch }}-
       - run:
-          name: Download deps
-          command: pub get
+          name: Download deps and run code generation
+          command: |
+            flutter pub get
+            flutter pub run build_runner build --delete-conflicting-outputs
       - run:
           name: Get junitreporter
           command: pub global activate junitreport
