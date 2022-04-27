@@ -1,3 +1,4 @@
+import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/brightness/make_brightness_action_request/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
@@ -16,13 +17,14 @@ class BrightnessRepository {
   }
 
   static Future<void> setBrightnessAction(
-      Request request, String id, int brightness) async {
-    final link = GraphLinkCreator.create(request);
+      Request request, String id, int brightness,
+      {Link? injectedClient}) async {
+    injectedClient ??= GraphLinkCreator.create(request);
     final req = GmakeBrightnessActionRequest((builder) {
       builder..vars.deviceId = id;
       builder..vars.brightness = brightness;
     });
-    Repository.mutate(link, req.operation, req.vars.toJson());
+    Repository.mutate(injectedClient, req.operation, req.vars.toJson());
   }
 }
 

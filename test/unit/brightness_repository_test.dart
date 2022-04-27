@@ -18,15 +18,18 @@ void main() {
   test('BrightnessRepository calls client request with passed id', () async {
     final mockResponse = MockResponse();
     final request = MockRequest();
+    final link = MockLink();
 
+    when(link.request(any, any)).thenAnswer((_) => Stream.value(mockResponse));
     when(request.headers).thenReturn(Map<String, String>());
     when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
     when(mockResponse.errors).thenReturn(null);
     when(mockResponse.data).thenReturn(Map<String, dynamic>());
 
-    await BrightnessRepository.setBrightnessAction(request, 'id', 75);
-    verify(request.graphUrl).called(1);
-    verify(request.headers).called(1);
+    await BrightnessRepository.setBrightnessAction(request, 'id', 75,
+        injectedClient: link);
+
+    verify(link.request(any, any)).called(1);
   });
 
   test(
