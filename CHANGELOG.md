@@ -1,3 +1,20 @@
+# [5.0.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v4.1.0...v5.0.0) (2022-04-28)
+
+
+### Bug Fixes
+
+* **schema.docs.graphql:** Fix inputs for color set action ([ccd56f3](https://github.com/Yonomi/yonomi-sdk-dart/commit/ccd56f3c613aea2df7dc675a7a9825c943ec823e))
+
+
+### Code Refactoring
+
+* Refactor to make code more testable ([240f5e9](https://github.com/Yonomi/yonomi-sdk-dart/commit/240f5e91bd7487d36ef3981a30aff07ca143d234))
+
+
+### BREAKING CHANGES
+
+*
+
 # [4.1.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v4.0.0...v4.1.0) (2022-04-26)
 
 
