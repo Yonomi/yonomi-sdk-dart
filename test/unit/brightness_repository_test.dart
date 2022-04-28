@@ -1,37 +1,16 @@
-import 'package:gql_exec/gql_exec.dart';
-import 'package:gql_link/gql_link.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
-import 'package:yonomi_platform_sdk/yonomi-sdk.dart' as sdk;
 
-import 'brightness_repository_test.mocks.dart';
+import 'base_mock_test.dart';
 
-@GenerateMocks([
-  Link,
-  Response
-], customMocks: [
-  MockSpec<sdk.Request>(as: #MockRequest, returnNullOnMissingStub: true)
-])
 void main() {
+  BaseMockTest baseMockTest = BaseMockTest();
   test('BrightnessRepository calls client request with passed id', () async {
-    final mockResponse = MockResponse();
-    final request = MockRequest();
-    final link = MockLink();
-
-    when(link.request(any, any)).thenAnswer((_) => Stream.value(mockResponse));
-    when(request.headers).thenReturn(Map<String, String>());
-    when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
-    when(mockResponse.errors).thenReturn(null);
-    when(mockResponse.data).thenReturn(Map<String, dynamic>());
-
-    try {
-    await BrightnessRepository.setBrightnessAction(request, 'id', 75,
-        injectedClient: link);
-
-      verify(request.headers).called(1);
-    } catch (ServerException) {}  });
+    final mockRequest = baseMockTest.mockRequest;
+    await BrightnessRepository.setBrightnessAction(mockRequest, 'id', 75);
+    verify(baseMockTest.mockLink.request(any)).called(1);
+  });
 
   test(
       '''#getBrightnessTrait should throw argumentError if trait object is not correct type''',

@@ -1,7 +1,5 @@
-import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/color_temperature/make_colortemperature_action_request/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 
@@ -24,14 +22,12 @@ class ColorTemperatureRepository {
   }
 
   static Future<void> setColorTemperatureAction(
-      Request request, String id, int colorTemperature,
-      {Link? injectedClient}) async {
-    injectedClient ??= GraphLinkCreator.create(request);
+      Request request, String id, int colorTemperature) async {
     final req = GmakeColorTemperatureActionRequest((builder) {
       builder..vars.deviceId = id;
       builder..vars.colorTemperature = colorTemperature;
     });
-    Repository.mutate(injectedClient, req.operation, req.vars.toJson());
+    Repository().mutate(request, req.operation, req.vars.toJson());
   }
 }
 

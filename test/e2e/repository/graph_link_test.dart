@@ -75,14 +75,14 @@ Bq9+YZ448t/vL5GuJpcaSHcCAwEAAQ==
 ''';
 void main() {
   test('create token creates correct token', () {
-    final token = GraphLinkCreator.createToken('1234', '1234', privateKey);
+    final token = GraphLinkCreator().createToken('1234', '1234', privateKey);
     final validator = JWTValidator();
     final errors = validator.validate(JWT.parse(token));
     expect(errors.length, 0);
   });
 
   test('createFromUserId creates link', () {
-    final link = GraphLinkCreator.createFromUserId(RequestParam(
+    final link = GraphLinkCreator().createFromUserId(RequestParam(
         'https://platform.yonomi.cloud/graphql',
         privateKey,
         '1234',
@@ -92,7 +92,7 @@ void main() {
   });
 
   test('create AuthorizedClient creates AuthorizedClient', () {
-    final token = GraphLinkCreator.createToken('1234', '1234', privateKey);
+    final token = GraphLinkCreator().createToken('1234', '1234', privateKey);
     final client = AuthorizedClient(token);
     expect(client.token, token);
   });
