@@ -19,8 +19,7 @@ void main() {
         .thenAnswer((_) => Stream.value(mockResponse));
 
     final removeResult = await AccountRepository.removeLinkedAccount(
-        'id', mockRequest,
-        graphqlLink: client);
+        'id', mockRequest);
     expect(removeResult, 'id');
     verify(client.request(any, any)).called(1);
   });

@@ -1,4 +1,3 @@
-import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/color/make_set_color_request/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
@@ -17,9 +16,8 @@ class ColorRepository {
   }
 
   static Future<void> sendSetColorAction(
-      Request request, String id, HSBColor color,
-      {Link? injectedClient}) async {
-    injectedClient ??= GraphLinkCreator.create(request);
+      Request request, String id, HSBColor color) async {
+    final client = GraphLinkCreator().create(request);
     final req = GmakeColorActionRequest((builder) {
       builder..vars.deviceId = id;
       builder
@@ -29,7 +27,7 @@ class ColorRepository {
           builder..b = color.brightness;
         }).toBuilder();
     });
-    Repository.mutate(injectedClient, req.operation, req.vars.toJson());
+    Repository.mutate(client, req.operation, req.vars.toJson());
   }
 }
 

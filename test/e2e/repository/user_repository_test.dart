@@ -1,6 +1,4 @@
-import 'package:gql_link/gql_link.dart';
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/repository/user_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 
@@ -15,10 +13,8 @@ void main() {
   });
 
   test('getUserDetails() returns populated fields', () async {
-    Link myClient = GraphLinkCreator.create(request);
-
     User user =
-        await UserRepository.getUserDetails(request, graphLink: myClient);
+        await UserRepository.getUserDetails(request);
     expect(user.id, isA<String>());
     expect(user.firstActivityAt, isA<DateTime>());
     expect(user.lastActivityAt, isA<DateTime>());

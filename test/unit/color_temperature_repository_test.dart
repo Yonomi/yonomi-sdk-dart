@@ -1,6 +1,3 @@
-import 'package:gql_exec/gql_exec.dart';
-import 'package:gql_link/gql_link.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
@@ -8,12 +5,6 @@ import 'package:yonomi_platform_sdk/yonomi-sdk.dart' as sdk;
 
 import 'base_mock_test.mocks.dart';
 
-@GenerateMocks([
-  Link,
-  Response
-], customMocks: [
-  MockSpec<sdk.Request>(as: #MockRequest, returnNullOnMissingStub: true)
-])
 void main() {
   test('ColorTemperatureRepository calls client request with passed id',
       () async {

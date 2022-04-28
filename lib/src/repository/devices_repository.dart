@@ -17,7 +17,7 @@ import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.doc
 
 class DevicesRepository {
   static Future<List<Device>> getDevices(Request request) async {
-    final link = GraphLinkCreator.create(request);
+    final link = GraphLinkCreator().create(request);
     final res = await Repository.fetch(link, GgetDevices().operation);
     return GgetDevicesData.fromJson(res.data!)!
         .me
@@ -37,7 +37,7 @@ class DevicesRepository {
   }
 
   static Future<Device> getDeviceDetails(Request request, String id) async {
-    Link client = GraphLinkCreator.create(request);
+    Link client = GraphLinkCreator().create(request);
     final req = GgetDevice((b) => b..vars.deviceId = id);
     final res = await Repository.fetch(client, req.operation,
         variables: req.vars.toJson());

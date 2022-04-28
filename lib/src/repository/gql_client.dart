@@ -7,12 +7,20 @@ import 'package:gql_link/gql_link.dart';
 import 'package:gql_http_link/gql_http_link.dart';
 
 class GraphLinkCreator {
-  static Link create(sdkRequest.Request request) {
+  static const GraphLinkCreator _instance = const GraphLinkCreator._internal();
+
+  const GraphLinkCreator._internal();
+
+  factory GraphLinkCreator() {
+    return _instance;
+  }
+
+  Link create(sdkRequest.Request request) {
     BaseClient authClient = AuthorizedClient.withHeaders(request.headers);
     return HttpLink(request.graphUrl, httpClient: authClient);
   }
 
-  static Link createFromUserId(sdkRequest.RequestParam requestParam) {
+  Link createFromUserId(sdkRequest.RequestParam requestParam) {
     final token = createToken(
         requestParam.userId, requestParam.tenantId, requestParam.privateKey);
     final tokenHeader = {HttpHeaders.authorizationHeader: 'Bearer ${token}'};
@@ -20,7 +28,7 @@ class GraphLinkCreator {
     return HttpLink(requestParam.graphUrl, httpClient: authClient);
   }
 
-  static String createToken(String userId, String tenantId, String privateKey) {
+  String createToken(String userId, String tenantId, String privateKey) {
     var builder = new JWTBuilder();
     builder.subject = userId;
     builder.expiresAt = DateTime.now().add(Duration(days: 30));

@@ -1,18 +1,9 @@
-import 'package:gql_exec/gql_exec.dart';
-import 'package:gql_link/gql_link.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart' as sdk;
 
 import 'base_mock_test.mocks.dart';
 
-@GenerateMocks([
-  Link,
-  Response
-], customMocks: [
-  MockSpec<sdk.Request>(as: #MockRequest, returnNullOnMissingStub: true)
-])
 main() {
   test('ColorRepository calls client request with passed id and color',
       () async {
@@ -26,7 +17,7 @@ main() {
     when(mockResponse.errors).thenReturn(null);
 
     await sdk.ColorRepository.sendSetColorAction(
-        request, 'id', sdk.HSBColor(0, 0, 0), injectedClient: link);
+        request, 'id', sdk.HSBColor(0, 0, 0));
 
     verify(link.request(any, any)).called(1);
   });

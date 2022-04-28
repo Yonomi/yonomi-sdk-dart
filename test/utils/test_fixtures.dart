@@ -14,7 +14,8 @@ class TestFixtures {
     if (CONFIG.PRIVATE_KEY == null) {
       throw 'Private Key could not be found';
     }
-    String accessToken = GraphLinkCreator.createToken(
+    String accessToken = GraphLinkCreator()
+        .createToken(
         CONFIG.USER_ID, CONFIG.TENANT_ID!, CONFIG.PRIVATE_KEY!);
     yoRequest.Request request = yoRequest.Request(
         CONFIG.URL, {HttpHeaders.authorizationHeader: 'Bearer ${accessToken}'});

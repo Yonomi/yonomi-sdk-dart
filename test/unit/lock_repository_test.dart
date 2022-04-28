@@ -1,18 +1,9 @@
-import 'package:gql_exec/gql_exec.dart';
-import 'package:gql_link/gql_link.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart' as sdk;
 
 import 'base_mock_test.mocks.dart';
 
-@GenerateMocks([
-  Link,
-  Response
-], customMocks: [
-  MockSpec<sdk.Request>(as: #MockRequest, returnNullOnMissingStub: true)
-])
 main() {
   test('LockRepository calls client request with passed id and lockUnlock',
       () async {
@@ -28,8 +19,7 @@ main() {
     });
     when(link.request(any, any)).thenAnswer((_) => Stream.value(mockResponse));
 
-    await sdk.LockRepository.sendLockUnlockAction(request, 'id', true,
-        injectedClient: link);
+    await sdk.LockRepository.sendLockUnlockAction(request, 'id', true);
     verify(link.request(any, any)).called(1);
   });
 

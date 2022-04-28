@@ -1,7 +1,5 @@
-import 'package:gql_link/gql_link.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/account_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 
 import '../../utils/test_fixtures.dart';
@@ -19,11 +17,9 @@ void main() {
       () async {
     final integrationsList =
         await AccountRepository.getAllIntegrations(request);
-    Link myClient = GraphLinkCreator.create(request);
     integrationsList.forEach((integration) async {
       String url = await AccountRepository.generateAccountUrl(
-          integration.id, request,
-          graphLink: myClient);
+          integration.id, request);
 
       expect(url, isNotEmpty);
       expect(Uri.parse(url).isAbsolute, true); // Expect a valid URL
@@ -32,20 +28,15 @@ void main() {
 
   test("AccountRepository.getAllIntegrations - returns list of Integrations",
       () async {
-    Link myClient = GraphLinkCreator.create(request);
-
     final listOfIntegrations = await AccountRepository.getAllIntegrations(
-        request,
-        graphLink: myClient);
+        request);
     expect(listOfIntegrations.isNotEmpty, true);
   });
 
   test("AccountRepository.getLinkedAccounts - returns list of linked Accounts",
       () async {
-    Link myClient = GraphLinkCreator.create(request);
-
     final listOfLinkedAccounts =
-        await AccountRepository.getLinkedAccounts(request, graphLink: myClient);
+        await AccountRepository.getLinkedAccounts(request);
     expect(listOfLinkedAccounts.isNotEmpty, true);
   });
 }

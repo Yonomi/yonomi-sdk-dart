@@ -27,8 +27,7 @@ void main() {
     when(mockResponse.data).thenReturn(Map<String, dynamic>());
 
     try {
-    await BrightnessRepository.setBrightnessAction(request, 'id', 75,
-        injectedClient: link);
+      await BrightnessRepository.setBrightnessAction(request, 'id', 75);
 
       verify(request.headers).called(1);
     } catch (ServerException) {}  });
