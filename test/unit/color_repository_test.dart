@@ -2,24 +2,15 @@ import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart' as sdk;
 
-import 'base_mock_test.mocks.dart';
+import 'base_mock_test.dart';
 
 main() {
+  BaseMockTest baseMockTest = BaseMockTest();
   test('ColorRepository calls client request with passed id and color',
       () async {
-    final mockResponse = MockResponse();
-    final request = MockRequest();
-    final link = MockLink();
-
-    when(link.request(any, any)).thenAnswer((_) => Stream.value(mockResponse));
-    when(request.headers).thenReturn(Map<String, String>());
-    when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
-    when(mockResponse.errors).thenReturn(null);
-
     await sdk.ColorRepository.sendSetColorAction(
-        request, 'id', sdk.HSBColor(0, 0, 0));
-
-    verify(link.request(any, any)).called(1);
+        baseMockTest.mockRequest, 'id', sdk.HSBColor(0, 0, 0));
+    verify(baseMockTest.mockLink.request(any, any)).called(1);
   });
 
   test('HSBColor toString override shows the correct values', () {

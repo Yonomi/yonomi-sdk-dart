@@ -13,12 +13,13 @@ void main() {
   });
 
   test(
-      "AccountRepository.generateAccountUrl - generates an account linking url",
+      "AccountRepository().generateAccountUrl - generates an account linking url",
       () async {
     final integrationsList =
         await AccountRepository.getAllIntegrations(request);
     integrationsList.forEach((integration) async {
-      String url = await AccountRepository.generateAccountUrl(
+      String url =
+          await AccountRepository.generateAccountUrl(
           integration.id, request);
 
       expect(url, isNotEmpty);
@@ -26,14 +27,16 @@ void main() {
     });
   });
 
-  test("AccountRepository.getAllIntegrations - returns list of Integrations",
+  test("AccountRepository().getAllIntegrations - returns list of Integrations",
       () async {
-    final listOfIntegrations = await AccountRepository.getAllIntegrations(
+    final listOfIntegrations =
+        await AccountRepository.getAllIntegrations(
         request);
     expect(listOfIntegrations.isNotEmpty, true);
   });
 
-  test("AccountRepository.getLinkedAccounts - returns list of linked Accounts",
+  test(
+      "AccountRepository().getLinkedAccounts - returns list of linked Accounts",
       () async {
     final listOfLinkedAccounts =
         await AccountRepository.getLinkedAccounts(request);

@@ -1,9 +1,7 @@
-import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/battery_level_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
@@ -17,8 +15,7 @@ import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.doc
 
 class DevicesRepository {
   static Future<List<Device>> getDevices(Request request) async {
-    final link = GraphLinkCreator().create(request);
-    final res = await Repository.fetch(link, GgetDevices().operation);
+    final res = await Repository().fetch(request, GgetDevices().operation);
     return GgetDevicesData.fromJson(res.data!)!
         .me
         .devices
@@ -37,9 +34,9 @@ class DevicesRepository {
   }
 
   static Future<Device> getDeviceDetails(Request request, String id) async {
-    Link client = GraphLinkCreator().create(request);
     final req = GgetDevice((b) => b..vars.deviceId = id);
-    final res = await Repository.fetch(client, req.operation,
+    final res = await Repository()
+        .fetch(request, req.operation,
         variables: req.vars.toJson());
 
     final device = GgetDeviceData.fromJson(res.data!)!.device;

@@ -4,14 +4,10 @@ import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
-import 'gql_client.dart';
-
 class UserRepository {
   static Future<User> getUserDetails(Request request) async {
-    final graphLink = GraphLinkCreator().create(request);
-
     final req = Guser();
-    final res = await Repository.fetch(graphLink, req.operation);
+    final res = await Repository().fetch(request, req.operation);
 
     final userData = GuserData.fromJson(res.data!);
     return User.fromGUser(

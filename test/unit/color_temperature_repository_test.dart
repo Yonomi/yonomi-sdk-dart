@@ -3,24 +3,19 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart' as sdk;
 
-import 'base_mock_test.mocks.dart';
+import 'base_mock_test.dart';
 
 void main() {
+  BaseMockTest baseMockTest = BaseMockTest();
   test('ColorTemperatureRepository calls client request with passed id',
       () async {
-    final request = MockRequest();
-    when(request.headers).thenReturn(Map<String, String>());
-    when(request.graphUrl).thenReturn('https://platform.yonomi.cloud/graphql');
-
     await ColorTemperatureRepository.setColorTemperatureAction(
-        request, 'id', 6000);
+        baseMockTest.mockRequest, 'id', 6000);
 
-    try {
-      await sdk.ColorTemperatureRepository.setColorTemperatureAction(
-          request, 'id', 1000);
+    await sdk.ColorTemperatureRepository.setColorTemperatureAction(
+        baseMockTest.mockRequest, 'id', 1000);
 
-      verify(request.headers).called(1);
-    } catch (ServerException) {}
+    verify(baseMockTest.mockLink.request(any)).called(2);
   });
 
   test(

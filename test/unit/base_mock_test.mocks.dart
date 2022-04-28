@@ -2,16 +2,13 @@
 // in yonomi_platform_sdk/test/unit/base_mock_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i5;
-import 'dart:convert' as _i7;
-import 'dart:typed_data' as _i8;
+import 'dart:async' as _i4;
 
 import 'package:gql_exec/gql_exec.dart' as _i3;
 import 'package:gql_link/gql_link.dart' as _i2;
-import 'package:http/http.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:yonomi_platform_sdk/src/repository/gql_client.dart' as _i6;
-import 'package:yonomi_platform_sdk/src/request/request.dart' as _i9;
+import 'package:yonomi_platform_sdk/src/repository/gql_client.dart' as _i5;
+import 'package:yonomi_platform_sdk/src/request/request.dart' as _i6;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -26,11 +23,6 @@ class _FakeLink_0 extends _i1.Fake implements _i2.Link {}
 class _FakeContext_1 extends _i1.Fake implements _i3.Context {}
 
 class _FakeResponse_2 extends _i1.Fake implements _i3.Response {}
-
-class _FakeStreamedResponse_3 extends _i1.Fake implements _i4.StreamedResponse {
-}
-
-class _FakeResponse_4 extends _i1.Fake implements _i4.Response {}
 
 /// A class which mocks [Link].
 ///
@@ -54,11 +46,11 @@ class MockLink extends _i1.Mock implements _i2.Link {
       (super.noSuchMethod(Invocation.method(#split, [test, left, right]),
           returnValue: _FakeLink_0()) as _i2.Link);
   @override
-  _i5.Stream<_i3.Response> request(_i3.Request? request,
+  _i4.Stream<_i3.Response> request(_i3.Request? request,
           [_i2.NextLink? forward]) =>
       (super.noSuchMethod(Invocation.method(#request, [request, forward]),
               returnValue: Stream<_i3.Response>.empty())
-          as _i5.Stream<_i3.Response>);
+          as _i4.Stream<_i3.Response>);
   @override
   String toString() => super.toString();
 }
@@ -88,100 +80,27 @@ class MockResponse extends _i1.Mock implements _i3.Response {
   String toString() => super.toString();
 }
 
-/// A class which mocks [AuthorizedClient].
+/// A class which mocks [GraphLinkCreator].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockAuthorizedClient extends _i1.Mock implements _i6.AuthorizedClient {
-  MockAuthorizedClient() {
+class MockGraphLinkCreator extends _i1.Mock implements _i5.GraphLinkCreator {
+  MockGraphLinkCreator() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  String get token =>
-      (super.noSuchMethod(Invocation.getter(#token), returnValue: '')
-          as String);
+  _i2.Link create(_i6.Request? request) =>
+      (super.noSuchMethod(Invocation.method(#create, [request]),
+          returnValue: _FakeLink_0()) as _i2.Link);
   @override
-  set token(String? _token) =>
-      super.noSuchMethod(Invocation.setter(#token, _token),
-          returnValueForMissingStub: null);
+  _i2.Link createFromUserId(_i6.RequestParam? requestParam) =>
+      (super.noSuchMethod(Invocation.method(#createFromUserId, [requestParam]),
+          returnValue: _FakeLink_0()) as _i2.Link);
   @override
-  Map<String, String> get headers =>
-      (super.noSuchMethod(Invocation.getter(#headers),
-          returnValue: <String, String>{}) as Map<String, String>);
-  @override
-  set headers(Map<String, String>? _headers) =>
-      super.noSuchMethod(Invocation.setter(#headers, _headers),
-          returnValueForMissingStub: null);
-  @override
-  _i5.Future<_i4.StreamedResponse> send(_i4.BaseRequest? request) =>
-      (super.noSuchMethod(Invocation.method(#send, [request]),
-              returnValue:
-                  Future<_i4.StreamedResponse>.value(_FakeStreamedResponse_3()))
-          as _i5.Future<_i4.StreamedResponse>);
-  @override
-  _i5.Future<_i4.Response> head(Uri? url, {Map<String, String>? headers}) =>
-      (super.noSuchMethod(Invocation.method(#head, [url], {#headers: headers}),
-              returnValue: Future<_i4.Response>.value(_FakeResponse_4()))
-          as _i5.Future<_i4.Response>);
-  @override
-  _i5.Future<_i4.Response> get(Uri? url, {Map<String, String>? headers}) =>
-      (super.noSuchMethod(Invocation.method(#get, [url], {#headers: headers}),
-              returnValue: Future<_i4.Response>.value(_FakeResponse_4()))
-          as _i5.Future<_i4.Response>);
-  @override
-  _i5.Future<_i4.Response> post(Uri? url,
-          {Map<String, String>? headers,
-          Object? body,
-          _i7.Encoding? encoding}) =>
+  String createToken(String? userId, String? tenantId, String? privateKey) =>
       (super.noSuchMethod(
-              Invocation.method(#post, [url],
-                  {#headers: headers, #body: body, #encoding: encoding}),
-              returnValue: Future<_i4.Response>.value(_FakeResponse_4()))
-          as _i5.Future<_i4.Response>);
-  @override
-  _i5.Future<_i4.Response> put(Uri? url,
-          {Map<String, String>? headers,
-          Object? body,
-          _i7.Encoding? encoding}) =>
-      (super.noSuchMethod(
-              Invocation.method(#put, [url],
-                  {#headers: headers, #body: body, #encoding: encoding}),
-              returnValue: Future<_i4.Response>.value(_FakeResponse_4()))
-          as _i5.Future<_i4.Response>);
-  @override
-  _i5.Future<_i4.Response> patch(Uri? url,
-          {Map<String, String>? headers,
-          Object? body,
-          _i7.Encoding? encoding}) =>
-      (super.noSuchMethod(
-              Invocation.method(#patch, [url],
-                  {#headers: headers, #body: body, #encoding: encoding}),
-              returnValue: Future<_i4.Response>.value(_FakeResponse_4()))
-          as _i5.Future<_i4.Response>);
-  @override
-  _i5.Future<_i4.Response> delete(Uri? url,
-          {Map<String, String>? headers,
-          Object? body,
-          _i7.Encoding? encoding}) =>
-      (super.noSuchMethod(
-              Invocation.method(#delete, [url],
-                  {#headers: headers, #body: body, #encoding: encoding}),
-              returnValue: Future<_i4.Response>.value(_FakeResponse_4()))
-          as _i5.Future<_i4.Response>);
-  @override
-  _i5.Future<String> read(Uri? url, {Map<String, String>? headers}) =>
-      (super.noSuchMethod(Invocation.method(#read, [url], {#headers: headers}),
-          returnValue: Future<String>.value('')) as _i5.Future<String>);
-  @override
-  _i5.Future<_i8.Uint8List> readBytes(Uri? url,
-          {Map<String, String>? headers}) =>
-      (super.noSuchMethod(
-              Invocation.method(#readBytes, [url], {#headers: headers}),
-              returnValue: Future<_i8.Uint8List>.value(_i8.Uint8List(0)))
-          as _i5.Future<_i8.Uint8List>);
-  @override
-  void close() => super.noSuchMethod(Invocation.method(#close, []),
-      returnValueForMissingStub: null);
+          Invocation.method(#createToken, [userId, tenantId, privateKey]),
+          returnValue: '') as String);
   @override
   String toString() => super.toString();
 }
@@ -189,7 +108,7 @@ class MockAuthorizedClient extends _i1.Mock implements _i6.AuthorizedClient {
 /// A class which mocks [Request].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRequest extends _i1.Mock implements _i9.Request {
+class MockRequest extends _i1.Mock implements _i6.Request {
   @override
   String get graphUrl =>
       (super.noSuchMethod(Invocation.getter(#graphUrl), returnValue: '')

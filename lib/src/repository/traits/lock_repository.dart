@@ -21,12 +21,11 @@ class LockRepository {
 
   static Future<void> sendLockUnlockAction(
       Request request, String id, bool lockUnlock) async {
-    final client = GraphLinkCreator().create(request);
     final req = GmakeLockUnlockActionRequest((b) {
       b..vars.deviceId = id;
       b..vars.lock = lockUnlock;
     });
-    Repository.mutate(client, req.operation, req.vars.toJson());
+    Repository().mutate(request, req.operation, req.vars.toJson());
   }
 }
 

@@ -7,9 +7,9 @@ import 'package:gql_link/gql_link.dart';
 import 'package:gql_http_link/gql_http_link.dart';
 
 class GraphLinkCreator {
-  static const GraphLinkCreator _instance = const GraphLinkCreator._internal();
+  static const GraphLinkCreator _instance = const GraphLinkCreator._();
 
-  const GraphLinkCreator._internal();
+  const GraphLinkCreator._();
 
   factory GraphLinkCreator() {
     return _instance;
