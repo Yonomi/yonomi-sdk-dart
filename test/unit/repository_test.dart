@@ -4,30 +4,28 @@ import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 
-import 'power_repository_test.mocks.dart';
+import 'base_mock_test.dart';
 
 void main() {
+  BaseMockTest baseMockTest = BaseMockTest();
+
+  setUpAll(() {
+    when(baseMockTest.mockResponse.errors)
+        .thenReturn([GraphQLError(message: 'message')]);
+  });
+
   test('should handle exceptions from a base repo fetch request', () async {
-    MockLink link = new MockLink();
-
-    when(link.request(any, any)).thenAnswer((_) => Stream.fromIterable([
-          Response(errors: [GraphQLError(message: 'errrr')])
-        ]));
-
-    expect(Repository.fetch(link, Operation(document: DocumentNode())),
+    expect(
+        Repository().fetch(
+            baseMockTest.mockRequest, Operation(document: DocumentNode())),
         throwsA(isA<GraphQLError>()));
   });
 
   test('should handle exceptions from a base repo mutate request', () async {
-    MockLink link = new MockLink();
-
-    when(link.request(any, any)).thenAnswer((_) => Stream.fromIterable([
-          Response(errors: [GraphQLError(message: 'errrr')])
-        ]));
-
     expect(
-        Repository.mutate(
-            link, Operation(document: DocumentNode()), Map<String, dynamic>()),
+        Repository().mutate(baseMockTest.mockRequest,
+            Operation(document: DocumentNode()),
+            Map<String, dynamic>()),
         throwsA(isA<GraphQLError>()));
   });
 }

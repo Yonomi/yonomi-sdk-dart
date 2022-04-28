@@ -3,7 +3,6 @@ import 'package:yonomi_platform_sdk/src/queries/thermostat/set_mode/query.req.gq
 import 'package:yonomi_platform_sdk/src/queries/thermostat/set_point/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
-import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
@@ -44,32 +43,29 @@ class ThermostatRepository {
 
   static Future<void> setPointThermostat(
       Request request, String id, double temperature) async {
-    final link = GraphLinkCreator.create(request);
     final req = GmakeSetTargetTemperatureRequest((b) {
       b..vars.deviceId = id;
       b..vars.targetTemperature = temperature;
     });
-    Repository.mutate(link, req.operation, req.vars.toJson());
+    Repository().mutate(request, req.operation, req.vars.toJson());
   }
 
   static Future<void> setMode(
       Request request, String id, GThermostatMode mode) async {
-    final link = GraphLinkCreator.create(request);
     final req = GmakeSetModeRequest((b) {
       b..vars.deviceId = id;
       b..vars.mode = mode;
     });
-    Repository.mutate(link, req.operation, req.vars.toJson());
+    Repository().mutate(request, req.operation, req.vars.toJson());
   }
 
   static Future<void> setFanMode(
       Request request, String id, AvailableFanMode mode) async {
-    final link = GraphLinkCreator.create(request);
     final req = GmakeSetFanModeRequest((b) {
       b..vars.deviceId = id;
       b..vars.fanMode = mode;
     });
-    Repository.mutate(link, req.operation, req.vars.toJson());
+    Repository().mutate(request, req.operation, req.vars.toJson());
   }
 }
 

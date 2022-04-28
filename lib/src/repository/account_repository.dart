@@ -1,4 +1,3 @@
-import 'package:gql_link/gql_link.dart';
 import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/accounts/generate_account_url/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/queries/accounts/get_all_integrations/query.data.gql.dart';
@@ -10,14 +9,12 @@ import 'package:yonomi_platform_sdk/src/queries/accounts/remove_linked_accounts/
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 
 import 'repository.dart';
-import 'gql_client.dart';
 
 class AccountRepository {
   static Future<List<GgetAllIntegrationsData_integrations_edges_node>>
-      getAllIntegrations(Request request, {Link? graphLink}) async {
-    graphLink ??= GraphLinkCreator.create(request);
+      getAllIntegrations(Request request) async {
     final req = GgetAllIntegrations();
-    final res = await Repository.fetch(graphLink, req.operation);
+    final res = await Repository().fetch(request, req.operation);
 
     GgetAllIntegrationsData.fromJson(res.data!)!.integrations;
     return GgetAllIntegrationsData.fromJson(res.data!)!
@@ -28,13 +25,11 @@ class AccountRepository {
   }
 
   static Future<String> generateAccountUrl(
-      String integrationId, Request request,
-      {Link? graphLink}) async {
-    graphLink ??= GraphLinkCreator.create(request);
+      String integrationId, Request request) async {
     final req = GgenerateAccountLinkingUrl(
         (b) => b..vars.integrationId = integrationId);
     final res =
-        await Repository.mutate(graphLink, req.operation, req.vars.toJson());
+        await Repository().mutate(request, req.operation, req.vars.toJson());
 
     return GgenerateAccountLinkingUrlData.fromJson(res.data!)!
         .generateAccountLinkingUrl
@@ -42,11 +37,9 @@ class AccountRepository {
   }
 
   static Future<List<GlinkedAccountsData_me_linkedAccounts_edges_node>>
-      getLinkedAccounts(Request request, {Link? graphLink}) async {
-    graphLink ??= GraphLinkCreator.create(request);
-
+      getLinkedAccounts(Request request) async {
     final req = GlinkedAccounts();
-    final res = await Repository.fetch(graphLink, req.operation);
+    final res = await Repository().fetch(request, req.operation);
 
     return GlinkedAccountsData.fromJson(res.data!)!
         .me
@@ -57,14 +50,11 @@ class AccountRepository {
   }
 
   static Future<String> removeLinkedAccount(
-      String linkedAccountId, Request request,
-      {Link? graphqlLink}) async {
-    graphqlLink ??= GraphLinkCreator.create(request);
-
+      String linkedAccountId, Request request) async {
     final req =
         GremoveLinkedAccount((b) => b..vars.linkedAccountId = linkedAccountId);
-    final res = await Repository.mutate(
-      graphqlLink,
+    final res = await Repository().mutate(
+      request,
       req.operation,
       req.vars.toJson(),
     );
