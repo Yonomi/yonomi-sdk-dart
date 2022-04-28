@@ -5,7 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart' as sdk;
 
-import 'lock_repository_test.mocks.dart';
+import 'base_mock_test.mocks.dart';
 
 @GenerateMocks([
   Link,

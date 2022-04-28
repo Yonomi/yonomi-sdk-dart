@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart' as sdk;
 
-import 'power_repository_test.mocks.dart';
+import 'base_mock_test.mocks.dart';
 
 @GenerateMocks([
   Link,
