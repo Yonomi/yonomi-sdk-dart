@@ -26,6 +26,10 @@
 .pub-cache/
 .pub/
 build/
+lib/src/queries/*
+!lib/src/queries/**/*.graphql
+lib/third_party/yonomi_graphql_schema/*
+!lib/third_party/yonomi_graphql_schema/**/*.graphql
 
 # Test Artifacts
 coverage/
