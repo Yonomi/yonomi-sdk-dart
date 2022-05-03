@@ -23,18 +23,35 @@ Flutter SDK for Yonomi Platform
 ## Getting Started
 
 ### Installing the SDK <a name="install-sdk"></a>
-
+#### __From pub.dev__
 Open your `pubspec.yaml` file and add the following entry under the `dependencies` section:
 
 ```
 dependencies:
   flutter:
     sdk: flutter
-    
-  yonomi_sdk_dart: ^1.0.0
-  
-```
 
+  yonomi_sdk_dart: ^1.0.0
+```
+#### __From source__
+Clone the latest source code to a directory of choice
+```
+git clone https://github.com/Yonomi/yonomi-sdk-dart.git
+```
+Build generated source files
+```
+cd yonomi-sdk-dart
+flutter pub run build_runner build --delete-conflicting-outputs
+```
+Open your `pubspec.yaml` file and add the following entry under the `dependencies` section:
+```
+dependencies:
+  flutter:
+    sdk: flutter
+
+  yonomi_sdk_dart:
+    path: <checked_out_path>/yonomi-sdk-dart
+```
 ###  Setting up your environment<a name="setup-env"></a>
 
 You will be interacting with our platform using the following URL:
@@ -133,7 +150,7 @@ You will get a list of devices, e.g.:
     	instance: "default",
     	...
     }]
-    
+
     ...
 }
 ```
