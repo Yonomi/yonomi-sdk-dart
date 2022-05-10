@@ -1,3 +1,10 @@
+## [5.0.1](https://github.com/Yonomi/yonomi-sdk-dart/compare/v5.0.0...v5.0.1) (2022-05-10)
+
+
+### Bug Fixes
+
+* **battery_level_repository.dart:** Fix battery trait name in invalid exception ([e51c6c8](https://github.com/Yonomi/yonomi-sdk-dart/commit/e51c6c85516b293b25ed7699cff2a04bd57847b1))
+
 # [5.0.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v4.1.0...v5.0.0) (2022-04-28)
 
 

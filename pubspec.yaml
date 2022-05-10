@@ -1,6 +1,6 @@
 name: yonomi_platform_sdk
 description: Flutter SDK for Yonomi Platform
-version: 5.0.0
+version: 5.0.1
 homepage: https://www.yonomi.co
 
 environment:
