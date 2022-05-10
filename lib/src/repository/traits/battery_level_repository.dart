@@ -6,7 +6,8 @@ class BatteryLevelRepository {
       return BatteryLevelTrait(
           BatteryLevel(trait.state.percentage.reported?.value ?? 0));
     } on NoSuchMethodError {
-      throw ArgumentError.value(trait, 'PowerTrait', 'Invalid PowerTrait');
+      throw ArgumentError.value(
+          trait, 'BatteryLevelTrait', 'Invalid BatteryLevelTrait');
     }
   }
 }
