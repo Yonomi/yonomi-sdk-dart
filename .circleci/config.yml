@@ -101,11 +101,6 @@ commands:
       - run:
           name: Get junitreporter
           command: flutter pub global activate junitreport
-      - run:
-          name: Get junitreporter
-          command: |
-            echo "export PATH="$PATH":"$HOME/.pub-cache/bin"" >> $BASH_ENV
-            pub global activate junitreport
       - save_cache:
           key: v1.4-dependencies-{{ arch }}-{{ checksum "pubspec.lock" }}
           paths:
