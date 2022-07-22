@@ -100,7 +100,7 @@ commands:
             flutter pub run build_runner build --delete-conflicting-outputs
       - run:
           name: Get junitreporter
-          command: pub global activate junitreport
+          command: flutter pub global activate junitreport
       - save_cache:
           key: v1.4-dependencies-{{ arch }}-{{ checksum "pubspec.lock" }}
           paths:
@@ -186,11 +186,11 @@ workflows:
           context:
             - org-global
           requires:
-              - test
+            - test
   production:
     when:
       and:
-        - equal: [ https://github.com/Yonomi/yonomi-sdk-dart, << pipeline.project.git_url >> ]
+        - equal: [https://github.com/Yonomi/yonomi-sdk-dart, << pipeline.project.git_url >>,]
     jobs:
       - test:
           <<: *release-tag-filter
