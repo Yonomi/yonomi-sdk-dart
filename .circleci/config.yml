@@ -190,11 +190,7 @@ workflows:
   production:
     when:
       and:
-        - equal:
-            [
-              https://github.com/Yonomi/yonomi-sdk-dart,
-              << pipeline.project.git_url >>,
-            ]
+        - equal: [https://github.com/Yonomi/yonomi-sdk-dart, << pipeline.project.git_url >>,]
     jobs:
       - test:
           <<: *release-tag-filter
