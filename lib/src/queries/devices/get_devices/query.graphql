@@ -3,6 +3,7 @@
 query getDevices {
     me {
         devices {
+            id
             pageInfo { hasNextPage }
             edges {
                 node {
