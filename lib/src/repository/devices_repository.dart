@@ -36,8 +36,7 @@ class DevicesRepository {
   static Future<Device> getDeviceDetails(Request request, String id) async {
     final req = GgetDevice((b) => b..vars.deviceId = id);
     final res = await Repository()
-        .fetch(request, req.operation,
-        variables: req.vars.toJson());
+        .fetch(request, req.operation, variables: req.vars.toJson());
 
     final device = GgetDeviceData.fromJson(res.data!)!.device;
     return Device(
@@ -99,7 +98,7 @@ class DevicesRepository {
     }
 
     return deviceTraits.map<Trait>((trait) {
-      switch (trait.name) {
+      switch (trait.name as GTraitName) {
         case GTraitName.THERMOSTAT_SETTING:
           return ThermostatRepository.getThermostatTrait(trait);
         case GTraitName.LOCK:
@@ -148,6 +147,7 @@ abstract class Trait {
   late final String name;
   late final Set<State> states;
   late final Set<Property> properties;
+
   Trait(this.name, this.states, this.properties);
 
   State<dynamic>? stateWhereType<T extends State<dynamic>>() {
@@ -183,7 +183,7 @@ abstract class Property<T> {
 }
 
 class UnknownTrait extends Trait {
-  UnknownTrait(String name) : super(name, {UnknownState()}, {});
+  UnknownTrait([String name = 'Unknown']) : super(name, {UnknownState()}, {});
 }
 
 class DeviceNameId {

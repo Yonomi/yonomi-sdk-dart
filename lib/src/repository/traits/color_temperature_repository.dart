@@ -2,6 +2,7 @@ import 'package:yonomi_platform_sdk/src/queries/color_temperature/make_colortemp
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
+import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
 class ColorTemperatureRepository {
   static ColorTemperatureTrait getColorTemperatureTrait(dynamic trait) {
@@ -33,7 +34,7 @@ class ColorTemperatureRepository {
 
 class ColorTemperature extends State<int?> {
   ColorTemperature(int? colorTemperature)
-      : super('color_temperature', colorTemperature);
+      : super('colorTemperature', colorTemperature);
 }
 
 class IntRange {
@@ -52,7 +53,7 @@ class SupportedColorTemperatureRange extends Property<IntRange> {
 
 class ColorTemperatureTrait extends Trait {
   ColorTemperatureTrait(Set<State> states, Set<Property> properties)
-      : super('color_temperature', states, properties);
+      : super(GTraitName.COLOR_TEMPERATURE.name.toLowerCase(), states, properties);
 
   int? get colorTemperature => stateWhereType<ColorTemperature>()?.value;
 

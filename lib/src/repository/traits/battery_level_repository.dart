@@ -1,3 +1,5 @@
+import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
+
 import '../devices_repository.dart';
 
 class BatteryLevelRepository {
@@ -17,5 +19,8 @@ class BatteryLevel extends State<int> {
 }
 
 class BatteryLevelTrait extends Trait {
-  BatteryLevelTrait(State state) : super('battery_level', {state}, {});
+  int? get batteryLevel => stateWhereType<BatteryLevel>()?.value;
+
+  BatteryLevelTrait(BatteryLevel batteryLevel)
+      : super(GTraitName.BATTERY_LEVEL.name.toLowerCase(), {batteryLevel}, {});
 }

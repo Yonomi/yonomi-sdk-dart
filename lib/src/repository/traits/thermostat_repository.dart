@@ -114,16 +114,20 @@ class AvailableThermostatModes extends Property<Set<AvailableThermostatMode>> {
 
 class ThermostatTrait extends Trait {
   ThermostatTrait(Set<State> states, Set<Property> properties)
-      : super('thermostat_setting', states, properties);
+      : super(GTraitName.THERMOSTAT_SETTING.name.toLowerCase(), states,
+            properties);
+
+  double? get targetTemperature => stateWhereType<TargetTemperature>()?.value;
+  double? get ambientTemperature => stateWhereType<AmbientTemperature>()?.value;
+  AvailableFanMode? get fanMode => stateWhereType<FanMode>()?.value;
+  AvailableThermostatMode? get mode => stateWhereType<ThermostatMode>()?.value;
 
   Set<AvailableFanMode> get availableFanModes =>
       propertyWhereType<AvailableFanModes>().value;
   Set<AvailableThermostatMode> get availableThermostatModes =>
       propertyWhereType<AvailableThermostatModes>().value;
-
   TemperatureRange get heatSetPointRange =>
       propertyWhereType<HeatSetPointRange>().value;
-
   TemperatureRange get coolSetPointRange =>
       propertyWhereType<CoolSetPointRange>().value;
 }

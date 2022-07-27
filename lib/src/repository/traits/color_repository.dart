@@ -53,7 +53,9 @@ class HSBColor extends State<GHSBColorValueInput> {
 }
 
 class ColorTrait extends Trait {
-  final HSBColor color;
-  ColorTrait(this.color)
-      : super('color', [color].toSet(), Set.identity());
+  HSBColor get color => stateWhereType<HSBColor>() as HSBColor;
+
+  ColorTrait(HSBColor color)
+      : super(GTraitName.COLOR.name.toLowerCase(), [color].toSet(),
+            Set.identity());
 }

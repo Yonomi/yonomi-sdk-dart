@@ -1,5 +1,6 @@
 import 'package:yonomi_platform_sdk/src/queries/power/make_power_action_request/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
+import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 
 class PowerRepository {
@@ -36,7 +37,12 @@ class IsOnOff extends State<bool?> {
 }
 
 class PowerTrait extends Trait {
-  final SupportsDiscreteOnOff supportsDiscreteOnOff;
-  PowerTrait(State state, {required this.supportsDiscreteOnOff})
-      : super('power', {state}, {supportsDiscreteOnOff});
+  bool? get isOn => stateWhereType<IsOnOff>()?.value;
+  bool? get supportsDiscreteOnOff =>
+      propertyWhereType<SupportsDiscreteOnOff>().value;
+
+  PowerTrait(State state,
+      {required SupportsDiscreteOnOff supportsDiscreteOnOff})
+      : super(GTraitName.POWER.name.toLowerCase(), {state},
+            {supportsDiscreteOnOff});
 }

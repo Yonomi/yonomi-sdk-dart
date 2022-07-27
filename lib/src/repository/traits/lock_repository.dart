@@ -1,5 +1,6 @@
 import 'package:yonomi_platform_sdk/src/queries/lock/make_lock_unlock_action_request/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
+import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 
 class LockRepository {
@@ -30,11 +31,11 @@ class LockRepository {
 }
 
 class IsLocked extends State<bool?> {
-  IsLocked(bool? value) : super('IsLocked', value);
+  IsLocked(bool? value) : super('isLocked', value);
 }
 
 class IsJammed extends State<bool?> {
-  IsJammed(bool? value) : super('IsJammed', value);
+  IsJammed(bool? value) : super('isJammed', value);
 }
 
 class SupportsIsJammed extends Property<bool?> {
@@ -43,6 +44,9 @@ class SupportsIsJammed extends Property<bool?> {
 
 class LockTrait extends Trait {
   bool? get supportsIsJammed => propertyWhereType<SupportsIsJammed>().value;
+  bool? get isLocked => stateWhereType<IsLocked>()?.value;
+  bool? get isJammed => stateWhereType<IsJammed>()?.value;
+
   LockTrait(Set<State> states, Set<Property> properties)
-      : super('lock', states, properties);
+      : super(GTraitName.LOCK.name.toLowerCase(), states, properties);
 }

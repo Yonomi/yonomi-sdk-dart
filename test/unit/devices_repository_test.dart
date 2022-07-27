@@ -178,15 +178,17 @@ void main() {
         thermostatDevice!.device!.traits.asList());
     final thermostatTrait = convertedValue.whereType<ThermostatTrait>().first;
 
-    expect(convertedValue.first.name, 'thermostat_setting');
+    expect(thermostatTrait.name, 'thermostat_setting');
+    expect(thermostatTrait.stateWhereType<TargetTemperature>()?.value, 22.0);
     expect(
-        convertedValue.first.stateWhereType<TargetTemperature>()?.value, 22.0);
-    expect(
-        convertedValue.first.stateWhereType<IsLocked>(), null);
-    expect(
-      convertedValue.first.stateWhereType<AmbientTemperature>()?.value,
+      thermostatTrait.stateWhereType<AmbientTemperature>()?.value,
       22.4,
     );
+    expect(thermostatTrait.ambientTemperature, 22.4);
+    expect(thermostatTrait.targetTemperature, 22.0);
+    expect(thermostatTrait.fanMode, AvailableFanMode.AUTO);
+    expect(thermostatTrait.mode, AvailableThermostatMode.HEAT);
+
     expect(thermostatTrait.availableFanModes, contains(AvailableFanMode.ON),
         reason: 'Does not have ON fan mode available');
     expect(thermostatTrait.availableFanModes, contains(AvailableFanMode.AUTO),
@@ -243,11 +245,15 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(LockTrait));
 
-    var traitUnderTest = convertedValue.first as LockTrait;
+    final traitUnderTest = convertedValue.first as LockTrait;
     expect(traitUnderTest.name, 'lock');
     expect(traitUnderTest.supportsIsJammed, equals(true));
-    expect(traitUnderTest.stateWhereType<IsJammed>()?.value, equals(true));
+    expect(traitUnderTest.propertyWhereType<SupportsIsJammed>().value,
+        equals(true));
     expect(traitUnderTest.stateWhereType<IsLocked>()?.value, equals(true));
+    expect(traitUnderTest.stateWhereType<IsJammed>()?.value, equals(true));
+    expect(traitUnderTest.isJammed, equals(true));
+    expect(traitUnderTest.isLocked, equals(true));
   });
 
   test(
@@ -262,15 +268,14 @@ void main() {
 
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
         lockDevice!.traits.asList());
-
     expect(convertedValue.first.runtimeType, equals(LockTrait));
 
-    var traitUnderTest = convertedValue.first as LockTrait;
+    final traitUnderTest = convertedValue.first as LockTrait;
     expect(traitUnderTest.name, 'lock');
     expect(traitUnderTest.stateWhereType<IsLocked>()?.value, equals(true));
-
-    expect(traitUnderTest.supportsIsJammed, equals(false));
+    expect(traitUnderTest.isLocked, equals(true));
     // Since isJammed is false, should not return the IsJammed State
+    expect(traitUnderTest.isJammed, null);
     expect(traitUnderTest.stateWhereType<IsJammed>(), null);
   });
 
@@ -338,6 +343,7 @@ void main() {
     expect(brightnessDevice.id, equals('442f2edb-6183-4671-92e8-c92b68bc9785'));
     expect(brightnessTrait.name, equals('brightness'));
     expect(brightnessTrait.stateWhereType<Brightness>()?.value, equals(100));
+    expect(brightnessTrait.brightness, equals(100));
     expect(powerTrait.stateWhereType<IsOnOff>()?.value, isFalse);
   });
 
@@ -382,6 +388,9 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(PowerTrait));
     expect(convertedValue.first.name, 'power');
+    expect((convertedValue.first as PowerTrait).supportsDiscreteOnOff,
+        equals(true));
+    expect((convertedValue.first as PowerTrait).isOn, equals(false));
   });
 
   test('''#2. responseToDeviceTraitConverter maps single Power
@@ -425,9 +434,9 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(PowerTrait));
     expect(convertedValue.first.name, 'power');
-
-    expect((convertedValue.first as PowerTrait).supportsDiscreteOnOff.value,
+    expect((convertedValue.first as PowerTrait).supportsDiscreteOnOff,
         equals(true));
+    expect((convertedValue.first as PowerTrait).isOn, equals(false));
   });
 
   test('''#1. responseToDeviceTraitConverter maps single Battery Level
@@ -448,7 +457,7 @@ void main() {
           'name': 'BATTERY_LEVEL',
           'instance': 'default',
           'state': {
-            'batteryLevel': {
+            'percentage': {
               'reported': {
                 'value': 50,
                 'sampledAt': '2021-01-04T21:45:19.364Z',
@@ -470,6 +479,10 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(BatteryLevelTrait));
     expect(convertedValue.first.name, 'battery_level');
+    expect(
+        convertedValue.first.stateWhereType<BatteryLevel>()?.value, equals(50));
+    expect(
+        (convertedValue.first as BatteryLevelTrait).batteryLevel, equals(50));
   });
 
   test(
@@ -488,11 +501,64 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(ColorTemperatureTrait));
 
-    var traitUnderTest = convertedValue.first as ColorTemperatureTrait;
+    final traitUnderTest = convertedValue.first as ColorTemperatureTrait;
     expect(traitUnderTest.name, 'color_temperature');
     expect(traitUnderTest.colorTemperature, equals(6500));
     expect(traitUnderTest.supportedColorTemperatureRange.min, equals(0));
     expect(traitUnderTest.supportedColorTemperatureRange.max, equals(7000));
+  });
+
+  test(
+      'Color : responseToDeviceTraitConverter maps single Color DeviceTrait to ColorTrait',
+      () {
+    final color = GgetDeviceData_device.fromJson({
+      'id': 'id',
+      'displayName': 'displayName',
+      'updatedAt': '2020-04-01T12:00:00.000Z',
+      'createdAt': '2020-04-01T12:00:00.000Z',
+      'productInformation': {
+        'manufacturer': 'abc',
+        'model': 'model',
+        'description': 'color',
+      },
+      'traits': [
+        {
+          '__typename': 'ColorDeviceTrait',
+          'name': 'COLOR',
+          'instance': 'default',
+          'state': {
+            'color': {
+              'reported': {
+                'value': {'h': 3, 's': 2, 'b': 1},
+                'sampledAt': '2021-01-04T21:45:19.364Z',
+                'createdAt': '2021-01-04T21:45:19.364Z'
+              },
+              'desired': {
+                'value': {'h': 3, 's': 2, 'b': 1},
+                'delta': null,
+                'updatedAt': '2021-01-04T21:45:19.364Z'
+              }
+            }
+          }
+        }
+      ]
+    });
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        color!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(ColorTrait));
+
+    final traitUnderTest = convertedValue.first as ColorTrait;
+    expect(traitUnderTest.name, 'color');
+    expect(traitUnderTest.color.hue, equals(3));
+    expect(traitUnderTest.color.saturation, equals(2));
+    expect(traitUnderTest.color.brightness, equals(1));
+
+    final state = traitUnderTest.stateWhereType<HSBColor>() as HSBColor;
+    expect(state.hue, equals(3));
+    expect(state.saturation, equals(2));
+    expect(state.brightness, equals(1));
   });
 
   test(

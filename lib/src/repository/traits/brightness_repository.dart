@@ -2,6 +2,7 @@ import 'package:yonomi_platform_sdk/src/queries/brightness/make_brightness_actio
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
+import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
 class BrightnessRepository {
   static BrightnessTrait getBrightnessTrait(dynamic trait) {
@@ -29,6 +30,8 @@ class Brightness extends State<int?> {
 }
 
 class BrightnessTrait extends Trait {
+  int? get brightness => stateWhereType<Brightness>()?.value;
+
   BrightnessTrait(Brightness brightness)
-      : super('brightness', {brightness}, {});
+      : super(GTraitName.BRIGHTNESS.name.toLowerCase(), {brightness}, {});
 }
