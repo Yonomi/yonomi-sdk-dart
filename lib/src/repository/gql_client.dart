@@ -34,7 +34,13 @@ class GraphLinkCreator {
         (DateTime.now().add(Duration(days: 30)).millisecondsSinceEpoch / 1000)
             .round();
     final jwt = JWT(
-      JsonEncoder().convert({'exp': time, 'iat': time}),
+      JsonEncoder().convert({
+        'exp': time,
+        'iat': time,
+        'sub': userId,
+        'aug': tenantId,
+        'iss': 'https://login.yonomi.com/',
+      }),
       header: {
         'alg': 'RS256',
         'typ': "JWT",
