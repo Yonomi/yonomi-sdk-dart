@@ -1,4 +1,4 @@
-import 'package:corsac_jwt/corsac_jwt.dart';
+import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
 import 'package:gql_http_link/gql_http_link.dart';
 import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
@@ -76,9 +76,11 @@ Bq9+YZ448t/vL5GuJpcaSHcCAwEAAQ==
 void main() {
   test('create token creates correct token', () {
     final token = GraphLinkCreator().createToken('1234', '1234', privateKey);
-    final validator = JWTValidator();
-    final errors = validator.validate(JWT.parse(token));
-    expect(errors.length, 0);
+    try {
+      JWT.verify(token, SecretKey(privateKey));
+    } catch (ex) {
+      fail("Should not throw an exception");
+    }
   });
 
   test('createFromUserId creates link', () {
@@ -96,6 +98,4 @@ void main() {
     final client = AuthorizedClient(token);
     expect(client.token, token);
   });
-
-
 }
