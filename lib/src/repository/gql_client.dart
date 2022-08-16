@@ -30,7 +30,9 @@ class GraphLinkCreator {
   }
 
   String createToken(String userId, String tenantId, String privateKey) {
-    final time = DateTime.now().add(Duration(days: 30));
+    final time =
+        (DateTime.now().add(Duration(days: 30)).millisecondsSinceEpoch / 1000)
+            .round();
     final jwt = JWT(
       JsonEncoder().convert({'exp': time, 'iat': time}),
       header: {
