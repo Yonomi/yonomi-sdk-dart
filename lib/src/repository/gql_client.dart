@@ -33,7 +33,10 @@ class GraphLinkCreator {
     var token = new JWT(
       {
         'https://platform.yonomi.cloud/tenant': tenantId,
-        'exp': DateTime.now().add(Duration(days: 30)).millisecondsSinceEpoch,
+        'exp':
+            ((DateTime.now().add(Duration(days: 30)).millisecondsSinceEpoch) /
+                    1000)
+                .round(),
       },
       subject: userId,
       issuer: 'www.example.com',
