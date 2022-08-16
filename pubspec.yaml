@@ -19,10 +19,10 @@ dependencies:
   gql_http_link: ^0.4.0
   yaml: ^3.1.0
   dotenv: ^4.0.1
-  corsac_jwt: ^1.0.0-nullsafety.1
   gql_code_builder: ^0.2.0
   built_value: ^8.2.0
   built_collection: ^5.1.1
+  dart_jsonwebtoken: ^2.4.2
 
 dev_dependencies:
   mockito: ^5.0.15

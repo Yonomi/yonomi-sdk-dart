@@ -18,7 +18,6 @@ class Repository {
     return _instance;
   }
 
-
   Future<Response> mutate(sdk.Request request, Operation operation,
       Map<String, dynamic> vars) async {
     final client = _linkCreator.create(request);
@@ -48,6 +47,10 @@ class Repository {
 
   static _handleErrors(List<GraphQLError>? errors) {
     if (errors?.isNotEmpty == true) {
+      errors?.forEach((error) {
+        print(error);
+      });
+
       throw errors!.first;
     }
   }
