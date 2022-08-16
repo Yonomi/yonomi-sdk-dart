@@ -38,7 +38,7 @@ class GraphLinkCreator {
         'exp': time,
         'iat': time,
         'sub': userId,
-        'aug': tenantId,
+        'aud': tenantId,
         'iss': 'https://login.yonomi.com/',
       }),
       header: {
