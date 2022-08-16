@@ -1,11 +1,10 @@
 import 'dart:io';
 
-import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
-import 'package:gql_http_link/gql_http_link.dart';
-import 'package:gql_link/gql_link.dart';
 import 'package:http/http.dart';
-
 import '../request/request.dart' as sdkRequest;
+import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
+import 'package:gql_link/gql_link.dart';
+import 'package:gql_http_link/gql_http_link.dart';
 
 class GraphLinkCreator {
   static const GraphLinkCreator _instance = const GraphLinkCreator._();
@@ -30,18 +29,19 @@ class GraphLinkCreator {
   }
 
   String createToken(String userId, String tenantId, String privateKey) {
-    var token = new JWT(
-      {
-        'https://platform.yonomi.cloud/tenant': tenantId,
-        'exp':
-            ((DateTime.now().add(Duration(days: 30)).millisecondsSinceEpoch) /
-                    1000)
-                .round(),
+    final time = DateTime.now().add(Duration(days: 30));
+    final jwt = JWT(
+      {'exp': time, 'iat': time},
+      header: {
+        'alg': 'RS256',
+        'typ': "JWT",
       },
+      issuer: 'https://login.yonomi.com/',
       subject: userId,
-      issuer: 'www.example.com',
+      audience: Audience([tenantId]),
     );
-    return token.sign(SecretKey(privateKey));
+
+    return jwt.sign(RSAPrivateKey(privateKey), algorithm: JWTAlgorithm.RS256);
   }
 }
 
