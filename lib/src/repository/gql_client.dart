@@ -40,6 +40,7 @@ class GraphLinkCreator {
         'sub': userId,
         'aud': tenantId,
         'iss': 'https://login.yonomi.com/',
+        'https://platform.yonomi.cloud/tenant': tenantId
       }),
       header: {
         'alg': 'RS256',
