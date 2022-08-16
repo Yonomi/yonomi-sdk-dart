@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart';
@@ -31,7 +32,7 @@ class GraphLinkCreator {
   String createToken(String userId, String tenantId, String privateKey) {
     final time = DateTime.now().add(Duration(days: 30));
     final jwt = JWT(
-      {'exp': time, 'iat': time},
+      JsonEncoder().convert({'exp': time, 'iat': time}),
       header: {
         'alg': 'RS256',
         'typ': "JWT",
