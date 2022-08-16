@@ -1,11 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:http/http.dart';
-import '../request/request.dart' as sdkRequest;
 import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
-import 'package:gql_link/gql_link.dart';
 import 'package:gql_http_link/gql_http_link.dart';
+import 'package:gql_link/gql_link.dart';
+import 'package:http/http.dart';
+
+import '../request/request.dart' as sdkRequest;
 
 class GraphLinkCreator {
   static const GraphLinkCreator _instance = const GraphLinkCreator._();
@@ -35,12 +36,11 @@ class GraphLinkCreator {
             .round();
     final jwt = JWT(
       JsonEncoder().convert({
-        'exp': time,
-        'iat': time,
         'sub': userId,
         'aud': tenantId,
+        'exp': time,
         'iss': 'https://login.yonomi.com/',
-        'https://platform.yonomi.cloud/tenant': tenantId
+        "https://platform.yonomi.cloud/tenant": tenantId,
       }),
       header: {
         'alg': 'RS256',

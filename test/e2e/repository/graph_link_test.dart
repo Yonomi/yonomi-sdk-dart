@@ -77,7 +77,7 @@ void main() {
   test('create token creates correct token', () {
     final token = GraphLinkCreator().createToken('1234', '1234', privateKey);
     try {
-      JWT.verify(token, SecretKey(privateKey));
+      JWT.verify(token, RSAPublicKey(publicKey));
     } catch (ex) {
       fail("Should not throw an exception");
     }
