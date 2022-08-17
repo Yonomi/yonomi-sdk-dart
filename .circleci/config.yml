@@ -69,9 +69,8 @@ commands:
     description: "Tag and create changelog"
     steps:
       - setup-github
-      - run: sudo apt-get update
-      - run: sudo apt-get -y install npm
       - run: |
+          apt-get update && apt-get -y install npm
           npm version
           npm init -y
           npm i -D @semantic-release/changelog
