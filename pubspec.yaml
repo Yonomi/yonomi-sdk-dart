@@ -8,6 +8,7 @@ environment:
 
 false_secrets:
   - test/e2e/repository/graph_link_test.dart
+  - node_modules/
 
 dependencies:
   equatable: ^2.0.3
