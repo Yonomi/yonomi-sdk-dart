@@ -1,3 +1,10 @@
+## [5.0.2](https://github.com/Yonomi/yonomi-sdk-dart/compare/v5.0.1...v5.0.2) (2022-08-17)
+
+
+### Bug Fixes
+
+* make the trait, state, and property names predictable for use in other applications determining types ([2537389](https://github.com/Yonomi/yonomi-sdk-dart/commit/25373893f5c4008596f97209155ba7c422ef7f3b))
+
 ## [5.0.1](https://github.com/Yonomi/yonomi-sdk-dart/compare/v5.0.0...v5.0.1) (2022-05-10)
 
 
