@@ -18,7 +18,7 @@ executors:
   node-executor:
     docker:
       - image: 'cimg/base:stable'
-    tag: "16"
+    tag: "16.13"
 
 anchors:
   - &main_only
