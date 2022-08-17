@@ -16,7 +16,7 @@ executors:
     shell: "/bin/bash -eo pipefail"
   node-executor:
     docker:
-      - image: cimg/base:16.13.0
+      - image: node:16.13
 
 anchors:
   - &main_only
