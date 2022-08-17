@@ -8,6 +8,7 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@1.2.5
   gh: circleci/github-cli@2.1.0
+  node: circleci/node@5.0
 
 executors:
   default-executor:
@@ -131,9 +132,11 @@ jobs:
       - store_test_results:
           path: test-results
   semantic-versioning:
-    executor: default-executor
+    executor:
+      name: node/default
+      tag: "14"
     steps:
-      - dependencies
+      - checkout
       - run-semantic-versioning
   publish:
     executor: default-executor
@@ -191,7 +194,11 @@ workflows:
   production:
     when:
       and:
-        - equal: [https://github.com/Yonomi/yonomi-sdk-dart, << pipeline.project.git_url >>,]
+        - equal:
+            [
+              https://github.com/Yonomi/yonomi-sdk-dart,
+              << pipeline.project.git_url >>,
+            ]
     jobs:
       - test:
           <<: *release-tag-filter
