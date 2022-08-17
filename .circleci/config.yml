@@ -69,6 +69,7 @@ commands:
       - run: sudo apt-get update
       - run: sudo apt-get -y install npm
       - run: |
+          npm version
           npm init -y
           npm i -D @semantic-release/changelog
           npm i -D @semantic-release/git
