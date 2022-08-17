@@ -138,9 +138,6 @@ jobs:
       name: node-executor
     steps:
       - checkout
-      - node/install:
-          install-yarn: true
-          node-version: '16.13'
       - run-semantic-versioning
   publish:
     executor: default-executor
