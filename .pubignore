@@ -1,2 +1,2 @@
-!lib/src/queries/*
-!lib/third_party/yonomi_graphql_schema/*
+lib/src/queries/**/*.graphql
+lib/third_party/yonomi_graphql_schema/**/*.graphql

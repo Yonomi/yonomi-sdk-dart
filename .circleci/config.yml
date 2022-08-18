@@ -82,7 +82,7 @@ commands:
     steps:
       - run:
           name: Publishing to pub.dev
-          command: dart pub publish
+          command: dart pub publish -f
 
   dependencies:
     description: "Download dependencies and setup global packages"
