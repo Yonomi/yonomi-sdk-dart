@@ -27,10 +27,8 @@ pubspec.lock
 .pub-cache/
 .pub/
 build/
-lib/src/queries/*
-!lib/src/queries/**/*.graphql
-lib/third_party/yonomi_graphql_schema/*
-!lib/third_party/yonomi_graphql_schema/**/*.graphql
+lib/src/queries/**/*.dart
+lib/third_party/yonomi_graphql_schema/**/*.dart
 
 # Test Artifacts
 coverage/
@@ -77,5 +75,6 @@ coverage/
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 node_modules/
+process.yml
 package-lock.json
 package.json
