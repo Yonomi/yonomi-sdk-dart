@@ -22,5 +22,5 @@ class BatteryLevelTrait extends Trait {
   int? get batteryLevel => stateWhereType<BatteryLevel>()?.value;
 
   BatteryLevelTrait(BatteryLevel batteryLevel)
-      : super(GTraitName.BATTERY_LEVEL.name.toLowerCase(), {batteryLevel}, {});
+      : super(GTraitName.BATTERY_LEVEL.name, {batteryLevel}, {});
 }

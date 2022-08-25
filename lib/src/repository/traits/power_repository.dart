@@ -43,6 +43,6 @@ class PowerTrait extends Trait {
 
   PowerTrait(State state,
       {required SupportsDiscreteOnOff supportsDiscreteOnOff})
-      : super(GTraitName.POWER.name.toLowerCase(), {state},
+      : super(GTraitName.POWER.name, {state},
             {supportsDiscreteOnOff});
 }
