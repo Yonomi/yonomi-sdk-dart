@@ -15,7 +15,7 @@ class BatteryLevelRepository {
 }
 
 class BatteryLevel extends State<int> {
-  BatteryLevel(int value) : super('batteryLevel', value);
+  BatteryLevel(int value) : super('percentage', value);
 }
 
 class BatteryLevelTrait extends Trait {
