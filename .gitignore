@@ -20,7 +20,6 @@
 .vscode/
 
 # Flutter/Dart/Pub related
-pubspec.lock
 .dart_tool/
 .flutter-plugins
 .packages
