@@ -15,12 +15,12 @@ class BatteryLevelRepository {
 }
 
 class BatteryLevel extends State<int> {
-  BatteryLevel(int value) : super('batteryLevel', value);
+  BatteryLevel(int value) : super('percentage', value);
 }
 
 class BatteryLevelTrait extends Trait {
   int? get batteryLevel => stateWhereType<BatteryLevel>()?.value;
 
   BatteryLevelTrait(BatteryLevel batteryLevel)
-      : super(GTraitName.BATTERY_LEVEL.name.toLowerCase(), {batteryLevel}, {});
+      : super(GTraitName.BATTERY_LEVEL.name, {batteryLevel}, {});
 }

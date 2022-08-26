@@ -56,6 +56,6 @@ class ColorTrait extends Trait {
   HSBColor get color => stateWhereType<HSBColor>() as HSBColor;
 
   ColorTrait(HSBColor color)
-      : super(GTraitName.COLOR.name.toLowerCase(), [color].toSet(),
+      : super(GTraitName.COLOR.name, [color].toSet(),
             Set.identity());
 }

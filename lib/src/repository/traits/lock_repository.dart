@@ -48,5 +48,5 @@ class LockTrait extends Trait {
   bool? get isJammed => stateWhereType<IsJammed>()?.value;
 
   LockTrait(Set<State> states, Set<Property> properties)
-      : super(GTraitName.LOCK.name.toLowerCase(), states, properties);
+      : super(GTraitName.LOCK.name, states, properties);
 }

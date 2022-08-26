@@ -33,5 +33,5 @@ class BrightnessTrait extends Trait {
   int? get brightness => stateWhereType<Brightness>()?.value;
 
   BrightnessTrait(Brightness brightness)
-      : super(GTraitName.BRIGHTNESS.name.toLowerCase(), {brightness}, {});
+      : super(GTraitName.BRIGHTNESS.name, {brightness}, {});
 }

@@ -53,7 +53,7 @@ class SupportedColorTemperatureRange extends Property<IntRange> {
 
 class ColorTemperatureTrait extends Trait {
   ColorTemperatureTrait(Set<State> states, Set<Property> properties)
-      : super(GTraitName.COLOR_TEMPERATURE.name.toLowerCase(), states, properties);
+      : super(GTraitName.COLOR_TEMPERATURE.name, states, properties);
 
   int? get colorTemperature => stateWhereType<ColorTemperature>()?.value;
 

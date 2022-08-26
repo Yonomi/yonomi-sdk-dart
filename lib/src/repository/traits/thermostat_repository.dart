@@ -114,8 +114,7 @@ class AvailableThermostatModes extends Property<Set<AvailableThermostatMode>> {
 
 class ThermostatTrait extends Trait {
   ThermostatTrait(Set<State> states, Set<Property> properties)
-      : super(GTraitName.THERMOSTAT_SETTING.name.toLowerCase(), states,
-            properties);
+      : super(GTraitName.THERMOSTAT_SETTING.name, states, properties);
 
   double? get targetTemperature => stateWhereType<TargetTemperature>()?.value;
   double? get ambientTemperature => stateWhereType<AmbientTemperature>()?.value;
