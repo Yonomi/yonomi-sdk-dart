@@ -9,6 +9,7 @@ import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repo
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
+import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
 import '../utils/test_fixtures.dart';
 
@@ -178,7 +179,7 @@ void main() {
         thermostatDevice!.device!.traits.asList());
     final thermostatTrait = convertedValue.whereType<ThermostatTrait>().first;
 
-    expect(thermostatTrait.name, 'THERMOSTAT_SETTING');
+    expect(thermostatTrait.name, GTraitName.THERMOSTAT_SETTING.name);
     expect(thermostatTrait.stateWhereType<TargetTemperature>()?.value, 22.0);
     expect(
       thermostatTrait.stateWhereType<AmbientTemperature>()?.value,
@@ -246,7 +247,7 @@ void main() {
     expect(convertedValue.first.runtimeType, equals(LockTrait));
 
     final traitUnderTest = convertedValue.first as LockTrait;
-    expect(traitUnderTest.name, 'LOCK');
+    expect(traitUnderTest.name, GTraitName.LOCK.name);
     expect(traitUnderTest.supportsIsJammed, equals(true));
     expect(traitUnderTest.propertyWhereType<SupportsIsJammed>().value,
         equals(true));
@@ -271,7 +272,7 @@ void main() {
     expect(convertedValue.first.runtimeType, equals(LockTrait));
 
     final traitUnderTest = convertedValue.first as LockTrait;
-    expect(traitUnderTest.name, 'LOCK');
+    expect(traitUnderTest.name, GTraitName.LOCK.name);
     expect(traitUnderTest.stateWhereType<IsLocked>()?.value, equals(true));
     expect(traitUnderTest.isLocked, equals(true));
     // Since isJammed is false, should not return the IsJammed State
@@ -341,7 +342,7 @@ void main() {
     final powerTrait = convertedValue.whereType<PowerTrait>().first;
 
     expect(brightnessDevice.id, equals('442f2edb-6183-4671-92e8-c92b68bc9785'));
-    expect(brightnessTrait.name, equals('BRIGHTNESS'));
+    expect(brightnessTrait.name, equals(GTraitName.BRIGHTNESS.name));
     expect(brightnessTrait.stateWhereType<Brightness>()?.value, equals(100));
     expect(brightnessTrait.brightness, equals(100));
     expect(powerTrait.stateWhereType<IsOnOff>()?.value, isFalse);
@@ -387,7 +388,7 @@ void main() {
         powerDevice!.traits.asList());
 
     expect(convertedValue.first.runtimeType, equals(PowerTrait));
-    expect(convertedValue.first.name, 'POWER');
+    expect(convertedValue.first.name, GTraitName.POWER.name);
     expect((convertedValue.first as PowerTrait).supportsDiscreteOnOff,
         equals(true));
     expect((convertedValue.first as PowerTrait).isOn, equals(false));
@@ -433,7 +434,7 @@ void main() {
         powerDevice!.traits.asList());
 
     expect(convertedValue.first.runtimeType, equals(PowerTrait));
-    expect(convertedValue.first.name, 'POWER');
+    expect(convertedValue.first.name, GTraitName.POWER.name);
     expect((convertedValue.first as PowerTrait).supportsDiscreteOnOff,
         equals(true));
     expect((convertedValue.first as PowerTrait).isOn, equals(false));
@@ -478,7 +479,7 @@ void main() {
         batteryLevelDevice!.traits.asList());
 
     expect(convertedValue.first.runtimeType, equals(BatteryLevelTrait));
-    expect(convertedValue.first.name, 'BATTERY_LEVEL');
+    expect(convertedValue.first.name, GTraitName.BATTERY_LEVEL.name);
     expect(
         convertedValue.first.stateWhereType<BatteryLevel>()?.value, equals(50));
     expect(
@@ -502,7 +503,7 @@ void main() {
     expect(convertedValue.first.runtimeType, equals(ColorTemperatureTrait));
 
     final traitUnderTest = convertedValue.first as ColorTemperatureTrait;
-    expect(traitUnderTest.name, 'COLOR_TEMPERATURE');
+    expect(traitUnderTest.name, GTraitName.COLOR_TEMPERATURE.name);
     expect(traitUnderTest.colorTemperature, equals(6500));
     expect(traitUnderTest.supportedColorTemperatureRange.min, equals(0));
     expect(traitUnderTest.supportedColorTemperatureRange.max, equals(7000));
@@ -550,7 +551,7 @@ void main() {
     expect(convertedValue.first.runtimeType, equals(ColorTrait));
 
     final traitUnderTest = convertedValue.first as ColorTrait;
-    expect(traitUnderTest.name, 'COLOR');
+    expect(traitUnderTest.name, GTraitName.COLOR.name);
     expect(traitUnderTest.color.hue, equals(3));
     expect(traitUnderTest.color.saturation, equals(2));
     expect(traitUnderTest.color.brightness, equals(1));
