@@ -1,3 +1,10 @@
+## [5.0.3](https://github.com/Yonomi/yonomi-sdk-dart/compare/v5.0.2...v5.0.3) (2022-08-26)
+
+
+### Bug Fixes
+
+* **traits:** take the trait names as they come to avoid mixups ([#79](https://github.com/Yonomi/yonomi-sdk-dart/issues/79)) ([8672866](https://github.com/Yonomi/yonomi-sdk-dart/commit/8672866cafa651dcbd3db96935eae8b1863c45a2))
+
 ## [5.0.2](https://github.com/Yonomi/yonomi-sdk-dart/compare/v5.0.1...v5.0.2) (2022-08-17)
 
 
