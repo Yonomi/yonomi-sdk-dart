@@ -260,7 +260,10 @@ fragment DeviceDetails on Device {
       state {
         pinCodeCredentials {
           reported {
+            # there can be large numbers of pin codes, so this also follows the relay spec:
+            # https://relay.dev/graphql/connections.htm
             value {
+              pageInfo { hasNextPage }
               edges {
                 node {
                   name
@@ -274,6 +277,7 @@ fragment DeviceDetails on Device {
           }
           desired {
             value {
+              pageInfo { hasNextPage }
               edges {
                 node {
                   name
@@ -283,6 +287,7 @@ fragment DeviceDetails on Device {
               }
             }
             delta {
+              pageInfo { hasNextPage }
               edges {
                 node {
                   name
@@ -292,6 +297,49 @@ fragment DeviceDetails on Device {
               }
             }
             updatedAt
+          }
+        }
+        pinCodeCredentialList {
+          reported {
+            sampledAt
+            createdAt
+            value {
+              edges {
+                node {
+                  name
+                  pinCode
+                  alwaysActive
+                  recurringSchedules {
+                    duration
+                    rrule
+                  }
+                  temporarySchedules {
+                    startDatetime
+                    endDatetime
+                  }
+                }
+              }
+            }
+          }
+          desired {
+            updatedAt
+            value {
+              edges {
+                node {
+                  name
+                  pinCode
+                  alwaysActive
+                  recurringSchedules {
+                    duration
+                    rrule
+                  }
+                  temporarySchedules {
+                    startDatetime
+                    endDatetime
+                  }
+                }
+              }
+            }
           }
         }
       }
