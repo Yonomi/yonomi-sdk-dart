@@ -257,6 +257,18 @@ fragment DeviceDetails on Device {
       }
     }
     ... on PinCodeCredentialDeviceTrait {
+      properties {
+        maxNumberOfPinCodeCredentials
+        supportedPinCodeCredentialNameRange {
+          min
+          max
+        }
+        supportedPinCodeRange {
+          min
+          max
+        }
+
+      }
       state {
         pinCodeCredentials {
           reported {
