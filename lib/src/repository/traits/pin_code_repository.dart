@@ -14,12 +14,6 @@ class PinCodeRepository {
       return PinCodeTrait(<State>{
         PinCodeCredentials(
             trait.state.pinCodeCredentials.reported?.value.edges.toList()),
-        // PinCodeCredentialList(
-        //   trait.state.pinCodeCredentialList.reported?.value.edges.node.name,
-        //   trait.state.pinCodeCredentialList.reported?.value.edges.node.pinCode,
-        //   trait.state.pinCodeCredentialList.reported?.value.edges.node
-        //       .alwaysActive,
-        // ),
       }, <Property>{
         MaxNumberOfPinCodeCredentials(
             trait.properties?.maxNumberOfPinCodeCredentials),
@@ -92,24 +86,6 @@ class PinCodeCredential {
   @override
   String toString() =>
       'PinCodeCredential(name: ${_pinCode.name}, pinCode: ${_pinCode.pinCode})';
-}
-
-class PinCodeCredentialList extends State<PinCodeCredentialListItemInput> {
-  final String name;
-  final String pinCode;
-  final bool alwaysActive;
-
-  PinCodeCredentialList(this.name, this.pinCode, this.alwaysActive)
-      : super('pinCodeCredentialList',
-            PinCodeCredentialListItemInput((builder) {
-          builder..name = name;
-          builder..pinCode = pinCode;
-          builder..alwaysActive = alwaysActive;
-        }));
-
-  @override
-  String toString() =>
-      'PinCodeCredentialList(name: $name, pinCode: $pinCode, alwaysActive: $alwaysActive)';
 }
 
 ///
