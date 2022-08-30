@@ -602,6 +602,8 @@ void main() {
 
     expect(traitUnderTest.pinCodes[0].name, equals("Admin"));
     expect(traitUnderTest.pinCodes[0].pinCode, equals("0070"));
+    expect(traitUnderTest.pinCodes[0].toString(),
+        equals("PinCodeCredential(name: Admin, pinCode: 0070)"));
     expect(traitUnderTest.pinCodes[1].name, equals("Plant Lady"));
     expect(traitUnderTest.pinCodes[1].pinCode, equals("5161"));
 
