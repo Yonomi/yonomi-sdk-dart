@@ -4,6 +4,7 @@ import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/pin_code_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 
@@ -291,6 +292,7 @@ class TestFixtures {
     int maxSupportedPinCodeCredentialNameRange = 30,
     int minSupportedPinCodeRange = 1,
     int maxSupportedPinCodeRange = 100,
+    List<PinCodeCredential> pinCredentials = const [],
   }) {
     return {
       'id': 'id',
@@ -323,20 +325,13 @@ class TestFixtures {
               "reported": {
                 "value": {
                   "edges": [
-                    {
-                      "node": {
-                        "name": "Admin",
-                        "pinCode": "0070",
-                        "schedules": []
-                      }
-                    },
-                    {
-                      "node": {
-                        "name": "Plant Lady",
-                        "pinCode": "5161",
-                        "schedules": []
-                      }
-                    }
+                    ...pinCredentials.map((pinCode) => {
+                          "node": {
+                            "name": pinCode.name,
+                            "pinCode": pinCode.pinCode,
+                            "schedules": []
+                          }
+                        }),
                   ]
                 },
                 "createdAt": "2021-10-20T02:51:18.445Z",

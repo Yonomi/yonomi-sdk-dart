@@ -578,7 +578,12 @@ void main() {
       'PinCode : responseToDeviceTraitConverter maps single PinCode DeviceTrait to PinCodeTrait',
       () {
     final pinCodeResponse =
-        GgetDeviceData_device.fromJson(TestFixtures.buildPinCodeJsonResponse());
+        GgetDeviceData_device.fromJson(TestFixtures.buildPinCodeJsonResponse(
+      pinCredentials: [
+        PinCodeCredential('Admin', '0070'),
+        PinCodeCredential('Plant Lady', '5161'),
+      ],
+    ));
 
     final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
         pinCodeResponse!.traits.asList());
@@ -593,11 +598,13 @@ void main() {
     expect(traitUnderTest.pinCodes[1].name, equals("Plant Lady"));
     expect(traitUnderTest.pinCodes[1].pinCode, equals("5161"));
 
-    expect(traitUnderTest.pinCodeNameLengthRange.min, 1);
-    expect(traitUnderTest.pinCodeNameLengthRange.max, 30);
+    expect(traitUnderTest.maxNumberOfCredentials, 10);
 
-    expect(traitUnderTest.pinCodeLengthRanges.min, 1);
-    expect(traitUnderTest.pinCodeLengthRanges.max, 100);
+    expect(traitUnderTest.nameLengthRange.min, 1);
+    expect(traitUnderTest.nameLengthRange.max, 30);
+
+    expect(traitUnderTest.pinCodeLengthRange.min, 1);
+    expect(traitUnderTest.pinCodeLengthRange.max, 100);
   });
 
   test(

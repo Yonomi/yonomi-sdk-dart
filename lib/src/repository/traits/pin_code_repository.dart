@@ -31,8 +31,8 @@ class PinCodeRepository {
         ),
         SupportedPinCodeRange(
           PinCodeLengthRange(
-            min: trait.properties.supportedPinCodeRange.min,
-            max: trait.properties.supportedPinCodeRange.max,
+            min: trait.properties?.supportedPinCodeRange.min,
+            max: trait.properties?.supportedPinCodeRange.max,
           ),
         ),
       });
@@ -160,13 +160,13 @@ class PinCodeTrait extends Trait {
   PinCodeTrait(Set<State> states, Set<Property> properties)
       : super(traitNames.PIN_CODE_CREDENTIAL.name, states, properties);
 
-  int get maxNumberOfPinCodeCredentials =>
+  int get maxNumberOfCredentials =>
       propertyWhereType<MaxNumberOfPinCodeCredentials>().value;
 
-  PinCodeNameLengthRange get pinCodeNameLengthRange =>
+  PinCodeNameLengthRange get nameLengthRange =>
       propertyWhereType<SupportedPinCodeNameLengthRange>().value;
 
-  PinCodeLengthRange get pinCodeLengthRanges =>
+  PinCodeLengthRange get pinCodeLengthRange =>
       propertyWhereType<SupportedPinCodeRange>().value;
 
   List<PinCodeCredential> get pinCodes =>
