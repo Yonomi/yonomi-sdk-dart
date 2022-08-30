@@ -60,6 +60,7 @@ class PinCodeCredentials extends State<List<PinCodeCredential>> {
   PinCodeCredentials(rawValues)
       : super((PinCodeCredentials).toString(), _toMappedList(rawValues)) {}
 
+  // coverage:ignore-line
   PinCodeCredential operator [](int index) => value[index];
 
   static List<PinCodeCredential> _toMappedList(List<dynamic> value) => value
@@ -103,7 +104,7 @@ class PinCodeNameLengthRange {
   final int? min;
   final int? max;
 
-  PinCodeNameLengthRange({required int? min, required int? max})
+  const PinCodeNameLengthRange({required int? min, required int? max})
       : min = min,
         max = max;
 }
@@ -120,7 +121,7 @@ class PinCodeLengthRange {
   final int? min;
   final int? max;
 
-  PinCodeLengthRange({required int? min, required int? max})
+  const PinCodeLengthRange({required int? min, required int? max})
       : min = min,
         max = max;
 }
