@@ -600,20 +600,20 @@ void main() {
 
     expect(traitUnderTest.name, GTraitName.PIN_CODE_CREDENTIAL.name);
 
-    expect(traitUnderTest.pinCodes[0].name, equals("Admin"));
-    expect(traitUnderTest.pinCodes[0].pinCode, equals("0070"));
-    expect(traitUnderTest.pinCodes[0].toString(),
+    expect(traitUnderTest.pinCodes?[0].name, equals("Admin"));
+    expect(traitUnderTest.pinCodes?[0].pinCode, equals("0070"));
+    expect(traitUnderTest.pinCodes?[0].toString(),
         equals("PinCodeCredential(name: Admin, pinCode: 0070)"));
-    expect(traitUnderTest.pinCodes[1].name, equals("Plant Lady"));
-    expect(traitUnderTest.pinCodes[1].pinCode, equals("5161"));
+    expect(traitUnderTest.pinCodes?[1].name, equals("Plant Lady"));
+    expect(traitUnderTest.pinCodes?[1].pinCode, equals("5161"));
 
     expect(traitUnderTest.maxNumberOfCredentials, 10);
 
-    expect(traitUnderTest.nameLengthRange.min, 1);
-    expect(traitUnderTest.nameLengthRange.max, 30);
+    expect(traitUnderTest.nameLengthRange?.min, 1);
+    expect(traitUnderTest.nameLengthRange?.max, 30);
 
-    expect(traitUnderTest.pinCodeLengthRange.min, 1);
-    expect(traitUnderTest.pinCodeLengthRange.max, 100);
+    expect(traitUnderTest.pinCodeLengthRange?.min, 1);
+    expect(traitUnderTest.pinCodeLengthRange?.max, 100);
   });
 
   test(

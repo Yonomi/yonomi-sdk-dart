@@ -43,12 +43,13 @@ class PinCodeRepository {
     }
   }
 
-  static createPinCode(
+  /// Send mutation `actionPinCodeCredentialAddPinCodeCredential`
+  static Future<void> sendAddPinCodeAction(
     Request request,
     String id,
     String pinCode,
     String pinCodeName,
-  ) {
+  ) async {
     final req = GmakeAddPinCodeRequest((b) {
       b..vars.deviceId = id;
       b..vars.pinCode = pinCode;
@@ -160,15 +161,15 @@ class PinCodeTrait extends Trait {
   PinCodeTrait(Set<State> states, Set<Property> properties)
       : super(_traitNames.PIN_CODE_CREDENTIAL.name, states, properties);
 
-  int get maxNumberOfCredentials =>
+  int? get maxNumberOfCredentials =>
       propertyWhereType<MaxNumberOfPinCodeCredentials>().value;
 
-  PinCodeNameLengthRange get nameLengthRange =>
+  PinCodeNameLengthRange? get nameLengthRange =>
       propertyWhereType<SupportedPinCodeNameLengthRange>().value;
 
-  PinCodeLengthRange get pinCodeLengthRange =>
+  PinCodeLengthRange? get pinCodeLengthRange =>
       propertyWhereType<SupportedPinCodeRange>().value;
 
-  List<PinCodeCredential> get pinCodes =>
+  List<PinCodeCredential>? get pinCodes =>
       stateWhereType<PinCodeCredentials>()?.value;
 }
