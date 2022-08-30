@@ -170,17 +170,24 @@ void main() {
               }
             }
           },
+          {
+            "__typename": "NewUnknownTrait",
+            "name": "BETA_NOISE_DETECTED",
+            "instance": "default",
+            "state": {}
+          },
         ]
       }
     });
     final convertedTraits = DevicesRepository.responseToDeviceTraitConverter(
         deviceWithMultipleTraits!.device!.traits.asList());
-    expect(convertedTraits, hasLength(5));
+    expect(convertedTraits, hasLength(6));
     expect(convertedTraits, contains(isA<LockTrait>()));
     expect(convertedTraits, contains(isA<BatteryLevelTrait>()));
     expect(convertedTraits, contains(isA<BrightnessTrait>()));
     expect(convertedTraits, contains(isA<ColorTrait>()));
     expect(convertedTraits, contains(isA<PinCodeTrait>()));
+    expect(convertedTraits, contains(isA<UnknownTrait>()));
   });
 
   test('''responseToDeviceTraitConverter maps single Thermostat
