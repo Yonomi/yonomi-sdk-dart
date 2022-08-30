@@ -6,7 +6,7 @@ import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.doc
 
 typedef PinCodeCredentialInput = GPinCodeCredentialInput;
 typedef PinCodeCredentialListItemInput = GPinCodeCredentialListItemInput;
-typedef traitNames = GTraitName;
+typedef _traitNames = GTraitName;
 
 class PinCodeRepository {
   static PinCodeTrait getPinCodeTrait(trait) {
@@ -158,7 +158,7 @@ class SupportedPinCodeRange extends Property<PinCodeLengthRange> {
 ///
 class PinCodeTrait extends Trait {
   PinCodeTrait(Set<State> states, Set<Property> properties)
-      : super(traitNames.PIN_CODE_CREDENTIAL.name, states, properties);
+      : super(_traitNames.PIN_CODE_CREDENTIAL.name, states, properties);
 
   int get maxNumberOfCredentials =>
       propertyWhereType<MaxNumberOfPinCodeCredentials>().value;

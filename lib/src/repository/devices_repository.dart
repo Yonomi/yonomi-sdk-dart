@@ -14,7 +14,7 @@ import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
-typedef traitNames = GTraitName;
+typedef _traitNames = GTraitName;
 
 class DevicesRepository {
   static Future<List<Device>> getDevices(Request request) async {
@@ -102,21 +102,21 @@ class DevicesRepository {
 
     return deviceTraits.map<Trait>((trait) {
       switch (trait.name as GTraitName) {
-        case traitNames.THERMOSTAT_SETTING:
+        case _traitNames.THERMOSTAT_SETTING:
           return ThermostatRepository.getThermostatTrait(trait);
-        case traitNames.LOCK:
+        case _traitNames.LOCK:
           return LockRepository.getLockTrait(trait);
-        case traitNames.BATTERY_LEVEL:
+        case _traitNames.BATTERY_LEVEL:
           return BatteryLevelRepository.getBatteryLevelTrait(trait);
-        case traitNames.POWER:
+        case _traitNames.POWER:
           return PowerRepository.getPowerTrait(trait);
-        case traitNames.BRIGHTNESS:
+        case _traitNames.BRIGHTNESS:
           return BrightnessRepository.getBrightnessTrait(trait);
-        case traitNames.COLOR:
+        case _traitNames.COLOR:
           return ColorRepository.getColorTrait(trait);
-        case traitNames.COLOR_TEMPERATURE:
+        case _traitNames.COLOR_TEMPERATURE:
           return ColorTemperatureRepository.getColorTemperatureTrait(trait);
-        case traitNames.PIN_CODE_CREDENTIAL:
+        case _traitNames.PIN_CODE_CREDENTIAL:
           return PinCodeRepository.getPinCodeTrait(trait);
         default:
           return UnknownTrait(trait.name.toString());
