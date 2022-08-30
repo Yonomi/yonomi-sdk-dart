@@ -7,6 +7,7 @@ import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.
 import 'package:yonomi_platform_sdk/src/repository/traits/color_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/pin_code_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
@@ -52,6 +53,17 @@ void main() {
             "__typename": "PinCodeCredentialDeviceTrait",
             "name": "PIN_CODE_CREDENTIAL",
             "instance": "default",
+            "properties": {
+              "maxNumberOfPinCodeCredentials": 10,
+              "supportedPinCodeCredentialNameRange": {
+                "min": 1,
+                "max": 30,
+              },
+              "supportedPinCodeRange": {
+                "min": 1,
+                "max": 100,
+              }
+            },
             "state": {
               "pinCodeCredentials": {
                 "reported": {
@@ -167,8 +179,8 @@ void main() {
     expect(convertedTraits, contains(isA<LockTrait>()));
     expect(convertedTraits, contains(isA<BatteryLevelTrait>()));
     expect(convertedTraits, contains(isA<BrightnessTrait>()));
-    expect(convertedTraits, contains(isA<UnknownTrait>()));
     expect(convertedTraits, contains(isA<ColorTrait>()));
+    expect(convertedTraits, contains(isA<PinCodeTrait>()));
   });
 
   test('''responseToDeviceTraitConverter maps single Thermostat
@@ -560,6 +572,32 @@ void main() {
     expect(state.hue, equals(3));
     expect(state.saturation, equals(2));
     expect(state.brightness, equals(1));
+  });
+
+  test(
+      'PinCode : responseToDeviceTraitConverter maps single PinCode DeviceTrait to PinCodeTrait',
+      () {
+    final pinCodeResponse =
+        GgetDeviceData_device.fromJson(TestFixtures.buildPinCodeJsonResponse());
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        pinCodeResponse!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(PinCodeTrait));
+    final PinCodeTrait traitUnderTest = convertedValue.first as PinCodeTrait;
+
+    expect(traitUnderTest.name, GTraitName.PIN_CODE_CREDENTIAL.name);
+
+    expect(traitUnderTest.pinCodes[0].name, equals("Admin"));
+    expect(traitUnderTest.pinCodes[0].pinCode, equals("0070"));
+    expect(traitUnderTest.pinCodes[1].name, equals("Plant Lady"));
+    expect(traitUnderTest.pinCodes[1].pinCode, equals("5161"));
+
+    expect(traitUnderTest.pinCodeNameLengthRange.min, 1);
+    expect(traitUnderTest.pinCodeNameLengthRange.max, 30);
+
+    expect(traitUnderTest.pinCodeLengthRanges.min, 1);
+    expect(traitUnderTest.pinCodeLengthRanges.max, 100);
   });
 
   test(
