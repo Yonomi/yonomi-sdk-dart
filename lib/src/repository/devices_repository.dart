@@ -8,10 +8,13 @@ import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.
 import 'package:yonomi_platform_sdk/src/repository/traits/color_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/pin_code_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
+
+typedef _traitNames = GTraitName;
 
 class DevicesRepository {
   static Future<List<Device>> getDevices(Request request) async {
@@ -99,20 +102,22 @@ class DevicesRepository {
 
     return deviceTraits.map<Trait>((trait) {
       switch (trait.name as GTraitName) {
-        case GTraitName.THERMOSTAT_SETTING:
+        case _traitNames.THERMOSTAT_SETTING:
           return ThermostatRepository.getThermostatTrait(trait);
-        case GTraitName.LOCK:
+        case _traitNames.LOCK:
           return LockRepository.getLockTrait(trait);
-        case GTraitName.BATTERY_LEVEL:
+        case _traitNames.BATTERY_LEVEL:
           return BatteryLevelRepository.getBatteryLevelTrait(trait);
-        case GTraitName.POWER:
+        case _traitNames.POWER:
           return PowerRepository.getPowerTrait(trait);
-        case GTraitName.BRIGHTNESS:
+        case _traitNames.BRIGHTNESS:
           return BrightnessRepository.getBrightnessTrait(trait);
-        case GTraitName.COLOR:
+        case _traitNames.COLOR:
           return ColorRepository.getColorTrait(trait);
-        case GTraitName.COLOR_TEMPERATURE:
+        case _traitNames.COLOR_TEMPERATURE:
           return ColorTemperatureRepository.getColorTemperatureTrait(trait);
+        case _traitNames.PIN_CODE_CREDENTIAL:
+          return PinCodeRepository.getPinCodeTrait(trait);
         default:
           return UnknownTrait(trait.name.toString());
       }

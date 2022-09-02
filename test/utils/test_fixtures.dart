@@ -4,6 +4,7 @@ import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/pin_code_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
 
@@ -277,6 +278,86 @@ class TestFixtures {
                 'value': colorTemperature,
                 'delta': null,
                 'updatedAt': '2022-04-18T10: 10: 40.200Z'
+              }
+            }
+          }
+        }
+      ]
+    };
+  }
+
+  static Map<String, dynamic> buildPinCodeJsonResponse({
+    int maxNumberOfPinCodeCredentials = 10,
+    int minSupportedPinCodeCredentialNameRange = 1,
+    int maxSupportedPinCodeCredentialNameRange = 30,
+    int minSupportedPinCodeRange = 1,
+    int maxSupportedPinCodeRange = 100,
+    List<PinCodeCredential> pinCredentials = const [],
+  }) {
+    return {
+      'id': 'id',
+      'displayName': 'displayName',
+      'updatedAt': '2022-04-18T12:00:00.000Z',
+      'createdAt': '2022-04-18T12:00:00.000Z',
+      'productInformation': {
+        'manufacturer': 'abc',
+        'model': 'model',
+        'description': 'PinCode device',
+      },
+      'traits': [
+        {
+          "__typename": "PinCodeCredentialDeviceTrait",
+          "name": "PIN_CODE_CREDENTIAL",
+          "instance": "default",
+          "properties": {
+            "maxNumberOfPinCodeCredentials": maxNumberOfPinCodeCredentials,
+            "supportedPinCodeCredentialNameRange": {
+              "min": minSupportedPinCodeCredentialNameRange,
+              "max": maxSupportedPinCodeCredentialNameRange,
+            },
+            "supportedPinCodeRange": {
+              "min": minSupportedPinCodeRange,
+              "max": maxSupportedPinCodeRange,
+            }
+          },
+          "state": {
+            "pinCodeCredentials": {
+              "reported": {
+                "value": {
+                  "edges": [
+                    ...pinCredentials.map((pinCode) => {
+                          "node": {
+                            "name": pinCode.name,
+                            "pinCode": pinCode.pinCode,
+                            "schedules": []
+                          }
+                        }),
+                  ]
+                },
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2021-10-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Admin",
+                        "pinCode": "0070",
+                        "schedules": []
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "Plant Lady",
+                        "pinCode": "5161",
+                        "schedules": []
+                      }
+                    }
+                  ]
+                },
+                "delta": null,
+                "updatedAt": "2021-10-20T02:51:18.445Z"
               }
             }
           }

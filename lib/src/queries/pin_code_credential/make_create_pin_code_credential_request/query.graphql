@@ -1,0 +1,28 @@
+mutation makeAddPinCodeRequest ($deviceId: ID!, $pinCode: String!, $pinCodeName: String!) {
+  actionPinCodeCredentialAddPinCodeCredential(
+    deviceId: $deviceId,
+    pinCodeCredential:{
+      pinCode: $pinCode
+      name: $pinCodeName,
+      recurringSchedules: [],
+      temporarySchedules: [],
+      alwaysActive: false
+    }
+  ) {
+    actionId
+    device {
+      traits {
+        __typename name instance
+        ... on PinCodeCredentialDeviceTrait {
+          properties { supportedPinCodeRange { min max } }
+          state {
+            pinCodeCredentials {
+              reported { value { edges { node { pinCode }}} sampledAt createdAt }
+              desired { value { edges { node { pinCode }}} updatedAt }
+            }
+          }
+        }
+      }
+    }
+  }
+}

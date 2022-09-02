@@ -6,6 +6,7 @@ export 'src/repository/traits/brightness_repository.dart';
 export 'src/repository/traits/color_repository.dart';
 export 'src/repository/traits/color_temperature_repository.dart';
 export 'src/repository/traits/lock_repository.dart';
+export 'src/repository/traits/pin_code_repository.dart';
 export 'src/repository/traits/power_repository.dart';
 export 'src/repository/traits/thermostat_repository.dart';
 export 'src/repository/user_repository.dart';

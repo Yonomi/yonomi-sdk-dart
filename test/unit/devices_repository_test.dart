@@ -7,6 +7,7 @@ import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.
 import 'package:yonomi_platform_sdk/src/repository/traits/color_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/pin_code_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/power_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/thermostat_repository.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
@@ -52,6 +53,17 @@ void main() {
             "__typename": "PinCodeCredentialDeviceTrait",
             "name": "PIN_CODE_CREDENTIAL",
             "instance": "default",
+            "properties": {
+              "maxNumberOfPinCodeCredentials": 10,
+              "supportedPinCodeCredentialNameRange": {
+                "min": 1,
+                "max": 30,
+              },
+              "supportedPinCodeRange": {
+                "min": 1,
+                "max": 100,
+              }
+            },
             "state": {
               "pinCodeCredentials": {
                 "reported": {
@@ -158,17 +170,24 @@ void main() {
               }
             }
           },
+          {
+            "__typename": "NewUnknownTrait",
+            "name": "BETA_NOISE_DETECTED",
+            "instance": "default",
+            "state": {}
+          },
         ]
       }
     });
     final convertedTraits = DevicesRepository.responseToDeviceTraitConverter(
         deviceWithMultipleTraits!.device!.traits.asList());
-    expect(convertedTraits, hasLength(5));
+    expect(convertedTraits, hasLength(6));
     expect(convertedTraits, contains(isA<LockTrait>()));
     expect(convertedTraits, contains(isA<BatteryLevelTrait>()));
     expect(convertedTraits, contains(isA<BrightnessTrait>()));
-    expect(convertedTraits, contains(isA<UnknownTrait>()));
     expect(convertedTraits, contains(isA<ColorTrait>()));
+    expect(convertedTraits, contains(isA<PinCodeTrait>()));
+    expect(convertedTraits, contains(isA<UnknownTrait>()));
   });
 
   test('''responseToDeviceTraitConverter maps single Thermostat
@@ -560,6 +579,41 @@ void main() {
     expect(state.hue, equals(3));
     expect(state.saturation, equals(2));
     expect(state.brightness, equals(1));
+  });
+
+  test(
+      'PinCode : responseToDeviceTraitConverter maps single PinCode DeviceTrait to PinCodeTrait',
+      () {
+    final pinCodeResponse =
+        GgetDeviceData_device.fromJson(TestFixtures.buildPinCodeJsonResponse(
+      pinCredentials: [
+        PinCodeCredential('Admin', '0070'),
+        PinCodeCredential('Plant Lady', '5161'),
+      ],
+    ));
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        pinCodeResponse!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(PinCodeTrait));
+    final PinCodeTrait traitUnderTest = convertedValue.first as PinCodeTrait;
+
+    expect(traitUnderTest.name, GTraitName.PIN_CODE_CREDENTIAL.name);
+
+    expect(traitUnderTest.pinCodes?[0].name, equals("Admin"));
+    expect(traitUnderTest.pinCodes?[0].pinCode, equals("0070"));
+    expect(traitUnderTest.pinCodes?[0].toString(),
+        equals("PinCodeCredential(name: Admin, pinCode: 0070)"));
+    expect(traitUnderTest.pinCodes?[1].name, equals("Plant Lady"));
+    expect(traitUnderTest.pinCodes?[1].pinCode, equals("5161"));
+
+    expect(traitUnderTest.maxNumberOfCredentials, 10);
+
+    expect(traitUnderTest.nameLengthRange?.min, 1);
+    expect(traitUnderTest.nameLengthRange?.max, 30);
+
+    expect(traitUnderTest.pinCodeLengthRange?.min, 1);
+    expect(traitUnderTest.pinCodeLengthRange?.max, 100);
   });
 
   test(

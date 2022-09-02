@@ -257,9 +257,23 @@ fragment DeviceDetails on Device {
       }
     }
     ... on PinCodeCredentialDeviceTrait {
+      properties {
+        maxNumberOfPinCodeCredentials
+        supportedPinCodeCredentialNameRange {
+          min
+          max
+        }
+        supportedPinCodeRange {
+          min
+          max
+        }
+
+      }
       state {
         pinCodeCredentials {
           reported {
+            # there can be large numbers of pin codes, so this also follows the relay spec:
+            # https://relay.dev/graphql/connections.htm
             value {
               edges {
                 node {
@@ -292,6 +306,49 @@ fragment DeviceDetails on Device {
               }
             }
             updatedAt
+          }
+        }
+        pinCodeCredentialList {
+          reported {
+            sampledAt
+            createdAt
+            value {
+              edges {
+                node {
+                  name
+                  pinCode
+                  alwaysActive
+                  recurringSchedules {
+                    duration
+                    rrule
+                  }
+                  temporarySchedules {
+                    startDatetime
+                    endDatetime
+                  }
+                }
+              }
+            }
+          }
+          desired {
+            updatedAt
+            value {
+              edges {
+                node {
+                  name
+                  pinCode
+                  alwaysActive
+                  recurringSchedules {
+                    duration
+                    rrule
+                  }
+                  temporarySchedules {
+                    startDatetime
+                    endDatetime
+                  }
+                }
+              }
+            }
           }
         }
       }
