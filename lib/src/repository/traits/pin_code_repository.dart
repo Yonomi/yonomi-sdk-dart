@@ -60,9 +60,6 @@ class PinCodeCredentials extends State<List<PinCodeCredential>> {
   PinCodeCredentials(rawValues)
       : super((PinCodeCredentials).toString(), _toMappedList(rawValues)) {}
 
-  // coverage:ignore-line
-  PinCodeCredential operator [](int index) => value[index];
-
   static List<PinCodeCredential> _toMappedList(List<dynamic> value) => value
       .map((each) => PinCodeCredential(
             each.node.name,
