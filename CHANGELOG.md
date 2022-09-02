@@ -1,3 +1,22 @@
+# [5.1.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v5.0.3...v5.1.0) (2022-09-02)
+
+
+### Bug Fixes
+
+* **device_details_fragment_query:** remove querying for hasNext node due to it causing problems ([a3950bd](https://github.com/Yonomi/yonomi-sdk-dart/commit/a3950bd0b2e747df9d453bda94a7a0890fe6d858))
+* **pin_code_repository:** fix pincode add pin action signature ([39e535d](https://github.com/Yonomi/yonomi-sdk-dart/commit/39e535d08725d6cfa73e58ec47512866565d03f7))
+* scope typedefs to their file only ([b90040f](https://github.com/Yonomi/yonomi-sdk-dart/commit/b90040f45cc259f583995bfcf26eeb6062d1eb59))
+
+
+### Features
+
+* **pin_code_repository:** introduce PinCode repository ([2d75ca1](https://github.com/Yonomi/yonomi-sdk-dart/commit/2d75ca13ee7df1ad8c9bc2726346e2a6da367044))
+* **pin_code_repository:** redefine pinCodeRepository interface for states ([042e5f0](https://github.com/Yonomi/yonomi-sdk-dart/commit/042e5f060c074782ebba507762f86b6eecd7dea7))
+* **pin-codes:** add gql query to add new pin code credential ([a3aff9f](https://github.com/Yonomi/yonomi-sdk-dart/commit/a3aff9f4b0afa0146626dcbcd1520af1b8f7768a))
+* **query.fragment.graphql:** query more info from PinCode Trait ([260411e](https://github.com/Yonomi/yonomi-sdk-dart/commit/260411ee0f7e5fe3a181236d5fa861012c4ac968))
+* **query.fragment.graphql:** query PinCode properties for a device ([d978ce5](https://github.com/Yonomi/yonomi-sdk-dart/commit/d978ce5ef45ae527f7f7cf3f242497b6d1f10d42))
+* **schema.docs.graphql:** update yp graphql schema file ([ee6c68e](https://github.com/Yonomi/yonomi-sdk-dart/commit/ee6c68ebfb4d2a82b5bb204d00f7e5ccc0e80333))
+
 ## [5.0.3](https://github.com/Yonomi/yonomi-sdk-dart/compare/v5.0.2...v5.0.3) (2022-08-26)
 
 
