@@ -365,4 +365,94 @@ class TestFixtures {
       ]
     };
   }
+
+  static Map<String, dynamic> buildBetaFirmwareJsonResponse({
+    String version = '0.0.1',
+    DateTime lastUpdated = new DateTime(),
+    DateTime installScheduledAt = new DateTime(),
+    DateTime installedAt = new DateTime(),
+    DateTime downloadScheduledAt = new DateTime(),
+  }) {
+    return {
+      'id': 'id',
+      'displayName': 'displayName',
+      'updatedAt': '2022-04-18T12:00:00.000Z',
+      'createdAt': '2022-04-18T12:00:00.000Z',
+      'productInformation': {
+        'manufacturer': 'abc',
+        'model': 'model',
+        'description': 'BetaFirmware device',
+      },
+      'traits': [
+        {
+          "__typename": "BetaFirmwareDeviceTrait",
+          "name": "BETA_FIRMWARE",
+          "instance": "default",
+          "properties": {},
+          "state": {
+            "version": {
+              "reported": {
+                "value": version,
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2021-10-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "0.0.1",
+                "delta": null,
+                "updatedAt": "2021-10-20T02:51:18.445Z"
+              }
+            },
+            "lastUpdated": {
+              "reported": {
+                "value": lastUpdated,
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2021-10-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
+              }
+            },
+            "installScheduledAt": {
+              "reported": {
+                "value": installScheduledAt,
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2021-10-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
+              }
+            },
+            "installedAt": {
+              "reported": {
+                "value": installedAt,
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2021-10-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
+              }
+            },
+            "downloadScheduledAt": {
+              "reported": {
+                "value": downloadScheduledAt,
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2021-10-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
+              }
+            }
+          }
+        }
+      ]
+    };
+  }
 }
