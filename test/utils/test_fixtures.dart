@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/beta_firmware_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/pin_code_repository.dart';
@@ -45,6 +46,14 @@ class TestFixtures {
     return devices
         .firstWhere((device) => deviceIsOfTrait(device, BrightnessTrait),
             orElse: () => throw 'No brightness device found')
+        .id;
+  }
+
+  Future<String> getBetaFirmwareDeviceId(yoRequest.Request request) async {
+    List<Device> devices = await DevicesRepository.getDevices(request);
+    return devices
+        .firstWhere((device) => deviceIsOfTrait(device, BetaFirmwareTrait),
+            orElse: () => throw '''No beta firmware device found.''')
         .id;
   }
 

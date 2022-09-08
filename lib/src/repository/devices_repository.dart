@@ -4,6 +4,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.g
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/battery_level_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/beta_firmware_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/color_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
@@ -71,6 +72,25 @@ class DevicesRepository {
         device.updatedAt,
         thermostatDeviceTrait);
     return thermostatDevice;
+  }
+
+  static Future<Device> getBetaFirmwareDetails(Request request, String id) async {
+    final device = await getDeviceDetails(request, id);
+    // For now thermostatDeviceTrait is device with only lock trait so stripping
+    // out all the other traits
+    final betaFirmwareDeviceTrait =
+        device.traits.whereType<BetaFirmwareTrait>().toList();
+    final betaFirmwareDevice = Device(
+        device.id,
+        device.displayName,
+        device.description,
+        device.manufacturerName,
+        device.model,
+        device.serialNumber,
+        device.createdAt,
+        device.updatedAt,
+        betaFirmwareDeviceTrait);
+    return betaFirmwareDevice;
   }
 
   // This method needs to be cleaned up we can just leverage deviceDetails
