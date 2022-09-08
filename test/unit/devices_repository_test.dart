@@ -3,6 +3,7 @@ import 'package:yonomi_platform_sdk/src/queries/devices/get_device/query.data.gq
 import 'package:yonomi_platform_sdk/src/queries/devices/get_devices/query.data.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/battery_level_repository.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/beta_firmware_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/color_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/color_temperature_repository.dart';
@@ -171,6 +172,73 @@ void main() {
             }
           },
           {
+            "__typename": "BetaFirmwareDeviceTrait",
+            "name": "BETA_FIRMWARE",
+            "instance": "default",
+            "state": {
+              "version": {
+                "reported": {
+                  "value": "0.0.1",
+                  "createdAt": "2021-10-20T02:51:18.445Z",
+                  "sampledAt": "2022-01-20T02:01:36.000Z"
+                },
+                "desired": {
+                  "value": "0.0.1",
+                  "delta": null,
+                  "updatedAt": "2021-10-20T02:51:18.445Z"
+                }
+              },
+              "lastUpdated": {
+                "reported": {
+                  "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                  "createdAt": "2021-10-20T02:51:18.445Z",
+                  "sampledAt": "2022-01-20T02:01:36.000Z"
+                },
+                "desired": {
+                  "value": "2022-09-07T12:00:00.000Z",
+                  "delta": null,
+                  "updatedAt": "2022-09-07T12:00:00.000Z"
+                }
+              },
+              "installScheduledAt": {
+                "reported": {
+                  "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                  "createdAt": "2021-10-20T02:51:18.445Z",
+                  "sampledAt": "2022-01-20T02:01:36.000Z"
+                },
+                "desired": {
+                  "value": "2022-09-07T12:00:00.000Z",
+                  "delta": null,
+                  "updatedAt": "2022-09-07T12:00:00.000Z"
+                }
+              },
+              "installedAt": {
+                "reported": {
+                  "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                  "createdAt": "2021-10-20T02:51:18.445Z",
+                  "sampledAt": "2022-01-20T02:01:36.000Z"
+                },
+                "desired": {
+                  "value": "2022-09-07T12:00:00.000Z",
+                  "delta": null,
+                  "updatedAt": "2022-09-07T12:00:00.000Z"
+                }
+              },
+              "downloadScheduledAt": {
+                "reported": {
+                  "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                  "createdAt": "2021-10-20T02:51:18.445Z",
+                  "sampledAt": "2022-01-20T02:01:36.000Z"
+                },
+                "desired": {
+                  "value": "2022-09-07T12:00:00.000Z",
+                  "delta": null,
+                  "updatedAt": "2022-09-07T12:00:00.000Z"
+                }
+              }
+            }
+          },
+          {
             "__typename": "NewUnknownTrait",
             "name": "BETA_NOISE_DETECTED",
             "instance": "default",
@@ -187,6 +255,7 @@ void main() {
     expect(convertedTraits, contains(isA<BrightnessTrait>()));
     expect(convertedTraits, contains(isA<ColorTrait>()));
     expect(convertedTraits, contains(isA<PinCodeTrait>()));
+    expect(convertedTraits, contains(isA<BetaFirmwareTrait>()));
     expect(convertedTraits, contains(isA<UnknownTrait>()));
   });
 
@@ -614,6 +683,102 @@ void main() {
 
     expect(traitUnderTest.pinCodeLengthRange?.min, 1);
     expect(traitUnderTest.pinCodeLengthRange?.max, 100);
+  });
+
+  test('''#1. responseToDeviceTraitConverter maps single Beta Firmware
+      DeviceTrait to BetaFirmwareTrait''', () {
+    final betaFirmwareDevice = GgetDeviceData_device.fromJson({
+      'id': 'id',
+      'displayName': 'displayName',
+      'updatedAt': '2020-04-01T12:00:00.000Z',
+      'createdAt': '2020-04-01T12:00:00.000Z',
+      'productInformation': {
+        'manufacturer': 'abc',
+        'model': 'model',
+        'description': 'lock',
+      },
+      'traits': [
+        {
+          '__typename': 'BetaFirmwareDeviceTrait',
+          'name': 'BETA_FIRMWARE',
+          'instance': 'default',
+          'properties': {},
+          'state': {
+            "version": {
+              "reported": {
+                "value": "0.0.1",
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2022-01-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "0.0.1",
+                "delta": null,
+                "updatedAt": "2021-10-20T02:51:18.445Z"
+              }
+            },
+            "lastUpdated": {
+              "reported": {
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2022-01-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
+              }
+            },
+            "installScheduledAt": {
+              "reported": {
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2022-01-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
+              }
+            },
+            "installedAt": {
+              "reported": {
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2022-01-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
+              }
+            },
+            "downloadScheduledAt": {
+              "reported": {
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2022-01-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
+              }
+            }
+          }
+        }
+      ]
+    });
+
+    final convertedValue = DevicesRepository.responseToDeviceTraitConverter(
+        betaFirmwareDevice!.traits.asList());
+
+    expect(convertedValue.first.runtimeType, equals(BetaFirmwareTrait));
+    expect(convertedValue.first.name, GTraitName.BETA_FIRMWARE.name);
+    expect((convertedValue.first as BetaFirmwareTrait).version, equals("0.0.1"));
+    expect((convertedValue.first as BetaFirmwareTrait).lastUpdated, equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
+    expect((convertedValue.first as BetaFirmwareTrait).installScheduledAt, equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
+    expect((convertedValue.first as BetaFirmwareTrait).installedAt, equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
+    expect((convertedValue.first as BetaFirmwareTrait).downloadScheduledAt, equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
   });
 
   test(

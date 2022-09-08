@@ -1,0 +1,19 @@
+mutation makeScheduleLatestFirmwareUpdateRequest ($deviceId: ID!, $scheduleAt: DateTime!) {
+	actionBetaFirmwareScheduleLatestFirmwareUpdateRequest (deviceId: $deviceId scheduleAt: $scheduleAt) {
+    actionId
+    device {
+ 	    traits {
+       __typename name instance
+       ... on BetaFirmwareDeviceTrait {
+         properties {}
+         state {
+          installScheduledAt {
+            reported { value sampledAt createdAt }
+            desired { value delta updatedAt }
+            }
+          }
+        }
+      }
+    }
+  }
+}

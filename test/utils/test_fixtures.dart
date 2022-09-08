@@ -375,13 +375,7 @@ class TestFixtures {
     };
   }
 
-  static Map<String, dynamic> buildBetaFirmwareJsonResponse({
-    String version = '0.0.1',
-    DateTime lastUpdated = new DateTime(),
-    DateTime installScheduledAt = new DateTime(),
-    DateTime installedAt = new DateTime(),
-    DateTime downloadScheduledAt = new DateTime(),
-  }) {
+  static Map<String, dynamic> buildBetaFirmwareJsonResponse({ String version = '0.0.1' }) {
     return {
       'id': 'id',
       'displayName': 'displayName',
@@ -403,7 +397,7 @@ class TestFixtures {
               "reported": {
                 "value": version,
                 "createdAt": "2021-10-20T02:51:18.445Z",
-                "sampledAt": "2021-10-20T02:01:36.000Z"
+                "sampledAt": "2022-01-20T02:01:36.000Z"
               },
               "desired": {
                 "value": "0.0.1",
@@ -413,9 +407,9 @@ class TestFixtures {
             },
             "lastUpdated": {
               "reported": {
-                "value": lastUpdated,
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
                 "createdAt": "2021-10-20T02:51:18.445Z",
-                "sampledAt": "2021-10-20T02:01:36.000Z"
+                "sampledAt": "2022-01-20T02:01:36.000Z"
               },
               "desired": {
                 "value": "2022-09-07T12:00:00.000Z",
@@ -425,9 +419,9 @@ class TestFixtures {
             },
             "installScheduledAt": {
               "reported": {
-                "value": installScheduledAt,
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
                 "createdAt": "2021-10-20T02:51:18.445Z",
-                "sampledAt": "2021-10-20T02:01:36.000Z"
+                "sampledAt": "2022-01-20T02:01:36.000Z"
               },
               "desired": {
                 "value": "2022-09-07T12:00:00.000Z",
@@ -437,9 +431,9 @@ class TestFixtures {
             },
             "installedAt": {
               "reported": {
-                "value": installedAt,
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
                 "createdAt": "2021-10-20T02:51:18.445Z",
-                "sampledAt": "2021-10-20T02:01:36.000Z"
+                "sampledAt": "2022-01-20T02:01:36.000Z"
               },
               "desired": {
                 "value": "2022-09-07T12:00:00.000Z",
@@ -449,9 +443,9 @@ class TestFixtures {
             },
             "downloadScheduledAt": {
               "reported": {
-                "value": downloadScheduledAt,
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
                 "createdAt": "2021-10-20T02:51:18.445Z",
-                "sampledAt": "2021-10-20T02:01:36.000Z"
+                "sampledAt": "2022-01-20T02:01:36.000Z"
               },
               "desired": {
                 "value": "2022-09-07T12:00:00.000Z",
