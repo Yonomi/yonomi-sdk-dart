@@ -38,7 +38,7 @@ class PinCodeRepository {
   }
 
   /// Send mutation `actionPinCodeCredentialAddPinCodeCredential`
-  static Future<void> sendAddPinCodeAction(
+  static Future<void> sendCreatePinCodeAction(
     Request request,
     String id,
     String pinCode,

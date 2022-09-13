@@ -7,7 +7,7 @@ import 'base_mock_test.dart';
 main() {
   BaseMockTest baseMockTest = BaseMockTest();
   test('PinCodeRepository calls client request', () async {
-    await PinCodeRepository.sendAddPinCodeAction(
+    await PinCodeRepository.sendCreatePinCodeAction(
         baseMockTest.mockRequest, 'id', '1234', 'newPinCode');
 
     verify(baseMockTest.mockLink.request(any, any)).called(1);
