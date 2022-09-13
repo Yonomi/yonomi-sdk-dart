@@ -1,12 +1,10 @@
 mutation makeAddPinCodeRequest ($deviceId: ID!, $pinCode: String!, $pinCodeName: String!) {
-  actionPinCodeCredentialAddPinCodeCredential(
+  actionPinCodeCredentialCreatePinCodeCredential(
     deviceId: $deviceId,
     pinCodeCredential:{
       pinCode: $pinCode
       name: $pinCodeName,
-      recurringSchedules: [],
-      temporarySchedules: [],
-      alwaysActive: false
+      schedules: []
     }
   ) {
     actionId
