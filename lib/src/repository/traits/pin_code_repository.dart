@@ -44,7 +44,7 @@ class PinCodeRepository {
     String pinCode,
     String pinCodeName,
   ) async {
-    final req = GmakeAddPinCodeRequest((b) {
+    final req = GmakeCreatePinCodeRequest((b) {
       b..vars.deviceId = id;
       b..vars.pinCode = pinCode;
       b..vars.pinCodeName = pinCodeName;

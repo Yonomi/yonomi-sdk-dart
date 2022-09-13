@@ -1,4 +1,4 @@
-mutation makeAddPinCodeRequest ($deviceId: ID!, $pinCode: String!, $pinCodeName: String!) {
+mutation makeCreatePinCodeRequest ($deviceId: ID!, $pinCode: String!, $pinCodeName: String!) {
   actionPinCodeCredentialCreatePinCodeCredential(
     deviceId: $deviceId,
     pinCodeCredential:{
