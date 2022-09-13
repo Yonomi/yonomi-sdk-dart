@@ -82,7 +82,49 @@ const Query = _i1.ObjectTypeDefinitionNode(
                 defaultValue: null)
           ],
           type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'Device'), isNonNull: false))
+              name: _i1.NameNode(value: 'Device'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'CLAIMABLE_claimStatus'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'ueid'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'integrationId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ClaimStatus'), isNonNull: true))
+    ]);
+const ClaimStatus = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ClaimStatus'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'ownershipStatus'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ClaimStatusEnum'), isNonNull: false))
+    ]);
+const ClaimStatusEnum = _i1.EnumTypeDefinitionNode(
+    name: _i1.NameNode(value: 'ClaimStatusEnum'),
+    directives: [],
+    values: [
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'CLAIMED'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'UNCLAIMED'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'UNREGISTERED'), directives: [])
     ]);
 const Mutation = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'Mutation'),
@@ -224,6 +266,92 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(
               value: 'actionBetaCardCredentialDeleteCardCredential'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'id'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'actionBetaCardCredentialsCreateCardCredential'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'cardCredential'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'CardCredentialCreateItemInput'),
+                    isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'actionBetaCardCredentialsUpdateCardCredential'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'deviceId'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'ID'), isNonNull: true),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'traitInstance'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: true),
+                defaultValue:
+                    _i1.StringValueNode(value: 'default', isBlock: false)),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'cardCredential'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'CardCredentialItemInput'),
+                    isNonNull: true),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CreateActionResponse'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(
+              value: 'actionBetaCardCredentialsDeleteCardCredential'),
           directives: [],
           args: [
             _i1.InputValueDefinitionNode(
@@ -1034,6 +1162,34 @@ const BetaCardCredentialInput = _i1.InputObjectTypeDefinitionNode(
               name: _i1.NameNode(value: 'String'), isNonNull: true),
           defaultValue: null)
     ]);
+const CardCredentialCreateItemInput = _i1.InputObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'CardCredentialCreateItemInput'),
+    directives: [],
+    fields: [
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'credential'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true),
+          defaultValue: null)
+    ]);
+const CardCredentialItemInput = _i1.InputObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'CardCredentialItemInput'),
+    directives: [],
+    fields: [
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'id'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true),
+          defaultValue: null),
+      _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'credential'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true),
+          defaultValue: null)
+    ]);
 const DateTime = _i1.ScalarTypeDefinitionNode(
     name: _i1.NameNode(value: 'DateTime'), directives: []);
 const HSBColorValueInput = _i1.InputObjectTypeDefinitionNode(
@@ -1063,12 +1219,6 @@ const PinCodeCredentialCreateItemInput = _i1.InputObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'PinCodeCredentialCreateItemInput'),
     directives: [],
     fields: [
-      _i1.InputValueDefinitionNode(
-          name: _i1.NameNode(value: 'id'),
-          directives: [],
-          type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'String'), isNonNull: true),
-          defaultValue: null),
       _i1.InputValueDefinitionNode(
           name: _i1.NameNode(value: 'pinCode'),
           directives: [],
@@ -1272,7 +1422,9 @@ const ThermostatMode = _i1.EnumTypeDefinitionNode(
       _i1.EnumValueDefinitionNode(
           name: _i1.NameNode(value: 'DEHUMIDIFY'), directives: []),
       _i1.EnumValueDefinitionNode(
-          name: _i1.NameNode(value: 'AIRFLOW'), directives: [])
+          name: _i1.NameNode(value: 'AIRFLOW'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'EMERGENCY_HEAT'), directives: [])
     ]);
 const FanMode = _i1.EnumTypeDefinitionNode(
     name: _i1.NameNode(value: 'FanMode'),
@@ -1481,6 +1633,10 @@ const TraitName = _i1.EnumTypeDefinitionNode(
           name: _i1.NameNode(value: 'BATTERY_LEVEL'), directives: []),
       _i1.EnumValueDefinitionNode(
           name: _i1.NameNode(value: 'BETA_CARD_CREDENTIAL'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'BETA_CARD_CREDENTIALS'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'BETA_CONNECTIVITY'), directives: []),
       _i1.EnumValueDefinitionNode(
           name: _i1.NameNode(value: 'BETA_FIRMWARE'), directives: []),
       _i1.EnumValueDefinitionNode(
@@ -2622,6 +2778,42 @@ const BetaCardCredential = _i1.ObjectTypeDefinitionNode(
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'String'), isNonNull: true))
     ]);
+const CardCredentialCreateItem = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'CardCredentialCreateItem'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'id'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'credential'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true))
+    ]);
+const CardCredentialItem = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'CardCredentialItem'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'id'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'credential'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true))
+    ]);
 const DynamicFloatRange = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'DynamicFloatRange'),
     directives: [],
@@ -2713,6 +2905,18 @@ const LockNotificationEventType = _i1.EnumTypeDefinitionNode(
           name: _i1.NameNode(value: 'THUMBTURN'), directives: []),
       _i1.EnumValueDefinitionNode(
           name: _i1.NameNode(value: 'VIRTUAL_KEY'), directives: [])
+    ]);
+const PinCodeAlreadyExistsNotificationDatatype = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'PinCodeAlreadyExistsNotificationDatatype'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'pinCode'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true))
     ]);
 const PinCodeCredential = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'PinCodeCredential'),
@@ -2877,6 +3081,44 @@ const PinCodeCredentialListItem = _i1.ObjectTypeDefinitionNode(
                   name: _i1.NameNode(value: 'TemporarySchedule'),
                   isNonNull: true),
               isNonNull: true))
+    ]);
+const PinCodeInUseNotification = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'PinCodeInUseNotification'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'pinCode'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true))
+    ]);
+const PinCodeNameAlreadyExistsNotificationDatatype =
+    _i1.ObjectTypeDefinitionNode(
+        name:
+            _i1.NameNode(value: 'PinCodeNameAlreadyExistsNotificationDatatype'),
+        directives: [],
+        interfaces: [],
+        fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'name'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true))
+    ]);
+const PinCodeNameInUseNotification = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'PinCodeNameInUseNotification'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'name'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true))
     ]);
 const RecurringSchedule = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'RecurringSchedule'),
@@ -3442,6 +3684,439 @@ const BetaCardCredentialDeviceTrait = _i1.ObjectTypeDefinitionNode(
           args: [],
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'BetaCardCredentialState'),
+              isNonNull: true))
+    ]);
+const CardCredentialItemEdge = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'CardCredentialItemEdge'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'cursor'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'node'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CardCredentialItem'), isNonNull: true))
+    ]);
+const CardCredentialItemConnection = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'CardCredentialItemConnection'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'pageInfo'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'PageInfo'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'edges'),
+          directives: [],
+          args: [],
+          type: _i1.ListTypeNode(
+              type: _i1.NamedTypeNode(
+                  name: _i1.NameNode(value: 'CardCredentialItemEdge'),
+                  isNonNull: true),
+              isNonNull: true))
+    ]);
+const BetaCardCredentialsStateReportedCardCredentials =
+    _i1.ObjectTypeDefinitionNode(
+        name: _i1.NameNode(
+            value: 'BetaCardCredentialsStateReportedCardCredentials'),
+        directives: [],
+        interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'ReportedStateField'), isNonNull: false)
+    ],
+        fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'createdAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'sampledAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'value'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'first'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
+                defaultValue: _i1.IntValueNode(value: '10')),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'after'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: false),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CardCredentialItemConnection'),
+              isNonNull: true))
+    ]);
+const BetaCardCredentialsStateDesiredCardCredentials =
+    _i1.ObjectTypeDefinitionNode(
+        name: _i1.NameNode(
+            value: 'BetaCardCredentialsStateDesiredCardCredentials'),
+        directives: [],
+        interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'DesiredStateField'), isNonNull: false)
+    ],
+        fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'updatedAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'value'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'first'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
+                defaultValue: _i1.IntValueNode(value: '10')),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'after'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: false),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CardCredentialItemConnection'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'delta'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'first'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
+                defaultValue: _i1.IntValueNode(value: '10')),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'after'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: false),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'CardCredentialItemConnection'),
+              isNonNull: false))
+    ]);
+const BetaCardCredentialsStateCardCredentialsField =
+    _i1.ObjectTypeDefinitionNode(
+        name:
+            _i1.NameNode(value: 'BetaCardCredentialsStateCardCredentialsField'),
+        directives: [],
+        interfaces: [],
+        fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'reported'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'BetaCardCredentialsStateReportedCardCredentials'),
+              isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'desired'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'BetaCardCredentialsStateDesiredCardCredentials'),
+              isNonNull: false))
+    ]);
+const BetaCardCredentialsState = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'BetaCardCredentialsState'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'cardCredentials'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'BetaCardCredentialsStateCardCredentialsField'),
+              isNonNull: true))
+    ]);
+const BetaCardCredentialsProperties = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'BetaCardCredentialsProperties'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'maxNumberOfCardCredentials'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Int'), isNonNull: false))
+    ]);
+const BetaCardCredentialsDeviceTrait = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'BetaCardCredentialsDeviceTrait'),
+    directives: [],
+    interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'DeviceTrait'), isNonNull: false)
+    ],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'name'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'TraitName'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'instance'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'isBeta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'events'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'first'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
+                defaultValue: _i1.IntValueNode(value: '10')),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'after'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: false),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'filter'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'TraitFilteredEventFilterInput'),
+                    isNonNull: false),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'sort'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'DeviceEventSortInput'),
+                    isNonNull: false),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DeviceEventConnection'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'properties'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'BetaCardCredentialsProperties'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'state'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'BetaCardCredentialsState'),
+              isNonNull: true))
+    ]);
+const BetaConnectivityStateReportedStatus = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'BetaConnectivityStateReportedStatus'),
+    directives: [],
+    interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'ReportedStateField'), isNonNull: false)
+    ],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'createdAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'sampledAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'value'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'BetaConnectivityStatus'),
+              isNonNull: true))
+    ]);
+const BetaConnectivityStatus = _i1.EnumTypeDefinitionNode(
+    name: _i1.NameNode(value: 'BetaConnectivityStatus'),
+    directives: [],
+    values: [
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'UNKNOWN'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'ONLINE'), directives: []),
+      _i1.EnumValueDefinitionNode(
+          name: _i1.NameNode(value: 'OFFLINE'), directives: [])
+    ]);
+const BetaConnectivityStateDesiredStatus = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'BetaConnectivityStateDesiredStatus'),
+    directives: [],
+    interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'DesiredStateField'), isNonNull: false)
+    ],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'updatedAt'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'value'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'BetaConnectivityStatus'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'delta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'BetaConnectivityStatus'),
+              isNonNull: false))
+    ]);
+const BetaConnectivityStateStatusField = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'BetaConnectivityStateStatusField'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'reported'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'BetaConnectivityStateReportedStatus'),
+              isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'desired'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'BetaConnectivityStateDesiredStatus'),
+              isNonNull: false))
+    ]);
+const BetaConnectivityState = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'BetaConnectivityState'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'status'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'BetaConnectivityStateStatusField'),
+              isNonNull: true))
+    ]);
+const BetaConnectivityDeviceTrait = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'BetaConnectivityDeviceTrait'),
+    directives: [],
+    interfaces: [
+      _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'DeviceTrait'), isNonNull: false)
+    ],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'name'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'TraitName'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'instance'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'String'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'isBeta'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'events'),
+          directives: [],
+          args: [
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'first'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'Int'), isNonNull: false),
+                defaultValue: _i1.IntValueNode(value: '10')),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'after'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'String'), isNonNull: false),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'filter'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'TraitFilteredEventFilterInput'),
+                    isNonNull: false),
+                defaultValue: null),
+            _i1.InputValueDefinitionNode(
+                name: _i1.NameNode(value: 'sort'),
+                directives: [],
+                type: _i1.NamedTypeNode(
+                    name: _i1.NameNode(value: 'DeviceEventSortInput'),
+                    isNonNull: false),
+                defaultValue: null)
+          ],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DeviceEventConnection'),
+              isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'state'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'BetaConnectivityState'),
               isNonNull: true))
     ]);
 const BetaFirmwareStateReportedVersion = _i1.ObjectTypeDefinitionNode(
@@ -6949,8 +7624,12 @@ const ThermostatSettingDeviceTrait = _i1.ObjectTypeDefinitionNode(
 const document = _i1.DocumentNode(definitions: [
   Health,
   Query,
+  ClaimStatus,
+  ClaimStatusEnum,
   Mutation,
   BetaCardCredentialInput,
+  CardCredentialCreateItemInput,
+  CardCredentialItemInput,
   DateTime,
   HSBColorValueInput,
   PinCodeCredentialCreateItemInput,
@@ -7010,15 +7689,21 @@ const document = _i1.DocumentNode(definitions: [
   ReportedStateField,
   DesiredStateField,
   BetaCardCredential,
+  CardCredentialCreateItem,
+  CardCredentialItem,
   DynamicFloatRange,
   DynamicIntRange,
   HSBColorValue,
   LockNotification,
   LockNotificationEventType,
+  PinCodeAlreadyExistsNotificationDatatype,
   PinCodeCredential,
   PinCodeCredentialCreateItem,
   PinCodeCredentialItem,
   PinCodeCredentialListItem,
+  PinCodeInUseNotification,
+  PinCodeNameAlreadyExistsNotificationDatatype,
+  PinCodeNameInUseNotification,
   RecurringSchedule,
   TemporarySchedule,
   ThermostatRange,
@@ -7039,6 +7724,20 @@ const document = _i1.DocumentNode(definitions: [
   BetaCardCredentialState,
   BetaCardCredentialProperties,
   BetaCardCredentialDeviceTrait,
+  CardCredentialItemEdge,
+  CardCredentialItemConnection,
+  BetaCardCredentialsStateReportedCardCredentials,
+  BetaCardCredentialsStateDesiredCardCredentials,
+  BetaCardCredentialsStateCardCredentialsField,
+  BetaCardCredentialsState,
+  BetaCardCredentialsProperties,
+  BetaCardCredentialsDeviceTrait,
+  BetaConnectivityStateReportedStatus,
+  BetaConnectivityStatus,
+  BetaConnectivityStateDesiredStatus,
+  BetaConnectivityStateStatusField,
+  BetaConnectivityState,
+  BetaConnectivityDeviceTrait,
   BetaFirmwareStateReportedVersion,
   BetaFirmwareStateDesiredVersion,
   BetaFirmwareStateVersionField,
