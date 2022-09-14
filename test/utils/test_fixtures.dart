@@ -375,7 +375,8 @@ class TestFixtures {
     };
   }
 
-  static Map<String, dynamic> buildBetaFirmwareJsonResponse({ String version = '0.0.1' }) {
+  static Map<String, dynamic> buildBetaFirmwareJsonResponse(
+      {String version = '0.0.1'}) {
     return {
       'id': 'id',
       'displayName': 'displayName',

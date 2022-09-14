@@ -1,15 +1,27 @@
-mutation makeBrightnessActionRequest ($deviceId: ID!, $brightness: Int!) {
-	actionBrightnessSetBrightnessPercentage (deviceId: $deviceId brightness: $brightness) {
+mutation makeBrightnessActionRequest($deviceId: ID!, $brightness: Int!) {
+  actionBrightnessSetBrightnessPercentage(
+    deviceId: $deviceId
+    brightness: $brightness
+  ) {
     actionId
     transactionId
     device {
- 	    traits {
-       name instance
-       ... on BrightnessDeviceTrait {
-         state {
-          brightness {
-            reported { value sampledAt createdAt }
-            desired { value delta updatedAt }
+      traits {
+        name
+        instance
+        ... on BrightnessDeviceTrait {
+          state {
+            brightness {
+              reported {
+                value
+                sampledAt
+                createdAt
+              }
+              desired {
+                value
+                delta
+                updatedAt
+              }
             }
           }
         }

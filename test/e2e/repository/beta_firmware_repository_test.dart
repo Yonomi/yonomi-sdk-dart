@@ -3,7 +3,6 @@ import 'package:test/test.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/beta_firmware_repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart' as yoRequest;
-import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
 import '../../utils/test_fixtures.dart';
 
@@ -27,7 +26,8 @@ void main() {
         await DevicesRepository.getDeviceDetails(request, testBetaFirmwareId);
     expect(device, isNotNull);
 
-    final betaFirmwareTrait = device.traits.whereType<BetaFirmwareTrait>().first;
+    final betaFirmwareTrait =
+        device.traits.whereType<BetaFirmwareTrait>().first;
 
     expect(betaFirmwareTrait, isNotNull);
     expect(betaFirmwareTrait.stateWhereType<String>(), isNotNull);
@@ -39,8 +39,8 @@ void main() {
   });
 
   test('getBetaFirmwareDetails gets beta firmware details', () async {
-    final device =
-        await DevicesRepository.getBetaFirmwareDetails(request, testBetaFirmwareId);
+    final device = await DevicesRepository.getBetaFirmwareDetails(
+        request, testBetaFirmwareId);
     expect(device, isNotNull);
     expect(device.traits.whereType<BetaFirmwareTrait>(), isNotEmpty);
   });
