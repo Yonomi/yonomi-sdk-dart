@@ -74,7 +74,8 @@ class DevicesRepository {
     return thermostatDevice;
   }
 
-  static Future<Device> getBetaFirmwareDetails(Request request, String id) async {
+  static Future<Device> getBetaFirmwareDetails(
+      Request request, String id) async {
     final device = await getDeviceDetails(request, id);
     // For now thermostatDeviceTrait is device with only lock trait so stripping
     // out all the other traits
@@ -138,6 +139,8 @@ class DevicesRepository {
           return ColorTemperatureRepository.getColorTemperatureTrait(trait);
         case _traitNames.PIN_CODE_CREDENTIAL:
           return PinCodeRepository.getPinCodeTrait(trait);
+        case _traitNames.BETA_FIRMWARE:
+          return BetaFirmwareRepository.getBetaFirmwareTrait(trait);
         default:
           return UnknownTrait(trait.name.toString());
       }

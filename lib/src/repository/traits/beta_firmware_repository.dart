@@ -9,13 +9,25 @@ typedef _traitNames = GTraitName;
 
 class BetaFirmwareRepository {
   static BetaFirmwareTrait getBetaFirmwareTrait(trait) {
+    DateTime _gDateTimeToDateTime(GDateTime gDateTime) {
+      return DateTime.parse(gDateTime.value);
+    }
+
     try {
+      final lastUpdated = _gDateTimeToDateTime(
+          trait.state.lastUpdated.reported?.value as GDateTime);
+      final installScheduledAt =
+          _gDateTimeToDateTime(trait.state.installScheduledAt.reported?.value);
+      final installedAt =
+          _gDateTimeToDateTime(trait.state.installedAt.reported?.value);
+      final downloadScheduledAt =
+          _gDateTimeToDateTime(trait.state.downloadScheduledAt.reported?.value);
       return BetaFirmwareTrait(<State>{
         Version(trait.state.version.reported?.value),
-        LastUpdated(trait.state.lastUpdated.reported?.value),
-        InstallScheduledAt(trait.state.installScheduledAt.reported?.value),
-        InstalledAt(trait.state.installedAt.reported?.value),
-        DownloadScheduledAt(trait.state.downloadScheduledAt.reported?.value)
+        LastUpdated(lastUpdated),
+        InstallScheduledAt(installScheduledAt),
+        InstalledAt(installedAt),
+        DownloadScheduledAt(downloadScheduledAt)
       }, <Property>{});
     } on NoSuchMethodError catch (e, stack) {
       Error.throwWithStackTrace(
@@ -30,9 +42,11 @@ class BetaFirmwareRepository {
     String id,
     DateTime scheduleAt,
   ) async {
+    final dateTimeBuilder = GDateTimeBuilder();
+    dateTimeBuilder..value = scheduleAt.toUtc().toIso8601String();
     final req = GmakeScheduleLatestFirmwareUpdateRequest((b) {
       b..vars.deviceId = id;
-      b..vars.scheduleAt = scheduleAt as GDateTimeBuilder?;
+      b..vars.scheduleAt = dateTimeBuilder;
     });
     Repository().mutate(request, req.operation, req.vars.toJson());
   }

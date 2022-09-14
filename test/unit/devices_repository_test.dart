@@ -190,7 +190,7 @@ void main() {
               },
               "lastUpdated": {
                 "reported": {
-                  "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                  "value": "2022-01-01T17:00:00.000Z",
                   "createdAt": "2021-10-20T02:51:18.445Z",
                   "sampledAt": "2022-01-20T02:01:36.000Z"
                 },
@@ -202,7 +202,7 @@ void main() {
               },
               "installScheduledAt": {
                 "reported": {
-                  "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                  "value": "2022-01-01T17:00:00.000Z",
                   "createdAt": "2021-10-20T02:51:18.445Z",
                   "sampledAt": "2022-01-20T02:01:36.000Z"
                 },
@@ -214,7 +214,7 @@ void main() {
               },
               "installedAt": {
                 "reported": {
-                  "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                  "value": "2022-01-01T17:00:00.000Z",
                   "createdAt": "2021-10-20T02:51:18.445Z",
                   "sampledAt": "2022-01-20T02:01:36.000Z"
                 },
@@ -226,7 +226,7 @@ void main() {
               },
               "downloadScheduledAt": {
                 "reported": {
-                  "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                  "value": "2022-01-01T17:00:00.000Z",
                   "createdAt": "2021-10-20T02:51:18.445Z",
                   "sampledAt": "2022-01-20T02:01:36.000Z"
                 },
@@ -249,7 +249,7 @@ void main() {
     });
     final convertedTraits = DevicesRepository.responseToDeviceTraitConverter(
         deviceWithMultipleTraits!.device!.traits.asList());
-    expect(convertedTraits, hasLength(6));
+    expect(convertedTraits, hasLength(7));
     expect(convertedTraits, contains(isA<LockTrait>()));
     expect(convertedTraits, contains(isA<BatteryLevelTrait>()));
     expect(convertedTraits, contains(isA<BrightnessTrait>()));
@@ -718,7 +718,7 @@ void main() {
             },
             "lastUpdated": {
               "reported": {
-                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "value": "2022-01-01T17:00:00.000Z",
                 "createdAt": "2021-10-20T02:51:18.445Z",
                 "sampledAt": "2022-01-20T02:01:36.000Z"
               },
@@ -730,7 +730,7 @@ void main() {
             },
             "installScheduledAt": {
               "reported": {
-                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "value": "2022-01-01T17:00:00.000Z",
                 "createdAt": "2021-10-20T02:51:18.445Z",
                 "sampledAt": "2022-01-20T02:01:36.000Z"
               },
@@ -742,7 +742,7 @@ void main() {
             },
             "installedAt": {
               "reported": {
-                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "value": "2022-01-01T17:00:00.000Z",
                 "createdAt": "2021-10-20T02:51:18.445Z",
                 "sampledAt": "2022-01-20T02:01:36.000Z"
               },
@@ -754,7 +754,7 @@ void main() {
             },
             "downloadScheduledAt": {
               "reported": {
-                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "value": "2022-01-01T17:00:00.000Z",
                 "createdAt": "2021-10-20T02:51:18.445Z",
                 "sampledAt": "2022-01-20T02:01:36.000Z"
               },
@@ -774,11 +774,16 @@ void main() {
 
     expect(convertedValue.first.runtimeType, equals(BetaFirmwareTrait));
     expect(convertedValue.first.name, GTraitName.BETA_FIRMWARE.name);
-    expect((convertedValue.first as BetaFirmwareTrait).version, equals("0.0.1"));
-    expect((convertedValue.first as BetaFirmwareTrait).lastUpdated, equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
-    expect((convertedValue.first as BetaFirmwareTrait).installScheduledAt, equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
-    expect((convertedValue.first as BetaFirmwareTrait).installedAt, equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
-    expect((convertedValue.first as BetaFirmwareTrait).downloadScheduledAt, equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
+    expect(
+        (convertedValue.first as BetaFirmwareTrait).version, equals("0.0.1"));
+    expect((convertedValue.first as BetaFirmwareTrait).lastUpdated,
+        equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
+    expect((convertedValue.first as BetaFirmwareTrait).installScheduledAt,
+        equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
+    expect((convertedValue.first as BetaFirmwareTrait).installedAt,
+        equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
+    expect((convertedValue.first as BetaFirmwareTrait).downloadScheduledAt,
+        equals(DateTime.parse("2022-01-01T17:00:00.000Z")));
   });
 
   test(

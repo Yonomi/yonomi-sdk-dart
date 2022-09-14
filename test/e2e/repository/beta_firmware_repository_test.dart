@@ -30,7 +30,6 @@ void main() {
         device.traits.whereType<BetaFirmwareTrait>().first;
 
     expect(betaFirmwareTrait, isNotNull);
-    expect(betaFirmwareTrait.stateWhereType<String>(), isNotNull);
     expect(betaFirmwareTrait.version, isNotEmpty);
     expect(betaFirmwareTrait.lastUpdated, isA<DateTime>());
     expect(betaFirmwareTrait.installScheduledAt, isA<DateTime>());
