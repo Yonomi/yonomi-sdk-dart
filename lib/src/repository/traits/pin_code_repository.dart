@@ -1,4 +1,6 @@
 import 'package:yonomi_platform_sdk/src/queries/pin_code_credential/make_create_pin_code_credential_request/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/pin_code_credential/make_delete_pin_code_credential_request/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/pin_code_credential/make_update_pin_code_credential_request/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
@@ -37,7 +39,7 @@ class PinCodeRepository {
     }
   }
 
-  /// Send mutation `actionPinCodeCredentialAddPinCodeCredential`
+  /// Send mutation `actionPinCodeCredentialCreatePinCodeCredential`
   static Future<void> sendCreatePinCodeAction(
     Request request,
     String id,
@@ -48,6 +50,34 @@ class PinCodeRepository {
       b..vars.deviceId = id;
       b..vars.pinCode = pinCode;
       b..vars.pinCodeName = pinCodeName;
+    });
+    Repository().mutate(request, req.operation, req.vars.toJson());
+  }
+
+  /// Send mutation `actionPinCodeCredentialUpdatePinCodeCredential`
+  static Future<void> sendUpdatePinCodeAction(
+    Request request,
+    String id,
+    String pinCode,
+    String pinCodeName,
+  ) async {
+    final req = GmakeUpdatePinCodeRequest((b) {
+      b..vars.deviceId = id;
+      b..vars.pinCode = pinCode;
+      b..vars.pinCodeName = pinCodeName;
+    });
+    Repository().mutate(request, req.operation, req.vars.toJson());
+  }
+
+  /// Send mutation `actionPinCodeCredentialDeletePinCodeCredential`
+  static Future<void> sendDeletePinCodeAction(
+    Request request,
+    String id,
+    String pinCode,
+  ) async {
+    final req = GmakeDeletePinCodeRequest((b) {
+      b..vars.deviceId = id;
+      b..vars.pinCode = pinCode;
     });
     Repository().mutate(request, req.operation, req.vars.toJson());
   }

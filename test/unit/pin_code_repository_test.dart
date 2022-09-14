@@ -7,18 +7,35 @@ import 'base_mock_test.dart';
 
 main() {
   BaseMockTest baseMockTest = BaseMockTest();
-  test('PinCodeRepository calls client request', () async {
+
+  test('PinCodeRepository calls sendCreatePinCodeAction request', () async {
     await PinCodeRepository.sendCreatePinCodeAction(
         baseMockTest.mockRequest, 'id', '1234', 'newPinCode');
 
     verify(baseMockTest.mockLink.request(any, any)).called(1);
   });
+
+  test('PinCodeRepository calls sendUpdatePinCodeAction request', () async {
+    await PinCodeRepository.sendUpdatePinCodeAction(
+        baseMockTest.mockRequest, 'id', '1234', 'newPinCode');
+
+    verify(baseMockTest.mockLink.request(any, any)).called(1);
+  });
+
+  test('PinCodeRepository calls sendDeletePinCodeAction request', () async {
+    await PinCodeRepository.sendDeletePinCodeAction(
+        baseMockTest.mockRequest, 'id', '1234');
+
+    verify(baseMockTest.mockLink.request(any, any)).called(1);
+  });
+
   test(
       '''#getPinCodeTrait should throw argumentError if trait object is not correct type''',
       () {
     expect(() => PinCodeRepository.getPinCodeTrait(null),
         throwsA(isA<ArgumentError>()));
   });
+
   test(
       'PinCodeCredentials.withCredentials should correctly build a list of credentials in a PinCodeTrait',
       () {
