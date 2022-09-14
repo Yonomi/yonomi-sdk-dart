@@ -1,0 +1,12 @@
+mutation makeInstallLatestFirmwareUpdateRequest($deviceId: ID!) {
+  scheduleLatestFirmwareUpdate(deviceId: $deviceId) {
+    actionId
+    transactionId
+    device {
+      traits {
+        name
+        instance
+      }
+    }
+  }
+}

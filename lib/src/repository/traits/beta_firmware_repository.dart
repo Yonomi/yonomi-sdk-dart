@@ -1,27 +1,26 @@
-import 'package:yonomi_platform_sdk/src/queries/beta_firmware/install_latest_firmware_update/query.req.gql.dart';
-import 'package:yonomi_platform_sdk/src/queries/beta_firmware/schedule_latest_firmware_update/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
 
-// typedef BetaFirmwareCredentialInput = GBetaFirmwareInput;
-// typedef BetaFirmwareCredentialListItemInput = GBetaFirmwareListItemInput;
+import '../../queries/beta_firmware/make_schedule_install_request/query.req.gql.dart';
+
 typedef _traitNames = GTraitName;
 
 class BetaFirmwareRepository {
   static BetaFirmwareTrait getBetaFirmwareTrait(trait) {
     try {
       return BetaFirmwareTrait(<State>{
-          Version(trait.state.version.reported?.value),
-          LastUpdated(trait.state.lastUpdated.reported?.value),
-          InstallScheduledAt(trait.state.installScheduledAt.reported?.value),
-          InstalledAt(trait.state.installedAt.reported?.value),
-          DownloadScheduledAt(trait.state.downloadScheduledAt.reported?.value)
-        }, <Property>{});
+        Version(trait.state.version.reported?.value),
+        LastUpdated(trait.state.lastUpdated.reported?.value),
+        InstallScheduledAt(trait.state.installScheduledAt.reported?.value),
+        InstalledAt(trait.state.installedAt.reported?.value),
+        DownloadScheduledAt(trait.state.downloadScheduledAt.reported?.value)
+      }, <Property>{});
     } on NoSuchMethodError catch (e, stack) {
       Error.throwWithStackTrace(
-          ArgumentError.value(trait, 'BetaFirmwareTrait', 'Invalid BetaFirmwareTrait'),
+          ArgumentError.value(
+              trait, 'BetaFirmwareTrait', 'Invalid BetaFirmwareTrait'),
           stack);
     }
   }
@@ -32,9 +31,9 @@ class BetaFirmwareRepository {
     DateTime scheduleAt,
   ) async {
     final req = GmakeScheduleLatestFirmwareUpdateRequest((b) {
-        b..vars.deviceId = id;
-        b..vars.scheduleAt = scheduleAt as GDateTimeBuilder?;
-      });
+      b..vars.deviceId = id;
+      b..vars.scheduleAt = scheduleAt as GDateTimeBuilder?;
+    });
     Repository().mutate(request, req.operation, req.vars.toJson());
   }
 
@@ -42,8 +41,8 @@ class BetaFirmwareRepository {
     Request request,
     String id,
   ) async {
-    final req = GmakeInstallLatestFirmwareUpdateRequest((b) => b..vars.deviceId = id,);
-    Repository().mutate(request, req.operation, req.vars.toJson());
+    // final req = GmakeInstallLatestFirmwareUpdateRequest((b) => b..vars.deviceId = id,);
+    // Repository().mutate(request, req.operation, req.vars.toJson());
   }
 }
 
@@ -76,7 +75,9 @@ class BetaFirmwareTrait extends Trait {
 
   String? get version => stateWhereType<Version>()?.value;
   DateTime? get lastUpdated => stateWhereType<LastUpdated>()?.value;
-  DateTime? get installScheduledAt => stateWhereType<InstallScheduledAt>()?.value;
+  DateTime? get installScheduledAt =>
+      stateWhereType<InstallScheduledAt>()?.value;
   DateTime? get installedAt => stateWhereType<InstalledAt>()?.value;
-  DateTime? get downloadScheduledAt => stateWhereType<DownloadScheduledAt>()?.value;
+  DateTime? get downloadScheduledAt =>
+      stateWhereType<DownloadScheduledAt>()?.value;
 }
