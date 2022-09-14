@@ -27,26 +27,6 @@ type Query {
     # The id of a specific device.
     id: ID!
   ): Device
-
-  # *BETA API* This query fetches the claim status of the device.
-  CLAIMABLE_claimStatus(
-    # The Universal Entity ID Claim (ueid) of the device.
-    ueid: String!
-
-    # The integration id of the Allegion IoTP connector.
-    integrationId: ID!
-  ): ClaimStatus!
-}
-
-# The claim status of the device.
-type ClaimStatus {
-  ownershipStatus: ClaimStatusEnum
-}
-
-enum ClaimStatusEnum {
-  CLAIMED
-  UNCLAIMED
-  UNREGISTERED
 }
 
 type Mutation {
@@ -110,42 +90,6 @@ type Mutation {
 
   # Revoke access for the card credential with `id` from the device.
   actionBetaCardCredentialDeleteCardCredential(
-    # The target device's id
-    deviceId: ID!
-
-    # The identifier for the specific trait instance this action is targeting.
-    traitInstance: String! = "default"
-
-    # The `id` of the card credential to remove.
-    id: String!
-  ): CreateActionResponse!
-
-  # Add a card credential to the device.
-  actionBetaCardCredentialsCreateCardCredential(
-    # The target device's id
-    deviceId: ID!
-
-    # The identifier for the specific trait instance this action is targeting.
-    traitInstance: String! = "default"
-
-    # The card credential to add to list of card credentials.
-    cardCredential: CardCredentialCreateItemInput!
-  ): CreateActionResponse!
-
-  # Update an existing card credential on the device.
-  actionBetaCardCredentialsUpdateCardCredential(
-    # The target device's id
-    deviceId: ID!
-
-    # The identifier for the specific trait instance this action is targeting.
-    traitInstance: String! = "default"
-
-    # The card credential to update in the list of card credentials.
-    cardCredential: CardCredentialItemInput!
-  ): CreateActionResponse!
-
-  # Revoke access for the card credential with `id` from the device.
-  actionBetaCardCredentialsDeleteCardCredential(
     # The target device's id
     deviceId: ID!
 
@@ -496,21 +440,6 @@ input BetaCardCredentialInput {
   id: String!
 }
 
-# Mutation input: Encapsulates card credential data
-input CardCredentialCreateItemInput {
-  # A card credential.
-  credential: String!
-}
-
-# Mutation input: Encapsulates card credential data
-input CardCredentialItemInput {
-  # A unique identifier (UUID) to address this card credential.
-  id: String!
-
-  # A card credential.
-  credential: String!
-}
-
 # A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
 scalar DateTime
 
@@ -528,7 +457,10 @@ input HSBColorValueInput {
 
 # Mutation input: Encapsulates PIN code credential data
 input PinCodeCredentialCreateItemInput {
-  # A PIN code.
+  # A unique identifier to address this pin code credential.
+  id: String!
+
+  # A PIN code. This is also the unique identifier for the PIN code credential data.
   pinCode: String!
 
   # A human-readable name for the PIN code credential data.
@@ -567,10 +499,10 @@ input TemporaryScheduleInput {
 
 # Mutation input: Encapsulates PIN code credential data
 input PinCodeCredentialItemInput {
-  # A unique identifier to address this PIN code credential.
+  # A unique identifier to address this pin code credential.
   id: String!
 
-  # A PIN code.
+  # A PIN code. This is also the unique identifier for the PIN code credential data.
   pinCode: String!
 
   # A human-readable name for the PIN code credential data.
@@ -600,7 +532,7 @@ input PinCodeCredentialInput {
 
 # Mutation input: Encapsulates PIN code credential data
 input PinCodeCredentialListItemInput {
-  # A PIN code.
+  # A PIN code. This is also the unique identifier for the PIN code credential data.
   pinCode: String!
 
   # A human-readable name for the PIN code credential data.
@@ -637,9 +569,6 @@ enum ThermostatMode {
 
   # The thermostat is in `airflow` mode.
   AIRFLOW
-
-  # The thermostat is in `emergency heat` mode.
-  EMERGENCY_HEAT
 }
 
 enum FanMode {
@@ -752,12 +681,6 @@ enum TraitName {
 
   # (BETA) Functionality for devices that can be accessed via a card credential.
   BETA_CARD_CREDENTIAL
-
-  # (BETA) Functionality for devices that can be accessed via a card credential.
-  BETA_CARD_CREDENTIALS
-
-  # Indication on whether device is online or offline status.
-  BETA_CONNECTIVITY
 
   # Functionality for devices that report their current firmware version.
   BETA_FIRMWARE
@@ -1271,24 +1194,6 @@ type BetaCardCredential {
   id: String!
 }
 
-# Encapsulates card credential data
-type CardCredentialCreateItem {
-  # A unique identifier (UUID) to address this card credential.
-  id: String!
-
-  # A card credential.
-  credential: String!
-}
-
-# Encapsulates card credential data
-type CardCredentialItem {
-  # A unique identifier (UUID) to address this card credential.
-  id: String!
-
-  # A card credential.
-  credential: String!
-}
-
 # This represents a range of floating point numbers with min and max values that are dynamic.
 type DynamicFloatRange {
   # The minimum floating point number value allowed.
@@ -1342,12 +1247,6 @@ enum LockNotificationEventType {
   VIRTUAL_KEY
 }
 
-# Notification that a PIN code cannot be saved because it is not unique.
-type PinCodeAlreadyExistsNotificationDatatype {
-  # The PIN Code that was already in use.
-  pinCode: String!
-}
-
 # Encapsulates PIN code credential data
 type PinCodeCredential {
   # A PIN code. This is also the unique identifier for the PIN code credential data.
@@ -1362,10 +1261,10 @@ type PinCodeCredential {
 
 # Encapsulates PIN code credential data
 type PinCodeCredentialCreateItem {
-  # A unique identifier to address this PIN code credential.
+  # A unique identifier to address this pin code credential.
   id: String!
 
-  # A PIN code.
+  # A PIN code. This is also the unique identifier for the PIN code credential data.
   pinCode: String!
 
   # A human-readable name for the PIN code credential data.
@@ -1383,10 +1282,10 @@ type PinCodeCredentialCreateItem {
 
 # Encapsulates PIN code credential data
 type PinCodeCredentialItem {
-  # A unique identifier to address this PIN code credential.
+  # A unique identifier to address this pin code credential.
   id: String!
 
-  # A PIN code.
+  # A PIN code. This is also the unique identifier for the PIN code credential data.
   pinCode: String!
 
   # A human-readable name for the PIN code credential data.
@@ -1404,7 +1303,7 @@ type PinCodeCredentialItem {
 
 # Encapsulates PIN code credential data
 type PinCodeCredentialListItem {
-  # A PIN code.
+  # A PIN code. This is also the unique identifier for the PIN code credential data.
   pinCode: String!
 
   # A human-readable name for the PIN code credential data.
@@ -1418,24 +1317,6 @@ type PinCodeCredentialListItem {
 
   # A set of schedules that provide one-time access using this PIN code credential.
   temporarySchedules: [TemporarySchedule!]!
-}
-
-# Notification that a PIN code cannot be saved because it is not unique.
-type PinCodeInUseNotification {
-  # The PIN Code that was already in use.
-  pinCode: String!
-}
-
-# Notification that a PIN code name cannot be saved because it is not unique.
-type PinCodeNameAlreadyExistsNotificationDatatype {
-  # The PIN Code name that was already in use.
-  name: String!
-}
-
-# Notification that a PIN code name cannot be saved because it is not unique.
-type PinCodeNameInUseNotification {
-  # The PIN Code name that was already in use.
-  name: String!
 }
 
 # A schedule that repeats based on an RRULE recurrance pattern.
@@ -1681,184 +1562,6 @@ type BetaCardCredentialDeviceTrait implements DeviceTrait {
 
   # The BetaCardCredential state of this device.
   state: BetaCardCredentialState!
-}
-
-# A single edge from a connection to CardCredentialItem nodes.
-type CardCredentialItemEdge {
-  cursor: String!
-  node: CardCredentialItem!
-}
-
-# A connection to a collection of CardCredentialItem edges.
-type CardCredentialItemConnection {
-  pageInfo: PageInfo!
-  edges: [CardCredentialItemEdge!]!
-}
-
-# Information about the reported BetaCardCredentials state for the cardCredentials field.
-type BetaCardCredentialsStateReportedCardCredentials implements ReportedStateField {
-  # The DateTime that this reported state value was persisted to the platform.
-  createdAt: DateTime!
-
-  # The DateTime that this reported state value was sampled (recorded) by the device
-  sampledAt: DateTime!
-
-  # Current list of card credentials that have been granted access to the device.
-  value(
-    # Limit the paged response to a max number of items.
-    first: Int = 10
-
-    # Used to indicated where in the result set the paged response should start.
-    after: String
-  ): CardCredentialItemConnection!
-}
-
-# Information about the desired BetaCardCredentials state for the cardCredentials field.
-type BetaCardCredentialsStateDesiredCardCredentials implements DesiredStateField {
-  # The datetime that this desired state value was most recently updated.
-  updatedAt: DateTime!
-
-  # Current list of card credentials that have been granted access to the device.
-  value(
-    # Limit the paged response to a max number of items.
-    first: Int = 10
-
-    # Used to indicated where in the result set the paged response should start.
-    after: String
-  ): CardCredentialItemConnection!
-
-  # Current list of card credentials that have been granted access to the device.
-  delta(
-    # Limit the paged response to a max number of items.
-    first: Int = 10
-
-    # Used to indicated where in the result set the paged response should start.
-    after: String
-  ): CardCredentialItemConnection
-}
-
-# Information about the BetaCardCredentials state for the cardCredentials field
-type BetaCardCredentialsStateCardCredentialsField {
-  # The most recently reported state. May be null if the device has not yet reported it's state
-  reported: BetaCardCredentialsStateReportedCardCredentials
-
-  # The device's desired state. May be null if the device has not yet reported it's state.
-  desired: BetaCardCredentialsStateDesiredCardCredentials
-}
-
-# The state information for the BetaCardCredentials trait
-type BetaCardCredentialsState {
-  # Current list of card credentials that have been granted access to the device.
-  cardCredentials: BetaCardCredentialsStateCardCredentialsField!
-}
-
-# The properties (trait configuration) payload for the BetaCardCredentials trait
-type BetaCardCredentialsProperties {
-  # The maximum number of card credentials that may be registered on a device.
-  maxNumberOfCardCredentials: Int
-}
-
-type BetaCardCredentialsDeviceTrait implements DeviceTrait {
-  # The name of this device trait.
-  name: TraitName!
-
-  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
-  instance: String!
-
-  # Whether this trait is in beta.
-  isBeta: Boolean
-
-  # The trait filtered events of this device.
-  events(
-    # Limit the paged response to a max number of items.
-    first: Int = 10
-
-    # Used to indicated where in the result set the paged response should start.
-    after: String
-    filter: TraitFilteredEventFilterInput
-    sort: DeviceEventSortInput
-  ): DeviceEventConnection!
-
-  # The BetaCardCredentials configuration for this device.
-  properties: BetaCardCredentialsProperties!
-
-  # The BetaCardCredentials state of this device.
-  state: BetaCardCredentialsState!
-}
-
-# Information about the reported BetaConnectivity state for the status field.
-type BetaConnectivityStateReportedStatus implements ReportedStateField {
-  # The DateTime that this reported state value was persisted to the platform.
-  createdAt: DateTime!
-
-  # The DateTime that this reported state value was sampled (recorded) by the device
-  sampledAt: DateTime!
-
-  # A description of the connectivity of the device.
-  value: BetaConnectivityStatus!
-}
-
-enum BetaConnectivityStatus {
-  # The connectivity status has not been reported.
-  UNKNOWN
-
-  # The connectivity status of the device is online.
-  ONLINE
-
-  # The connectivity status of the device is offline.
-  OFFLINE
-}
-
-# Information about the desired BetaConnectivity state for the status field.
-type BetaConnectivityStateDesiredStatus implements DesiredStateField {
-  # The datetime that this desired state value was most recently updated.
-  updatedAt: DateTime!
-
-  # A description of the connectivity of the device.
-  value: BetaConnectivityStatus!
-
-  # A description of the connectivity of the device.
-  delta: BetaConnectivityStatus
-}
-
-# Information about the BetaConnectivity state for the status field
-type BetaConnectivityStateStatusField {
-  # The most recently reported state. May be null if the device has not yet reported it's state
-  reported: BetaConnectivityStateReportedStatus
-
-  # The device's desired state. May be null if the device has not yet reported it's state.
-  desired: BetaConnectivityStateDesiredStatus
-}
-
-# The state information for the BetaConnectivity trait
-type BetaConnectivityState {
-  # A description of the connectivity of the device.
-  status: BetaConnectivityStateStatusField!
-}
-
-type BetaConnectivityDeviceTrait implements DeviceTrait {
-  # The name of this device trait.
-  name: TraitName!
-
-  # Devices can have multiple "instances" of a given trait. This property is used to differentiate those separate instances
-  instance: String!
-
-  # Whether this trait is in beta.
-  isBeta: Boolean
-
-  # The trait filtered events of this device.
-  events(
-    # Limit the paged response to a max number of items.
-    first: Int = 10
-
-    # Used to indicated where in the result set the paged response should start.
-    after: String
-    filter: TraitFilteredEventFilterInput
-    sort: DeviceEventSortInput
-  ): DeviceEventConnection!
-
-  # The BetaConnectivity state of this device.
-  state: BetaConnectivityState!
 }
 
 # Information about the reported BetaFirmware state for the version field.
