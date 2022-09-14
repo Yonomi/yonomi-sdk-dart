@@ -1,0 +1,32 @@
+mutation makeUpdatePinCodeRequest ($deviceId: ID!, $pinCode: String!, $pinCodeName: String!) {
+  actionPinCodeCredentialUpdatePinCodeCredential (
+    deviceId: $deviceId
+    # This is an upsert operation, so the entirety of the pinCodeCredential
+    # must be supplied even if only one of the fields (i.e. name)
+    # is being updated
+    pinCodeCredential: {
+      # add the pin code credential to update
+      pinCode: $pinCode
+      name: $pinCodeName
+      # A list of schedules in rrule format
+      # https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html
+      schedules: []
+    }
+  ) {
+    actionId
+    device {
+      traits {
+        name instance
+        ... on PinCodeCredentialDeviceTrait {
+          properties { supportedPinCodeRange { min max } }
+          state {
+            pinCodeCredentials {
+              reported { value { edges { node { pinCode }}} sampledAt createdAt }
+              desired { value { edges { node { pinCode }}} updatedAt }
+            }
+          }
+        }
+      }
+    }
+  }
+}

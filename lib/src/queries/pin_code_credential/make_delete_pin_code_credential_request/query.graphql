@@ -1,0 +1,23 @@
+mutation makeDeletePinCodeRequest ($deviceId: ID!, $pinCode: String!) {
+  actionPinCodeCredentialDeletePinCodeCredential (
+    deviceId: $deviceId
+    # the pinCode to delete from this device
+    pinCode: $pinCode
+  ) {
+    actionId
+    device {
+      traits {
+        name instance
+        ... on PinCodeCredentialDeviceTrait {
+          properties { supportedPinCodeRange { min max } }
+          state {
+            pinCodeCredentials {
+              reported { value { edges { node { pinCode }}} sampledAt createdAt }
+              desired { value { edges { node { pinCode }}} updatedAt }
+            }
+          }
+        }
+      }
+    }
+  }
+}
