@@ -41,8 +41,10 @@ class BetaFirmwareRepository {
     Request request,
     String id,
   ) async {
-    // final req = GmakeInstallLatestFirmwareUpdateRequest((b) => b..vars.deviceId = id,);
-    // Repository().mutate(request, req.operation, req.vars.toJson());
+    final req = GmakeInstallLatestFirmwareUpdateRequest(
+      (b) => b..vars.deviceId = id,
+    );
+    Repository().mutate(request, req.operation, req.vars.toJson());
   }
 }
 
