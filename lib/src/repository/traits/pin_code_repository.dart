@@ -58,7 +58,10 @@ class PinCodeRepository {
 ///
 class PinCodeCredentials extends State<List<PinCodeCredential>> {
   PinCodeCredentials(rawValues)
-      : super((PinCodeCredentials).toString(), _toMappedList(rawValues)) {}
+      : super((PinCodeCredentials).toString(), _toMappedList(rawValues));
+
+  PinCodeCredentials.withCredentials(credentials)
+      : super((PinCodeCredentials).toString(), credentials);
 
   static List<PinCodeCredential> _toMappedList(List<dynamic> value) => value
       .map((each) => PinCodeCredential(
