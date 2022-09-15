@@ -1,4 +1,6 @@
 import 'package:yonomi_platform_sdk/src/queries/pin_code_credential/make_create_pin_code_credential_request/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/pin_code_credential/make_delete_pin_code_credential_request/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/pin_code_credential/make_update_pin_code_credential_request/query.req.gql.dart';
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
@@ -37,17 +39,45 @@ class PinCodeRepository {
     }
   }
 
-  /// Send mutation `actionPinCodeCredentialAddPinCodeCredential`
-  static Future<void> sendAddPinCodeAction(
+  /// Send mutation `actionPinCodeCredentialCreatePinCodeCredential`
+  static Future<void> sendCreatePinCodeAction(
     Request request,
     String id,
     String pinCode,
     String pinCodeName,
   ) async {
-    final req = GmakeAddPinCodeRequest((b) {
+    final req = GmakeCreatePinCodeRequest((b) {
       b..vars.deviceId = id;
       b..vars.pinCode = pinCode;
       b..vars.pinCodeName = pinCodeName;
+    });
+    Repository().mutate(request, req.operation, req.vars.toJson());
+  }
+
+  /// Send mutation `actionPinCodeCredentialUpdatePinCodeCredential`
+  static Future<void> sendUpdatePinCodeAction(
+    Request request,
+    String id,
+    String pinCode,
+    String pinCodeName,
+  ) async {
+    final req = GmakeUpdatePinCodeRequest((b) {
+      b..vars.deviceId = id;
+      b..vars.pinCode = pinCode;
+      b..vars.pinCodeName = pinCodeName;
+    });
+    Repository().mutate(request, req.operation, req.vars.toJson());
+  }
+
+  /// Send mutation `actionPinCodeCredentialDeletePinCodeCredential`
+  static Future<void> sendDeletePinCodeAction(
+    Request request,
+    String id,
+    String pinCode,
+  ) async {
+    final req = GmakeDeletePinCodeRequest((b) {
+      b..vars.deviceId = id;
+      b..vars.pinCode = pinCode;
     });
     Repository().mutate(request, req.operation, req.vars.toJson());
   }
@@ -58,7 +88,10 @@ class PinCodeRepository {
 ///
 class PinCodeCredentials extends State<List<PinCodeCredential>> {
   PinCodeCredentials(rawValues)
-      : super((PinCodeCredentials).toString(), _toMappedList(rawValues)) {}
+      : super((PinCodeCredentials).toString(), _toMappedList(rawValues));
+
+  PinCodeCredentials.withCredentials(credentials)
+      : super((PinCodeCredentials).toString(), credentials);
 
   static List<PinCodeCredential> _toMappedList(List<dynamic> value) => value
       .map((each) => PinCodeCredential(

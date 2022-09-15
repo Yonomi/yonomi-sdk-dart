@@ -1,16 +1,13 @@
-mutation makeCreatePinCodeRequest ($deviceId: ID!, $pinCode: String!, $pinCodeName: String!) {
-  actionPinCodeCredentialCreatePinCodeCredential(
-    deviceId: $deviceId,
-    pinCodeCredential:{
-      pinCode: $pinCode
-      name: $pinCodeName,
-      schedules: []
-    }
+mutation makeDeletePinCodeRequest ($deviceId: ID!, $pinCode: String!) {
+  actionPinCodeCredentialDeletePinCodeCredential (
+    deviceId: $deviceId
+    # the pinCode to delete from this device
+    pinCode: $pinCode
   ) {
     actionId
     device {
       traits {
-        __typename name instance
+        name instance
         ... on PinCodeCredentialDeviceTrait {
           properties { supportedPinCodeRange { min max } }
           state {
