@@ -1,3 +1,19 @@
+# [5.2.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v5.1.0...v5.2.0) (2022-09-15)
+
+
+### Bug Fixes
+
+* **create_pin_code:** use actionPinCodeCredentialCreatePinCodeCredential mutation ([4061ad0](https://github.com/Yonomi/yonomi-sdk-dart/commit/4061ad02e9f73cd5b7d7504b65dcdf410d30a6e2))
+* **graphql_schema:** do not update graphql schema in this PR ([9f3bbed](https://github.com/Yonomi/yonomi-sdk-dart/commit/9f3bbed159f9a70de128b9c595824ce0c3e8151a))
+* **pin_code_repository:** add secondary constructor to directly pass credentials list ([b25fb43](https://github.com/Yonomi/yonomi-sdk-dart/commit/b25fb43d02efd9e22e875d5a2356d0eb39040f37))
+
+
+### Features
+
+* **graphql_schema:** update graphql schema to latest one ([5cb6e24](https://github.com/Yonomi/yonomi-sdk-dart/commit/5cb6e2496e0fbb3195975cc0642d7b2c2731aab8))
+* **pin_code_repository:** add updatePinCode and deletePinCode actions to repository ([0ff03af](https://github.com/Yonomi/yonomi-sdk-dart/commit/0ff03afb78580fbd419797d1fb45a0034480a8d2))
+* **pin_code_trait:** mutations to update or delete a pin code ([a3aee9d](https://github.com/Yonomi/yonomi-sdk-dart/commit/a3aee9ddd689c6f33ef10329d77482e8bdf33c51))
+
 # [5.1.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v5.0.3...v5.1.0) (2022-09-02)
 
 
