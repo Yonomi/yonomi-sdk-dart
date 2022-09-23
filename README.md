@@ -6,7 +6,16 @@
 
 ---
 
-Flutter SDK for Yonomi Platform
+The Yonomi Platform SDK aims to lower the curve to getting
+an application connected to the Yonomi Platform and
+working with objects in the IoT domain.
+By simplifying the developer experience of the Platform API,
+the SDK will speed up development time for prototypes and
+full production solutions. It will make interacting
+with the platform a more enjoyable developer experience,
+and allow the developer to focus on problems specific to
+their application domain and not necessarily specific to
+the minutia of Yonomi’s implementation of GraphQL.
 
 ---
 
