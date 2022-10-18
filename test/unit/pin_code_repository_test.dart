@@ -66,10 +66,10 @@ main() {
     expect(PinCodeCredential('Admin', '5678'),
         isNot(PinCodeCredential('Admin', '1234')));
     expect(PinCodeCredential('Administrator', '5678'),
-        isNot(PinCodeCredential('Admin', '1234')));
+        isNot(PinCodeCredential('Admin', '5678')));
     expect(PinCodeCredential('Admin', '5678').hashCode,
         isNot(PinCodeCredential('Admin', '1234').hashCode));
     expect(PinCodeCredential('Administrator', '5678').hashCode,
-        isNot(PinCodeCredential('Admin', '1234').hashCode));
+        isNot(PinCodeCredential('Admin', '5678').hashCode));
   });
 }
