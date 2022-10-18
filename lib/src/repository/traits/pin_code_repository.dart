@@ -123,7 +123,7 @@ class PinCodeCredential {
           pinCode == other.pinCode;
 
   @override
-  int get hashCode => name.hashCode;
+  int get hashCode => Object.hash(name, pinCode);
 
   @override
   String toString() =>
