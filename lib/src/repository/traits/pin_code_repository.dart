@@ -115,6 +115,17 @@ class PinCodeCredential {
   String get pinCode => _pinCode.pinCode;
 
   @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PinCodeCredential &&
+          runtimeType == other.runtimeType &&
+          name == other.name &&
+          pinCode == other.pinCode;
+
+  @override
+  int get hashCode => name.hashCode;
+
+  @override
   String toString() =>
       'PinCodeCredential(name: ${_pinCode.name}, pinCode: ${_pinCode.pinCode})';
 }
