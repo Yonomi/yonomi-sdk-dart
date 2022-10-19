@@ -37,10 +37,7 @@ Open your `pubspec.yaml` file and add the following entry under the `dependencie
 
 ```
 dependencies:
-  flutter:
-    sdk: flutter
-
-  yonomi_sdk_dart: ^1.0.0
+  yonomi_platform_sdk: ^5.2.1
 ```
 #### __From source__
 Clone the latest source code to a directory of choice
