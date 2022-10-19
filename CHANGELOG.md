@@ -1,3 +1,11 @@
+## [5.2.1](https://github.com/Yonomi/yonomi-sdk-dart/compare/v5.2.0...v5.2.1) (2022-10-19)
+
+
+### Bug Fixes
+
+* **pin_code_repository:** hash both name and pincode ([7a79e78](https://github.com/Yonomi/yonomi-sdk-dart/commit/7a79e7870fe5fb39184232a72802f655f5652196))
+* **pin_code_repository:** override equals and hashcode for PinCodeCredential class ([cf694ff](https://github.com/Yonomi/yonomi-sdk-dart/commit/cf694ff0f561fc42539ff2f18b4cca4446cc03f3))
+
 # [5.2.0](https://github.com/Yonomi/yonomi-sdk-dart/compare/v5.1.0...v5.2.0) (2022-09-15)
 
 
