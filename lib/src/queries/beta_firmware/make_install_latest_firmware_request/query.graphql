@@ -1,8 +1,8 @@
 mutation makeInstallLatestFirmwareUpdateRequest($deviceId: ID!) {
-  scheduleLatestFirmwareUpdate(deviceId: $deviceId) {
+  actionBetaFirmwareInstallLatestFirmwareUpdate(deviceId: $deviceId) {
     actionId
-    transactionId
     device {
+      id
       traits {
         name
         instance
