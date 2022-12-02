@@ -3,7 +3,7 @@ description: >-
   The Yonomi Platform SDK aims to lower the curve to getting
   an application connected to the Yonomi Platform and
   working with objects in the IoT domain.
-version: 5.2.0
+version: 5.2.1
 homepage: https://www.yonomi.com
 repository: https://github.com/Yonomi/yonomi-sdk-dart
 issue_tracker: https://github.com/Yonomi/yonomi-sdk-dart/issues

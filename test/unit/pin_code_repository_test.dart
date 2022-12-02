@@ -52,4 +52,24 @@ main() {
     expect(pinCodeTrait.pinCodes![1].name, 'Plant Lady');
     expect(pinCodeTrait.pinCodes![1].pinCode, '1234');
   });
+
+  test(
+      'PinCodeCredential hashcode and == operator compares two objects correctly',
+      () {
+    // Expect equality
+    expect(
+        PinCodeCredential('Admin', '5678'), PinCodeCredential('Admin', '5678'));
+    expect(PinCodeCredential('Admin', '5678').hashCode,
+        PinCodeCredential('Admin', '5678').hashCode);
+
+    // Expect inequality
+    expect(PinCodeCredential('Admin', '5678'),
+        isNot(PinCodeCredential('Admin', '1234')));
+    expect(PinCodeCredential('Administrator', '5678'),
+        isNot(PinCodeCredential('Admin', '5678')));
+    expect(PinCodeCredential('Admin', '5678').hashCode,
+        isNot(PinCodeCredential('Admin', '1234').hashCode));
+    expect(PinCodeCredential('Administrator', '5678').hashCode,
+        isNot(PinCodeCredential('Admin', '5678').hashCode));
+  });
 }
