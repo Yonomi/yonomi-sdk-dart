@@ -1,4 +1,4 @@
-mutation makeInstallLatestFirmwareUpdateRequest($deviceId: ID!) {
+mutation makeBetaFirmwareInstallLatestFirmwareUpdateRequest($deviceId: ID!) {
   actionBetaFirmwareInstallLatestFirmwareUpdate(deviceId: $deviceId) {
     actionId
     device {

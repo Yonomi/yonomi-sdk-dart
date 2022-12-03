@@ -1,9 +1,10 @@
+import 'package:yonomi_platform_sdk/src/queries/beta_firmware/make_schedule_latest_firmware_request/query.req.gql.dart';
+import 'package:yonomi_platform_sdk/src/queries/beta_firmware/make_install_latest_firmware_request/query.req.gql.dart';
+
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/repository.dart';
 import 'package:yonomi_platform_sdk/src/request/request.dart';
 import 'package:yonomi_platform_sdk/third_party/yonomi_graphql_schema/schema.docs.schema.gql.dart';
-
-import '../../queries/beta_firmware/make_schedule_install_request/query.req.gql.dart';
 
 typedef _traitNames = GTraitName;
 
@@ -44,7 +45,7 @@ class BetaFirmwareRepository {
   ) async {
     final dateTimeBuilder = GDateTimeBuilder();
     dateTimeBuilder..value = scheduleAt.toUtc().toIso8601String();
-    final req = GmakeScheduleLatestFirmwareUpdateRequest((b) {
+    final req = GmakeBetaFirmwareScheduleLatestFirmwareUpdate((b) {
       b..vars.deviceId = id;
       b..vars.scheduleAt = dateTimeBuilder;
     });
@@ -55,7 +56,7 @@ class BetaFirmwareRepository {
     Request request,
     String id,
   ) async {
-    final req = GmakeInstallLatestFirmwareUpdateRequest(
+    final req = GmakeBetaFirmwareInstallLatestFirmwareUpdateRequest(
       (b) => b..vars.deviceId = id,
     );
     Repository().mutate(request, req.operation, req.vars.toJson());
