@@ -1,6 +1,5 @@
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
-import 'package:yonomi_platform_sdk/src/repository/traits/pin_code_repository.dart';
 import 'package:yonomi_platform_sdk/yonomi-sdk.dart';
 
 import 'base_mock_test.dart';
@@ -54,7 +53,7 @@ main() {
   });
 
   test(
-      'PinCodeCredential hashcode and == operator compares two objects correctly',
+      'PinCodeCredential hash code and == operator compares two objects correctly',
       () {
     // Expect equality
     expect(
