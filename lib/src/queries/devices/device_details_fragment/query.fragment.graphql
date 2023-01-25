@@ -353,5 +353,69 @@ fragment DeviceDetails on Device {
         }
       }
     }
+    ... on BetaFirmwareDeviceTrait {
+      state {
+        version {
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
+        }
+        lastUpdated {
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
+        }
+        installScheduledAt {
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
+        }
+        installedAt {
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
+        }
+        downloadScheduledAt {
+          reported {
+            value
+            sampledAt
+            createdAt
+          }
+          desired {
+            value
+            delta
+            updatedAt
+          }
+        }
+      }
+    }
   }
 }

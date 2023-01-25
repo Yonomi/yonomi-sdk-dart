@@ -1,0 +1,12 @@
+mutation makeBetaFirmwareInstallLatestFirmwareUpdateRequest($deviceId: ID!) {
+  actionBetaFirmwareInstallLatestFirmwareUpdate(deviceId: $deviceId) {
+    actionId
+    device {
+      id
+      traits {
+        name
+        instance
+      }
+    }
+  }
+}

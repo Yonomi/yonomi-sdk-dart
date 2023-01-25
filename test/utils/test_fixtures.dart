@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:yonomi_platform_sdk/src/repository/devices_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/gql_client.dart';
+import 'package:yonomi_platform_sdk/src/repository/traits/beta_firmware_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/brightness_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/lock_repository.dart';
 import 'package:yonomi_platform_sdk/src/repository/traits/pin_code_repository.dart';
@@ -45,6 +46,14 @@ class TestFixtures {
     return devices
         .firstWhere((device) => deviceIsOfTrait(device, BrightnessTrait),
             orElse: () => throw 'No brightness device found')
+        .id;
+  }
+
+  Future<String> getBetaFirmwareDeviceId(yoRequest.Request request) async {
+    List<Device> devices = await DevicesRepository.getDevices(request);
+    return devices
+        .firstWhere((device) => deviceIsOfTrait(device, BetaFirmwareTrait),
+            orElse: () => throw '''No beta firmware device found.''')
         .id;
   }
 
@@ -358,6 +367,91 @@ class TestFixtures {
                 },
                 "delta": null,
                 "updatedAt": "2021-10-20T02:51:18.445Z"
+              }
+            }
+          }
+        }
+      ]
+    };
+  }
+
+  static Map<String, dynamic> buildBetaFirmwareJsonResponse(
+      {String version = '0.0.1'}) {
+    return {
+      'id': 'id',
+      'displayName': 'displayName',
+      'updatedAt': '2022-04-18T12:00:00.000Z',
+      'createdAt': '2022-04-18T12:00:00.000Z',
+      'productInformation': {
+        'manufacturer': 'abc',
+        'model': 'model',
+        'description': 'BetaFirmware device',
+      },
+      'traits': [
+        {
+          "__typename": "BetaFirmwareDeviceTrait",
+          "name": "BETA_FIRMWARE",
+          "instance": "default",
+          "properties": {},
+          "state": {
+            "version": {
+              "reported": {
+                "value": version,
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2022-01-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "0.0.1",
+                "delta": null,
+                "updatedAt": "2021-10-20T02:51:18.445Z"
+              }
+            },
+            "lastUpdated": {
+              "reported": {
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2022-01-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
+              }
+            },
+            "installScheduledAt": {
+              "reported": {
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2022-01-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
+              }
+            },
+            "installedAt": {
+              "reported": {
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2022-01-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
+              }
+            },
+            "downloadScheduledAt": {
+              "reported": {
+                "value": DateTime.parse("2022-01-01T17:00:00.000Z"),
+                "createdAt": "2021-10-20T02:51:18.445Z",
+                "sampledAt": "2022-01-20T02:01:36.000Z"
+              },
+              "desired": {
+                "value": "2022-09-07T12:00:00.000Z",
+                "delta": null,
+                "updatedAt": "2022-09-07T12:00:00.000Z"
               }
             }
           }

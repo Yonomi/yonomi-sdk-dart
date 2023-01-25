@@ -1,17 +1,21 @@
-mutation makeBrightnessActionRequest($deviceId: ID!, $brightness: Int!) {
-  actionBrightnessSetBrightnessPercentage(
+mutation makeBetaFirmwareScheduleLatestFirmwareUpdate(
+  $deviceId: ID!
+  $scheduleAt: DateTime!
+) {
+  actionBetaFirmwareScheduleLatestFirmwareUpdate(
     deviceId: $deviceId
-    brightness: $brightness
+    scheduleAt: $scheduleAt
   ) {
     actionId
-    transactionId
     device {
+      id
       traits {
+        __typename
         name
         instance
-        ... on BrightnessDeviceTrait {
+        ... on BetaFirmwareDeviceTrait {
           state {
-            brightness {
+            installScheduledAt {
               reported {
                 value
                 sampledAt
